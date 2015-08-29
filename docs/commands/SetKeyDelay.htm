@@ -3,48 +3,49 @@
 <html>
 <head>
 <title>SetKeyDelay</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/jquery.js" type="text/javascript"></script>
+<script src="../static/tree.jquery.js" type="text/javascript"></script>
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
 <h1>SetKeyDelay</h1>
 
-<p>Sets the delay that will occur after each keystroke sent by <a href="Send.htm">Send</a> and <a href="ControlSend.htm">ControlSend</a>.</p>
+<p>ÉèÖÃÃ¿´Î <a href="Send.htm">Send</a> ºÍ <a href="ControlSend.htm">ControlSend</a> ·¢ËÍ¼ü»÷ºó×Ô¶¯µÄÑÓÊ±.</p>
 
 <pre class="Syntax">SetKeyDelay [, Delay, PressDuration, Play]</pre>
-<h3>Parameters</h3>
+<h3>²ÎÊý</h3>
 <dl>
 
   <dt>Delay</dt>
-  <dd><p>Time in milliseconds, which can be an <a href="../Variables.htm#Expressions">expression</a>. Use -1 for no delay at all and 0 for the smallest possible delay (however, if the <em>Play</em> parameter is present, both 0 and -1 produce no delay). Leave this parameter blank to retain the current <em>Delay</em>.</p>
-    <p>If SetKeyDelay is never used by a script, the default <em>Delay</em> for the tradional SendEvent mode is 10. For <a href="Send.htm#SendPlayDetail">SendPlay mode</a>, the default <em>Delay</em> is -1. The default <em>PressDuration</em> (below) is -1 for both modes.</p></dd>
+  <dd><p>ºÁÃë±íÊ¾µÄÊ±¼ä, ¿ÉÒÔÎª <a href="../Variables.htm#Expressions">±í´ïÊ½</a>. Ê¹ÓÃ -1 ±íÊ¾ÎÞÑÓÊ±£¬¶ø 0 ±íÊ¾×îÐ¡ÑÓÊ±£¨È»¶øÈç¹ûÊ¹ÓÃÁË <em>Play</em> ²ÎÊý£¬Ôò 0 ºÍ -1 ¶¼±íÊ¾ÎÞÑÓÊ±£©¡£Áô¿Õ´Ë²ÎÊýÀ´±£³Öµ±Ç°µÄ <em>Delay</em>.</p>
+    <p>Èç¹û½Å±¾ÖÐÃ»ÓÐÊ¹ÓÃ¹ý SetKeyDelay£¬Ôò¶ÔÓÚ´«Í³µÄ SendEvent Ä£Ê½Ä¬ÈÏ <em>Delay</em> Îª 10¡£¶ÔÓÚ <a href="Send.htm#SendPlayDetail">SendPlay Ä£Ê½</a>, Ä¬ÈÏ <em>Delay</em> Îª -1. ¶ÔÓÚÕâÁ½ÖÖÄ£Ê½Ä¬ÈÏµÄ <em>°´×¡Ê±³¤</em> (ÏÂÃæµÄ) Îª -1.</p></dd>
 
   <dt>PressDuration</dt>
-  <dd><p><a name="dur"></a>Certain games and other specialized applications may require a delay inside each keystroke; that is, after the press of the key but before its release.</p>
-      <p>Use -1 for no delay at all (default) and 0 for the smallest possible delay (however, if the <em>Play</em> parameter is present, both 0 and -1 produce no delay). Omit this parameter to leave the current <em>PressDuration</em> unchanged.</p>
-	  <p>Note: <em>PressDuration</em> also produces a delay after any change to the modifier key state (CTRL, ALT, SHIFT, and WIN) needed to support the keys being sent.</p>
-    <p>This parameter can be an <a href="../Variables.htm#Expressions">expression</a>.</p></dd>
+  <dd><p><a name="dur"></a>Ä³Ð©ÓÎÏ·ºÍÌØÊâµÄÓ¦ÓÃ³ÌÐò¿ÉÄÜÒªÇóÃ¿´Î¼ü»÷¾ßÓÐÒ»¶¨µÄ°´ÏÂÊ±¼ä; ¼´°´ÏÂ°´¼üºó, ³ÖÐøÒ»¶ÎÊ±¼ä, È»ºó²ÅËÉ¿ª.</p>
+      <p>Ê¹ÓÃ -1 ±íÊ¾ÎÞÑÓÊ± (Ä¬ÈÏ), ¶ø 0 ±íÊ¾×îÐ¡ÑÓÊ± (È»¶ø, Èç¹ûÊ¹ÓÃÁË <em>Play </em>²ÎÊý, Ôò 0 ºÍ -1 ¶¼±íÊ¾ÎÞÑÓÊ±). ×¢: ÕâÀïµÄÑÓÊ±Ö¸°´×¡°´¼üµÄ³ÖÐøÊ±¼ä, ÉÏÃæµÄÑÓÊ±ÊÇÁ½´Î¼ü»÷Ö®¼äµÄ¼ä¸ôÊ±¼ä. Ê¡ÂÔ´Ë²ÎÊýÀ´±£Áôµ±Ç°µÄ <em>°´×¡Ê±³¤</em> ²»±ä.</p>
+	  <p>×¢: <em>PressDuration</em> Í¬Ñù»áÔÚÖ§³ÖÆäËû°´¼ü·¢ËÍµÄÐÞÊÎ¼ü (CTRL, ALT, SHIFT ºÍ WIN) ×´Ì¬¸Ä±äºó²úÉúÑÓÊ±.</p>
+    <p>´Ë²ÎÊý¿ÉÒÔÎª <a href="../Variables.htm#Expressions">±í´ïÊ½</a>.</p></dd>
 
-  <dt>Play<br>
-    <span class="ver">[v1.0.43+]</span></dt>
-  <dd><p>The word <em>Play</em> applies the above settings to the <a href="Send.htm#SendPlayDetail">SendPlay mode</a> rather than the traditional SendEvent mode. If a script never uses this parameter, the delay is always -1/-1 for SendPlay.</p></dd>
+  <dt>Play<br><span class="ver">[v1.0.43+]</span></dt>
+  <dd><p>µ¥´Ê <em>Play</em> »á°ÑÉÏÃæµÄÉèÖÃÓ¦ÓÃÓÚ <a href="Send.htm#SendPlayDetail">SendPlay Ä£Ê½</a> ¶ø²»ÊÇ´«Í³µÄ SendEvent Ä£Ê½. Èç¹û½Å±¾Ã»ÓÐÊ¹ÓÃ´Ë²ÎÊý, Ôò SendPlay Ä£Ê½µÄÑÓÊ±×ÜÊÇÎª -1/-1.</p></dd>
 
 </dl>
 
-<h3>Remarks</h3>
-<p><strong>Note:</strong> SetKeyDelay is not obeyed by <a href="Send.htm#SendInputDetail">SendInput</a>; there is no delay between keystrokes in that mode. This same is true for <a href="Send.htm">Send</a> when <a href="SendMode.htm">SendMode Input</a> is in effect.</p>
-<p>A short delay (sleep) is done automatically after every keystroke sent by <a href="Send.htm">Send</a> or <a href="ControlSend.htm">ControlSend</a>. This is done to improve the reliability of scripts because a window sometimes can't keep up with a rapid flood of keystrokes.</p>
-<p>Due to the granularity of the OS's time-keeping system, delays might be rounded up to the nearest multiple of 10 or 15. For example, a delay between 1 and 10 (inclusive) is equivalent to 10 or 15 on most Windows XP systems (and probably 2k).</p>
-<p>For Send/SendEvent mode, a delay of 0 internally executes a Sleep(0), which yields the remainder of the script's timeslice to any other process that may need it. If there is none, Sleep(0) will not sleep at all. By contrast, a delay of -1 will never sleep.  For better reliability, 0 is recommended as an alternative to -1.</p>
-<p>When the delay is set to -1, a script's process-priority becomes an important factor in how fast it can send keystrokes when using the traditional <a href="SendMode.htm">SendEvent mode</a>. To raise a script's priority, use <code><a href="Process.htm">Process</a>, Priority,, High</code>. Although this typically causes keystrokes to be sent faster than the <a href="WinActivate.htm">active window</a> can process them, the system automatically buffers them. Buffered keystrokes continue to arrive in the target window after the <a href="Send.htm">Send</a> command completes (even if the window is no longer active). This is usually harmless because any subsequent keystrokes sent to the same window get queued up behind the ones already in the buffer.</p>
-<p>The built-in variable <strong>A_KeyDelay</strong> contains the current setting of <em>Delay</em> for Send/SendEvent mode. There is no built-in variable for either <em>PressDuration</em> or <a href="Send.htm#SendPlayDetail">SendPlay</a>'s <em>Delay</em>.</p>
-<p>Every newly launched <a href="../misc/Threads.htm">thread</a> (such as a <a href="../Hotkeys.htm">hotkey</a>, <a href="Menu.htm">custom menu item</a>, or <a href="SetTimer.htm">timed</a> subroutine) starts off fresh with the default setting for this command. That default may be changed by using this command in the auto-execute section (top part of the script).</p>
-<h3>Related</h3>
+<h3>±¸×¢</h3>
+<p><strong>×¢:</strong> SetKeyDelay µÄÉèÖÃ²»»áÓ°Ïì <a href="Send.htm#SendInputDetail">SendInput</a>; ÔÚÕâÖÖÄ£Ê½µÄ¼ü»÷Ö®¼äÃ»ÓÐÑÓÊ±. µ± <a href="SendMode.htm">SendMode Input</a> ÉúÐ§Ê±¶ÔÓÚ <a href="Send.htm">Send</a> Í¬ÑùÈç´Ë.</p>
+<p>ÔÚÃ¿´Î <a href="Send.htm">Send</a> »ò <a href="ControlSend.htm">ControlSend</a> ·¢ËÍ¼ü»÷ºó»á×Ô¶¯½øÐÐ¶ÌÔÝµÄÑÓÊ±. ÕâÑù×öÌá¸ßÁË½Å±¾µÄ¿É¿¿ÐÔ, ÒòÎª´°¿ÚÓÐÊ±ÎÞ·¨ÏìÓ¦¿ìËÙµÄ¼ü»÷Á÷.</p>
+<p>ÓÉÓÚ²Ù×÷ÏµÍ³¼ÆÊ±ÏµÍ³µÄ¾«È·¶È, ÑÓÊ±¿ÉÄÜ»á±»ÏòÉÏÈ¡Õûµ½×î½üµÄ 10 »ò 15 µÄ±¶Êý. ÀýÈç£¬ÔÚ´ó²¿·Ö Windows XP ÏµÍ³ÉÏ½éÓÚ 1 ºÍ 10£¨º¬±ß½ç£©µÄÑÓÊ±¶¼Ïàµ±ÓÚ 10 »ò 15£¨¿ÉÄÜÒ²ÊÊÓÃÓÚ 2k£©¡£</p>
+<p>¶ÔÓÚ Send/SendEvent Ä£Ê½, ÑÓÊ±Îª 0 Ê±Êµ¼ÊÄÚ²¿»áÖ´ÐÐ Sleep(0), ÕâÑù»á½«½Å±¾Ê±¼äÆ¬µÄÊ£Óà²¿·Ö·ÖÅä¸øÆäËûÐèÒªµÄ½ø³Ì. Èç¹ûÃ»ÓÐ½ø³ÌÐèÒª, ÄÇÃ´ Sleep(0) Ïàµ±ÓÚÍêÈ«Ã»ÓÐÑÓÊ±. ÓëÖ®Ïà±È, ÑÓÊ±Îª -1 Ôò´Ó²»ÐÝÃß. ÎªÁËÌá¸ß¿É¿¿ÐÔ, ÍÆ¼öÊ¹ÓÃ 0 ¶ø²»ÊÇ -1.</p>
+<p>µ±ÑÓÊ±ÉèÎª -1 Ê±, ½Å±¾µÄ½ø³ÌÓÅÏÈ¼¶»á³ÉÎª´«Í³µÄ <a href="SendMode.htm">SendEvent Ä£Ê½</a> ÖÐ¼ü»÷·¢ËÍËÙ¶ÈµÄÖØÒªÒòËØ. ÒªÌáÉý½Å±¾µÄÓÅÏÈ¼¶£¬ÇëÊ¹ÓÃ <code><a href="Process.htm">Process</a>, Priority,, High</code>¡£¾¡¹ÜÕâÍ¨³£»áÊ¹µÃ¼ü»÷·¢ËÍµÄËÙ¶È³¬¹ý <a href="WinActivate.htm">»î¶¯´°¿Ú</a> µÄ´¦ÀíËÙ¶È, ²»¹ýÏµÍ³»á×Ô¶¯¶ÔËüÃÇ½øÐÐ»º³å. ÔÚ <a href="Send.htm">Send</a> ÃüÁîÍê³Éºó, ±»»º³åµÄ¼ü»÷»á¼ÌÐøµ½´ïÄ¿±ê´°¿Ú (¼´Ê¹´Ë´°¿ÚÏÖÔÚÒÑ¾­²»ÊÇ»î¶¯´°¿Ú). ÕâÖÖÇé¿öÒ»°ãÊÇ²»Òª½ôµÄ, ÒòÎªÈÎºÎºóÐø·¢ËÍ¸øÏàÍ¬´°¿ÚµÄ¼ü»÷»áÅÅÁÐÔÚ»º³åÖÐµÄÄÇÐ©¼ü»÷Ö®ºó.</p>
+<p>ÄÚÖÃ±äÁ¿ <strong>A_KeyDelay</strong> °üº¬ÁË Send/SendEvent Ä£Ê½µÄµ±Ç° <em>Delay</em> ÉèÖÃ¡£Ã»ÓÐ¶ÔÓ¦ÓÚ <em>PressDuration</em> »ò <a href="Send.htm#SendPlayDetail">SendPlay</a> µÄ <em>Delay</em> µÄÄÚÖÃ±äÁ¿¡£</p>
+<p>Ã¿¸öÐÂÔËÐÐµÄ <a href="../misc/Threads.htm">Ïß³Ì</a> (ÀýÈç <a href="../Hotkeys.htm">ÈÈ¼ü</a>, <a href="Menu.htm">×Ô¶¨Òå²Ëµ¥Ïî</a> »ò <a href="SetTimer.htm">¶¨Ê±</a> ×Ó³ÌÐò) ¶¼»áÒÔ´ËÃüÁîµÄÄ¬ÈÏÉèÖÃ¿ªÊ¼. Í¨¹ýÔÚ½Å±¾µÄ×Ô¶¯Ö´ÐÐ¶Î (½Å±¾µÄ¶¥²¿) Ê¹ÓÃ´ËÃüÁî¿ÉÒÔ¸Ä±äÕâ¸öÄ¬ÈÏÉèÖÃ.</p>
+<h3>Ïà¹Ø</h3>
 <p><a href="Send.htm">Send</a>, <a href="ControlSend.htm">ControlSend</a>, <a href="SendMode.htm">SendMode</a>, <a href="SetMouseDelay.htm">SetMouseDelay</a>, <a href="SetControlDelay.htm">SetControlDelay</a>, <a href="SetWinDelay.htm">SetWinDelay</a>, <a href="SetBatchLines.htm">SetBatchLines</a>, <a href="Click.htm">Click</a></p>
-<h3>Example</h3>
+<h3>Ê¾Àý</h3>
 <pre class="NoIndent">SetKeyDelay, 0</pre>
 
 </body>

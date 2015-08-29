@@ -2,26 +2,21 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Seek -- by Phi</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ËÑË÷ -- ×÷Õß: Phi</title>
+<meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/jquery.js" type="text/javascript"></script>
+<script src="../static/tree.jquery.js" type="text/javascript"></script>
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>Seek -- by Phi</h1>
+<h1>ËÑË÷ -- ×÷Õß: Phi</h1>
 
-<p>Navigating the Start Menu can be a hassle, especially
- if you have installed many programs over time. 'Seek'
- lets you specify a case-insensitive key word/phrase
- that it will use to filter only the matching programs
- and directories from the Start Menu, so that you can
- easily open your target program from a handful of
- matched entries. This eliminates the drudgery of
- searching and traversing the Start Menu.
+<p>ä¯ÀÀ¿ªÊ¼²Ëµ¥¿ÉÄÜÊÇ¼þÂé·³ÊÂ, ÓÈÆäÔÚÄú°²×°ÁËºÜ¶à³ÌÐòµÄÊ±ºò. 'Seek' ÄÜÈÃÄúÖ¸¶¨²»Çø·Ö´óÐ¡Ð´µÄ¹Ø¼ü´Ê/¶ÌÓï, ÓÃËü´Ó¿ªÊ¼²Ëµ¥ÀïÉ¸Ñ¡³öÆ¥ÅäµÄ³ÌÐòºÍÄ¿Â¼, ÒÔ±ãÄú¿ÉÒÔÇáËÉµØ´ÓÉÙÊýÆ¥ÅäµÄÏîÄ¿ÖÐ´ò¿ªÄ¿±ê³ÌÐò. ÕâÑù¾Í²»ÓÃÔÚ¿ªÊ¼²Ëµ¥ÖÐ×ö²éÕÒºÍ´©Ô½µÄ¿àÁ¦»îÁË.
 </p>
-<p><a href="Seek_(SearchTheStartMenu).ahk">Download This Script</a> &nbsp;| &nbsp;<a href="index.htm">Other Sample Scripts</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Home</a></p>
+<p><a href="Seek_(SearchTheStartMenu).ahk">ÏÂÔØ´Ë½Å±¾</a> &nbsp;| &nbsp;<a href="index.htm">ÆäËûÊ¾Àý½Å±¾</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Ö÷Ò³</a></p>
 
 <pre class="NoIndent"><em>;*****************************************************************
 ;
@@ -230,18 +225,18 @@
 ; * v2.0.3
 ; - Added /on option to DIR-command to sort by name.
 ; - Fuzzy search when user enters multiple query strings,
-;   separated by space, for e.g. &quot;med pla&quot;. It's a match
-;   when all the strings (&quot;med&quot; &amp; &quot;pla&quot;) are found. This
-;   will match &quot;Media Player&quot;, &quot;Macromedia Flash Player&quot;,
-;   &quot;Play Medieval King&quot;, &quot;medpla&quot;, &quot;plamed&quot;.
+;   separated by space, for e.g. "med pla". It's a match
+;   when all the strings ("med" &amp; "pla") are found. This
+;   will match "Media Player", "Macromedia Flash Player",
+;   "Play Medieval King", "medpla", "plamed".
 ; - Corrected tab-movement sequence by adding all buttons
 ;   right from the start, but disable them until they can
 ;   be used.
 ; - Added status bar to replace tooltip-feedback.
 ; - Removed obsolete internal switch (ToolTipFilename).
-; - Replaced the use of &quot;dir&quot; command with AutoHotkey's
-;   own &quot;Loop&quot; command for scanning directory contents.
-;   &quot;dir&quot; cannot handle extended character set and thus
+; - Replaced the use of "dir" command with AutoHotkey's
+;   own "Loop" command for scanning directory contents.
+;   "dir" cannot handle extended character set and thus
 ;   non-English (e.g German) directory and filename are
 ;   captured wrongly. (Thanks Wolfgang Bujatti and
 ;   Sietse Fliege for testing this modification)
@@ -311,7 +306,7 @@ version = Seek v2.0.3
 <em>; DISPLAY HELP INSTRUCTIONS</em>
 If 1 in --help,-help,/h,-h,/?,-?
 {
-    MsgBox,, %version%, Navigating the Start Menu can be a hassle, especially if you have installed many programs over time. 'Seek' lets you specify a case-insensitive key word/phrase that it will use to filter only the matching programs and directories from the Start Menu, so that you can easily open your target program from a handful of matched entries. This eliminates the drudgery of searching and traversing the Start Menu.`n`nI have a lot of fun coding this, and hope you will enjoy using it too. Feel free to drop me an email with your comments and feedback at: phi1618 (*a.t*) gmail :D0T: com.`n`nOptions:`n  -cache`tUse the cached directory-listing if available (this is the default mode when no option is specified)`n  -scan`tForce a directory scan to retrieve the latest directory listing`n  -scex`tScan &amp; exit (this is useful for scheduling the potentially time-consuming directory-scanning as a background job)`n  -help`tShow this help
+    MsgBox,, %version%, Navigating the Start Menu can be a hassle, especially if you have installed many programs over time. 'Seek' ÄÜÈÃÄúÖ¸¶¨²»Çø·Ö´óÐ¡Ð´µÄ¹Ø¼ü´Ê/¶ÌÓï, ÓÃËü´Ó¿ªÊ¼²Ëµ¥ÀïÉ¸Ñ¡³öÆ¥ÅäµÄ³ÌÐòºÍÄ¿Â¼, ÒÔ±ãÄú¿ÉÒÔÇáËÉµØ´ÓÉÙÊýÆ¥ÅäµÄÏîÄ¿ÖÐ´ò¿ªÄ¿±ê³ÌÐò. This eliminates the drudgery of searching and traversing the Start Menu.`n`nI have a lot of fun coding this, and hope you will enjoy using it too. Feel free to drop me an email with your comments and feedback at: phi1618 (*a.t*) gmail :D0T: com.`n`nOptions:`n  -cache`tUse the cached directory-listing if available (this is the default mode when no option is specified)`n  -scan`tForce a directory scan to retrieve the latest directory listing`n  -scex`tScan &amp; exit (this is useful for scheduling the potentially time-consuming directory-scanning as a background job)`n  -help`tShow this help
     Goto QuitNoSave
 }
 
@@ -466,7 +461,7 @@ IfExist, %SeekMyDir%
     Loop, read, %SeekMyDir%
     {
         IfNotExist, %A_LoopReadLine%
-            MsgBox, 8192, %version%, Processing your customised directory list...`n`n&quot;%A_LoopReadLine%&quot; does not exist and will be excluded from the scanning.`nPlease update [ %SeekMyDir% ].
+            MsgBox, 8192, %version%, Processing your customised directory list...`n`n"%A_LoopReadLine%" does not exist and will be excluded from the scanning.`nPlease update [ %SeekMyDir% ].
         Else
             scanPath = %scanPath%|%A_LoopReadLine%
     } 
@@ -521,7 +516,7 @@ If List = |
 {
     <em>; NOT EVEN A SINGLE MATCHING RECORD IS FOUND.</em>
     <em>; LET USER MODIFY THE QUERY STRING AND TRY AGAIN.</em>
-    MsgBox, 8192, %version%, The query string &quot;%CurFilename%&quot; does not match any record. Try again.
+    MsgBox, 8192, %version%, The query string "%CurFilename%" does not match any record. Try again.
     GuiControl, 1:Disable, ButtonOPENDIR
     GuiControl, 1:Enable, ButtonSCANSTARTMENU
     Goto EnterQuery
@@ -753,7 +748,7 @@ IfNotExist, %OpenTarget%
 <em>; OPEN THE DIRECTORY</em>
 IfExist, %dirExplorer%
 {
-    Run, &quot;%dirExplorer%&quot; &quot;%OpenTarget%&quot;, , Max <em>; OPEN WITH CUSTOMISED FILE EXPLORER</em>
+    Run, "%dirExplorer%" "%OpenTarget%", , Max <em>; OPEN WITH CUSTOMISED FILE EXPLORER</em>
 }
 Else
 {

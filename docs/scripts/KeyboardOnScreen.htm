@@ -2,23 +2,21 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>On-Screen Keyboard (requires XP/2k/NT) -- by Jon</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ÆÁÄ»¼üÅÌ (ÐèÒª XP/2k/NT) -- ×÷Õß: Jon</title>
+<meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/jquery.js" type="text/javascript"></script>
+<script src="../static/tree.jquery.js" type="text/javascript"></script>
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>On-Screen Keyboard (requires XP/2k/NT) -- by Jon</h1>
+<h1>ÆÁÄ»¼üÅÌ (ÐèÒª XP/2k/NT) -- ×÷Õß: Jon</h1>
 
-<p>This script creates a mock keyboard at the bottom of your screen that shows
- the keys you are pressing in real time. I made it to help me to learn to
- touch-type (to get used to not looking at the keyboard).  The size of the
- on-screen keyboard can be customized at the top of the script. Also, you
- can double-click the tray icon to show or hide the keyboard.
+<p>´Ë½Å±¾»áÔÚÆÁÄ»µÄµ×²¿´´½¨Ò»¸öÄ£Äâ¼üÅÌÀ´ÊµÊ±ÏÔÊ¾Äú°´ÏÂµÄ°´¼ü. ÎÒÐ´Õâ¸öÊÇÎªÁË°ïÎÒÑ§Ï°Ã¤´ò (À´ÊÊÓ¦²»È¥¿´¼üÅÌ). ÔÚ½Å±¾µÄ¶¥²¿¿ÉÒÔ×Ô¶¨ÒåÆÁÄ»¼üÅÌµÄ´óÐ¡. »¹ÓÐ, Äú¿ÉÒÔË«»÷ÍÐÅÌÍ¼±êÀ´ÏÔÊ¾»òÒþ²Ø¼üÅÌ.
 </p>
-<p><a href="KeyboardOnScreen.ahk">Download This Script</a> &nbsp;| &nbsp;<a href="index.htm">Other Sample Scripts</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Home</a></p>
+<p><a href="KeyboardOnScreen.ahk">ÏÂÔØ´Ë½Å±¾</a> &nbsp;| &nbsp;<a href="index.htm">ÆäËûÊ¾Àý½Å±¾</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Ö÷Ò³</a></p>
 
 <pre class="NoIndent"><em>;---- Configuration Section: Customize the size of the on-screen keyboard and
 ; other options here.</em>
@@ -170,7 +168,7 @@ Loop
 {
     Transform, k_char, Chr, %k_ASCII%
     StringUpper, k_char, k_char
-    if k_char not in &lt;,&gt;,^,~,&#129;,`,
+    if k_char not in &lt;,&gt;,^,~,?,`,
         Hotkey, ~*%k_char%, k_KeyPress
         <em>; In the above, the asterisk prefix allows the key to be detected regardless</em>
         <em>; of whether the user is holding down modifier keys such as Control and Shift.</em>
@@ -191,8 +189,8 @@ ControlClick, Bk, ahk_id %k_ID%, , LEFT, 1, U
 return
 
 
-<em>; LShift and RShift are used rather than &quot;Shift&quot; because when used as a hotkey,
-; &quot;Shift&quot; would default to firing upon release of the key (in older AHK versions):</em>
+<em>; LShift and RShift are used rather than "Shift" because when used as a hotkey,
+; "Shift" would default to firing upon release of the key (in older AHK versions):</em>
 ~*LShift::
 ~*RShift::
 ~*LCtrl::  <em>; Must use Ctrl not Control to match button names.</em>
