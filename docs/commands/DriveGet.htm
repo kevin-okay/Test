@@ -3,78 +3,80 @@
 <html>
 <head>
 <title>DriveGet</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/jquery.js" type="text/javascript"></script>
+<script src="../static/tree.jquery.js" type="text/javascript"></script>
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
 <h1>DriveGet</h1>
 
-<p>Retrieves various types of information about the computer's drive(s).</p>
+<p>»ñÈ¡¼ÆËã»úÇý¶¯Æ÷µÄ¸÷ÖÖÀàÐÍµÄÐÅÏ¢¡£</p>
 
 <pre class="Syntax">DriveGet, OutputVar, Cmd [, Value]</pre>
-<h3>Parameters</h3>
+<h3>²ÎÊý</h3>
 <dl>
 
   <dt>OutputVar</dt>
-  <dd><p>The name of the variable in which to store the result of <em>Cmd</em>.</p></dd>
+  <dd><p>ÓÃÀ´±£´æ <em>Cmd</em> ½á¹ûµÄ±äÁ¿Ãû.</p></dd>
 
   <dt>Cmd, Value</dt>
-  <dd>See list below.
+  <dd>Çë²ÎÔÄºóÃæµÄÁÐ±í.
     </dd>
 
 </dl>
 
 <h3>Cmd, Value</h3>
-<p>The <em>Cmd</em> and <em>Value</em> parameters are dependent upon each other and their usage is described below. If a problem is encountered <em>OutputVar</em> is made blank and <a href="../misc/ErrorLevel.htm">ErrorLevel</a> is set to 1.</p>
-<p><strong>List [, Type]</strong>: Sets <em>OutputVar</em> to be a string of letters, one character for each drive letter in the system. For example: ACDEZ. If <em>Type</em> is omitted, all drive types are retrieved. Otherwise, <em>Type</em> should be one of the following words to retrieve only a specific type of drive: CDROM, REMOVABLE, FIXED, NETWORK, RAMDISK, UNKNOWN.</p>
-<p><strong>Capacity (or Cap), Path</strong>: Retrieves the total capacity of <em>Path</em> (e.g. C:\) in megabytes. Use <a href="DriveSpaceFree.htm">DriveSpaceFree</a> to determine the free space.</p>
-<p><strong>Filesystem (or FS), Drive</strong>: Retrieves the type of <em>Drive</em>'s file system, where <em>Drive</em> is the drive letter followed by a colon and an optional backslash, or a UNC name such \\server1\share1. <em>OutputVar</em> will be set to one of the following words: FAT, FAT32, NTFS, CDFS (typically indicates a CD), UDF (typically indicates a DVD). <em>OutputVar</em> will be made blank and <a href="../misc/ErrorLevel.htm">ErrorLevel</a> set to 1 if the drive does not contain formatted media.</p>
-<p><strong>Label, Drive</strong>: Retrieves <em>Drive</em>'s volume label, where <em>Drive</em> is the drive letter followed by a colon and an optional backslash, or a UNC name such \\server1\share1. To change the label, follow this example: <code><a href="Drive.htm">Drive</a>, Label, C:, MyLabel</code>.</p>
-<p><strong>Serial, Drive</strong>: Retrieves <em>Drive</em>'s volume serial number expressed as decimal integer, where <em>Drive</em> is the drive letter followed by a colon and an optional backslash, or a UNC name such \\server1\share1. See <a href="SetFormat.htm">SetFormat</a> for how to convert it to hexadecimal.</p>
-<p><strong>Type, Path</strong>: Retrieves <em>Path</em>'s drive type, which is one of the following words: Unknown, Removable, Fixed, Network, CDROM, RAMDisk.</p>
-<p><strong>Status, Path</strong>: Retrieves <em>Path</em>'s status, which is one of the following words: Unknown (might indicate unformatted/RAW), Ready, NotReady (typical for removable drives that don't contain media), Invalid (<em>Path</em> does not exist or is a network drive that is presently inaccessible, etc.)</p>
-<p><strong>StatusCD [, Drive]</strong>: Retrieves the media status of a CD or DVD drive, where <em>Drive</em> is the drive letter followed by a colon (if <em>Drive</em> is omitted, the default CD/DVD drive will be used). <em>OutputVar</em> is made blank if the status cannot be determined. Otherwise, it is set to one of the following strings:</p>
+<p><em>Cmd</em> ºÍ <em>Value</em> ²ÎÊý»¥ÏàÒÀÀµ, ËüÃÇµÄÓÃ·¨ÃèÊöÈçÏÂ. Èç¹ûÓöµ½ÎÊÌâ, Ôò <em>OutputVar</em> ±»ÖÃ¿ÕÇÒ <a href="../misc/ErrorLevel.htm">ErrorLevel</a> ±»ÖÃÎª 1.</p>
+<p><strong>List [, Type]</strong>£ºÉèÖÃ <em>OutputVar</em> ÎªÒ»´®×ÖÄ¸£¬ÆäÖÐÃ¿¸ö×ÖÄ¸±íÊ¾ÏµÍ³ÖÐµÄÒ»¸öÇý¶¯Æ÷¡£ÀýÈç: ACDEZ. Èç¹ûÊ¡ÂÔ <em>Type</em>, Ôò»ñÈ¡ËùÓÐÀàÐÍµÄÇý¶¯Æ÷. ·ñÔò, Ö¸¶¨ <em>Type</em> ÎªÏÂÁÐµ¥´ÊµÄÆäÖÐÒ»¸öÀ´»ñÈ¡¸ÃÌØ¶¨ÀàÐÍµÄÇý¶¯Æ÷: CDROM, REMOVABLE, FIXED, NETWORK, RAMDISK, UNKNOWN.</p>
+<p><strong>Capacity (or Cap), Path</strong>: »ñÈ¡ <em>Path</em> (e.g. C:\) µÄ×ÜÈÝÁ¿, µ¥Î»Îª MB. Ê¹ÓÃ <a href="DriveSpaceFree.htm">DriveSpaceFree</a> À´»ñÈ¡¿ÉÓÃ¿Õ¼ä.</p>
+<p><strong>Filesystem£¨»ò FS£©, Drive </strong>£º»ñÈ¡ <em>Drive</em> µÄÎÄ¼þÏµÍ³ÀàÐÍ£¬ÆäÖÐ <em>Drive</em> ÓÉÇý¶¯Æ÷×ÖÄ¸¡¢¸ú×ÅÒ»¸öÃ°ºÅºÍ¿ÉÑ¡µÄ·´Ð±Ïß×é³É£¬»òÎª UNC Ãû³Æ£¨ÀýÈç \\server1\share1£©¡£<em>OutputVar</em> ½«±»ÉèÎªÏÂÁÐµ¥´ÊµÄÆäÖÐÒ»¸ö: FAT, FAT32, NTFS, CDFS (Ò»°ãÖ¸ CD), UDF (Ò»°ãÖ¸ DVD). Èç¹ûÇý¶¯Æ÷ÖÐ²»°üº¬¸ñÊ½»¯µÄÃ½Ìå, Ôò <em>OutputVar</em> ±»ÖÃ¿ÕÇÒ <a href="../misc/ErrorLevel.htm">ErrorLevel</a> ±»ÖÃÎª 1.</p>
+<p><strong>Label, Drive</strong>: »ñÈ¡ <em>Drive</em> µÄ¾í±ê, ÆäÖÐ <em>Drive</em> ÓÉÇý¶¯Æ÷×ÖÄ¸, ¸ú×ÅÃ°ºÅºÍ¿ÉÑ¡µÄ·´Ð±Ïß×é³É, »òÎª UNC Ãû³Æ (ÀýÈç \\server1\share1). Òª¸Ä±ä¾í±ê£¬Çë²ÎÕÕ´ËÀý£º<code><a href="Drive.htm">Drive</a>, Label, C:, MyLabel</code>¡£</p>
+<p><strong>Serial, Drive</strong>£º»ñÈ¡ÒÔÊ®½øÖÆÊý±íÊ¾µÄ <em>Drive</em> µÄ¾íÐòÁÐºÅ£¬ÆäÖÐ <em>Drive</em> ÓÉÇý¶¯Æ÷×ÖÄ¸¡¢¸ú×ÅÃ°ºÅºÍ¿ÉÑ¡µÄ·´Ð±Ïß×é³É£¬»òÎª UNC Ãû³Æ£¨ÀýÈç \\server1\share1£©¡£Çë²ÎÔÄ <a href="SetFormat.htm">SetFormat</a> ÁË½âÈçºÎ°ÑËü×ª»»³ÉÊ®Áù½øÖÆ.</p>
+<p><strong>Type, Path</strong>: »ñÈ¡ <em>Path</em> µÄÇý¶¯Æ÷ÀàÐÍ, ËüÎªÏÂÁÐµ¥´ÊµÄÆäÖÐÒ»¸ö: Unknown, Removable, Fixed, Network, CDROM, RAMDisk.</p>
+<p><strong>Status, Path</strong>: »ñÈ¡ <em>Path</em> µÄ×´Ì¬, ËüÎªÏÂÁÐµ¥´ÊµÄÆäÖÐÒ»¸ö: Unknown (¿ÉÄÜ±íÊ¾Î´¸ñÊ½»¯/RAW), Ready, NotReady (Í¨³£±íÊ¾²»º¬Ã½ÌåµÄ¿ÉÒÆ¶¯Çý¶¯Æ÷), Invalid (<em>Path</em> ²»´æÔÚ»òÎªµ±Ç°ÎÞ·¨·ÃÎÊµÄÍøÂçÇý¶¯Æ÷, µÈµÈ).</p>
+<p><strong>StatusCD [, Drive]</strong>: »ñÈ¡ CD »ò DVD Çý¶¯Æ÷µÄÃ½Ìå×´Ì¬, ÆäÖÐ <em>Drive</em> ÓÉÇý¶¯Æ÷×ÖÄ¸¸ú×ÅÃ°ºÅ×é³É (Èç¹ûÊ¡ÂÔ <em>Drive</em>, ÔòÊ¹ÓÃÄ¬ÈÏµÄ CD/DVD Çý¶¯Æ÷). Èç¹ûÎÞ·¨È·¶¨ËüµÄ×´Ì¬, Ôò <em>OutputVar</em> ±»ÖÃ¿Õ. ·ñÔò, Ëü±»ÉèÖÃÎªÏÂÁÐ×Ö·û´®µÄÆäÖÐÒ»¸ö:</p>
 <table class="info">
   <tr>
     <td width="15%">not ready</td>
-    <td width="85%">The drive is not ready to be accessed, perhaps due to being engaged in a write operation. Known limitation: &quot;not ready&quot; also occurs when the drive contains a DVD rather than a CD.</td>
+    <td width="85%">Çý¶¯Æ÷Î´×¼±¸ºÃ±»·ÃÎÊ, ¿ÉÄÜÒòÎªÕýÃ¦ÓÚÐ´Èë²Ù×÷. ÒÑÖªÏÞÖÆ: µ±Çý¶¯Æ÷ÀïÊÇ DVD ¶ø²»ÊÇ CD Ê±, Ò²»á³öÏÖ "Î´×¼±¸ºÃ" µÄÇé¿ö.</td>
   </tr>
   <tr>
     <td>open</td>
-    <td>The drive contains no disc, or the tray is ejected.</td>
+    <td>Çý¶¯Æ÷ÀïÃ»ÓÐ¹âÅÌ, »òÕßÍÐÅÌÒÑµ¯³ö.</td>
   </tr>
   <tr>
     <td>playing</td>
-    <td>The drive is playing a disc.</td>
+    <td>Çý¶¯Æ÷ÕýÔÚ²¥·Å¹âÅÌ.</td>
   </tr>
   <tr>
     <td>paused</td>
-    <td>The previously playing audio or video is now paused.</td>
+    <td>Ö®Ç°²¥·ÅµÄÒôÆµ»òÊÓÆµÏÖÔÚÒÑÔÝÍ£.</td>
   </tr>
   <tr>
     <td>seeking</td>
-    <td>The drive is seeking.</td>
+    <td>Çý¶¯Æ÷ÕýÔÚÑ°µÀ.</td>
   </tr>
   <tr>
     <td>stopped</td>
-    <td>The drive contains a CD but is not currently accessing it.</td>
+    <td>Çý¶¯Æ÷ÀïÓÐ CD µ«µ±Ç°Ã»ÓÐ½øÐÐ·ÃÎÊ.</td>
   </tr>
 </table>
-<p>This command will probably not work on a network drive or non-CD/DVD drive; if it fails in such cases or for any other reason, <em>OutputVar</em> is made blank and <a href="../misc/ErrorLevel.htm">ErrorLevel</a> is set to 1.</p>
-<p>If the tray was recently closed, there may be a delay before the command completes.</p>
-<p>To eject or retract the tray, see the <a href="Drive.htm">Drive</a> command.</p>
+<p>´ËÃüÁî¶ÔÍøÂçÇý¶¯Æ÷»ò·Ç CD/DVD Çý¶¯Æ÷²»Æð×÷ÓÃ; Èç¹ûÒòÎªÕâÖÖ»òÆäËûÔ­ÒòÊ§°ÜÁË, Ôò <em>OutputVar</em> ±»ÖÃ¿ÕÇÒ <a href="../misc/ErrorLevel.htm">ErrorLevel</a> ±»ÖÃÎª 1.</p>
+<p>Èç¹ûÍÐÅÌ¸Õ²Å±»¹Ø±Õ, Ôò´ËÃüÁî¿ÉÄÜÐèÒªÒ»Ð©Ê±¼ä²ÅÄÜÍê³É.</p>
+<p>Òªµ¯³ö»òÊÕ»ØÍÐÅÌ, Çë²ÎÔÄ <a href="Drive.htm">Drive</a> ÃüÁî.</p>
 <h3>ErrorLevel</h3>
-<p><span class="ver">[v1.1.04+]</span> This command is able to throw an exception on failure. For more information, see <a href="Catch.htm#RuntimeErrors">Runtime Errors</a>.</p>
-<p><a href="../misc/ErrorLevel.htm">ErrorLevel</a> is set to 1 if there was a problem or 0 otherwise.</p>
-<h3>Remarks</h3>
-<p>Some of the commands will accept a network share name as <em>Path</em>, such as \\MyServer\MyShare\</p>
-<h3>Related</h3>
+<p><span class="ver">[v1.1.04+]</span> ´ËÃüÁîÊ§°ÜÊ±»áÅ×³öÒì³£. ÏëÁË½â¸ü¶àÐÅÏ¢, Çë²ÎÔÄ <a href="Catch.htm#RuntimeErrors">ÔËÐÐÊ±´íÎó</a>.</p>
+<p>Èç¹ûÓöµ½ÎÊÌâÔò <a href="../misc/ErrorLevel.htm">ErrorLevel</a> ±»ÖÃÎª 1, ·ñÔòÎª 0.</p>
+<h3>±¸×¢</h3>
+<p>´ËÃüÁîµÄÒ»Ð©×ÓÃüÁî²ÎÊý <em>Path</em> ÖÐ¿ÉÒÔ½ÓÊÜÍøÂç¹²ÏíÃû, ÀýÈç \\MyServer\MyShare\</p>
+<h3>Ïà¹Ø</h3>
 <p><a href="Drive.htm">Drive</a>, <a href="DriveSpaceFree.htm">DriveSpaceFree</a></p>
-<h3>Example</h3>
-<pre class="NoIndent"><em>; This is a working example script.</em>
+<h3>Ê¾Àý</h3>
+<pre class="NoIndent"><em>; ÕâÊÇ¸ö¿ÉÔËÐÐÊ¾Àý½Å±¾.</em>
 FileSelectFolder, folder, , 3, Pick a drive to analyze:
 if folder =
     return

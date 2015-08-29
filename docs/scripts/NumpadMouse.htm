@@ -2,23 +2,21 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Using Keyboard Numpad as a Mouse -- by deguix</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>°ÑÐ¡¼üÅÌ×÷ÎªÊó±êÊ¹ÓÃ -- ×÷Õß: deguix</title>
+<meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
+<script src="../static/jquery.js" type="text/javascript"></script>
+<script src="../static/tree.jquery.js" type="text/javascript"></script>
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>Using Keyboard Numpad as a Mouse -- by deguix</h1>
+<h1>°ÑÐ¡¼üÅÌ×÷ÎªÊó±êÊ¹ÓÃ -- ×÷Õß: deguix</h1>
 
-<p>This script makes mousing with your keyboard almost as easy
- as using a real mouse (maybe even easier for some tasks).
- It supports up to five mouse buttons and the turning of the
- mouse wheel.  It also features customizable movement speed,
- acceleration, and &quot;axis inversion&quot;.
+<p>´Ë½Å±¾ÓÃÄúµÄ¼üÅÌÀ´ÊµÏÖÊó±ê²Ù×÷, ¼¸ºõÏàµ±ÓÚÕæÕýµÄÊó±ê (ÔÚÒ»Ð©ÈÎÎñÖÐÉõÖÁ¸ü·½±ã). ËüÖ§³Ö¶à´ïÎå¸öÊó±ê°´Å¥ºÍÊó±ê¹öÂÖµÄ×ª¶¯. Ëü»¹¾ßÓÐÄÜ×Ô¶¨ÒåÒÆ¶¯ËÙ¶È, ¼ÓËÙºÍ "Öá·´×ª" µÄÌØµã.
 </p>
-<p><a href="NumpadMouse.ahk">Download This Script</a> &nbsp;| &nbsp;<a href="index.htm">Other Sample Scripts</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Home</a></p>
+<p><a href="NumpadMouse.ahk">ÏÂÔØ´Ë½Å±¾</a> &nbsp;| &nbsp;<a href="index.htm">ÆäËûÊ¾Àý½Å±¾</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Ö÷Ò³</a></p>
 
 <pre class="NoIndent"><em>/*
 o------------------------------------------------------------o
@@ -32,7 +30,7 @@ o------------------------------------------------------------o
 | into a mouse. Some features are the acceleration which     |
 | enables you to increase the mouse movement when holding    |
 | a key for a long time, and the rotation which makes the    |
-| numpad mouse to &quot;turn&quot;. I.e. NumPadDown as NumPadUp        |
+| numpad mouse to "turn". I.e. NumPadDown as NumPadUp        |
 | and vice-versa. See the list of keys used below:           |
 |                                                            |
 |------------------------------------------------------------|
@@ -69,7 +67,7 @@ o------------------------------------------------------------o
 | ^NumPad9/^NumPad3     | Inc./dec. wheel maximum speed per  |
 |                       | button press*.                     |
 | NumPad4/NumPad6       | Inc./dec. rotation angle to        |
-|                       | right in degrees. (i.e. 180&deg; =     |
+|                       | right in degrees. (i.e. 180¡ã =     |
 |                       | = inversed controls).              |
 |------------------------------------------------------------|
 | * = These options are affected by the mouse wheel speed    |
@@ -85,7 +83,7 @@ o------------------------------------------------------------o
 
 <em>; Using the keyboard hook to implement the Numpad hotkeys prevents
 ; them from interfering with the generation of ANSI characters such
-; as &agrave;.  This is because AutoHotkey generates such characters
+; as ¨¤.  This is because AutoHotkey generates such characters
 ; by holding down ALT and sending a series of Numpad keystrokes.
 ; Hook hotkeys are smart enough to ignore such keystrokes.</em>
 #UseHook
@@ -106,7 +104,7 @@ MouseRotationAngle = 0
 <em>;END OF CONFIG SECTION</em>
 
 <em>;This is needed or key presses would faulty send their natural
-;actions. Like NumPadDiv would send sometimes &quot;/&quot; to the
+;actions. Like NumPadDiv would send sometimes "/" to the
 ;screen.</em>
 #InstallKeybdHook
 
@@ -114,11 +112,11 @@ Temp = 0
 Temp2 = 0
 
 MouseRotationAnglePart = %MouseRotationAngle%
-<em>;Divide by 45&ordm; because MouseMove only supports whole numbers,
-;and changing the mouse rotation to a number lesser than 45&ordm;
+<em>;Divide by 45o because MouseMove only supports whole numbers,
+;and changing the mouse rotation to a number lesser than 45o
 ;could make strange movements.
 ;
-;For example: 22.5&ordm; when pressing NumPadUp:
+;For example: 22.5o when pressing NumPadUp:
 ;  First it would move upwards until the speed
 ;  to the side reaches 1.</em>
 MouseRotationAnglePart /= 45
@@ -390,7 +388,7 @@ If MouseRotationAnglePart &gt;= 8
     MouseRotationAnglePart = 0
 MouseRotationAngle = %MouseRotationAnglePart%
 MouseRotationAngle *= 45
-ToolTip, Mouse rotation angle: %MouseRotationAngle%&deg;
+ToolTip, Mouse rotation angle: %MouseRotationAngle%¡ã
 SetTimer, RemoveToolTip, 1000
 return
 ButtonRotationAngleDown:
@@ -399,7 +397,7 @@ If MouseRotationAnglePart &lt; 0
     MouseRotationAnglePart = 7
 MouseRotationAngle = %MouseRotationAnglePart%
 MouseRotationAngle *= 45
-ToolTip, Mouse rotation angle: %MouseRotationAngle%&deg;
+ToolTip, Mouse rotation angle: %MouseRotationAngle%¡ã
 SetTimer, RemoveToolTip, 1000
 return
 
