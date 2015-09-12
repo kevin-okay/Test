@@ -3,11 +3,9 @@
 <html>
 <head>
 <title>Loop（文件和文件夹）</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
-<script src="../static/jquery.js" type="text/javascript"></script>
-<script src="../static/tree.jquery.js" type="text/javascript"></script>
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
@@ -24,25 +22,25 @@
   <dt>Files <span class="ver">[v1.1.21+]</span></dt>
   <dd><p>单词 <code>Files</code> (大小写敏感). 不可为 变量 或 表达式.</p></dd>
 
-  <dt>FilePattern</dt>
+  <dt>FilePattern 文件模式</dt>
   <dd><p>单个文件或文件夹的名称或者通配符模式，例如 <code>C:\Temp\*.tmp</code>。如果未指定绝对路径则假定 <em>FilePattern</em> 在 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a>。</p>
     <p>支持星号和问号作为通配符使用. 当模式出现在文件的长/普通名称或其 <a href="#LoopFileShortName">8.3 短名称</a> 时出现匹配.</p>
     <p>如果此参数为单个文件或文件夹 (即不含通配符) 且 <em>Recurse</em> 为 1, 同时指定的文件名出现在多个被搜索的文件夹中, 那么将找到多个匹配.</p></dd>
 
-  <dt>Mode <span class="ver">[v1.1.21+]</span></dt>
+  <dt>Mode 方式<span class="ver">[v1.1.21+]</span></dt>
   <dd><p>零个或多个以下字母（的组合）:</p>
     <p><code>D</code> : 包含目录（文件夹）。<br>
     <code>F</code> : 包含文件. 如果同时省略 F 和 D，则包含 F 和 D 。<br>
     <code>R</code> : 递归子目录. 如果省略 R , 则不包含子目录中的文件和目录。</p>
   </dd>
 
-  <dt>IncludeFolders?</dt>
+  <dt>IncludeFolders? 包含子文件夹?</dt>
  <dd><p>使用下列的其中一个数字, 或留空以使用默认值:<br>
   <code>0</code> : (默认) 不获取文件夹 (仅文件)。<br>
   <code>1</code> : 获取所有匹配通配符模式的文件和文件夹。<br>
   <code>2</code> : 仅获取文件夹 (不获取文件)。</p></dd>
   
-  <dt>递归？</dt>
+  <dt>Recurse? 递归?</dt>
   <dd>使用下列的其中一个数字, 或留空以使用默认值:<br>
 <code>0</code> : (默认) 不对子文件夹进行递归。<br>
 <code>1</code> : 递归子文件夹, 以便获取包含在其中的匹配 <em>FilePattern</em> 的文件和文件夹。将递归所有子文件夹, 而不仅是名称匹配 <em>FilePattern</em> 的那些。</dd>
