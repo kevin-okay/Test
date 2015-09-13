@@ -12,29 +12,29 @@
 <body>
 <h1>变更和新功能</h1>
 <p>下面列出了 AutoHotkey 当前开发分支（也称为 AutoHotkey_L）新增的功能。</p>
-<p>对于较旧的变更，请参阅<a href="ChangeLogHelp.htm">存档变更</a>。</p><!--new revisions go here-->
+<p>对于较旧的变更，请参阅<a href="ChangeLogHelp.htm">存档变更</a>。</p>
 
 <!--new revisions go here-->
-<h2 id="v1.1.22.06">1.1.22.06 - September 13, 2015</h2>
-<p>Fixed Input and hotstrings to catch Unicode/non-key character events.</p>
-<p>Fixed auto-sizing of Edit controls to include the last line if blank.</p>
-<p>Fixed handling of out-of-memory in ComObj functions.</p>
-<p>Fixed ComObjArray to ignore excess parameters rather than crashing (only applies to dynamic calls).</p>
-<p>Fixed GuiControl to append--not prepend--tabs, as documented.</p>
-<p>Fixed XP64 support.</p>
+<h2 id="v1.1.22.06">1.1.22.06 - 2015年9月13日</h2>
+<p>修复 输入和热字符串捕获 Unicode 和 无标记字符编码 事件.</p>
+<p>修复 Edit 控件中如果最后一行为空行也进行自动伸缩大小.</p>
+<p>修复 可响应 ComObj 函数的 内存不足 问题.</p>
+<p>修复 ComObjArray 直接忽略多余的参数而不会崩溃 (仅适用于动态调用).</p>
+<p>修复 GuiControl 以增加无附加缩进作为标准.</p>
+<p>修复 XP64 支持.</p>
 
-<h2 id="v1.1.22.05">1.1.22.05 - September 10, 2015</h2>
-<p>Fixed icons which have non-numeric IDs loading with sub-optimal quality.</p>
-<p>Fixed Gui Destroy not releasing function objects which were set by the +g option.</p>
-<p>Fixed Gui Show to avoid attempting to force-activate a child GUI.</p>
-<p>Fixed failure to set Caps/Num/ScrollLock state while the key is down.</p>
-<p>Fixed Gui Color causing incorrect text color (usually black).</p>
-<p>Changed Gui Show to improve the odds of GuiSize executing immediately.</p>
-<p><em>For developers:</em></p>
+<h2 id="v1.1.22.05">1.1.22.05 - 2015年9月10日</h2>
+<p>修复 优化无数字 ID 的图标加载.</p>
+<p>修复 当 Gui 销毁时,对于 +g 选项的函数对象不会主动释放资源.</p>
+<p>修复 Gui Show 显示 主Gui 时避免强制激活 子GUI.</p>
+<p>修复 当 Caps/Num/ScrollLock 按键按下时状态设置失败.</p>
+<p>修复 Gui 颜色影响文本的颜色 (一般为黑色).</p>
+<p>修改 提高当 Gui Show 时 GuiSize 立即执行的成功几率.</p>
+<p><em>对于开发人员:</em></p>
 <ul>
-	<li>Modified project config to support more VC++ versions.</li>
-	<li>Fixed various build warnings on VC++ 2015.</li>
-	<li>64-bit binaries are now built with VC++ 2015. 32-bit binaries still use VC++ 2010.</li>
+	<li>调整工程配置以适应更多 VC++ 版本.</li>
+	<li>修复多个在 VC++ 2015 中出现的编译错误.</li>
+	<li>64-bit 版本使用 VC++ 2015 来编译. 32-bit 版本仍然使用 VC++ 2010 编译.</li>
 </ul>
 <h2 id="v1.1.22.04">1.1.22.04 - 2015年8月19日</h2>
 <p>修正ObjRawSet()不返回内容.</p>
