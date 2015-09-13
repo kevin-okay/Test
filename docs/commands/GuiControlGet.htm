@@ -6,8 +6,6 @@
 <meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
-<script src="../static/jquery.js" type="text/javascript"></script>
-<script src="../static/tree.jquery.js" type="text/javascript"></script>
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
@@ -56,7 +54,7 @@
 <p><strong>GuiControlGet, OutputVar, Pos</strong>：获取控件的位置和大小。这里的位置相对于 GUI 窗口的工作区, 这是窗口中不包括标题栏, 菜单栏和边框的区域. 获取的结果保存在四个名称以 <em>OutputVar</em> 开始的变量中. 例如：</p>
 <pre>GuiControlGet, MyEdit, Pos
 MsgBox The X coordinate is %MyEditX%. The Y coordinate is %MyEditY%. The width is %MyEditW%. The height is %MyEditH%.</pre>
-<p>在 <a href="Functions.htm">函数</a> 中, 要创建一组全局变量而不是局部变量, 请在此命令前 <a href="../Functions.htm#Global">声明</a> <em>OutputVar</em> 为全局变量 (对于 <a href="../Functions.htm#AssumeGlobal">假设全局</a> 函数, 反之亦成).</p>
+<p>在 <a href="Functions.htm">函数</a> 中, 要创建一组全局变量而不是局部变量, 请在此命令前 <a href="../Functions.htm#Global">声明</a> <em>OutputVar</em> 为全局变量 (对于 <a href="../Functions.htm#AssumeGlobal">假设全局</a> 函数, 反之亦成). 但是,通常需要对每个变量都进行声明, 因为可能会造成 <a href="../Functions.htm#ArrayConfusion">混乱的根源</a>.</p>
 <p>&nbsp;</p>
 <p><strong>GuiControlGet, OutputVar, Focus</strong>：获取当前含键盘焦点的控件的标识符（ClassNN）。由于指定的 GUI 窗口必须是 <a href="WinActivate.htm">活动的</a>, 这样其中的某个控件才会含有焦点, 所以如果窗口不是活动的则 <em>OutputVar</em> 被置空. 用法示例：<code>GuiControlGet, focused_control, focus</code>。</p>
 <p><strong>GuiControlGet, OutputVar, FocusV</strong> <span class="ver">[v1.0.43.06+]</span>: 与上面的 <em>Focus</em> 相同, 不过它获取的是焦点控件的 <a href="Gui.htm#Events">关联变量</a> 的名称. 如果那个控件没有关联变量, 则获取控件的文本/标题中前 63 个字符 (这常用来避免给每个按钮分配变量名).</p>

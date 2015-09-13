@@ -6,8 +6,6 @@
 <meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
-<script src="../static/jquery.js" type="text/javascript"></script>
-<script src="../static/tree.jquery.js" type="text/javascript"></script>
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
@@ -48,8 +46,11 @@
 <p id="ProcessName"><strong>ProcessName</strong>: 获取拥有窗口的进程名 (例如 notepad.exe). 如果没有匹配窗口, 那么 <em>OutputVar</em> 被置空.</p>
 <p id="ProcessPath"><strong>ProcessPath</strong> <span class="ver">[v1.1.01+]</span>: 类似于 <em>ProcessName</em>, 但获取进程的完整路径和名称而不仅是名称.</p>
 <p><strong>Count</strong>: 获取匹配指定 <em>WinTitle</em>, <em>WinText</em>, <em>ExcludeTitle</em> 以及 <em>ExcludeText</em> 的窗口数 (没有则为 0). 要统计系统中所有窗口数, 请省略所有的四个标题/文本参数. 只有在打开 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> 设置时才会包括隐藏窗口.</p>
-<p><strong><a name="List"></a>List</strong>: 获取匹配指定的 <em>WinTitle</em>, <em>WinText</em>, <em>ExcludeTitle</em> 以及 <em>ExcludeText</em> 的所有窗口的唯一 ID 号 (要获取整个系统中所有窗口, 请省略所有的四个标题/文本参数). 每个 ID 号保存在名称以 <em>OutputVar</em> 开始的变量（构成<a href="../misc/Arrays.htm#pseudo">伪数组</a>）中，而 <em>OutputVar</em> 自己则保存了获取的项数（没有则为 0）。例如, 如果 <em>OutputVar</em> 为 MyArray 且找到两个匹配的窗口, 那么 MyArray1 会被设置为首个窗口的 ID, MyArray2 被设置为第二个窗口的 ID, 同时 MyArray 自身被设置为数目 2. 窗口获取的顺序是从最上面到最下面 (根据它们在桌面上的堆放顺序). 只有在打开 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> 设置时才会包括隐藏窗口. 在<a href="Functions.htm">函数</a>中，要创建全局而不是局部的伪数组，必须在使用此命令前<a href="../Functions.htm#Global">声明</a> MyArray 为全局变量（对于<a href="../Functions.htm#AssumeGlobal">假设全局</a>函数，反之亦成）。</p>
-<p><strong>MinMax</strong>: 获取窗口的最小化/最大化状态. 如果不存在匹配窗口, 则 <em>OuputVar</em> 被置空; 否则, 它被设置为下列数字的其中一个：<br>-1: 窗口处于最小化状态 (使用 <a href="WinRestore.htm">WinRestore</a> 可以让它还原). <br>1: 窗口处于最大化状态 (使用 <a href="WinRestore.htm">WinRestore</a> 可以让它还原).<br>0: 窗口既不处于最小化状态也不处于最大化状态.</p>
+<p><strong><a name="List"></a>List</strong>: 获取匹配指定的 <em>WinTitle</em>, <em>WinText</em>, <em>ExcludeTitle</em> 以及 <em>ExcludeText</em> 的所有窗口的唯一 ID 号 (要获取整个系统中所有窗口, 请省略所有的四个标题/文本参数). 每个 ID 号保存在名称以 <em>OutputVar</em> 开始的变量（构成<a href="../misc/Arrays.htm#pseudo">伪数组</a>）中，而 <em>OutputVar</em> 自己则保存了获取的项数（没有则为 0）。例如, 如果 <em>OutputVar</em> 为 MyArray 且找到两个匹配的窗口, 那么 MyArray1 会被设置为首个窗口的 ID, MyArray2 被设置为第二个窗口的 ID, 同时 MyArray 自身被设置为数目 2. 窗口获取的顺序是从最上面到最下面 (根据它们在桌面上的堆放顺序). 只有在打开 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> 设置时才会包括隐藏窗口. 在<a href="Functions.htm">函数</a>中，要创建全局而不是局部的伪数组，必须在使用此命令前<a href="../Functions.htm#Global">声明</a> MyArray 为全局变量(对于<a href="../Functions.htm#AssumeGlobal">假设全局</a>函数, 反之亦然. 但是, 通常需要对每一个变量进行声明, 否则可能引起 <a href="../Functions.htm#ArrayConfusion">混乱的根源</a>.</p>
+<p><strong>MinMax</strong>: 获取窗口的最小化/最大化状态. 如果不存在匹配窗口, 则 <em>OuputVar</em> 被置空; 否则, 它被设置为下列数字的其中一个：<br>
+	-1: 窗口处于最小化状态 (使用 <a href="WinRestore.htm">WinRestore</a> 可以让它还原). <br>
+	1: 窗口处于最大化状态 (使用 <a href="WinRestore.htm">WinRestore</a> 可以让它还原).<br>
+	0: 窗口既不处于最小化状态也不处于最大化状态.</p>
 <p><strong><a name="ControlList"></a>ControlList</strong>: 获取窗口中所有控件的控件名称. 如果没有匹配窗口或窗口中没有控件, 那么 <em>OutputVar</em> 被置空. 否则, 每个控件的名称由其类名紧接着序号 (ClassNN) 组成, 如同 Window Spy 显示的那样.</p>
 <p>除最后一项外的其他项以换行符结束 (`n). 要逐个检查每个控件的名称, 请使用 <a href="LoopParse.htm">解析循环</a>, 如同下文示例部分演示的那样.</p>
 <p>控件根据它们的 Z 顺序排列, 当窗口支持 TAB 导航时这通常和 TAB 键导航的顺序相同.</p>
@@ -75,7 +76,7 @@ if (ExStyle &amp; 0x8)  <em>; 0x8 为 WS_EX_TOPMOST.</em>
 <p>由此命令获取的 ID 号是数值的 (不包含前缀 "ahk_id"), 且不论 <a href="SetFormat.htm">SetFormat</a> 的设置如何都保存为十六进制格式.</p>
 <p>当前鼠标光标下的窗口 ID 可以通过 <a href="MouseGetPos.htm">MouseGetPos</a> 获取.</p>
 <p>尽管当前 ID 号为 32 位的无符号整数, 但是在未来的版本中可能变成 64 位. 因此, 对它们进行数值运算例如加法是不可靠的, 因为这些运算需要把输入字符串解析为有符号而不是无符号的整数.</p>
-<p>窗口标题和文本是区分大小写的. 只有在打开 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> 设置时，才能检测到隐藏窗口。</p>
+<p>窗口标题和文本是区分大小写的. 只有在打开 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> 设置时, 才能检测到隐藏窗口。</p>
 <h3>相关</h3>
 <p><a href="WinGetClass.htm">WinGetClass</a>, <a href="Process.htm">Process</a>, <a href="WinGetTitle.htm">WinGetTitle</a>, <a href="MouseGetPos.htm">MouseGetPos</a>, <a href="ControlGet.htm">ControlGet</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="GroupAdd.htm">GroupAdd</a></p>
 <h3>示例</h3>

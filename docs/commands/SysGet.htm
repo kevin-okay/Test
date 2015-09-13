@@ -6,8 +6,6 @@
 <meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
-<script src="../static/jquery.js" type="text/javascript"></script>
-<script src="../static/tree.jquery.js" type="text/javascript"></script>
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
@@ -38,7 +36,7 @@
 <p><strong>Monitor [, N] </strong>：获取编号为 <strong>N</strong> 的监视器的边界坐标（如果 <strong>N</strong> 省略，则使用主监视器）。获取的结果保存在四个名称以 <em>OutputVar</em> 开始的变量中. 如果 <strong>N</strong> 太大或获取信息时遇到问题, 那么这些变量都被置空. 例如：</p>
 <pre>SysGet, Mon2, Monitor, 2
 MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2Bottom%.</pre>
-<p>在 <a href="Functions.htm">函数</a> 中, 要创建一组全局变量而不是局部变量, 请在此命令前 <a href="../Functions.htm#Global">声明</a> Mon2 为全局变量 (对于 <a href="../Functions.htm#AssumeGlobal">假设全局</a> 函数, 反之亦成).</p>
+<p>在 <a href="Functions.htm">函数</a> 中, 要创建一组全局变量而不是局部变量, 请在此命令前 <a href="../Functions.htm#Global">声明</a> Mon2 为全局变量 (对于 <a href="../Functions.htm#AssumeGlobal">假设全局</a> 函数, 反之亦成). 但是, 通常需要对每个变量进行声明, 否则可能造成 <a href="../Functions.htm#ArrayConfusion">混乱的根源</a>.</p>
 <p><strong>MonitorWorkArea [, N]</strong>: 与上面相同, 不过这个区域不包括任务栏和其他注册的桌面工具栏占用的空间.</p>
 <p><strong>MonitorName [, N]</strong>: 监视器编号为 <strong>N</strong> 的操作系统名称 (如果省略 <strong>N</strong>, 则使用主监视器).</p>
 <p><strong>(数值)</strong>: 指定 <em>Sub-command</em> 下表的其中一个数字来获取相应的值. 后面的例子会保存鼠标按钮的数目到变量“MouseButtonCount”：<code>SysGet, MouseButtonCount, 43</code>。</p>
@@ -67,6 +65,7 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
 <tr>
 <td>59, 60</TD>
 <td>SM_CXMAXTRACK, SM_CYMAXTRACK: 包含标题和可调整大小边框的窗口的默认最大尺寸, 单位为像素. 这个度量指向整个桌面. 用户无法拖动窗口边框超过这些尺寸指定的大小.</TD>
+
 </TR>
 <tr>
 <td>28, 29</TD>
@@ -79,6 +78,8 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
 <tr>
 <td>34, 35</TD>
 <td>SM_CXMINTRACK, SM_CYMINTRACK: 窗口的最小跟踪宽度和高度, 单位为像素. 用户无法拖动窗口边框小于这些尺寸指定的大小. 窗口可以通过处理 WM_GETMINMAXINFO 消息来覆盖这些值.</TD>
+
+
 </TR>
 <tr>
 <td>0, 1</TD>
@@ -87,6 +88,8 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
 <tr>
 <td>78, 79</TD>
 <td>SM_CXVIRTUALSCREEN, SM_CYVIRTUALSCREEN: 虚拟屏幕的宽度和高度, 单位为像素. 虚拟屏幕是所有监视器的边框. SM_XVIRTUALSCREEN, SM_YVIRTUALSCREEN 度量是虚拟屏幕左上角的坐标.</TD>
+
+
 </TR>
 <tr>
 <td>19</TD>
@@ -98,22 +101,28 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
 </TR>
 <tr>
 <td>63</TD>
-<td>SM_NETWORK: 网络存在时设置最低的有效位, 否则进行清除. 其他的位保留供将来使用.</TD>
+<td>SM_NETWORK: 网络存在时设置最低的有效位, 否则进行清除. 
+其他的位保留供将来使用.</TD>
 </TR>
 <tr>
 <td>8193</TD>
 <td>
-        SM_REMOTECONTROL: 此系统度量用于终端服务环境. 如果当前的会话是由远程控制的则它的值不为零; 否则为零.</TD>
+        SM_REMOTECONTROL: 此系统度量用于终端服务环境. 
+		如果当前的会话是由远程控制的则它的值不为零; 否则为零.</TD>
 </TR>
 <tr>
 <td>4096</TD>
 <td>
-        SM_REMOTESESSION: 此系统度量用于终端服务环境. 如果调用线程与终端服务的客户端会话关联, 则返回非零值. 如果调用线程与终端服务的控制台会话关联, 则返回零. 控制台会话不一定是实际的控制台.</TD>
+        SM_REMOTESESSION: 此系统度量用于终端服务环境. 
+		如果调用线程与终端服务的客户端会话关联, 则返回非零值. 
+		如果调用线程与终端服务的控制台会话关联, 则返回零. 
+		控制台会话不一定是实际的控制台.</TD>
 </TR>
 <tr>
 <td>70</TD>
 <td>
         SM_SHOWSOUNDS: 如果用户要求一个原本只提供声音信息的场合中同时提供可视化信息时为非零值, 否则为零.
+		
     </TD>
 </TR>
 <tr>
@@ -129,6 +138,8 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
 <td>76, 77</TD>
 <td>
         SM_XVIRTUALSCREEN, SM_YVIRTUALSCREEN: 虚拟屏幕左边和上面的坐标. 虚拟屏幕是所有监视器的边框. 与之相比, the SM_CXVIRTUALSCREEN, SM_CYVIRTUALSCREEN 度量 (较远的上面) 为虚拟屏幕的宽度和高度.</TD>
+		
+		
 </TR>
 </TABLE>
 <br>
@@ -144,7 +155,10 @@ MsgBox, Left: %Mon2Left% -- Top: %Mon2Top% -- Right: %Mon2Right% -- Bottom %Mon2
   </TR>
   <tr>
     <td>67</TD>
-    <td>SM_CLEANBOOT: 指定系统启动的方式：<br>0 正常启动<br>1 失败-安全模式启动<br>2 失败-带网络的安全模式启动</TD>
+    <td>SM_CLEANBOOT: 指定系统启动的方式：<br>
+	0 正常启动<br>
+	1 失败-安全模式启动<br>
+	2 失败-带网络的安全模式启动</TD>
   </TR>
   <tr>
     <td>5, 6</TD>
