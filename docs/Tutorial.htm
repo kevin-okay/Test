@@ -982,7 +982,7 @@ If Var1 &lt; %Var2%                   <em>; 如果IF不使用括号，那么IF后面的内容将
 							</li>
 							<li>插入值
 								<div class="indented" >
-									另一种新增键值的方法是使用 <code>Insert</code> "方法".
+									其他新增键值到对象的方法是使用以下方法之一.<br />
 									<br />
 									<code>MyObject.InsertAt(Index, Value1, Value2, Value3...)</code><br />
 									<i>Index</i> 为任意整数键. 这样将导致所有较高的整数键的索引增加插入值的数量, 即使是空缺的也一样(例如, 假设只有键 1 和 100 存在, 当插入一个值到第50个键的位置时, 将导致原来位于100的键的索引变成101).<br />
@@ -1003,17 +1003,17 @@ If Var1 &lt; %Var2%                   <em>; 如果IF不使用括号，那么IF后面的内容将
 							</li>
 							<li>移除键<br />
 								<div class="indented" >
-									这种方法能够将键<i>和</i>值同时移除. 通过 <code>Remove</code> 方法来实现. 这种方法都很多种形式，不过差别都不大.
+									有几种同时删除键 <i>和</i> 值的办法,它们是:
 								</div>
 								<ol>
 									<li><code>RemovedValue := MyObject.Delete(AnyKey)</code>
 										<div class="indented">
-											位于<code>MyObject[AnyKey]</code>之前的值将替换到 <i>RemovedValue</i>.
+											之前位于<code>MyObject[AnyKey]</code>的值将储存到 <i>RemovedValue</i>.
 										</div>
 									</li>
 									<li><code>NumberOfRemovedKeys := MyObject.Delete(FirstKey, LastKey)</code>
 										<div class="indented">
-											如果你使用这种形式，将删除一组连续的键和对应的值(仅包含数字或字符串值的键的类型)，从FirstKey开始，到LastKey结束.<br />
+											如果你使用这种形式，将删除一组连续的键和对应的值，范围从FirstKey开始，到LastKey结束.<br />
 											<br />
 											然后将删除的数量返回给变量NumberOfRemovedKeys. 当键与键之间有空隙，返回值就很有用，因为它可以告诉我们究竟删除了几个键.(比如，你想要删除一组键，从1到4，但其实这一组键中缺少键2，所以你一共只删除了3个键，那么NumberOfRemovedKeys的值就是3)
 										</div>
