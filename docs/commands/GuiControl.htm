@@ -50,7 +50,7 @@
 <p><a href="GuiControls.htm#Tab">Tab 控件</a>: 除了上面段落中描述的行为, 一个选项卡的子控件和它们原始的选项卡编号保持关联; 即它们不会和它们选项卡的实际显示名称关联. 因此, 重命名或移除一个选项卡不会改变子控件所属的选项卡编号. 例如，如果有三个选项卡“Red|Green|Blue”，使用  <code>GuiControl,, MyTab, |Red|Blue</code> 移除第二个选项卡，则原来和 Green 关联的子控件现在和 Blue 关联。由于这种特性, 通常只应该移除默认的选项卡. 使用这种方法移除的选项卡以后还可以添加回来, 此时它们会要回原来的控件集合.</p>
 <p><a href="ListView.htm">ListView</a> 和 <a href="TreeView.htm">TreeView</a>: 当 <em>Sub-command</em> 为空时不支持它们. 作为替代, 请使用内置的 <a href="ListView.htm#BuiltIn">ListView 函数</a> 和 <a href="TreeView.htm#BuiltIn">TreeView 函数</a>.</p>
 <p><br>
-    <strong><a name="Text"></a>GuiControl, Text&lt;/s0：除了下面的情况，其他行为和上面一样：<br>
+    <strong><a name="Text"></a>GuiControl, Text</strong>：除了下面的情况，其他行为和上面一样：<br>
 	<a href="GuiControls.htm#Checkbox">Checkbox</a>/<a href="GuiControls.htm#Radio">Radio</a>: 把<em>Param3</em>作为新文本/标题, 即使它为 -1, 0 或 1。<br>
 	<a href="GuiControls.htm#DateTime">DateTime</a>: 把 <em>Param3</em> 作为新 <a href="GuiControls.htm#DateTimeFormat">日期/时间格式</a> 显示到控件中. 如果省略 Param3, 则移除所有自定义格式然后使用短日期格式.<br>
 	<a href="GuiControls.htm#ComboBox">ComboBox</a>: 把 <em>Param3</em> 作为文本直接放到 ComboBox 中编辑控件.</p>
