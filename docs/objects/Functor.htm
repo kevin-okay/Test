@@ -1,8 +1,11 @@
-<html><head>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
 <title>Function Objects</title>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link href="../static/theme.css" rel="stylesheet" type="text/css">
+<link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
@@ -44,9 +47,9 @@
 </pre>
 <p>模式中各个部分适用于不同的使用情形，如下：</p>
 <ul>
-<li>如果脚本按<a href="../Functions.htm#DynCall">%this%()</a>或<code>this.()</code>的形式调用，则，<code>method</code>（方法名）的值是空字符串。</li>
-<li>如果对象作为方法被调用，则<code>IsObject(method)</code>返回真，并且<code>method</code>包含关于目标对象的引用。如：若<code>x.y</code>指向<code>this</code> 函数对象，则<code>x.y()</code> → <code>this[x]()</code> → <code>this.__Call(x)</code> → <code>this.Call(x)</code>.</li>
-<li><span class="ver">[v1.1.20+]:</span>如果对象被某需要回调函数的内置函数所使用，如OnMessage或SetTimer，则此对象仅需支持Call方法即可。</li>
+  <li>如果脚本按<a href="../Functions.htm#DynCall">%this%()</a>或<code>this.()</code>的形式调用，则，<code>method</code>（方法名）的值是空字符串。</li>
+  <li>如果对象作为方法被调用，则<code>IsObject(method)</code>返回真，并且<code>method</code>包含关于目标对象的引用。如：若<code>x.y</code>指向<code>this</code> 函数对象，则<code>x.y()</code> → <code>this[x]()</code> → <code>this.__Call(x)</code> → <code>this.Call(x)</code>.</li>
+  <li><span class="ver">[v1.1.20+]:</span>如果对象被某需要回调函数的内置函数所使用，如OnMessage或SetTimer，则此对象仅需支持Call方法即可。</li>
 </ul>
 <p>上述过程可以直接在__Call中完成，推荐使用__Call代替Call以便更好的迁移到V2版本，其会改变<code>%this%()</code>的行为及调用CALL的方法调用。</p>
 
@@ -71,6 +74,5 @@ RealFn(a, b) {
 getLine := ObjBindMethod(file, "ReadLine")
 MsgBox % %getLine%()  <em>;显示此文件的第一行。</em></pre>
 
-
-
-</body></html>
+</body>
+</html>

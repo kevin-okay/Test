@@ -15,6 +15,9 @@
 <p>对于较旧的变更，请参阅<a href="ChangeLogHelp.htm">存档变更</a>。</p>
 
 <!--new revisions go here-->
+<h2 id="v1.1.22.07">1.1.22.07 - September 27, 2015</h2>
+<p>Fixed Gui control <code>w-1</code> and <code>h-1</code> options failing when DPI is 150+% and the Gui has not applied <code>-DPIScale</code>.</p>
+<p>Fixed <code>~<i>key</i> up</code> hotkeys to not perform an automatic <code>Send {<i>key</i> down}</code>. This was occurring only if the hotkey was turned on after the key was pressed down.</p>
 <h2 id="v1.1.22.06">1.1.22.06 - 2015年9月13日</h2>
 <p>修复 输入和热字符串捕获 Unicode 和 无标记字符编码 事件.</p>
 <p>修复 Edit 控件中如果最后一行为空行也进行自动伸缩大小.</p>

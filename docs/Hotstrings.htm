@@ -21,7 +21,7 @@
 <p>在上面的例子中, 每当您输入缩写 btw 时会被自动替换为 "by the way" (不过, 默认情况下您必须在输入 btw 后输入 <a href="#EndChars">终止符</a>, 例如空格, 句点或回车).</p>
 <p><a name="auto"></a>上面的 "by the way" 示例被称为自动替换热字串, 因为输入的文本被自动替换为第二个双冒号后指定的字符串. 与之相比, 热字串还可以定义用来执行任何自定义动作, 例如. 注意命令必须放在热字串的 <u>下面</u>.</p>
 <pre>::btw::
-MsgBox You typed "btw".
+MsgBox You typed &quot;btw&quot;.
 return
 
 :*:]d::  <em>; 此热字串通过后面的命令把 "]d" 替换成当前日期和时间.</em>
@@ -36,9 +36,12 @@ return</pre>
 <p>可以使用下面的两种方式改变热字串的默认行为:</p>
 <ol>
   <li><a href="commands/_Hotstring.htm">#Hotstring</a> 指令, 它会影响脚本中实际在它后面的所有热字串. 下列示例会让 C 和 R 选项生效：<code>#Hotstring <strong>c r</strong></code>。</li>
-  <li>把选项放在热字串的第一个双冒号之间. 下列示例会让 C 和 * 选项对当前热字串生效：<br><code>:<strong>c*</strong>:j@::john@somedomain.com <em>; 区分大小写且“不需要终止符”。</em></code>。</li>
+  <li>把选项放在热字串的第一个双冒号之间. 下列示例会让 C 和 * 选项对当前热字串生效：<br>
+  <code>:<strong>c*</strong>:j@::john@somedomain.com <em>; 区分大小写且“不需要终止符”。</em></code>。</li>
 </ol>
-<p>下面列表中对每个选项进行说明. 当使用上面的方法指定多个选项时, 可以在选项间包含空格.<br><br><strong><a name="Asterisk"></a>*</strong> (星号): 不需要终止符 (即空格, 句点或回车) 来触发热字串。例如：</p>
+<p>下面列表中对每个选项进行说明. 当使用上面的方法指定多个选项时, 可以在选项间包含空格.<br>
+<br>
+<strong><a name="Asterisk"></a>*</strong> (星号): 不需要终止符 (即空格, 句点或回车) 来触发热字串。例如：</p>
 <pre>:*:j@::jsmith@somedomain.com</pre>
 <p>上面的示例会在您输入 @ 字符时立即进行替换. 如果在 <a href="commands/_Hotstring.htm">#Hotstring 指令</a> 中含有此选项, 那么可以使用 <strong>*0</strong> 来关闭它.</p>
 <p><strong><a name="Question"></a>?</strong> (问号): 即使此热字串在另一个单词中也会被触发; 即, 在字符串被混排前立即输入字符. 例如，如果 <code>:?:al::airline</code> 为热字串，那么输入“practical ”会得到“practicairline ”。使用 <strong>?0</strong> 来关闭此选项.</p>
