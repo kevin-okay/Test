@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>OnExit</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -12,15 +12,15 @@
 
 <h1>OnExit</h1>
 
-<p>æŒ‡å®šåœ¨è„šæœ¬é€€å‡ºæ—¶è‡ªåŠ¨è¿è¡Œçš„<a href="Gosub.htm">å­ç¨‹åº</a>ã€‚</p>
+<p>Ö¸¶¨ÔÚ½Å±¾ÍË³öÊ±×Ô¶¯ÔËÐÐµÄ<a href="Gosub.htm">×Ó³ÌÐò</a>¡£</p>
 
 <pre class="Syntax">OnExit [, Label]
 OnExit(Func [, AddRemove])  <em>; Requires <span class="ver">[v1.1.20+]</span></em></pre>
-<h3>å‚æ•°</h3>
+<h3>²ÎÊý</h3>
 <dl>
 
-  <dt>æ ‡ç­¾</dt>
-  <dd><p>å¦‚æžœçœç•¥, åˆ™è„šæœ¬ä¼šè¿”å›žåˆ°æ­£å¸¸çš„é€€å‡ºè¡Œä¸º. å¦åˆ™, è¯·æŒ‡å®š <a href="../misc/Labels.htm">æ ‡ç­¾</a> çš„åç§°, å½“è„šæœ¬ç”±äºŽä»»æ„åŽŸå› é€€å‡ºæ—¶å°†æ‰§è¡Œæ ‡ç­¾ä¸­çš„å†…å®¹ (ä½œä¸ºæ–° <a href="../misc/Threads.htm">çº¿ç¨‹</a>).</p></dd>
+  <dt>±êÇ©</dt>
+  <dd><p>Èç¹ûÊ¡ÂÔ, Ôò½Å±¾»á·µ»Øµ½Õý³£µÄÍË³öÐÐÎª. ·ñÔò, ÇëÖ¸¶¨ <a href="../misc/Labels.htm">±êÇ©</a> µÄÃû³Æ, µ±½Å±¾ÓÉÓÚÈÎÒâÔ­ÒòÍË³öÊ±½«Ö´ÐÐ±êÇ©ÖÐµÄÄÚÈÝ (×÷ÎªÐÂ <a href="../misc/Threads.htm">Ïß³Ì</a>).</p></dd>
   
   <dt>Func</dt>
   <dd><p>A function name or <a href="../objects/Functor.htm">function object</a> to call when the script is exiting. The function can optionally define parameters as shown below. If an OnExit function returns a non-zero integer, the script does not exit. Otherwise, the script exits after all registered functions are called.</p>
@@ -44,53 +44,53 @@ OnExit(Func [, AddRemove])  <em>; Requires <span class="ver">[v1.1.20+]</span></
 <p>If the OnExit <a href="../misc/Threads.htm">thread</a> encounters a failure condition such as a runtime error, the script will terminate. This prevents a flawed OnExit subroutine from making a script impossible to terminate.</p>
 <p>If the OnExit subroutine was launched due to an <a href="Exit.htm">Exit</a> or <a href="ExitApp.htm">ExitApp</a> command that specified an exit code, in v1.1.19 and earlier that code is ignored and no longer available. In <span class="ver">[v1.1.20+]</span> the initial exit code is used unless overridden by calling <a href="ExitApp.htm">ExitApp</a> with a new exit code.</p>
 <p>Whenever the OnExit subroutine is called by an exit attempt, it starts off fresh with the default values for settings such as <a href="SendMode.htm">SendMode</a>. These defaults can be changed in the <a href="../Scripts.htm#auto">auto-execute section</a>.</p>
-<p>å†…ç½®å˜é‡ <strong>A_ExitReason</strong> ä¸ºç©ºï¼Œé™¤éž OnExit å­ç¨‹åºæ­£åœ¨è¿è¡Œæˆ–è€…åœ¨ä¹‹å‰çš„é€€å‡ºä¸­è‡³å°‘è°ƒç”¨è¿‡ä¸€æ¬¡ã€‚å¦‚æžœä¸æ˜¯ç©ºçš„, åˆ™å®ƒä¸ºä¸‹åˆ—å•è¯çš„å…¶ä¸­ä¸€ä¸ª:</p>
+<p>ÄÚÖÃ±äÁ¿ <strong>A_ExitReason</strong> Îª¿Õ£¬³ý·Ç OnExit ×Ó³ÌÐòÕýÔÚÔËÐÐ»òÕßÔÚÖ®Ç°µÄÍË³öÖÐÖÁÉÙµ÷ÓÃ¹ýÒ»´Î¡£Èç¹û²»ÊÇ¿ÕµÄ, ÔòËüÎªÏÂÁÐµ¥´ÊµÄÆäÖÐÒ»¸ö:</p>
 <table class="info" id="ExitReason">
   <tr>
     <td>logoff</td>
-    <td><a name="logoff"></a>ç”¨æˆ·æ­£åœ¨æ³¨é”€.</td>
+    <td><a name="logoff"></a>ÓÃ»§ÕýÔÚ×¢Ïú.</td>
   </tr>
   <tr>
     <td>Shutdown</td>
-    <td>æ­£åœ¨å…³é—­æˆ–é‡å¯ç³»ç»Ÿ, ä¾‹å¦‚ä½¿ç”¨ <a href="Shutdown.htm">Shutdown</a> å‘½ä»¤.</td>
+    <td>ÕýÔÚ¹Ø±Õ»òÖØÆôÏµÍ³, ÀýÈçÊ¹ÓÃ <a href="Shutdown.htm">Shutdown</a> ÃüÁî.</td>
   </tr>
   <tr>
     <td>Close</td>
-    <td>è„šæœ¬æŽ¥æ”¶åˆ° WM_CLOSE æˆ– WM_QUIT æ¶ˆæ¯, å‡ºçŽ°è‡´å‘½é”™è¯¯æˆ–è€…æ­£è¢«ä»¥å…¶ä»–æ–¹å¼å…³é—­. å°½ç®¡è¿™äº›æƒ…å†µéƒ½æ˜¯å¾ˆå°‘è§çš„, ç„¶è€Œ WM_CLOSE å¯èƒ½æ˜¯ç”±è„šæœ¬ä¸»çª—å£ä½¿ç”¨ <a href="WinClose.htm">WinClose</a> å‘½ä»¤å‘å‡ºçš„. è¦é¿å…è¿™ç§æƒ…å†µï¼Œè¯·ä½¿ç”¨ <code>Send, !{F4}</code> å…³é—­ä¸»çª—å£ã€‚</td>
+    <td>½Å±¾½ÓÊÕµ½ WM_CLOSE »ò WM_QUIT ÏûÏ¢, ³öÏÖÖÂÃü´íÎó»òÕßÕý±»ÒÔÆäËû·½Ê½¹Ø±Õ. ¾¡¹ÜÕâÐ©Çé¿ö¶¼ÊÇºÜÉÙ¼ûµÄ, È»¶ø WM_CLOSE ¿ÉÄÜÊÇÓÉ½Å±¾Ö÷´°¿ÚÊ¹ÓÃ <a href="WinClose.htm">WinClose</a> ÃüÁî·¢³öµÄ. Òª±ÜÃâÕâÖÖÇé¿ö£¬ÇëÊ¹ÓÃ <code>Send, !{F4}</code> ¹Ø±ÕÖ÷´°¿Ú¡£</td>
   </tr>
   <tr>
-    <td>é”™è¯¯</td>
-    <td>åœ¨æ²¡æœ‰çƒ­é”®ä¸”ä¸æ˜¯ <a href="_Persistent.htm">æŒç»­è¿è¡Œçš„</a> è„šæœ¬ä¸­å‘ç”Ÿäº†è¿è¡Œæ—¶é”™è¯¯. è¿è¡Œæ—¶é”™è¯¯çš„ä¸€ä¸ªä¾‹å­æ˜¯ <a href="Run.htm">Run/RunWait</a> å‘½ä»¤æ— æ³•å¯åŠ¨æŒ‡å®šçš„ç¨‹åºæˆ–æ‰“å¼€æŒ‡å®šçš„æ–‡æ¡£.</td>
+    <td>´íÎó</td>
+    <td>ÔÚÃ»ÓÐÈÈ¼üÇÒ²»ÊÇ <a href="_Persistent.htm">³ÖÐøÔËÐÐµÄ</a> ½Å±¾ÖÐ·¢ÉúÁËÔËÐÐÊ±´íÎó. ÔËÐÐÊ±´íÎóµÄÒ»¸öÀý×ÓÊÇ <a href="Run.htm">Run/RunWait</a> ÃüÁîÎÞ·¨Æô¶¯Ö¸¶¨µÄ³ÌÐò»ò´ò¿ªÖ¸¶¨µÄÎÄµµ.</td>
   </tr>
   <tr>
     <td>Menu</td>
-    <td>ç”¨æˆ·åœ¨ä¸»çª—å£çš„èœå•æˆ–æ ‡å‡†æ‰˜ç›˜èœå•ä¸­é€‰æ‹©äº†é€€å‡º.</td>
+    <td>ÓÃ»§ÔÚÖ÷´°¿ÚµÄ²Ëµ¥»ò±ê×¼ÍÐÅÌ²Ëµ¥ÖÐÑ¡ÔñÁËÍË³ö.</td>
   </tr>
   <tr>
     <td>Exit</td>
-    <td>ä½¿ç”¨äº† <a href="Exit.htm">Exit</a> æˆ– <a href="ExitApp.htm">ExitApp</a> å‘½ä»¤ (åŒ…æ‹¬ <a href="Menu.htm">è‡ªå®šä¹‰èœå•é¡¹</a>).</td>
+    <td>Ê¹ÓÃÁË <a href="Exit.htm">Exit</a> »ò <a href="ExitApp.htm">ExitApp</a> ÃüÁî (°üÀ¨ <a href="Menu.htm">×Ô¶¨Òå²Ëµ¥Ïî</a>).</td>
   </tr>
   <tr>
     <td>Reload</td>
-    <td>æ­£é€šè¿‡ <a href="Reload.htm">Reload</a> å‘½ä»¤æˆ–èœå•é¡¹é‡è½½è„šæœ¬.</td>
+    <td>ÕýÍ¨¹ý <a href="Reload.htm">Reload</a> ÃüÁî»ò²Ëµ¥ÏîÖØÔØ½Å±¾.</td>
   </tr>
   <tr>
     <td>Single</td>
-    <td>ç”±äºŽ <a href="_SingleInstance.htm">#SingleInstance</a> çš„ç»“æžœ, è„šæœ¬æ­£è¢«å®ƒè‡ªèº«çš„æ–°å®žä¾‹ä»£æ›¿.</td>
+    <td>ÓÉÓÚ <a href="_SingleInstance.htm">#SingleInstance</a> µÄ½á¹û, ½Å±¾Õý±»Ëü×ÔÉíµÄÐÂÊµÀý´úÌæ.</td>
   </tr>
 </table>
 
-<h3>ç›¸å…³</h3>
+<h3>Ïà¹Ø</h3>
 <p><a href="OnMessage.htm">OnMessage()</a>, <a href="RegisterCallback.htm">RegisterCallback()</a>, <a href="OnClipboardChange.htm">OnClipboardChange</a>, <a href="ExitApp.htm">ExitApp</a>, <a href="Shutdown.htm">Shutdown</a>, <a href="_Persistent.htm">#Persistent</a>, <a href="../misc/Threads.htm">Threads</a>, <a href="Gosub.htm">Gosub</a>, <a href="Return.htm">Return</a>, <a href="Menu.htm">Menu</a></p>
 
-<h3 id="Examples">ç¤ºä¾‹</h3>
+<h3 id="Examples">Ê¾Àý</h3>
 <p>The following examples use <a href="_Persistent.htm">#Persistent</a> to prevent the script from exiting automatically. After running the script, right click the tray icon and click <em>Exit</em> to test the OnExit subroutine or function. Then click "Yes" to terminate the script or "No" to keep it running.</p>
 <pre class="NoIndent">#Persistent
 OnExit, ExitSub
 return
 
 ExitSub:
-if A_ExitReason not in Logoff,Shutdown  <em>; åœ¨è¿™è¡Œè¯­å¥ä¸­, æ³¨æ„ä¸è¦åœ¨é€—å·å‘¨å›´å«æœ‰ç©ºæ ¼.</em>
+if A_ExitReason not in Logoff,Shutdown  <em>; ÔÚÕâÐÐÓï¾äÖÐ, ×¢Òâ²»ÒªÔÚ¶ººÅÖÜÎ§º¬ÓÐ¿Õ¸ñ.</em>
 {
     MsgBox, 4, , Are you sure you want to exit?
     IfMsgBox, No
