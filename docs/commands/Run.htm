@@ -69,7 +69,8 @@ Run ::{645ff040-5081-101b-9f08-00aa002f954e}  <em>; 打开回收站.</em></pre>
   </tr>
   <tr>
     <td>properties（属性）</td>
-    <td>显示指定文件的资源管理器属性窗口. 例如：<code>Run, properties "C:\My File.txt"</code><br>注: 当脚本终止时属性窗口会自动关闭. 要避免这种情况, 请使用 <a href="WinWait.htm">WinWait</a> 等待窗口出现, 然后使用 <a href="WinWaitClose.htm">WinWaitClose</a> 等待用户关闭它。</td>
+    <td>显示指定文件的资源管理器属性窗口. 例如：<code>Run, properties "C:\My File.txt"</code><br>
+    注: 当脚本终止时属性窗口会自动关闭. 要避免这种情况, 请使用 <a href="WinWait.htm">WinWait</a> 等待窗口出现, 然后使用 <a href="WinWaitClose.htm">WinWaitClose</a> 等待用户关闭它。</td>
   </tr>
   <tr>
     <td>find（查找）</td>
@@ -126,30 +127,31 @@ MsgBox % RunWaitMany("
 (
 echo 在这填入命令，
 echo 会执行所有命令，
-echo 并获取输出。)")
+echo 并获取输出。
+)")
 
 RunWaitOne(command) {
-    <em>; WshShell对象： <a href="http://msdn.microsoft.com/en-us/library/aew9yb99">http://msdn.microsoft.com/en-us/library/aew9yb99</a></em>
+    <em>; WshShell 对象： <a href="http://msdn.microsoft.com/en-us/library/aew9yb99">http://msdn.microsoft.com/en-us/library/aew9yb99</a></em>
     shell := ComObjCreate("WScript.Shell")
-    <em>;通过cmd.exe执行单条命令</em>
+    <em>; 通过 cmd.exe 执行单条命令</em>
     exec := shell.Exec(ComSpec " /C " command)
-    <em>;读取并返回命令的输出</em>
+    <em>; 读取并返回命令的输出</em>
     return exec.StdOut.ReadAll()
 }
 
 RunWaitMany(commands) {
     shell := ComObjCreate("WScript.Shell")
-    <em>; 打开cmd.exe，禁用命令显示。</em>
+    <em>; 打开 cmd.exe 禁用命令显示</em>
     exec := shell.Exec(ComSpec " /Q /K echo off")
     <em>; 发送并执行命令，使用新行分隔</em>
-    exec.StdIn.WriteLine(commands "`nexit")  <em>; 末尾时退出!</em>
+    exec.StdIn.WriteLine(commands "`nexit")  <em>; 保证执行完毕后退出!</em>
     <em>; 读取并返回所有命令的输出</em>
     return exec.StdOut.ReadAll()
 }
 </pre>
 
 <pre class="NoIndent" id="ExecScript">
-<em>; ExecScript: 以一个新的AutoHotkey程序来执行给定的代码.</em>
+<em>; ExecScript: 在新的 AutoHotkey 进程中执行给定的代码.</em>
 ExecScript(Script, Wait:=true)
 {
     shell := ComObjCreate("WScript.Shell")
