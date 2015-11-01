@@ -3,11 +3,9 @@
 <html>
 <head>
 <title>FormatTime</title>
-<meta http-equiv="content-type" content="text/html; charset=GB2312">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
-<script src="../static/jquery.js" type="text/javascript"></script>
-<script src="../static/tree.jquery.js" type="text/javascript"></script>
 <script src="../static/content.js" type="text/javascript"></script>
 <style type="text/css">
 <!--
@@ -175,14 +173,31 @@
 <pre>FormatTime, OutputVar, 20040228 LSys D1 D4</pre>
 <p><strong>R</strong>: 反转. 让日期在时间之前 (仅当 <em>Format</em> 为空时才有意义).</p>
 <p><strong>Ln</strong>: 如果此选项 <em>不</em> 存在, 则使用当前用户区域设置来格式化字符串. 要使用系统的区域设置, 请指定 LSys. 要使用特殊的区域设置, 请指定字母 L 后面跟着十六进制或十进制的区域设置标识符 (LCID). 关于如何构建 LCID 的信息, 请在 <a href="http://www.microsoft.com">www.microsoft.com</a> 上搜索下列短语: Locale Identifiers</p>
-<p><strong>Dn</strong>: 日期选项. 请指定 <strong>n</strong> 为下列数字的其中一个:<br>0: 强制使用默认选项. 这也会让短日期生效. <br>1: 使用短日期 (仅当 <em>Format</em> 为空时才有意义; 与 2 和 8 不兼容).<br>2: 使用长日期 (仅当 <em>Format</em> 为空时才有意义; 与 1 和 8 不兼容).<br>4：使用备用日历（如果有）。<br>8: 使用年份-月份格式 (仅当 <em>Format</em> 为空时才有意义; 与 1 和 2 不兼容).<br>0x10: 为从左到右的阅读顺序布局添加标记.<br>0x20: 为从右到左的阅读顺序布局添加标记.<br>0x80000000: 不遵循任何用户对系统默认日期格式的覆盖. <br>0x40000000: 使用系统 ANSI 代码页而不是区域设置代码页进行字符串转换.</p>
-<p><strong>Tn</strong>: 时间选项. 请指定 <strong>n</strong> 为下列数字的其中一个:<br>0: 强制使用默认选项. 这也使得会显示分钟数和秒数.<br>1: 省略分钟数和秒数.<br>2: 省略秒数. <br>4: 省略时间标记 (例如 AM/PM).<br>8: 始终使用二十四小时制而不是十二小时制.<br>12: 上面两个参数的组合.<br>0x80000000: 不遵循任何用户对系统默认时间格式的覆盖. <br>0x40000000: 使用系统 ANSI 代码页而不是区域设置代码页进行字符串转换.</p>
-<p><strong>Note</strong>：Dn 和 Tn 可以使用多次以使多个选项生效，例如：<code>FormatTime, OutputVar, 20040228 D2 D4 T1 T8</code></p>
+<p><strong>Dn</strong>: 日期选项. 请指定 <strong>n</strong> 为下列数字的其中一个:<br>
+0: 强制使用默认选项. 这也会让短日期生效. <br>
+1: 使用短日期 (仅当 <em>Format</em> 为空时才有意义; 与 2 和 8 不兼容).<br>
+2: 使用长日期 (仅当 <em>Format</em> 为空时才有意义; 与 1 和 8 不兼容).<br>
+4：使用备用日历（如果有）。<br>
+8: 使用年份-月份格式 (仅当 <em>Format</em> 为空时才有意义; 与 1 和 2 不兼容).<br>
+0x10: 为从左到右的阅读顺序布局添加标记.<br>
+0x20: 为从右到左的阅读顺序布局添加标记.<br>
+0x80000000: 不遵循任何用户对系统默认日期格式的覆盖. <br>
+0x40000000: 使用系统 ANSI 代码页而不是区域设置代码页进行字符串转换.</p>
+<p><strong>Tn</strong>: 时间选项. 请指定 <strong>n</strong> 为下列数字的其中一个:<br>
+0: 强制使用默认选项. 这也使得会显示分钟数和秒数.<br>
+1: 省略分钟数和秒数.<br>
+2: 省略秒数. <br>
+4: 省略时间标记 (例如 AM/PM).<br>
+8: 始终使用二十四小时制而不是十二小时制.<br>
+12: 上面两个参数的组合.<br>
+0x80000000: 不遵循任何用户对系统默认时间格式的覆盖. <br>
+0x40000000: 使用系统 ANSI 代码页而不是区域设置代码页进行字符串转换.</p>
+<p><strong>Note</strong>： Dn 和 Tn 可以使用多次以使多个选项生效，例如：<code>FormatTime, OutputVar, 20040228 D2 D4 T1 T8</code></p>
 <h3 id="Remarks">备注</h3>
 <p>从 <em>Format</em> 到 <em>OutputVar</em> 的转换时，您希望原义转换的字母和数字必须包含在单引号中，例如：<code>'Date:' MM/dd/yy 'Time:' hh:mm:ss tt</code>。</p>
 <p>与之相比, 非字母数字字符 (例如空格, tab, 换行符 (`n), 斜杠, 冒号, 逗号和其他标点) 不需要包围在单引号中. 例外情况是单引号字符本身: 要产生原义的单引号, 请使用四个连续的单引号 (''''), 不过如果它们已经包含在一对外部引号中则仅使用连续的两个就行了.</p>
 <p>如果 <em>Format</em> 同时包含日期和时间元素, 则它们不能混用. 换句话说, 这个字符串应该分成两半: 一半时间, 一半日期. 例如, 包含 "hh yyyy mm" 的格式字符串不会产生期望的结果, 因为它在两个时间元素间包含日期元素.</p>
-<p>当<em>Format</em>包含数值的天数（d或dd）后跟着月份的全称（MMMM），则使用月份名称的所有格形式（如果当前语言有所有格形式）。</p>
+<p>当<em>Format</em>包含数值的天数（d 或 dd）后跟着月份的全称（MMMM），则使用月份名称的所有格形式（如果当前语言有所有格形式）。</p>
 <p>如果 <em>Format</em> 包含超过 2000 个字符, 则 <em>OutputVar</em> 会被置空.</p>
 <p>相关提示, 使用 <a href="EnvAdd.htm">EnvAdd</a> 和 <a href="EnvSub.htm">EnvSub</a> 可以对日期和时间进行加减.</p>
 <h3>相关</h3>
@@ -231,7 +246,7 @@ FormatSeconds(NumberOfSeconds)  <em>; 把指定的秒数转换成 hh:mm:ss 格式.</em>
     time = 19990101  <em>; 任意日期的 *午夜*.</em>
     time += %NumberOfSeconds%, seconds
     FormatTime, mmss, %time%, mm:ss
-    return NumberOfSeconds//3600 ":" mmss
+    return NumberOfSeconds//3600 &quot;:&quot; mmss
     <em>/*
     ; 和上面方法不同的是，这里不支持超过 24 小时的秒数：
     FormatTime, hmmss, %time%, h:mm:ss

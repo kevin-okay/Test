@@ -6,8 +6,6 @@
 <meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
-<script src="../static/jquery.js" type="text/javascript"></script>
-<script src="../static/tree.jquery.js" type="text/javascript"></script>
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
@@ -92,7 +90,8 @@ DllCall("DeleteFile", Ptr, &amp;filename) <em>; 省略 Ptr 两边的引号.</em></pre>
   <p>注意: 要传递 <strong>NULL</strong> 句柄或指针, 请传递整数 0.</p></td>
 </tr>
 <tr>
-  <td>* 或 P(后缀)</td>
+  <td>* 或 P<br>
+    (后缀)</td>
   <td id="asterisk"><p>在上述任一类型后附加星号 (星号前可以含有空格) 表示传递参数的地址而不是参数的值 (被调用函数必须接受地址). 由于这时函数可能修改参数的值, 所以每当不受保护的变量作为参数传递时, 变量的内容都会被更新. 例如，后面的调用将通过地址传递 MyVar 的内容给 MyFunction，但也会更新 MyVar 来反映 MyFunction 对它作出的改变：<code>DllCall("MyDll\MyFunction", "Int*", MyVar)</code>。</p>
     <p>一般说来, 星号可用于函数中以 "LP" 开始的参数类型或返回值类型. 最常见的例子是 LPDWORD, 这是指向 DWORD 的指针. 因为 DWORD 是无符号 32 位整型, 所以用 "UInt*" 或 "UintP" 来表示 LPDWORD. 星号不应该用于字符串类型 (例如 LPTSTR), 指向结构的指针 (如 LPRECT) 或数组; 对于这些, 根据您需要传递的是变量还是其地址应该使用 <a href="#str">"Str"</a> 或 "Ptr".</p>
     <p>注：“Char*”与<a href="#str">“Str”</a>类型是不同的，因为“Char*”传递 8 位数的地址，而<a href="#str">“Str”</a>传递一系列字符的地址，根据 AutoHotkey 版本的不同它可能是 8 位（ANSI）或 16 位（Unicode）的。同样地，“UInt*”会传递 32 位数的地址，所以不应该使用在函数期望大于 32 位的结构或值的数组的时候。</p>
@@ -100,7 +99,7 @@ DllCall("DeleteFile", Ptr, &amp;filename) <em>; 省略 Ptr 两边的引号.</em></pre>
     </td>
 </tr>
 <tr>
-  <td>U (前缀)</td>
+  <td>U<br>(前缀)</td>
   <td><p><a name="unsigned"></a>在上述任一整型前加上字符 U 表示无符号整型 (UInt64, UInt, UShort 和 UChar). 严格说来, 这仅对于返回值或 <a href="#asterisk">星号变量</a> 才是必要的, 因为它不影响值传递的参数是无符号的还是有符号的 (Int64 除外).</p>
     <p>如果在无符号参数中指定负整数, 那么它会被转换到无符号范围中. 例如, 把 -1 作为 UInt 类型传递, 则它会被转换成 0xFFFFFFFF.</p>
     <p>不支持由函数产生的 <em>无符号</em> 64 位整型. 因此, 要让大于或等于 0x8000000000000000 的数字有效, 请省略 U 前缀并且把任何从函数接收到的负值转换成很大的正数. 例如, 如果设计返回值为 UInt64 类型的函数在返回 Int64 类型的值 -1 时, 实际的返回值是 0xFFFFFFFFFFFFFFFF.</p></td>
@@ -243,27 +242,27 @@ CREATE_ALWAYS = 2  <em>; 创建新文件 (覆盖任何现有的文件).</em>
 hFile := <strong>DllCall</strong>("CreateFile", Str, FileName, UInt, GENERIC_WRITE, UInt, 0, Ptr, 0, UInt, CREATE_ALWAYS, UInt, 0, Ptr, 0, Ptr)
 if not hFile
 {
-    MsgBox Can't open "%FileName%" for writing.
+    MsgBox Can't open &quot;%FileName%&quot; for writing.
     return
 }
 TestString = This is a test string.`r`n  <em>; 通过这种方式写入内容到文件时, 要使用 `r`n 而不是 `n 来开始新行.</em>
-<strong>DllCall</strong>("WriteFile", Ptr, hFile, Str, TestString, UInt, StrLen(TestString), UIntP, BytesActuallyWritten, Ptr, 0)
-<strong>DllCall</strong>("CloseHandle", Ptr, hFile)  <em>; 关闭文件.</em>
+<strong>DllCall</strong>(&quot;WriteFile&quot;, Ptr, hFile, Str, TestString, UInt, StrLen(TestString), UIntP, BytesActuallyWritten, Ptr, 0)
+<strong>DllCall</strong>(&quot;CloseHandle&quot;, Ptr, hFile)  <em>; Close the file.</em>
 
 <em>; 现在已经把内容写入文件了, 重新把它们读取回内存中.</em>
 GENERIC_READ = 0x80000000  <em>; 以读取而不是写入的方式来打开文件.</em>
 OPEN_EXISTING = 3  <em>; 此标志表示要打开的文件必须已经存在.</em>
 FILE_SHARE_READ = 0x1 <em>; 这个和下一个标志表示其他进程是否可以打开我们已经打开的文件.</em>
 FILE_SHARE_WRITE = 0x2
-hFile := <strong>DllCall</strong>("CreateFile", Str, FileName, UInt, GENERIC_READ, UInt, FILE_SHARE_READ|FILE_SHARE_WRITE, Ptr, 0, UInt, OPEN_EXISTING, UInt, 0, Ptr, 0)
+hFile := <strong>DllCall</strong>(&quot;CreateFile&quot;, Str, FileName, UInt, GENERIC_READ, UInt, FILE_SHARE_READ|FILE_SHARE_WRITE, Ptr, 0, UInt, OPEN_EXISTING, UInt, 0, Ptr, 0)
 if not hFile
 {
-    MsgBox Can't open "%FileName%" for reading.
+    MsgBox Can't open &quot;%FileName%&quot; for reading.
     return
 }
 <em>; 清空变量以便进行测试, 但需要确保它含有足够的容量:</em>
 BytesToRead := VarSetCapacity(TestString, StrLen(TestString))
-<strong>DllCall</strong>("ReadFile", Ptr, hFile, Str, TestString, UInt, BytesToRead, UIntP, BytesActuallyRead, Ptr, 0)
+<strong>DllCall</strong>(&quot;ReadFile&quot;, Ptr, hFile, Str, TestString, UInt, BytesToRead, UIntP, BytesActuallyRead, Ptr, 0)
 <strong>DllCall</strong>("CloseHandle", Ptr, hFile)  <em>; 关闭文件.</em>
 MsgBox The following string was read from the file: %TestString%</pre>
 
@@ -274,7 +273,7 @@ OnExit, ShowCursor  <em>; 确保到脚本退出时鼠标光标是显示的.</em>
 return
 
 ShowCursor:
-SystemCursor("On")
+SystemCursor(&quot;On&quot;)
 ExitApp
 
 #c::SystemCursor("Toggle")  <em>; Win+C 热键用来切换鼠标光标的显示和隐藏.</em>
@@ -295,13 +294,13 @@ SystemCursor(OnOff=1)   <em>; 初始化 = "I","Init"; 隐藏 = 0,"Off"; 切换 = -1,"T"
         StringSplit c, system_cursors, `,
         Loop %c0%
         {
-            h_cursor   := DllCall( "LoadCursor", "Ptr",0, "Ptr",c%A_Index% )
-            h%A_Index% := DllCall( "CopyImage", "Ptr",h_cursor, "UInt",2, "Int",0, "Int",0, "UInt",0 )
-            b%A_Index% := DllCall( "CreateCursor", "Ptr",0, "Int",0, "Int",0
-                , "Int",32, "Int",32, "Ptr",&amp;AndMask, "Ptr",&amp;XorMask )
+            h_cursor   := DllCall( &quot;LoadCursor&quot;, &quot;Ptr&quot;,0, &quot;Ptr&quot;,c%A_Index% )
+            h%A_Index% := DllCall( &quot;CopyImage&quot;, &quot;Ptr&quot;,h_cursor, &quot;UInt&quot;,2, &quot;Int&quot;,0, &quot;Int&quot;,0, &quot;UInt&quot;,0 )
+            b%A_Index% := DllCall( &quot;CreateCursor&quot;, &quot;Ptr&quot;,0, &quot;Int&quot;,0, &quot;Int&quot;,0
+                , &quot;Int&quot;,32, &quot;Int&quot;,32, &quot;Ptr&quot;,&amp;AndMask, &quot;Ptr&quot;,&amp;XorMask )
         }
     }
-    if (OnOff = 0 or OnOff = "Off" or $ = "h" and (OnOff &lt; 0 or OnOff = "Toggle" or OnOff = "T"))
+    if (OnOff = 0 or OnOff = &quot;Off&quot; or $ = &quot;h&quot; and (OnOff &lt; 0 or OnOff = &quot;Toggle&quot; or OnOff = &quot;T&quot;))
         $ = b  <em>; 使用空白指针</em>
     else
         $ = h  <em>; 使用保存的指针</em>

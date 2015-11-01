@@ -3,11 +3,9 @@
 <html>
 <head>
 <title>FileSelectFolder</title>
-<meta http-equiv="content-type" content="text/html; charset=GB2312">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
-<script src="../static/jquery.js" type="text/javascript"></script>
-<script src="../static/tree.jquery.js" type="text/javascript"></script>
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
@@ -29,7 +27,8 @@ Folder := RegExReplace(Folder, "\\$")  <em>; 移除默认的反斜线，如果存在。</em></
   <dd><p>如果为空或省略, 则对话框的初始选择对象为用户的我的文档文件夹 (或可能是我的电脑). 可以指定 <a href="../misc/CLSID-List.htm">CLSID 文件夹</a> 例如 <code>::{20d04fe0-3aea-1069-a2d8-08002b30309d}</code>（即我的电脑）来从特定的专用文件夹开始导航。</p>
       <p>否则, 此参数最常见的用法是星号后面紧跟着初始选择的驱动器或文件夹的绝对路径. 例如，<code>*C:\</code> 会初始选择 C 驱动器。同样地，<code>*C:\My Folder</code> 会初始选择这个特殊的文件夹。</p>
       <p>星号表示允许用户从起始文件夹向上导航 (接近根目录). 如果没有星号，则强制用户在 <em>StartingFolder </em>中选择文件夹（或 <em>StartingFolder</em> 自身）。省略星号的一个好处是最初 <em>StartingFolder</em> 会显示为树形展开状态, 这样可以节省用户点击前面加号的时间.</p>
-      <p>如果使用星号, 则向上导航可以被限制到桌面外的其他文件夹. 在星号前加上最上级文件夹的绝对路径跟着一个空格或 tab 即可实现. 在下面的例子中, 将不允许用户导航到比 C:\My Folder 更上级的文件夹 (不过初始选择对象为 C:\My Folder\Projects):<br><code>C:\My Folder *C:\My Folder\Projects</code></p>
+      <p>如果使用星号, 则向上导航可以被限制到桌面外的其他文件夹. 在星号前加上最上级文件夹的绝对路径跟着一个空格或 tab 即可实现. 在下面的例子中, 将不允许用户导航到比 C:\My Folder 更上级的文件夹 (不过初始选择对象为 C:\My Folder\Projects):<br>
+      <code>C:\My Folder *C:\My Folder\Projects</code></p>
     </dd>
 
   <dt>选项</dt>
@@ -57,16 +56,16 @@ Folder := RegExReplace(Folder, "\\$")  <em>; 移除默认的反斜线，如果存在。</em></
 FileSelectFolder, OutputVar,, 3
 Thread, NoTimers, false</pre>
 <h3>相关</h3>
-<p><a href="FileSelectFile.htm">FileSelectFile</a>, <a href="MsgBox.htm">MsgBox</a>, <a href="InputBox.htm">InputBox</a>, <a href="ToolTip.htm">ToolTip</a>, <a href="Gui.htm">GUI</a>, <a href="../misc/CLSID-List.htm">CLSID 列表</a>, <a href="FileCopyDir.htm">FileCopyDir</a>, <a href="FileMoveDir.htm">FileMoveDir</a>, <a href="SplitPath.htm">SplitPath</a></p>
+<p><a href="FileSelectFile.htm">FileSelectFile</a>, <a href="MsgBox.htm">MsgBox</a>, <a href="InputBox.htm">InputBox</a>, <a href="ToolTip.htm">ToolTip</a>, <a href="Gui.htm">GUI</a>, <a href="../misc/CLSID-List.htm">CLSID List</a>, <a href="FileCopyDir.htm">FileCopyDir</a>, <a href="FileMoveDir.htm">FileMoveDir</a>, <a href="SplitPath.htm">SplitPath</a></p>
 <p>此外, 操作系统提供了标准的对话框让用户选取字体, 颜色或图标. 使用 <a href="DllCall.htm">DllCall()</a> 可以显示这些对话框, 演示的例子请参阅 <a href="http://www.autohotkey.com/forum/topic17230.html">www.autohotkey.com/forum/topic17230.html</a>.</p>
 <h3>示例</h3>
 <pre class="NoIndent">FileSelectFolder, OutputVar, , 3
 if OutputVar =
     MsgBox, You didn't select a folder.
 else
-    MsgBox, You selected folder "%OutputVar%".
+    MsgBox, You selected folder &quot;%OutputVar%&quot;.
 
-<a href="../misc/CLSID-List.htm">CLSID</a> 的例子:
+<em>; <a href="../misc/CLSID-List.htm">CLSID</a> 例如:</em>
 FileSelectFolder, OutputVar, ::{20d04fe0-3aea-1069-a2d8-08002b30309d}  <em>; 我的电脑.</em></pre>
 
 </body>
