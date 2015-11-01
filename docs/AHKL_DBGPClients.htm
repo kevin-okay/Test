@@ -2,110 +2,110 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Debugging Features</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>调试功能</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="static/theme.css" rel="stylesheet" type="text/css" />
 <script src="static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>Debugger Clients</h1>
+<h1>调试器客户端</h1>
 
-<p>Additional debugging features are supported via <a href="http://xdebug.org/docs-dbgp.php">DBGp</a>, a common debugger protocol for languages and debugger UI communication. See <a href="Scripts.htm#idebug">Interactive Debugging</a> for more details. Some UIs or "clients" known to be compatible with AutoHotkey are listed on this page.</p>
+<p>通过 <a href="http://xdebug.org/docs-dbgp.php">DBGp</a> 可以支持调试功能，DGBp 是一种常见的支持多语言和调试器 UI 通信的调试器协议。请参阅<a href="Scripts.htm#idebug">交互式调试</a>了解更多细节。在这个页面中列出了一些与 AutoHotkey 兼容的 UI 或“客户端”。</p>
 
 <h2>SciTE4AutoHotkey</h2>
-<p><a href="http://fincs.ahk4.net/scite4ahk/">SciTE4AutoHotkey</a> is a free, <a href="http://www.scintilla.org/SciTE.html">SciTE</a>-based AutoHotkey script editor. In addition to DBGp support, it provides syntax highlighting, calltips/parameter info and auto-complete for AutoHotkey, and other useful editing features and scripting tools.</p>
-<p>Debugging features include:</p>
+<p><a href="http://fincs.ahk4.net/scite4ahk/">SciTE4AutoHotkey</a> 是一个免费的基于 <a href="http://www.scintilla.org/SciTE.html">SciTE</a> 的 AutoHotkey 脚本编辑器. 除了 DBGp 支持, 它还为 AutoHotkey 提供了语法高亮, 调用提示, 参数信息和自动完成, 以及其他拥有的编辑特性和辅助工具.</p>
+<p>调试功能包括:</p>
 <ul>
-  <li>Breakpoints.</li>
-  <li>Run, Step Over/Into/Out.</li>
-  <li>View the call stack.</li>
-  <li>List name and contents of variables in local/global scope.</li>
-  <li>Hover over variable to show contents.</li>
-  <li>Inspect or edit variable contents.</li>
-  <li>View structure of objects.</li>
+  <li>断点.</li>
+  <li>运行, 逐语句/逐过程/跳出.</li>
+  <li>查看调用堆栈.</li>
+  <li>列出局部域和全局域中变量的名称和内容.</li>
+  <li>在变量上悬停时显示其内容。</li>
+  <li>检查或编辑变量的内容.</li>
+  <li>查看对象的结构.</li>
 </ul>
 <p><a href="http://fincs.ahk4.net/scite4ahk/">http://fincs.ahk4.net/scite4ahk/</a></p>
 
 <h2>XDebugClient</h2>
-<p><a href="http://code.google.com/p/xdebugclient/">XDebugClient</a> is a simple open-source front-end DBGp client based on the <b>.NET Framework 2.0</b>. XDebugClient was originally designed for PHP with Xdebug, but a custom build compatible with AutoHotkey is available below.</p>
-<p><b>Changes:</b></p>
+<p><a href="http://code.google.com/p/xdebugclient/">XDebugClient</a> 是一个基于 <b>.NET Framework 2.0</b> 的简单开源前端 DBGp 客户端. XDebugClient 一起最初设计用于带 Xdebug 的 PHP，不过下面有一个自定义版本可用于 AutoHotkey 中。</p>
+<p><b>改变:</b></p>
 <ul>
-  <li>Allow the debugger engine to report a language other than "php".</li>
-  <li>Added AutoHotkey syntax highlighting.</li>
-  <li>Automatically listen for a connection from the debugger engine, rather than waiting for the user to click <em>Start Listening</em>.</li>
-  <li>Truncate property values at the first null-character, since AutoHotkey currently returns the entire variable contents and XDebugClient has no suitable interface for displaying binary content.</li>
+  <li>允许调试器引擎报告 "php" 外的其他语言.</li>
+  <li>添加 AutoHotkey 语法高亮.</li>
+  <li>自动监听调试器引擎的连接, 而不需要等待用户点击 <em>开始监听</em>.</li>
+  <li>截去属性值中首个空字符及其后面的内容，因为当前 AutoHotkey 返回整个变量的内容而 XDebugClient 无法正确显示二进制内容。</li>
 </ul>
-<p><b>Download:</b> <a href="http://ahkscript.org/download/tools/XDebugClient.zip">Binary</a>; <a href="http://ahkscript.org/download/tools/XDebugClient_src.zip">Source Code</a> (also see <a href="http://www.icsharpcode.net/">SharpDevelop</a>, <a href="http://sourceforge.net/projects/dockpanelsuite/">Dockpanel Suite</a> and <a href="http://www.codeproject.com/cs/miscctrl/treeviewadv.asp">Advanced Treeview</a>.)</p>
-<p><b>Usage:</b></p>
+<p><b>下载:</b> <a href="http://ahkscript.org/download/tools/XDebugClient.zip">二进制</a>; <a href="http://ahkscript.org/download/tools/XDebugClient_src.zip">源代码</a> (另请参阅 <a href="http://www.icsharpcode.net/">SharpDevelop</a>, <a href="http://sourceforge.net/projects/dockpanelsuite/">Dockpanel Suite</a> 和 <a href="http://www.codeproject.com/cs/miscctrl/treeviewadv.asp">Advanced Treeview</a>.)</p>
+<p><b>用法:</b></p>
 <ul>
-  <li>Launch XDebugClient.</li>
-  <li>Launch AutoHotkey /Debug. XDebugClient should automatically open the script file.</li>
-  <li>Click the left margin to set at least one breakpoint.</li>
-  <li>Choose Run from the Debug menu, or press F5.</li>
-  <li>When execution hits a breakpoint, use the Debug menu or shortcut keys to step through or resume the script.</li>
+  <li>运行 XDebugClient.</li>
+  <li>运行 AutoHotkey /Debug。XDebugClient 会自动打开脚本文件.</li>
+  <li>在左边距点击以至少设置一个断点.</li>
+  <li>在调试菜单中选择运行或按下 F5.</li>
+  <li>执行到断点时, 使用调试菜单或快捷键进行单步调试或继续执行脚本.</li>
 </ul>
-<p><b>Features:</b></p>
+<p><b>特性:</b></p>
 <ul>
-  <li>Syntax highlighted, read-only view of the source code.</li>
-  <li>Breakpoints.</li>
-  <li>Run, Step Over/Into/Out.</li>
-  <li>View the call stack.</li>
-  <li>Inspect variables - select a variable name, right-click, Inspect.</li>
+  <li>源码语法高亮只读显示.</li>
+  <li>断点.</li>
+  <li>运行, 逐语句/逐过程/跳出.</li>
+  <li>查看调用堆栈.</li>
+  <li>检查变量 - 选择变量名, 右键点击, 检查.</li>
 </ul>
-<p><b>Issues:</b></p>
+<p><b>已知问题:</b></p>
 <ul>
-  <li>The user interface does not respond to user input while the script is running.</li>
-  <li>No mechanisms are provided to list variables or set their values.</li>
+  <li>当脚本运行时用户界面不响应用户的输入.</li>
+  <li>没有提供列出变量或设置变量值的结构.</li>
 </ul>
 
-<h2>Notepad++ DBGp Plugin</h2>
-<p>A DBGp client is available as a plugin for <a href="http://notepad-plus-plus.org/">Notepad++</a>. It is designed for PHP, but also works well with AutoHotkey.</p>
-<p><b>Download:</b> See <a href="http://sourceforge.net/apps/mediawiki/notepad-plus/index.php?title=Plugin_Central#D">Directory for Notepad++ plugins</a>.</p>
-<p><b>Usage:</b></p>
+<h2>Notepad++ DBGp 插件</h2>
+<p>一个可作为 <a href="http://notepad-plus-plus.org/">Notepad++</a> 插件使用的 DBGp 客户端. 它设计用于 PHP，不过用于 AutoHotkey 时同样工作地很好。</p>
+<p><b>下载：</b>请参阅 <a href="http://sourceforge.net/apps/mediawiki/notepad-plus/index.php?title=Plugin_Central#D">Notepad++ 插件目录</a>。</p>
+<p><b>用法:</b></p>
 <ul>
-  <li>Launch Notepad++.</li>
-  <li>Configure the DBGp plugin via <i>Plugins</i>, <i>DBGp</i>, <i>Config...</i>
-    <p><b>Note:</b> File Mapping must be configured.  Most users will not be debugging remotely, and therefore may simply put a checkmark next to <i>Bypass all mapping (local windows setup)</i>.</p>
+  <li>运行 Notepad++.</li>
+  <li>通过 <i>插件</i>, <i>DBGp</i>, <i>配置...</i> 配置 DBGp 插件
+    <p><b>注意:</b> 必须配置文件映射. 大多数用户不进行远程调试, 因此可以简单地复选 <i>忽略所有映射 (本地 windows 安装)</i>.</p>
   </li>
-  <li>Show the debugger pane via the toolbar or <b>Plugins</b>, <b>DBGp</b>, <b>Debugger</b>.</li>
-  <li>Open the script file to be debugged.</li>
-  <li>Set at least one breakpoint.</li>
-  <li>Launch AutoHotkey /Debug.</li>
-  <li>Use the debugger toolbar or shortcut keys to control the debugger.</li>
+  <li>通过工具栏或 <b>插件</b>, <b>DBGp</b>, <b>调试器</b> 显示调试器面板.</li>
+  <li>打开需调试的脚本文件.</li>
+  <li>至少设置一个断点.</li>
+  <li>运行 AutoHotkey /Debug。</li>
+  <li>使用调试器工具栏或快捷键控制调试器.</li>
 </ul>
-<p><b>Features:</b></p>
+<p><b>特性:</b></p>
 <ul>
-  <li>Syntax highlighting, if configured by the user.</li>
-  <li>Breakpoints.</li>
-  <li>Run, Step Over/Into/Out, Run to cursor, Stop.</li>
-  <li>View local/global variables.</li>
-  <li>Watch user-specified variables.</li>
-  <li>View the call stack.</li>
-  <li>Hover over a variable to view its contents.</li>
-  <li>User-configurable shortcut keys - Settings, Shortcut Mapper..., Plugin commands.</li>
+  <li>根据用户的配置进行语法高亮显示.</li>
+  <li>断点.</li>
+  <li>运行, 逐语句/逐过程/跳出, 运行到光标, 停止.</li>
+  <li>查看局部/全局变量.</li>
+  <li>监视用户指定的变量.</li>
+  <li>查看调用堆栈.</li>
+  <li>悬停在变量上时显示其内容.</li>
+  <li>可配置的快捷键 - 设置, 快捷映射..., 插件命令.</li>
 </ul>
-<p><b>Issues:</b></p>
+<p><b>已知问题:</b></p>
 <ul>
-  <li>Hovering over a single-letter variable name does not work - for instance, hovering over "a" will attempt to retrieve " a" or "a ".</li>
-  <li>Hovering over text will attempt to retrieve a variable even if the text contains invalid characters.</li>
-  <li>Notepad++ becomes unstable if property_get fails, which is particularly problematic in light of the above. As a workaround, AutoHotkey sends an empty property instead of an error code when a non-existent or invalid variable is requested.</li>
+  <li>悬停在单字母的变量名上时不会显示变量内容 - 例如, 悬停在 "a" 将试图获取 " a" 或 "a " 变量的内容.</li>
+  <li>悬停在文本上将试图把文本作为变量名获取其内容, 即使文本中含有非法字符.</li>
+  <li>如果属性获取失败 Notepad++ 会变得不稳定, 在上述问题的来源中这是显著的问题. 为了避过此问题，AutoHotkey 接到获取一个不存在或非法变量的请求时发送一个空属性而不是错误码。</li>
 </ul>
 
-<h2 id="dbgp.ahk">Script-based Clients</h2>
-<p>�����ڿ����е�һ�����ڽű��� <a href="http://ahkscript.org/download/tools/DBGP.ahk">DBGp ��</a> �����������Ŀͻ���:</p><ul>
-  <li><a href="http://ahkscript.org/download/tools/dbgp_console.ahk">dbgp_console.ahk</a>: �򵥵������пͻ���.</li>
-  <li><a href="http://ahkscript.org/download/tools/dbgp_test.ahk">dbgp_test.ahk</a>: ��ʾ�첽����.</li>
-  <li>dbgp_listvars.ahk: һ��չʾ�������нű��ı�����ʾ���ͻ���.</li>
+<h2 id="dbgp.ahk">基于脚本的客户端</h2>
+<p>A script-based DBGp library and example clients are available from GitHub.</p><ul>
+  <li>dbgp_console.ahk: Simple command-line client.</li>
+  <li>dbgp_test.ahk: Demonstrates asynchronous debugging.</li>
+  <li>dbgp_listvars.ahk: Example client which justs lists the variables of all running scripts.</li>
 </ul>
 <p>GitHub: <a href="https://github.com/Lexikos/dbgp">Lexikos / <strong>dbgp</strong></a></p>
 
+<h2>命令行客户端</h2>
+<p>A command-line client is available from <a href="http://xdebug.org/">xdebug.org</a>, however this is not suitable for most users as it requires a decent understanding of DBGp (the protocol).</p>
 
-<h2>�����пͻ���</h2>
-<p><a href="http://xdebug.org/">xdebug.org</a> ����һ�����õ������пͻ���, Ȼ�������ʺϴ�����û�, ��Ϊ��Ҫ�������� DBGp (Э��) ����ʹ����.</p>
-<h2>����</h2>
-<p>����һЩ���õ����� DBGp �ͻ��ˣ�����û���� AutoHotkey ���Թ���������Щ�ͻ��˵��б�������� <a href="http://xdebug.org/docs/remote">Xdebug���ĵ�</a>��</p>
+<h2>其他</h2>
+<p>还有一些可用的其他 DBGp 客户端，不过没有在 AutoHotkey 测试过。关于这些客户端的列表，请参阅 <a href="http://xdebug.org/docs/remote">Xdebug：文档</a>。</p>
 
 </body>
 </html>
