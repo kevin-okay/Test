@@ -12,8 +12,8 @@ if (FileExist("AutoHotkey.chm"))
     FileDelete, AutoHotkey.chm
 }
 
-go_change1()
-Convert_cp_4chinese()
+;~ go_change1()
+;~ Convert_cp_4chinese()
 
 ; Change this path if the loop below doesn't find your hhc.exe,
 ; or leave it as-is if hhc.exe is somewhere in %PATH%.
