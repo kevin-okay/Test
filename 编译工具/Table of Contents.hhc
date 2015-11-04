@@ -92,7 +92,7 @@
 <li><object type="text/sitemap"><param name="Name" value="FileInstall"><param name="Local" value="docs/commands/FileInstall.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileMove"><param name="Local" value="docs/commands/FileMove.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileMoveDir"><param name="Local" value="docs/commands/FileMoveDir.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="FileOpen()"><param name="Local" value="docs/commands/FileOpen.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="FileOpen"><param name="Local" value="docs/commands/FileOpen.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileReadLine"><param name="Local" value="docs/commands/FileReadLine.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileRead"><param name="Local" value="docs/commands/FileRead.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileRecycle"><param name="Local" value="docs/commands/FileRecycle.htm"></object>
