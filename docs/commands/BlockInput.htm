@@ -34,7 +34,8 @@
 </dl>
 
 <h3>备注</h3>
-<p>比起 BlockInput，通常优先考虑使用 <code><a href="SendMode.htm">SendMode Input</a></code> 或 <code><a href="SendMode.htm">SendMode Play</a></code> 会更好，这样键击和鼠标点击会变得不可中断。这是因为与 BlockInput 不同, 这些模式不会丢弃发送期间用户输入的内容; 作为替代, 这些键击被缓冲起来在之后发送. 不使用 BlockInput 也避免了下一段落所描述的需要解决的粘滞按键问题.</p>
+<p><strong>注意:</strong> <code>BlockInput On</code> 在 UAC 开启且脚本不是以管理员权限运行的时候失效. 更多详情, 请参阅 <a href="../FAQ.htm#uac">FAQ</a>.</p>
+<p>比起 BlockInput，通常优先考虑使用 <code><a href="SendMode.htm">SendMode Input</a></code> 或 <code><a href="SendMode.htm">SendMode Play</a></code> 会更好,这样键击和鼠标点击会变得不可中断. 因为它们与 BlockInput 不一样, 这些模式不会丢弃发送期间用户输入的内容; 相反, 这些键击被缓冲起来在之后发送. 不使用 BlockInput 也避免了下文所描述的需要解决的粘滞按键问题.</p>
 <p>如果在用户按住按键时启用 BlockInput, 可能会导致这些键 "卡住". 通过等待这些按键释放后才启用 BlockInput 可以避免此问题, 与本例一样:</p>
 <pre>^!p::
 KeyWait Control  <em>; 等待按键释放.  为每个热键修饰符使用一次 KeyWait 命令.</em>
@@ -44,7 +45,7 @@ BlockInput On
 BlockInput Off
 return</pre>
 <p>每当发送 ALT 事件时, 输入阻塞会自动和临时禁用 (之后重新启用).</p>
-<p>BlockInput 生效时，用户的输入被拦截，不过 AutoHotkey 可以模拟键击和鼠标点击。然而由于 Windows API 的特性，按下 Ctrl+Alt+Del 将重新启用输入。</p>
+<p>BlockInput 生效时,用户的输入被拦截,不过 AutoHotkey 可以模拟键击和鼠标点击。然而由于 Windows API 的特性,按下 Ctrl+Alt+Del 将重新启用输入。</p>
 <p><a href="_UseHook.htm">钩子热键</a> 的某些类型在 BlockInput 启用时仍然可以被触发. 例子包括 <code>MButton</code>（鼠标钩子）和 <code>LWin &amp; Space</code>（含有除修饰符<code>$#</code>外的明确前缀的键盘钩子）。</p>
 <p>当脚本关闭时会自动重新启用输入.</p>
 <h3>相关</h3>

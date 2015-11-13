@@ -15,6 +15,19 @@
 <p>对于较旧的变更，请参阅<a href="ChangeLogHelp.htm">存档变更</a>。</p>
 
 <!--new revisions go here-->
+<h2 id="v1.1.22.09">1.1.22.09 - November 11, 2015</h2>
+<p>修复一些 SetTimer Delete 的问题.</p>
+<ul>
+  <li>KeyHistory 的 timer 计数错误的包含了已经删除的 timer.</li>
+  <li>Calling KeyHistory within a thread started by a timer crashed the script if the timer had been deleted but not turned off.</li>
+  <li>Deleting the most recently created timer prevented subsequently created timers from working unless ALL timers were deleted.</li>
+</ul>
+
+<h2 id="v1.1.22.08">1.1.22.08 - November 11, 2015</h2>
+<p>Fixed For-loop to pass control correctly when _NewEnum/Next throws an exception.</p>
+<p>Fixed Finally to suspend the pending exception until its body has been evaluated, not just until the first built-in function call.</p>
+<p>Fixed load-time detection of invalid jumps from Finally blocks (broken by v1.1.20).</p>
+
 <h2 id="v1.1.22.07">1.1.22.07 - September 27, 2015</h2>
 <p>Fixed Gui control <code>w-1</code> and <code>h-1</code> options failing when DPI is 150+% and the Gui has not applied <code>-DPIScale</code>.</p>
 <p>Fixed <code>~<i>key</i> up</code> hotkeys to not perform an automatic <code>Send {<i>key</i> down}</code>. This was occurring only if the hotkey was turned on after the key was pressed down.</p>
@@ -57,7 +70,6 @@
 <p>修正TreeView不提交<code>*</code> 事件在位置消息情况下.(Fixed TreeView to not raise <code>*</code> events for unknown notifications.)</p>
 <p>修正定时器删除本身时出现的崩溃或坏的表现.</p>
 <p>修正RWin-up<a href="commands/_MenuMaskKey.htm">被屏蔽</a> 在某些罕见的情况下而LWin-up不会.</p>
-
 <h2 id="v1.1.22.01">1.1.22.01 - 2015年5月24日</h2>
 <p>修正Text/Edit/Button控件调整大小来弥补字符溢出.</p>
 <p>修正注册表命令允许在子键中使用<code>:</code>当与根键合并.</p>

@@ -653,7 +653,16 @@ if A_OSVersion in WIN_NT4,WIN_95,WIN_98,WIN_ME  <em>; 注：逗号两边没有空格. </em
   <tr id="ProgramFiles">
     <td>A_ProgramFiles<br>
 	或 ProgramFiles</td>
-    <td>Program Files 目录 (例如 C:\Program Files). 在 v1.0.43.08+, 前缀 A_ 可以省略, 这样有助于自然过渡到 <a href="commands/_NoEnv.htm">#NoEnv</a>.</td>
+    <td>
+      <p>Program Files 目录 (例如 <code>C:\Program Files</code> 或者 <code>C:\Program Files (x86)</code>). 一般来说和 <code>ProgramFiles</code> <a href="#env">环境变量</a> 一样.</p>
+      <p>在 <a href="#Is64bitOS">64位系统</a> (非32位系统) 上适用:</p>
+      <ul>
+        <li>如果可执行文件 (EXE) 以32位脚本运行的时候, A_ProgramFiles 返回路径为 "Program Files (x86)" 目录.</li>
+        <li>对于32位的进程, 这个 <code>ProgramW6432</code> <a href="#env">环境变量</a> 指向 64 位 Program Files 目录. 在 Windows 7 和更高版本上, 对于 64 位的进程也是这样设置的.</li>
+        <li>而 <code>ProgramFiles(x86)</code> 环境变量指向 32 位 Program Files 目录.</li>
+      </ul>
+	  <p>在 v1.0.43.08+, 前缀 A_ 可以省略, 这样有助于自然过渡到 <a href="commands/_NoEnv.htm">#NoEnv</a>.</p>
+	  </td>
   </tr>
   <tr id="AppData">
     <td>A_AppData<br>
@@ -704,12 +713,13 @@ if A_OSVersion in WIN_NT4,WIN_95,WIN_98,WIN_ME  <em>; 注：逗号两边没有空格. </em
   <tr id="IsAdmin">
     <td>A_IsAdmin</td>
     <td><p>如果当前用户有管理员权限, 则此变量的值为 1. 否则为 0.</p>
-    <p><a name="RequireAdmin" id="RequireAdmin"></a>在 Windows Vista 或更高版本中, 一些脚本可能需要管理员权限才能正常运行 (例如与使用管理员权限执行的进程和窗口进行交互的脚本). 要做到这点, 请把下列语句添加到脚本的顶部：</p>
+    <p id="RequireAdmin">在 Windows Vista 或更高版本中, 一些脚本可能需要管理员权限才能正常运行 (例如与使用管理员权限执行的进程和窗口进行交互的脚本). 要做到这点, 请把下列语句添加到脚本的顶部：</p>
     <pre>if not A_IsAdmin
 {
-   Run *RunAs "%A_ScriptFullPath%"  <em>; 需要 v1.0.92.01+</em>
+   Run *RunAs &quot;%A_ScriptFullPath%&quot;  <em>; 需要 v1.0.92.01+</em>
    ExitApp
-}</pre></td>
+}</pre>
+    <p>Although this also allows the script to automate windows of programs which are running as admin, it is not the only way. See <a href="FAQ.htm#uac">the FAQ</a> for details.</p></td>
   </tr>
   <tr id="Screen">
     <td><p>A_ScreenWidth<br>
