@@ -6,8 +6,6 @@
 <meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="static/theme.css" rel="stylesheet" type="text/css" />
-
-
 <script src="static/content.js" type="text/javascript"></script>
 </head>
 <body>
@@ -173,7 +171,7 @@ MsgBox,, Title
 
 
 <h2 id="Format">Unicode 和 ANSI 的比较</h2>
-<p>脚本处理的每个文本值会被保存为一序列或<em>一串</em>字符。每个字符的数值和大小取决于所使用的AutoHotkey构建：<i>Unicode</i>或<i>ANSI</i>。这些细节对于进行下列操作的脚本通常很重要：</p>
+<p>文本值(text value)通常会被看做字符串(  <em>string</em> ), 也就是被视作为序列 (sequence) 或 <em>一串</em> 字符.每个字符的数值和大小(单位是 bytes 字节)取决于所使用的AutoHotkey构建: <i>Unicode</i> 或 <i>ANSI</i> .这些细节对于进行下列操作的脚本通常很重要:</p>
 <ul>
   <li>通过 <a href="#DllCall">DllCall</a> 传递字符串到外部函数。</li>
   <li>通过 <a href="commands/PostMessage.htm">PostMessage/SendMessage</a> 传递字符串。</li>
@@ -259,7 +257,7 @@ t_size(char_count=1) {
 */</em>
 VarSetCapacity(pi, A_PtrSize*2 + 8) <em>; Ptr + Ptr + UInt + UInt</em>
 DllCall("<a href="http://msdn.microsoft.com/en-us/library/ms682425.aspx">CreateProcess</a>", <span class="dull">&lt;为简短而省略&gt;</span>, "Ptr", &amp;pi, <span class="dull">&lt;omitted&gt;</span>)
-hProcess    := NumGet(pi, 0)         <em>; 默认为“Ptr”。</em>
+hProcess    := NumGet(pi, 0)         <em>; 默认为 "Ptr".</em>
 hThread     := NumGet(pi, A_PtrSize) <em>;</em>
 dwProcessId := NumGet(pi, A_PtrSize*2,     "UInt")
 dwProcessId := NumGet(pi, A_PtrSize*2 + 4, "UInt")
