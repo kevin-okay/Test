@@ -30,25 +30,25 @@
   <dt>Mode 方式<span class="ver">[v1.1.21+]</span></dt>
   <dd><p>零个或多个以下字母（的组合）:</p>
     <p><code>D</code> : 包含目录（文件夹）。<br>
-    <code>F</code> : 包含文件. 如果同时省略 F 和 D，则包含 F 和 D 。<br>
-    <code>R</code> : 递归子目录. 如果省略 R , 则不包含子目录中的文件和目录。</p>
+    <code>F</code>: 包含文件. 如果同时省略 F 和 D, 则仅包含文件而不包括目录 .<br>
+    <code>R</code> : 递归子目录. 如果省略 R , 则不包含子目录中的文件和目录.</p>
   </dd>
 
   <dt>IncludeFolders? 包含子文件夹?</dt>
  <dd><p>使用下列的其中一个数字, 或留空以使用默认值:<br>
-  <code>0</code> : (默认) 不获取文件夹 (仅文件)。<br>
-  <code>1</code> : 获取所有匹配通配符模式的文件和文件夹。<br>
-  <code>2</code> : 仅获取文件夹 (不获取文件)。</p></dd>
+  <code>0</code> : (默认) 不获取文件夹 (仅文件).<br>
+  <code>1</code> : 获取所有匹配通配符模式的文件和文件夹.<br>
+  <code>2</code> : 仅获取文件夹 (不获取文件).</p></dd>
   
   <dt>Recurse? 递归?</dt>
   <dd>使用下列的其中一个数字, 或留空以使用默认值:<br>
-<code>0</code> : (默认) 不对子文件夹进行递归。<br>
-<code>1</code> : 递归子文件夹, 以便获取包含在其中的匹配 <em>FilePattern</em> 的文件和文件夹。将递归所有子文件夹, 而不仅是名称匹配 <em>FilePattern</em> 的那些。</dd>
+<code>0</code> : (默认) 不对子文件夹进行递归.<br>
+<code>1</code> : 递归子文件夹, 以便获取包含在其中的匹配 <em>FilePattern</em> 的文件和文件夹.将递归所有子文件夹, 而不仅是名称匹配 <em>FilePattern</em> 的那些.</dd>
 
 </dl>
 
 <h3>可在文件循环中使用的特殊变量</h3>
-<p>下列变量存在于任何文件循环中。如果一个内层文件循环包含在一个外层文件循环中，那么最内层循环的文件将具有优先权:</p>
+<p>下列变量存在于任何文件循环中.如果一个内层文件循环包含在一个外层文件循环中,那么最内层循环的文件将具有优先权:</p>
 <table class="info">
   <tr>
     <td>A_LoopFileName</td>
@@ -60,7 +60,7 @@
   </tr>
   <tr>
     <td>A_LoopFileFullPath</td>
-    <td><a name="LoopFileFullPath"></a>当前获取的文件/文件夹的路径和名称. 如果 <em>FilePattern</em> 包含相对路径而不是绝对路径，那么这里的路径也是相对路径。此外，<em>FilePattern</em> 中的任何短（8.3）文件夹名称仍将为短名称（请参阅下一项来获取长名称）。</td>
+    <td><a name="LoopFileFullPath"></a>当前获取的文件/文件夹的路径和名称. 如果 <em>FilePattern</em> 包含相对路径而不是绝对路径,那么这里的路径也是相对路径.此外,<em>FilePattern</em> 中的任何短（8.3）文件夹名称仍将为短名称（请参阅下一项来获取长名称）.</td>
   </tr>
   <tr>
     <td>A_LoopFileLongPath</td>
@@ -68,7 +68,7 @@
   </tr>
   <tr>
     <td>A_LoopFileShortPath</td>
-    <td><p><a name="LoopFileShortPath"></a>当前获取的文件/文件夹的 8.3 短路径和名称. 例如: C:\MYDOCU~1\ADDRES~1.txt. 如果 <em>FilePattern</em> 包含相对路径而不是绝对路径，那么这里的路径也是相对路径。</p>
+    <td><p><a name="LoopFileShortPath"></a>当前获取的文件/文件夹的 8.3 短路径和名称. 例如: C:\MYDOCU~1\ADDRES~1.txt. 如果 <em>FilePattern</em> 包含相对路径而不是绝对路径,那么这里的路径也是相对路径.</p>
       <p>要获取单个文件或文件夹的完整的 8.3 路径和名称, 像这个例子那样在 <em>FilePattern</em> 中指定其名称:</p>
 <pre>Loop, C:\My Documents\Address List.txt
     ShortPathName = %A_LoopFileShortPath%</pre>
@@ -80,7 +80,7 @@
   </tr>
   <tr>
     <td>A_LoopFileDir</td>
-    <td><a name="LoopFileDir"></a><em>A_LoopFileName</em> 所在目录的路径。如果 <em>FilePattern</em> 包含相对路径而不是绝对路径，那么这里的路径也是相对路径。根目录将不包含末尾的反斜线. 例如: C:</td>
+    <td><a name="LoopFileDir"></a><em>A_LoopFileName</em> 所在目录的路径.如果 <em>FilePattern</em> 包含相对路径而不是绝对路径,那么这里的路径也是相对路径.根目录将不包含末尾的反斜线. 例如: C:</td>
   </tr>
   <tr>
     <td>A_LoopFileTimeModified</td>
@@ -116,7 +116,7 @@
 <p>所有匹配的文件都被获取, 包括隐藏文件. 相比之下, 诸如 DIR 命令的 OS 特性默认忽略隐藏文件. 要避免处理隐藏, 系统 和/或 只读文件, 请在循环内部使用类似下面的方法:</p>
 <pre>if A_LoopFileAttrib contains H,R,S  <em>; 跳过具有 H (隐藏), R (只读) 或 S (系统) 属性的任何文件. 注意: 在 "H,R,S" 中不含空格.</em>
     continue  <em>; 跳过这个文件并前进到下一个.</em></pre>
-<p>要在递归搜索中获取文件的相对路径而不是绝对路径，在循环之前使用 <a href="SetWorkingDir.htm">SetWorkingDir</a> 来改变工作目录为基文件夹，且在接着的 Loop 中省略路径（例如 <code>Loop, *.*, 0, 1</code>）。这样将使得 <a href="#LoopFileFullPath">A_LoopFileFullPath</a> 包含相对于基文件夹的文件路径。</p>
+<p>要在递归搜索中获取文件的相对路径而不是绝对路径,在循环之前使用 <a href="SetWorkingDir.htm">SetWorkingDir</a> 来改变工作目录为基文件夹,且在接着的 Loop 中省略路径（例如 <code>Loop, *.*, 0, 1</code>）.这样将使得 <a href="#LoopFileFullPath">A_LoopFileFullPath</a> 包含相对于基文件夹的文件路径.</p>
 <p>如果文件循环在其范围中创建或重命名文件或文件夹, 那么会扰乱它自己. 例如, 如果它通过 <a href="FileMove.htm">FileMove</a> 或其他方法重命名文件, 每个这样的文件可能被找到两次: 一次是作为其旧名称, 再一次则作为其新名称. 要变通解决此问题, 创建需重命名文件的列表后才重命名这些文件. 例如:</p>
 <pre>FileList =
 Loop, Files, *.jpg
@@ -125,7 +125,7 @@ Loop, Parse, FileList, `n
    FileMove, %A_LoopField%, renamed_%A_LoopField%</pre>
 <p>在 NTFS 文件系统中的文件可能总是按字母顺序来获取. 在其他文件系统中的文件则没有特殊的获取顺序. 要使用特殊的获取顺序, 使用 <a href="Sort.htm">Sort</a> 命令, 如同下文示例部分演示的那样.</p>
 <p>文件和文件夹的完整路径和名称超过 259 个字符时, 这些文件和文件夹会被跳过, 就像它们不存在一样. 这样的文件很罕见, 因为操作系统一般不允许创建它们.</p>
-<p>请参阅 <a href="Loop.htm">Loop</a> 了解关于<a href="Block.htm">区块</a>、<a href="Break.htm">Break</a>、<a href="Continue.htm">Continue</a> 和 A_Index 变量（其存在于各种类型的循环中）的相关信息。</p>
+<p>请参阅 <a href="Loop.htm">Loop</a> 了解关于<a href="Block.htm">区块</a>、<a href="Break.htm">Break</a>、<a href="Continue.htm">Continue</a> 和 A_Index 变量（其存在于各种类型的循环中）的相关信息.</p>
 <h3>相关</h3>
 <p><a href="Loop.htm">Loop</a>, <a href="Break.htm">Break</a>, <a href="Continue.htm">Continue</a>, <a href="Block.htm">区块</a>, <a href="SplitPath.htm">SplitPath</a>, <a href="FileSetAttrib.htm">FileSetAttrib</a>, <a href="FileSetTime.htm">FileSetTime</a></p>
 <h3>示例</h3>
@@ -149,7 +149,7 @@ MsgBox Size of %WhichFolder% is %FolderSizeKB% KB.</pre>
 FileList =  <em>; 初始为空.</em>
 Loop, C:\*.*
     FileList = %FileList%%A_LoopFileName%`n
-Sort, FileList, R  <em>; R 选项使得以逆序排列. 请参阅 <a href="Sort.htm">Sort</a> 了解其他选项。</em>
+Sort, FileList, R  <em>; R 选项使得以逆序排列. 请参阅 <a href="Sort.htm">Sort</a> 了解其他选项.</em>
 Loop, parse, FileList, `n
 {
     if A_LoopField =  <em>; 忽略列表末尾的空项.</em>
