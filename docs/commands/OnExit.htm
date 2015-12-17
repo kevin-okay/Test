@@ -12,39 +12,39 @@
 
 <h1>OnExit</h1>
 
-<p>指定在脚本退出时自动运行的<a href="Gosub.htm">子程序</a>。</p>
+<p>指定一个在脚本退出时自动运行的 <a href="Gosub.htm">子程序</a> (通常表示标签) 或 <a href="../Functions.htm">函数</a>.</p>
 
 <pre class="Syntax">OnExit [, Label]
-OnExit(Func [, AddRemove])  <em>; Requires <span class="ver">[v1.1.20+]</span></em></pre>
+OnExit(Func [, AddRemove])  <em>; 需要 <span class="ver">[v1.1.20+]</span></em></pre>
 <h3>参数</h3>
 <dl>
 
-  <dt>标签</dt>
-  <dd><p>如果省略, 则脚本会返回到正常的退出行为. 否则, 请指定 <a href="../misc/Labels.htm">标签</a> 的名称, 当脚本由于任意原因退出时将执行标签中的内容 (作为新 <a href="../misc/Threads.htm">线程</a>).</p></dd>
+  <dt>Label</dt>
+  <dd><p>如果省略, 则脚本会返回到正常的退出行为. 否则, 请指定 <a href="../misc/Labels.htm">label (标签)</a> 的名称, 当脚本由于任意原因退出时将执行标签中的内容 (作为新 <a href="../misc/Threads.htm">线程</a>).</p></dd>
   
   <dt>Func</dt>
-  <dd><p>A function name or <a href="../objects/Functor.htm">function object</a> to call when the script is exiting. The function can optionally define parameters as shown below. If an OnExit function returns a non-zero integer, the script does not exit. Otherwise, the script exits after all registered functions are called.</p>
+  <dd><p>脚本退出时调用的一个函数名称或 <a href="../objects/Functor.htm">函数对象</a> . 该函数还可以有选择的定义参数, 请参考下面的例子. 如果 OnExit 调用的函数返回一个非零整数, 脚本将不会继续退出. 否则, 脚本将在该函数运行完成之后退出.</p>
   <pre class="Syntax">ExitFunc(<a href="#ExitReason">ExitReason</a>, <a href="ExitApp.htm">ExitCode</a>)</pre></dd>
   
   <dt>AddRemove</dt>
-  <dd><p>One of the following values:<br>
-  <strong>1</strong> (the default): Call the function after any previously registered functions.<br>
-  <strong>-1</strong>: Call the function before any previously registered functions.<br>
-  <strong>0</strong>: Do not call the function.</p>
-  <p>If a label (subroutine) has been registered, it is always called first.</p></dd>
+  <dd><p>下列的某个值:<br>
+  <strong>1</strong>:  (默认) 在所有之前注册的函数之后调用该函数.<br>
+  <strong>-1</strong>:  在所有之前注册的函数之前调用该函数.<br>
+  <strong>0 </strong>: 不调用该函数.</p>
+  <p>总是优先调用注册的 label (标签) (子程序). </p></dd>
 
 </dl>
 
 <h3>Remarks</h3>
-<p><strong>IMPORTANT:</strong> Since the specified subroutine is called instead of terminating the script, that subroutine must use the <a href="ExitApp.htm">ExitApp</a> command if termination is desired. <span class="ver">[v1.1.20+]:</span> New scripts should use a function instead of a subroutine -- this reduces the risk of accidentally creating a script which can't be exited, and ensures that the exit code passed to Exit or ExitApp is preserved.</p>
-<p><span class="ver">[v1.1.20+]:</span> Any number of OnExit functions can be registered. If a label (subroutine) is also registered, the functions are called after the subroutine calls <a href="ExitApp.htm">ExitApp</a>. An OnExit function usually should not call ExitApp; if it does, the script terminates immediately.</p>
-<p>The OnExit subroutine is called when the script exits by any means (except when it is killed by something like &quot;End Task&quot;). It is also called whenever the <a href="_SingleInstance.htm">#SingleInstance</a> and <a href="Reload.htm">Reload</a> commands ask a previous instance to terminate.</p>
+<p><strong>注意:</strong> 这是调用子程序而不是退出脚本, 如果希望最终能退出脚本, 该子程序必须使用 <a href="ExitApp.htm">ExitApp</a> 命令. <span class="ver">[v1.1.20+]:</span> 推荐新脚本使用函数替代原来的标签 (子程序) 形式 -- 这样可以降低脚本无法退出的风险, 还能确保传递给 Exit 或 ExitApp 的退出码是可控的(保存).</p>
+<p><span class="ver">[v1.1.20+]:</span> OnExit 函数可以注册任意多个. 如果同时还注册了 label (子程序) 也会被注册, 注册的这些函数会在子程序执行 <a href="ExitApp.htm">ExitApp</a> 命令之后被调用. 通常 OnExit 不需要调用 ExitApp 命令; 如果调用了, 脚本将会立即退出.</p>
+<p>OnExit 子程序在任何 means (译者注:理解为有意的退出信息) (脚本收到) 时被调用 (除非被类似 &quot;结束任务&quot; ). 无论 <a href="_SingleInstance.htm">#SingleInstance</a> 和 <a href="Reload.htm">Reload</a> commands ask a previous instance to terminate.</p>
 <p>A script can detect and optionally abort a system shutdown or logoff via <code><a href="OnMessage.htm#shutdown">OnMessage(0x11, &quot;WM_QUERYENDSESSION&quot;)</a></code>.</p>
 <p>The OnExit <a href="../misc/Threads.htm">thread</a> does not obey <a href="_MaxThreads.htm">#MaxThreads</a> (it will always launch when needed). In addition, while it is running, it cannot be interrupted by any <a href="../misc/Threads.htm">thread</a>, including <a href="../Hotkeys.htm">hotkeys</a>, <a href="Menu.htm">custom menu items</a>, and <a href="SetTimer.htm">timed subroutines</a>. However, it will be interrupted (and the script will terminate) if the user chooses Exit from the tray menu or main menu, or the script is asked to terminate as a result of <a href="Reload.htm">Reload</a> or <a href="_SingleInstance.htm">#SingleInstance</a>. Because of this, the OnExit subroutine should be designed to finish quickly unless the user is aware of what it is doing.</p>
 <p>If the OnExit <a href="../misc/Threads.htm">thread</a> encounters a failure condition such as a runtime error, the script will terminate. This prevents a flawed OnExit subroutine from making a script impossible to terminate.</p>
 <p>If the OnExit subroutine was launched due to an <a href="Exit.htm">Exit</a> or <a href="ExitApp.htm">ExitApp</a> command that specified an exit code, in v1.1.19 and earlier that code is ignored and no longer available. In <span class="ver">[v1.1.20+]</span> the initial exit code is used unless overridden by calling <a href="ExitApp.htm">ExitApp</a> with a new exit code.</p>
 <p>Whenever the OnExit subroutine is called by an exit attempt, it starts off fresh with the default values for settings such as <a href="SendMode.htm">SendMode</a>. These defaults can be changed in the <a href="../Scripts.htm#auto">auto-execute section</a>.</p>
-<p>内置变量 <strong>A_ExitReason</strong> 为空，除非 OnExit 子程序正在运行或者在之前的退出中至少调用过一次。如果不是空的, 则它为下列单词的其中一个:</p>
+<p>内置变量 <strong>A_ExitReason</strong> 为空，除非 OnExit 子程序正在运行或者在之前的退出中至少调用过一次.如果不是空的, 则它为下列单词的其中一个:</p>
 <table class="info" id="ExitReason">
   <tr>
     <td>logoff</td>
@@ -56,7 +56,7 @@ OnExit(Func [, AddRemove])  <em>; Requires <span class="ver">[v1.1.20+]</span></
   </tr>
   <tr>
     <td>Close</td>
-    <td>脚本接收到 WM_CLOSE 或 WM_QUIT 消息, 出现致命错误或者正被以其他方式关闭. 尽管这些情况都是很少见的, 然而 WM_CLOSE 可能是由脚本主窗口使用 <a href="WinClose.htm">WinClose</a> 命令发出的. 要避免这种情况，请使用 <code>Send, !{F4}</code> 关闭主窗口。</td>
+    <td>脚本接收到 WM_CLOSE 或 WM_QUIT 消息, 出现致命错误或者正被以其他方式关闭. 尽管这些情况都是很少见的, 然而 WM_CLOSE 可能是由脚本主窗口使用 <a href="WinClose.htm">WinClose</a> 命令发出的. 要避免这种情况，请使用 <code>Send, !{F4}</code> 关闭主窗口.</td>
   </tr>
   <tr>
     <td>错误</td>
