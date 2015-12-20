@@ -167,8 +167,8 @@ WM_QUERYENDSESSION(wParam, lParam)
 <pre class="NoIndent"><em>; 示例: 此脚本能接收到其他脚本或程序的自定义消息和最多两个数字
 ; (要发送字符串而不是数字, 请参阅下一个示例).</em>
 
-OnMessage(0x5555, "MsgMonitor")
-OnMessage(0x5556, "MsgMonitor")
+OnMessage(0x5555, &quot;MsgMonitor&quot;)
+OnMessage(0x5556, &quot;MsgMonitor&quot;)
 
 MsgMonitor(wParam, lParam, msg)
 {
