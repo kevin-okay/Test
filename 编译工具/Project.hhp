@@ -1,8 +1,8 @@
 [OPTIONS]
+Binary Index=No
 Compatibility=1.1 or later
 Compiled file=AutoHotkey.chm
 Contents file=Table of Contents.hhc
-Default Font=Tahoma,10,0
 Default Window=Contents
 Default topic=docs\AutoHotkey.htm
 Display compile progress=No
@@ -12,7 +12,7 @@ Language=0x804 中文(简体，中国)
 Title=AutoHotkey Help
 
 [WINDOWS]
-Contents="AutoHotkey Help","Table of Contents.hhc","Index.hhk","docs\AutoHotkey.htm","docs\AutoHotkey.htm",,,,,0x73520,,0x10200e,[200,100,1080,800],0x0,,,,0,,0
+Contents="AutoHotkey Help","Table of Contents.hhc","Index.hhk","docs\AutoHotkey.htm","docs\AutoHotkey.htm",,,,,0x73520,,0x10200e,[200,0,1080,700],0x0,,,,0,,0
 
 
 [FILES]

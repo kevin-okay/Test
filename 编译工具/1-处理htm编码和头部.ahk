@@ -22,14 +22,7 @@ delHead()
       {
           File_CpTransform(A_LoopFileFullPath, "b", "a")
       }
-      ;~ ansi,需要改为utf8 no bom
-      else if (_fEncoding = 1)
-      {
-         ;~ Debug(A_LineFile "`nline`: " A_LineNumber "`nFunc`:" A_ThisFunc "`n`n"
-         ;~ . A_LoopFileFullPath)
-         
-          ;~ File_CpTransform(A_LoopFileFullPath, "a", "b")
-      }
+      
       ;~ utf8 no bom,改为ANSI
       else if (_fEncoding = 6)
       {
