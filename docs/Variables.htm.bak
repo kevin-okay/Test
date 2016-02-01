@@ -544,18 +544,6 @@ MsgBox,  %ElapsedTime% milliseconds have elapsed.</pre>
 </table>
 <h3>GUI 窗口和菜单栏</h3>
 <table class="info">
-  <tr id="DefaultGui">
-    <td>A_DefaultGui <span class="ver">[v1.1.23+]</span></td>
-    <td>The name or number of the current thread's <a href="commands/Gui.htm#Default">default GUI</a>.</td>
-  </tr>
-  <tr id="DefaultListView">
-    <td>A_DefaultListView <span class="ver">[v1.1.23+]</span></td>
-    <td>The <a href="commands/Gui.htm#Events">variable name</a> or <a href="commands/Gui.htm#HwndOutputVar">HWND</a> of the <a href="commands/ListView.htm">ListView control</a> upon which the <a href="commands/ListView.htm#BuiltIn">ListView functions</a> operate. If the default GUI lacks a ListView, this variable is blank.</td>
-  </tr>
-  <tr id="DefaultTreeView">
-    <td>A_DefaultTreeView <span class="ver">[v1.1.23+]</span></td>
-    <td>The <a href="commands/Gui.htm#Events">variable name</a> or <a href="commands/Gui.htm#HwndOutputVar">HWND</a> of the <a href="commands/TreeView.htm">TreeView control</a> upon which the <a href="commands/TreeView.htm#BuiltIn">TreeView functions</a> operate. If the default GUI lacks a TreeView, this variable is blank.</td>
-  </tr>
   <tr id="Gui">
     <td>A_Gui</td>
     <td>启动了 <a href="misc/Threads.htm">当前线程</a> 的 <a href="commands/Gui.htm">GUI</a> 的名称或编号. 除非当前线程是由 Gui 控件, 菜单项或 Gui 事件 (例如 GuiClose/GuiEscape) 启动的, 否则此变量为空.</td>

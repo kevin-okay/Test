@@ -37,7 +37,7 @@
   
   <h2 style="margin-top: 1.5em">为什么我会看到这个?</h2>
   <div id="why">
-  <p>你运行了 AutoHotkey 而没有<a href="Scripts.htm#cmd">告诉它</a>要运行哪个脚本, 并且它没有找到<a href="Scripts.htm#defaultfile">默认脚本</a>.</p>
+  <p>你运行了AutoHotkey而没有<a href="Scripts.htm#cmd">告诉它</a>要运行哪个脚本, 并且它没有找到<a href="Scripts.htm#defaultfile">默认脚本</a>.</p>
   </div>
   
 </div>
