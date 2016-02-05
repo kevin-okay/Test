@@ -13,7 +13,7 @@
 <li><object type="text/sitemap"><param name="Name" value="Tutorial (快速入门教程)"><param name="Local" value="docs/Tutorial.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FAQ (常见问题)"><param name="Local" value="docs/FAQ.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="命令和函数索引"><param name="Local" value="docs/commands/index.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Script Showcase"><param name="Local" value="docs/scripts/index.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="优秀脚本示例"><param name="Local" value="docs/scripts/index.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="更新历史"><param name="Local" value="docs/AHKL_ChangeLog.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="基本用法和语法"></object>
 <ul>
@@ -38,10 +38,10 @@
 <li><object type="text/sitemap"><param name="Name" value="函数对象"><param name="Local" value="docs/objects/Functor.htm"></object>
 </ul>
 </ul>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="迁移到 AutoHotkey_L"></OBJECT>
+<li><object type="text/sitemap"><param name="Name" value="迁移到 AutoHotkey_L 1.1"></object>
 <ul>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="AutoHotkey_L 新特性"><param name="Local" value="docs/AHKL_Features.htm"></OBJECT></LI>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="脚本兼容性"><param name="Local" value="docs/Compat.htm"></OBJECT></LI>
+<li><object type="text/sitemap"><param name="Name" value="AutoHotkey_L 新特性"><param name="Local" value="docs/AHKL_Features.htm"></object></li>
+<li><object type="text/sitemap"><param name="Name" value="脚本兼容性"><param name="Local" value="docs/Compat.htm"></object></li>
 </ul>
 <li><object type="text/sitemap"><param name="Name" value="环境变量管理"></object>
 <ul>
@@ -56,7 +56,7 @@
 <li><object type="text/sitemap"><param name="Name" value="NumGet"><param name="Local" value="docs/commands/NumGet.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="NumPut"><param name="Local" value="docs/commands/NumPut.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RegisterCallback"><param name="Local" value="docs/commands/RegisterCallback.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="StrPut() 和 StrGet()"><param name="Local" value="docs/commands/StrPutGet.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="StrPut()/StrGet()"><param name="Local" value="docs/commands/StrPutGet.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="COM"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="ComObjActive"><param name="Local" value="docs/commands/ComObjActive.htm"></object>
@@ -92,7 +92,7 @@
 <li><object type="text/sitemap"><param name="Name" value="FileInstall"><param name="Local" value="docs/commands/FileInstall.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileMove"><param name="Local" value="docs/commands/FileMove.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileMoveDir"><param name="Local" value="docs/commands/FileMoveDir.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="FileOpen"><param name="Local" value="docs/commands/FileOpen.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="FileOpen()"><param name="Local" value="docs/commands/FileOpen.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileReadLine"><param name="Local" value="docs/commands/FileReadLine.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileRead"><param name="Local" value="docs/commands/FileRead.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileRecycle"><param name="Local" value="docs/commands/FileRecycle.htm"></object>
@@ -132,14 +132,14 @@
 <li><object type="text/sitemap"><param name="Name" value="If (表达式)"><param name="Local" value="docs/commands/IfExpression.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="If var [not] between Low and High"><param name="Local" value="docs/commands/IfBetween.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="If var is [not] type"><param name="Local" value="docs/commands/IfIs.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="If var [not] in/contains MatchList"><param name="Local" value="docs/commands/IfIn.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="If var [not] in/contains Matchlist"><param name="Local" value="docs/commands/IfIn.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="IfExist/IfNotExist"><param name="Local" value="docs/commands/IfExist.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="IfInString/IfNotInString"><param name="Local" value="docs/commands/IfInString.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="IfMsgBox"><param name="Local" value="docs/commands/IfMsgBox.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="IfWinActive/IfWinNotActive"><param name="Local" value="docs/commands/WinActive.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="IfWinExist/IfWinNotExist"><param name="Local" value="docs/commands/WinExist.htm"></object>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="Loop 循环"><param name="Local" value="docs/commands/Loop.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Loop 命令"><param name="Local" value="docs/commands/Loop.htm"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="Loop"><param name="Local" value="docs/commands/Loop.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Loop (文件和文件夹)"><param name="Local" value="docs/commands/LoopFile.htm"></object>
@@ -161,7 +161,7 @@
 <li><object type="text/sitemap"><param name="Name" value="Until"><param name="Local" value="docs/commands/Until.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="While 循环"><param name="Local" value="docs/commands/While.htm"></object>
 </ul>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="内置函数"><param name="Local" value="docs/Functions.htm"></OBJECT>
+<li><object type="text/sitemap"><param name="Name" value="内置函数"><param name="Local" value="docs/Functions.htm"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="Asc"><param name="Local" value="docs/Functions.htm#Asc"></object>
 <li><object type="text/sitemap"><param name="Name" value="Chr"><param name="Local" value="docs/Functions.htm#Chr"></object>
@@ -169,7 +169,7 @@
 <li><object type="text/sitemap"><param name="Name" value="Format"><param name="Local" value="docs/commands/Format.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="GetKeyName/VK/SC"><param name="Local" value="docs/Functions.htm#GetKeyName"></object>
 <li><object type="text/sitemap"><param name="Name" value="GetKeyState"><param name="Local" value="docs/Functions.htm#GetKeyState"></object>
-<li><object type="text/sitemap"><param name="Name" value="InStr"><param name="Local" value="docs/Functions.htm#InStr"></object>
+<li><object type="text/sitemap"><param name="Name" value="InStr"><param name="Local" value="docs/commands/InStr.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="IsByRef"><param name="Local" value="docs/Functions.htm#IsByRef"></object>
 <li><object type="text/sitemap"><param name="Name" value="IsFunc"><param name="Local" value="docs/Functions.htm#IsFunc"></object>
 <li><object type="text/sitemap"><param name="Name" value="IsLabel"><param name="Local" value="docs/Functions.htm#IsLabel"></object>
@@ -191,7 +191,7 @@
 <li><object type="text/sitemap"><param name="Name" value="WinActive"><param name="Local" value="docs/commands/WinActive.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="WinExist"><param name="Local" value="docs/commands/WinExist.htm"></object>
 </ul>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="GUI, MsgBox, InputBox 和其他对话框"></OBJECT>
+<li><object type="text/sitemap"><param name="Name" value="GUI, MsgBox, InputBox 和其他对话框"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="FileSelectFile"><param name="Local" value="docs/commands/FileSelectFile.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileSelectFolder"><param name="Local" value="docs/commands/FileSelectFolder.htm"></object>
@@ -212,9 +212,9 @@
 <li><object type="text/sitemap"><param name="Name" value="ToolTip"><param name="Local" value="docs/commands/ToolTip.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="TrayTip"><param name="Local" value="docs/commands/TrayTip.htm"></object>
 </ul>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="鼠标和键盘"></OBJECT>
+<li><object type="text/sitemap"><param name="Name" value="鼠标和键盘"></object>
 <ul>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="热键和热字串"><param name="Local" value="docs/Hotkeys.htm"></OBJECT>
+<li><object type="text/sitemap"><param name="Name" value="热键和热字串"><param name="Local" value="docs/Hotkeys.htm"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="#HotkeyInterval"><param name="Local" value="docs/commands/_HotkeyInterval.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="#HotkeyModifierTimeout"><param name="Local" value="docs/commands/_HotkeyModifierTimeout.htm"></object>
@@ -242,7 +242,7 @@
 <li><object type="text/sitemap"><param name="Name" value="ControlSend, ControlSendRaw"><param name="Local" value="docs/commands/ControlSend.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="CoordMode"><param name="Local" value="docs/commands/CoordMode.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="GetKeyState"><param name="Local" value="docs/commands/GetKeyState.htm"></object>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="按键列表 (键盘, 鼠标, 操纵杆)"><param name="Local" value="docs/KeyList.htm"></OBJECT>
+<li><object type="text/sitemap"><param name="Name" value="按键列表 (键盘, 鼠标, 操纵杆)"><param name="Local" value="docs/KeyList.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="KeyHistory"><param name="Local" value="docs/commands/KeyHistory.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="KeyWait"><param name="Local" value="docs/commands/KeyWait.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Input"><param name="Local" value="docs/commands/Input.htm"></object>
@@ -259,7 +259,7 @@
 <li><object type="text/sitemap"><param name="Name" value="SetNumScrollCapsLockState"><param name="Local" value="docs/commands/SetNumScrollCapsLockState.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SetStoreCapslockMode"><param name="Local" value="docs/commands/SetStoreCapslockMode.htm"></object>
 </ul>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="数学相关"></OBJECT>
+<li><object type="text/sitemap"><param name="Name" value="数学相关"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="Abs"><param name="Local" value="docs/Functions.htm#Abs"></object>
 <li><object type="text/sitemap"><param name="Name" value="Ceil"><param name="Local" value="docs/Functions.htm#Ceil"></object>
@@ -276,13 +276,13 @@
 <li><object type="text/sitemap"><param name="Name" value="ASin/ACos/ATan"><param name="Local" value="docs/Functions.htm#ASin"></object>
 <li><object type="text/sitemap"><param name="Name" value="Transform"><param name="Local" value="docs/commands/Transform.htm"></object>
 </ul>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="屏幕管理"></OBJECT>
+<li><object type="text/sitemap"><param name="Name" value="屏幕管理"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="ImageSearch"><param name="Local" value="docs/commands/ImageSearch.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="PixelGetColor"><param name="Local" value="docs/commands/PixelGetColor.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="PixelSearch"><param name="Local" value="docs/commands/PixelSearch.htm"></object>
 </ul>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="杂项命令"></OBJECT>
+<li><object type="text/sitemap"><param name="Name" value="杂项命令"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="#NoTrayIcon"><param name="Local" value="docs/commands/_NoTrayIcon.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="#SingleInstance"><param name="Local" value="docs/commands/_SingleInstance.htm"></object>
@@ -297,14 +297,14 @@
 <li><object type="text/sitemap"><param name="Name" value="URLDownloadToFile"><param name="Local" value="docs/commands/URLDownloadToFile.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="VarSetCapacity"><param name="Local" value="docs/commands/VarSetCapacity.htm"></object>
 </ul>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="进程管理"></OBJECT>
+<li><object type="text/sitemap"><param name="Name" value="进程管理"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="Process"><param name="Local" value="docs/commands/Process.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Run/RunWait"><param name="Local" value="docs/commands/Run.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RunAs"><param name="Local" value="docs/commands/RunAs.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Shutdown"><param name="Local" value="docs/commands/Shutdown.htm"></object>
 </ul>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="注册表管理"></OBJECT>
+<li><object type="text/sitemap"><param name="Name" value="注册表管理"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="Loop (解析注册表)"><param name="Local" value="docs/commands/LoopReg.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RegDelete"><param name="Local" value="docs/commands/RegDelete.htm"></object>
@@ -312,7 +312,7 @@
 <li><object type="text/sitemap"><param name="Name" value="RegWrite"><param name="Local" value="docs/commands/RegWrite.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SetRegView"><param name="Local" value="docs/commands/SetRegView.htm"></object>
 </ul>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="声音命令"></OBJECT>
+<li><object type="text/sitemap"><param name="Name" value="声音命令"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="SoundBeep"><param name="Local" value="docs/commands/SoundBeep.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SoundGet"><param name="Local" value="docs/commands/SoundGet.htm"></object>
@@ -322,12 +322,12 @@
 <li><object type="text/sitemap"><param name="Name" value="SoundSetWaveVolume"><param name="Local" value="docs/commands/SoundSetWaveVolume.htm"></object>
 </ul>
 <li><object type="text/sitemap"><param name="Name" value="字符串管理"></object>
-<UL>
+<ul>
 <li><object type="text/sitemap"><param name="Name" value="Format()"><param name="Local" value="docs/commands/Format.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FormatTime"><param name="Local" value="docs/commands/FormatTime.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="IfInString/IfNotInString"><param name="Local" value="docs/commands/IfInString.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="If var [not] in/contains MatchList"><param name="Local" value="docs/commands/IfIn.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="InStr()"><param name="Local" value="docs/Functions.htm#InStr"></object>
+<li><object type="text/sitemap"><param name="Name" value="InStr()"><param name="Local" value="docs/commands/InStr.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Loop（解析字符串）"><param name="Local" value="docs/commands/LoopParse.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RegExMatch()"><param name="Local" value="docs/commands/RegExMatch.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RegExReplace()"><param name="Local" value="docs/commands/RegExReplace.htm"></object>
