@@ -465,15 +465,15 @@ MsgBox,  %ElapsedTime% milliseconds have elapsed.</pre>
   </tr>
   <tr id="SendMode">
     <td>A_SendMode</td>
-    <td><span class="ver">[v1.1.23+]:</span> The current mode (Event, Input, Play or InputThenPlay) set by  <a href="commands/SendMode.htm">SendMode</a>.</td>
+    <td><span class="ver">[v1.1.23+]:</span> 由 <a href="commands/SendMode.htm">SendMode</a> 设置的当前模式字符串 (可能的值为: Event, Input, Play 或 InputThenPlay).</td>
   </tr>
   <tr id="SendLevel">
     <td>A_SendLevel</td>
-    <td><span class="ver">[v1.1.23+]:</span> The current <a href="commands/SendLevel.htm">SendLevel</a> setting (an integer between 0 and 100, inclusive).</td>
+    <td><span class="ver">[v1.1.23+]:</span> 当前 <a href="commands/SendLevel.htm">SendLevel</a> 的设置 (可能的值为: 0 到 100 之间的整数, 包括0和100).</td>
   </tr>
   <tr id="StoreCapslockMode">
     <td>A_StoreCapslockMode</td>
-    <td><span class="ver">[v1.1.23+]:</span> The current mode (On or Off) set by <a href="commands/SetStoreCapslockMode.htm">SetStoreCapslockMode</a>.</td>
+    <td><span class="ver">[v1.1.23+]:</span> 由 <a href="commands/SetStoreCapslockMode.htm">SetStoreCapslockMode</a> 设置的当前模式字符串 (可能的值为: On 或 Off).</td>
   </tr>
   <tr id="KeyDelay">
     <td>A_KeyDelay<br>
@@ -483,7 +483,7 @@ MsgBox,  %ElapsedTime% milliseconds have elapsed.</pre>
   <tr id="KeyDelayPlay">
     <td>A_KeyDelayPlay<br>
     A_KeyDurationPlay</td>
-    <td>The current delay or duration set by <a href="commands/SetKeyDelay.htm">SetKeyDelay</a> for the <a href="commands/Send.htm#SendPlayDetail">SendPlay</a> mode (always decimal, not hex). Requires <span class="ver">[v1.1.23+]</span>.</td>
+    <td>表示由 <a href="commands/SetKeyDelay.htm">SetKeyDelay</a> 设置 <a href="commands/Send.htm#SendPlayDetail">SendPlay</a> 模式的延迟或持续时间 (总是十进制数, 不是十六进制). 依赖 <span class="ver">[v1.1.23+]</span>.</td>
   </tr>
   <tr id="WinDelay">
     <td>A_WinDelay</td>
@@ -496,7 +496,7 @@ MsgBox,  %ElapsedTime% milliseconds have elapsed.</pre>
   <tr id="MouseDelay">
     <td>A_MouseDelay<br>
     A_MouseDelayPlay</td>
-    <td>由 <a href="commands/SetMouseDelay.htm">SetMouseDelay</a> 设置的当前延迟 (总是十进制数, 不是十六进制). A_MouseDelay is for the traditional SendEvent mode, whereas A_MouseDelayPlay is for <a href="commands/Send.htm#SendPlayDetail">SendPlay</a>. A_MouseDelayPlay requires <span class="ver">[v1.1.23+]</span>.</td>
+    <td>由 <a href="commands/SetMouseDelay.htm">SetMouseDelay</a> 设置的当前延迟 (总是十进制数, 不是十六进制). A_MouseDelay 表示传统的 SendEvent 模式, 而 A_MouseDelayPlay 则表示 <a href="commands/Send.htm#SendPlayDetail">SendPlay</a>. A_MouseDelayPlay 依赖 <span class="ver">[v1.1.23+]</span>.</td>
   </tr>
   <tr id="DefaultMouseSpeed">
     <td>A_DefaultMouseSpeed</td>
@@ -508,7 +508,7 @@ MsgBox,  %ElapsedTime% milliseconds have elapsed.</pre>
     A_CoordModeMouse<br>
     A_CoordModeCaret<br>
     A_CoordModeMenu</td>
-    <td><span class="ver">[v1.1.23+]:</span> The current mode (Window, Client or Screen) set by <a href="commands/CoordMode.htm">CoordMode</a>.</td>
+    <td><span class="ver">[v1.1.23+]:</span> <a href="commands/CoordMode.htm">CoordMode</a> 的当前设置值的字符串. (可能的值为: Window, Client 或 Screen) </td>
   </tr>
   <tr id="RegView">
     <td>A_RegView</td>
