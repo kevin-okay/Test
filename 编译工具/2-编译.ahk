@@ -3,7 +3,6 @@
 #Warn, LocalSameAsGlobal, Off
 #Warn, UseUnsetLocal, Off
 
-Include_Functions()
 Include_CpTransform()
 
 ;~ 删除已经存在的输出文件 AutoHotkey.chm
@@ -89,7 +88,7 @@ Convert_cp_4chinese()
 {
    Loop, %A_ScriptDir%\*.htm, , 1
    {
-       _fEncoding := Unicode_GetFileEncoding(A_LoopFileFullPath)
+       _fEncoding := File_GetEncoding(A_LoopFileFullPath)
        
       ;~ utf8+bom,需要改为 utf8 no bom
       if (_fEncoding = 4)
