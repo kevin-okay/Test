@@ -186,7 +186,7 @@
 <li><object type="text/sitemap"><param name="Name" value="StrPut/StrGet"><param name="Local" value="docs/commands/StrPutGet.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="StrReplace"><param name="Local" value="docs/commands/StringReplace.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="StrSplit"><param name="Local" value="docs/commands/StringSplit.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="SubStr"><param name="Local" value="docs/Functions.htm#SubStr"></object>
+<li><object type="text/sitemap"><param name="Name" value="SubStr"><param name="Local" value="docs/commands/SubStr.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="VarSetCapacity"><param name="Local" value="docs/commands/VarSetCapacity.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="WinActive"><param name="Local" value="docs/commands/WinActive.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="WinExist"><param name="Local" value="docs/commands/WinExist.htm"></object>
@@ -347,7 +347,7 @@
 <li><object type="text/sitemap"><param name="Name" value="StrPut()/StrGet()"><param name="Local" value="docs/commands/StrPutGet.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="StrReplace()"><param name="Local" value="docs/commands/StringReplace.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="StrSplit()"><param name="Local" value="docs/commands/StringSplit.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="SubStr()"><param name="Local" value="docs/Functions.htm#SubStr"></object>
+<li><object type="text/sitemap"><param name="Name" value="SubStr()"><param name="Local" value="docs/commands/SubStr.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Trim()"><param name="Local" value="docs/commands/Trim.htm"></object>
 </ul>
 <li><object type="text/sitemap"><param name="Name" value="´°¿Ú¹ÜÀí"></object>

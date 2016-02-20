@@ -789,7 +789,7 @@
 <li><object type="text/sitemap"><param name="Name" value="StrGet()"><param name="Local" value="docs/commands/StrPutGet.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="string (search for)"><param name="Local" value="docs/commands/InStr.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="string: InStr()"><param name="Local" value="docs/commands/InStr.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="string: SubStr()"><param name="Local" value="docs/Functions.htm#SubStr"></object>
+<li><object type="text/sitemap"><param name="Name" value="string: SubStr()"><param name="Local" value="docs/commands/SubStr.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="StringCaseSense"><param name="Local" value="docs/commands/StringCaseSense.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="StringGetPos"><param name="Local" value="docs/commands/StringGetPos.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="StringLeft"><param name="Local" value="docs/commands/StringLeft.htm"></object>
@@ -808,7 +808,7 @@
 <li><object type="text/sitemap"><param name="Name" value="StrSplit()"><param name="Local" value="docs/commands/StringSplit.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="structures, via DllCall"><param name="Local" value="docs/commands/DllCall.htm#struct"></object>
 <li><object type="text/sitemap"><param name="Name" value="styles for GUI command"><param name="Local" value="docs/misc/Styles.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="SubStr()"><param name="Local" value="docs/Functions.htm#SubStr"></object>
+<li><object type="text/sitemap"><param name="Name" value="SubStr()"><param name="Local" value="docs/commands/SubStr.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="subtract"><param name="Local" value="docs/commands/EnvSub.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Super-global variables"><param name="Local" value="docs/Functions.htm#SuperGlobal"></object>
 <li><object type="text/sitemap"><param name="Name" value="Suspend"><param name="Local" value="docs/commands/Suspend.htm"></object>
