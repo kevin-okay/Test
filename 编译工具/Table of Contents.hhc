@@ -38,7 +38,7 @@
 <li><object type="text/sitemap"><param name="Name" value="函数对象"><param name="Local" value="docs/objects/Functor.htm"></object>
 </ul>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="迁移到 AutoHotkey_L 1.1"></object>
+<li><object type="text/sitemap"><param name="Name" value="迁移到 AutoHotkey 1.1 (AutoHotkey_L)"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="AutoHotkey_L 新特性"><param name="Local" value="docs/AHKL_Features.htm"></object></li>
 <li><object type="text/sitemap"><param name="Name" value="脚本兼容性"><param name="Local" value="docs/Compat.htm"></object></li>
@@ -328,7 +328,7 @@
 <li><object type="text/sitemap"><param name="Name" value="IfInString/IfNotInString"><param name="Local" value="docs/commands/IfInString.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="If var [not] in/contains MatchList"><param name="Local" value="docs/commands/IfIn.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="InStr()"><param name="Local" value="docs/commands/InStr.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Loop（解析字符串）"><param name="Local" value="docs/commands/LoopParse.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Loop (解析字符串)"><param name="Local" value="docs/commands/LoopParse.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RegExMatch()"><param name="Local" value="docs/commands/RegExMatch.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RegExReplace()"><param name="Local" value="docs/commands/RegExReplace.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SetEnv (var = value)"><param name="Local" value="docs/commands/SetEnv.htm"></object>
