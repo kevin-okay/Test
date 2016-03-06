@@ -261,7 +261,7 @@ other.test()</pre>
         ...
     }
 
-    Property[]  <em>; 方括号是可选的</em>
+    Property[]  <em>; 方括号是可选的,(译者注:这是实例属性)</em>
     {
         get {
             return ...
@@ -315,8 +315,8 @@ Method()
 </ul>
 <p><code>base</code> 仅在后面跟着点 <code>.</code> 或方括号 <code>[]</code> 时才有特殊含义, 所以像 <code>obj := base, obj.Method()</code> 这样的代码将不起作用. 通过把 <i>base</i> 赋为非空值可以禁用它的特殊行为,但是不建议这样做. 因为变量 <i>base</i> 必须为空, 所以如果脚本中不含有 <a href="commands/_NoEnv.htm">#NoEnv</a> 指令那么性能可能会降低.</p>
 
-<h4 id="Custom_Classes_property">Properties （属性）<span class="ver">[v1.1.16+]</span></h4>
-<p>属性定义允许当脚本获取或设置一个指定键时调用一个方法.</p>
+<h4 id="Custom_Classes_property">Properties （属性）(译者注: 实例属性而不是类属性) <span class="ver">[v1.1.16+]</span></h4>
+<p>属性的定义用于当脚本获取或设置一个指定键时调用一个方法.</p>
 <pre>Property[]
 {
     get {
@@ -326,11 +326,11 @@ Method()
         return ... := value
     }
 }</pre>
-<p><em>Property</em> 是用户定义的名称,用于标识属性.如, <code>obj.Property</code> 将调用 <em>get</em> ,而 <code>obj.Property := value</code> 将调用 <em>set</em> . 在 <em>get</em> 或 <em>set</em> 内, <code>this</code> 指向被引用的对象. <em>set</em> , <code>value</code> 中包含正要赋予的值.</p>
-<p>可在属性名右后使用方括号包裹以传递参数, 可用于定义及调用中. 除了使用方括号这点不同, 属性的参数和方法的参数定义方法完全一样 - 可选参数, ByRef 和 可变参数 也都支持.</p>
+<p><em>Property</em> 是用自定义属性的名称.如, <code>obj.myName</code> 将调用 <em>get</em> ,而 <code>obj.myName := value</code> 将调用 <em>set</em> . 在 <em>get</em> 或 <em>set</em> 内, <code>this</code> 指向当前类的实例对象. <em>set</em> , <code>value</code> 中包含正要赋予的值.(译者注: value 相当于set的内置变量,必须用这个单词引用传入的值.)</p>
+<p>可选则在属性名右后使用方括号包裹以传递参数, 可用于定义或调用. 除了使用方括号这点不同, 属性的参数和方法的参数定义方法完全一样 - 可选参数, ByRef 和 可变参数 也都支持.</p>
 <p><em>get</em> 或 <em>set</em> 的返回值, 成为引用属性的子表达式的结果.如, <code>val := obj.Property := 42</code> 存储 <em>set</em> 的返回值至 <code>val</code>.</p>
-<p>每个类可定义部分或完整的属性.如果一个类覆盖了属性,可用 <code><a href="#Custom_Classes_base">base.Property</a></code> 访问定义于其基类中的属性. 如果 <em>get</em> 或 <em>set</em> 未定, 会交由基类处理. 如果 <em>set</em> 未定义, 且未被元表或基类处理, 赋予的值被存储于对象中, 相当于禁用了属性. </p>
-<p>内部 <em>get</em> 与 <em>set</em> 是独立的两方法, 故不可共享变量(除非存储于 <code>this</code>中).</p>
+<p>每个类可定义部分或完整的属性.如果子类覆盖了父类的属性,可用 <code><a href="#Custom_Classes_base">base.Property</a></code> 访问定义于其父类中的属性. 如果子类中没有定义 <em>get</em> 或 <em>set</em> , 则会交由父类处理. 如果父类也没有 <em>set</em> 定义, 且未被元函数或默认基类处理,那么赋予的值无法存储于实例对象中,相当于禁用了属性.</p>
+<p>内部 <em>get</em> 与 <em>set</em> 是独立的两方法, 故不可共享变量(除非存储于 <code>this</code> 中).</p>
 <p><a href="#Meta_Functions">Meta-functions (元方法) </a> 提供了广泛的控制属性访问, 方法调用的机制, 但更复杂及易错.</p>
 
 <h3 id="Custom_NewDelete">创建和销毁</h3>
