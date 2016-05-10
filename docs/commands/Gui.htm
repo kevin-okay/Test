@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>GUI</title>
@@ -98,7 +97,7 @@ Gui, Show</pre>
 <p><strong>Center</strong>: ÈÃ´°¿ÚÔÚÆÁÄ»µÄË®Æ½ºÍ´¹Ö±·½ÏòÉÏ¾ÓÖÐ.</p>
 <p><strong>xCenter</strong>: ÈÃ´°¿ÚÔÚÆÁÄ»µÄË®Æ½·½ÏòÉÏ¾ÓÖÐ. ÀýÈç£º<code>Gui, Show, xCenter y0</code>¡£</p>
 <p><strong>yCenter</strong>: ÈÃ´°¿ÚÔÚÆÁÄ»µÄ´¹Ö±·½ÏòÉÏ¾ÓÖÐ.</p>
-<p><strong><a name="AutoSize"></a>AutoSize</strong>: ¸ù¾Ý´°¿Úµ±Ç°°üº¬µÄ¿É¼û¿Ø¼þµ÷Õû´°¿ÚµÄ´óÐ¡. Õâ³£ÔÚÌí¼ÓÐÂ¿Ø¼þ, µ÷ÕûÏÖÓÐ¿Ø¼þµÄ´óÐ¡»òÒþ²Ø/ÏÔÊ¾ÏÖÓÐ¿Ø¼þºóÓÃÀ´µ÷Õû´°¿ÚµÄ´óÐ¡. ÀýÈç£º:<br>
+<p id="AutoSize"><strong>AutoSize</strong>: ¸ù¾Ý´°¿Úµ±Ç°°üº¬µÄ¿É¼û¿Ø¼þµ÷Õû´°¿ÚµÄ´óÐ¡. Õâ³£ÔÚÌí¼ÓÐÂ¿Ø¼þ, µ÷ÕûÏÖÓÐ¿Ø¼þµÄ´óÐ¡»òÒþ²Ø/ÏÔÊ¾ÏÖÓÐ¿Ø¼þºóÓÃÀ´µ÷Õû´°¿ÚµÄ´óÐ¡. ÀýÈç£º:<br>
   <code>Gui, Show, AutoSize Center</code></p>
 <p><br>
   <em><strong>»¹¿ÉÒÔ°üº¬ÏÂÁÐ²ÎÊýµÄÆäÖÐÒ»¸ö:</strong></em></p>
@@ -173,37 +172,37 @@ Gui <strong>MyGui:</strong>+Resize -MaximizeBox  <em>; ¸Ä±äÃû³ÆÎª <i>MyGui</i> µ
 <p><strong>AlwaysOnTop</strong>£ºÈÃ´°¿ÚÖÃ¶¥£¬Óë <a href="WinSet.htm#AlwaysOnTop">WinSet AlwaysOnTop</a> µÄÐ§¹ûÏàÍ¬¡£</p>
 <p><strong>Border</strong>: Îª´°¿ÚÔö¼ÓÏ¸±ß¿ò. ´ËÑ¡Ïî²»³£ÓÃ.</p>
 <p><strong>Caption</strong> (Ä¬ÈÏ¾ßÓÐ´ËÑ¡Ïî): Îª´°¿ÚÔö¼Ó±êÌâÀ¸ºÍ´Ö±ß¿ò. Èç¹ûÒªÒÆ³ý½«ÒªÊ¹ÓÃ <a href="WinSet.htm#TransColor">WinSet TransColor</a> ÉèÖÃÍ¸Ã÷µÄ´°¿ÚµÄ±êÌâÀ¸, ÄÇÃ´ÔÚÐèÒªÔÚÉèÖÃ TransColor ºó²Å½øÐÐÒÆ³ý.</p>
-<p><strong><a name="Delimiter"></a>Delimiter</strong>: Ö¸¶¨¹ÜµÀ (|) ÍâµÄÆäËû×Ö·û×÷Îª´°¿ÚµÄ×Ö¶Î·Ö¸ô·û, Ã¿µ±Ê¹ÓÃ <a href="#Add">Gui Add</a> Ìí¼Ó, Ê¹ÓÃ <a href="GuiControl.htm">GuiControl</a> ÐÞ¸Ä, Ê¹ÓÃ <a href="#Submit">Gui Submit</a> »ò <a href="GuiControlGet.htm">GuiControlGet</a> »ñÈ¡¿Ø¼þµÄÄÚÈÝÊ±. ÔÚµ¥´Ê Delimiter ºó½ô¸ú×Åµ¥¸ö×Ö·û. ÀýÈç£¬<code>Gui +Delimiter`n</code> ½«Ê¹ÓÃ»»ÐÐ·û£¬Õâ¿ÉÄÜÌØ±ðÊÊºÏÓÚ<a href="../Scripts.htm#continuation">ÑÓÐøÆ¬¶Î</a>¡£Í¬Ñù£¬Ê¹ÓÃ <code>Gui +Delimiter|</code> ½«»Ö¸´ÎªÄ¬ÈÏµÄ·Ö¸ô·û¡£ÒªÊ¹ÓÃ¿Õ¸ñ»ò tab£¬Ö¸¶¨ <code>Gui +DelimiterSpace</code> »ò <code>Gui +DelimiterTab</code>¡£Ò»µ©¸Ä±äÊý¾Ý·Ö¸ô·û, Ëü»áÓ°Ïì×÷ÓÃÓÚÕâ¸öÌØÊâ´°¿ÚµÄËùÓÐÏÖÔÚºÍºóÐøµÄ <a href="../misc/Threads.htm">Ïß³Ì</a>.</p>
+<p id="Delimiter"><strong>Delimiter</strong>: Ö¸¶¨¹ÜµÀ (|) ÍâµÄÆäËû×Ö·û×÷Îª´°¿ÚµÄ×Ö¶Î·Ö¸ô·û, Ã¿µ±Ê¹ÓÃ <a href="#Add">Gui Add</a> Ìí¼Ó, Ê¹ÓÃ <a href="GuiControl.htm">GuiControl</a> ÐÞ¸Ä, Ê¹ÓÃ <a href="#Submit">Gui Submit</a> »ò <a href="GuiControlGet.htm">GuiControlGet</a> »ñÈ¡¿Ø¼þµÄÄÚÈÝÊ±. ÔÚµ¥´Ê Delimiter ºó½ô¸ú×Åµ¥¸ö×Ö·û. ÀýÈç£¬<code>Gui +Delimiter`n</code> ½«Ê¹ÓÃ»»ÐÐ·û£¬Õâ¿ÉÄÜÌØ±ðÊÊºÏÓÚ<a href="../Scripts.htm#continuation">ÑÓÐøÆ¬¶Î</a>¡£Í¬Ñù£¬Ê¹ÓÃ <code>Gui +Delimiter|</code> ½«»Ö¸´ÎªÄ¬ÈÏµÄ·Ö¸ô·û¡£ÒªÊ¹ÓÃ¿Õ¸ñ»ò tab£¬Ö¸¶¨ <code>Gui +DelimiterSpace</code> »ò <code>Gui +DelimiterTab</code>¡£Ò»µ©¸Ä±äÊý¾Ý·Ö¸ô·û, Ëü»áÓ°Ïì×÷ÓÃÓÚÕâ¸öÌØÊâ´°¿ÚµÄËùÓÐÏÖÔÚºÍºóÐøµÄ <a href="../misc/Threads.htm">Ïß³Ì</a>.</p>
 <p><strong>Disabled</strong>: ½ûÓÃ´°¿Ú, ×èÖ¹ÓÃ»§ºÍ´°¿ÚÖÐµÄ¿Ø¼þ½»»¥. ´ËÑ¡Ïî³£ÓÃÓÚº¬ÓÐ×Ó´°¿ÚµÄ´°¿Ú (Çë²ÎÔÄ <a href="#Owner">Owner</a>).</p>
 <p id="DPIScale"><strong>DPIScale</strong> <span class="ver">[v1.1.11+]</span>£ºÊ¹ÓÃ <code>Gui -DPIScale</code> ½ûÓÃ DPI Ëõ·Å£¬ËüÄ¬ÈÏÊÇÆôÓÃµÄ¡£Èç¹ûÔÚÊ¹ÓÃ·Ç±ê×¼ DPI ÉèÖÃµÄÏµÍ³ÉÏÆôÓÃ DPI Ëõ·Å£¬Ôò Gui ÃüÁî»á×Ô¶¯µ÷Õû×ø±êºÍ³ß´çÀ´ÈÃ¿Ø¼þ¾ßÓÐ´óÖÂÏàÍ¬µÄÍâ¹Û³ß´ç£¨²»¹ý½âÎöÂÊ¸ü¸ß£©¡£ÀýÈç£¬¶ÔÓÚ 144£¨150%£© µÄ DPI£¬<code>Gui Show, w100</code> »áÈÃ Gui ¿í¶ÈÎª 150 ÏñËØ£¬µ« <a href="../Variables.htm#GuiWidth">A_GuiWidth</a> ½«±£³Ö 100¡£<a href="../Variables.htm#ScreenDPI">A_ScreenDPI</a> °üº¬ÁËÏµÍ³µ±Ç° DPI¡£</p>
 <p id="GuiHwndOutputVar"><strong>Hwnd</strong><em>OutputVar</em> <span class="ver">[v1.1.04+]:</span> ´ËÑ¡Ïî±£´æ GUI µÄ´°¿Ú¾ä±ú (HWND) µ½ <em>OutputVar</em>. ÀýÈç£º<code>Gui +HwndMyGuiHwnd</code>¡£ÔÚº¯ÊýÖÐÊ¹ÓÃÊ±, <em>MyGuiHwnd</em> »á±»ÊÓÎª <a href="../Functions.htm#DynVar">º¯Êý¶¯Ì¬±äÁ¿</a>. GUI µÄ HWND ³£ÓÃÓÚ <a href="PostMessage.htm">PostMessage</a>, <a href="PostMessage.htm">SendMessage</a> ºÍ <a href="DllCall.htm">DllCall</a>. Ëü»¹¿ÉÒÔÖ±½Ó×÷Îª <a href="../misc/WinTitle.htm#ahk_id">ahk_id WinTitle</a> »ò´úÌæ GUI Ãû³ÆÀ´Ê¹ÓÃ£¬ÀýÈç <code>Gui %MyGuiHwnd%:Destroy</code>¡£</p>
-<p><strong><a name="PlusLabel"></a>Label</strong> <span class="ver">[v1.0.44.09+]:</span> Îªµ±Ç°´°¿ÚµÄ <a href="#Labels">ÌØÊâ±êÇ©</a> Ö¸¶¨×Ô¶¨ÒåÃû³Æ. ÀýÈç£¬<code>Gui MyGui:+LabelMyGui_On</code> ½«Ê¹ÓÃ±êÇ© MyGui_OnClose ºÍ MyGui_OnSize£¨Èç¹ûËüÃÇ´æÔÚ£©·Ö±ð´úÌæ MyGuiGuiClose ºÍ MyGuiGuiSize¡£»»¾ä»°Ëµ, ÔÚËùÓÐ <a href="#Labels">ÌØÊâ±êÇ©</a> µÄÃû³ÆÖÐ×Ö·û´® "MyGuiGui" ±»Ìæ»»Îª "MyGui_On". Õâ¿ÉÒÔÈÃ¶à¸ö´°¿ÚÊ¹ÓÃÒ»Ì×ÏàÍ¬µÄ±êÇ© (´ËÊ±½Å±¾¿ÉÒÔ¸ù¾Ý <a href="../Variables.htm#Gui">A_Gui</a> À´È·¶¨ÔËÐÐ×Ó³ÌÐòµÄ´°¿ÚÊÇÄÄ¸ö).</p>
-<p><strong><a name="LastFound"></a>LastFound</strong>: ÉèÖÃ´°¿ÚÎª <a href="../misc/WinTitle.htm#LastFoundWindow">ÉÏ´ÎÕÒµ½µÄ´°¿Ú</a> (¶ÔÓÚ <a href="#DefaultWin">Gui Ïß³Ì</a> ÕâÊÇ¶àÓàµÄ, ÒòÎªËü×Ô¶¯ÉèÖÃÁË), ÕâÑùÔÊÐíÀàËÆ <a href="WinSet.htm">WinSet</a> ÕâÑùµÄÃüÁî¶Ô´Ë´°¿Ú½øÐÐ²Ù×÷, ¼´Ê¹Ëüµ±Ç°ÎªÒþ²Ø×´Ì¬ (¼´²»ÐèÒªÊ¹ÓÃ <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>). ÐèÒªÔÚÏÔÊ¾´°¿ÚÖ®Ç°¸Ä±äÆäÊôÐÔÊ±, ÕâÊÇ·Ç³£ÓÐÓÃµÄ. ÀýÈç£º</p>
+<p id="PlusLabel"><strong>Label</strong> <span class="ver">[v1.0.44.09+]:</span> Îªµ±Ç°´°¿ÚµÄ <a href="#Labels">ÌØÊâ±êÇ©</a> Ö¸¶¨×Ô¶¨ÒåÃû³Æ. ÀýÈç£¬<code>Gui MyGui:+LabelMyGui_On</code> ½«Ê¹ÓÃ±êÇ© MyGui_OnClose ºÍ MyGui_OnSize£¨Èç¹ûËüÃÇ´æÔÚ£©·Ö±ð´úÌæ MyGuiGuiClose ºÍ MyGuiGuiSize¡£»»¾ä»°Ëµ, ÔÚËùÓÐ <a href="#Labels">ÌØÊâ±êÇ©</a> µÄÃû³ÆÖÐ×Ö·û´® "MyGuiGui" ±»Ìæ»»Îª "MyGui_On". Õâ¿ÉÒÔÈÃ¶à¸ö´°¿ÚÊ¹ÓÃÒ»Ì×ÏàÍ¬µÄ±êÇ© (´ËÊ±½Å±¾¿ÉÒÔ¸ù¾Ý <a href="../Variables.htm#Gui">A_Gui</a> À´È·¶¨ÔËÐÐ×Ó³ÌÐòµÄ´°¿ÚÊÇÄÄ¸ö).</p>
+<p id="LastFound"><strong>LastFound</strong>: ÉèÖÃ´°¿ÚÎª <a href="../misc/WinTitle.htm#LastFoundWindow">ÉÏ´ÎÕÒµ½µÄ´°¿Ú</a> (¶ÔÓÚ <a href="#DefaultWin">Gui Ïß³Ì</a> ÕâÊÇ¶àÓàµÄ, ÒòÎªËü×Ô¶¯ÉèÖÃÁË), ÕâÑùÔÊÐíÀàËÆ <a href="WinSet.htm">WinSet</a> ÕâÑùµÄÃüÁî¶Ô´Ë´°¿Ú½øÐÐ²Ù×÷, ¼´Ê¹Ëüµ±Ç°ÎªÒþ²Ø×´Ì¬ (¼´²»ÐèÒªÊ¹ÓÃ <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>). ÐèÒªÔÚÏÔÊ¾´°¿ÚÖ®Ç°¸Ä±äÆäÊôÐÔÊ±, ÕâÊÇ·Ç³£ÓÐÓÃµÄ. ÀýÈç£º</p>
 <pre>Gui +LastFound
 WinSet, TransColor, %CustomColor% 150
 Gui Show</pre>
-<p><strong><a name="LastFoundExist"></a>LastFoundExist</strong> <span class="ver">[v1.0.43.09+]:</span> ºÍÆäËûÑ¡Ïî²»Í¬, LastFoundExist Ñ¡ÏîÖ»ÓÐÔÚµ¥¶ÀÊ¹ÓÃÊ±²ÅÓÐÐ§. <em>+LastFoundExist</em> µÄÐ§¹ûÓë <em>+LastFound</em> ÏàÍ¬, ²»¹ýÈç¹û´°¿Ú²»´æÔÚÊ±²»»á´´½¨´°¿Ú. ´ËÑ¡ÏîµÄÖ÷ÒªÓÃÍ¾ÊÇÅÐ¶ÏÊÇ·ñ´æÔÚÄ³ÌØÊâµÄ´°¿Ú. ÀýÈç£º</p>
+<p id="LastFoundExist"><strong>LastFoundExist</strong> <span class="ver">[v1.0.43.09+]:</span> ºÍÆäËûÑ¡Ïî²»Í¬, LastFoundExist Ñ¡ÏîÖ»ÓÐÔÚµ¥¶ÀÊ¹ÓÃÊ±²ÅÓÐÐ§. <em>+LastFoundExist</em> µÄÐ§¹ûÓë <em>+LastFound</em> ÏàÍ¬, ²»¹ýÈç¹û´°¿Ú²»´æÔÚÊ±²»»á´´½¨´°¿Ú. ´ËÑ¡ÏîµÄÖ÷ÒªÓÃÍ¾ÊÇÅÐ¶ÏÊÇ·ñ´æÔÚÄ³ÌØÊâµÄ´°¿Ú. ÀýÈç£º</p>
 <pre>Gui MyGui:+LastFoundExist
 IfWinExist
     MsgBox GUI "MyGui" already exists.</pre>
 <p><strong>MaximizeBox</strong>: ÆôÓÃ±êÌâÀ¸ÉÏµÄ×î´ó»¯°´Å¥. ÏÂÃæµÄ <em>Resize</em> Ò²º¬ÓÐ´ËÐ§¹û.</p>
 <p><strong>MinimizeBox</strong> (Ä¬ÈÏº¬ÓÐ´ËÑ¡Ïî): ÆôÓÃ±êÌâÀ¸ÉÏµÄ×îÐ¡»¯°´Å¥.</p>
-<p><strong><a name="MinSize"></a>MinSize</strong> ºÍ <strong>MaxSize</strong> <span class="ver">[v1.0.44.13+]:</span> ÏÞ¶¨´°¿ÚµÄ×îÐ¡³ß´çºÍ×î´ó³ß´ç, ÀýÈçµ±ÓÃ»§ÍÏ¶¯´°¿Ú±ß¿ò¸Ä±äÆä´óÐ¡µÄÊ±ºò. Ö¸¶¨²»´øºó×ºµÄµ¥´Ê <em>MinSize</em> ºÍ/»ò <em>MaxSize</em> À´Ê¹ÓÃ´°¿Úµ±Ç°³ß´ç×÷ÎªÏÞÖÆ´óÐ¡ (Èç¹ûÃ»ÓÐ´°¿Úµ±Ç°³ß´ç, ÔòÊ¹ÓÃÊ×´Î <a href="#Show">Gui Show</a> Ê±ÏÔÊ¾µÄ´óÐ¡). »¹¿ÉÒÔÔÚºóÃæ¼ÓÉÏ¿í¶È£¬¸ú×Å X ºÍ¸ß¶È£¬ÀýÈç£º<code>Gui +Resize +MinSize640x480</code>¡£ËüÃÇÖ¸¶¨ÁËÒÔÏñËØÎªµ¥Î»µÄ´°¿Ú¹¤×÷Çø (²»°üÀ¨±ß¿ò, ±êÌâÀ¸ºÍ <a href="#Menu">²Ëµ¥À¸</a>) µÄ´óÐ¡. ¹æ¶¨Ã¿¸öÊý×ÖÎªÊ®½øÖÆ, ¶ø²»ÊÇÊ®Áù½øÖÆ.</p>
+<p id="MinSize"><strong>MinSize</strong> ºÍ <strong>MaxSize</strong> <span class="ver">[v1.0.44.13+]:</span> ÏÞ¶¨´°¿ÚµÄ×îÐ¡³ß´çºÍ×î´ó³ß´ç, ÀýÈçµ±ÓÃ»§ÍÏ¶¯´°¿Ú±ß¿ò¸Ä±äÆä´óÐ¡µÄÊ±ºò. Ö¸¶¨²»´øºó×ºµÄµ¥´Ê <em>MinSize</em> ºÍ/»ò <em>MaxSize</em> À´Ê¹ÓÃ´°¿Úµ±Ç°³ß´ç×÷ÎªÏÞÖÆ´óÐ¡ (Èç¹ûÃ»ÓÐ´°¿Úµ±Ç°³ß´ç, ÔòÊ¹ÓÃÊ×´Î <a href="#Show">Gui Show</a> Ê±ÏÔÊ¾µÄ´óÐ¡). »¹¿ÉÒÔÔÚºóÃæ¼ÓÉÏ¿í¶È£¬¸ú×Å X ºÍ¸ß¶È£¬ÀýÈç£º<code>Gui +Resize +MinSize640x480</code>¡£ËüÃÇÖ¸¶¨ÁËÒÔÏñËØÎªµ¥Î»µÄ´°¿Ú¹¤×÷Çø (²»°üÀ¨±ß¿ò, ±êÌâÀ¸ºÍ <a href="#Menu">²Ëµ¥À¸</a>) µÄ´óÐ¡. ¹æ¶¨Ã¿¸öÊý×ÖÎªÊ®½øÖÆ, ¶ø²»ÊÇÊ®Áù½øÖÆ.</p>
 <p>¿ÉÒÔÊ¡ÂÔ¸ß¶È»ò¿í¶ÈÒÔ±£³Ö²»±ä£¨ÀýÈç <code>+MinSize640x</code> »ò <code>+MinSizex480</code>£©¡£¶øÇÒ, ¿ÉÒÔ¶à´ÎÖ¸¶¨ Min/MaxSize ÒÔ±ãÔÚÒ»¸ö·½ÏòÉÏÊ¹ÓÃ´°¿Úµ±Ç°µÄ³ß´ç¶øÁíÒ»¸öÔòÊ¹ÓÃÖ¸¶¨µÄ´óÐ¡. ÀýÈç£¬<code>+MinSize +MinSize640x</code> ±íÊ¾×îÐ¡¸ß¶ÈÏÞÖÆÎª´°¿Úµ±Ç°µÄ´óÐ¡¶ø×îÐ¡¿í¶ÈÏÞÖÆÎª 640¡£</p>
 <p>Èç¹û´ÓÃ»ÓÐÊ¹ÓÃ <em>MinSize</em> ºÍ <em>MaxSize</em>£¬ÔòÊ¹ÓÃ²Ù×÷ÏµÍ³µÄÄ¬ÈÏÖµ£¨Í¬ÑùµØ£¬¿ÉÒÔÊ¹ÓÃ <code>Gui -MinSize -MaxSize</code> »Ö¸´Îª´ËÄ¬ÈÏÖµ£©¡£×¢Òâ: ±ØÐëº¬ÓÐ <a href="#Resize">+Resize</a> ²ÅÄÜÔÊÐíÓÃ»§µ÷½Ú´°¿ÚµÄ´óÐ¡.</p>
-<p><strong><a name="OwnDialogs"></a>OwnDialogs</strong>£ºÔÚÃ¿¸ö<a href="../misc/Threads.htm">Ïß³Ì</a>£¨ ÀýÈç ButtonOK ×ÓÏß³Ì£©ÖÐÖ¸¶¨ <code>Gui +OwnDialogs</code>£¬ÕâÑùËùÓÐºóÐøµÄ <a href="MsgBox.htm">MsgBox</a>¡¢<a href="InputBox.htm">InputBox</a>¡¢<a href="FileSelectFile.htm">FileSelectFile</a> ÒÔ¼° <a href="FileSelectFolder.htm">FileSelectFolder</a> ¶Ô»°¿ò²Å»á³ÉÎªµ±Ç°´°¿ÚµÄ×Ó´°¿Ú¡£ÕâÊ±ÕâÐ©¶Ô»°¿ò³ÉÎªÄ£Ê½¶Ô»°¿ò, ÕâÒâÎ¶×ÅÓÃ»§±ØÐëÏÈ¹Ø±ÕÕâÐ©¶Ô»°¿ò²ÅÄÜºÍËüÃÇµÄ¸¸´°¿Ú½øÐÐ½»»¥. ÓëÖ®Ïà±È, <a href="ToolTip.htm">ToolTip</a>, <a href="Progress.htm">Progress</a> ºÍ <a href="Progress.htm">SplashImage</a> ´°¿Ú¼´Ê¹³ÉÎªÁËÆäËû´°¿ÚµÄ×Ó´°¿ÚÒ²Îª·ÇÄ£Ê½µÄ; ËüÃÇ½ö½öÊÇÓÀÔ¶ÏÔÊ¾ÔÚÆä¸¸´°¿ÚµÄÉÏÃæ. ÔÚÄ£Ê½ºÍ·ÇÄ£Ê½´°¿ÚÁ½ÖÖÇé¿öÖÐ, µ±ËüÃÇµÄ¸¸´°¿Ú <a href="#Destroy">Ïú»Ù</a> Ê±ËüÃÇÒ²»á±»×Ô¶¯Ïú»Ù.</p>
+<p id="OwnDialogs"><strong>OwnDialogs</strong>£ºÔÚÃ¿¸ö<a href="../misc/Threads.htm">Ïß³Ì</a>£¨ ÀýÈç ButtonOK ×ÓÏß³Ì£©ÖÐÖ¸¶¨ <code>Gui +OwnDialogs</code>£¬ÕâÑùËùÓÐºóÐøµÄ <a href="MsgBox.htm">MsgBox</a>¡¢<a href="InputBox.htm">InputBox</a>¡¢<a href="FileSelectFile.htm">FileSelectFile</a> ÒÔ¼° <a href="FileSelectFolder.htm">FileSelectFolder</a> ¶Ô»°¿ò²Å»á³ÉÎªµ±Ç°´°¿ÚµÄ×Ó´°¿Ú¡£ÕâÊ±ÕâÐ©¶Ô»°¿ò³ÉÎªÄ£Ê½¶Ô»°¿ò, ÕâÒâÎ¶×ÅÓÃ»§±ØÐëÏÈ¹Ø±ÕÕâÐ©¶Ô»°¿ò²ÅÄÜºÍËüÃÇµÄ¸¸´°¿Ú½øÐÐ½»»¥. ÓëÖ®Ïà±È, <a href="ToolTip.htm">ToolTip</a>, <a href="Progress.htm">Progress</a> ºÍ <a href="Progress.htm">SplashImage</a> ´°¿Ú¼´Ê¹³ÉÎªÁËÆäËû´°¿ÚµÄ×Ó´°¿ÚÒ²Îª·ÇÄ£Ê½µÄ; ËüÃÇ½ö½öÊÇÓÀÔ¶ÏÔÊ¾ÔÚÆä¸¸´°¿ÚµÄÉÏÃæ. ÔÚÄ£Ê½ºÍ·ÇÄ£Ê½´°¿ÚÁ½ÖÖÇé¿öÖÐ, µ±ËüÃÇµÄ¸¸´°¿Ú <a href="#Destroy">Ïú»Ù</a> Ê±ËüÃÇÒ²»á±»×Ô¶¯Ïú»Ù.</p>
 <p>Ò»°ãÇé¿öÏÂ´ò¿ªÕâ¸öÉèÖÃºó²»ÐèÒªÔÙÇÐ»»µ½¹Ø±Õ, ÒòÎªËü²»Ó°ÏìÆäËû <a href="../misc/Threads.htm">Ïß³Ì</a>. µ«ÊÇ£¬Èç¹ûÒ»¸öÏß³ÌÐèÒªÏÔÊ¾´ÓÊôºÍ·Ç´ÓÊô¶Ô»°¿ò£¬Ôò¿ÉÒÔÊ¹ÓÃ <code>Gui -OwnDialogs</code> ¹Ø±Õ´ËÉèÖÃ¡£</p>
 <p>Èç¹ûÔÚÇ°×ºÖÐÃ»ÓÐÊ¹ÓÃ´°¿ÚÃû³Æ£¨ÀýÈçÊ¹ÓÃ <code>Gui +OwnDialogs</code> ¶ø²»ÊÇ <code>Gui MyGui:+OwnDialogs</code>£©£¬Ôòµ±Ç°<a href="#DefaultWin">Ïß³ÌµÄÄ¬ÈÏ´°¿Ú</a>½«ÓµÓÐÕâÐ©´ÓÊô¶Ô»°¿ò¡£</p>
-<p><strong><a name="Owner"></a>Owner</strong>: Ê¹ÓÃ <em>+Owner</em> ¿ÉÒÔÈÃµ±Ç°´°¿Ú´ÓÊôÓÚÁíÒ»¸ö´°¿Ú. ´ÓÊôµÄ´°¿ÚÄ¬ÈÏ²»ÏÔÊ¾ÔÚÈÎÎñÀ¸, ²¢ÇÒËü×ÜÊÇÏÔÊ¾ÔÚÆä¸¸´°¿ÚµÄÉÏÃæ. µ±Æä¸¸´°¿ÚÏú»ÙÊ±ËüÒ²±»×Ô¶¯Ïú»Ù. <em>+Owner</em> ±ØÐëÔÚ¸¸´°¿Ú´´½¨ <u>ºó</u> Ê¹ÓÃ, ¶øÔÚ v1.1.05 ¼°¸ü¸ß°æ±¾ÖÐ¿ÉÒÔÔÚ´ÓÊô´°¿Ú´´½¨Ç°Ãæ»òºóÃæÊ¹ÓÃ. <em>+owner</em> ÓÐÁ½ÖÖÊ¹ÓÃ·½·¨£¬ÈçÏÂËùÊ¾£º</p>
+<p id="Owner"><strong>Owner</strong>: Ê¹ÓÃ <em>+Owner</em> ¿ÉÒÔÈÃµ±Ç°´°¿Ú´ÓÊôÓÚÁíÒ»¸ö´°¿Ú. ´ÓÊôµÄ´°¿ÚÄ¬ÈÏ²»ÏÔÊ¾ÔÚÈÎÎñÀ¸, ²¢ÇÒËü×ÜÊÇÏÔÊ¾ÔÚÆä¸¸´°¿ÚµÄÉÏÃæ. µ±Æä¸¸´°¿ÚÏú»ÙÊ±ËüÒ²±»×Ô¶¯Ïú»Ù. <em>+Owner</em> ±ØÐëÔÚ¸¸´°¿Ú´´½¨ <u>ºó</u> Ê¹ÓÃ, ¶øÔÚ v1.1.05 ¼°¸ü¸ß°æ±¾ÖÐ¿ÉÒÔÔÚ´ÓÊô´°¿Ú´´½¨Ç°Ãæ»òºóÃæÊ¹ÓÃ. <em>+owner</em> ÓÐÁ½ÖÖÊ¹ÓÃ·½·¨£¬ÈçÏÂËùÊ¾£º</p>
 <pre>Gui, MyGui:+OwnerMyOtherGui  <em>; ÈÃ <i>MyGui</i> ³ÉÎª <i>MyOtherGui</i> µÄ×Ó´°¿Ú.</em>
 Gui, MyGui:+Owner  <em>; ÈÃ <i>MyGui</i> ³ÉÎª <a href="Menu.htm#MainWindow">½Å±¾Ö÷´°¿Ú</a> µÄ×Ó´°¿Ú, ÕâÑù¿ÉÒÔ×èÖ¹ÈÎÎñÀ¸°´Å¥µÄÏÔÊ¾.</em></pre>
 <p><span class="ver">[v1.1.03+]£º</span><code>+Owner</code> ºóÃæ¿ÉÒÔ½ô¸ú×ÅÏÖÓÐµÄ Gui »òÈÎºÎ¶¥¼¶´°¿ÚµÄ <a href="WinGet.htm#ID">HWND</a> µÄ<a href="#Name">Ãû³Æ</a>»ò±àºÅ¡£</p>
 <p>¼æÈÝÐÔ×¢Òâ£ºÔÚ v1.1.03 ¼°¸ü¸ß°æ±¾ÖÐ£¬<code>+Owner</code> ÒÆ³ý WS_CHILD ÑùÊ½²¢ÉèÖÃ WS_POPUP ÑùÊ½¡£ÒªÉèÖÃÄ³¸ö Gui µÄ¸¸´°¿Ú£¬½Å±¾±ØÐëÊ¹ÓÃ <code>+Parent</code> Ñ¡Ïî»ò<em>ÔÚ</em> <code>+Owner</code> Ñ¡Ïîºó¸²¸ÇÊÊµ±µÄÑùÊ½¡£</p>
 <p>ÔÚÄ³¸ö´ÓÊô´°¿ÚÏÔÊ¾Ê±Òª·ÀÖ¹ÓÃ»§ÓëÆä¸¸´°¿Ú½»»¥£¬ÇëÊ¹ÓÃ <code>Gui +Disabled</code> ½ûÓÃ¸¸´°¿Ú¡£Ö®ºó£¨µ±×Ó´°¿ÚÈ¡Ïû»òÏú»ÙÊ±£©£¬Í¨¹ý <code>Gui -Disabled</code> À´ÖØÐÂÆôÓÃ¸¸´°¿Ú¡£ÔÚÈ¡Ïû»òÏú»Ù×Ó´°¿ÚÇ°ÕâÑù×ö¿ÉÒÔÈÃ¸¸´°¿Ú×Ô¶¯»Ö¸´ÓÐÐ§.</p>
-<p><strong><a name="Parent"></a>Parent</strong> <span class="ver">[v1.1.03+]</span>£ºÊ¹ÓÃ <code>+Parent</code> ºóÃæ½ô¸ú×ÅÒªÓµÓÐ´Ë´°¿ÚµÄÏÖÓÐ Gui »òÈÎºÎ´°¿Ú»ò¿Ø¼þµÄ <a href="WinGet.htm#ID">HWND</a> µÄ<a href="#Name">Ãû³Æ</a>»ò±àºÅ¡£Òª»Ö¸´ Gui Îª¶¥¼¶´°¿Ú£¬ÇëÊ¹ÓÃ <code>-Parent.</code>¡£ÔÚ´°¿Ú´´½¨ºó´ËÑ¡ÏîÒ²ÓÐÐ§.</p>
-<p><strong><a name="Resize"></a>Resize</strong>: ´ËÑ¡ÏîÔÊÐíÓÃ»§ÖØÐÂµ÷Õû´°¿ÚµÄ´óÐ¡²¢ÆôÓÃ±êÌâÀ¸ÉÏµÄ×î´ó»¯°´Å¥. Òª½ûÓÃ×î´ó»¯°´Å¥£¬ÇëÖ¸¶¨ <code>+Resize -MaximizeBox</code>¡£</p>
+<p id="Parent"><strong>Parent</strong> <span class="ver">[v1.1.03+]</span>£ºÊ¹ÓÃ <code>+Parent</code> ºóÃæ½ô¸ú×ÅÒªÓµÓÐ´Ë´°¿ÚµÄÏÖÓÐ Gui »òÈÎºÎ´°¿Ú»ò¿Ø¼þµÄ <a href="WinGet.htm#ID">HWND</a> µÄ<a href="#Name">Ãû³Æ</a>»ò±àºÅ¡£Òª»Ö¸´ Gui Îª¶¥¼¶´°¿Ú£¬ÇëÊ¹ÓÃ <code>-Parent.</code>¡£ÔÚ´°¿Ú´´½¨ºó´ËÑ¡ÏîÒ²ÓÐÐ§.</p>
+<p id="Resize"><strong><a name="Resize"></a>Resize</strong>: ´ËÑ¡ÏîÔÊÐíÓÃ»§ÖØÐÂµ÷Õû´°¿ÚµÄ´óÐ¡²¢ÆôÓÃ±êÌâÀ¸ÉÏµÄ×î´ó»¯°´Å¥. Òª½ûÓÃ×î´ó»¯°´Å¥£¬ÇëÖ¸¶¨ <code>+Resize -MaximizeBox</code>¡£</p>
 <p><strong>SysMenu</strong>£¨Ä¬ÈÏº¬ÓÐ´ËÑ¡Ïî£©£ºÖ¸¶¨ <code>-SysMenu</code>£¨¸º SysMenu£©¿ÉÒÔÉ¾³ýµã»÷´°¿Ú×óÉÏ½ÇÊ±µ¯³öµÄÏµÍ³²Ëµ¥ºÍÍ¼±ê¡£Í¬Ê±Ò²É¾³ý±êÌâÀ¸ÉÏµÄ×îÐ¡»¯, ×î´ó»¯ºÍ¹Ø±Õ°´Å¥.</p>
-<p><strong><a name="Theme"></a>Theme</strong>£ºÖ¸¶¨ <code>-Theme</code>£¬¿ÉÒÔÈÃºóÐø´´½¨µÄËùÓÐ¿Ø¼þÔÚ Windows XP ÒÔ¼°¸ü¸ß°æ±¾ÖÐÊ¹ÓÃ¾­µäÖ÷ÌâÍâ¹Û¡£Ö®ºóÒª´´½¨ÆäËûÊ¹ÓÃµ±Ç°Ö÷ÌâµÄ¿Ø¼þÊ±£¬ÇëÊ¹ÓÃ <code>+Theme</code> °ÑÉèÖÃÇÐ»»»ØÀ´¡£×¢Òâ: ´ËÑ¡ÏîÔÚ±È Windows XP ÔçµÄÏµÍ³ÉÏÃ»ÓÐÐ§¹û, Èç¹û XP ÖÐµ±Ç°Ê¹ÓÃ¾­µäÖ÷ÌâÊ±Ò²Ã»ÓÐÐ§¹û. ×îºó£¬¶ÔÓÚµ¥¶ÀµÄ¿Ø¼þ»¹¿ÉÒÔÔÚÆä´´½¨µÄÑ¡ÏîÖÐÖ¸¶¨ <code>+Theme</code> »ò <code>-Theme</code> À´¸Ä±ä´ËÉèÖÃ¡£</p>
+<p id="Theme"><strong>Theme</strong>£ºÖ¸¶¨ <code>-Theme</code>£¬¿ÉÒÔÈÃºóÐø´´½¨µÄËùÓÐ¿Ø¼þÔÚ Windows XP ÒÔ¼°¸ü¸ß°æ±¾ÖÐÊ¹ÓÃ¾­µäÖ÷ÌâÍâ¹Û¡£Ö®ºóÒª´´½¨ÆäËûÊ¹ÓÃµ±Ç°Ö÷ÌâµÄ¿Ø¼þÊ±£¬ÇëÊ¹ÓÃ <code>+Theme</code> °ÑÉèÖÃÇÐ»»»ØÀ´¡£×¢Òâ: ´ËÑ¡ÏîÔÚ±È Windows XP ÔçµÄÏµÍ³ÉÏÃ»ÓÐÐ§¹û, Èç¹û XP ÖÐµ±Ç°Ê¹ÓÃ¾­µäÖ÷ÌâÊ±Ò²Ã»ÓÐÐ§¹û. ×îºó£¬¶ÔÓÚµ¥¶ÀµÄ¿Ø¼þ»¹¿ÉÒÔÔÚÆä´´½¨µÄÑ¡ÏîÖÐÖ¸¶¨ <code>+Theme</code> »ò <code>-Theme</code> À´¸Ä±ä´ËÉèÖÃ¡£</p>
 <p><strong>ToolWindow</strong>: ÈÃ´°¿ÚÏÔÊ¾Ï¸±êÌâÀ¸, Í¬Ê±È¥³ýÈÎÎñÀ¸°´Å¥.</p>
 <p><strong>(Î´ÃüÃûÑùÊ½)</strong>: ÔÚÊ®½øÖÆ»òÊ®Áù½øÖÆµÄ <a href="../misc/Styles.htm">ÑùÊ½±àºÅ</a> Ç°¼ÓÉÏ¼ÓºÅ»ò¼õºÅ±íÊ¾Ìí¼Ó»òÉ¾³ý´ËÑùÊ½.</p>
 <p><strong>(Î´ÃüÃûÀ©Õ¹ÑùÊ½)</strong>: ÔÚ×ÖÄ¸ E ºÍÊ®½øÖÆ»òÊ®Áù½øÖÆµÄÀ©Õ¹ÑùÊ½±àºÅÇ°¼ÓÉÏ¼ÓºÅ»ò¼õºÅ±íÊ¾Ìí¼Ó»òÉ¾³ý´ËÀ©Õ¹ÑùÊ½. ÀýÈç£¬<code>+E0x40000</code> ±íÊ¾Ìí¼Ó WS_EX_APPWINDOW ÑùÊ½£¬´ËÑùÊ½ÈÃ´°¿ÚÏÔÊ¾ÈÎÎñÀ¸°´Å¥¡£¾¡¹ÜÕâÀïÃ»ÓÐÁÐ³öÆäËûµÄÀ©Õ¹ÑùÊ½±àºÅ (ÒòÎªËüÃÇ¼«ÉÙÊ¹ÓÃ), ²»¹ý¿ÉÒÔÍ¨¹ýÔÚ <a href="http://www.microsoft.com">www.microsoft.com</a> ÖÐËÑË÷ WS_EX_APPWINDOW ÕÒµ½ËüÃÇ.</p>
@@ -222,7 +221,7 @@ Menu, MyMenuBar, Add, &amp;Help, :HelpMenu
 <p>Ò»µ©²Ëµ¥±»ÉèÖÃÎª´°¿ÚµÄ²Ëµ¥À¸, Ëü¾Í²»ÄÜÓÃÓÚµ¯³ö²Ëµ¥»ò×Ó²Ëµ¥. ÕâÊÇÒòÎª²Ëµ¥À¸ÄÚ²¿Ê¹ÓÃÁË²»Í¬µÄ¸ñÊ½ (²»¹ý, ÕâÖ»ÏÞÖÆ²Ëµ¥À¸×ÔÉí, ¶ø²»°üÀ¨Æä×Ó²Ëµ¥). Èç¹ûÄúÒ»¶¨ÒªÕâÑùÊµÏÖ, ÄÇÃ´ÏÈ´´½¨Ò»¸ö²Ëµ¥ÓÃÓÚ²Ëµ¥À¸, ÔÙ´´½¨ÁíÒ»¸öÏàÍ¬µÄ²Ëµ¥ÓÃÓÚÆäËûÄ¿µÄ.</p>
 <p>¶Ôµ±Ç°ÕýÓÃÓÚ²Ëµ¥À¸ (ÔÚÄ³Ð©Çé¿öÏÂ°üÀ¨Æä×Ó²Ëµ¥) Ê¹ÓÃÄ³Ð©ÆÆ»µÐÔµÄ <a href="Menu.htm">menu ×ÓÃüÁî</a> (ÀýÈç Delete ºÍ DeleteAll) Ê±, ÕâÐ©ÃüÁî»áÎÞÐ§²¢ÏÔÊ¾´íÎó¶Ô»°¿ò (¿ÉÒÔÊ¹ÓÃ <a href="Menu.htm">UseErrorLevel</a> À´±ÜÃâ). ¿ÉÒÔÊ¹ÓÃÏÂÁÐ²½Öè¸Ä±ä´°¿Ú²Ëµ¥À¸ÖÐµÄ²Ëµ¥£º1) Ê¹ÓÃ <code>Gui Menu</code>£¨Ê¡ÂÔ <em>MenuName</em>£©´Ó´°¿ÚÖÐ·ÖÀë²Ëµ¥£»2) ¸Ä±ä²Ëµ¥£»3) Ê¹ÓÃ <code>Gui, Menu, MyMenuBar</code> ÖØÐÂ¸½¼Ó²Ëµ¥µ½´°¿Ú¡£</p>
 
-<h2 id="Minimize"><a name="Maximize"></a><a name="Restore"></a><a name="Hide"></a>Gui, Hide / Minimize / Maximize / Restore</h2>
+<span id="Maximize"></span><span id="Restore"></span><span id="Hide"></span><h2 id="Minimize">Gui, Hide / Minimize / Maximize / Restore</h2>
 <p><code>Gui Hide</code> Ïàµ±ÓÚ <a href="#Cancel">Gui Cancel</a>¡£ÆäËûÈý¸öÃüÁîÔòÏÔÊ¾´°¿Ú, (±ØÒªÊ±) È»ºó·Ö±ð¶Ô´°¿Ú½øÐÐ×îÐ¡»¯/×î´ó»¯/»¹Ô­²Ù×÷. Èç¹ûÓÉÓÚÖ®Ç°Ê¹ÓÃ <a href="#Destroy">Gui Destroy</a> Ïú»ÙÁË´°¿Ú»òÆäËûÔ­ÒòÊ¹µÃ´°¿Ú²»´æÔÚ£¬ÄÇÃ´ÕâÐ©ÃüÁîÃ»ÓÐÐ§¹û¡£</p>
 
 <h2 id="Flash">Gui, Flash [, Off]</h2>
@@ -243,7 +242,7 @@ Menu, MyMenuBar, Add, &amp;Help, :HelpMenu
 <h2 id="PosSize">¿Ø¼þµÄÎ»ÖÃºÍ´óÐ¡</h2>
 <p>Èç¹ûÔÚ <em>Options</em> ÖÐÊ¡ÂÔÁËÄ³Ð©³ß´çºÍ/»ò×ø±ê, Ôò»á¸ù¾ÝÇ°Ò»¸ö¿Ø¼þÈ·¶¨ËüµÄÎ»ÖÃ, ¸ù¾Ý¿Ø¼þµÄÀàÐÍºÍÄÚÈÝÈ·¶¨ËüµÄ´óÐ¡.</p>
 <p>Ö§³ÖÏÂÁÐÑ¡Ïî:</p>
-<p><strong><a name="R"></a>R</strong>: Ö¸¶¨ÎÄ±¾µÄÐÐÊý (¿ÉÒÔÎª¸¡µãÊý, Èç R2.5). Ê¹ÓÃ <strong>R</strong> Í¨³£±È <strong>H</strong> (¸ß¶È) ¸üºÏÊÊ. Èç¹ûÍ¬Ê±Ö¸¶¨ <strong>R</strong> ºÍ <strong>H</strong> Ñ¡Ïî, Ôò <strong>R</strong> ÓÅÏÈ¿¼ÂÇ. ¶ÔÓÚ GroupBox, ´ËÑ¡ÏîÉèÖÃÔÚ¿òÖÐ¿ÉÒÔÈÝÄÉµÄ¿Ø¼þÊýÄ¿. ¶ÔÓÚ <a href="GuiControls.htm#DropDownList">DropDownLists</a>, <a href="GuiControls.htm#ComboBox">ComboBoxes</a> ºÍ <a href="GuiControls.htm#ListBox">ListBoxes</a>, ´ËÑ¡ÏîÉèÖÃÔÚ¿Ø¼þµÄÁÐ±í²¿·ÖÒ»´Î¿ÉÒÔ¿´µ½µÄÏîÄ¿Êý (µ«ÔÚ Windows XP »ò¸ü¸ß°æ±¾ÖÐ, ¶ÔÓÚ DropDownList ºÍ ComboBox ¿Ø¼þ³£³£Í¬Ê±Ê¡ÂÔ <strong>R</strong> ºÍ <strong>H</strong> Ñ¡Ïî, ÕâÑù¿ÉÒÔÈÃµ¯³öµÄÁÐ±í×Ô¶¯ÉèÖÃÎªÓÃ»§×ÀÃæµÄ¿ÉÓÃ¸ß¶È). ¶ÔÓÚÆäËûÀàÐÍµÄ¿Ø¼þ, <strong>R</strong> ±íÊ¾¿Ø¼þÄÚ¿É¼ûµÄÎÄ±¾ÐÐÊý.</p>
+<p id="R"><strong>R</strong>: Ö¸¶¨ÎÄ±¾µÄÐÐÊý (¿ÉÒÔÎª¸¡µãÊý, Èç R2.5). Ê¹ÓÃ <strong>R</strong> Í¨³£±È <strong>H</strong> (¸ß¶È) ¸üºÏÊÊ. Èç¹ûÍ¬Ê±Ö¸¶¨ <strong>R</strong> ºÍ <strong>H</strong> Ñ¡Ïî, Ôò <strong>R</strong> ÓÅÏÈ¿¼ÂÇ. ¶ÔÓÚ GroupBox, ´ËÑ¡ÏîÉèÖÃÔÚ¿òÖÐ¿ÉÒÔÈÝÄÉµÄ¿Ø¼þÊýÄ¿. ¶ÔÓÚ <a href="GuiControls.htm#DropDownList">DropDownLists</a>, <a href="GuiControls.htm#ComboBox">ComboBoxes</a> ºÍ <a href="GuiControls.htm#ListBox">ListBoxes</a>, ´ËÑ¡ÏîÉèÖÃÔÚ¿Ø¼þµÄÁÐ±í²¿·ÖÒ»´Î¿ÉÒÔ¿´µ½µÄÏîÄ¿Êý (µ«ÔÚ Windows XP »ò¸ü¸ß°æ±¾ÖÐ, ¶ÔÓÚ DropDownList ºÍ ComboBox ¿Ø¼þ³£³£Í¬Ê±Ê¡ÂÔ <strong>R</strong> ºÍ <strong>H</strong> Ñ¡Ïî, ÕâÑù¿ÉÒÔÈÃµ¯³öµÄÁÐ±í×Ô¶¯ÉèÖÃÎªÓÃ»§×ÀÃæµÄ¿ÉÓÃ¸ß¶È). ¶ÔÓÚÆäËûÀàÐÍµÄ¿Ø¼þ, <strong>R</strong> ±íÊ¾¿Ø¼þÄÚ¿É¼ûµÄÎÄ±¾ÐÐÊý.</p>
 <p><strong>W</strong>: ¿í¶È, µ¥Î»ÎªÏñËØ. Èç¹ûÊ¡ÂÔ, ¶ÔÓÚÄ³Ð©¿Ø¼þÔò¸ù¾ÝÆäÄÚÈÝ×Ô¶¯¼ÆËã¿í¶È. ÆäËûÀàÐÍµÄ¿Ø¼þ¾ßÓÐÏÂÁÐÄ¬ÈÏµÄ¿í¶ÈÖµ:<br>
   Ñ¡Ïî¿¨¿Ø¼þ:
   30 ±¶µÄµ±Ç°×ÖÌå´óÐ¡¼ÓÉÏ 3 ±¶µÄ <a href="#Margin">X-margin</a> (ÐÐ±ß¾à).<br>
@@ -251,15 +250,15 @@ Menu, MyMenuBar, Add, &amp;Help, :HelpMenu
   Ë®Æ½½ø¶ÈÌõ, Ë®Æ½»¬¶¯Ìõ, DropDownList, ComboBox, ListBox, GroupBox, Edit ºÍ Hotkey: 15 ±¶µÄµ±Ç°×ÖÌå´óÐ¡ (GroupBox ÀýÍâ, ÆäÄ¬ÈÏ¿í¶ÈÎª 18 ±¶, ÕâÑù¿ÉÒÔÏÔÊ¾ÄÚ²¿µÄ±ß¾à).</p>
 <p><strong>H</strong>: ¸ß¶È, µ¥Î»ÎªÏñËØ. Èç¹û <strong>H</strong> ºÍ <strong>R</strong> Ñ¡ÏîÍ¬Ê±Ê¡ÂÔ, Ôò DropDownList, ComboBox, ListBox ºÍ³õÊ¼ÄÚÈÝÎª¿ÕµÄ¶àÐÐ Edit ¿Ø¼þÄ¬ÈÏÎª 3 ÐÐ; GroupBox Ä¬ÈÏÎª 2 ÐÐ; ´¹Ö±»¬¶¯ÌõºÍ½ø¶ÈÌõÄ¬ÈÏÎª 5 ÐÐ; Ë®Æ½»¬¶¯ÌõÄ¬ÈÏÎª 30 ÏñËØ (ÔÚÃ»ÓÐÖ¸¶¨Æäºñ¶ÈÊ±); Ë®Æ½½ø¶ÈÌõÄ¬ÈÏÎª 2 ±¶µÄµ±Ç°×ÖÌå´óÐ¡; Hotkey ¿Ø¼þÄ¬ÈÏÎª 1 ÐÐ; ¶ø Tab ¿Ø¼þÄ¬ÈÏÎª 10 ÐÐ. ¶ÔÓÚÆäËûÀàÐÍµÄ¿Ø¼þ, ¸ù¾ÝËüÃÇµÄÄÚÈÝ×Ô¶¯¼ÆËã¸ß¶È. Çë×¢Òâ¶ÔÓÚ DropDownList ºÍ ComboBox, <strong>H</strong> Îª¿Ø¼þ×ÜÊÇ¿É¼ûµÄ²¿·Ö (´ó¸ÅÖ¸ÁÐ±íÉÏÃæµÄ¿ò) ºÍÆäÁÐ±í²¿·ÖÏà¼ÓµÄ¸ß¶È (µ«¼´Ê¹¸ß¶ÈÉèÖÃºÜÐ¡, Ò²ÖÁÉÙ»áÔÚÏÂÀ­ÁÐ±íÖÐÏÔÊ¾Ò»¸öÏîÄ¿). Í¬Ê±¶ÔÓÚËùÓÐÀàÐÍµÄ¿Ø¼þ, Í¨¹ý <strong>R</strong> Ñ¡ÏîÖ¸¶¨ÐÐÊý±ÈÊ¹ÓÃ <strong>H</strong> ¸ü¿ÉÈ¡, ÒòÎªÕâÑù¿ÉÒÔ±ÜÃâÔÚ¿Ø¼þÖÐÏÔÊ¾²¿·Ö/²»ÍêÕûµÄÎÄ±¾ÐÐ.</p>
 <p><strong>wp+n</strong>, <strong>hp+n</strong>, <strong>wp-n</strong>, <strong>hp-n</strong> (ÆäÖÐ <strong>n</strong> ¿ÉÒÔÎªÈÎÒâÊý×Ö) ÓÃÀ´ÉèÖÃ¿Ø¼þµÄ¿í¶ÈºÍ/»ò¸ß¶ÈµÈÓÚÇ°Ò»¸öÌí¼Ó¿Ø¼þµÄ¿í¶È»ò¸ß¶È, ¿ÉÒÔÊ¹ÓÃ¼ÓºÅ»ò¼õºÅ½øÐÐµ÷Õû. ÀýÈç£¬<code>wp</code> ½«ÉèÖÃ¿Ø¼þµÄ¿í¶ÈµÈÓÚÖ®Ç°µÄ¿Ø¼þ£¬¶ø <code>wp-50</code> ÔòÉèÖÃ¿í¶ÈÎªÖ®Ç°µÄ¿Ø¼þ¿í¶È¼õÈ¥ 50 ÏñËØ¡£</p>
-<p><strong><a name="XY"></a>X</strong>: ¿Ø¼þµÄ X ×ø±ê. ÀýÈç£¬Ö¸¶¨ <code>x0 y0</code> Ôò°Ñ¿Ø¼þ·ÅÖÃµ½´°¿Ú¹¤×÷ÇøµÄ×óÉÏ½Ç£¬´°¿Ú¹¤×÷ÇøÊÇÔÚ±êÌâÀ¸ºÍ²Ëµ¥À¸£¨Èç¹ûÓÐ£©ÏÂÃæµÄÇøÓò¡£Èç¹ûÊ¡ÂÔÁË <strong>X</strong> µ«Ö¸¶¨ÁË <strong>Y</strong>£¬Ôò¿Ø¼þ½«±»·ÅÖÃÔÚÖ®Ç°ËùÓÐ¿Ø¼þµÄÓÒ±ß£¨¼´Æä X ×ø±êÎªÇ°Ò»¸ö¿Ø¼þµÄ X ×ø±ê¼ÓÉÏÇ°Ò»¸ö¿Ø¼þµÄ¿í¶È£¬¼´Ç°Ò»¸ö×ø±êÓÒ±ßµÄÎ»ÖÃ£©£¬¿ÉÒÔÀí½âÎª¿ªÊ¼ÁËÒ»¸öÐÂ¡°ÁÐ¡±¡£</p>
+<p id="XY">X</strong>: ¿Ø¼þµÄ X ×ø±ê. ÀýÈç£¬Ö¸¶¨ <code>x0 y0</code> Ôò°Ñ¿Ø¼þ·ÅÖÃµ½´°¿Ú¹¤×÷ÇøµÄ×óÉÏ½Ç£¬´°¿Ú¹¤×÷ÇøÊÇÔÚ±êÌâÀ¸ºÍ²Ëµ¥À¸£¨Èç¹ûÓÐ£©ÏÂÃæµÄÇøÓò¡£Èç¹ûÊ¡ÂÔÁË <strong>X</strong> µ«Ö¸¶¨ÁË <strong>Y</strong>£¬Ôò¿Ø¼þ½«±»·ÅÖÃÔÚÖ®Ç°ËùÓÐ¿Ø¼þµÄÓÒ±ß£¨¼´Æä X ×ø±êÎªÇ°Ò»¸ö¿Ø¼þµÄ X ×ø±ê¼ÓÉÏÇ°Ò»¸ö¿Ø¼þµÄ¿í¶È£¬¼´Ç°Ò»¸ö×ø±êÓÒ±ßµÄÎ»ÖÃ£©£¬¿ÉÒÔÀí½âÎª¿ªÊ¼ÁËÒ»¸öÐÂ¡°ÁÐ¡±¡£</p>
 <p><strong>Y</strong>: ¿Ø¼þµÄ Y ×ø±ê. Èç¹ûÊ¡ÂÔÁË <strong>Y</strong> µ«Ö¸¶¨ÁË <strong>X</strong>, Ôò¿Ø¼þ½«±»·ÅÖÃÔÚÖ®Ç°ËùÓÐ¿Ø¼þµÄÏÂÃæ, ¿ÉÒÔÀí½âÎª¿ªÊ¼ÁËÒ»¸öÐÂ "ÐÐ".</p>
 <p><strong>X</strong>¡¢<strong>Y</strong> µÄÆäÖÐÒ»¸ö»òÍ¬Ê±Ê¡ÂÔÊ±£¬¿ÉÒÔÔÚÄú¶Ô¿Ø¼þµÄ´óÐ¡»ò×ÖÌå½øÐÐ¸Ä±äÊ±×Ô¶¯µ÷Õû GUI ²¼¾Ö¡£ÓëÖ®Ïà±È, Èç¹ûÎªÃ¿¸ö¿Ø¼þÖ¸¶¨ÁË¾ø¶ÔÎ»ÖÃ, Ôòµ±Ò»¸ö¿Ø¼þ·Å´ó»òËõÐ¡Ê±ÐèÒªÎªÔÚ´Ë¿Ø¼þÏÂÃæºÍ/»òÓÒ±ßµÄËùÓÐ¿Ø¼þÊÖ¶¯µ÷ÕûÎ»ÖÃ.</p>
 <p>Èç¹ûÍ¬Ê±Ê¡ÂÔ <strong>X</strong> ºÍ <strong>Y</strong>, Ôò¿Ø¼þ»á·ÅÖÃÔÚÖ®Ç°¿Ø¼þµÄÏÂÃæ, ÖÐ¼ä¼ÓÉÏ±ê×¼µÄÌî³ä¼ä¾à.</p>
-<p><a name="PosPlus"></a>¶ÔÓÚ <strong>X</strong> ºÍ <strong>Y</strong>, »¹¿ÉÒÔÔÚºóÃæ¼ÓÉÏ¼ÓºÅÀ´È·¶¨¿Ø¼þÏà¶ÔÓÚÇ°Ò»¸öÌí¼Ó¿Ø¼þµÄÓÒ±ß»òµ×²¿±ßÔµ (·Ö±ðµØ) µÄÎ»ÖÃ. ÀýÈç£¬Ö¸¶¨ <code>Y+10</code> ½«°Ñ¿Ø¼þ·ÅÖÃÔÚÇ°Ò»¸ö¿Ø¼þµ×²¿ÏÂÃæ 10 ¸öÏñËØµÄÎ»ÖÃ£¬¶ø²»Ê¹ÓÃ±ê×¼µÄÌî³ä¼ä¾à¡£Í¬ÑùµØ£¬Ö¸¶¨ <code>X+10</code> ½«°Ñ¿Ø¼þ·ÅÖÃÔÚÇ°Ò»¸ö¿Ø¼þÓÒ±ßÔµµÄÓÒ±ß 10 ¸öÏñËØµÄÎ»ÖÃ¡£ÓÉÓÚ¸ºÊýÈç <code>X-10</code> ±íÊ¾¾ø¶ÔµÄÎ»ÖÃ£¬Òò´ËÒªÊ¹ÓÃ¸ºµÄÎ»ÖÃÆ«ÒÆ£¬ÐèÒªÔÚÇ°Ãæ¼ÓÉÏÒ»¸ö¼ÓºÅ¡£ÀýÈç£º<code>X+-10</code>¡£</p>
+<p id="PosPlus">¶ÔÓÚ <strong>X</strong> ºÍ <strong>Y</strong>, »¹¿ÉÒÔÔÚºóÃæ¼ÓÉÏ¼ÓºÅÀ´È·¶¨¿Ø¼þÏà¶ÔÓÚÇ°Ò»¸öÌí¼Ó¿Ø¼þµÄÓÒ±ß»òµ×²¿±ßÔµ (·Ö±ðµØ) µÄÎ»ÖÃ. ÀýÈç£¬Ö¸¶¨ <code>Y+10</code> ½«°Ñ¿Ø¼þ·ÅÖÃÔÚÇ°Ò»¸ö¿Ø¼þµ×²¿ÏÂÃæ 10 ¸öÏñËØµÄÎ»ÖÃ£¬¶ø²»Ê¹ÓÃ±ê×¼µÄÌî³ä¼ä¾à¡£Í¬ÑùµØ£¬Ö¸¶¨ <code>X+10</code> ½«°Ñ¿Ø¼þ·ÅÖÃÔÚÇ°Ò»¸ö¿Ø¼þÓÒ±ßÔµµÄÓÒ±ß 10 ¸öÏñËØµÄÎ»ÖÃ¡£ÓÉÓÚ¸ºÊýÈç <code>X-10</code> ±íÊ¾¾ø¶ÔµÄÎ»ÖÃ£¬Òò´ËÒªÊ¹ÓÃ¸ºµÄÎ»ÖÃÆ«ÒÆ£¬ÐèÒªÔÚÇ°Ãæ¼ÓÉÏÒ»¸ö¼ÓºÅ¡£ÀýÈç£º<code>X+-10</code>¡£</p>
 <p id="PosPlusMargin"><span class="ver">[v1.1.16+]£º</span>¶Ô<strong>X+</strong>¼°<strong>Y+</strong>£¬¿É½«×ÖÄ¸<strong>M</strong>Ìæ»»Îª´°¿ÚµÄ<a href="#Margin£¨±ß¾à£©">±ß¾à</a>Öµ¡£Èç£¬<strong>x+m</strong>Ê¹ÓÃÇ°Ò»¿Ø¼þµÄÓÒ±ßÎ»ÖÃ¼ÓÉÏ±ê×¼Ìî³ä¼ä¸ô¡£. <strong>xp y+m</strong>½«¿Ø¼þ·ÅÖÃÓÚÇ°Ò»¸öÖ®ÏÂ£¬ µ«µ±Ö¸¶¨X×ø±êÊ±£¬Ïàµ±ÓÚÄ¬ÈÏÇé¿öÏÂÒþÊ½µÄ<strong>yp</strong>£¨whereas specifying an X coordinate on its own would normally imply <strong>yp</strong> by default£©¡£</p>
 <p><strong>xp+n</strong>, <strong>yp+n</strong>, <strong>xp-n</strong>, <strong>yp-n</strong> (ÆäÖÐ <strong>n</strong> ¿ÉÒÔÎªÈÎÒâÊý×Ö) ¿ÉÒÔÓÃÀ´Ö¸¶¨¿Ø¼þÏà¶ÔÓÚÇ°Ò»¸ö¿Ø¼þ×óÉÏ½ÇµÄÎ»ÖÃ, ´ËÑ¡Ïî³£ÓÃÓÚ <a href="GuiControls.htm#GroupBox">GroupBox</a> ÖÐµÄ·â×°¿Ø¼þ.</p>
 <p><strong>xm</strong> ºÍ <strong>ym</strong> ·Ö±ð¿ÉÒÔ°Ñ¿Ø¼þ·ÅÖÃÔÚ´°¿Ú×î×ó±ßºÍ×îÉÏ±ßµÄ <a href="#Margin£¨±ß¾à£©">±ßÔµ</a> (ËüÃÇºóÃæ»¹¿ÉÒÔ¸ú×Å¼ÓºÅ/¼õºÅºÍÊý×Ö). Ö¸¶¨ <strong>ym</strong> ¶øÊ¡ÂÔ x ×ø±ê, ½«°Ñ¿Ø¼þ·ÅÖÃÔÚ´°¿ÚµÄ×îÉÏÃæµ«ÔÚÖ®Ç°ËùÓÐ¿Ø¼þµÄÓÒ±ß, ¿ÉÒÔÀí½âÎª¿ªÊ¼ÁËÒ»¸öÐÂ "ÁÐ". ·´Ö®ÒàÈ».</p>
-<p><a name="xs"></a><strong>xs</strong> ºÍ <strong>ys</strong>£ºËüÃÇÀàËÆÓÚ <strong>xm</strong> ºÍ <strong>ym</strong>£¬Çø±ðÔÚÓÚËüÃÇÊÇÏà¶ÔÓÚÇ°Ò»¸öÊ¹ÓÃ <a href="#Section">Section</a> Ñ¡ÏîÌí¼ÓµÄ¿Ø¼þ×ø±ê£¨ÔÚ´°¿ÚÖÐ´´½¨Ê×¸ö¿Ø¼þÊ±×ÜÊÇ¿ªÊ¼Ò»¸öÐÂÁÐ£¬¼´Ê¹Ã»ÓÐÖ¸¶¨´ËÑ¡Ïî£©¡£Ö¸¶¨ <strong>ys</strong> ¶øÊ¡ÂÔ x ×ø±ê, ½«°Ñ¿Ø¼þ·ÅÖÃÔÚÖ®Ç°±£´æµÄ y ×ø±ê (¼´×î½üÒ»´ÎÊ¹ÓÃ Section Ñ¡ÏîÌí¼ÓµÄ¿Ø¼þµÄ y ×ø±ê) µ«ÔÚ×î½üÒ»´ÎÊ¹ÓÃ <a href="#Section">Section</a> ºóÌí¼ÓµÄËùÓÐ¿Ø¼þÓÒ±ß; Õâ¿ÉÒÔÀí½âÎªÔÚÍ¬Ò»¸ö¿Ø¼þ¶ÎÖÐ¿ªÊ¼Ò»¸öÐÂÁÐ. ÀýÈç£º</p>
+<p id="xs"><strong>xs</strong> ºÍ <strong>ys</strong>£ºËüÃÇÀàËÆÓÚ <strong>xm</strong> ºÍ <strong>ym</strong>£¬Çø±ðÔÚÓÚËüÃÇÊÇÏà¶ÔÓÚÇ°Ò»¸öÊ¹ÓÃ <a href="#Section">Section</a> Ñ¡ÏîÌí¼ÓµÄ¿Ø¼þ×ø±ê£¨ÔÚ´°¿ÚÖÐ´´½¨Ê×¸ö¿Ø¼þÊ±×ÜÊÇ¿ªÊ¼Ò»¸öÐÂÁÐ£¬¼´Ê¹Ã»ÓÐÖ¸¶¨´ËÑ¡Ïî£©¡£Ö¸¶¨ <strong>ys</strong> ¶øÊ¡ÂÔ x ×ø±ê, ½«°Ñ¿Ø¼þ·ÅÖÃÔÚÖ®Ç°±£´æµÄ y ×ø±ê (¼´×î½üÒ»´ÎÊ¹ÓÃ Section Ñ¡ÏîÌí¼ÓµÄ¿Ø¼þµÄ y ×ø±ê) µ«ÔÚ×î½üÒ»´ÎÊ¹ÓÃ <a href="#Section">Section</a> ºóÌí¼ÓµÄËùÓÐ¿Ø¼þÓÒ±ß; Õâ¿ÉÒÔÀí½âÎªÔÚÍ¬Ò»¸ö¿Ø¼þ¶ÎÖÐ¿ªÊ¼Ò»¸öÐÂÁÐ. ÀýÈç£º</p>
 <pre>gui, add, edit, w600  <em>; ÔÚ´°¿ÚµÄ¶¥²¿Ìí¼ÓÒ»¸ö·Ç³£¿íµÄ±à¼­¿Ø¼þ.</em>
 gui, add, text, <strong>section</strong>, First Name:  <em>; ±£´æ´Ë¿Ø¼þÎ»ÖÃ²¢¶¨ÒåÒ»¸öÐÂ¿Ø¼þ¶Î.</em>
 gui, add, text,, Last Name:
@@ -270,7 +269,7 @@ gui, show</pre>
 <p><strong>xs</strong> ºÍ <strong>ys</strong> ºóÃæ¿ÉÒÔ¸ú×ÅÒ»¸ö¼ÓºÅ/¼õºÅºÍÒ»¸öÊý×Ö. ²¢ÇÒ, »¹¿ÉÒÔÔÚ¿Ø¼þµÄÑ¡ÏîÖÐÍ¬Ê±Ö¸¶¨µ¥´Ê <a href="#Section">Section</a> ºÍ xs/ys; ÕâÑù¿ÉÒÔÈÃµ±Ç°¿Ø¼þÊ¹ÓÃÖ®Ç°µÄ¿Ø¼þ¶Î, µ«ÎªºóÐø¿Ø¼þ¶¨ÒåÒ»¸öÐÂ¶Î.</p>
 
 <h2 id="Events">´æ´¢ºÍÏìÓ¦ÓÃ»§µÄÊäÈë</h2>
-<p><strong><a name="var"></a>V</strong>: ±äÁ¿. Îª¿Ø¼þ·ÖÅä¹ØÁª±äÁ¿. ÔÚ×ÖÄ¸ V ºóÖ¸¶¨Ò»¸ö±äÁ¿Ãû, ´Ë±äÁ¿½«ÎªÈ«¾Ö±äÁ¿ (»òÖ¸ÏòÈ«¾Ö±äÁ¿µÄ <a href="../Functions.htm#ByRef">ByRef ¾Ö²¿±äÁ¿</a>, ÔÚ v1.0.46.01+ »¹¿ÉÄÜÎª <a href="../Functions.htm#static">¾²Ì¬±äÁ¿</a>). ÀýÈç£¬Ö¸¶¨ <code><strong>v</strong>MyEdit</code> ºó£¬Ã¿µ±Ö´ÐÐ <a href="#Submit">Gui Submit</a> ÃüÁîÊ±½«°Ñ¿Ø¼þµÄÄÚÈÝ±£´æµ½±äÁ¿ <em>MyEdit</em>¡£Èç¹û¿Ø¼þÊÇ²»¿ÉÊäÈëÐÍ£¨ÀýÈç Text ¿Ø¼þ»ò GroupBox£©£¬ÄÇÃ´ÎªÆä·ÖÅäµÄ¹ØÁª±äÁ¿×÷Îª¿Ø¼þµÄÎ¨Ò»±êÊ¶·ûÈÔ¿ÉÓÃÓÚ <a href="GuiControl.htm">GuiControl</a>¡¢<a href="GuiControlGet.htm">GuiControlGet</a> ºÍ <a href="../Variables.htm#GuiControl">A_GuiControl</a>¡£×¢Òâ: <a href="#Submit">Gui Submit</a> ²»»á¸Ä±ä²»¿ÉÊäÈëÐÍ¿Ø¼þ (ÀýÈç Text ºÍ GroupBox) ¹ØÁª±äÁ¿µÄÄÚÈÝ, Ò²²»»á¸Ä±äÆäËûÄ³Ð©¿Ø¼þµÄÄÚÈÝ (ÀýÈç <a href="ListView.htm">ListView</a> ºÍ <a href="TreeView.htm">TreeView</a>).</p>
+<p id="var"><strong>V</strong>: ±äÁ¿. Îª¿Ø¼þ·ÖÅä¹ØÁª±äÁ¿. ÔÚ×ÖÄ¸ V ºóÖ¸¶¨Ò»¸ö±äÁ¿Ãû, ´Ë±äÁ¿½«ÎªÈ«¾Ö±äÁ¿ (»òÖ¸ÏòÈ«¾Ö±äÁ¿µÄ <a href="../Functions.htm#ByRef">ByRef ¾Ö²¿±äÁ¿</a>, ÔÚ v1.0.46.01+ »¹¿ÉÄÜÎª <a href="../Functions.htm#static">¾²Ì¬±äÁ¿</a>). ÀýÈç£¬Ö¸¶¨ <code><strong>v</strong>MyEdit</code> ºó£¬Ã¿µ±Ö´ÐÐ <a href="#Submit">Gui Submit</a> ÃüÁîÊ±½«°Ñ¿Ø¼þµÄÄÚÈÝ±£´æµ½±äÁ¿ <em>MyEdit</em>¡£Èç¹û¿Ø¼þÊÇ²»¿ÉÊäÈëÐÍ£¨ÀýÈç Text ¿Ø¼þ»ò GroupBox£©£¬ÄÇÃ´ÎªÆä·ÖÅäµÄ¹ØÁª±äÁ¿×÷Îª¿Ø¼þµÄÎ¨Ò»±êÊ¶·ûÈÔ¿ÉÓÃÓÚ <a href="GuiControl.htm">GuiControl</a>¡¢<a href="GuiControlGet.htm">GuiControlGet</a> ºÍ <a href="../Variables.htm#GuiControl">A_GuiControl</a>¡£×¢Òâ: <a href="#Submit">Gui Submit</a> ²»»á¸Ä±ä²»¿ÉÊäÈëÐÍ¿Ø¼þ (ÀýÈç Text ºÍ GroupBox) ¹ØÁª±äÁ¿µÄÄÚÈÝ, Ò²²»»á¸Ä±äÆäËûÄ³Ð©¿Ø¼þµÄÄÚÈÝ (ÀýÈç <a href="ListView.htm">ListView</a> ºÍ <a href="TreeView.htm">TreeView</a>).</p>
 <p id="label"><strong>G</strong>: Gosub (g ±êÇ©). µ±ÓÃ»§µã»÷»ò¸Ä±ä¿Ø¼þÄÚÈÝÊ±»á×Ô¶¯ÔËÐÐµÄ×Ó³ÌÐò. ÔÚ×ÖÄ¸ G ºóÖ¸¶¨ÐèÒªÖ´ÐÐµÄ <a href="../misc/Labels.htm">±êÇ©</a> Ãû³Æ. Ö¸¶¨ <code>gCancel</code> °µÊ¾Ö´ÐÐ <a href="#Cancel">Gui Cancel</a>£¨µ«Èç¹ûÔÚ½Å±¾ÖÐ´æÔÚÃû³ÆÎª¡°Cancel¡±µÄ±êÇ©£¬Ôò»áÖ´ÐÐ´Ë±êÇ©£©¡£ÔÚ×Ó³ÌÐòÖÐ¿ÉÒÔÒýÓÃÏÂÁÐÄÚÖÃ±äÁ¿£º<a href="../Variables.htm#Gui">A_Gui</a>¡¢<a href="../Variables.htm#GuiControl">A_GuiControl</a>¡¢<a href="../Variables.htm#GuiEvent">A_GuiEvent</a> ÒÔ¼° <a href="../Variables.htm#EventInfo">A_EventInfo</a>¡£</p>
 <p><span class="ver">[v1.1.20+]:</span> Èç¹û²»ÊÇÒ»¸öÓÐÐ§±êÇ©Ãû³Æ, ¿ÉÒÔÓÃº¯ÊýÃû³ÆÌæ´ú. »òÕß, ¿ÉÒÔÓÃ <a href="GuiControl.htm#Functor">GuiControl</a> ÃüÁîÎª¿Ø¼þÁ¬½ÓÒ»¸ö <a href="../objects/Functor.htm">º¯Êý¶ÔÏó</a> . º¯Êý (ÓÃ <code>gCtrlEvent</code> ÉèÖÃµÄº¯ÊýÃû³ÆÎª CtrlEvent) ¿ÉÒÔ½ÓÊÜÒÔÏÂ¿ÉÑ¡²ÎÊý:</p>
 <pre class="Syntax">CtrlEvent(CtrlHwnd, GuiEvent, EventInfo, ErrorLevel)</pre>
@@ -278,24 +277,24 @@ gui, show</pre>
 
 <h2 id="OtherOptions">¿Ø¼þ: ³£ÓÃÑùÊ½ºÍÆäËûÑ¡Ïî</h2>
 <p>×¢Òâ£ºÑ¡ÏîÇ°µÄ·ûºÅÊ¡ÂÔÊ±£¬Ä¬ÈÏÎª¼ÓºÅ£¬ÀýÈç<code>Wrap</code> µÈÍ¬ÓÚ <code>+Wrap</code>¡£Ïà·´µØ£¬<code>-Wrap</code> ½«È¥³ý×Ô¶¯»»ÐÐÊôÐÔ¡£</p>
-<p><strong><a name="AltSubmit"></a>AltSubmit</strong>: Ê¹ÓÃ±¸ÓÃµÄÌá½»·½·¨. ¶ÔÓÚ DropDownList, ComboBox ºÍ ListBox ´ËÑ¡Ïî»áÈÃ <a href="#Submit">Gui Submit</a> ÃüÁî±£´æÑ¡ÏîÏîÄ¿µÄÎ»ÖÃ¶ø²»ÊÇÆäÎÄ±¾. Èç¹ûÃ»ÓÐÑ¡ÔñÏîÄ¿, Ôò¶ÔÓÚ ComboBox »á±£´æÆä±à¼­ÇøÓòµÄÎÄ±¾; Í¬ÑùµØ, ¶ÔÓÚ DropDownList »ò ListBox Ôò°ÑËüÃÇµÄ¹ØÁª <a href="#var">Êä³ö±äÁ¿</a> ÉèÖÃÎª¿Õ. ×¢Òâ: AltSubmit »¹»áÓ°Ïì <a href="GuiControlGet.htm">GuiControlGet</a> »ñÈ¡ÕâÐ©¿Ø¼þÄÚÈÝÊ±µÄÐÐÎª.</p>
+<p id="AltSubmit"><strong>AltSubmit</strong>: Ê¹ÓÃ±¸ÓÃµÄÌá½»·½·¨. ¶ÔÓÚ DropDownList, ComboBox ºÍ ListBox ´ËÑ¡Ïî»áÈÃ <a href="#Submit">Gui Submit</a> ÃüÁî±£´æÑ¡ÏîÏîÄ¿µÄÎ»ÖÃ¶ø²»ÊÇÆäÎÄ±¾. Èç¹ûÃ»ÓÐÑ¡ÔñÏîÄ¿, Ôò¶ÔÓÚ ComboBox »á±£´æÆä±à¼­ÇøÓòµÄÎÄ±¾; Í¬ÑùµØ, ¶ÔÓÚ DropDownList »ò ListBox Ôò°ÑËüÃÇµÄ¹ØÁª <a href="#var">Êä³ö±äÁ¿</a> ÉèÖÃÎª¿Õ. ×¢Òâ: AltSubmit »¹»áÓ°Ïì <a href="GuiControlGet.htm">GuiControlGet</a> »ñÈ¡ÕâÐ©¿Ø¼þÄÚÈÝÊ±µÄÐÐÎª.</p>
 <p><strong>C</strong>: ÎÄ±¾ÑÕÉ« (¶Ô <a href="GuiControls.htm#Button">°´Å¥</a> ¿Ø¼þÎÞÐ§). Ö¸¶¨×ÖÄ¸ C ºóÃæ½ô¸ú×ÅÑÕÉ«Ãû³Æ (Çë²ÎÔÄ <a href="Progress.htm#colors">ÑÕÉ«Í¼±í</a>) »ò RGB Öµ (0x Ç°×º¿ÉÒÔÊ¡ÂÔ). ÀýÈç£º<code>cRed</code>¡¢<code>cFF2211</code>¡¢<code>c0xFF2211</code>¡¢<code>cDefault</code>¡£</p>
 <p><strong>Disabled</strong>: ÈÃ¿ÉÊäÈëÐÍ¿Ø¼þ±äÎª»ÒÉ«½ûÓÃ×´Ì¬, ÕâÑù¿ÉÒÔ·ÀÖ¹È¡µÃ½¹µã»òÓÃ»§¸Ä±äÆäÄÚÈÝ. ÒÔºó¿ÉÒÔÊ¹ÓÃ <a href="GuiControl.htm#Enable">GuiControl Enable</a> À´ÆôÓÃ¿Ø¼þ¡£×¢Òâ£ºÒªÈÃ±à¼­¿Ø¼þÎªÖ»¶Á×´Ì¬£¬ÇëÖ¸¶¨ <code>ReadOnly</code> Ñ¡Ïî´úÌæ¡£²¢ÇÒ, »¹¿ÉÒÔÔÚµ¥´Ê Disabled ºó½ô¸ú×Å 0 »ò 1 À´±íÊ¾¿Ø¼þµÄ³õÊ¼×´Ì¬ (0 ÎªÆôÓÃ¶ø 1 Îª½ûÓÃ). »»¾ä»°Ëµ£¬<code>Disabled</code> ºÍ <code>Disabled%VarContainingOne%</code> ÊÇÒ»ÑùµÄ¡£</p>
 <p><strong>Hidden</strong>: ÈÃ¿Ø¼þ³õÊ¼ÎªÒþ²Ø×´Ì¬. ÒÔºó¿ÉÒÔÊ¹ÓÃ <a href="GuiControl.htm#Show">GuiControl Show</a> À´ÈÃËüÏÔÊ¾¡£¿ÉÒÔÔÚµ¥´Ê Hidden ºó¸ú×Å 0 »ò 1 À´±íÊ¾³õÊ¼×´Ì¬ (0 Îª¿É¼û¶ø 1 ÎªÒþ²Ø). »»¾ä»°Ëµ£¬<code>Hidden</code> ºÍ <code>Hidden%VarContainingOne%</code> ÊÇÒ»ÑùµÄ¡£</p>
 <p><strong>Left</strong>: ÔÚ¿Ø¼þµÄ¿ÉÓÃ¿í¶ÈÄÚ×ó¶ÔÆë¿Ø¼þµÄÎÄ±¾.</p>
 <p><strong>Right</strong>: ÔÚ¿Ø¼þµÄ¿ÉÓÃ¿í¶ÈÄÚÓÒ¶ÔÆë¿Ø¼þµÄÎÄ±¾. ¶ÔÓÚ¸´Ñ¡¿òºÍµ¥Ñ¡°´Å¥, ´ËÑ¡ÏîÒ²Í¬Ê±°Ñ¿ò·ÅÖÃÔÚ¿Ø¼þµÄÓÒ±ß¶ø²»ÊÇ×ó±ß.</p>
 <p><strong>Center</strong>: ÔÚ¿Ø¼þµÄ¿ÉÓÃ¿í¶ÈÄÚ¾ÓÖÐ¶ÔÆë¿Ø¼þµÄÎÄ±¾.</p>
-<p><strong><a name="Section"></a>Section</strong>£º¶¨ÒåÒ»¸öÐÂµÄ¿Ø¼þ¶Î²¢±£´æµ±Ç°¿Ø¼þµÄÎ»ÖÃÒÔ±ãÔÚÖ®ºó´´½¨º¬ÓÐ <em>xs</em> ºÍ <em>ys</em> Ñ¡ÏîµÄ¿Ø¼þÊ±Ê¹ÓÃ£¬Çë²ÎÔÄ<a href="#xs">ÉÏÎÄµÄÃèÊö</a>¡£</p>
-<p><strong><a name="Tabstop" id="Tabstop"></a>Tabstop</strong>£ºÊ¹ÓÃ <code>-Tabstop</code>£¨¼´¸º Tabstop£©¿ÉÒÔÈÃÓÃ»§°´ TAB ¼üµ¼º½Ê±Ìø¹ýÊäÈëÐÍ¿Ø¼þ¡£</p>
-<p><strong><a name="Wrap"></a>Wrap</strong>: ÈÃ¿Ø¼þµÄÎÄ±¾×Ô¶¯»»ÐÐ. ÒòÎª¼¸ºõËùÓÐÀàÐÍµÄ¿Ø¼þ³õÊ¼×´Ì¬¶¼ÆôÓÃÁË×Ô¶¯»»ÐÐ£¬ËùÒÔÐèÒªÍ¨¹ý<code>-Wrap</code>½ûÓÃËü¡£</p>
+<p id="Section"><strong>Section</strong>£º¶¨ÒåÒ»¸öÐÂµÄ¿Ø¼þ¶Î²¢±£´æµ±Ç°¿Ø¼þµÄÎ»ÖÃÒÔ±ãÔÚÖ®ºó´´½¨º¬ÓÐ <em>xs</em> ºÍ <em>ys</em> Ñ¡ÏîµÄ¿Ø¼þÊ±Ê¹ÓÃ£¬Çë²ÎÔÄ<a href="#xs">ÉÏÎÄµÄÃèÊö</a>¡£</p>
+<p id="Tabstop"><strong>Tabstop</strong>£ºÊ¹ÓÃ <code>-Tabstop</code>£¨¼´¸º Tabstop£©¿ÉÒÔÈÃÓÃ»§°´ TAB ¼üµ¼º½Ê±Ìø¹ýÊäÈëÐÍ¿Ø¼þ¡£</p>
+<p id="Wrap"><strong>Wrap</strong>: ÈÃ¿Ø¼þµÄÎÄ±¾×Ô¶¯»»ÐÐ. ÒòÎª¼¸ºõËùÓÐÀàÐÍµÄ¿Ø¼þ³õÊ¼×´Ì¬¶¼ÆôÓÃÁË×Ô¶¯»»ÐÐ£¬ËùÒÔÐèÒªÍ¨¹ý<code>-Wrap</code>½ûÓÃËü¡£</p>
 <p><strong>VScroll</strong>: µ±¿Ø¼þÖ§³ÖÊ±ÎªÆäÌá¹©Ò»¸ö´¹Ö±¹ö¶¯Ìõ.</p>
 <p><strong>HScroll</strong>: µ±¿Ø¼þÖ§³ÖÊ±ÎªÆäÌá¹©Ò»¸öË®Æ½¹ö¶¯Ìõ. Õâ¸ö¶ÎÂäµÄÊ£Óà²¿·Ö½öÊÊÓÃÓÚ <a href="GuiControls.htm#ListBox">ListBox</a>. ¿ÉË®Æ½¹ö¶¯µÄ¿í¶ÈÄ¬ÈÏÎª ListBox ¿í¶ÈµÄ 3 ±¶. ÒªÊ¹ÓÃÆäËûµÄ¹ö¶¯¿í¶È, ÇëÔÚµ¥´Ê HScroll ºó½ô¸ú×ÅÒ»¸öÊý×Ö±íÊ¾. ÀýÈç£¬<code>HScroll500</code> ½«ÔÚ ListBox ÖÐÊ¹ÓÃ 500 ÏñËØµÄ¹ö¶¯À¸¿í¶È¡£µ«ÊÇ£¬Èç¹ûÖ¸¶¨µÄ¹ö¶¯¿í¶ÈÐ¡ÓÚ ListBox µÄ¿í¶È£¬Ôò²»ÏÔÊ¾¹ö¶¯Ìõ£¨²»¹ýÔÚÕâÖÖº¬ÓÐ <em>HScroll</em> µÄÇé¿öÏÂ£¬¿ÉÒÔÔÚÖ®ºóÊ¹ÓÃ <code><a href="GuiControl.htm">GuiControl</a>, +HScroll500, MyScrollBar</code> À´Ìí¼ÓË®Æ½¹ö¶¯Ìõ£¬·ñÔòÊÇÎÞ·¨Ìí¼ÓµÄ£©¡£</p>
 
 <h2>¿Ø¼þ: ²»³£ÓÃÑùÊ½ºÍÑ¡Ïî</h2>
-<p><strong><a name="BackgroundTrans"></a>BackgroundTrans</strong>: Ê¹ÓÃÍ¸Ã÷µÄ±³¾°, ÕâÑù¿ÉÒÔÈÃÈÎºÎÒ»¸öÔÚ Text, Picture »ò GroupBox ºóÃæµÄ¿Ø¼þÏÔÊ¾³öÀ´. ÀýÈç, ÔÚ Picture ¿Ø¼þÉÏÏÔÊ¾Ò»¸öÍ¸Ã÷±³¾°µÄ Text ¿ÉÒÔÈÃÎÄ×Ö¿´ÆðÀ´¾ÍÏñÍ¼Æ¬µÄÒ»²¿·Ö. ÒÔºó¿ÉÒÔÊ¹ÓÃ <code><a href="GuiControl.htm">GuiControl</a> +background</code> ÒÆ³ý´ËÑ¡Ïî¡£Çë²ÎÔÄ <a href="GuiControls.htm#PicAltSubmit">Picture ¿Ø¼þµÄ AltSubmit ²¿·Ö</a>À´ÁË½â¹ØÓÚÍ¸Ã÷Í¼ÏñµÄ¸ü¶àÏ¸½Ú¡£ÒÑÖªÏÞÖÆ£º¶Ô°üº¬ÁË <a href="GuiControls.htm#Tab">ListView</a> µÄ <a href="ListView.htm">Tab ¿Ø¼þ</a>ÖÐµÄÆäËû¿Ø¼þ£¬BackgroundTrans ¿ÉÄÜÎÞ·¨ÕýÈ·Ó¦ÓÃ¡£</p>
+<p id="BackgroundTrans"><strong>BackgroundTrans</strong>: Ê¹ÓÃÍ¸Ã÷µÄ±³¾°, ÕâÑù¿ÉÒÔÈÃÈÎºÎÒ»¸öÔÚ Text, Picture »ò GroupBox ºóÃæµÄ¿Ø¼þÏÔÊ¾³öÀ´. ÀýÈç, ÔÚ Picture ¿Ø¼þÉÏÏÔÊ¾Ò»¸öÍ¸Ã÷±³¾°µÄ Text ¿ÉÒÔÈÃÎÄ×Ö¿´ÆðÀ´¾ÍÏñÍ¼Æ¬µÄÒ»²¿·Ö. ÒÔºó¿ÉÒÔÊ¹ÓÃ <code><a href="GuiControl.htm">GuiControl</a> +background</code> ÒÆ³ý´ËÑ¡Ïî¡£Çë²ÎÔÄ <a href="GuiControls.htm#PicAltSubmit">Picture ¿Ø¼þµÄ AltSubmit ²¿·Ö</a>À´ÁË½â¹ØÓÚÍ¸Ã÷Í¼ÏñµÄ¸ü¶àÏ¸½Ú¡£ÒÑÖªÏÞÖÆ£º¶Ô°üº¬ÁË <a href="GuiControls.htm#Tab">ListView</a> µÄ <a href="ListView.htm">Tab ¿Ø¼þ</a>ÖÐµÄÆäËû¿Ø¼þ£¬BackgroundTrans ¿ÉÄÜÎÞ·¨ÕýÈ·Ó¦ÓÃ¡£</p>
 <p><strong>-Background</strong>£¨¼´¸º Background£©£ºÊ¹ÓÃ±ê×¼µÄ±³¾°ÑÕÉ«´úÌæ <a href="#Color">Gui Color</a> ÃüÁîÉèÖÃµÄÄÇ¸öÑÕÉ«¡£´ËÑ¡Ïî³£ÓÃÓÚÈÃ Tab ¿Ø¼þÊ¹ÓÃÆä±ê×¼ÑÕÉ«´úÌæ´°¿ÚÑÕÉ«. ÒÔºó¿ÉÒÔÊ¹ÓÃ <code><a href="GuiControl.htm">GuiControl</a> +background</code> ÒÆ³ý´ËÑ¡Ïî¡£</p>
 <p><strong>Border</strong>: Îª¿Ø¼þÔö¼ÓÒ»¸öÏ¸±ß¿ò. ¶ÔÓÚ´ó¶àÊý¿Ø¼þ²»ÐèÒªÊ¹ÓÃ´ËÑ¡Ïî, ÒòÎªËüÃÇÒÑ¾­º¬ÓÐÌØ¶¨ÓÚÀàÐÍµÄ±ß¿ò. Ìí¼ÓÒ»¸ö±ß¿òµ½ <em>ÏÖÓÐ</em> ¿Ø¼þÊ±, ¿ÉÄÜÐèÒª¸ø¿Ø¼þµÄ¿í¶ÈºÍ¸ß¶ÈÔö¼Ó 1 ¸öÏñËØ.</p>
-<p><strong><a name="HwndOutputVar"></a>Hwnd</strong><em>OutputVar</em> <span class="ver">[v1.0.46.01+]:</span> ÔÚ <a href="#Add">Gui Add</a> ÖÐÊ¹ÓÃÊ±, ´ËÑ¡Ïî±£´æÐÂ½¨¿Ø¼þµÄ´°¿Ú¾ä±ú (HWND) µ½ <em>OutputVar</em>. ÀýÈç£º<code>Gui, Add, Edit, vMyEdit HwndMyEditHwnd</code>¡£Èç¹ûÔÚº¯ÊýÖÐÊ¹ÓÃ, <em>MyEditHwnd</em> »á±»ÊÓÎª <a href="../Functions.htm#DynVar">º¯Êý¶¯Ì¬±äÁ¿</a>. ¿Ø¼þµÄ HWND ³£ÓÃÓÚ <a href="PostMessage.htm">PostMessage</a>, <a href="PostMessage.htm">SendMessage</a> ºÍ <a href="DllCall.htm">DllCall</a>. Ëü»¹¿ÉÒÔÖ±½ÓÓÃÔÚ <a href="../misc/WinTitle.htm#ahk_id">ahk_id WinTitle</a> (¼´Ê¹ <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> ÉèÖÃ¹Ø±ÕÊ±, ÕâÑù¶ÔÓÚÒþ²Ø¿Ø¼þÒ²ÊÇÓÐÐ§µÄ) »ò <span class="ver">[in v1.1.04+]</span> GuiControl ºÍ GuiControlGet µÄ<em>ControlID</em> ²ÎÊý. Ïà¹ØÌáÊ¾£¬¸¸´°¿ÚµÄ HWND ¿ÉÒÔÊ¹ÓÃ <code><a href="#GuiHwndOutputVar">Gui MyGui:+HwndOutputVar</a></code> »ñÈ¡¡£</p>
+<p id="HwndOutputVar"><strong>Hwnd</strong><em>OutputVar</em> <span class="ver">[v1.0.46.01+]:</span> ÔÚ <a href="#Add">Gui Add</a> ÖÐÊ¹ÓÃÊ±, ´ËÑ¡Ïî±£´æÐÂ½¨¿Ø¼þµÄ´°¿Ú¾ä±ú (HWND) µ½ <em>OutputVar</em>. ÀýÈç£º<code>Gui, Add, Edit, vMyEdit HwndMyEditHwnd</code>¡£Èç¹ûÔÚº¯ÊýÖÐÊ¹ÓÃ, <em>MyEditHwnd</em> »á±»ÊÓÎª <a href="../Functions.htm#DynVar">º¯Êý¶¯Ì¬±äÁ¿</a>. ¿Ø¼þµÄ HWND ³£ÓÃÓÚ <a href="PostMessage.htm">PostMessage</a>, <a href="PostMessage.htm">SendMessage</a> ºÍ <a href="DllCall.htm">DllCall</a>. Ëü»¹¿ÉÒÔÖ±½ÓÓÃÔÚ <a href="../misc/WinTitle.htm#ahk_id">ahk_id WinTitle</a> (¼´Ê¹ <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> ÉèÖÃ¹Ø±ÕÊ±, ÕâÑù¶ÔÓÚÒþ²Ø¿Ø¼þÒ²ÊÇÓÐÐ§µÄ) »ò <span class="ver">[in v1.1.04+]</span> GuiControl ºÍ GuiControlGet µÄ<em>ControlID</em> ²ÎÊý. Ïà¹ØÌáÊ¾£¬¸¸´°¿ÚµÄ HWND ¿ÉÒÔÊ¹ÓÃ <code><a href="#GuiHwndOutputVar">Gui MyGui:+HwndOutputVar</a></code> »ñÈ¡¡£</p>
 <p><strong>Theme</strong>: Ê¹ÓÃ´ËÑ¡Ïî¿ÉÒÔÈÃÐÂ½¨µÄ¿Ø¼þºöÂÔ´°¿Úµ±Ç°µÄÖ÷ÌâÉèÖÃ. Ëü¶ÔÓÚÏÖÓÐ¿Ø¼þÃ»ÓÐÐ§¹û; ²»¹ý, ÕâÖÖÇé¿ö¿ÉÄÜÔÚ½«À´µÄ°æ±¾ÖÐ¸Ä±ä. Çë²ÎÔÄ <a href="#Theme">Gui +/-Theme</a> ÁË½âÏêÇé.</p>
 <p><strong>(Î´ÃüÃûÑùÊ½)</strong>: ÔÚÊ®½øÖÆ»òÊ®Áù½øÖÆµÄ <a href="../misc/Styles.htm">ÑùÊ½±àºÅ</a> Ç°¼ÓÉÏ¼ÓºÅ»ò¼õºÅ±íÊ¾Ìí¼Ó»òÉ¾³ý´ËÑùÊ½. Èç¹ûÊ¡ÂÔÁË·ûºÅ, ÔòÄ¬ÈÏÎª¼ÓºÅ.</p>
 <p><strong>(Î´ÃüÃûÀ©Õ¹ÑùÊ½)</strong>: ÔÚ×ÖÄ¸ E ºÍÊ®½øÖÆ»òÊ®Áù½øÖÆµÄÀ©Õ¹ÑùÊ½±àºÅÇ°¼ÓÉÏ¼ÓºÅ»ò¼õºÅ±íÊ¾Ìí¼Ó»òÉ¾³ý´ËÀ©Õ¹ÑùÊ½. Èç¹ûÊ¡ÂÔÁË·ûºÅ, ÔòÄ¬ÈÏÎª¼ÓºÅ. ÀýÈç£¬<code>E0x200</code> ±íÊ¾Ìí¼Ó WS_EX_CLIENTEDGE ÑùÊ½£¬Ëü¿ÉÒÔÎªÍ¼Æ¬ºÍÆäËû¿Ø¼þÔö¼ÓÒ»¸öÏÂ³ÁµÄ±ß¿òÑùÊ½¡£¾¡¹ÜÕâÀïÃ»ÓÐÁÐ³öÆäËûµÄÀ©Õ¹ÑùÊ½±àºÅ£¨ÒòÎªËüÃÇ¼«ÉÙÊ¹ÓÃ£©£¬²»¹ý¿ÉÒÔÍ¨¹ýÔÚ <a href="http://www.microsoft.com">www.microsoft.com</a> ÖÐËÑË÷ WS_EX_CLIENTEDGE ÕÒµ½ËüÃÇ¡£</p>
@@ -312,7 +311,7 @@ gui, show</pre>
 <p><span class="ver">[v1.1.20+]:</span> Èç¹ûÊÂ¼þ´¦Àí±êÇ©²»´æÔÚ, ÄÇÃ´ÏàÍ¬Ãû³ÆµÄº¯Êý½«Ìæ´ú±êÇ©ÏìÓ¦. º¯Êý¿ÉÑ¡Ôñ½ÓÊÕ GUI µÄ <a href="#GuiHwndOutputVar">HWND</a> ×÷ÎªµÚÒ»¸ö²ÎÊý. Ò»Ð©ÊÂ¼þ»¹ÓÐ¸ü¶àµÄ²ÎÊý.</p>
 <p>¶ÔÓÚ·ÇµÚÒ»¸ö´°¿Ú <a href="#MultiWin"> (¶à´°¿ÚµÄÇé¿ö) </a> , ´°¿ÚµÄÃû³Æ»òÐòºÅ (Èç¹ûÓÐ) »á±»×÷ÎªÇ°ÃæÌáµ½µÄÌØÊâ±êÇ©µÄÇ°×º; ÀýÈç, 2GuiEscape ºÍ 2GuiClose ½«±»×÷ÎªµÚ¶þ´°¿ÚµÄÄ¬ÈÏ±êÇ©, µ± <em>MyGui</em>GuiEscape ºÍ <em>MyGui</em>GuiClose »á×÷Îª <em>MyGui</em> µÄÄ¬ÈÏ±êÇ©. Òª×Ô¶¨ÒåÒ»¸öÇ°×º, ÇëÓÃ <code><a href="#PlusLabel">Gui +Label</a></code>.</p>
 
-<p><strong><a name="GuiClose"></a>GuiClose</strong>: Ê¹ÓÃÏÂÁÐÆäÖÐÒ»ÖÖ·½·¨¹Ø±Õ´°¿ÚÊ±×Ô¶¯ÔËÐÐ´Ë×Ó³ÌÐò: µã»÷±êÌâÀ¸ÉÏµÄ¹Ø±Õ°´Å¥, ´Ó±êÌâÀ¸ÖÐµÄÏµÍ³²Ëµ¥ÖÐÑ¡Ôñ "¹Ø±Õ" »òÊ¹ÓÃ <a href="WinClose.htm">WinClose</a> ¹Ø±Õ. Èç¹û´Ë±êÇ©²»´æÔÚ, Ôò¹Ø±Õ´°¿ÚÖ»ÊÇ¼òµ¥µØÒþ²Ø´°¿Ú, Óë <a href="#Cancel">Gui Cancel</a> µÄÐ§¹ûÒ»Ñù. ÔÚ GuiClose ÖÐÒ»¸ö×î³£ÓÃµÄ¶¯×÷ÊÇ <a href="ExitApp.htm">ExitApp</a>; ÀýÈç:</p>
+<p id="GuiClose"><strong>GuiClose</strong>: Ê¹ÓÃÏÂÁÐÆäÖÐÒ»ÖÖ·½·¨¹Ø±Õ´°¿ÚÊ±×Ô¶¯ÔËÐÐ´Ë×Ó³ÌÐò: µã»÷±êÌâÀ¸ÉÏµÄ¹Ø±Õ°´Å¥, ´Ó±êÌâÀ¸ÖÐµÄÏµÍ³²Ëµ¥ÖÐÑ¡Ôñ "¹Ø±Õ" »òÊ¹ÓÃ <a href="WinClose.htm">WinClose</a> ¹Ø±Õ. Èç¹û´Ë±êÇ©²»´æÔÚ, Ôò¹Ø±Õ´°¿ÚÖ»ÊÇ¼òµ¥µØÒþ²Ø´°¿Ú, Óë <a href="#Cancel">Gui Cancel</a> µÄÐ§¹ûÒ»Ñù. ÔÚ GuiClose ÖÐÒ»¸ö×î³£ÓÃµÄ¶¯×÷ÊÇ <a href="ExitApp.htm">ExitApp</a>; ÀýÈç:</p>
 <pre>GuiClose:
 ExitApp</pre>
 <p><span class="ver">[v1.1.20+]:</span> Èç¹û GuiClose ÊÇÒ»¸öº¯Êý, GUI Ä¬ÈÏ½«¹Ø±Õ. º¯Êý¿ÉÒÔÍ¨¹ý·µ»ØÒ»¸ö·ÇÁãÕûÊýÀ´·ÀÖ¹ÕâÖÖÇé¿ö, ÈçÏÂÃæµÄÀý×Ó:</p>
@@ -322,10 +321,10 @@ ExitApp</pre>
         return true  <em>; true = 1</em>
 }</pre>
 
-<p><strong><a name="GuiEscape"></a>GuiEscape</strong>: ÓÃ»§ÔÚ GUI ´°¿Ú»î¶¯Ê±°´ÏÂ Escape ºó×Ô¶¯ÔËÐÐ´Ë×Ó³ÌÐò. Èç¹û´Ë±êÇ©²»´æÔÚ, Ôò°´ÏÂ Escape Ã»ÓÐÐ§¹û.
+<p id="GuiEscape"><strong>GuiEscape</strong>: ÓÃ»§ÔÚ GUI ´°¿Ú»î¶¯Ê±°´ÏÂ Escape ºó×Ô¶¯ÔËÐÐ´Ë×Ó³ÌÐò. Èç¹û´Ë±êÇ©²»´æÔÚ, Ôò°´ÏÂ Escape Ã»ÓÐÐ§¹û.
 ÒÑÖªÏÞÖÆ: Èç¹û´°¿ÚÖÐÊ×¸ö¿Ø¼þÊÇ½ûÓÃµÄ (¿ÉÄÜÓë¿Ø¼þÀàÐÍÓÐ¹Ø), Ôò°´ÏÂ Escape Ê± GuiEscape ×Ó³ÌÐò²»»áÔËÐÐ. ²úÉúÕâÑùµÄÐ§¹û¿ÉÄÜÊÇÊÜÆäËûÒ»Ð©ÊÂ¼þµÄÓ°Ïì.</p>
 
-<p><strong><a name="GuiSize"></a>GuiSize</strong>: ¶Ô´°¿Úµ÷Õû´óÐ¡, ×îÐ¡»¯, ×î´ó»¯»ò»¹Ô­Ê±×Ô¶¯ÔËÐÐ´Ë×Ó³ÌÐò. ÄÚÖÃ±äÁ¿ <a href="../Variables.htm#GuiWidth">A_GuiWidth</a> ºÍ <a href="../Variables.htm#GuiWidth">A_GuiHeight</a> ·Ö±ð°üº¬ÁË´°¿Ú¹¤×÷Çøµ÷ÕûºóµÄ¿í¶ÈºÍ¸ß¶È£¬´°¿Ú¹¤×÷Çø²»°üÀ¨±êÌâÀ¸¡¢²Ëµ¥À¸ºÍ±ß¿ò¡£´ËÍâ£¬<a href="../Variables.htm#EventInfo">A_EventInfo</a> ºÍ <a href="../misc/ErrorLevel.htm">ErrorLevel</a> ½«Í¬Ê±°üº¬ÏÂÁÐÊý×ÖµÄÆäÖÐÒ»¸ö£º</p>
+<p id="GuiSize"><strong>GuiSize</strong>: ¶Ô´°¿Úµ÷Õû´óÐ¡, ×îÐ¡»¯, ×î´ó»¯»ò»¹Ô­Ê±×Ô¶¯ÔËÐÐ´Ë×Ó³ÌÐò. ÄÚÖÃ±äÁ¿ <a href="../Variables.htm#GuiWidth">A_GuiWidth</a> ºÍ <a href="../Variables.htm#GuiWidth">A_GuiHeight</a> ·Ö±ð°üº¬ÁË´°¿Ú¹¤×÷Çøµ÷ÕûºóµÄ¿í¶ÈºÍ¸ß¶È£¬´°¿Ú¹¤×÷Çø²»°üÀ¨±êÌâÀ¸¡¢²Ëµ¥À¸ºÍ±ß¿ò¡£´ËÍâ£¬<a href="../Variables.htm#EventInfo">A_EventInfo</a> ºÍ <a href="../misc/ErrorLevel.htm">ErrorLevel</a> ½«Í¬Ê±°üº¬ÏÂÁÐÊý×ÖµÄÆäÖÐÒ»¸ö£º</p>
 <p>0: ´°¿Ú±»»¹Ô­»òÍ¨¹ýÍÏÀ­´°¿Ú±ßÔµÕâÑùÕý³£µ÷½Ú¹ý´óÐ¡Ê±¡£<br>
   1: ´°¿Ú±»×îÐ¡»¯ÁË.<br>
   2: ´°¿Ú±»×î´ó»¯ÁË.</p>
@@ -337,7 +336,7 @@ ExitApp</pre>
 <p><span class="ver">[v1.1.20+]:</span> Èç¹û GuiSize Îªº¯Êý, ËüµÄ²ÎÊýÓ¦Îª:</p>
 <pre class="Syntax">GuiSize(GuiHwnd, EventInfo, Width, Height)</pre>
 
-<p><strong><a name="GuiContextMenu"></a>GuiContextMenu</strong>: µ±ÓÃ»§ÔÚ´°¿ÚÉÏ³ý±êÌâÀ¸ºÍ²Ëµ¥À¸ÍâµÄÆäËûµØ·½µã»÷ÓÒ¼üÊ±×Ô¶¯ÔËÐÐ´Ë×Ó³ÌÐò. µ±ÓÃ»§°´ÏÂ Apps ¼ü»ò Shift-F10 Ê±Ò²»áÔËÐÐ. ºÍÆäËû¶àÊý GUI ±êÇ©²»Í¬, GuiContextMenu ¿ÉÒÔº¬ÓÐ¶à¸ö²¢·¢ <a href="../misc/Threads.htm">Ïß³Ì</a>. ÔÚ GuiContextMenu ×Ó³ÌÐòÖÐ¿ÉÒÔÒýÓÃÏÂÁÐÄÚÖÃ±äÁ¿:</p>
+<p id="GuiContextMenu"><strong>GuiContextMenu</strong>: µ±ÓÃ»§ÔÚ´°¿ÚÉÏ³ý±êÌâÀ¸ºÍ²Ëµ¥À¸ÍâµÄÆäËûµØ·½µã»÷ÓÒ¼üÊ±×Ô¶¯ÔËÐÐ´Ë×Ó³ÌÐò. µ±ÓÃ»§°´ÏÂ Apps ¼ü»ò Shift-F10 Ê±Ò²»áÔËÐÐ. ºÍÆäËû¶àÊý GUI ±êÇ©²»Í¬, GuiContextMenu ¿ÉÒÔº¬ÓÐ¶à¸ö²¢·¢ <a href="../misc/Threads.htm">Ïß³Ì</a>. ÔÚ GuiContextMenu ×Ó³ÌÐòÖÐ¿ÉÒÔÒýÓÃÏÂÁÐÄÚÖÃ±äÁ¿:</p>
 <ol>
   <li><a href="../Variables.htm#GuiControl">A_GuiControl</a>, Ëü°üº¬ÁË½ÓÊÕÊÂ¼þµÄ¿Ø¼þµÄ <a href="../Variables.htm#GuiControl">ÎÄ±¾»ò±äÁ¿Ãû</a> (Èç¹ûÃ»ÓÐÔòÎª¿Õ).</li>
   <li><a href="../Variables.htm#EventInfo">A_EventInfo</a>: µ±ÓÒ¼üµã»÷ ListBox, ListView »ò TreeView Ê± (¿ÉÒÔÓÉÉÏÃæµÄ A_GuiControl È·¶¨), A_EventInfo °üº¬ÁËÓÒ¼üµã»÷µÄ¿Ø¼þÏîÄ¿:<br>
@@ -351,7 +350,7 @@ ExitApp</pre>
 <pre class="Syntax">GuiContextMenu(GuiHwnd, CtrlHwnd, EventInfo, IsRightClick, X, Y)</pre>
 <p><em>CtrlHwnd</em> Èç¹û¿Ø¼þÃ»ÓÐ½ÓÊÕµ½ÊÂ¼þÔòÎª¿Õ. <em>IsRightClick</em> ÔÚ A_GuiEvent Îª RightClick Ê±·µ»Ø True.</p>
 
-<p><strong><a name="GuiDropFiles"></a>GuiDropFiles</strong>: ÍÏ·ÅÎÄ¼þ/ÎÄ¼þ¼Ðµ½´°¿ÚÉÏÊ±ÔËÐÐ´Ë×Ó³ÌÐò (Èç¹û´Ë×Ó³ÌÐòÒÑ¾­ÔÚÔËÐÐÖÐ, ÔòºöÂÔÍÏ·ÅÊÂ¼þ). ÔÚ GuiDropFiles ÖÐ¿ÉÒÔÒýÓÃÏÂÁÐÄÚÖÃ±äÁ¿:</p>
+<p id="GuiDropFiles"><strong>GuiDropFiles</strong>: ÍÏ·ÅÎÄ¼þ/ÎÄ¼þ¼Ðµ½´°¿ÚÉÏÊ±ÔËÐÐ´Ë×Ó³ÌÐò (Èç¹û´Ë×Ó³ÌÐòÒÑ¾­ÔÚÔËÐÐÖÐ, ÔòºöÂÔÍÏ·ÅÊÂ¼þ). ÔÚ GuiDropFiles ÖÐ¿ÉÒÔÒýÓÃÏÂÁÐÄÚÖÃ±äÁ¿:</p>
 <ol>
   <li><a href="../Variables.htm#GuiControl">A_GuiControl</a>, Ëü°üº¬ÁË½ÓÊÕµ½ÊÍ·ÅÎÄ¼þµÄ¿Ø¼þµÄ <a href="../Variables.htm#GuiControl">ÎÄ±¾»ò±äÁ¿Ãû</a> (Èç¹ûÃ»ÓÐÔòÎª¿Õ).</li>
   <li><a href="../Variables.htm#EventInfo">A_EventInfo</a> ºÍ <a href="../misc/ErrorLevel.htm">ErrorLevel</a>, °üº¬ÁËÊÍ·ÅÎÄ¼þµÄÊýÄ¿.</li>
@@ -389,7 +388,7 @@ Loop, parse, FileList, `n
 
 <p><strong>¼ì²âºÍÏìÓ¦ÆäËûÊÂ¼þ</strong>: ÆäËû GUI ÊÂ¼þ¿ÉÒÔÊ¹ÓÃ <a href="OnMessage.htm">OnMessage()</a> À´¼ì²âºÍÏìÓ¦. ÀýÈç, µ±ÓÃ»§°ÑÊó±êÒÆ¶¯µ½´°¿ÚÖÐÌØÊâµÄ¿Ø¼þÊ±½Å±¾¿ÉÒÔÍ¨¹ý¹¤¾ßÌáÊ¾ÏÔÊ¾Ïà¹Ø°ïÖú. Çë²ÎÔÄÑÝÊ¾ <a href="#ExToolTip">GUI ¹¤¾ßÌáÊ¾Ê¾Àý</a>.</p>
 
-<h2><a name="MultiWin" id="MultiWin"></a>´´½¨¶à¸ö GUI ´°¿Ú</h2>
+<h2 id="MultiWin">´´½¨¶à¸ö GUI ´°¿Ú</h2>
 <p>Òª¶Ô·Ç <a href="#DefaultWin">Ä¬ÈÏ</a> ´°¿Ú½øÐÐ²Ù×÷, ÐèÒªÔÚ×ÓÃüÁîÇ°¼ÓÉÏ´°¿ÚÃû³Æ»ò±àºÅ (ÔÚ v1.1.03+, »¹¿ÉÒÔÊ¹ÓÃ <a href="#GuiHwndOutputVar">HWND</a>) ºÍÒ»¸öÃ°ºÅ, ÀýÈç:</p>
 <pre>Gui, <strong>MyGui:</strong>Add, Text,, Text for about-box.
 Gui, <strong>MyGui:</strong>Show</pre>
@@ -411,7 +410,7 @@ ExitApp  <em>; ÉÏÃæµÄËùÓÐ±êÇ©¶¼»áÖ´ÐÐÕâ¸öÓï¾ä.</em></pre>
 <p>ËùÓÐµÄ GUI <a href="../misc/Threads.htm">Ïß³Ì</a> ¶¼»áÒÔÉèÖÃµÄÄ¬ÈÏÖµÆô¶¯, ÀýÈç <a href="SendMode.htm">SendMode</a>. ÕâÐ©Ä¬ÈÏÖµ¿ÉÒÔÔÚ <a href="../Scripts.htm#auto">×Ô¶¯Ö´ÐÐ¶Î</a> ¸Ä±ä.</p>
 <h2 id="Navigate">¼üÅÌµ¼º½</h2>
 <p>Ê¹ÓÃ TAB ¿ÉÒÔÔÚ GUI ´°¿ÚÖÐµ¼º½, Ëü»áÒÆ¶¯¼üÅÌ½¹µãµ½ÏÂÒ»¸ö¿ÉÊäÈëÐÍ¿Ø¼þÖÐ (Ìø¹ýÒÆ³ýÁË <a href="#Tabstop">Tabstop</a> ÑùÊ½µÄ¿Ø¼þ). µ¼º½µÄË³ÐòÓÉ¿Ø¼þÌí¼ÓµÄË³Ðò¾ö¶¨. µ±Ê×´ÎÏÔÊ¾Ò»¸ö´°¿ÚÊ±, ¼üÅÌ½¹µã½«ÔÚÊ×¸ö¾ßÓÐ Tabstop ÑùÊ½ (Ä¬ÈÏÇé¿öÏÂ´ó¶àÊýÀàÐÍµÄ¿Ø¼þ¶¼¾ßÓÐ) µÄ¿ÉÊäÈëÐÍ¿Ø¼þÉÏ.</p>
-<p><a name="ShortcutKey"></a>¿ÉÒÔÔÚÄ³Ð©¿Ø¼þµÄÃû³ÆÖÐ°üº¬ºÍ·ûºÅ (&amp;) À´´´½¨´Ë¿Ø¼þµÄ¼üÅÌ¿ì½Ý¼ü, ÔÚ¿Ø¼þÃû³ÆÖÐµÄ¿ì½Ý¼ü×ÖÄ¸»á¼ÓÉÏÏÂ»®ÏßÏÔÊ¾ (È¡¾öÓÚÏµÍ³ÉèÖÃ). ÓÃ»§¿ÉÒÔÍ¨¹ý°´ÏÂ ALT ¼üºÍÏàÓ¦µÄ×Ö·ûÀ´´¥·¢ÕâÑùµÄ¿ì½Ý¼ü. ¶ÔÓÚ°´Å¥, ¸´Ñ¡¿òºÍµ¥Ñ¡°´Å¥, °´ÏÂÏàÓ¦µÄ¿ì½Ý¼üµÈÓÚµã»÷ÁË°´Å¥. ¶ÔÓÚ GroupBox ºÍ Text ¿Ø¼þ, °´ÏÂÏàÓ¦µÄ¿ì½Ý¼üÔòÒÆ¶¯¼üÅÌ½¹µãµ½´Ë¿Ø¼þºó (²»ÊÇÖ¸Î»ÖÃ, ÊÇ´´½¨Ë³Ðò) Ê×¸ö¾ßÓÐ <a href="#Tabstop">tabstop</a> ÑùÊ½µÄ¿ÉÊäÈëÐÍ¿Ø¼þÖÐ. È»¶ø, Èç¹û¶à¸ö¿Ø¼þº¬ÓÐÏàÍ¬µÄ¿ì½Ý¼ü, Ôò°´ÏÂ´Ë¿ì½Ý¼ü»áÈÃ¼üÅÌ½¹µãÔÚÕâÐ©¿Ø¼þÖÐ½»Ìæ.</p>
+<p id="ShortcutKey">¿ÉÒÔÔÚÄ³Ð©¿Ø¼þµÄÃû³ÆÖÐ°üº¬ºÍ·ûºÅ (&amp;) À´´´½¨´Ë¿Ø¼þµÄ¼üÅÌ¿ì½Ý¼ü, ÔÚ¿Ø¼þÃû³ÆÖÐµÄ¿ì½Ý¼ü×ÖÄ¸»á¼ÓÉÏÏÂ»®ÏßÏÔÊ¾ (È¡¾öÓÚÏµÍ³ÉèÖÃ). ÓÃ»§¿ÉÒÔÍ¨¹ý°´ÏÂ ALT ¼üºÍÏàÓ¦µÄ×Ö·ûÀ´´¥·¢ÕâÑùµÄ¿ì½Ý¼ü. ¶ÔÓÚ°´Å¥, ¸´Ñ¡¿òºÍµ¥Ñ¡°´Å¥, °´ÏÂÏàÓ¦µÄ¿ì½Ý¼üµÈÓÚµã»÷ÁË°´Å¥. ¶ÔÓÚ GroupBox ºÍ Text ¿Ø¼þ, °´ÏÂÏàÓ¦µÄ¿ì½Ý¼üÔòÒÆ¶¯¼üÅÌ½¹µãµ½´Ë¿Ø¼þºó (²»ÊÇÖ¸Î»ÖÃ, ÊÇ´´½¨Ë³Ðò) Ê×¸ö¾ßÓÐ <a href="#Tabstop">tabstop</a> ÑùÊ½µÄ¿ÉÊäÈëÐÍ¿Ø¼þÖÐ. È»¶ø, Èç¹û¶à¸ö¿Ø¼þº¬ÓÐÏàÍ¬µÄ¿ì½Ý¼ü, Ôò°´ÏÂ´Ë¿ì½Ý¼ü»áÈÃ¼üÅÌ½¹µãÔÚÕâÐ©¿Ø¼þÖÐ½»Ìæ.</p>
 <p>ÒªÔÚÉÏÃæÌá¼°ÀàÐÍµÄ¿Ø¼þÖÐÏÔÊ¾Ò»¸öÔ­ÒåµÄºÍ·ûºÅ£¬ÇëÖ¸¶¨Á½¸öÁ¬ÐøµÄºÍ·ûºÅ£¬ÀýÈç£º<code>Save &amp;&amp; Exit</code>¡£</p>
 <h2 id="Appear">´°¿ÚÍâ¹Û</h2>
 <p>GUI ´°¿ÚÊ¹ÓÃËü´´½¨Ê±µÄÍÐÅÌÍ¼±ê×÷ÎªÆä´°¿ÚÍ¼±ê. Òò´Ë, Èç¹ûÒªÊ¹ÓÃ²»Í¬µÄÍ¼±ê, ÐèÒªÔÚ´´½¨´°¿ÚÇ°¸Ä±äÍÐÅÌÍ¼±ê. ÀýÈç£º<code><a href="Menu.htm">Menu</a>, Tray, Icon, MyIcon.ico</code>¡£»¹¿ÉÒÔÈÃ´°¿ÚÓµÓÐÒ»¸ö²»Í¬µÄ´óÍ¼±ê¶ø²»ÓÃÕâ¸öÐ¡Í¼±ê (´óÍ¼±êÏÔÊ¾ÔÚ alt-tab ÈÎÎñÇÐ»»Æ÷ÖÐ). Õâ¸ö¹¦ÄÜ¿ÉÒÔÍ¨¹ý DllCall ºÍ SendMessage À´ÊµÏÖ; ÀýÈç:</p>
@@ -507,7 +506,7 @@ GuiClose:
 GuiEscape:
 ExitApp</pre>
 <p>&nbsp;</p>
-<pre class="NoIndent"><a name="ExToolTip"></a><em>; Ê¾Àý: µ±Êó±êÒÆ¶¯µ½ÌØ¶¨µÄ¿Ø¼þÉÏÊ±ÏÔÊ¾Ïà¹Ø°ïÖú (Ê¹ÓÃ¹¤¾ßÌáÊ¾):</em>
+<pre class="NoIndent" id="ExToolTip"><em>; Ê¾Àý: µ±Êó±êÒÆ¶¯µ½ÌØ¶¨µÄ¿Ø¼þÉÏÊ±ÏÔÊ¾Ïà¹Ø°ïÖú (Ê¹ÓÃ¹¤¾ßÌáÊ¾):</em>
 
 Gui, Add, Edit, v<strong>MyEdit</strong>
 <strong>MyEdit</strong>_TT := &quot;This is a tooltip for the control whose variable is MyEdit.&quot;
@@ -546,7 +545,7 @@ WM_MOUSEMOVE()
 GuiClose:
 ExitApp</pre>
 <p>&nbsp;</p>
-<pre class="NoIndent"><a name="OSD"></a><em>; Ê¾Àý: Ê¹ÓÃÍ¸Ã÷´°¿Ú½øÐÐÆÁÄ»ÏÔÊ¾ (OSD):</em>
+<pre class="NoIndent" id="OSD"><em>; Ê¾Àý: Ê¹ÓÃÍ¸Ã÷´°¿Ú½øÐÐÆÁÄ»ÏÔÊ¾ (OSD):</em>
 
 CustomColor = EEAA99  <em>; ¿ÉÒÔÎªÈÎÒâ RGB ÑÕÉ« (ÔÚÏÂÃæ»á±»ÉèÖÃÎªÍ¸Ã÷).</em>
 Gui +LastFound +AlwaysOnTop -Caption +ToolWindow  <em>; +ToolWindow ±ÜÃâÏÔÊ¾ÈÎÎñÀ¸°´Å¥ºÍ alt-tab ²Ëµ¥Ïî.</em>

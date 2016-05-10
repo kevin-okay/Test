@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>SendMode</title>
@@ -22,7 +21,7 @@
   <li>Windows 资源管理器会忽略 SendInput 模拟的某些导航的热键, 例如 Alt+LeftArrow. 要变通解决此问题，请使用 <code>SendEvent !{Left}</code> 或 <code>SendInput {Backspace}</code>。</li>
 </ul>
 <p><strong>InputThenPlay</strong> <span class="ver">[v1.0.43.02+]:</span> 与上面相同, 不过当 SendInput <a href="Send.htm#SendInputUnavail">不可用</a> 时恢复为下面的 Play 模式而不是退回到 Event 模式. 这也会使得 <a href="Send.htm#SendInput">SendInput 命令</a> 自身在 SendInput 不可用时恢复到 Play 模式.</p>
-<p><strong><a name="Play"></a>Play</strong>: 让 <a href="Send.htm">Send</a>, <a href="Send.htm">SendRaw</a>, <a href="Click.htm">Click</a> 和 <a href="MouseMove.htm">MouseMove</a>/<a href="MouseClick.htm">Click</a>/<a href="MouseClickDrag.htm">Drag</a> 切换到 <a href="Send.htm#SendPlay">SendPlay</a> 方法。<br>已知限制:</p>
+<p id="Play"><strong>Play</strong>: 让 <a href="Send.htm">Send</a>, <a href="Send.htm">SendRaw</a>, <a href="Click.htm">Click</a> 和 <a href="MouseMove.htm">MouseMove</a>/<a href="MouseClick.htm">Click</a>/<a href="MouseClickDrag.htm">Drag</a> 切换到 <a href="Send.htm#SendPlay">SendPlay</a> 方法。<br>已知限制:</p>
 <ul>
   <li>不能发送在当前键盘布局上不存在的字符 (例如英语中的 ?). 要变通解决此问题, 请使用 <a href="Send.htm#SendEvent">SendEvent</a>.</li>
   <li>在 RichEdit 控件 (可能还有其他的) 例如 WordPad 和 Metapad, 模拟鼠标拖动可能没有效果. 要为特殊的拖动使用替换模式，请参照此例：<code><a href="Send.htm#SendEvent">SendEvent</a> {Click 6, 52, down}{Click 45, 52, up}</code>。</li>

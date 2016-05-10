@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>Func 对象</title>
@@ -68,7 +67,7 @@ Func.(<i>Parameters</i>)  <em>; 旧形式 - 不推荐使用</em></pre>
 <p>确定一个参数是否为 ByRef (按地址传递) 类型.</p>
 <pre class="Syntax">Func.IsByRef(ParamIndex)</pre>
 <table class="info">
-  <tr><td width="15%">ParamIndex</td><td width="85%">可选: 基于 1 的参数索引. 如果省略, 那么返回值表示此函数是否含有 ByRef 参数.</td></tr>
+  <tr><td style="width:15%">ParamIndex</td><td>可选: 基于 1 的参数索引. 如果省略, 那么返回值表示此函数是否含有 ByRef 参数.</td></tr>
   <tr><td><b>返回值</b></td><td>如果函数为内置函数或 <i>ParamIndex</i> 无效时返回空字符串; 否则返回布尔值表示此参数是否为 ByRef 类型.</td></tr>
 </table>
 </div>
@@ -77,7 +76,7 @@ Func.(<i>Parameters</i>)  <em>; 旧形式 - 不推荐使用</em></pre>
 <p>确定一个参数是否是可选的.</p>
 <pre class="Syntax">Func.IsOptional(ParamIndex)</pre>
 <table class="info">
-  <tr><td width="15%">ParamIndex</td><td width="85%">可选: 基于 1 的参数索引. 如果省略, 返回值表示此函数是否含有可选参数.</td></tr>
+  <tr><td style="width:15%">ParamIndex</td><td>可选: 基于 1 的参数索引. 如果省略, 返回值表示此函数是否含有可选参数.</td></tr>
   <tr><td><b>返回值</b></td><td>如果 <i>ParamIndex</i> 无效则返回空字符串; 否则返回 布尔值 (true / false) 表示此参数是否可选.</td></tr>
 </table>
 <p>如果此函数是可变参数的, 那么参数可以不进行正式声明. 支持内置函数.</p></div>

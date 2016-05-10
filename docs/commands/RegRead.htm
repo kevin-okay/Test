@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>RegRead</title>
@@ -29,7 +28,7 @@ RegRead, OutputVar, RootKey, SubKey [, ValueName]</pre>
   <dd><p>子键名 (例如 Software\SomeApplication).</p></dd>
   
   <dt>RootKey\SubKey <span class="ver">[v1.1.21+]</span></dt>
-  <dd><p>If <em>RootKey</em> is followed immediately by a slash (<code>\</code>), <em>RootKey</em> and <em>SubKey</em> are merged into a single parameter.</p></dd>
+  <dd><p>如果在 <em>RootKey</em> 后面紧随一个反斜杠 (<code>\</code>), <em>RootKey</em> 和 <em>SubKey</em> 将被合并成一个变量.</p></dd>
 
   <dt>ValueName</dt>
   <dd><p>要获取的值名. 如果省略, 则获取 <em>Subkey</em> 的默认值, 这是在注册表中值名显示为 "(默认)" 的值. 如果没有默认值 (即注册表中显示 "数值未设置"), 则 <em>OutputVar</em> 被置空且 ErrorLevel 被设置为 1.</p></dd>
@@ -52,20 +51,19 @@ RegRead, OutputVar, RootKey, SubKey [, ValueName]</pre>
 <h3>相关</h3>
 <p><a href="RegDelete.htm">RegDelete</a>, <a href="RegWrite.htm">RegWrite</a>, <a href="LoopReg.htm">注册表循环</a>, <a href="SetRegView.htm">SetRegView</a>, <a href="IniRead.htm">IniRead</a></p>
 <h3>示例</h3>
-<pre class="NoIndent"><em>; Example: Retrieve the path of the Program Files directory.
+<pre class="NoIndent"><em>; 例子: 返回 Program Files 目录的路径.
 
-; The line below ensures that the path of the 64-bit Program Files
-; directory is returned if the OS is 64-bit and the script is not.</em>
-<a href="SetRegView.htm">SetRegView</a> 64  <em>; Requires v1.1.08+</em>
+;此行确保在64位系统上运行非64位脚本时也能正常返回64位的 Program Files 目录路径.</em>
+<a href="SetRegView.htm">SetRegView</a> 64  <em>; 需要 v1.1.08+</em>
 
 RegRead, OutputVar, HKEY_LOCAL_MACHINE<span class="red">,</span> SOFTWARE\Microsoft\Windows\CurrentVersion, ProgramFilesDir
 MsgBox, Program files are in: %OutputVar%
 
-<em>; Alternative syntax (requires v1.1.21+):</em>
+<em>; 备用写法 (需要 v1.1.21+):</em>
 RegRead, OutputVar, HKEY_LOCAL_MACHINE<span class="red">\</span>SOFTWARE\Microsoft\Windows\CurrentVersion, ProgramFilesDir
 MsgBox, Program files are in: %OutputVar%
 
-<em>; Another way to retrieve the path of the Program Files directory:</em>
+<em>; 另一种返回 Program Files 目录路径的方法:</em>
 EnvGet OutputVar, % <a href="../Variables.htm#Is64bitOS">A_Is64bitOS</a> ? "ProgramW6432" : "ProgramFiles"
 MsgBox, Program files are in: %OutputVar%
 </pre>

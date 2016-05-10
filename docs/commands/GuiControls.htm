@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>GUI 控件类型</title>
@@ -65,14 +64,14 @@ GuiControl,, MyEdit, %FileContents%</pre>
 <p>要移除而非添加选项,请在选项前加上负号：</p>
 <p><strong>Limit</strong>: 限制用户的输入在编辑区域的可见宽度内. 另外, 要限制输入指定数目的字符, 请在选项后跟着数字. 例如,<code>Limit10</code> 将允许输入不超过 10 个字符.</p>
 <p><strong>Lowercase</strong>: 把用户输入的字符自动转换成小写形式.</p>
-<p><strong><a name="EditMulti" id="EditMulti"></a>Multi</strong>: 让控件可以含有多行文本. 然而, 通常没必要指定此选项, 因为它会根据高度 (H), <a href="Gui.htm#R">行数 (R)</a> 或内容 (<em>Text</em>) 自动判断.</p>
-<p><strong><a name="EditNum"></a>Number</strong>: 阻止用户输入数字以外的其他字符到编辑区域 (然而, 还是可能粘贴非数字字符到里面). 强制输入数字的另一种方法是添加 <a href="#UpDown">UpDown</a> 控件到 Edit 控件.</p>
+<p id="EditMulti"><strong>Multi</strong>: 让控件可以含有多行文本. 然而, 通常没必要指定此选项, 因为它会根据高度 (H), <a href="Gui.htm#R">行数 (R)</a> 或内容 (<em>Text</em>) 自动判断.</p>
+<p id="EditNum"><strong>Number</strong>: 阻止用户输入数字以外的其他字符到编辑区域 (然而, 还是可能粘贴非数字字符到里面). 强制输入数字的另一种方法是添加 <a href="#UpDown">UpDown</a> 控件到 Edit 控件.</p>
 <p><strong>Password</strong>: 通过将用户的输入替代为屏蔽字符来隐藏用户的输入 (例如密码). 如果想使用非默认的屏蔽字符, 请在单词 Password 后加上此符号. 例如,<code>Password*</code> 将使用星号而不是黑色圆(项目符号)作为屏蔽符号,这是 Windows XP 中的默认屏蔽符号.注意: 此选项对于多行编辑控件没有效果.</p>
 <p><strong>ReadOnly</strong>: 阻止用户改变控件的内容. 不过, 仍然可以滚动, 选择文本或将文本复制到剪贴板.</p>
 <p><strong>Tn</strong>: 字母 T 可以用来设置 <a href="#EditMulti">多行编辑控件</a> 的制表位 (因为制表位决定了原义的 TAB 字符跳转的列位置, 所以它们可以把文本格式成列). 如果没有使用字母 T, 则每 32 个对话框单位设置一次制表位 (每个对话框单位的宽度由操作系统决定). 如果仅使用一次字母 T, 则每 <strong>n</strong> 个单位设置一次横跨整个控件宽度的制表位. 例如,<code>Gui, Add, Edit, vMyEdit r16 t64</code> 将设置制表位之间的距离为默认的两倍.要自定义制表位,请指定字母 T 多次,例如：<code>Gui, Add, Edit, vMyEdit r16 t8 t16 t32 t64 t128</code>.在列表中每个绝对的列位置设置一个制表位, 制表位数目最大可达 50 个. 注: 制表位仅用于多行编辑控件.</p>
 <p><strong>Uppercase</strong>: 把用户输入的字符自动转换成大写形式.</p>
 <p><strong>WantCtrlA</strong> <span class="ver">[v1.0.44+]:</span> 指定 -WantCtrlA (负 WantCtrlA) 阻止用户使用 Control-A 来选择编辑控件中所有文本.</p>
-<p><strong><a name="WantReturn"></a>WantReturn</strong>: 指定 -WantReturn (即负后后跟着 WantReturn) 来阻止多行编辑控件捕获回车键. 按下回车键相当于点击了窗口的<a href="#DefaultButton">默认按钮</a>(如果有).此时用户可以使用 Control-Enter 来开始新行.</p>
+<p id="WantReturn"><strong>WantReturn</strong>: 指定 -WantReturn (即负后后跟着 WantReturn) 来阻止多行编辑控件捕获回车键. 按下回车键相当于点击了窗口的<a href="#DefaultButton">默认按钮</a>(如果有).此时用户可以使用 Control-Enter 来开始新行.</p>
 <p><strong>WantTab</strong>: 使得 tab 键击产生制表符而不是导航到下一个控件. 如果没有这个选项, 则在多行编辑控件中用户可以按下 Control-Tab 来产生制表符. 注: 尽管 <em>WantTab</em> 也可以用于单行编辑控件, 但此时每个制表符显示为一个空框字符 (不过实际保存为真正的 tab).</p>
 <p><strong>-Wrap</strong> (负 wrap): 关闭多行编辑控件中的自动换行属性. 由于在控件创建后不能改变此样式, 所以需要使用下列方法的其中一个来改变它: 1) <a href="Gui.htm#Destroy">销毁</a> 后重新创建窗口和其中的控件; 或 2) 创建两个重叠的编辑控件, 其中一个启用自动换行而另一个禁用. 当前没有使用的那个可以保持空的和/或隐藏.</p>
 <p>请参阅 <a href="Gui.htm#OtherOptions">常规选项</a> 来了解其他选项 (例如 <em>Right</em>, <em>Center</em> 和 <em>Hidden</em>). 另请参阅: <a href="Gui.htm#PosSize">控件的位置和大小</a>.</p>
@@ -87,12 +86,12 @@ Gui, Add, UpDown, vMyUpDown Range1-10, 5</pre>
 <p>使用<a href="Gui.htm#Submit">Gui Submit</a>命令后,控件的<a href="Gui.htm#var">关联输出变量</a>(如果有)会接收到UpDown的当前的数字位置.如果 UpDown 依附于编辑控件而且您不想确认用户的输入, 此时最好使用 UpDown 的值而不是编辑控件的. 这是因为 UpDown 总是产生一个允许范围内的数字, 即使用户在编辑控件中输入了非数字或超出范围的内容. 相关提示, 默认情况下超过三位的数字会添加 <a href="../misc/Styles.htm#UpDownSep">千位分隔符</a> (例如逗号). 这些分隔符保存在编辑控件的输出变量中, 但不在 UpDown 的变量中.</p>
 <p>如果 UpDown 含有 <a href="Gui.htm#label">g 标签</a>, 则当用户点击增减按钮的其中一个或按下了键盘上的方向键时它将会运行. 每次运行g标签还会保存UpDown的位置到其<a href="Gui.htm#var">关联输出变量</a>(如果有).</p>
 <h3>UpDown 选项</h3>
-<p><strong><a name="Horz"></a>Horz</strong>: 使控件的按钮点指向左/右而不是上/下. 默认情况下, <em>Horz</em> 还会让控件变成孤立的 (没有伙伴控件). 通过在控件选项中指定 <code>Horz 16</code> 可以覆盖此特性.</p>
+<p id="Horz"><strong>Horz</strong>: 使控件的按钮点指向左/右而不是上/下. 默认情况下, <em>Horz</em> 还会让控件变成孤立的 (没有伙伴控件). 通过在控件选项中指定 <code>Horz 16</code> 可以覆盖此特性.</p>
 <p><strong>Left</strong>: 把 UpDown 放在其伙伴控件的左边而不是右边.</p>
 <p><strong>Range</strong>: 使用 0 到 100 外的其他范围. 在单词 Range 后指定最小值, 破折号和最大值. 例如, Range1-1000 将允许选择一个介于 1 和 1000 之间的数字; Range-50-50 将允许介于 -50 和 50 之间的数字; 而 Range-10--5 将允许介于 -10 和 -5 之间的数字. 交换最小值和最大值可以让箭头往与正常方向相反的方向移动. 最大的允许范围是 -2147483648-2147483647. 最后, 如果伙伴控件为 <a href="#ListBox">ListBox</a>, 那么垂直的默认范围是 32767-0 而水平的则反向 (<a href="#Horz">Horz</a>).</p>
 <p><strong>Wrap</strong>: 当用户试图超出最小值或最大值时使得控件返回到其范围的另一端. 如果没有 <em>Wrap</em>, 当达到最小值或最大值时控件会停止.</p>
 <p><strong>-16</strong> (负 16): 让垂直的 UpDown 成为孤立的; 即让它没有伙伴控件. 这还可以让控件符合任何指定的宽度, 高度和位置而不是适应于其伙伴控件的大小. 此外, 孤立的 UpDown 会内部跟踪它自己的位置. 使用 <a href="Gui.htm#Submit">Gui Submit</a> 可以正常获取此位置.</p>
-<p><strong><a name="UpDownSep"></a>0x80</strong>：在<em>选项</em>中包含 <code>0x80</code> 来省略伙伴控件中正常出现在每三位十进制数间的千位分隔符.然而, 通常不使用此样式, 因为当脚本从 UpDown 控件 (而不是其伙伴控件) 获取的数字中不包含分隔符.</p>
+<p id="UpDownSep"><strong>0x80</strong>：在<em>选项</em>中包含 <code>0x80</code> 来省略伙伴控件中正常出现在每三位十进制数间的千位分隔符.然而, 通常不使用此样式, 因为当脚本从 UpDown 控件 (而不是其伙伴控件) 获取的数字中不包含分隔符.</p>
 <p><strong>使用 1 以外的其他增量</strong>: 在 <a href="http://numeric.nerim.net/AutoHotkey/Scripts/UpDown%20-%20Non-unitary%20increments.ahk">此脚本</a> 中, NumEric 演示了如何改变 UpDown 增量为 1 以外的其他值 (例如 5 或 0.1).</p>
 <p>另请参阅: <a href="Gui.htm#PosSize">控件的位置和大小</a>.</p>
 <h2 id="Picture">Picture (或 Pic)</h2>
@@ -102,14 +101,14 @@ Gui, Add, UpDown, vMyUpDown Range1-10, 5</pre>
 <p><a href="Gui.htm#label">g 标签</a>例如 <code><strong>g</strong>MySubroutine</code> 可以使用在此控件的选项中.这使得当用户点击图片时 <em>MySubroutine</em> 标签会自动运行. 通过检查 <a href="../Variables.htm#GuiEvent">A_GuiEvent</a> 是否包含单词 DoubleClick 可以检测到双击事件.</p>
 <p>要使用图片作为其他控件的背景, 则应该在其他控件之前正常添加图片. 然而,如果这些控件是可输入型且此图片控件含有 <a href="Gui.htm#label">g 标签</a>,那么在其他控件后创建图片控件并在其<em>选项</em>中包含 <code>0x4000000</code>(这是 WS_CLIPSIBLINGS).使用此技巧还可以把一个图片设为 <a href="#Tab">Tab 控件</a>或 <a href="ListView.htm">ListView</a> 的背景.</p>
 <p><strong>图标, 光标和动画光标</strong>: 图标和光标可以从下列类型的文件中加载: ICO, CUR, ANI, EXE, DLL, CPL, SCR 以及包含图标资源的其他类型. 要使用文件中的图标组而不是首个图标, 请在 <em>选项</em> 包含单词 Icon 和图标组编号. 在下面的例子中,将使用第二个图标组中的默认图标：<code>Gui, Add, Picture, Icon2, C:\My Application.exe</code>.</p>
-<p><a name="PicAltSubmit"></a>在 <em>选项</em> 中指定单词 AltSubmit 会让程序使用微软的 GDIPlus.dll 来加载图像, 这可能让 GIF, BMP 和图标图像产生不同的外观. 例如, 它可以把含透明背景的 ICO/GIF 作为透明的位图进行加载, 这样允许 <a href="Gui.htm#BackgroundTrans">BackgroundTrans</a> 选项才生效(不过从 <span class="ver">[v1.1.23+]</span> 开始, 透明图标可以不设置 AltSubmit 选项). 如果 GDIPlus 不可用 (请参阅下个段落), 则 AltSubmit 选项会被忽略而使用常规方法加载图像.</p>
+<p id="PicAltSubmit">在 <em>选项</em> 中指定单词 AltSubmit 会让程序使用微软的 GDIPlus.dll 来加载图像, 这可能让 GIF, BMP 和图标图像产生不同的外观. 例如, 它可以把含透明背景的 ICO/GIF 作为透明的位图进行加载, 这样允许 <a href="Gui.htm#BackgroundTrans">BackgroundTrans</a> 选项才生效(不过从 <span class="ver">[v1.1.23+]</span> 开始, 透明图标可以不设置 AltSubmit 选项). 如果 GDIPlus 不可用 (请参阅下个段落), 则 AltSubmit 选项会被忽略而使用常规方法加载图像.</p>
 <p>在所有的操作系统中都支持 GIF, JPG, BMP, ICO, CUR 和 ANI 图像. 在 Windows XP 或更高版本中, 还支持其他图像格式, 例如PNG, TIF, Exif, WMF 和 EMF. 比 XP 早的操作系统可以通过复制微软免费的 GDI+ DLL 到 AutoHotkey.exe 文件夹中来提供支持 (但如果是 <a href="Scripts.htm#ahk2exe">已编译脚本</a>, 则复制此 DLL 到脚本的文件夹). 要下载这个 DLL, 请在 <a href="http://www.microsoft.com">www.microsoft.com</a> 搜索下列短语: gdi redistributable</p>
 <p><strong>GIF 动画</strong>: 虽然 GIF 动画文件可以显示在图片控件中, 但实际上它们并不会动起来. 要解决此问题, 请使用 AniGIF DLL (对非商业用途免费), 演示的例子请参阅 <a href="http://www.autohotkey.com/forum/topic19264.html">www.autohotkey.com/forum/topic19264.html</a></p>
 <p><span class="ver">[v1.1.23+]:</span> bitmap (位图)或 icon (图标) 的 <a href="../misc/ImageHandles.htm"> handle (句柄)</a> 可完全替代文件名使用. 例如, <code>HBITMAP:%handle%</code>.</p>
 <h2 id="Button">按钮</h2>
 <p>描述: 按下后可以触发动作的按钮. 此时最后一个参数为按钮的名称 (显示在按钮上), 其中可以包含换行符 (`n) 来开始新行. 例如：</p>
 <pre>Gui, Add, Button, Default, OK</pre>
-<p><a name="DefaultButton"></a>上面的例子在其 <em>选项</em> 中包含单词 <strong>Default</strong> 来让 "OK" 成为默认按钮. 每当用户按下回车键时会自动触发默认按钮的动作, 除非此时键盘焦点在另一个按钮上或含有 <a href="#WantReturn">WantReturn</a> 样式的多行编辑控件中. 以后要改变默认按钮为另一个按钮,请参照此例,这里让 Cancel 按钮成为默认按钮：<code><a href="GuiControl.htm">GuiControl</a>, +default, Cancel</code>.以后要让窗口没有默认按钮,请参照此例：<code>GuiControl, -default, OK</code>.</p>
+<p id="DefaultButton">上面的例子在其 <em>选项</em> 中包含单词 <strong>Default</strong> 来让 "OK" 成为默认按钮. 每当用户按下回车键时会自动触发默认按钮的动作, 除非此时键盘焦点在另一个按钮上或含有 <a href="#WantReturn">WantReturn</a> 样式的多行编辑控件中. 以后要改变默认按钮为另一个按钮,请参照此例,这里让 Cancel 按钮成为默认按钮：<code><a href="GuiControl.htm">GuiControl</a>, +default, Cancel</code>.以后要让窗口没有默认按钮,请参照此例：<code>GuiControl, -default, OK</code>.</p>
 <p>在按钮名称中使用和符号 (&amp;) 可以让其中的某个字母带下划线显示. 例如：</p>
 <pre>Gui, Add, Button,, &amp;Pause</pre>
 <p>在上述示例中, 字母 P 将被添加下划线, 这允许用户按下 Alt+P 作为其 <a href="Gui.htm#ShortcutKey">快捷键</a>. 要显示一个原义的和符号, 请指定两个连续的和符号 (&amp;&amp;).</p>
@@ -159,13 +158,13 @@ Gui Show, h70, Test</pre>
 <h2 id="ListBox">ListBox</h2>
 <p>描述: 一个包含选择列表的较高的框. 此时,最后一个参数是管道分隔的选择列表,例如 <code>Choice1|Choice2|Choice3</code>.例如：</p>
 <pre>Gui, Add, ListBox, vColorChoice, Red|Green|Blue|Black|White</pre>
-<p><a name="ChooseLB"></a>要在窗口初次出现时预选其中的某个或某些项目, 请在这些项目中的每个后面包含两个管道符 (如果要预选多个项目, 则需要 <a href="#ListBoxMulti">Multi</a> 选项). 或者, 在 <em>选项</em> 中包含单词 <strong>Choose</strong> 紧接着预选的单个项目编号. 例如,<code>Choose5</code> 会预选第五项.要在控件创建后改变选择或添加/移除列表中的条目,请使用 <a href="GuiControl.htm">GuiControl</a>.</p>
+<p id="ChooseLB">要在窗口初次出现时预选其中的某个或某些项目, 请在这些项目中的每个后面包含两个管道符 (如果要预选多个项目, 则需要 <a href="#ListBoxMulti">Multi</a> 选项). 或者, 在 <em>选项</em> 中包含单词 <strong>Choose</strong> 紧接着预选的单个项目编号. 例如,<code>Choose5</code> 会预选第五项.要在控件创建后改变选择或添加/移除列表中的条目,请使用 <a href="GuiControl.htm">GuiControl</a>.</p>
 <p>当使用<a href="Gui.htm#Submit">Gui Submit</a>命令后,控件的<a href="Gui.htm#var">关联输出变量</a>(如果有)会接收到当前选择项目的文本. 但是, 如果控件含有 <a href="Gui.htm#AltSubmit">AltSubmit</a> 属性, 则输出变量将接收到项目的位置编号 (首个项目为 1, 第二个为 2, 等等).</p>
 <p><a href="Gui.htm#label">g 标签</a>例如 <code><strong>g</strong>MySubroutine</code> 可以使用在此控件的选项中.这使得当用户选择新项目时 <em>MySubroutine</em> 标签会自动运行. 如果用户双击一个项目, 则内置变量 A_GuiEvent 会包含字符串 DoubleClick 而不是 Normal. 此外, 变量 A_EventInfo 将包含被双击项目的位置 (首个项目为 1, 第二个为 2, 等等).</p>
-<p><a name="LBRedraw"></a>当添加大量项目到 ListBox 时,在操作前使用 <code>GuiControl, -Redraw, MyListBox</code> 并且在操作后使用 <code>GuiControl, +Redraw, MyListBox</code> 也许会提高性能.</p>
+<p id="LBRedraw">当添加大量项目到 ListBox 时,在操作前使用 <code>GuiControl, -Redraw, MyListBox</code> 并且在操作后使用 <code>GuiControl, +Redraw, MyListBox</code> 也许会提高性能.</p>
 <h3>ListBox 选项</h3>
 <p><strong>Choose</strong>: 请参阅 <a href="#ChooseLB">上面</a>.</p>
-<p><strong><a name="ListBoxMulti"></a>Multi</strong>: 允许使用 shift-click 和 control-click 同时选择多个项目 (如果不希望使用 shift/control-click, 请指定 <a href="../misc/Styles.htm#LBS_MULTI">数字 8</a> 代替单词 Multi). 此时, <a href="Gui.htm#Submit">Gui Submit</a> 会保存管道分隔的项目字符串列表到控件的 <a href="Gui.htm#var">输出变量</a>. 不过, 如果存在 <a href="Gui.htm#AltSubmit">AltSubmit</a> 选项, 则 <a href="Gui.htm#Submit">Gui Submit</a> 保存管道分隔的项目编号列表. 例如,<code>1|2|3</code> 表示选择了前三个项目.要提取每个项目,请使用<a href="LoopParse.htm">解析循环</a>,例如：</p>
+<p id="ListBoxMulti"><strong>Multi</strong>: 允许使用 shift-click 和 control-click 同时选择多个项目 (如果不希望使用 shift/control-click, 请指定 <a href="../misc/Styles.htm#LBS_MULTI">数字 8</a> 代替单词 Multi). 此时, <a href="Gui.htm#Submit">Gui Submit</a> 会保存管道分隔的项目字符串列表到控件的 <a href="Gui.htm#var">输出变量</a>. 不过, 如果存在 <a href="Gui.htm#AltSubmit">AltSubmit</a> 选项, 则 <a href="Gui.htm#Submit">Gui Submit</a> 保存管道分隔的项目编号列表. 例如,<code>1|2|3</code> 表示选择了前三个项目.要提取每个项目,请使用<a href="LoopParse.htm">解析循环</a>,例如：</p>
 <pre>Loop, parse, MyListBox, |
 {
     MsgBox Selection number %A_Index% is %A_LoopField%.
@@ -207,13 +206,13 @@ Gui, Add, Link,, Links may be used anywhere in the text like &lt;a id="1"&gt;thi
 <h2 id="DateTime">DateTime</h2>
 <p>描述: 一个看起来像单行编辑控件的框, 不过它接受日期和/或时间. 同时提供下拉日历. 例如：</p>
 <pre>Gui, Add, DateTime, vMyDateTime, LongDate</pre>
-<p><a name="DateTimeFormat"></a>最后一个参数可以为下列的其中一个:</p>
+<p id="DateTimeFormat">最后一个参数可以为下列的其中一个:</p>
 <p><strong>(省略)</strong>: 省略时, 使用区域设置的短日期格式. 例如, 在某些区域设置中它看起来像这样: 6/1/2005</p>
 <p><strong>LongDate</strong>: 使用区域设置的长日期格式. 例如, in 在某些区域设置中它看起来像这样: Wednesday, June 01, 2005</p>
 <p><strong>Time</strong>: 仅显示时间, 使用区域设置的时间格式. 尽管不显示日期, 但它仍然存在于控件中并且与 <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a> 格式的时间一起被获取.</p>
 <p><strong>(自定义格式)</strong>: 指定 <a href="FormatTime.htm">日期和时间格式</a> 的任意组合. 例如,<code>M/d/yy HH:mm</code> 格式显示的时间看起来像 6/1/05 21:37.同样,<code>dddd MMMM d, yyyy hh:mm:ss tt</code> 格式显示的时间看起来像 Wednesday June 1, 2005 09:37:45 PM.想要原义显示的字母和数字应该括在一对单引号中,例如：<code>'Date:' MM/dd/yy 'Time:' hh:mm:ss tt</code>.与之相比, 非字母数字字符 (例如空格, tab, 斜杠, 冒号, 逗号和其他标点) 不需要包围在单引号中. 例外情况是单引号字符本身: 要产生原义的单引号, 请使用四个连续的单引号 (''''), 不过如果它们已经包含在一对外部引号中则仅使用连续的两个就行了.</p>
 <h3>DateTime 用法</h3>
-<p><a name="ChooseDT"></a>要预选今天外的其他日期, 请在 <em>选项</em> 中包含单词 <strong>Choose</strong> 紧跟着 YYYYMMDD 格式的日期. 例如,<code>Choose20050531</code> 将预选 May 31, 2005(和其他选项一样,它还可以为变量,例如 <code>Choose%Var%</code>).要不预选日期/时间,请指定 <strong>ChooseNone</strong>.<em>ChooseNone</em> 还会在控件中创建一个复选框,只有控件中不含日期则此复选框为未选中状态.当控件中没有选择日期时,<a href="Gui.htm#Submit">Gui Submit</a> 和 <a href="GuiControlGet.htm">GuiControlGet</a> 会获取到空值(空字符串).</p>
+<p id="ChooseDT">要预选今天外的其他日期, 请在 <em>选项</em> 中包含单词 <strong>Choose</strong> 紧跟着 YYYYMMDD 格式的日期. 例如,<code>Choose20050531</code> 将预选 May 31, 2005(和其他选项一样,它还可以为变量,例如 <code>Choose%Var%</code>).要不预选日期/时间,请指定 <strong>ChooseNone</strong>.<em>ChooseNone</em> 还会在控件中创建一个复选框,只有控件中不含日期则此复选框为未选中状态.当控件中没有选择日期时,<a href="Gui.htm#Submit">Gui Submit</a> 和 <a href="GuiControlGet.htm">GuiControlGet</a> 会获取到空值(空字符串).</p>
 <p>日期的时间部分是可选的. 但是, 当进入或离开控件时, 时间部分必须总是在日期之前. 时间部分的格式为 HH24MISS (小时数, 分钟数, 秒数), 其中 HH24 含义是用 24 小时格式表示; 例如, 09 为 9am 而 21 为 9pm. 因此, 完整的日期时间字符串的格式应为 <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a>.</p>
 <p>当指定了 YYYYMMDDHH24MISS 格式的日期时, 只有前导部分是不能缺少的. 其他任何省略的元素将使用下列默认值代替:<br>
 MM: Month 月份 01<br>
@@ -230,7 +229,7 @@ SS: Second 秒 00</p>
 <p><strong>Range</strong>: 限制可以选择的日期范围. 在单词 Range 后指定以 YYYYMMDD 格式表示的最小和最大的日期 (它们之间使用破折号连接). 例如,<code>Range20050101-20050615</code> 将限制可选择的日期为 5.5 年的前 5 个半月.最小或最大的日期可以省略, 此时控件中在这个方向上的日期不受限制. 例如,<code>Range20010101</code> 将禁止选择早于 2001 年的日期而 <code>Range-20091231</code>(有前导的破折号)将禁止选择迟于 2009 年的日期.如果不含 Range 选项, 则可以选择介于 1601 和 9999 年份之间的任何日期. 无法限制日期的时间部分.</p>
 <p><strong>Right</strong>: 让下拉日历在控件的右边而不是左边拉下.</p>
 <p><strong>1</strong>：在<em>选项</em>中指定数字1会在此控件的右边提供一个增减控件来修改日期和时间的值,这会取代其他地方可用的下拉月历的修改按钮.这不能和上面所述的LongDate格式选项联用.</p>
-<p><strong><a name="ChooseNone"></a>2</strong>: 在 <em>选项</em> 中指定数字 2 在控件中提供复选框, 用户可以取消此复选框选择来表示没有选择日期/时间. 控件创建后无法改变此选项.</p>
+<p id="ChooseNone"><strong>2</strong>: 在 <em>选项</em> 中指定数字 2 在控件中提供复选框, 用户可以取消此复选框选择来表示没有选择日期/时间. 控件创建后无法改变此选项.</p>
 <h2 id="MonthCal">MonthCal</h2>
 <p>描述: 一个又高又宽的控件, 其中以日历的格式显示一个月中的所有日子. 用户可以选择单个日期或日期范围. 例如：</p>
 <pre>Gui, Add, MonthCal, vMyCalendar</pre>
@@ -242,7 +241,7 @@ SS: Second 秒 00</p>
 <p>如果MonthCal含有<a href="Gui.htm#label">g 标签</a>,则它每次运行时会更新控件的<a href="Gui.htm#var">关联输出变量</a>(如果有)为当前选择的日期或范围.默认情况下, 仅当出现下列情况时这个标签才会运行: 1) 用户改变了选择对象; 或 2) 每隔两分钟, 以防新的一天到来 (此行为是操作系统的怪癖). 但是, 如果控件的 <em>选项</em> 中包含单词 AltSubmit, 则 <a href="Gui.htm#label">g 标签</a> 会运行地更频繁, 而内置变量 A_GuiEvent 在改变日期时包含单词 Normal, 点击一个日期时包含数字 1, 而当 MonthCal 释放 "鼠标捕获" 时包含数字 2. 例如, 如果用户双击一个新日期, 则标签会运行五次: 其中一次为 Normal, 两次为 1, 还有两次为 2. 通过 <a href="../Variables.htm#TickCount">计算两次数字 1 实例之间的时间间隔</a> 可以检测双击.</p>
 <p>指定 YYYYMMDD 格式的日期时, MM 和/或 DD 部分可以省略, 此时它们默认为 1. 例如,<code>200205</code> 被视为 20020501,而 <code>2005</code> 被视为 20050101.</p>
 <h3>MonthCal 选项</h3>
-<p><strong><a name="MonthCalMulti"></a>Multi</strong>: 多选. 允许用户使用 shift-click 或 click-drag 来选择一个连续的日期范围 (此时用户仍然可以选择单个日期). 可以明确指定此选项或在创建控件时通过指定一个选择范围的方法来让此选项自动生效. 例如：<code>Gui, Add, MonthCal, vMyCal, 20050101-20050108</code>.控件创建后无法改变此选项.</p>
+<p id="MonthCalMulti"><strong>Multi</strong>: 多选. 允许用户使用 shift-click 或 click-drag 来选择一个连续的日期范围 (此时用户仍然可以选择单个日期). 可以明确指定此选项或在创建控件时通过指定一个选择范围的方法来让此选项自动生效. 例如：<code>Gui, Add, MonthCal, vMyCal, 20050101-20050108</code>.控件创建后无法改变此选项.</p>
 <p><strong>Range</strong>: 限制日历中可以选择的时间范围. 在单词 Range 后指定以 YYYYMMDD 格式表示的最小和最大的日期 (它们之间使用破折号连接). 例如,<code>Range20050101-20050615</code> 将限制选区为 2005 年的前 5 个半月.最小或最大的日期可以省略, 此时日历中在这个方向上的日期不受限制. 例如,<code>Range20010101</code> 将禁止选择早于 2001 年的日期而 <code>Range-20091231</code>(有前导的破折号)将禁止选择迟于 2009 年的日期.如果不含 Range 选项, 则可以选择介于 1601 和 9999 年份之间的任何日期.</p>
 <p><strong>4</strong>: 在 <em>选项</em> 中指定数字 4 来在每行日期的左边显示周数 (1-52). Week 1 被定义为至少包含四天的第一周.</p>
 <p><strong>8</strong>: 在 <em>选项</em> 中指定数字 8 来禁止控件中当前日期往复循环.</p>
@@ -299,12 +298,12 @@ SS: Second 秒 00</p>
 <pre>Gui, Add, GroupBox, w400 h300, Geographic Criteria</pre>
 <p>默认情况下, 组合框的标题可以只有一行文本. 在选项中指定 <code>Wrap</code> 可以改变此特性.</p>
 <p>要指定控件中的行数 (或高度和宽度), 请参阅 <a href="Gui.htm#PosSize">控件的位置和大小</a>.</p>
-<h2 id="Tab"><a name="Tab2"></a>Tab2</h2>
+<span id="Tab2"></span><h2 id="Tab">Tab2</h2>
 <p>描述: 一个大的包含多个页面的控件, 其中的每个包含其他控件. 从此以后, 这些页面被称为 "选项卡".</p>
 <p><strong>Tab2 与 Tab 的异同</strong>: v1.0.47.05 添加了 "Tab2" 控件, 其中修复了原 "Tab" 控件中很少出现的重绘问题 (例如通过点击 GUI 窗口中控件的某个部分 (如滚动条) 来激活窗口时, 可能无法正确重绘). 为了向后兼容而保留了原 Tab 控件, 因为 Tab2 在 tab 键导航顺序中把它的选项卡控件放在它所包含的控件之后. 新脚本应尽可能使用 Tab2. 例如：</p>
 <pre>Gui, Add, Tab2,, General|View|Appearance|Settings</pre>
-<p><a name="ChooseTab"></a>上述的最后一个参数是管道分隔的选项卡名称列表. 要在窗口初次出现时预选其中的某个选项卡,请在它后面包含两个管道符(例如 <code>Red|Green||Blue</code>).或者,在<em>选项</em>中包含单词 <strong>Choose</strong> 紧跟着想预选的编号.例如,<code>Choose5</code> 会预选第五个选项卡(和其他选项一样,它也可以为变量,例如 <code>Choose%Var%</code>).要在控件创建后改变选择的选项卡,请使用 <a href="GuiControl.htm">GuiControl</a>.</p>
-<p><a name="TabCmd"></a>创建选项卡控件后, 随后添加的控件自动属于其首个选项卡. 这可以在任何时候改变, 请参照这些例子:</p>
+<p id="ChooseTab">上述的最后一个参数是管道分隔的选项卡名称列表. 要在窗口初次出现时预选其中的某个选项卡,请在它后面包含两个管道符(例如 <code>Red|Green||Blue</code>).或者,在<em>选项</em>中包含单词 <strong>Choose</strong> 紧跟着想预选的编号.例如,<code>Choose5</code> 会预选第五个选项卡(和其他选项一样,它也可以为变量,例如 <code>Choose%Var%</code>).要在控件创建后改变选择的选项卡,请使用 <a href="GuiControl.htm">GuiControl</a>.</p>
+<p id="TabCmd">创建选项卡控件后, 随后添加的控件自动属于其首个选项卡. 这可以在任何时候改变, 请参照这些例子:</p>
 <pre>Gui, Tab  <em>; 随后的控件不属于任何选项卡控件的一部分.</em>
 Gui, Tab, 3  <em>; 随后的控件属于当前选项卡控件的第三个选项卡.</em>
 Gui, Tab, 3, 2  <em>; 随后的控件属于第二个选项卡控件的第三个选项卡.</em>
@@ -331,16 +330,16 @@ Gui, Tab, Name,, Exact  <em>; 与上面相同, 不过这里需要准确匹配 (也区分大小写).</
 SB_SetText("There are " . RowCount . " rows selected.")</pre>
 <p>状态栏最简单的用法是每当应该报告给用户一些状态改变时调用 <a href="#SB_SetText">SB_SetText()</a>. 要报告多片的信息, 请使用 <a href="#SB_SetParts">SB_SetParts()</a> 把状态栏分成多段. 要在状态栏中显示图标, 请使用 <a href="#SB_SetIcon">SB_SetIcon()</a>.</p>
 <p>下列所有的状态栏函数操作于当前线程的<a href="Gui.htm#DefaultWin">默认 GUI 窗口</a>(这可以使用 <a href="Gui.htm#Default"><code>Gui, 2:Default</code></a> 进行改变).如果默认窗口不存在或不含有状态栏, 则所有 SB 函数会返回 0 来表明此问题.</p>
-<h3><a name="SB_SetText"></a>SB_SetText(NewText [, PartNumber, Style])</h3>
+<h3 id="SB_SetText">SB_SetText(NewText [, PartNumber, Style])</h3>
 <p>在状态栏指定部分显示 <em>NewText</em>.如果省略 <em>PartNumber</em>,则使用默认值 1.否则, 请指定介于 1 和 256 之间的整数. 如果省略 <em>Style</em>,则使用默认值 0,此时使用让状态栏那部分看起来凹陷的传统边界.否则, 指定 1 则不含边界, 而 2 则含有让状态栏看起来是高出的边界. 最后,在 <em>NewText</em> 中任意地方可以使用最多两个 tab 字符(`t)：在首个 tab 字符右边的任何内容显示在此部分中心,而在第二个 tab 右边的内容显示为右对齐.成功时 SB_SetText() 返回 1 而失败时为 0.</p>
-<h3><a name="SB_SetParts"></a>SB_SetParts([Width1, Width2, ... Width255])</h3>
+<h3 id="SB_SetParts">SB_SetParts([Width1, Width2, ... Width255])</h3>
 <p>根据指定的宽度(单位为像素)把状态栏分成多个部分.如果省略所有参数, 则状态栏恢复为单个很长的唯一一个部分. 否则, 指定除了最后一部分外的其他每个部分的宽度 (最后一部分将填充状态栏的剩余宽度). 例如,<code>SB_SetParts(50, 50)</code> 将创建三个部分：前两个部分的宽度都为 50,而最后一部分占据剩余的所有宽度.注: SB_SetParts() "删除" 的任何部分下次显示时初始不含文本 (而且会自动销毁其中的图标). 成功时,SB_SetParts() 返回非零值(状态栏的 <a href="ControlGet.htm#Hwnd">HWND</a>).失败时返回 0.</p>
-<h3><a name="SB_SetIcon"></a>SB_SetIcon(Filename [, IconNumber, PartNumber])</h3>
+<h3 id="SB_SetIcon">SB_SetIcon(Filename [, IconNumber, PartNumber])</h3>
 <p>在指定部分的文本左边显示一个小图标(如果省略 <em>PartNumber</em>,则使用默认值 1).<em>Filename</em> 为图标(.ICO)、光标(.CUR)或动画光标(.ANI)文件的名称(动画光标在状态栏上实际将不会动).图标的其他来源包含下列类型的文件: EXE, DLL, CPL, SCR 以及包含图标资源的其他类型. 要使用文件中的图标组而不是首个图标,请在 <em>IconNumber</em> 指定它的编号.例如,<code>SB_SetIcon("Shell32.dll", 2)</code> 将使用第二个图标组中的默认图标.如果 <em>IconNumber</em> 为负数,则假定其绝对值表示可执行文件中图标的资源 ID.SB_SetIcon() 成功时返回图标的 HICON 而失败时返回 0. HICON 是可以被大多数脚本安全忽略的系统资源, 因为状态栏所在窗口销毁时它会被自动销毁. 同样, 当 SB_SetIcon() 用新图标替换旧图标时会销毁旧图标. 这种情况可以使用以下方法避免:</p>
 <pre>Gui +LastFound
 <a href="PostMessage.htm">SendMessage</a>, 0x40F, part_number - 1, my_hIcon, msctls_statusbar321  <em>; 0x40F 为 SB_SETICON.</em></pre>
 <p><span class="ver">[v1.1.23+]:</span> <a href="../misc/ImageHandles.htm">icon handle (图标句柄)</a> 可替代文件名. 例如, <code>SB_SetIcon("HICON:" handle)</code>.</p>
-<h3><a name="SB_SetProgress"></a>SB_SetProgress()</h3>
+<h3 id="SB_SetProgress">SB_SetProgress()</h3>
 <p>创建和控制状态栏中的进度条.此函数可以从 <a href="http://www.autohotkey.com/forum/topic37754.html">www.autohotkey.com/forum/topic37754.html</a> 获取</p>
 <h3>G 标签通知</h3>
 <p><a href="Gui.htm#label">g 标签</a>例如 <code><strong>g</strong>MySubroutine</code> 可以使用在此控件的选项中.这使得当用户点击状态栏时 <em>MySubroutine</em> 标签会自动运行.此子程序中可引用内置变量 <a href="../Variables.htm#Gui">A_Gui</a> 和 <a href="../Variables.htm#GuiControl">A_GuiControl</a>.更重要的是,它可以参考 <strong>A_GuiEvent</strong>,其包含下列字符串的其中一个(考虑到和未来版本的兼容性,脚本不应假定这些字符串是唯一可能的值)：</p>
@@ -360,7 +359,7 @@ SB_SetText("There are " . RowCount . " rows selected.")</pre>
 <p>1) 如果某个控件的位置和状态栏重叠,那么它有可能会被绘制在状态栏的上方.避免这种情况的一种方法是通过 <a href="Gui.htm#GuiSize">GuiSize 标签</a>动态地缩小这样的控件.2) 每个窗口只允许有一个状态栏控件.</p>
 <h3><strong>示例</strong></h3>
 <p><a href="TreeView.htm#Examples">TreeView 页面</a>底部演示了一个多部分的状态栏.</p>
-<h2 id="ActiveX"><a name="IE_Control"></a>ActiveX <span class="ver">[v1.1.03+]</span></h2>
+<span id="IE_Control"></span><h2 id="ActiveX">ActiveX <span class="ver">[v1.1.03+]</span></h2>
 <p>ActiveX 组件 (例如 MSIE 浏览器控件) 可以嵌入到 GUI 窗口, 请参照此例:</p>
 <pre>Gui Add, ActiveX, w980 h640 vWB, <a href="http://msdn.microsoft.com/en-us/library/aa752085">Shell.Explorer</a>  <em>; 最后一个参数是ActiveX组件的名称.</em>
 WB.<a href="http://msdn.microsoft.com/en-us/library/aa752093">Navigate</a>("https://autohotkey.com/boards/")  <em>; 该句只适用于web浏览器控件.</em>

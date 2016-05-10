@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>MsgBox</title>
@@ -32,8 +31,8 @@ MsgBox [, Options, Title, Text, Timeout]</pre>
   <dt>标题</dt>
   <dd><p>消息框窗口的标题。如果省略或为空, 那么它默认为脚本的名称 (不含路径).</p></dd>
 
-  <dt>超时</dt>
-  <dd><p><a name="Timeout"></a>（可选）以秒为单位的超时时间，默认情况下可以为小数但不能是表达式。在 v1.1.06+，此参数可以强制为表达式，例如 <code>% mins*60</code>。</p>
+  <dt id="Timeout">超时</dt>
+  <dd><p>（可选）以秒为单位的超时时间，默认情况下可以为小数但不能是表达式。在 v1.1.06+，此参数可以强制为表达式，例如 <code>% mins*60</code>。</p>
     <p>如果这个值超过 2147483（24.8 天），那么它会被设置为 2147483。经过这个超时时间后消息框将自动关闭且 <a href="IfMsgBox.htm">IfMsgBox</a> 命令将看到表示超时状态的值 TIMEOUT。</p>
       <p>已知限制: 如果 MsgBox 仅含有一个 "确定" 按钮, 且当 MsgBox 自身的 <a href="../misc/Threads.htm">线程</a> 被其他线程中断时超时了, 那么 <a href="IfMsgBox.htm">IfMsgBox</a> 将认为用户按下了 "确定" 按钮.</p></dd>
 
@@ -42,124 +41,124 @@ MsgBox [, Options, Title, Text, Timeout]</pre>
 <p><em>Options</em> 参数可以为一个或多个下列值的组合（和）。</p>
 <table class="info" style="width:55%">
   <tr>
-    <th width="287">功能</th>
+    <th style="width:287px">功能</th>
     <th>十进制值</th>
     <th>十六进制值</th>
   </tr>
   <tr>
     <td>确定 (即仅显示一个 "确定" 按钮)</td>
-    <td align="center">0</td>
-    <td align="center">0x0</td>
+    <td>0</td>
+    <td>0x0</td>
   </tr>
   <tr>
     <td>确定/取消</td>
-    <td align="center">1</td>
-    <td align="center">0x1</td>
+    <td>1</td>
+    <td>0x1</td>
   </tr>
   <tr>
     <td>终止/重试/忽略</td>
-    <td align="center">2</td>
-    <td align="center">0x2</td>
+    <td>2</td>
+    <td>0x2</td>
   </tr>
   <tr>
     <td>是/否/取消</td>
-    <td align="center">3</td>
-    <td align="center">0x3</td>
+    <td>3</td>
+    <td>0x3</td>
   </tr>
   <tr>
     <td>是/否</td>
-    <td align="center">4</td>
-    <td align="center">0x4</td>
+    <td>4</td>
+    <td>0x4</td>
   </tr>
   <tr>
     <td>重试/取消</td>
-    <td align="center">5</td>
-    <td align="center">0x5</td>
+    <td>5</td>
+    <td>0x5</td>
   </tr>
   <tr>
     <td>Cancel/Try Again/Continue</td>
-    <td align="center">6</td>
-    <td align="center">0x6</td>
+    <td>6</td>
+    <td>0x6</td>
   </tr>
   <tr>
     <td>添加一个 "帮助" 按钮 (请参阅后面的备注)</td>
-    <td align="center">16384</td>
-    <td align="center">0x4000</td>
+    <td>16384</td>
+    <td>0x4000</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td align="center">&nbsp;</td>
-    <td align="center">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td>错误图标 (停止/错误)</td>
-    <td align="center">16</td>
-    <td align="center">0x10</td>
+    <td>16</td>
+    <td>0x10</td>
   </tr>
   <tr>
     <td>问号图标</td>
-    <td align="center">32</td>
-    <td align="center">0x20</td>
+    <td>32</td>
+    <td>0x20</td>
   </tr>
   <tr>
     <td>惊叹号图标</td>
-    <td align="center">48</td>
-    <td align="center">0x30</td>
+    <td>48</td>
+    <td>0x30</td>
   </tr>
   <tr>
     <td>星号图标 (信息)</td>
-    <td align="center">64</td>
-    <td align="center">0x40</td>
+    <td>64</td>
+    <td>0x40</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td align="center">&nbsp;</td>
-    <td align="center">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td>让第二个按钮成为默认按钮</td>
-    <td align="center">256</td>
-    <td align="center">0x100</td>
+    <td>256</td>
+    <td>0x100</td>
   </tr>
   <tr>
     <td>让第三个按钮成为默认按钮</td>
-    <td align="center">512</td>
-    <td align="center">0x200</td>
+    <td>512</td>
+    <td>0x200</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td align="center">&nbsp;</td>
-    <td align="center">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td>系统模态 (总是在顶部)</td>
-    <td align="center">4096</td>
-    <td align="center">0x1000</td>
+    <td>4096</td>
+    <td>0x1000</td>
   </tr>
   <tr>
     <td>任务模态</td>
-    <td align="center">8192</td>
-    <td align="center">0x2000</td>
+    <td>8192</td>
+    <td>0x2000</td>
   </tr>
   <tr>
     <td>置顶(WS_EX_TOPMOST样式)<br>(和系统模态类似, 但省略了标题栏图标)</td>
-    <td align="center">262144</td>
-    <td align="center">0x40000</td>
+    <td>262144</td>
+    <td>0x40000</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td align="center">&nbsp;</td>
-    <td align="center">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td>让文本右对齐显示</td>
-    <td align="center">524288</td>
-    <td align="center">0x80000</td>
+    <td>524288</td>
+    <td>0x80000</td>
   </tr>
   <tr>
     <td>用于希伯来语/阿拉伯语的从右向左的阅读顺序</td>
-    <td align="center">1048576</td>
-    <td align="center">0x100000</td>
+    <td>1048576</td>
+    <td>0x100000</td>
   </tr>
 </table>
 <h3>备注</h3>

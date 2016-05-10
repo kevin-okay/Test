@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>RegisterCallback</title>
@@ -29,7 +28,7 @@
 
   <dt>选项</dt>
   <dd><p>指定零个或多个下列单词. 在选项间使用空格分隔（例如<code>C Fast</code>）。</p>
-    <p><strong><a name="Fast" id="Fast"></a>Fast</strong> 或 <strong>F</strong>: 避免每次调用 <em>FunctionName</em> 时都启动新 <a href="../misc/Threads.htm">线程</a>. 尽管这样执行的更好, 但必须避免调用 <em>Address</em> 的线程发生变化 (例如当回调函数被传入的消息触发时). 这是因为 <em>FunctionName</em> 能改变在它被调用时刚好在运行的线程的全局设置 (例如 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>, <a href="../Variables.htm#LastError">A_LastError</a> 和 <a href="../misc/WinTitle.htm#LastFoundWindow">上次找到的窗口</a>). 想了解更多细节, 请参阅 <a href="#Threads">备注</a>.</p>
+    <p id="Fast"><strong>Fast</strong> 或 <strong>F</strong>: 避免每次调用 <em>FunctionName</em> 时都启动新 <a href="../misc/Threads.htm">线程</a>. 尽管这样执行的更好, 但必须避免调用 <em>Address</em> 的线程发生变化 (例如当回调函数被传入的消息触发时). 这是因为 <em>FunctionName</em> 能改变在它被调用时刚好在运行的线程的全局设置 (例如 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>, <a href="../Variables.htm#LastError">A_LastError</a> 和 <a href="../misc/WinTitle.htm#LastFoundWindow">上次找到的窗口</a>). 想了解更多细节, 请参阅 <a href="#Threads">备注</a>.</p>
     <p><strong>CDecl</strong> 或 <strong>C</strong>：让 <em>Address</em> 遵循“C”调用约定。此选项通常省略, 因为在回调函数中标准调用约定更常用.</p></dd>
 
   <dt>ParamCount</dt>
@@ -44,20 +43,20 @@
 
 <h3>回调函数的参数</h3>
 <p>分配了回调地址的 <a href="Functions.htm">函数</a> 可以接受多达 31 个参数. 允许有 <a href="../Functions.htm#optional">可选参数</a>, 这可用于函数被多个调用者调用时.</p>
-<p>Interpreting the parameters correctly requires some understanding of how the x86 calling conventions work. Since AutoHotkey does not have typed parameters, the callback's parameter list is assumed to consist of integers, and some reinterpretation may be required.</p>
+<p>正确的解析此参数需要您对x86的调用转换机制有所了解.在AutoHotKey中没有形参的概念,回调的参数列表由整数和一些必要的重解析组成.</p>
 
 <p><strong>32 位:</strong> 所有传入参数都是 32 位无符号整数. 如果某个传入参数应该为有符号整数, 则可以参照下面的其中一个例子得到负数:</p>
-<p>If an incoming parameter is intended to be a signed integer, any negative numbers can be revealed by following either of the following examples:</p>
+<p>如果传入参数被当作有符号整数, 所有的负数将被显示成下列两种形式中的一种:</p>
 <pre><em>; 方法 #1</em>
 if wParam > 0x7FFFFFFF
     wParam := -(~wParam) - 1
 
-<em>; 方法 #2: 依赖于 AutoHotkey 原生使用 64 位有符号整数的事实.</em>
+<em>; 方法 #2: 依赖于 AutoHotkey 有 64 位有符号整数的原生支持.</em>
 wParam := wParam &lt;&lt; 32 &gt;&gt; 32</pre>
 
 <p><strong>64 位:</strong> 所有传入参数都是 64 位有符号整数. AutoHotkey 没有对 64 位无符号整数的原生支持.</p>
 
-<p><strong>AutoHotkey 32-bit/64-bit:</strong> If an incoming parameter is intended to be 8-bit or 16-bit (or 32-bit on x64), the upper bits of the value might contain "garbage" which can be filtered out by using bitwise-and, as in the following examples:</p>
+<p><strong>AutoHotkey 32位/64位:</strong> 如果传入参数被当作8位或16位(x64上是32位)整数,此数值的高位可能会包含杂位,可通过以下方法加以过滤:</p>
 <pre>Callback(UCharParam, UShortParam, UIntParam) {
     UCharParam &amp;= 0xFF
     UShortParam &amp;= 0xFFFF

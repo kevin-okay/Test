@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>OnExit</title>
@@ -46,9 +45,9 @@ OnExit(Func [, AddRemove])  <em>; 需要 <span class="ver">[v1.1.20+]</span></em><
 <p>任何当 OnExit 子程序被 exit 尝试调用时, 它都会使用脚本默认配置, 如 <a href="SendMode.htm">SendMode</a>. 这些默认配置可在 <a href="../Scripts.htm#auto">auto-execute section (自动运行区域)</a> 改变.</p>
 <p>内置变量 <strong>A_ExitReason</strong> 为空，除非 OnExit 子程序正在运行或者在之前的退出中至少调用过一次.如果不是空的, 则它为下列单词的其中一个:</p>
 <table class="info" id="ExitReason">
-  <tr>
+  <tr id="logoff">
     <td>logoff</td>
-    <td><a name="logoff"></a>用户正在注销.</td>
+    <td>用户正在注销.</td>
   </tr>
   <tr>
     <td>Shutdown</td>

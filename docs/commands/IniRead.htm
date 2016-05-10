@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>IniRead</title>
@@ -12,7 +11,7 @@
 
 <h1>IniRead</h1>
 
-<p>Reads a value, section or list of section names from a standard format .ini file.</p>
+<p>从标准ini格式文件中读取一个值、一个段或段名列表.</p>
 
 <pre class="Syntax">IniRead, OutputVar, Filename, Section, Key [, Default]
 IniRead, OutputVarSection, Filename, Section
@@ -23,14 +22,14 @@ IniRead, OutputVarSectionNames, Filename
 
   <dt>OutputVar</dt>
   <dd>
-      <p>The name of the variable in which to store the retrieved value. If the value cannot be retrieved, the variable is set to the value indicated by the <em>Default</em> parameter (described below).</p>
+      <p>存放返回值的变量名. 如果无法返回值, 此变量将被设置成 <em>Default</em> 参数所指定的值(在下文列出).</p>
     </dd>
   
   <dt>OutputVarSection</dt>
-  <dd><p><span class="ver">[AHK_L 57+]:</span> Omit the <em>Key</em> parameter to read an entire section. Comments and empty lines are omitted. Only the first 65,533 characters of the section are retrieved.</p></dd>
+  <dd><p><span class="ver">[AHK_L 57+]:</span> 省略 <em>Key</em> 参数时会读取一整段的值.仅该段的前65,533个字符串会被返回，不包含注释和空行.</p></dd>
   
   <dt>OutputVarSectionNames</dt>
-  <dd><p><span class="ver">[AHK_L 57+]:</span> Omit the <em>Key</em> and <em>Section</em> parameters to retrieve a linefeed (<code>`n</code>) delimited list of section names.</p></dd>
+  <dd><p><span class="ver">[AHK_L 57+]:</span> 省略 <em>Key</em> 和 <em>Section</em> 参数时会返回一个以换行符 (<code>`n</code>) 分隔的段名列表.</p></dd>
 
   <dt>Filename</dt>
   <dd><p>ini 文件名, 如果未指定绝对路径则假定在 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a> 中.</p></dd>

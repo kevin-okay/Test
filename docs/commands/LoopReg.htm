@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>Loop (registry)</title>
@@ -14,13 +13,13 @@
 
 <p>获取指定的注册表子键的内容，每次一个项目。</p>
 
-<pre class="Syntax">Loop, Reg, RootKey[\Key, Mode]  <em>; v1.1.21+ (recommended)</em></pre>
+<pre class="Syntax">Loop, Reg, RootKey[\Key, Mode]  <em>; v1.1.21+ (推荐)</em></pre>
 <pre class="Syntax">Loop, RootKey [, Key, IncludeSubkeys?, Recurse?]</pre>
 <h3>参数</h3>
 <dl>
 
   <dt>Reg <span class="ver">[v1.1.21+]</span></dt>
-  <dd><p>The literal word <code>Reg</code> (case-insensitive). This cannot be a variable or expression. If this keyword is present, <em>Key</em> must be separated from <em>RootKey</em> by a slash instead of a comma, and both can be contained within a single variable. For example, <code>Loop, Reg, HKLM\Software</code> or <code>Loop, Reg, %FullPathOfKey%</code>.</p></dd>
+  <dd><p>原义单词 <code>Reg</code> (不区分大小写). 这里不是能是变量或表达式. 出现此关键词时, <em>键名</em> 必须和 <em>根键</em> 用斜杠(/)而不是逗号分隔开来, 这两者都可以包含在一个变量当中. 例如, <code>Loop, Reg, HKLM\Software</code> 或 <code>Loop, Reg, %FullPathOfKey%</code>.</p></dd>
 
   <dt>RootKey</dt>
   <dd><p>必须为 HKEY_LOCAL_MACHINE（或 HKLM）、HKEY_USERS（或 HKU）、HKEY_CURRENT_USER（或 HKCU）、HKEY_CLASSES_ROOT（或 HKCR）或 HKEY_CURRENT_CONFIG（或 HKCC）的其中一个。</p>
@@ -30,10 +29,10 @@
   <dd><p>键名（例如 Software\SomeApplication）。如果为空或省略, 将获取 <em>根键</em> 的内容.</p></dd>
   
   <dt>Mode <span class="ver">[v1.1.21+]</span></dt>
-  <dd><p>Zero or more of the following letters:</p>
-    <p><code>K</code>: Include keys.<br>
-    <code>V</code>: Include values. Values are also included if both K and V are omitted.<br>
-    <code>R</code>: Recurse into subkeys. If R is omitted, keys and values within subkeys of <em>Key</em> are not included.</p>
+  <dd><p>一个或多个下列字母:</p>
+    <p><code>K</code>: 包含键名.<br>
+    <code>V</code>: 包含键值,即使在 K 和 V 都被省略时<br>
+    <code>R</code>: 递归子键. 若省略 R , <em>Key</em> 下的子键名和子键值都不会被包含.</p>
   </dd>
 
   <dt>IncludeSubkeys?</dt>
@@ -75,8 +74,8 @@
 <p>在注册表循环中使用下列命令时, 可以以一种简化的方式来操作当前获取项:</p>
 <table class="info">
   <tr>
-    <td width="21%"><a href="RegRead.htm">RegRead</a>, OutputVar</td>
-    <td width="79%">读取当前项. 如果当前项为键, ErrorLevel 将被置为 1 且 <em>OutputVar</em> 将被置空.</td>
+    <td style="width:21%"><a href="RegRead.htm">RegRead</a>, OutputVar</td>
+    <td>读取当前项. 如果当前项为键, ErrorLevel 将被置为 1 且 <em>OutputVar</em> 将被置空.</td>
   </tr>
   <tr>
     <td><a href="RegWrite.htm">RegWrite</a> [, Value]</td>

@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>FileGetAttrib</title>
@@ -32,7 +31,7 @@
 <p><a href="../Variables.htm#LastError">A_LastError</a> 被设置为操作系统 GetLastError() 函数返回的结果.</p>
 
 <h3>备注</h3>
-<p><a name="attrib"></a>返回的字符串为字符串 "RASHNDOCT" 中部分字母组成的子集：<br>R = 只读<br>A = 存档<br>S = 系统<br>H = 隐藏<br>N = 普通<br>D = 目录<br>O = 离线<br>C = 压缩<br>T = 临时</p>
+<p id="attrib">返回的字符串为字符串 "RASHNDOCT" 中部分字母组成的子集：<br>R = 只读<br>A = 存档<br>S = 系统<br>H = 隐藏<br>N = 普通<br>D = 目录<br>O = 离线<br>C = 压缩<br>T = 临时</p>
 <p><br>
   要判断在获取的字符串中是否含有指定的属性, 请参照此例:</p>
 <pre>FileGetAttrib, Attributes, C:\My File.txt

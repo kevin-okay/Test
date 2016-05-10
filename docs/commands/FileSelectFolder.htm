@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>FileSelectFolder</title>
@@ -36,7 +35,7 @@ Folder := RegExReplace(Folder, "\\$")  <em>; 移除默认的反斜线，如果存在。</em></
       <p><strong>0</strong>: 禁用下面所有选项 (不包括 Windows 2000, 这里可能总是会显示 "新建文件夹" 按钮).</p>
       <p><strong>1</strong> (默认): 提供允许用户新建文件夹的按钮.</p>
       <p><strong>增加 2</strong> 到上面的数字来提供允许用户输入文件夹名称的编辑区域. 例如, 此参数使用数值 3 表示同时提供编辑区域和 "新建文件夹" 按钮.</p>
-      <p><strong><a name="NewDialog"></a>增加 4</strong> 到上面的数字来忽略 BIF_NEWDIALOGSTYLE 属性. 增加 4 确保了 FileSelectFolder 即使在像 WinPE 或 BartPE 这样的预安装环境中也能正常工作. 然而, 这样阻止了 "新建文件夹" 按钮的出现, 至少在 Windows XP 上是这样. ["4" 需要 v1.0.48+]</p>
+      <p id="NewDialog"><strong>增加 4</strong> 到上面的数字来忽略 BIF_NEWDIALOGSTYLE 属性. 增加 4 确保了 FileSelectFolder 即使在像 WinPE 或 BartPE 这样的预安装环境中也能正常工作. 然而, 这样阻止了 "新建文件夹" 按钮的出现, 至少在 Windows XP 上是这样. ["4" 需要 v1.0.48+]</p>
       <p>如果用户在编辑区域中输入了无效的文件夹名称, 则 <em>OutputVar</em> 会被设置为在导航树中选择的文件夹而不是用户输入的内容, 至少在 Windows XP 上是这样.</p>
       <p>此参数可以为 <a href="../Variables.htm#Expressions">表达式</a>.<br>
       </p></dd>

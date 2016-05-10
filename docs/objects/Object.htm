@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>Object 对象</title>
@@ -163,7 +162,7 @@ MsgBox % {-10: 0, -1: 0}.Length()  <em>;  0</em>
 <pre class="Syntax">Object.SetCapacity(MaxItems)
 Object.SetCapacity(Key, ByteSize)</pre>
 <table class="info">
-  <tr><td width="15%">MaxItems</td><td width="85%">对象在必须自动扩展前它可以包含的键值对的最大数目。如果少于键值对的当前数目，则使用该数目并释放未使用的内存。</td></tr>
+  <tr><td style="width:15%">MaxItems</td><td>对象在必须自动扩展前它可以包含的键值对的最大数目。如果少于键值对的当前数目，则使用该数目并释放未使用的内存。</td></tr>
   <tr><td>Key</td><td>任何有效键.</td></tr>
   <tr><td>ByteSize</td><td>为目标区域字符串缓存设置的新大小, 不包括空终止符, 单位为字节. 如果区域不存在, 则创建它. 如果 <i>ByteSize</i> 为零, 则清空缓存但不移除空区域. 如果 <i>ByteSize</i> 小于当前大小, 则移除额外的数据; 否则保留所有现有的数据.</td></tr>
   <tr><td><b>返回值</b></td><td>成功时返回新设置的内存空间, 否则为空字符串.</td></tr>

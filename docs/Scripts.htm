@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>AutoHotkey Scripts and Macros</title>
@@ -29,7 +28,7 @@
 <h2 id="intro">简介</h2>
 <p>每个脚本都是纯文本文件, 其中包含了可由程序 (AutoHotkey.exe) 执行的文本行. 脚本中还可以包含 <a href="Hotkeys.htm">热键</a> 和 <a href="Hotstrings.htm">热字串</a> 或者甚至完全由它们组成. 不过, 在不包含热键和热字串时, 脚本会在启动后从上往下按顺序执行其中的命令.</p>
 <p>程序会把脚本逐行加载到内存中, 每行最多可以包含 16,383 个字符. 在加载过程中, 脚本会被 <a href="misc/Performance.htm">优化</a> 和检查. 将列出所有的语法错误, 更正它们后脚本才能运行.</p>
-<h2><a name="auto" id="auto"></a>脚本顶部 (自动执行段)</h2>
+<h2 id="auto">脚本顶部 (自动执行段)</h2>
 <p>脚本加载完成后，它会从顶行开始执行，直到遇到 <a href="commands/Return.htm">Return</a>、<a href="commands/Exit.htm">Exit</a>、<a href="Hotkeys.htm">热键/热字串标签</a> 或脚本的底部（无论最先遇到哪个）.脚本的这个顶端部分被称为 <em>自动执行</em> 段.</p>
 <p>如果脚本不是 <a href="commands/_Persistent.htm">持续运行的</a> 且不含有 <a href="Hotkeys.htm">热键</a>, <a href="Hotstrings.htm">热字串</a>, <a href="commands/OnMessage.htm">OnMessage</a> 和 <a href="commands/Gui.htm">GUI</a>, 那么它会在自动执行段结束后终止. 否则, 它会以空闲状态继续运行, 从而对例如热键, 热字串, <a href="commands/Gui.htm#label">GUI 事件</a>, <a href="commands/Menu.htm">自定义菜单项</a> 和 <a href="commands/SetTimer.htm">计时器</a> 这些事件进行响应.</p>
 <p>每个由 <a href="Hotkeys.htm">热键</a>, <a href="Hotstrings.htm">热字串</a>, <a href="commands/Menu.htm">菜单项</a>, <a href="commands/Gui.htm#label">GUI 事件</a> 或 <a href="commands/SetTimer.htm">计时器</a> 启动的 <a href="misc/Threads.htm">线程</a> 都以在自动执行段设置的下列属性值作为默认值开始.如果没有设置，则使用标准的默认值（与下面每个页面中注明的一样）：<a href="commands/DetectHiddenWindows.htm">DetectHiddenWindows</a>、<a href="commands/DetectHiddenText.htm">DetectHiddenText</a>、<a href="commands/SetTitleMatchMode.htm">SetTitleMatchMode</a>、<a href="commands/SetBatchLines.htm">SetBatchLines</a>, <a href="commands/SendMode.htm">SendMode</a>、<a href="commands/SetKeyDelay.htm">SetKeyDelay</a>、<a href="commands/SetMouseDelay.htm">SetMouseDelay</a>、
@@ -91,15 +90,15 @@ A line of text.
 ), C:\My File.txt</pre>
 <p>在上面的例子中, 几行代码被一对圆括号包围起来. 这被称为 <em>延续片段</em>. 注意在底行的闭括号后面跟着 <a href="commands/FileAppend.htm">FileAppend</a> 的最后一个参数. 这种做法是可选的; 这样做是为了确保逗号被视为参数分隔符而不是原义的逗号.</p>
 <p>通过在延续片段的开括号右侧包含一个或多个下列选项, 可以覆盖它的默认特性. 如果含有多个选项, 那么选项之间使用空格分开. 例如：<code>( LTrim Join| %</code>.</p>
-<p><strong><a name="Join"></a>Join</strong>: 指定行与行之间连接的方式. 如果省略此选项, 那么除最后一行外的其他行后面都会跟一个换行符 (`n). 如果指定单词 <em>Join</em> 自身, 则行与行之间直接连接而不添加任何字符. 或者在单词 <em>Join</em> 后可以紧跟着多达 15 个字符.例如，<code>Join`s</code> 会在除最后一行外的每行末尾插入一个空格（“`s”表示原义的空格，这是一个只能被 <em>Join</em> 识别的特殊转义序列）.另一个例子是 <code>Join`r`n</code>，它会在行与行之间插入 CR+LF.同样地，<code>Join|</code> 会在行之间插入管道符.要让延续片段的最后一行也以连接字符串结尾, 需要在它的闭括号上一行添加一个空行.</p>
+<p id="Join"><strong>Join</strong>: 指定行与行之间连接的方式. 如果省略此选项, 那么除最后一行外的其他行后面都会跟一个换行符 (`n). 如果指定单词 <em>Join</em> 自身, 则行与行之间直接连接而不添加任何字符. 或者在单词 <em>Join</em> 后可以紧跟着多达 15 个字符.例如，<code>Join`s</code> 会在除最后一行外的每行末尾插入一个空格（“`s”表示原义的空格，这是一个只能被 <em>Join</em> 识别的特殊转义序列）.另一个例子是 <code>Join`r`n</code>，它会在行与行之间插入 CR+LF.同样地，<code>Join|</code> 会在行之间插入管道符.要让延续片段的最后一行也以连接字符串结尾, 需要在它的闭括号上一行添加一个空行.</p>
 <p>已知限制: 如果单词Join后面紧跟一个冒号，那么冒号不能是这一行的最后一个. 因为 <code>(Join:</code> 将被当做一个名为 Join 的标签对待，所以不支持 <code>(LTrim Join:</code> 这种写法, 而 <code>(Join: C</code> 这种写法没有问题.</p>
-<p><strong><a name="LTrim"></a>LTrim</strong>: 删除每行开头的空格和 tab. 主要用来允许延续片段使用缩进. 此外，通过在一行中指定 <code>#LTrim</code> 自身可以为多个延续片段打开此选项.<code>#LTrim</code> 跟位置有关:会影响它下面的所有延续片段.使用 <code>#LTrim Off</code> 可以关闭此设置.</p>
+<p id="LTrim"><strong>LTrim</strong>: 删除每行开头的空格和 tab. 主要用来允许延续片段使用缩进. 此外，通过在一行中指定 <code>#LTrim</code> 自身可以为多个延续片段打开此选项.<code>#LTrim</code> 跟位置有关:会影响它下面的所有延续片段.使用 <code>#LTrim Off</code> 可以关闭此设置.</p>
 <p><strong>RTrim0</strong> (RTrim 后跟着一个零): 关闭自动删除每行末尾的空格和 tab 的设置.</p>
-<p><strong><a name="CommentOption"></a>Comments</strong>（或 <strong>Comment</strong> 或 <strong>Com</strong> 或 <strong>C</strong>) <span class="ver">[v1.0.45.03+]</span>：允许在延续片段中使用<a href="#Comments">分号注释</a>（但不支持 <code>/*..*/</code>）.这样的注释 (以及它们左边的空格和 tab) 会在连接时完全被忽略而不是当成原义文本处理. 每个注释可以放在一行的右侧或单独一行.</p>
+<p id="CommentOption"><strong>Comments</strong>（或 <strong>Comment</strong> 或 <strong>Com</strong> 或 <strong>C</strong>) <span class="ver">[v1.0.45.03+]</span>：允许在延续片段中使用<a href="#Comments">分号注释</a>（但不支持 <code>/*..*/</code>）.这样的注释 (以及它们左边的空格和 tab) 会在连接时完全被忽略而不是当成原义文本处理. 每个注释可以放在一行的右侧或单独一行.</p>
 <p><strong>%</strong> (百分号): 把百分号视为原义字符而不是变量引用. 这样就不需要把每个百分号 <a href="commands/_EscapeChar.htm">转义</a> 成原义字符. 在百分号已经为原义的地方不需要使用此选项, 例如 <a href="Hotstrings.htm">自动替换热字串</a>.</p>
 <p><strong>,</strong> (逗号): 把逗号作为分隔符而不是原义逗号. 这个非常少用的选项只有在命令的参数之间才需要, 因为在 <a href="Functions.htm">函数调用</a> 中逗号的类型没有影响. 并且, 此选项只会转换那些真正的分隔参数的逗号. 换句话说, 一旦到了命令的最后一个参数 (或者命令没有参数), 那么会忽略此选项而把后续的逗号当成原义逗号.</p>
-<p><a name="accent"></a><strong>`</strong> (重音符): 把每个反引号视为原义字符而不是 <a href="commands/_EscapeChar.htm">转义符</a>. 此选项同时也避免了需要分别对逗号和百分号进行明确地转义. 此外, 它还阻止对任何特定的转义序列例如 `r 和 `t 进行转义.</p>
-<p><a name="non-continuation"></a><strong>)</strong> <span class="ver">[v1.1.01+]</span>: 如果一个右括号出现在延续代码的参数中(除了作为 <a href="#Join">Join</a> 的选项参数), 那么这一行将重新解释为一个表达式，而不是作为一段延续代码的开始. 这将避免类似 <code>(x.y)[z]()</code> 的表达式需要对左括号进行转义.</p>
+<p id="accent"><strong>`</strong> (重音符): 把每个反引号视为原义字符而不是 <a href="commands/_EscapeChar.htm">转义符</a>. 此选项同时也避免了需要分别对逗号和百分号进行明确地转义. 此外, 它还阻止对任何特定的转义序列例如 `r 和 `t 进行转义.</p>
+<p id="non-continuation"><strong>)</strong> <span class="ver">[v1.1.01+]</span>: 如果一个右括号出现在延续代码的参数中(除了作为 <a href="#Join">Join</a> 的选项参数), 那么这一行将重新解释为一个表达式，而不是作为一段延续代码的开始. 这将避免类似 <code>(x.y)[z]()</code> 的表达式需要对左括号进行转义.</p>
 <p><u>备注</u></p>
 <p>当没有指定 <a href="#accent">重音符 (`) 选项</a> 时, 支持在延续片段中使用 <a href="commands/_EscapeChar.htm">转义序列</a>, 例如 `n (换行) 和 `t (tab).</p>
 <p>没有使用 <a href="#CommentOption">注释选项</a> 时, 不支持在延续片段中使用分号和 /*..*/ 添加注释, 因为它们会被视为原义文本. 不过, 可以在片段的底行和顶行添加注释. 例如：</p>
@@ -122,14 +121,15 @@ FileAppend, %Var%, C:\My File.txt</pre>
 <p>因为闭括号表示延续片段的结束，所以要让某一行以原义的闭括号开头，需要在其前面加上重音符/反引号：<code>`)</code>.</p>
 <p>一个延续片段后面可以紧跟着包含另一个延续片段的开括号的一行. 这样使得上面提到的选项可以在创建单行的过程中进行改变.</p>
 <p>不支持通过 <a href="commands/_Include.htm">#Include</a> 的方法把延续片段各部分连接起来.</p>
+
 <h2 id="ahk2exe">把脚本转换成 EXE (ahk2exe)</h2>
 <p>程序中已包含了脚本编译器 (感谢 fincs 提供).</p>
-<p>脚本编译完成后，就成了一个独立的可执行文件；也就是说，它甚至可以在没有安装 AutoHotkey 的机器上运行（并且这样的可执行文件可以无限制地发布或出售）.编译过程中会创建一个包含下列文件的可执行文件: AutoHotkey 解释器, 脚本需要<a href="commands/_Include.htm">加载</a>的任何文件以及通过 <a href="commands/FileInstall.htm">FileInstall</a> 命令合并的任何文件.</p>
+<p>脚本编译完成后，就成了一个独立的可执行文件；也就是说，可以在没有安装 AutoHotkey 的机器上运行.编译过程中会创建一个包含下列文件的可执行文件: AutoHotkey 解释器, 脚本需要<a href="commands/_Include.htm">加载</a>的任何文件以及通过 <a href="commands/FileInstall.htm">FileInstall</a> 命令内嵌的任何文件.</p>
 <p>使用 Ahk2Exe 有下列几种方式:</p>
 <ol>
   <li><strong>GUI 界面</strong>: 运行菜单菜单中的 "Convert .ahk to .exe" 菜单项.</li>
-  <li><strong>右键点击</strong>: 在资源管理器中, 您可以在任何一个 .ahk 上右键点击并选择 "Compile Script" (只有在安装 AutoHotkey 时选择了脚本编译器时时才可用). 这样创建了与脚本具有相同的主文件名的 EXE 文件, 它会在稍后出现在相同目录中. 注: 这样生成的 EXE 文件会使用与前面的方法 #1 最后一次使用时相同的自定义图标, .bin 文件以及 MPRESS 设置.</li>
-  <li><a name="ahk2exeCmd"></a><strong>命令行</strong>: 编译器可以使用下列参数在命令行中运行:
+  <li><strong>右键点击</strong>: 在资源管理器中, 您可以在任何一个 .ahk 上右键点击并选择 "Compile Script" (只有在安装 AutoHotkey 时选择了脚本编译器时时才可用). 这样创建了与脚本具有相同的主文件名的 EXE 文件, 它会在稍后出现在相同目录中. 注: 这样生成的 EXE 文件会使用与前面的方法 #1 最后一次使用时相同的自定义图标, .bin 文件以及 <a href="#mpress">MPRESS</a> 设置.</li>
+  <li id="ahk2exeCmd"><strong>命令行</strong>: 编译器可以使用下列参数在命令行中运行:
   <pre>Ahk2Exe.exe /in MyScript.ahk [/out MyScript.exe] [/icon MyIcon.ico] [/bin AutoHotkeySC.bin] [/mpress 0or1]</pre>
   例如：
 <pre>Ahk2Exe.exe /in "MyScript.ahk" /icon "MyIcon.ico"</pre>
@@ -143,7 +143,6 @@ FileAppend, %Var%, C:\My File.txt</pre>
 <ul>
   <li>进行编译通常并不会提升脚本的性能.</li>
   <li>截至 v1.1.01, 还不支持密码保护和 /NoDecompile 选项.</li>
-  <li>如果在 AutoHotkey 安装目录的 "Compiler" 子文件夹中含有 <a href="http://www.matcode.com/mpress.htm">mpress.exe</a>, 则会使用它压缩脚本的可执行文件, 除非通过 <code>/mpress 0</code> 或 GUI 设置把它禁用了. 这样同时压缩了脚本的源代码 (删除了所有注释), 其中的源码可以使用 PE 资源编辑器从可执行文件中提取.</li>
   <li>命令 <a href="commands/_NoTrayIcon.htm">#NoTrayIcon</a> 和 "<a href="commands/Menu.htm">Menu, Tray, ShowMainWindow</a>" 会影响已编译脚本的行为.</li>
   <li>使用类似 Resource Hacker (免费软件) 的工具编辑 "AutoHotkeySC.bin" 文件可以给已编译脚本添加自定义版本信息 (和在资源管理器的文件属性对话框中看到的那些). 此文件包含在 AutoHotkey 安装目录的 "Compiler" 子文件夹中. 可以使用 <a href="http://www.autohotkey.com/forum/topic22975.html">Compile_AHK II</a> 简化这个过程. 截至 v1.1.01, 可以直接编辑已编译脚本而不是 AutoHotkeySC.bin.</li>
   <li>还可以使用上面的方法改变所有已编译脚本现有的图标或为它们添加新图标.</li>
@@ -152,6 +151,11 @@ FileAppend, %Var%, C:\My File.txt</pre>
   <li>另外，当编译出错时，Ahk2Exe还能返回退出代码，它可以指示编译的错误类型.错误类型更多信息请访问 <a href="https://github.com/fincs/Ahk2Exe/blob/master/ErrorCodes.md">GitHub (ErrorCodes.md)</a>. <span class="ver">[v1.1.22.03+]</span></li>
 </ul>
 <p>编译器的源码和新版本可以在 <a href="https://github.com/fincs/Ahk2Exe">GitHub</a> 找到.</p>
+<h3 id="mpress">压缩编译脚本</h3>
+<p>Ahk2Exe 可选用 MPRESS (MATCODE Software出品的一款免费软件) 压缩编译脚本. 如果在AutoHotKey安装目录的"Compiler"子目录存在 <strong>mpress.exe</strong> , 编译时将自动使用MPRESS来压缩,除非指定了 <code>/mpress 0</code> 参数或在界面中设置不启用压缩. </p>
+<p>官网 (2016年3月该网站已下线): <a href="http://www.matcode.com/mpress.htm">http://www.matcode.com/mpress.htm</a></p>
+<p>镜像 (下载信息): <a href="https://autohotkey.com/mpress/">https://autohotkey.com/mpress/</a></p>
+<p><strong>注:</strong> 压缩编译脚本可以保护脚本不被诸如记事本或PE编辑器这类的工具随意查看，但并不能保护脚本源码不被专用的提取工具提取.</p>
 
 <h2 id="cmd">向脚本传递命令行参数</h2>
 <p>脚本支持命令行参数. 格式为:</p>
@@ -194,7 +198,7 @@ FileAppend, %Var%, C:\My File.txt</pre>
   </tr>
 </table>
 
-<p><a name="defaultfile"></a><strong>Script Filename:</strong>如果不含 <em>Script Parameters</em>, 那么此参数可以省略. 省略时, 它会运行 (或提示您创建) 下列默认位置的其中一个文件:</p>
+<p id="defaultfile"><strong>Script Filename:</strong>如果不含 <em>Script Parameters</em>, 那么此参数可以省略. 省略时, 它会运行 (或提示您创建) 下列默认位置的其中一个文件:</p>
 <ul>
   <li><a href="Variables.htm#AhkPath">AutoHotkey执行程序目录</a>.</li>
   <li><a href="Variables.htm#MyDocuments">我的文档</a>.</li>

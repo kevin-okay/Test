@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>SetTitleMatchMode</title>
@@ -22,7 +21,7 @@ SetTitleMatchMode, Fast|Slow</pre>
   <dt>MatchMode</dt>
   <dd><p>下列数字的其中一个或单词 RegEx:</p>
       <p><strong>1</strong>: 窗口标题必须以指定的 <em>WinTitle</em> 开头.<br><strong>2</strong>: 窗口标题的某个位置必须包含<em>WinTitle</em>。. <br><strong>3</strong>: 窗口标题必须准确匹配<em>WinTitle</em>。</p>
-      <p><strong><a name="RegEx"></a>RegEx</strong> (v1.0.45+): 改变 <em>WinTitle</em>, <em>WinText</em>, <em>ExcludeTitle</em> 以及 <em>ExcludeText</em> 为 <a href="../misc/RegEx-QuickRef.htm">正则表达式</a>. 在这些命令中使用时, 不要把正则表达式括在引号中. 例如：<code><a href="WinActivate.htm">WinActivate Untitled.*Notepad</a></code>。RegEx 还适用于 <a href="../misc/WinTitle.htm#ahk_class">ahk_class</a>；例如，<code>ahk_class IEFrame</code> 会搜索类名包含 <em>IEFrame</em> 的任意窗口（这是由于在默认情况下，正则表达式在目标字符串<em>任意位置</em>查找匹配）。注：对于 <em>WinText</em>，RegEx 会分别与每个文本元素（即每个控件的文本）进行对照来寻找匹配。因此, 匹配不会横跨多个文本元素.</p>
+      <p id="RegEx"><strong>RegEx</strong> (v1.0.45+): 改变 <em>WinTitle</em>, <em>WinText</em>, <em>ExcludeTitle</em> 以及 <em>ExcludeText</em> 为 <a href="../misc/RegEx-QuickRef.htm">正则表达式</a>. 在这些命令中使用时, 不要把正则表达式括在引号中. 例如：<code><a href="WinActivate.htm">WinActivate Untitled.*Notepad</a></code>。RegEx 还适用于 <a href="../misc/WinTitle.htm#ahk_class">ahk_class</a>；例如，<code>ahk_class IEFrame</code> 会搜索类名包含 <em>IEFrame</em> 的任意窗口（这是由于在默认情况下，正则表达式在目标字符串<em>任意位置</em>查找匹配）。注：对于 <em>WinText</em>，RegEx 会分别与每个文本元素（即每个控件的文本）进行对照来寻找匹配。因此, 匹配不会横跨多个文本元素.</p>
       <p>上面的模式还会对 <em> ExcludeTitle</em> 产生与 <em>WinTitle</em> 相同的影响。例如, 模式 3 要求被排除的窗口的标题必须准确匹配 <em>ExcludeTitle</em>.</p>
     </dd>
 

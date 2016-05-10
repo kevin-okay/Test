@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>Shutdown</title>
@@ -27,8 +26,8 @@
 <p>关闭代码包含下列值:</p>
 <table class="info" style="width:80%">
   <tr>
-    <td width="25%">logoff</td>
-    <td width="75%">0</td>
+   <td style="width:25%">logoff</td>
+    <td>0</td>
   </tr>
   <tr>
     <td>Shutdown</td>
@@ -64,8 +63,8 @@
 <h3>示例</h3>
 <pre class="NoIndent"><em>; 强制重新启动 (重启 + 强制 = 2 + 4 = 6):</em>
 Shutdown, 6
-<a name="Suspend"></a>
-<em>; 调用 Windows API 函数 "SetSuspendState" 来让系统挂起或休眠.
+
+<em id="Suspend">; 调用 Windows API 函数 "SetSuspendState" 来让系统挂起或休眠.
 ; 参数 #1: 使用 1 代替 0 来进行休眠而不是挂起.
 ; 参数 #2: 使用 1 代替 0 来立即挂起而不询问每个应用程序以获得许可.
 ; 参数 #3: 使用 1 而不是 0 来禁止所有的唤醒事件.</em>

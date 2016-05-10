@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>正则表达式（RegEx）——快速参考</title>
@@ -29,9 +28,9 @@
     <td><strong>i</strong></td>
     <td>不区分大小写匹配, 它把字母 A 到 Z 视为等同于它们的小写副本.</td>
   </tr>
-  <tr>
+  <tr id="Multiline">
     <td><strong>m</strong></td>
-    <td><p><a name="Multiline"></a>多行. 把<em>Haystack</em>视为许多单独的行（如果它包含新行符）的集合而不是一个单个的连续行。具体地, 它会改变下列方式:</p>
+    <td><p>多行. 把<em>Haystack</em>视为许多单独的行（如果它包含新行符）的集合而不是一个单个的连续行。具体地, 它会改变下列方式:</p>
       <p>1) 抑扬符 (^) 能匹配紧跟在内部所有新行符之后的位置, 如同它总能匹配 <em>Haystack</em> 的开始处一样 (但它不会匹配 <em>Haystack</em> 的 <em>最后面</em> 的新行符之后的位置).</p>
       <p>2) 美元符 ($) 能匹配 <em>Haystack</em> 中任何新行符之前的位置 (如同它总能匹配最后面的位置).</p>
       <p>例如，模式“<span class="red">m)</span>^abc$”中包含了“m”选项才能在 <em>Haystack</em>“xyz`r`nabc”中形成匹配。</p>
@@ -69,9 +68,9 @@
     <td><strong>P</strong></td>
     <td>位置模式. 这会使 RegExMatch() 产生匹配和其子模式的位置和长度而不是匹配它们的子字符串. 更多细节请参阅 <a href="../commands/RegExMatch.htm#PosMode">UnquotedOutputVar</a>。</td>
   </tr>
-  <tr>
+  <tr id="Study">
     <td><strong>S</strong></td>
-    <td><a name="Study"></a>研究模式来提高性能. 它可用于要执行多次的特殊模式 (尤其是复杂的模式). 如果 PCRE 找到了提高性能的方法, 则会把这个发现储存到缓存中模式的旁边, 以便在之后执行相同模式时使用 (后续使用此模式时还需要指定 S 选项, 因为要找到缓存中相同的模式则它们的选项也必须完全相同, 包括它们的顺序). (这里的研究主要指在进行匹配前使用其他一些通常较简单快速的方法进行判断, 例如假设模式至少匹配 5 个字符, 而源字符串只有 3 个, 那么正则表达式引擎会直接返回 "没有匹配" 的结果, 而不会进行匹配.)</td>
+    <td>研究模式来提高性能. 它可用于要执行多次的特殊模式 (尤其是复杂的模式). 如果 PCRE 找到了提高性能的方法, 则会把这个发现储存到缓存中模式的旁边, 以便在之后执行相同模式时使用 (后续使用此模式时还需要指定 S 选项, 因为要找到缓存中相同的模式则它们的选项也必须完全相同, 包括它们的顺序). (这里的研究主要指在进行匹配前使用其他一些通常较简单快速的方法进行判断, 例如假设模式至少匹配 5 个字符, 而源字符串只有 3 个, 那么正则表达式引擎会直接返回 "没有匹配" 的结果, 而不会进行匹配.)</td>
   </tr>
   <tr id="opt_Callout">
     <td><strong>C</strong></td>
@@ -85,93 +84,93 @@
     <td><strong>`r</strong></td>
     <td>从默认的新行符 (`r`n) 切换到单独的回车符 (`r).</td>
   </tr>
-  <tr>
+  <tr id="NEWLINE_ANY">
     <td><strong>`a</strong></td>
-    <td><a name="NEWLINE_ANY"></a>在 v1.0.46.06+, `a 可以识别任意类型的新行符, 即 `r, `n, `r`n, `v/VT/vertical tab/chr(0xB), `f/FF/formfeed/chr(0xC) 以及 NEL/next-line/chr(0x85). 在 v1.0.47.05+，新行符可以被限制为 CR、LF 和 CRLF 三种，只需要在模式的开始处（选项后面）指定大写的（*ANYCRLF）；例如 <code>im)(*ANYCRLF)^abc$</code>。</td>
+    <td>在 v1.0.46.06+, `a 可以识别任意类型的新行符, 即 `r, `n, `r`n, `v/VT/vertical tab/chr(0xB), `f/FF/formfeed/chr(0xC) 以及 NEL/next-line/chr(0x85). 在 v1.0.47.05+，新行符可以被限制为 CR、LF 和 CRLF 三种，只需要在模式的开始处（选项后面）指定大写的（*ANYCRLF）；例如 <code>im)(*ANYCRLF)^abc$</code>。</td>
   </tr>
 </table>
 <p>注: 在两个选项间可以使用空格或 tab 分隔.</p>
 
 <h2 id="Common">常用符号和用法</h2>
 <table class="info">
-	<tr>
-		<td align="center"><strong>.</strong></td>
-		<td><a name="dot"></a>默认情况下, 句点匹配除新行符 (`r`n) 序列外的任何单个字符, 但是这种特性可以使用 <a href="#opt_s">DotAll (s)</a>, <a href="#opt_esc_n">新行 (`n)</a>, <a href="#opt_esc_r">回车 (`r)</a>, <a href="#NEWLINE_ANY">`a 或 (*ANYCRLF)</a> 选项进行改变. 例如, <span class="regex">ab.</span> 可以匹配 <span class="subj">abc</span> 和 <span class="subj">abz</span> 以及 <span class="subj">ab_</span>.</td>
+	<tr id="dot">
+		<td style="align:center"><strong>.</strong></td>
+		<td>默认情况下, 句点匹配除新行符 (`r`n) 序列外的任何单个字符, 但是这种特性可以使用 <a href="#opt_s">DotAll (s)</a>, <a href="#opt_esc_n">新行 (`n)</a>, <a href="#opt_esc_r">回车 (`r)</a>, <a href="#NEWLINE_ANY">`a 或 (*ANYCRLF)</a> 选项进行改变. 例如, <span class="regex">ab.</span> 可以匹配 <span class="subj">abc</span> 和 <span class="subj">abz</span> 以及 <span class="subj">ab_</span>.</td>
 	</tr>
 	<tr>
-		<td align="center"><strong>*</strong></td>
+		<td style="align:center"><strong>*</strong></td>
 		<td><p>星号匹配零个或多个前面的字符, <a href="#class">字符类</a> 或 <a href="#subpat">子模式</a>. 例如, <span class="regex">a*</span> 可以匹配 <span class="subj">a</span>b 和 <span class="subj">aaa</span>b. 它还可以匹配完全不包含 "a" 的任意字符串的开始处.</p>
 	      <p><strong>通配符:</strong> 句点星号模式 <span class="regex">.*</span> 是匹配范围最广的模式之一, 因为它可以匹配零个或多个 <em>任意</em> 字符 (除了新行符: `r 和 `n). 例如, <span class="regex">abc.*123</span> 可以匹配 <span class="subj">abcAnything123</span>, 也能匹配 <span class="subj">abc123</span>.</p>		  </td>
 	</tr>
 	<tr>
-	  <td align="center"><strong>?</strong></td>
+	  <td style="align:center"><strong>?</strong></td>
 	  <td>问号匹配零或一个前面的字符, <a href="#set">字符类</a> 或 <a href="#subpat">子模式</a>. 可以理解为 "前面的那项是可选的". 例如, <span class="regex">colou?r</span> 可以匹配 <span class="subj">color</span> 和 <span class="subj">colour</span>, 因为 "u" 是可选的.</td>
   </tr>
 	<tr>
-	  <td align="center"><strong>+</strong></td>
+	  <td style="align:center"><strong>+</strong></td>
 	  <td>加号匹配一个或多个前面的字符, <a href="#class">字符类</a> 或 <a href="#subpat">子模式</a>. 例如 <span class="regex">a+</span> 可以匹配 <span class="subj">a</span>b 和 <span class="subj">aaa</span>b. 但与 <span class="regex">a*</span> 和 <span class="regex">a?</span> 不同的是, 模式 <span class="regex">a+</span> 不会匹配开始处没有 "a" 的字符串.</td>
   </tr>
 	<tr>
-	  <td align="center">{min,max}</td>
+	  <td style="align:center">{min,max}</td>
 	  <td><p>匹配出现次数介于 <em>min</em> 和 <em>max</em> 的前面的字符, <a href="#set">字符类</a> 或 <a href="#subpat">子模式</a>. 例如, <span class="regex">a{1,2}</span> 可以匹配 <span class="subj">a</span>b 但只匹配 <span class="subj">aa</span>ab 中的前两个 a.</p>
         <p>此外, {3} 表示准确匹配 3 次, 而 {3<strong>,</strong>} 则表示匹配 3 次或更多. 注: 指定的数字必须小于 65536, 且第一个必须小于等于第二个.</p></td>
   </tr>
-	<tr>
-	  <td align="center"><strong>[...]</strong></td>
-	  <td><p><a name="set"></a><a name="class"></a><strong>字符类:</strong> 方括号把一列字符或一个范围括在了一起 (或两者). 例如, <span class="regex">[abc]</span> 表示 "a, b 或 c 的中任何一个字符". 使用破折号来创建范围; 例如, <span class="regex">[a-z]</span> 表示 "在小写字母 a 和 z (包含的) 之间的任何一个字符". 列表和范围可以组合在一起; 例如 <span class="regex">[a-zA-Z0-9_]</span> 表示 "字母, 数字或下划线中的任何一个字符".</p>
+	<tr id="class">
+	  <td style="align:center"><strong>[...]</strong></td>
+	  <td><p><strong>字符类:</strong> 方括号把一列字符或一个范围括在了一起 (或两者). 例如, <span class="regex">[abc]</span> 表示 "a, b 或 c 的中任何一个字符". 使用破折号来创建范围; 例如, <span class="regex">[a-z]</span> 表示 "在小写字母 a 和 z (包含的) 之间的任何一个字符". 列表和范围可以组合在一起; 例如 <span class="regex">[a-zA-Z0-9_]</span> 表示 "字母, 数字或下划线中的任何一个字符".</p>
 	    <p>字符类后面可以使用 *, ?, + 或 {min,max} 进行限定. 例如, <span class="regex">[0-9]+</span> 匹配一个或多个任意数字; 因此它可以匹配 xyz<span class="subj">123</span> 但不会匹配 abcxyz.</p>            
         <p>通过 [[:xxx:]] 还支持下列 POSIX 命名集, 其中 xxx 是下列单词的其中一个: alnum, alpha, ascii (0-127), blank (space 或 tab), cntrl (控制字符), digit (0-9), xdigit (十六进制数), print, graph (排除了空格的打印字符), punct, lower, upper, space (空白), word (等同于 <a href="#word">\w</a>).</p>
         <p>在字符类中, 只有在类中具有特殊含义的字符才需要进行转义; 例如 <span class="regex">[\^a]</span>, <span class="regex">[a\-b]</span>, <span class="regex">[a\]]</span> 和 <span class="regex">[\\a]</span>.</p></td>
   </tr>
 	<tr>
-	  <td align="center"><strong>[^...]</strong></td>
+	  <td style="align:center"><strong>[^...]</strong></td>
 	  <td>匹配 <strong>不</strong> 在类中的任何一个字符. 例如, <span class="regex">[^/]*</span> 匹配零个或多个 <em>不是</em> 正斜杠的任意字符, 例如 <span class="subj">http:</span>//. 同样地, <span class="regex">[^0-9xyz]</span> 匹配既不是数字也不是 x, y 或 z 的任何一个字符.</td>
   </tr>
 	<tr>
-	  <td align="center"><strong>\d</strong></td>
+	  <td style="align:center"><strong>\d</strong></td>
 	  <td>匹配任意一个数字 (相当于类 <span class="regex">[0-9]</span>). 相反地，大写的\D表示“任意的<em>非</em>数字字符”。这个和下面的两个都可以用在 <a href="#set">字符类</a> 中; 例如, <span class="regex">[\d.-]</span> 表示 "任何数字, 句点或负号".</td>
   </tr>
 	<tr>
-	  <td align="center"><strong>\s</strong></td>
+	  <td style="align:center"><strong>\s</strong></td>
 	  <td>匹配任意单个空白字符 , 主要是空格, tab 和新行符 (`r 和 `n). 相反地, 大写的 \S 表示 "任何 <em>非</em>空白字符".</td>
   </tr>
-	<tr>
-	  <td align="center"><strong>\w</strong></td>
-	  <td><a name="word"></a>匹配任何单个 "单词" 字符, 即字母, 数字或下划线. 这等同于 <span class="regex">[a-zA-Z0-9_]</span>. 相反地, 大写的 \W 表示 "任何 <em>非</em>单词字符".</td>
+	<tr id="word">
+	  <td style="align:center"><strong>\w</strong></td>
+	  <td>匹配任何单个 "单词" 字符, 即字母, 数字或下划线. 这等同于 <span class="regex">[a-zA-Z0-9_]</span>. 相反地, 大写的 \W 表示 "任何 <em>非</em>单词字符".</td>
   </tr>
-	<tr>
-	  <td align="center"><strong>^<br>$</strong></td>
-	  <td><p><a name="anchor" id="anchor"></a>抑扬符 (^) 和美元符 ($) 被称为 <em>锚</em>, 因为它们不消耗任何字符; 相反地, 它们把模式限定在被搜索字符串的开始或末尾进行匹配.</p>
+	<tr id="anchor">
+	  <td style="align:center"><strong>^<br>$</strong></td>
+	  <td><p>抑扬符 (^) 和美元符 ($) 被称为 <em>锚</em>, 因为它们不消耗任何字符; 相反地, 它们把模式限定在被搜索字符串的开始或末尾进行匹配.</p>
 	    <p>在模式的开始处使用 <span class="regex">^</span> 表示需要在行的开始处进行匹配. 例如, <span class="regex">^abc</span> 可以匹配 <span class="subj">abc</span>123 但不匹配 123abc.</p>
 	    <p>在模式的末尾处使用 <span class="regex">$</span> 表示需要在行的末端进行匹配. 例如, <span class="regex">abc$</span> 可以匹配 123<span class="subj">abc</span> 但不能匹配 abc123.</p>
       <p>这两个锚还可以组合使用. 例如, <span class="regex">^abc$</span> 仅匹配 <span class="subj">abc</span> (即在它的前面或后面不能有另外的字符).</p>
       <p>如果被搜索的文本包含多行, 则可以使用 <a href="#Multiline">"m" 选项</a> 让锚应用于每行而不是把所有文本作为整体. 例如, <span class="regex">m)^abc$</span> 可以匹配 123`r`n<span class="subj">abc</span>`r`n789. 但如果没有 "m" 选项, 则不会形成匹配.</p></td>
   </tr>
 	<tr>
-	  <td align="center"><strong>\b</strong></td>
+	  <td style="align:center"><strong>\b</strong></td>
 	  <td>\b 表示 "单词边界", 它类似锚, 因为它不消耗任何字符. 它要求当前字符的 <a href="#word">状态为单词字符 (\w)</a>, 与前一个字符的状态相反. 它通常用来避免意外地匹配到在其他单词内的某个单词. 例如, <span class="regex">\bcat\b</span> 不会匹配 catfish, 但它可以匹配不论周围是否有标点或空白的 <span class="subj">cat</span>. 大写的 \B 则相反: 它要求当前字符 <em>不是</em> 单词的边界.</td>
   </tr>
 	<tr>
-	  <td align="center"><strong>|</strong></td>
+	  <td style="align:center"><strong>|</strong></td>
 	  <td>竖线将两个或多个可选项目分隔开来. 如果可选项目中 <em>任何一个</em> 满足条件, 则会形成匹配. 例如, <span class="regex">gray|grey</span> 既可以匹配 <span class="subj">gray</span> 也可以匹配 <span class="subj">grey</span>. 同样地, 模式 <span class="regex">gr(a|e)y</span> 中通过下面描述的括号的帮助可以实现同样的作用.</td>
   </tr>
-	<tr>
-	  <td align="center"><strong>(...)</strong></td>
-	  <td><p><a name="subpat"></a>括在括号中的项目常用于:</p>
+	<tr id="subpat">
+	  <td style="align:center"><strong>(...)</strong></td>
+	  <td><p>括在括号中的项目常用于:</p>
 	    <ul>
 	      <li>确定求值的顺序. 例如, <span class="regex">(Sun|Mon|Tues|Wednes|Thurs|Fri|Satur)day</span> 可以匹配任何一天的名称.</li>
 	      <li>把 <span class="regex">*</span>, <span class="regex">?</span>, <span class="regex">+</span> 或 <span class="regex">{min,max}</span> 应用到 <em>系列</em> 字符而不只是单个字符. 例如, <span class="regex">(abc)+</span> 匹配一个或一串字符串 "abc"; 因此它可以匹配 <span class="subj">abcabc</span>123 但不会匹配 ab123 或 bc123.</li>
-          <li><a name="capture"></a>捕获子模式, 例如 <span class="regex">abc<span class="red">(.*)</span>xyz</span> 中的句点星号. 例如, <a href="../commands/RegExMatch.htm">RegExMatch()</a> 会把匹配每个子模式的子字符串保存到 <a href="../commands/RegExMatch.htm#Array">输出数组</a>. 同样地, <a href="../commands/RegExReplace.htm">RegExReplace()</a> 中允许把匹配每个子模式的子字符串通过像 $1 这样的 <a href="../commands/RegExReplace.htm#BackRef">后向引用</a> 重新插入到替换结果中. 要使用不捕获子模式的括号, 请把括号内的开始两个字符指定为 <span class="regex">?:</span>; 例如: <span class="regex">(<span class="red">?:</span>.*)</span></li>
+          <li id="capture">捕获子模式, 例如 <span class="regex">abc<span class="red">(.*)</span>xyz</span> 中的句点星号. 例如, <a href="../commands/RegExMatch.htm">RegExMatch()</a> 会把匹配每个子模式的子字符串保存到 <a href="../commands/RegExMatch.htm#Array">输出数组</a>. 同样地, <a href="../commands/RegExReplace.htm">RegExReplace()</a> 中允许把匹配每个子模式的子字符串通过像 $1 这样的 <a href="../commands/RegExReplace.htm#BackRef">后向引用</a> 重新插入到替换结果中. 要使用不捕获子模式的括号, 请把括号内的开始两个字符指定为 <span class="regex">?:</span>; 例如: <span class="regex">(<span class="red">?:</span>.*)</span></li>
 	      <li>在匹配过程中改变 <a href="#Options">选项</a>. 例如, <span class="regex">(?im)</span> 会为模式的后续部分打开不区分大小写和多行选项 (如果它在子模式中则它会改变子模式的选项). 相反地, <span class="regex">(?-im)</span> 会关闭它们. 支持除 DPS`r`n`a 外的所有选项.</li>
 	    </ul></td>
   </tr>
 	<tr>
-	  <td align="center"><strong>\t<br>\r<br>等等.</strong></td>
+	  <td style="align:center"><strong>\t<br>\r<br>等等.</strong></td>
 	  <td><p>这些转义序列表示特殊的字符. 最常见的有 <span class="regex">\t</span> (tab), <span class="regex">\r</span> (回车) 和 <span class="regex">\n</span> (换行). 在 AutoHotkey, 在这些情况中还可以使用重音符 (`) 代替反斜线. 还支持 \xhh 格式的转义序列, 其中 <em>hh</em> 是介于 00 和 FF 之间的任意 ANSI 字符的十六进制码.</p>
       <p>在 v1.0.46.06+, <span class="regex">\R</span> 表示 "单个任意类型的新行符", 即在 <a href="#NEWLINE_ANY">`a 选项</a> 中列出的这些 (然而, \R 在 <a href="#class">字符类</a> 中仅仅表示字母 "R"). 在 v1.0.47.05+, <span class="regex">\R</span> 可以被限制为 CR, LF 和 CRLF 三种, 只需要在模式的开始处 (选项后面) 指定大写的 (*BSR_ANYCRLF) ; 例如 <span class="regex">im)(*BSR_ANYCRLF)abc\Rxyz</span></p></td>
   </tr>
   <tr id="slashP">
-    <td align="center"><strong>\p{xx}<br>\P{xx}<br>\X</strong></td>
+    <td style="align:center"><strong>\p{xx}<br>\P{xx}<br>\X</strong></td>
     <td><p><span class="ver">[AHK_L 61+]:</span> Unicode 字符属性. 在 ANSI 版本中不支持. <span class="regex">\p{xx}</span> 匹配带 xx 属性的字符而 <span class="regex">\P{xx}</span> 匹配 <i>不带</i> xx 属性的任意一个字符. 例如, <span class="regex">\pL</span> 匹配任意一个字母而 <span class="regex">\p{Lu}</span> 匹配任意一个大写字母. <span class="regex">\X</span> 匹配组成扩展 Unicode 序列的任何数目的字符.</p>
     <p>对于受支持的属性名称的完整列表和其他细节, 请在 <a href="http://www.pcre.org/pcre.txt">www.pcre.org/pcre.txt</a> 中搜索 "\p{xx}".</p></td>
   </tr>

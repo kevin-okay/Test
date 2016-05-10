@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>Transform</title>
@@ -28,7 +27,7 @@
 
 <h3>Cmd, Value1, Value2</h3>
 <p><em>Cmd</em>, <em>Value1</em> 和 <em>Value2</em> 参数相互依赖, 它们的用法描述如下.</p>
-<p><strong><a name="Unicode"></a>Unicode [, String]</strong>：<em>（此子命令在 AutoHotkey 的 Unicode 版本中不可用）</em>获取或保存剪贴板上的 Unicode 文本。注：使用<a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a>的方法可以保存和恢复整个剪贴板的内容，这样可以在不丢失剪贴板原始内容情况下用“Transform Unicode”操作剪贴板。</p>
+<p id="Unicode"><strong>Unicode [, String]</strong>：<em>（此子命令在 AutoHotkey 的 Unicode 版本中不可用）</em>获取或保存剪贴板上的 Unicode 文本。注：使用<a href="../misc/Clipboard.htm#ClipboardAll">ClipboardAll</a>的方法可以保存和恢复整个剪贴板的内容，这样可以在不丢失剪贴板原始内容情况下用“Transform Unicode”操作剪贴板。</p>
 <p>此子命令的两种操作模式举例如下:</p>
 <pre>Transform, OutputVar, Unicode  <em>; 获取剪贴板中的 Unicode 文本为 UTF-8 字符串.</em>
 Transform, Clipboard, Unicode, %MyUTF_String%  <em>; 把 Unicode 文本放到剪贴板中.</em></pre>
@@ -44,8 +43,8 @@ return</pre>
 <br>
 <p><strong>Asc, String</strong>：获取 <em>String</em> 中首个字符的 ASCII 码（一个介于 1 和 255 之间的数字）。如果 <em>String</em> 为空, 则 <em>OutputVar</em> 也会被置空. 例如：<code>Transform, OutputVar, Asc, %VarContainingString%</code>。对应的函数: <a href="../Functions.htm#Asc">Asc(String)</a>.</p>
 <p><strong>Chr, Value1</strong>: 获取 ASCII 码为 <em>Value1</em> 的单个字符. 如果 <em>Value1</em> 不是 1 和 255 及其之间的数字, 那么 <em>OutputVar</em> 会被置空来表明此问题. 例如：<code>Transform, OutputVar, Chr, 130</code>。对应的函数: <a href="../Functions.htm#Chr">Chr(Number)</a>.</p>
-<p><strong><a name="Deref"></a>Deref, String</strong>: 展开变量引用和包含在其他变量中的 <a href="_EscapeChar.htm">转义序列</a>. 任何糟糕格式的变量引用在展开时会被忽略. 把 <em>OutputVar</em> 展开为它的内容时也是如此; 换句话说, 在 <em>String</em> 变量中任何对 <em>OutputVar</em> 的引用在展开时会被忽略 (但请注意 <em>String</em> 自身可以 <u>是</u> %<em>OutputVar</em>%). 在下面的例子中，如果 var1 包含字符串“test”而 var2 包含<u>原义的</u>字符串“%var1%”，则 <em>OutputVar</em> 会被赋值为字符串“test”：<code>Transform, OutputVar, deref, %var2%</code>。在 <a href="Functions.htm">函数</a> 内, <em>String</em> 中的每个变量总是被解析为局部变量, 只有在局部变量不存在时才解析为全局变量 (如果没有则为空).</p>
-<p><strong><a name="HTML"></a>HTML, String [, Flags]</strong>:</p>
+<p id="Deref"><strong>Deref, String</strong>: 展开变量引用和包含在其他变量中的 <a href="_EscapeChar.htm">转义序列</a>. 任何糟糕格式的变量引用在展开时会被忽略. 把 <em>OutputVar</em> 展开为它的内容时也是如此; 换句话说, 在 <em>String</em> 变量中任何对 <em>OutputVar</em> 的引用在展开时会被忽略 (但请注意 <em>String</em> 自身可以 <u>是</u> %<em>OutputVar</em>%). 在下面的例子中，如果 var1 包含字符串“test”而 var2 包含<u>原义的</u>字符串“%var1%”，则 <em>OutputVar</em> 会被赋值为字符串“test”：<code>Transform, OutputVar, deref, %var2%</code>。在 <a href="Functions.htm">函数</a> 内, <em>String</em> 中的每个变量总是被解析为局部变量, 只有在局部变量不存在时才解析为全局变量 (如果没有则为空).</p>
+<p id="HTML"><strong>HTML, String [, Flags]</strong>:</p>
 <p><em>对于 ANSI 可执行脚本：</em>通过把 ASCII 值大于 127 的字符译成它们的 HTML 名称来把 <em>String</em> 转换为与它对应的 HTML 字符串（例如把 ￡ 译成 &amp;pound;）。此外, 这四个字符 "&amp;&lt;&gt; 依次被译成 &amp;quot;&amp;amp;&amp;lt;&amp;gt;. 最后, 每个换行符 (`n) 被译成 &lt;br&gt;`n (即 &lt;br&gt; 后面跟着一个换行符). 忽略 <em>Flags</em> 参数。</p>
 <p><em>在 Unicode 可执行脚本：</em>除了上述的功能外，<em>Flags</em> 可以为零或下列值的组合（和）。如果省略, 则它默认为 1.</p>
 <ul>
@@ -53,7 +52,7 @@ return</pre>
     <li>2: 把某些字符转换成编号表示法. 例如 � 被转换成 <code>&amp;#8364;</code></li>
 </ul>
 <p>仅影响非 ASCII 字符. 如果 <i>Flags</i> = 3, 仅在命名表示法不可用的情况下才使用编号表示法. 后面的这些字符总是需要转换: <code>&lt;&gt;"&amp;</code> 和 <code>`n</code> (换行符).</p>
-<p><strong><a name="FromCodePage"></a>FromCodePage</strong> / <strong><a name="ToCodePage"></a>ToCodePage</strong>: 不赞成使用. 请使用 <a href="StrPutGet.htm">StrPut() / StrGet()</a> 代替.</p>
+<p><strong id="FromCodePage">FromCodePage</strong> / <strong><a name="ToCodePage"></a>ToCodePage</strong>: 不赞成使用. 请使用 <a href="StrPutGet.htm">StrPut() / StrGet()</a> 代替.</p>
 <p><strong>Mod, Dividend, Divisor</strong>: 获取被除数 <em>Dividend</em> 除以除数 <em>Divisor</em> 后得到的余数. 如果 <em>Divisor</em> 为零, 则 <em>OutputVar</em> 被置空. <em>Dividend</em> 和 <em>Divisor</em> 都可以为小数. 如果 <em>Divisor</em> 为负数, 那么在计算中会被视为正数处理. 后面的例子结果为 2：<code>Transform, OutputVar, mod, 5, 3</code>。对应的函数：<a href="../Functions.htm#Mod">Mod(Dividend, Divisor)</a>。</p>
 <p><strong>Pow, Base, Exponent</strong>: 获取底数 <em>Base</em> 的指数 <em>Exponent</em> 次幂. <em>Base</em> 和 <em>Exponent</em> 都可以为小数. 如果 <em>Exponent</em> 为负数, 那么即使 <em>Base</em> 和 <em>Exponent</em> 都是整数, <em>OutputVar</em> 也会被格式化为浮点数. 不支持 <em>Base</em> 为负数且 <em>Exponent</em> 为分数例如 1.5 的情况; 它会使得 <em>OutputVar</em> 被置空. 另请参阅: <a href="../Variables.htm#pow">** 运算符</a>.</p>
 <p><strong>Exp, N</strong>: 获取 e (它的近似值为 2.71828182845905) 的 <em>N</em> 次幂. <em>N</em> 可以为负数也可以为小数. 对应的函数: <a href="../Functions.htm#Exp">Exp(N)</a>.</p>

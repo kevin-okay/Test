@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>DllCall</title>
@@ -23,7 +22,7 @@
 
   <dt>[DllFile\]Function</dt>
   <dd><p>DLL 或 EXE 文件名, 后面跟着一个反斜杠和函数名. 例如：<code>MyDLL\MyFunction</code>（省略时文件扩展名默认为 ".dll"）。如果未指定绝对路径，则假定 <em>DllFile</em> 在系统的 PATH 指定的路径或 <a href="../Variables.htm#WorkingDir">A_WorkingDir</a> 中。</p>
-      <p>调用 User32.dll, Kernel32.dll, ComCtl32.dll 或 Gdi32.dll 中的函数时可以省略 <em><a name="std"></a>DllFile</em>. 例如，使用 <code>"User32\IsWindowVisible"</code> 和 <code>"IsWindowVisible"</code> 得到相同的结果。</p>
+      <p id="std"><em>调用 User32.dll, Kernel32.dll, ComCtl32.dll 或 Gdi32.dll 中的函数时可以省略 <em><a name="std"></a>DllFile</em>. 例如，使用 <code>"User32\IsWindowVisible"</code> 和 <code>"IsWindowVisible"</code> 得到相同的结果。</p>
       <p>如果使用指定的名称无法找到函数, 则会根据当前运行脚本的 AutoHotkey 版本自动附加 A (ANSI) 或 W (Unicode) 后缀. 例如，<code>"MessageBox"</code> 在 ANSI 版本中等同于 <code>"MessageBoxA"</code> 而在 Unicode 版本中等同于 <code>"MessageBoxW"</code>。</p>
       <p>当 <em>重复</em> 调用 DLL 通过 <a href="#load">预先加载此 DLL 文件</a> 可以显著改善执行效率.</p>
     <p>在 1.0.46.08+ 版本中, 此参数也可以是表示需调用函数的内存地址的单独的整数. 如 <a href="#COM">COM</a> 和 <a href="RegisterCallback.htm">RegisterCallback()</a> 提供的地址.</p></dd>
@@ -32,7 +31,7 @@
   <dd><p>这样的每对数据表示需传递给函数的单个参数. 参数的个数没有限制. 关于 <em>Type</em>，请参阅下面的<a href="#types">类型表</a>。关于 <em>Arg</em>, 指定传递给函数的值.</p></dd>
 
   <dt>Cdecl ReturnType</dt>
-  <dd><p><a name="cdecl"></a>通常省略单词 <em>Cdecl</em> 因为大多数函数使用标准调用约定而不是 "C" 调用约定 (像 wsprintf 这样接受可变数目参数的函数在这点上是个例外). 如果您省略了 Cdecl 但调用时产生 <a href="#An">ErrorLevel A<strong>n</strong></a> (这里 <strong>n</strong> 是您传递的参数的总大小), 此时可能需要加上 <em>Cdecl</em>. 注意大多数面向对象的 C++ 函数使用的 <i>thiscall</i> 约定是不受支持的.</p>
+  <dd><p id ="cdecl">通常省略单词 <em>Cdecl</em> 因为大多数函数使用标准调用约定而不是 "C" 调用约定 (像 wsprintf 这样接受可变数目参数的函数在这点上是个例外). 如果您省略了 Cdecl 但调用时产生 <a href="#An">ErrorLevel A<strong>n</strong></a> (这里 <strong>n</strong> 是您传递的参数的总大小), 此时可能需要加上 <em>Cdecl</em>. 注意大多数面向对象的 C++ 函数使用的 <i>thiscall</i> 约定是不受支持的.</p>
       <p>如果使用了，那么单词<em>Cdecl</em>应该在返回值类型前列出（如果有）。在单词间使用空格或 tab 分隔. 例如：<code>"Cdecl Str"</code>。</p>
       <p><span class="ver">[AHK_L 53+]：</span>因为在 64 位代码中不存在“C”调用约定，所以在 AutoHotkey 的 64 位版本中可以使用 <i>Cdecl</i> 但没有效果。</p>
       <p><em>ReturnType</em>: 如果函数返回 32 位的有符号整型 (Int), BOOL 或没有返回值, 则 <em>ReturnType</em> 可以省略. 否则, 需要指定下面 <a href="#types">类型表</a> 中参数类型的其中一个. 还支持 <a href="#asterisk">星号后缀</a>.</p></dd>
@@ -41,25 +40,25 @@
 
 <h3 id="types">参数和返回值类型</h3>
 <table class="info">
-<tr>
+<tr id="str">
 <td>Str</td>
-<td><p><a name="str"></a>例如“Blue”或 MyVar 这样的字符串型。如果被调用函数修改了字符串且此参数是个裸变量, 那么其内容将被更新. 例如，后面的调用将把 <em>MyVar</em> 的内容转换成大写：<code>DllCall("CharUpper", "Str", <i>MyVar</i>)</code>。</p>
+<td><p>例如“Blue”或 MyVar 这样的字符串型。如果被调用函数修改了字符串且此参数是个裸变量, 那么其内容将被更新. 例如，后面的调用将把 <em>MyVar</em> 的内容转换成大写：<code>DllCall("CharUpper", "Str", <i>MyVar</i>)</code>。</p>
   <p>然而, 如果函数需要保存超过变量当前容量的字符串, 则在调用前必须确保此变量的容量足够大. 这可以通过调用 <code><a href="VarSetCapacity.htm">VarSetCapacity(MyVar, 123)</a></code> 来实现，其中 123 是为 <em>MyVar</em> 保留的容量。</p>
   <p><em>Str</em> 参数不能是计算结果为数字 (例如 i+1) 的 <a href="../Variables.htm#Expressions">表达式</a>. 如果这样, 则不会调用函数并设置 ErrorLevel 的值为 -2.</p>
   <p>支持 <a href="#asterisk">星号变量</a> "Str*" 但极少使用. 它可以用在期望如 "TCHAR **" 或 "LPTSTR *" 类型参数的函数中.</p>
   <p>注意: 传递字符串给函数时, 应该注意函数期望什么 <a href="../Compat.htm#DllCall"><i>类型</i> 的字符串</a>.</p></td>
 </tr>
 <tr>
-  <td><a name="astr"></a><a name="wstr"></a>AStr<br>WStr</td>
+  <td><span id="astr"></span><span id="wstr"></span>AStr<br>WStr</td>
   <td><span class="ver">[AHK_L 42+]:</span> <b>A</b>NSI 或 Unicode (<b>宽</b> 字符) 字符串型. 请参阅 <a href="../Compat.htm#DllCall">脚本兼容性</a> 了解等同的 Win32 类型和其他细节.</td>
 </tr>
 <tr>
   <td>Int64</td>
   <td>64 位整型, 其范围为 -9223372036854775808 (-0x8000000000000000) 到 9223372036854775807 (0x7FFFFFFFFFFFFFFF).</td>
 </tr>
-<tr>
+<tr id="Int">
   <td>Int</td>
-  <td id="Int"><p>32 位整型 (最常用的整数类型), 其范围为 -2147483648 (-0x80000000) 到 2147483647 (0x7FFFFFFF). Int 有时也写成 "Long".</p>
+  <td><p>32 位整型 (最常用的整数类型), 其范围为 -2147483648 (-0x80000000) 到 2147483647 (0x7FFFFFFF). Int 有时也写成 "Long".</p>
     <p>在函数期望 BOOL 类型的参数中也应该使用 Int (BOOL 值应该为 1 或 0).</p>
     <p><a href="#unsigned">无符号</a> 整型 (UInt) 也是频繁使用的类型, 例如用于 DWORD.</p></td>
 </tr>
@@ -79,9 +78,9 @@
   <td>Double</td>
   <td>64 位浮点型, 具有 15 位精确度.</td>
 </tr>
-<tr>
+<tr id="ptr">
   <td>Ptr</td>
-  <td id="ptr"><p><span class="ver">[AHK_L 42+]:</span> <a href="../Variables.htm#PtrSize">指针大小的</a> 整型, 根据当前运行的脚本是 32 位还是 64 位分别相当于 Int 或 Int64. <i>Ptr</i> 应该用于数组或结构中的指针 (例如 RECT* 或 LPPOINT) 和几乎所有句柄 (例如 HWND, HBRUSH 或 HBITMAP). 如果参数是指向简单的数值的指针 (例如 LPDWORD 或 int*), 通常应该使用 * 或 P 后缀代替 "Ptr".</p>
+  <td><p><span class="ver">[AHK_L 42+]:</span> <a href="../Variables.htm#PtrSize">指针大小的</a> 整型, 根据当前运行的脚本是 32 位还是 64 位分别相当于 Int 或 Int64. <i>Ptr</i> 应该用于数组或结构中的指针 (例如 RECT* 或 LPPOINT) 和几乎所有句柄 (例如 HWND, HBRUSH 或 HBITMAP). 如果参数是指向简单的数值的指针 (例如 LPDWORD 或 int*), 通常应该使用 * 或 P 后缀代替 "Ptr".</p>
   <p><i>Ptr</i> 也可以和 * 或 P 后缀一起使用; 此时它应该用在通过 LPVOID* 或类似类型输出指针的函数中.</p>
   <p><i>UPtr</i> 也是有效的, 但仅适用于 32 位版本中的无符号整型, 因为 AutoHotkey 不支持无符号的 64 位整型.</p>
   <p>如果需要和旧版本的 AutoHotkey 兼容, 请使用如下所示的变量类型:</p>
@@ -89,18 +88,18 @@
 DllCall("DeleteFile", Ptr, &amp;filename) <em>; 省略 Ptr 两边的引号.</em></pre>
   <p>注意: 要传递 <strong>NULL</strong> 句柄或指针, 请传递整数 0.</p></td>
 </tr>
-<tr>
+<tr id="asterisk">
   <td>* 或 P<br>
     (后缀)</td>
-  <td id="asterisk"><p>在上述任一类型后附加星号 (星号前可以含有空格) 表示传递参数的地址而不是参数的值 (被调用函数必须接受地址). 由于这时函数可能修改参数的值, 所以每当不受保护的变量作为参数传递时, 变量的内容都会被更新. 例如，后面的调用将通过地址传递 MyVar 的内容给 MyFunction，但也会更新 MyVar 来反映 MyFunction 对它作出的改变：<code>DllCall("MyDll\MyFunction", "Int*", MyVar)</code>。</p>
+  <td><p>在上述任一类型后附加星号 (星号前可以含有空格) 表示传递参数的地址而不是参数的值 (被调用函数必须接受地址). 由于这时函数可能修改参数的值, 所以每当不受保护的变量作为参数传递时, 变量的内容都会被更新. 例如，后面的调用将通过地址传递 MyVar 的内容给 MyFunction，但也会更新 MyVar 来反映 MyFunction 对它作出的改变：<code>DllCall("MyDll\MyFunction", "Int*", MyVar)</code>。</p>
     <p>一般说来, 星号可用于函数中以 "LP" 开始的参数类型或返回值类型. 最常见的例子是 LPDWORD, 这是指向 DWORD 的指针. 因为 DWORD 是无符号 32 位整型, 所以用 "UInt*" 或 "UintP" 来表示 LPDWORD. 星号不应该用于字符串类型 (例如 LPTSTR), 指向结构的指针 (如 LPRECT) 或数组; 对于这些, 根据您需要传递的是变量还是其地址应该使用 <a href="#str">"Str"</a> 或 "Ptr".</p>
     <p>注：“Char*”与<a href="#str">“Str”</a>类型是不同的，因为“Char*”传递 8 位数的地址，而<a href="#str">“Str”</a>传递一系列字符的地址，根据 AutoHotkey 版本的不同它可能是 8 位（ANSI）或 16 位（Unicode）的。同样地，“UInt*”会传递 32 位数的地址，所以不应该使用在函数期望大于 32 位的结构或值的数组的时候。</p>
     <p>由于AutoHotkey 中的变量没有固定的类型，所以传递给函数的地址指向临时内存而不是变量自身。不需要对这样的变量调用 <a href="VarSetCapacity.htm">VarSetCapacity</a>，因为在函数返回后 DllCall 会正确的更新变量。</p>
     </td>
 </tr>
-<tr>
+<tr id="unsigned">
   <td>U<br>(前缀)</td>
-  <td><p><a name="unsigned"></a>在上述任一整型前加上字符 U 表示无符号整型 (UInt64, UInt, UShort 和 UChar). 严格说来, 这仅对于返回值或 <a href="#asterisk">星号变量</a> 才是必要的, 因为它不影响值传递的参数是无符号的还是有符号的 (Int64 除外).</p>
+  <td><p>在上述任一整型前加上字符 U 表示无符号整型 (UInt64, UInt, UShort 和 UChar). 严格说来, 这仅对于返回值或 <a href="#asterisk">星号变量</a> 才是必要的, 因为它不影响值传递的参数是无符号的还是有符号的 (Int64 除外).</p>
     <p>如果在无符号参数中指定负整数, 那么它会被转换到无符号范围中. 例如, 把 -1 作为 UInt 类型传递, 则它会被转换成 0xFFFFFFFF.</p>
     <p>不支持由函数产生的 <em>无符号</em> 64 位整型. 因此, 要让大于或等于 0x8000000000000000 的数字有效, 请省略 U 前缀并且把任何从函数接收到的负值转换成很大的正数. 例如, 如果设计返回值为 UInt64 类型的函数在返回 Int64 类型的值 -1 时, 实际的返回值是 0xFFFFFFFFFFFFFFFF.</p></td>
 </tr>
@@ -116,11 +115,11 @@ DllCall("DeleteFile", Ptr, &amp;filename) <em>; 省略 Ptr 两边的引号.</em></pre>
 <p><strong>-3</strong>：无法访问或加载指定的 <em>DllFile</em>。如果没有明确指明 <em>DllFile</em> 的路径, 则文件必须在系统 PATH 变量的路径或 <a href="../Variables.htm#WorkingDir">A_WorkingDir</a> 中. 此错误的原因可能是用户缺少访问此文件的权限，或者 AutoHotkey 为 32 位而 DLL 是 64 位，反之亦然。</p>
 <p><strong>-4</strong>: 在 DLL 中没有找到指定的函数.</p>
 <p><strong>N</strong> (任意正数): 函数被调用后异常终止了, 致命异常号为 <strong>N</strong> (例如, 0xC0000005 表示 "访问违例"). 此时函数返回空值 (空字符串), 但仍会更新所有的 <a href="#asterisk">星号变量</a>. 致命异常的一个例子是间接引用了无效的指针, 如 NULL. 因为 <a href="#cdecl">Cdecl</a> 函数决不会产生下一段描述中的 <em>"An"</em> 错误, 所以当传递给它的参数太少时可能会产生异常.</p>
-<p><strong><a name="An"></a>An</strong> (字母 A 后面跟着整数 <strong>n</strong>): 调用了函数, 但传递给它的参数太多或太少了. "<strong>n</strong>" 是错误参数列表超过正确参数列表的字节数. 如果 <strong>n</strong> 为正数, 表示传递的参数过多 (或参数太大), 或函数调用要求 <a href="#cdecl">CDecl</a> 的返回值类型. 如果 <strong>n</strong> 为负数, 表示传递的参数过少. 应该改正这种情况来让函数可靠运行. 此错误的出现也可能表示出现了异常, 此时函数返回空字符串. 请注意由于 x64 调用约定, 64 位版本不会设置 ErrorLevel 为 <b>An</b>.</p>
+<p id="An"><strong>An</strong> (字母 A 后面跟着整数 <strong>n</strong>): 调用了函数, 但传递给它的参数太多或太少了. "<strong>n</strong>" 是错误参数列表超过正确参数列表的字节数. 如果 <strong>n</strong> 为正数, 表示传递的参数过多 (或参数太大), 或函数调用要求 <a href="#cdecl">CDecl</a> 的返回值类型. 如果 <strong>n</strong> 为负数, 表示传递的参数过少. 应该改正这种情况来让函数可靠运行. 此错误的出现也可能表示出现了异常, 此时函数返回空字符串. 请注意由于 x64 调用约定, 64 位版本不会设置 ErrorLevel 为 <b>An</b>.</p>
 
 <h3 id="except">异常和 A_LastError</h3>
 <p>尽管有内置的异常处理机制, 但 DllCall 仍有可能让脚本崩溃. 当函数不直接生成异常而输出一些不适当的数据 (例如无效的指针或没有结束符的字符串) 时, 这种情况可能会发生. 这可能不是函数的问题，而是脚本传递给它不适合的值，例如无效的指针或内存空间不足的 <a href="#str">“str”</a>。当脚本指定不适当的参数类型或返回值类型 (例如要求由函数生成的整数是 <a href="#asterisk">星号变量</a> 或 <a href="#str">str</a>) 时, 它也可能崩溃.</p>
-<p><a name="LastError"></a>内置变量 <strong>A_LastError</strong> 包含了操作系统 GetLastError() 函数最近调用返回的结果, 在调用函数后会立即执行此函数 (对效率的影响未知). A_LastError 是一个介于 0 和 4294967295 之间的数字 (总是为十进制而非十六进制). 像 <a href="../misc/ErrorLevel.htm">ErrorLevel</a> 一样, A_LastError 是与每个线程关联的设置; 即由其他 <a href="../misc/Threads.htm">线程</a> 产生的中断不会改变它. 不过, <a href="Run.htm#LastError">Run/RunWait</a> 也会设置 A_LastError 的值.</p>
+<p id="LastError">内置变量 <strong>A_LastError</strong> 包含了操作系统 GetLastError() 函数最近调用返回的结果, 在调用函数后会立即执行此函数 (对效率的影响未知). A_LastError 是一个介于 0 和 4294967295 之间的数字 (总是为十进制而非十六进制). 像 <a href="../misc/ErrorLevel.htm">ErrorLevel</a> 一样, A_LastError 是与每个线程关联的设置; 即由其他 <a href="../misc/Threads.htm">线程</a> 产生的中断不会改变它. 不过, <a href="Run.htm#LastError">Run/RunWait</a> 也会设置 A_LastError 的值.</p>
 
 <h3 id="load">性能</h3>
 <p>当需要重复调用一个 DLL 时, 预先明确装载它可以显著提高执行效率 (<em>对于 <a href="#std">标准的 DLL</a> 文件如 User32 可以不需要, 因为它是常驻的</em>). 这样的实现避免了 DllCall 内部每次调用 LoadLibrary 和 FreeLibrary 的需要. 例如：</p>
@@ -183,7 +182,7 @@ VarSetCapacity(ZeroPaddedNumber, 20)  <em>; 确保变量的容量足够大以便容纳新的字符
 DllCall("wsprintf", "Str", ZeroPaddedNumber, "Str", "%010d", "Int", 432, "Cdecl")  <em>; 需要 Cdecl 调用约定.</em>
 MsgBox %ZeroPaddedNumber%</pre>
 
-<pre class="NoIndent"><a name="QPC"></a><em>; 例子: 演示 QueryPerformanceCounter(), 它提供了比 <a href="../Variables.htm#TickCount">A_TickCount</a> 的 10ms 更高的精确度.</em>
+<pre class="NoIndent" id="QPC"><em>; 例子: 演示 QueryPerformanceCounter(), 它提供了比 <a href="../Variables.htm#TickCount">A_TickCount</a> 的 10ms 更高的精确度.</em>
 
 DllCall("QueryPerformanceCounter", "Int64*", CounterBefore)
 Sleep 1000
@@ -205,7 +204,7 @@ return
 
 F1 up::<strong>DllCall</strong>("SystemParametersInfo", UInt, 0x71, UInt, 0, Ptr, OrigMouseSpeed, UInt, 0)  <em>; 恢复原来的速度.</em></pre>
 
-<pre class="NoIndent"><a name="GetChildHWND"></a><em>; 例子: 当传递窗口的唯一 ID 和其中某个控件的文本或 ClassNN,
+<pre class="NoIndent" id="GetChildHWND"><em>; 例子: 当传递窗口的唯一 ID 和其中某个控件的文本或 ClassNN,
 ; 下面的函数会返回此控件的 HWND (唯一 ID).
 ; v1.0.43.06+: 此函数已经被下面的命令取代, 这个命令执行地更准确.</em>
 
@@ -230,7 +229,7 @@ ControlGet, ChildHWND, Hwnd,, %FocusedControl%, ahk_id %ActiveWindow%
 ToolTip % <strong>DllCall</strong>("GetScrollPos", "Ptr", ChildHWND, "Int", 1)  <em>;  最后一个参数 1 表示 SB_VERT, 而 0 表示 SB_HORZ.</em>
 return</pre>
 
-<pre class="NoIndent"><a name="file"></a><em>; 示例: 这是个可运行脚本, 它写入一些文本到文件, 然后从文件读取回内存 (需要 v1.0.34+).
+<pre class="NoIndent" id="file"><em>; 示例: 这是个可运行脚本, 它写入一些文本到文件, 然后从文件读取回内存 (需要 v1.0.34+).
 ; 在同时读取或写入多个文件时使用这种方法可以改善性能.
 ; 在 AHK_L 42+, <a href="FileOpen.htm#writeread"></a>使用 <a href="FileOpen.htm">FileOpen</a> 可以实现同样的目的.</em>
 
@@ -266,7 +265,7 @@ BytesToRead := VarSetCapacity(TestString, StrLen(TestString))
 <strong>DllCall</strong>("CloseHandle", Ptr, hFile)  <em>; 关闭文件.</em>
 MsgBox The following string was read from the file: %TestString%</pre>
 
-<pre class="NoIndent"><a name="HideCursor"></a><em>; 例子: 当您按下 Win+C 时隐藏鼠标光标. 再次按下 Win+C 显示.
+<pre class="NoIndent" id="HideCursor"><em>; 例子: 当您按下 Win+C 时隐藏鼠标光标. 再次按下 Win+C 显示.
 ; 此脚本来自 <a href="http://www.autohotkey.com/forum/topic6107.html">www.autohotkey.com/forum/topic6107.html</a></em>
 
 OnExit, ShowCursor  <em>; 确保到脚本退出时鼠标光标是显示的.</em>

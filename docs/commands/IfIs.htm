@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>If var is [not] type</title>
@@ -31,8 +30,8 @@ if var is not <i>type</i></pre>
 <p>受支持的 <em>Type</em>:</p>
 <table class="info">
   <tr>
-    <td width="15%">integer</td>
-    <td width="85%">当 <em>var</em> 非空且包含不带小数点的纯数值字符串 (十进制或十六进制) 时为 true. 允许含有前导和尾随空格和 tab. 字符串可以以加号或减号开始.</td>
+    <td style="width:15%">integer</td>
+    <td>当 <em>var</em> 非空且包含不带小数点的纯数值字符串 (十进制或十六进制) 时为 true. 允许含有前导和尾随空格和 tab. 字符串可以以加号或减号开始.</td>
   </tr>
   <tr>
     <td>float</td>
@@ -70,9 +69,9 @@ if var is not <i>type</i></pre>
     <td>space</td>
     <td>当 <em>var</em> 为空或仅包含空白字符时为 true, 其中空白字符包括后面这些字符: 空格 (<a href="../Variables.htm">%A_Space%</a>), tab (<a href="../Variables.htm">%A_Tab%</a> or `t), 换行符 (`n), 回车符 (`r), 垂直 tab (`v) 和进纸符 (`f).</td>
   </tr>
-  <tr>
+  <tr id="time">
     <td>time</td>
-    <td><p><a name="time"></a>当 <em>var</em> 包含有效的日期时间戳时为 true, 其中日期时间戳可以是 <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a> 格式的全部或开始部分. 例如, 类似 2004 这样的 4 位字符串被视为有效的. 使用 <a href="StringLen.htm">StringLen</a> 可以判断是否存在额外的时间部分.</p>
+    <td><p>当 <em>var</em> 包含有效的日期时间戳时为 true, 其中日期时间戳可以是 <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a> 格式的全部或开始部分. 例如, 类似 2004 这样的 4 位字符串被视为有效的. 使用 <a href="StringLen.htm">StringLen</a> 可以判断是否存在额外的时间部分.</p>
       <p>小于 1601 的年份会被视为无效的, 因为操作系统通常不支持它们. 被视为有效的最大年份为 9999.</p>
       <p>可以使用单词 DATE 代替 TIME, 效果相同.</p>
     </td>

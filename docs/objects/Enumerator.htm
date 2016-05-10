@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>枚举</title>
@@ -20,7 +19,7 @@
 <p>检索下一个项目或枚举中的项目.</p>
 <pre class="Syntax">Enum.Next(OutputVar1 [, OutputVar2, ...])</pre>
 <table class="info">
-  <tr><td width="15%">OutputVar1, OutputVar2</td><td width="85%">接收特定于实现的值.</td></tr>
+  <tr><td style="width:15%">OutputVar1, OutputVar2</td><td>接收特定于实现的值.</td></tr>
   <tr><td>...</td><td>附加参数, 如果支持.</td></tr>
   <tr><td><b>返回值</b></td><td>成功时返回非零整数, 如果没有剩余项目则返回零, 而参数不正确则返回空字符串.</td></tr>
 </table>
@@ -28,7 +27,7 @@
 <h3>对象</h3>
 <p>由 <a href="Object.htm#NewEnum">ObjNewEnum()</a> 返回的计数器为每个键值对调用一次, 最多允许两个参数:</p>
 <table class="info">
-  <tr><td width="15%">OutputVar1</td><td width="85%">键值对中的 <b>键</b>.</td></tr>
+  <tr><td style="width:15%">OutputVar1</td><td>键值对中的 <b>键</b>.</td></tr>
   <tr><td>OutputVar2</td><td>接收与 <i>OutputVar1</i> 关联的 <b>值</b>。</td></tr>
 </table>
 <p>返回的键值对是以实现定义的顺序. 即, 它们一般不是以在定义时的相同顺序返回. 现有的键值对可以在枚举时修改, 但插入或移除键可能使得一些项目被多次枚举或一次都不枚举.</p>

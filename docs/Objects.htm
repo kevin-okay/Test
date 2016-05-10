@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>对象</title>
@@ -44,7 +43,7 @@ ul.list_of_p li { margin: 1em 0; }
   <li><a href="#Implementation">实现</a> - <a href="#Reference_Counting">引用计数</a>, <a href="#Implementation_Pointers">指向对象的指针</a></li>
 </ul>
 
-<a name="Syntax"></a><h2 id="Usage">基本用法</h2>
+<span id="Syntax"></span><h2 id="Usage">基本用法</h2>
 
 <h3 id="Usage_Simple_Arrays">简单数组</h3>
 <p>创建数组:</p>
@@ -74,7 +73,7 @@ Array := Array(Item1, Item2, ..., ItemN)</pre>
     MsgBox % "Item " index " is '" value "'"
 </pre>
 
-<a name="Arrays"></a><h3 id="Usage_Associative_Arrays">关联数组</h3>
+<span id="Arrays"></span><h3 id="Usage_Associative_Arrays">关联数组</h3>
 <p>关联数组是包含唯一键集合和值集合的对象, 其中每个键和一个值关联. 键可以为字符串, 整数或对象, 而值可以为任何类型. 关联数组可以用如下方法创建:</p>
 <pre>Array := {KeyA: ValueA, KeyB: ValueB, ..., KeyZ: ValueZ}
 Array := Object("KeyA", ValueA, "KeyB", ValueB, ..., "KeyZ", ValueZ)</pre>
@@ -165,7 +164,7 @@ RetVal := Func.(<i>Params</i>)      <em>; 不推荐</em>
 </pre>
 <p>关于函数对象引用的属性详细描述, 见 <a href="objects/Func.htm">函数对象</a>.</p>
 
-<h3 id="Usage_Arrays_of_Arrays"><a name="JaggedArrays"></a>数组嵌套</h3>
+<span id="JaggedArrays"></span><h3 id="Usage_Arrays_of_Arrays">数组嵌套</h3>
 <p>AutoHotkey 支持通过透明地把数组存储到其他数组中来支持“多维”数组。例如, 表格可以表示为行数组, 这里每个行自身是一个列数组. 此时,  <code>x</code> 行 <code>y</code> 列的内容可以用以下两种方法的其中一个进行设置:</p>
 <pre>table[x][y] := content  <em>; A</em>
 table[x, y] := content  <em>; B</em></pre>
@@ -187,7 +186,7 @@ table.base.__Set(table, x, y, content)     <em>; B</em></pre>
 </ul>
 <p>这种行为仅适用于由脚本创建的对象, 而不适合特殊的对象类型例如 COM 对象或 COM 数组.</p>
 
-<h3 id="Usage_Arrays_of_Functions"><a name="FuncArrays"></a>函数数组</h3>
+<span id="FuncArrays"></span><h3 id="Usage_Arrays_of_Functions">函数数组</h3>
 <p>函数数组是包含函数名或引用的简单数组. 例如：</p>
 <pre>array := [Func("FirstFunc"), Func("SecondFunc")]
 
@@ -261,7 +260,7 @@ other.test()</pre>
         ...
     }
 
-    Property[]  <em>; 方括号是可选的,(译者注:这是实例属性)</em>
+    Property[]  <em>; 方括号是可选的</em>
     {
         get {
             return ...
@@ -315,8 +314,8 @@ Method()
 </ul>
 <p><code>base</code> 仅在后面跟着点 <code>.</code> 或方括号 <code>[]</code> 时才有特殊含义, 所以像 <code>obj := base, obj.Method()</code> 这样的代码将不起作用. 通过把 <i>base</i> 赋为非空值可以禁用它的特殊行为,但是不建议这样做. 因为变量 <i>base</i> 必须为空, 所以如果脚本中不含有 <a href="commands/_NoEnv.htm">#NoEnv</a> 指令那么性能可能会降低.</p>
 
-<h4 id="Custom_Classes_property">Properties （属性）(译者注: 实例属性而不是类属性) <span class="ver">[v1.1.16+]</span></h4>
-<p>属性的定义用于当脚本获取或设置一个指定键时调用一个方法.</p>
+<h4 id="Custom_Classes_property">Properties （属性）<span class="ver">[v1.1.16+]</span></h4>
+<p>属性定义允许当脚本获取或设置一个指定键时调用一个方法.</p>
 <pre>Property[]
 {
     get {
@@ -326,11 +325,11 @@ Method()
         return ... := value
     }
 }</pre>
-<p><em>Property</em> 是用自定义属性的名称.如, <code>obj.myName</code> 将调用 <em>get</em> ,而 <code>obj.myName := value</code> 将调用 <em>set</em> . 在 <em>get</em> 或 <em>set</em> 内, <code>this</code> 指向当前类的实例对象. <em>set</em> , <code>value</code> 中包含正要赋予的值.(译者注: value 相当于set的内置变量,必须用这个单词引用传入的值.)</p>
-<p>可选则在属性名右后使用方括号包裹以传递参数, 可用于定义或调用. 除了使用方括号这点不同, 属性的参数和方法的参数定义方法完全一样 - 可选参数, ByRef 和 可变参数 也都支持.</p>
+<p><em>Property</em> 是用户定义的名称,用于标识属性.如, <code>obj.Property</code> 将调用 <em>get</em> ,而 <code>obj.Property := value</code> 将调用 <em>set</em> . 在 <em>get</em> 或 <em>set</em> 内, <code>this</code> 指向被引用的对象. <em>set</em> , <code>value</code> 中包含正要赋予的值.</p>
+<p>可在属性名右后使用方括号包裹以传递参数, 可用于定义及调用中. 除了使用方括号这点不同, 属性的参数和方法的参数定义方法完全一样 - 可选参数, ByRef 和 可变参数 也都支持.</p>
 <p><em>get</em> 或 <em>set</em> 的返回值, 成为引用属性的子表达式的结果.如, <code>val := obj.Property := 42</code> 存储 <em>set</em> 的返回值至 <code>val</code>.</p>
-<p>每个类可定义部分或完整的属性.如果子类覆盖了父类的属性,可用 <code><a href="#Custom_Classes_base">base.Property</a></code> 访问定义于其父类中的属性. 如果子类中没有定义 <em>get</em> 或 <em>set</em> , 则会交由父类处理. 如果父类也没有 <em>set</em> 定义, 且未被元函数或默认基类处理,那么赋予的值无法存储于实例对象中,相当于禁用了属性.</p>
-<p>内部 <em>get</em> 与 <em>set</em> 是独立的两方法, 故不可共享变量(除非存储于 <code>this</code> 中).</p>
+<p>每个类可定义部分或完整的属性.如果一个类覆盖了属性,可用 <code><a href="#Custom_Classes_base">base.Property</a></code> 访问定义于其基类中的属性. 如果 <em>get</em> 或 <em>set</em> 未定, 会交由基类处理. 如果 <em>set</em> 未定义, 且未被元表或基类处理, 赋予的值被存储于对象中, 相当于禁用了属性. </p>
+<p>内部 <em>get</em> 与 <em>set</em> 是独立的两方法, 故不可共享变量(除非存储于 <code>this</code>中).</p>
 <p><a href="#Meta_Functions">Meta-functions (元方法) </a> 提供了广泛的控制属性访问, 方法调用的机制, 但更复杂及易错.</p>
 
 <h3 id="Custom_NewDelete">创建和销毁</h3>
@@ -385,7 +384,7 @@ class <i>ClassName</i> {
   <li>如果在 <i>get</i> 或 <i>set</i> 指定了多个参数且找到了键,则检查其值.如果那个值为对象,则调用它处理剩余参数,不做进一步处理.</li>
   <li>如果找到了键,<br>
     <i>Get</i>:返回值.<br>
-    <i>Call</i>:如果值为函数名或<a href="#Function_References">引用</a>,则把目标对象(<code>this</code>)作为首个参数调用它.</p></li>
+    <i>Call</i>:如果值为函数名或<a href="#Function_References">引用</a>,则把目标对象(<code>this</code>)作为首个参数调用它.</li>
 </ul>
 <p>如果元函数把匹配的键保存在对象中但未 <code>return</code>,则行为类似于该键原本就存在于对象中.使用 __Set 的示例,请参阅<a href="#Subclassing_aoa">子类化数组的数组</a>.</p>
 <p>如果操作仍为得到处理,则检查是否有内置方法或属性:</p>
@@ -599,7 +598,7 @@ Default__Warn(nonobj, p1="", p2="", p3="", p4="")
 }</pre>
 
 <h2 id="Implementation">实现</h2>
-<a name="Refs"></a><h3 id="Reference_Counting">引用计数</h3>
+<span id="Refs"></span><h3 id="Reference_Counting">引用计数</h3>
 <p>当脚本不再引用对象时, AutoHotkey 使用基本引用计数结构来自动释放对象使用的资源. 脚本作者不应该明确调用此结构, 除非在直接处理指向对象的未托管指针时. 想了解更多细节,请参阅 <a href="commands/ObjAddRef.htm">ObjAddRef</a>.</p>
 <pre><em>; 增加对象的引用数以 "使其保持存在"(不被垃圾回收):</em>
 <a href="commands/ObjAddRef.htm">ObjAddRef</a>(address)
@@ -617,7 +616,7 @@ ObjRelease(address)
 </ul>
 <p>尽管当程序退出时操作系统会回收对象所使用的内存, 但只有在指向对象的所有引用都释放时才会调用 <a href="#Custom_NewDelete">__Delete</a>. 这样释放了不会由操作系统自动回收的其他资源, 例如临时文件, 所以这很重要.</p>
 
-<a name="AddressCast"></a><h3 id="Implementation_Pointers">指向对象的指针</h3>
+<span id="AddressCast"></span><h3 id="Implementation_Pointers">指向对象的指针</h3>
 <p>在一些罕见的情况中, 可能需要通过 DllCall 传递对象到外部代码或把它存储到二进制数据结构以供以后取回. 通过 <code>x := &amp;obj</code> 可以获取对象的地址; 然而, 如果变量 <i>obj</i> 被清除, 此对象可能被过早释放. 为确保不发生这样的情况, 按上面演示那样使用 ObjAddRef 或按下面演示那样使用 <code>Object()</code>:</p>
 <pre>address := Object(object)</pre>
 <p>此外, 还可以使用此函数把地址转换回引用:</p>

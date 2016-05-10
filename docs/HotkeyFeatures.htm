@@ -5,6 +5,8 @@
 <meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="static/theme.css" rel="stylesheet" type="text/css" />
+
+
 <script src="static/content.js" type="text/javascript"></script>
 </head>
 
@@ -20,7 +22,7 @@ return</pre>
 <p>&nbsp;</p>
 <p>修饰符 <u>不再局限于 CTRL, ALT, SHIFT 和 WIN</u>; 您可以使用 <strong>任意</strong> 两个按键或鼠标按钮组成自定义热键. 例如: 按住 Numpad0 且按下 Numpad1 来执行热键 (语法: Numpad0 &amp; Numpad1::); 按住 CapsLock 并按下另一个键或点击鼠标右键 (语法: CapsLock &amp; RButton::). 此时 (运行热键时), CapsLock 键的状态 (大写或小写) 不会发生改变. 更多细节请参阅 <a href="Hotkeys.htm#combo">自定义组合键</a>.</p>
 <p>&nbsp;</p>
-<p id="AltTab"><u>Convert the mouse wheel</u> (或您选择的其他任意键 ) 完全代替 Alt-Tab. 点击滚轮来显示窗口选择菜单, 转动滚轮来浏览菜单. 当 Alt-Tab 菜单没有出现时滚轮仍保持正常的功能. 语法:</p>
+<p id="AltTab"><u>使用鼠标滚轮</u> (或您选择的其他任意键 ) 完全代替 Alt-Tab. 点击滚轮来显示窗口选择菜单, 转动滚轮来浏览菜单. 当 Alt-Tab 菜单没有出现时滚轮仍保持正常的功能. 语法:</p>
 <pre>MButton::AltTabMenu
 WheelDown::AltTab
 WheelUp::ShiftAltTab</pre>
@@ -46,7 +48,7 @@ RControl::Send, ^c!{tab}^v  <em>; 复制计算器的结果到之前的活动窗口.</em></pre>
 <ul>
   <li>别人拼血流汗时, 您只需动动手指, 就可执行一系列复杂的操作. 因为这些操作可以定义到几乎 <a href="KeyList.htm">任意键</a> 上, 包括单个字母, 方向键, 数字键, 甚至是修饰键 (CTRL/ALT/WIN/SHIFT).</li>
   <li>创建鼠标热键, 包括鼠标滚轮按钮 (MButton) 和往上/往下/往左/往右转动滚轮 (WheelUp, WheelDown, WheelLeft 和 WheelRight). 您还可以把键盘键和鼠标按钮组合使用. 例如，按住 Ctrl 时点击鼠标右键可以写为 <code>^RButton::</code>。</li>
-  <li>创建 "穿透" 热键. 例如，点击鼠标左键一方面触发热键，另一方面点击仍可以被发送到游戏中(语法：<code>~LButton::</code>).</li>
+  <li>创建 "穿透" 热键. 例如，点击鼠标左键一方面触发热键，另一方面点击仍可以被发送到游戏中（语法：<code>~LButton::</code>）。</li>
   <li>使用例如 <a href="commands/PixelSearch.htm">PixelSearch</a>, <a href="commands/PixelGetColor.htm">PixelGetColor</a> 和 <a href="commands/ImageSearch.htm">ImageSearch</a> 的命令可以自动化游戏操作.</li>
   <li>使用 <a href="commands/_UseHook.htm">键盘钩子</a> 来实现热键, 当游戏占用较多 CPU 资源时, 这种方法会比其他方法响应的更及时. 使用钩子还可以解除在游戏中只有某些按键才可以 "映射" 到游戏动作上的限制.</li>
 </ul>

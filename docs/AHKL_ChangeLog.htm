@@ -14,55 +14,59 @@
 <p>对于较旧的变更，请参阅<a href="ChangeLogHelp.htm">存档变更</a>。</p>
 
 <!--new revisions go here-->
-<h2 id="v1.1.23.05">1.1.23.05 - March 27, 2016</h2>
-<p>Fixed InputBox, MsgBox, FileSelectFile and FileSelectFolder sending an unwanted Alt-up if Alt is down. This was due to an error with the Ctrl/Shift workaround added in v1.1.22.01.</p>
-<p>Improved the Ctrl/Shift workaround to avoid unnecessarily "masking" the Win key if Ctrl, Shift or Alt is also down.</p>
-<h2 id="v1.1.23.04">1.1.23.04 - March 26, 2016</h2>
-<p>Fixed LV_Modify to support omitting Options, as in <code>LV_Modify(r,, col1)</code>.</p>
-<h2 id="v1.1.23.03">1.1.23.03 - March 12, 2016</h2>
-<p>Fixed __Delete meta-functions erroneously suppressing or prematurely re-throwing exceptions, when they are called during exception propagation.</p>
-<p>Fixed load-time detection of function calls where a required parameter is blank, as in <code>fn(x,,y)</code>.</p>
-<h2 id="v1.1.23.02">1.1.23.02 - March 12, 2016</h2>
-<p>Fixed RegDelete deleting the entire key instead of the default value.</p>
-<p>Code maintenance; minor code size improvement.</p>
-<h2 id="v1.1.23.01">1.1.23.01 - January 24, 2016</h2>
-<p>Fixed a theoretical issue with loading scripts from weird/very long paths.</p>
-<p>Ahk2Exe: Fixed Unicode in compiled scripts (broken by v1.1.23.00 release).</p>
+<h2 id="v1.1.23.05">1.1.23.05 - 2016年3月27日</h2>
+<p>修复 InputBox, MsgBox, FileSelectFile 和 FileSelectFolder 命令在当Alt键被按下时会发送一个非预期的Alt-up出来. 这是由于在 v1.1.22.01 版本处理 Ctrl/Shift 时的错误导致的.</p>
+<p>改进 Ctrl/Shift 的工作方式,以避免在同时按下Ctrl、Shift或Alt键时不必要的掩盖了Win键.</p>
 
-<h2 id="v1.1.23.00">1.1.23.00 - January 16, 2016</h2>
-<p>Added <a href="commands/Menu.htm#Insert">Menu Insert</a> sub-command.</p>
-<p>Added <a href="commands/MenuGetHandle.htm">MenuGetHandle()</a>.</p>
-<p>Added <a href="commands/MenuGetName.htm">MenuGetName()</a>.</p>
-<p>Added menu item options: Radio, Right, Break and BarBreak.</p>
-<p>Improved the Menu command to allow identifying items by position: <code>1&amp;</code></p>
-<p>Added <a href="commands/LoadPicture.htm">LoadPicture()</a>.</p>
-<p>Added <a href="misc/ImageHandles.htm">hicon/hbitmap: syntax</a> for passing handles to commands which normally load an image from file.</p>
-<p>Added built-in variables: A_CoordModeToolTip/Pixel/Mouse/Caret/Menu, A_DefaultGui, A_DefaultListView, A_DefaultTreeView, A_KeyDelayPlay, A_KeyDuration/Play, A_MouseDelayPlay, A_SendLevel, A_SendMode and A_StoreCapslockMode.</p>
-<p>Added <code>Ix</code> Hotkey option to set the hotkey variant's input level to x.</p>
-<p>Improved Picture control to support BackgroundTrans with icons.</p>
-<p>Improved Picture control to reduce flicker when loading large images.</p>
-<p>Small optimizations to the menu code and built-in var lookups.</p>
-<p>Fixed conversion of menu items to/from separators.</p>
-<p>Fixed A_ThisMenuItemPos to support duplicate item names.</p>
-<p>Fixed sub-menus sometimes not being recreated after a menu is deleted.</p>
-<p>Fixed AutoHotkeyXXX.exe to launch AutoHotkey.chm, not AutoHotkeyXXX.chm.</p>
+<h2 id="v1.1.23.04">1.1.23.04 - 2016年3月26日</h2>
+<p>修复 LV_Modify 以支持被忽略的参数, 如 <code>LV_Modify(r,, col1)</code>.</p>
 
-<h2 id="v1.1.22.09">1.1.22.09 - November 11, 2015</h2>
-<p>修复一些 SetTimer Delete 的问题.</p>
+<h2 id="v1.1.23.03">1.1.23.03 - 2016年3月12日</h2>
+<p>修复 __Delete 元函数如果在异常传递过程中被调用时,错误的不抛出或重复抛出异常.</p>
+<p>修复 当必须参数为空时函数调用的载入时侦测问题, 如 <code>fn(x,,y)</code>.</p>
+
+<h2 id="v1.1.23.02">1.1.23.02 - 2016年3月12日</h2>
+<p>修复 RegDelete 删除整个键值而非默认值.</p>
+<p>代码维护;一些代码体积的精简、提升.</p>
+
+<h2 id="v1.1.23.01">1.1.23.01 - 2016年1月24日</h2>
+<p>修复 理论上可能存在从畸形或太长的路径中无法载入脚本的问题.</p>
+<p>Ahk2Exe: 修复已编译脚本中的Unicode编码问题(v1.1.23.00版本引入).</p>
+
+<h2 id="v1.1.23.00">1.1.23.00 - 2016年1月16日</h2>
+<p>增加 <a href="commands/Menu.htm#Insert">Menu Insert</a> 子命令.</p>
+<p>增加 <a href="commands/MenuGetHandle.htm">MenuGetHandle()</a>.</p>
+<p>增加 <a href="commands/MenuGetName.htm">MenuGetName()</a>.</p>
+<p>增加 Menu命令菜单项目: Radio, Right, Break 和 BarBreak.</p>
+<p>改进 Menu命令以支持通过项目位置序号识别菜单项目: <code>1&amp;</code></p>
+<p>增加 <a href="commands/LoadPicture.htm">LoadPicture()</a>.</p>
+<p>增加 <a href="misc/ImageHandles.htm">hicon/hbitmap: </a>传递句柄给那些通常需要从文件载入图像的命令.</p>
+<p>增加 内置变量: A_CoordModeToolTip/Pixel/Mouse/Caret/Menu, A_DefaultGui, A_DefaultListView, A_DefaultTreeView, A_KeyDelayPlay, A_KeyDuration/Play, A_MouseDelayPlay, A_SendLevel, A_SendMode 和 A_StoreCapslockMode.</p>
+<p>增加 Hotkey 命令的 <code>Ix</code> 选项,动态设置热键的输入等级为 x .</p>
+<p>改进 Picture 控件以支持背景透明的图标文件.</p>
+<p>改进 Picture 控件以减少载入大图像时的闪烁现象.</p>
+<p>对菜单部分的代码和内置变量查找做了一点优化.</p>
+<p>修复 菜单项目中项目和分隔线的转换.</p>
+<p>修复 A_ThisMenuItemPos 以支持重复的项目名称.</p>
+<p>修复 子菜单无法在菜单被删除后有时重新创建.</p>
+<p>修复 AutoHotkeyXXX.exe 直接运行时启动 AutoHotkey.chm, 而非 AutoHotkeyXXX.chm.</p>
+
+<h2 id="v1.1.22.09">1.1.22.09 - 2015年11月11日</h2>
+<p>修复 SetTimer Delete 的一些问题.</p>
 <ul>
-  <li>KeyHistory 的 timer 计数错误的包含了已经删除的 timer.</li>
-  <li>Calling KeyHistory within a thread started by a timer crashed the script if the timer had been deleted but not turned off.</li>
-  <li>Deleting the most recently created timer prevented subsequently created timers from working unless ALL timers were deleted.</li>
+  <li>KeyHistory 的 timer 计数当中错误的包含了已经删除的 timer.</li>
+  <li>由定时器初始化的线程中,如果已被删除但并未关闭的定时器调用了KeyHistory将会引起脚本崩溃.</li>
+  <li>删除最近创建的定时器时会导致早前创建的定时器无法运行除非所有定时器被删除.</li>
 </ul>
 
-<h2 id="v1.1.22.08">1.1.22.08 - November 11, 2015</h2>
-<p>Fixed For-loop to pass control correctly when _NewEnum/Next throws an exception.</p>
-<p>Fixed Finally to suspend the pending exception until its body has been evaluated, not just until the first built-in function call.</p>
-<p>Fixed load-time detection of invalid jumps from Finally blocks (broken by v1.1.20).</p>
+<h2 id="v1.1.22.08">1.1.22.08 - 2015年11月11日</h2>
+<p>修复 For循环在_NewEnum/Next抛出异常时仍可以正确传递控制.</p>
+<p>修复 Finally命令在其执行体执行完成后才暂停延迟异常而不是仅当遇到首个内建函数调用时.</p>
+<p>修复 对于来自Finally代码段的不可用跳转的载入时侦测 (v1.1.20引入此BUG).</p>
 
-<h2 id="v1.1.22.07">1.1.22.07 - September 27, 2015</h2>
-<p>Fixed Gui control <code>w-1</code> and <code>h-1</code> options failing when DPI is 150+% and the Gui has not applied <code>-DPIScale</code>.</p>
-<p>Fixed <code>~<i>key</i> up</code> hotkeys to not perform an automatic <code>Send {<i>key</i> down}</code>. This was occurring only if the hotkey was turned on after the key was pressed down.</p>
+<h2 id="v1.1.22.07">1.1.22.07 - 2015年9月27日</h2>
+<p>修复 当DPI缩放为150+%且Gui没有使用 <code>-DPIScale</code> 参数,Gui控件中的 <code>w-1</code> 和 <code>h-1</code> 选项失效问题.</p>
+<p>修复 <code>~<i>key</i> up</code> 热键没有自动 <code>Send {<i>key</i> down}</code>. 仅当热键在该键被按下后才被启用的时候会发生此问题.</p>
 <h2 id="v1.1.22.06">1.1.22.06 - 2015年9月13日</h2>
 <p>修复 输入和热字符串捕获 Unicode 和 无标记字符编码 事件.</p>
 <p>修复 Edit 控件中如果最后一行为空行也进行自动伸缩大小.</p>
@@ -95,11 +99,11 @@
 <ul>
 	<li>改变A_Language使用GetSystemDefaultUILanguage()获取.</li>
 	<li>重构托盘链接菜单Window Spy/帮助文件来提高代码复用.</li>
-	<li>优化Gui/Menu/Hotkey/Hotstring/OnClipboard消息处理(minor).</li>
+	<li>优化Gui/Menu/Hotkey/Hotstring/OnClipboard消息处理(多处).</li>
 </ul>
 
 <h2 id="v1.1.22.02">1.1.22.02 - 2015年5月27日</h2>
-<p>修正TreeView不提交<code>*</code> 事件在位置消息情况下.(Fixed TreeView to not raise <code>*</code> events for unknown notifications.)</p>
+<p>修正TreeView对于未知消息不提交<code>*</code> 事件.</p>
 <p>修正定时器删除本身时出现的崩溃或坏的表现.</p>
 <p>修正RWin-up<a href="commands/_MenuMaskKey.htm">被屏蔽</a> 在某些罕见的情况下而LWin-up不会.</p>
 <h2 id="v1.1.22.01">1.1.22.01 - 2015年5月24日</h2>
@@ -241,11 +245,11 @@
 <p>修正return/break/continue/跑到try..<a href="commands/Finally.htm">finally</a>.</p>
 
 <h2 id="v1.1.19.01">1.1.19.01 - 2015年1月5日</h2>
-<p>Fixed Hotkey command crashing the program when trying to create new variants of existing hotkeys (broken by v1.1.19.00).</p>
-<p>Made some minor optimizations to the Hotkey command and A_TimeIdle, relating to removal of Win9x support.</p>
+<p>修复 Hotkey 命令在创建变量中已存在的热键时引起程序崩溃(由v1.1.19.00引入).</p>
+<p>为 Hotkey 命令和 A_TimeIdle 做了多处优化(删除Win9x的支持).</p>
 
 <h2 id="v1.1.19.00">1.1.19.00 - 2015年1月4日</h2>
-<p>为<code>Func.Call()</code>增加了一个名字. <code>Func.()</code> 任然工作但已废弃.</p>
+<p>为<code>Func.Call()</code>增加了一个名字. <code>Func.()</code> 仍然可用但已废弃.</p>
 <p>修正一些错误当<code>X.Y</code>和<code>X.Y(Z)</code> 在VBScript/JScript/C#:</p>
 <ul>
   <li>如果<code>X.__Call</code> 包含一个函数<em>name</em>, 会被返回而不是调用.</li>
@@ -254,7 +258,7 @@
 <p>修正热键命令忽略~前缀当<em>标签</em>被省略.</p>
 <p>修正热键命令忽略$签注如果热键变种已经创建但没有使用$</p>
 <p>修正<code>%Fn%()</code>语法工作于JavaScript函数对象.</p>
-<p>修正EXE的manifest来禁用UAC检测算法 (broken by v1.1.17).</p>
+<p>修正EXE的manifest来禁用UAC检测算法 (由v1.1.17引入).</p>
 <p>改进了线程在调试器的调用堆栈上的表现.</p>
 <ul>
   <li>线程的类型被现实而不是标签名,这在下一个堆栈入口任然有效,热键,hotkey显示相反.</li>
@@ -379,14 +383,14 @@
 <p>修正 PixelSearch 快速模式，使其仅在成功时才设置 OutputVarX/Y。</p>
 
 <h2 id="v1.1.13.01">1.1.13.01 - 2013年10月11日</h2>
-<p>Fixed variadic function calls with named values for required parameters.</p>
+<p>修复 用已命名值调用带参可变函数.</p>
 
 <h2 id="v1.1.13.00">1.1.13.00 - 2013年8月27日</h2>
-<p>Ported <a href="commands/StringSplit.htm">StrSplit()</a> from v2 alpha.</p>
+<p>从v2测试版移植 <a href="commands/StringSplit.htm">StrSplit()</a> 函数.</p>
 
 <h2 id="v1.1.12.00">1.1.12.00 - 2013年8月14日</h2>
-<p>Optional parameters can be omitted by writing two consecutive commas, as in <code>InStr(a, b,, 2)</code>.  Unlike previous versions, this now works for objects (including COM objects) and built-in functions.  <code>[a,,b]</code> can be used to create a sparse array.</p>
-<p>Object properties can now be set using variadic syntax, as in <code>x[y*]:=z</code>, where y contains an array of keys/indices or parameters.</p>
+<p>可选参数可通过连写两个逗号的方式略过, 如 <code>InStr(a, b,, 2)</code>.  和之前版本不同的是, 这种方式可以用在对象(包括COM对象)和内置函数中. <code>[a,,b]</code>  的写法可以用来创建稀疏数组.</p>
+<p>对象属性现在可以通过使用可变值的方式赋予, 如 <code>x[y*]:=z</code> 中 y 包含了 键名/索引或一组参数.</p>
 
 <h2 id="v1.1.11.02">1.1.11.02 - 2013年6月28日</h2>
 <p>Fixed GuiControl/Get to accept the ClassNN of a ComboBox's child Edit.  Specifying the HWND of a ComboBox's child Edit was already supported as a means of identifying the ComboBox.</p>
@@ -1026,7 +1030,7 @@
 
 <h2 id="L48">Revision 48 - 2010年2月21日</h2>
 <p>Fixed: Standalone <code>obj.()</code> was not recognized as a valid expression.</p>
-<p>ControlSend now uses WM_CHAR to support characters which have no associated keycode.  For instance, this applies to "&#133;" (en-US), "&#x221e;" in a Unicode build and <code>{U+221e}</code> in either build.</p>
+<p>ControlSend now uses WM_CHAR to support characters which have no associated keycode.  For instance, this applies to "&#8230;" (en-US), "&#x221e;" in a Unicode build and <code>{U+221e}</code> in either build.</p>
 <p>KeyHistory now shows the full 16-bit character code for VK_PACKET (VK=E7) events.  <a href="commands/Send.htm#Unicode">Send</a> 5月 indirectly cause these to be generated for Unicode characters.</p>
 
 <h2 id="L47">Revision 47 - 2010年2月13日</h2>

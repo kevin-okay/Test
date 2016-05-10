@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>WinSet</title>
@@ -36,7 +35,7 @@
 </dl>
 
 <h3>Attribute, Value</h3>
-<p><strong><a name="AlwaysOnTop" id="AlwaysOnTop"></a>AlwaysOnTop, [On|Off|Toggle]</strong>£ºÈÃ´°¿Ú´¦ÓÚÖÃ¶¥×´Ì¬¡£Ê¹ÓÃ ON ´ò¿ª´ËÉèÖÃ, Ê¹ÓÃ OFF ¹Ø±Õ, ¶øÊ¹ÓÃ TOGGLE ÇÐ»»µ½µ±Ç°µÄÏà·´×´Ì¬. Èç¹ûÊ¡ÂÔ, Ä¬ÈÏÎª TOGGLE. ¿ÉÒÔÊ¹ÓÃµ¥´Ê Topmost ´úÌæ AlwaysOnTop.</p>
+<p id="AlwaysOnTop"><strong>AlwaysOnTop, [On|Off|Toggle]</strong>£ºÈÃ´°¿Ú´¦ÓÚÖÃ¶¥×´Ì¬¡£Ê¹ÓÃ ON ´ò¿ª´ËÉèÖÃ, Ê¹ÓÃ OFF ¹Ø±Õ, ¶øÊ¹ÓÃ TOGGLE ÇÐ»»µ½µ±Ç°µÄÏà·´×´Ì¬. Èç¹ûÊ¡ÂÔ, Ä¬ÈÏÎª TOGGLE. ¿ÉÒÔÊ¹ÓÃµ¥´Ê Topmost ´úÌæ AlwaysOnTop.</p>
 <p><strong>Bottom</strong>: ·¢ËÍ´°¿Úµ½¶ÑÕ»µÄµ×²¿; ¼´ÔÚÆäËûËùÓÐ´°¿ÚµÄÏÂÃæ. Õâ¸öÐ§¹ûÀàËÆÓÚÊ¹ÓÃ Alt-Escape. ÀýÈç£º<code>WinSet, Bottom,, WinTitle</code>¡£</p>
 <p><strong>Top</strong>: °Ñ´°¿Ú´ø»Øµ½¶ÑÕ»µÄ¶¥²¿¶ø²»½øÐÐ <a href="WinActivate.htm">¼¤»î</a>. µ«ÊÇ, ÔÚ´ó¶àÊýÇé¿öÏÂÏµÍ³Ä¬ÈÏÉèÖÃ»á¼¤»îËü. ´ËÍâ, µ±²Ù×÷ÏµÍ³×èÖ¹Ó¦ÓÃ³ÌÐò´ÓÓÃ»§ÇÀ¶á½¹µãÊ±, ´ËÃüÁî¿ÉÄÜÃ»ÓÐÐ§¹û (Õâ¿ÉÄÜÈ¡¾öÓÚµ±Ç°»î¶¯´°¿ÚµÄÀàÐÍºÍÓÃ»§µ±Ç°ÕýÔÚ½øÐÐµÄ²Ù×÷ÕâÐ©ÒòËØ). Ò»¸ö¿ÉÄÜµÄ½â¾ö·½·¨ÊÇÈÃ´°¿ÚÔÝÊ± <a href="#AlwaysOnTop">AlwaysOnTop</a>, È»ºó¹Ø±Õ AlwaysOnTop.</p>
 <p><strong>Disable</strong> »ò <strong>Enable</strong>: ·Ö±ðÎª½ûÓÃ»òÆôÓÃ´°¿Ú. µ±´°¿Ú±»½ûÓÃÊ±, ÓÃ»§²»ÄÜÒÆ¶¯Ëü»òÓëËüµÄ¿Ø¼þ½øÐÐ½»»¥. ´ËÍâ, ±»½ûÓÃµÄ´°¿Ú»á´Ó alt-tab ÁÐ±íÖÐÒÆ³ý.</p>
@@ -57,7 +56,7 @@ WinSet, ExStyle, ^0x80, WinTitle  <em>; ÇÐ»» WS_EX_TOOLWINDOW ÊôÐÔ, Ëü»áÒÆ³ý/Ìí¼
 <p>Çë²ÎÔÄ±¾Ò³µ×²¿²é¿´Ê¹ÓÃ´ËÃüÁîµÄÊ¾Àý.</p>
 <h3 id="trans">WinSet, Transparent, N, WinTitle</h3>
 <p>ÉèÖÃ´°¿ÚÎª°ëÍ¸Ã÷×´Ì¬. Ö¸¶¨ <em>N</em> Îª½éÓÚ 0 ºÍ 255 Ö®¼äµÄÊý×ÖÀ´±íÊ¾Í¸Ã÷¶È: 0 ±íÊ¾ÍêÈ«Í¸Ã÷, 255 ±íÊ¾ÍêÈ«²»Í¸Ã÷. Ö¸¶¨µ¥´Ê OFF ¿ÉÒÔÍêÈ«¹Ø±ÕÍ¸Ã÷¶È. ÓëÖ¸¶¨ 255 µÄÇø±ðÊÇ, ÕâÑù¿ÉÒÔÌáÉýÐÔÄÜ²¢½µµÍÏµÍ³×ÊÔ´µÄÕ¼ÓÃ.</p>
-<p><a name="TransLimit"></a><strong>Transparent ºÍ <a href="#TransColor">TransColor</a> µÄÒÑÖªÏÞÖÆ</strong>:</p>
+<p id="TransLimit"><strong>Transparent ºÍ <a href="#TransColor">TransColor</a> µÄÒÑÖªÏÞÖÆ</strong>:</p>
 <ul>
   <li>¶ÔÓÚÃ»ÓÐ±êÌâÀ¸ÇÒ²»º¬ <a href="#AlwaysOnTop">ÖÃ¶¥</a> ÊôÐÔµÄ´°¿ÚÃ»ÓÐÐ§¹û. ¶ÔÓÚ <a href="Gui.htm">GUI ´°¿Ú</a>, ¿ÉÒÔÔÚÉèÖÃ´°¿ÚÍ¸Ã÷¶Èºó²ÅÒÆ³ý±êÌâÀ¸. »òÕßÊ¹ÓÃÏÂÃæµÄÊôÐÔÈÃÍ¸Ã÷¶ÈÉúÐ§£º<code><a href="Gui.htm#Options">Gui -Caption +ToolWindow</a></code>¡£</li>
   <li>ÔÚ¹Ø±ÕÍ¸Ã÷¶ÈÖ®Ç°ÉèÖÃ "Í¸Ã÷¶È" Îª 255 ¿ÉÒÔ±ÜÃâÏñºÚÉ«±³¾°µÄ´°¿ÚµÄÖØ»æÎÊÌâ. Èç¹û´°¿ÚÈÔÎÞ·¨ÕýÈ·ÖØ»æ, ÄÇÃ´Çë²ÎÔÄ <a href="#Redraw">Redraw</a> ÁË½â¿ÉÄÜµÄ½â¾ö·½·¨.</li>

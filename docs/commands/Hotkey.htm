@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>Hotkey</title>
@@ -45,14 +44,14 @@ Hotkey, If [, Expression]</pre>
 
   <dt>Options 选项</dt>
   <dd><p>由零个或多个下列字母组成的字符串, 字母间可以用空格分隔. 例如:<code>UseErrorLevel B0</code></p>
-      <p><strong><a name="UseErrorLevel"></a>UseErrorLevel</strong>: 如果命令遇到问题, 使用此选项会跳过警告对话框, 设置 <a href="../misc/ErrorLevel.htm">ErrorLevel</a> 为 <a href="#ErrorLevel">下表</a> 中的一个代码, 然后让 <a href="../misc/Threads.htm">当前线程</a> 继续执行.</p>
+      <p id="UseErrorLevel"><strong>UseErrorLevel</strong>: 如果命令遇到问题, 使用此选项会跳过警告对话框, 设置 <a href="../misc/ErrorLevel.htm">ErrorLevel</a> 为 <a href="#ErrorLevel">下表</a> 中的一个代码, 然后让 <a href="../misc/Threads.htm">当前线程</a> 继续执行.</p>
       <p><strong>On</strong>: 如果热键当前是禁用的则启用它.</p>
       <p><strong>Off</strong>: 如果热键当前是启用的则禁用它. 此选项常用来创建初始状态为禁用的热键.</p>
       <p><strong>B</strong> 或 <strong>B0</strong>: 指定字母 B 将按照 <a href="_MaxThreadsBuffer.htm">#MaxThreadsBuffer</a> 描述的方法缓冲热键. 指定 B0 (B 后跟着数字 0) 来禁用这种类型的缓冲.</p>
       <p><strong>Pn</strong>: 指定字母 P 后面跟着热键的 <a href="../misc/Threads.htm">线程优先级</a>. 如果创建热键时省略 P 选项, 则设置优先级为 0.</p>
       <p><strong>Tn</strong>: 指定字母 T 后面跟着一个表示此热键允许的线程数, 如同 <a href="_MaxThreadsPerHotkey.htm">#MaxThreadsPerHotkey</a> 中描述的那样. 例如:<code>T5</code>.</p>
       <p><strong>In</strong> (表示: InputLevel 输入级别) <span class="ver">[v1.1.23+]</span>: 指定字母 I (或 i) 跟随热键的 <a href="_InputLevel.htm">input level (输入级别)</a>. 例如: <code>I1</code>.</p>
-      <p>If any of the option letters are omitted and the hotkey already exists, those options will not be changed. But if the hotkey does not yet exist -- that is, it is about to be created by this command -- the options will default to those most recently in effect. For example, the instance of <a href="_MaxThreadsBuffer.htm">#MaxThreadsBuffer</a> that occurs closest to the bottom of the script will be used. If <a href="_MaxThreadsBuffer.htm">#MaxThreadsBuffer</a> does not appear in the script, its default setting (OFF in this case) will be used. This behavior also applies to <a href="_IfWinActive.htm">#IfWin</a>: the bottommost occurrence applies to newly created hotkeys unless &quot;<a href="#IfWin">Hotkey IfWin</a>&quot; has executed since the script started.</p>
+      <p>如果任一选项字母被忽略并且热键已经存在, 这些选项将不会起作用. 但如果热键还没创建(将由这条命令创建), 这些选项将会影响那些最近创建的热键. 例如, 即使 <a href="_MaxThreadsBuffer.htm">#MaxThreadsBuffer</a> 出现在脚本底部的情况下也会被采用. 而如果脚本中没有出现 <a href="_MaxThreadsBuffer.htm">#MaxThreadsBuffer</a> , 则会采用其默认值 (这里是 OFF) . 这种特性也适用于 <a href="_IfWinActive.htm">#IfWin</a>: 脚本最底部出现的#IfWin会适用于最近创建的热键除非 &quot;<a href="#IfWin">Hotkey IfWin</a>&quot; 在脚本开始时就已执行</p>
       </dd>
 
   <dt>IfWinActive<br>

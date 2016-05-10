@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML><html lang="en">
 	<head>
 		<meta charset="GB2312" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -750,7 +749,7 @@ if (var=5)
 }
 </pre><br />
 
-						下面的代码中，当var等于5时，才能显示消息框. 而不管var是否等于5，脚本都会终止.
+						下面的代码中，当var等于5时，才能显示消息框. 但不管var是否等于5，脚本都会终止.
 
 <pre>
 if (var=5)
@@ -758,7 +757,7 @@ if (var=5)
    Exitapp
 </pre><br />
 
-						If后面只有一行与它有关的代码，下面一个例子做了一个非常好的代码编写示范f后面只有一行与它有关的代码，下面一个例子做了一个非常好的代码编写示范. 它实现的功能跟上面的代码一样，但是我将第二行代码前面增加了一个缩进，这样写让我们很容易就知道这行代码是跟If相关的.
+						If后面只有一行与它有关的代码，下面的例子做了一个非常好的代码编写示范. 它实现的功能跟上面的代码一样，但是我将第二行代码进行了缩进排版，这样写让我们很容易就知道这行代码是跟If相关的.
 
 <pre>
 if (var=5)
@@ -783,10 +782,10 @@ MsgBox, We are now 'outside' the if. We did not need {}'s since there was only 1
 								<div class="indented">这是给变量赋值最简单的方法，也是传统的赋值方法. 只需要在等号后面输入文本就行了.</div>
 							</li>
 							<li><code>variable=%variable2%</code><br />
-								<div class="indented">更上面的方法类似，只是你将一个变量所对应的值赋给了另一个变量.</div>
+								<div class="indented">和上面的方法类似，只是你将一个变量所对应的值赋给了另一个变量.</div>
 							</li>
 							<li><code>variable:="text"</code><br />
-								<div class="indented">这里通过一个表达式给变量赋值，因为 = 前面有一个 :. 不过文本前后需要加上双引号.</div>
+								<div class="indented">这里通过一个表达式给变量赋值，因为  <span style="color:#ff4400"><b>=</b></span> 前面有一个 <span style="color:#ff4400"><b>:</b></span> . 任何文本都须包含在双引号内.</div>
 							</li>
 							<li><code>variable:=variable2</code><br />
 								<div class="indented">如果用表达式的方法赋值，变量不需要使用%.</div>
@@ -833,7 +832,7 @@ If (<span style="color:red">Var1</span> != <span style="color:red">Var2</span>)
 
 					<h3 id="s62">b. 获取用户输入</h3>
 					<div>
-						有时候你想让用户来选择某些变量的值. 我们有很多种方法，但最简单的办法就是使用 <a href="commands/InputBox.htm">Inputbox</a> 命令. 下面的例子展示了如何向用户提问，并使用用户输入的值来完成一些事情.
+						有时候你想让用户来选择某些值. 这可以有很多种方法，但其中最简单的办法就是使用 <a href="commands/InputBox.htm">Inputbox</a> 命令. 下面的例子展示了如何向用户提出一堆问题并根据用户的输入完成一些事情.
 
 <pre>
 InputBox, OutputVar, Question 1, What is your first name?
@@ -883,22 +882,22 @@ If Var1 &lt; %Var2%                   <em>; 如果IF不使用括号，那么IF后面的内容将
 				<div id="objects" class="section">
 					<h2 id="s7">7 - 对象</h2>
 					<p>
-						<a href="Objects.htm">对象</a>其实是数据的一种组织方式，它有很多用处. 有时候对象被当作数组，在这重点声明一下所有的数组都是对象. 我们可以根据对象的使用范围区分不同的对象，但这些对象都有同样的特性.
+						<a href="Objects.htm">对象</a>其实是一种更具效率的数据组织方式，它有很多用处. 有时候对象被当作数组，在这重点声明一下所有的数组都是对象. 我们可以根据对象的使用范围区分不同的对象，但这些对象都有同样的特性.
 					</p>
 					<hr />
 					一个对象可以看成是变量的集合.
 					变量的名字叫做"键"，变量的内容叫做"值".<br />
 					<br />
-					当你听到人们把一个对象叫做<i>数组</i>或<i>索引数组</i>, 说明这个对象的键是从1开始连续递增的数字.<br />
-					当你听到人们把一个对象叫做<i>关联数组</i>，说明这个对象的键要么使用字符串（或文本），要么使用不连续的数字.
-					有时候人们把这两个混合在一起!<br />
+					当你听到人们把一个对象叫做 <i>数组</i> 或 <i>索引数组</i> , 说明这个对象的键是从1开始递增的连续数字.<br />
+					当你听到人们把一个对象叫做 <i>关联数组</i> ，说明这个对象的键要么使用字符串 (或文本），要么使用不连续的数字.
+					有时可能是两者的混合也有可能是数列!<br />
 					<br />
 					一个对象的键和值没有什么限制，它们甚至可以是另一个数组!
 					<br />
-					如果一个对象的值也是数组，我们把它叫做<i>嵌套数组</i>, 一会我们再解释这个.
+					如果一个对象的值也是数组，我们把它叫做 <i>嵌套数组</i> , 这个我们以后再解释.
 					<hr />
 					<div>
-						很多地方需要使用数组，比如:<br />
+						有很多地方需要使用数组，比如:<br />
 						<ol>
 							<li>当你需要描述一组有序列表时，比如杂货店列表(这种情况最好使用索引数组)</li>
 							<li>当你需要描述一个图形方格时，比如一个棋盘游戏(这种情况最好使用嵌套对象)</li>
@@ -911,28 +910,28 @@ If Var1 &lt; %Var2%                   <em>; 如果IF不使用括号，那么IF后面的内容将
 						<ol>
 							<li><code>MyObject := ["one", "two", "three", 17]</code><br />
 								<div class="indented" >
-									采用方括号语法.
+									采用方括号的形式.
 									我们这里介绍所谓的"索引数组"对象.
 									索引数组表示这个对象包含一组数据，这些数据的索引号从1开始连续递增.
-									在这个例子中，值 <code>"one"</code> 对应键 <code>1</code> (又叫做索引号1), 值 <code>17</code> 对应键 <code>4</code> (又叫做索引号4).
+									在这个例子中，值 <code>"one"</code> 存储在对应键 <code>1</code> (又叫做索引号1), 值 <code>17</code> 存储在对应键 <code>4</code> (又叫做索引号4).
 								</div>
 							</li>
 							<li><code>Banana := {"Shape": "Elongated", "Color": "Yellow", "Taste": "Delicious", "Price": 3}</code><br />
 								<div class="indented" >
-									采用花括号语法.
+									采用花括号形式.
 									这里介绍所谓的"关联数组"对象.
-									关联数组表示这个对象包括一组数据，每个数据都自己的名字.
+									关联数组表示这个对象包括一组数据，每个数据都有自己的名字.
 									在这个例子中，值 <code>"yellow"</code> 对应键 <code>"color"</code>. 同样的, 值 <code>3</code> 对应键 <code>"Price"</code>.
 								</div>
 							</li>
 							<li><code>MyObject := Array("one", "two", "three", 17)</code><br />
 								<div class="indented" >
-									采用"数组"创建函数.这种方式跟方括号语法一样，区别仅仅是采用了函数的形式.
+									采用"数组"创建函数.这种方式跟方括号形式一样，区别仅仅是采用了函数的形式.
 								</div>
 							</li>
 							<li><code>Banana := Object("Shape", "Elongated", "Color", "Yellow", "Taste", "Delicious", "Price", 3)</code><br />
 								<div class="indented" >
-									采用对象创建函数.这种方式跟花括号语法一样，区别仅仅是采用了函数的形式.
+									采用对象创建函数.这种方式跟花括号形式一样，区别仅仅是采用了函数的形式.
 								</div>
 							</li>
 						</ol>
@@ -948,7 +947,7 @@ If Var1 &lt; %Var2%                   <em>; 如果IF不使用括号，那么IF后面的内容将
 						<strong>设置对象值:</strong>
 						<div class="indented">
 							设置对象的值跟设置变量的值一样简单.<br />
-							你需要做的是将方括号或句点放在<code>:=</code>的左边.<br />
+							你需要做的是将方括号或句点表示法(就像下文取对象值部分那样)放在表达式赋值符号<code>:=</code>的左边.<br />
 							<br />
 							例如:<br />
 							<code>Banana.Consistency := "Mushy"</code><br />
@@ -958,14 +957,13 @@ If Var1 &lt; %Var2%                   <em>; 如果IF不使用括号，那么IF后面的内容将
 						<strong>取出对象值:</strong>
 						<ol>
 							<li><code>Value := Banana["Color"]</code><br />
-								<div class="indented" >方括号语法. 允许你使用表达式作为键来获取对象的值.
-									在这个例子中，我仅仅使用表达式 <code>"Color"</code>, 其他它就是键 <code>Color</code>，
-									我们将会得到一个值 "Yellow" , 因为我们将键 <code>Color</code> 与 "Yellow" 关联起来了，可以查看<a href="#s71">前面一节</a>.
+								<div class="indented" >方括号表示法. 允许你使用表达式作为键从对象中获取值.
+									在这个例子中，我使用表达式 <code>"Color"</code>, 不要惊讶我仅使用键 <code>Color</code> 就会得到一个包含单词 "Yellow" 的值, 因为 "Yellow" 是我们事先 (在<a href="#s71">上一节</a>) 就与键 <code>Color</code> 建立关联的.
 								</div>
 							</li>
 							<li><code>Value := Banana.Color</code><br />
 								<div class="indented" >
-									句点语法. 仅仅允许使用文字串作为键名. 在句点语法中键不能使用变量.
+									句点表示法. 仅允许使用原样的字串作为键名. 在句点表示法中键名不能使用变量.
 								</div>
 							</li>
 						</ol>
