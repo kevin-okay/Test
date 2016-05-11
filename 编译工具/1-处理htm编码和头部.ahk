@@ -39,23 +39,13 @@ delHead()
       {
          _line := A_LoopField
          
-         if (A_Index = 6)
-         || (A_Index = 7)
+         if (A_Index < 10)
          {
             if (_line ~= "i)charset=iso-8859-1")
             {
-               _line := RegExReplace(_line,"charset=iso-8859-1","charset=GB2312")
+               _line := RegExReplace(_line,"charset=iso-8859-1","charset=gb2312")
             }
          }
-         else if (A_Index = 9)
-         || (A_Index = 10)
-         {
-            if (_line ~= "^<script.*jquery")
-            {
-               continue
-            }
-         }
-         
          _newContent .= _line "`n"
       }
       ;~ 删除最后的换行符

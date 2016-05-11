@@ -1,7 +1,7 @@
 [OPTIONS]
 Binary Index=No
 Compatibility=1.1 or later
-Compiled file=AutoHotkey_Help_CN.chm
+Compiled file=AutoHotkey.chm
 Contents file=Table of Contents.hhc
 Default Window=Contents
 Default topic=docs\AutoHotkey.htm
@@ -12,7 +12,7 @@ Language=0x804 中文(简体，中国)
 Title=AutoHotkey 中文帮助
 
 [WINDOWS]
-Contents="AutoHotkey 中文帮助","Table of Contents.hhc","Index.hhk","docs\AutoHotkey.htm","docs\AutoHotkey.htm",,,,,0x73520,,0x10200e,[200,0,1080,700],,,,,,,0
+Contents="AutoHotkey 中文帮助","Table of Contents.hhc","Index.hhk","docs\AutoHotkey.htm","docs\AutoHotkey.htm",,,,,0x73520,,0x10200e,[200,0,1080,700],0,,,,0,,0
 
 
 [FILES]
