@@ -11,7 +11,7 @@
 
 <h1>RegRead</h1>
 
-<p>从注册表读取值。</p>
+<p>从注册表读取值.</p>
 
 <pre class="Syntax">RegRead, OutputVar, RootKey\SubKey [, ValueName]  <em>; v1.1.21+</em>
 RegRead, OutputVar, RootKey, SubKey [, ValueName]</pre>
@@ -43,10 +43,10 @@ RegRead, OutputVar, RootKey, SubKey [, ValueName]</pre>
 <p>REG_DWORD 值总是被转换为正十进制数.</p>
 <p>读取 REG_BINARY 键时, 获取的结果为十六进制字符的字符串. 例如, REG_BINARY 类型的值 01,a9,ff,77 的读取结果为字符串 01A9FF77.</p>
 <p>读取 REG_MULTI_SZ 键时, 值的每个部分会以换行符结束 (`n). 如果值为空, 则 <em>OutputVar</em> 会被置空. 请参阅 <a href="FileSelectFile.htm">FileSelectFile</a> 中的示例了解如何从 <em>OutputVar</em> 中逐个提取单独的部分.</p>
-<p>大于 64K 的 REG_BINARY 值只有在 v1.1.10.01 或更高版本中才能读取。</p>
+<p>大于 64K 的 REG_BINARY 值只有在 v1.1.10.01 或更高版本中才能读取.</p>
 <p>要获取和操作多个注册表键或值, 请考虑使用 <a href="LoopReg.htm">注册表循环</a>.</p>
 <p>关于如何访问远程计算机注册表的详情, 请参阅 <a href="LoopReg.htm">注册表循环</a> 中的备注.</p>
-<p>要在 32 位脚本中读写注册表 64 位部分的条目或进行相反的操作，请使用 <a href="SetRegView.htm">SetRegView</a>。</p>
+<p>要在 32 位脚本中读写注册表 64 位部分的条目或进行相反的操作,请使用 <a href="SetRegView.htm">SetRegView</a>.</p>
 
 <h3>相关</h3>
 <p><a href="RegDelete.htm">RegDelete</a>, <a href="RegWrite.htm">RegWrite</a>, <a href="LoopReg.htm">注册表循环</a>, <a href="SetRegView.htm">SetRegView</a>, <a href="IniRead.htm">IniRead</a></p>

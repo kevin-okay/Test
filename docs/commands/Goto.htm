@@ -11,7 +11,7 @@
 
 <h1>Goto</h1>
 
-<p>跳转到指定的标签并继续执行。</p>
+<p>跳转到指定的标签并继续执行.</p>
 
 <pre class="Syntax">Goto, Label</pre>
 <h3>参数</h3>
@@ -23,7 +23,7 @@
 </dl>
 
 <h3>备注</h3>
-<p>使用动态标签时 (例如 %MyLabel%), 如果目标标签不存在则会显示错误对话框. 要避免此问题, 请预先调用 <a href="../Functions.htm#IsLabel">IsLabel()</a>. 例如：</p>
+<p>使用动态标签时 (例如 %MyLabel%), 如果目标标签不存在则会显示错误对话框. 要避免此问题, 请预先调用 <a href="../Functions.htm#IsLabel">IsLabel()</a>. 例如:</p>
 <pre>if IsLabel(VarContainingLabelName)
     Goto %VarContainingLabelName%</pre>
 <p>不鼓励使用 Goto, 因为它通常让脚本不容易阅读且难以维护. 考虑使用 <a href="Else.htm">Else</a>, <a href="Block.htm">区块</a>, <a href="Break.htm">Break</a> 和 <a href="Continue.htm">Continue</a> 来代替 Goto.</p>

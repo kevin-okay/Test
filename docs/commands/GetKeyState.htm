@@ -12,7 +12,7 @@
 
 <h1>GetKeyState</h1>
 
-<p>检查键盘按键或鼠标/操纵杆按钮是否按下或放开。也可以获取操纵杆的状态。</p>
+<p>检查键盘按键或鼠标/操纵杆按钮是否按下或放开.也可以获取操纵杆的状态.</p>
 
 <pre class="Syntax">GetKeyState, OutputVar, KeyName [, Mode]
 KeyIsDown := <a href="../Functions.htm#GetKeyState">GetKeyState</a>("KeyName" [, "Mode"])</pre>
@@ -32,14 +32,14 @@ KeyIsDown := <a href="../Functions.htm#GetKeyState">GetKeyState</a>("KeyName" [,
 
   <dt>KeyName</dt>
   <dd><p>此参数可以是键盘中任何的单个字符或 <a href="../KeyList.htm">按键列表</a> 中的其中一个键名, 例如鼠标/操纵杆按钮. 例如: B, 5, LWin, RControl, Alt, Enter, Escape, LButton, MButton, Joy1.</p>
-      <p>或者, 可以指定明确的虚拟按键代码, 例如 vkFF. 只有在一个按键没有指定名称这样少见的情况下, 这种方法才有用. 这种按键的虚拟按键代码可以通过<a href="../KeyList.htm#SpecialKeys">按键列表页面</a>底部的步骤来确定。</p> 
+      <p>或者, 可以指定明确的虚拟按键代码, 例如 vkFF. 只有在一个按键没有指定名称这样少见的情况下, 这种方法才有用. 这种按键的虚拟按键代码可以通过<a href="../KeyList.htm#SpecialKeys">按键列表页面</a>底部的步骤来确定.</p> 
       <p><b>已知限制:</b> 此函数无法区别共享相同虚拟按键代码的两个按键, 例如 Left 和 NumpadLeft.</p></dd>
 
   <dt>Mode</dt>
   <dd><p>获取操纵杆状态时, 此参数被忽略.</p>
       <p>如果省略, 则默认的模式是获取按键的逻辑状态. 这是操作系统和活动窗口所认为的按键所处的状态, 但可能和它的物理状态不一致.</p>
 	  <p>或者, 可以指定这些字母的其中一个:</p>
-      <p><strong>P</strong>: 获取物理状态 (即用户是否实际按住了按键). 如果没有安装键盘和/或鼠标钩子，则按键或鼠标按钮的物理状态通常和逻辑状态一致（有时逻辑状态可能比物理状态滞后）；如果安装了钩子，则它会准确反映出用户是否按下了按键或鼠标按钮（只要在脚本执行时它正被按住）。您可以通过 <a href="KeyHistory.htm">KeyHistory</a> 命令或菜单项确定脚本中是否使用了钩子。通过添加 <a href="_InstallKeybdHook.htm">#InstallKeybdHook</a> 和/或 <a href="_InstallMouseHook.htm">#InstallMouseHook</a> 指令到脚本中您可以强制安装钩子。</p>
+      <p><strong>P</strong>: 获取物理状态 (即用户是否实际按住了按键). 如果没有安装键盘和/或鼠标钩子,则按键或鼠标按钮的物理状态通常和逻辑状态一致(有时逻辑状态可能比物理状态滞后)；如果安装了钩子,则它会准确反映出用户是否按下了按键或鼠标按钮(只要在脚本执行时它正被按住).您可以通过 <a href="KeyHistory.htm">KeyHistory</a> 命令或菜单项确定脚本中是否使用了钩子.通过添加 <a href="_InstallKeybdHook.htm">#InstallKeybdHook</a> 和/或 <a href="_InstallMouseHook.htm">#InstallMouseHook</a> 指令到脚本中您可以强制安装钩子.</p>
       <p><strong>T</strong>: 获取切换状态 (仅对可以切换的按键才有效, 例如 Capslock, Numlock, Scrolllock 和 Insert). 获取的值为 D 表明按键是打开的, 而 U 表明它是关闭的 (不过 <a href="../Functions.htm#GetKeyState">GetKeyState()</a> 函数当打开时返回 true (1) 而关闭时返回 false (0)).</p>
     </dd>
 

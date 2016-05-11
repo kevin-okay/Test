@@ -11,7 +11,7 @@
 
 <h1>FileCopyDir</h1>
 
-<p>复制文件夹及其所有子文件夹和文件（类似于 xcopy）。</p>
+<p>复制文件夹及其所有子文件夹和文件(类似于 xcopy).</p>
 
 <pre class="Syntax">FileCopyDir, Source, Dest [, Flag]</pre>
 <h3>参数</h3>
@@ -26,7 +26,7 @@
   <dt>Flag</dt>
   <dd><p>(可选参数) 此标志决定了是否覆盖现有的文件:</p>
       <p><strong>0</strong> (默认): 不覆盖现有的文件. 如果存在 <em>Dest</em> 名称的文件或目录, 则操作会失败而且不会产生效果.</p>
-      <p><strong>1</strong>: 覆盖现在的文件. 但是，不会删除在 <em>Dest</em> 中没有被 <em>Source</em> 目录中文件覆盖的其他子目录或文件。</p>
+      <p><strong>1</strong>: 覆盖现在的文件. 但是,不会删除在 <em>Dest</em> 中没有被 <em>Source</em> 目录中文件覆盖的其他子目录或文件.</p>
       <p>此参数可以为 <a href="../Variables.htm#Expressions">表达式</a>, 甚至是计算结果为真或假的表达式 (因为真和假内部分别保存为 1 和 0).</p></dd>
 
 </dl>
@@ -51,7 +51,7 @@ if SourceFolder =
 FileSelectFolder, TargetFolder, , 3, Select the folder IN WHICH to create the duplicate folder.
 if TargetFolder =
     return
-<em>; 否则继续。</em>
+<em>; 否则继续.</em>
 MsgBox, 4, , A copy of the folder "%SourceFolder%" will be put into "%TargetFolder%".  Continue?
 IfMsgBox, No
     return

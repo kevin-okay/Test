@@ -10,14 +10,14 @@
 <body>
 
 <h1>ComObjCreate() <span class="ver">[AHK_L 53+]</span></h1>
-<p>创建 COM 对象。</p>
+<p>创建 COM 对象.</p>
 <pre class="Syntax">ComObject := ComObjCreate(CLSID [, IID])</pre>
 
 <h3>参数</h3>
 <dl>
 
   <dt>CLSID</dt>
-  <dd><p>要创建的 COM 对象的 CLSID 或可读 Prog ID。</p></dd>
+  <dd><p>要创建的 COM 对象的 CLSID 或可读 Prog ID.</p></dd>
 
   <dt>IID</dt>
   <dd><p><span class="ver">[v1.0.96.00+]:</span> 对象支持的接口标识符.</p></dd>
@@ -36,7 +36,7 @@
 <p>参阅后面的论坛主题可以看到不断增长的示例列表: <a href="http://www.autohotkey.com/forum/topic61509.html">http://www.autohotkey.com/forum/topic61509.html</a>.</p>
 <pre class="NoIndent">
 ie := <b>ComObjCreate</b>("InternetExplorer.Application")
-ie.Visible := true  <em>; 已知此语句在IE7上无法正常执行。</em>
+ie.Visible := true  <em>; 已知此语句在IE7上无法正常执行.</em>
 ie.Navigate("https://autohotkey.com/")
 </pre>
 

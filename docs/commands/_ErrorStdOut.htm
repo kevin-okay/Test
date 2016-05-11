@@ -16,7 +16,7 @@
 <pre class="Syntax">#ErrorStdOut</pre>
 <p><span class="ver">[AHK_L 42+]:</span> 错误输出到 stderr (标准错误) 而不是 stdout (标准输出). 命令行和高级编辑器往往会同时显示这些信息. 这种不太规范的情况仅影响 v1.1.19.01 之前的版本.</p>
 <p>这个指令可以让类似 Textpad, SciTE, Crimson 和 EditPlus 这些高级编辑器在语法错误发生时跳到有问题的行. 添加 #ErrorStdOut 指令到每个脚本中通常比使用 <a href="../Scripts.htm#cmd">命令行开关</a> <strong>/ErrorStdOut</strong> 更方便. (请参阅命令行开关页面较远的后面了解设置说明)</p>
-<p>尽管语法错误会被发送到标准输出 (stdout), 但是它们不会直接显示在命令提示符中. 不过, 可以通过管道或重定向捕获这样的输出. 例如：</p>
+<p>尽管语法错误会被发送到标准输出 (stdout), 但是它们不会直接显示在命令提示符中. 不过, 可以通过管道或重定向捕获这样的输出. 例如:</p>
 <pre>"C:\Program Files\AutoHotkey\AutoHotkey.exe" /ErrorStdOut "My Script.ahk" <strong>|more</strong>
 "C:\Program Files\AutoHotkey\AutoHotkey.exe" /ErrorStdOut "My Script.ahk" <strong>&gt;"Syntax-Error Log.txt"</strong></pre>
 <p>您还可以通过管道输出把信息直接传输到剪贴板,只需下载 <a href="http://www.autohotkey.com/misc/cb.zip">cb.zip</a> (4 KB) 然后参考下面的例子:</p>

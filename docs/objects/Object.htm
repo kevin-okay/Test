@@ -11,7 +11,7 @@
 
 <h1>Object 对象</h1>
 
-<p>AutoHotkey 的基本对象数据类型是关联数组，特点是允许<a href="../Objects.htm#Custom_Objects">自定义</a>它的行为。默认由 <code>{}</code>、<code>[]</code>、<code>Object()</code> 和 <code>Array()</code> 创建的对象支持下列方法：</p>
+<p>AutoHotkey 的基本对象数据类型是关联数组,特点是允许<a href="../Objects.htm#Custom_Objects">自定义</a>它的行为.默认由 <code>{}</code>,<code>[]</code>,<code>Object()</code> 和 <code>Array()</code> 创建的对象支持下列方法:</p>
 <ul>
   <li><a href="#InsertAt">InsertAt</a> / <a href="#RemoveAt">RemoveAt</a></li>
   <li><a href="#Push">Push</a> / <a href="#Pop">Pop</a></li>
@@ -162,7 +162,7 @@ MsgBox % {-10: 0, -1: 0}.Length()  <em>;  0</em>
 <pre class="Syntax">Object.SetCapacity(MaxItems)
 Object.SetCapacity(Key, ByteSize)</pre>
 <table class="info">
-  <tr><td style="width:15%">MaxItems</td><td>对象在必须自动扩展前它可以包含的键值对的最大数目。如果少于键值对的当前数目，则使用该数目并释放未使用的内存。</td></tr>
+  <tr><td style="width:15%">MaxItems</td><td>对象在必须自动扩展前它可以包含的键值对的最大数目.如果少于键值对的当前数目,则使用该数目并释放未使用的内存.</td></tr>
   <tr><td>Key</td><td>任何有效键.</td></tr>
   <tr><td>ByteSize</td><td>为目标区域字符串缓存设置的新大小, 不包括空终止符, 单位为字节. 如果区域不存在, 则创建它. 如果 <i>ByteSize</i> 为零, 则清空缓存但不移除空区域. 如果 <i>ByteSize</i> 小于当前大小, 则移除额外的数据; 否则保留所有现有的数据.</td></tr>
   <tr><td><b>返回值</b></td><td>成功时返回新设置的内存空间, 否则为空字符串.</td></tr>
@@ -175,11 +175,11 @@ ByteSize := Object.GetCapacity(Key)</pre>
 
 <div class="methodShort" id="GetAddress"><h2>GetAddress <span class="ver">[AHK_L 31+]</span></h2>
 <pre class="Syntax">Ptr := Object.GetAddress(Key)</pre>
-<p>返回对象的区域字符串缓冲区地址，如果它有。</p></div>
+<p>返回对象的区域字符串缓冲区地址,如果它有.</p></div>
 
 <div class="methodShort" id="NewEnum"><h2>NewEnum <span class="ver">[AHK_L 49+]</span></h2>
 <pre class="Syntax">Enum := Object._NewEnum()</pre>
-<p>返回一个新的 <a href="Enumerator.htm">计数器</a> 用于枚举当前对象中的键值对. 该方法通常不直接调用，而是使用 <a href="../commands/For.htm">for 循环</a> 来遍历对象.</p></div>
+<p>返回一个新的 <a href="Enumerator.htm">计数器</a> 用于枚举当前对象中的键值对. 该方法通常不直接调用,而是使用 <a href="../commands/For.htm">for 循环</a> 来遍历对象.</p></div>
 
 <div class="methodShort" id="HasKey"><h2>HasKey <span class="ver">[AHK_L 53+]</span></h2>
 <pre class="Syntax">Object.HasKey(Key)</pre>

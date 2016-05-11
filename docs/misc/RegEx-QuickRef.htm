@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>正则表达式（RegEx）——快速参考</title>
+<title>正则表达式(RegEx)__快速参考</title>
 <meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -14,7 +14,7 @@
 </style>
 </head>
 <body>
-<h1>正则表达式（RegEx）——快速参考</h1>
+<h1>正则表达式(RegEx)__快速参考</h1>
 
 <h2>基础知识</h2>
 <p><strong>在任意位置进行匹配</strong>: 默认情况下, 正则表达式可以匹配被搜索字符串的 <em>任意位置</em> 的子字符串. 例如, 正则表达式 <span class="regex">abc</span> 可以匹配 <span class="subj">abc</span>123, 123<span class="subj">abc</span> 以及 123<span class="subj">abc</span>xyz. 要限制在开始或末尾进行匹配, 请使用 <a href="#anchor">锚</a>.</p>
@@ -30,10 +30,10 @@
   </tr>
   <tr id="Multiline">
     <td><strong>m</strong></td>
-    <td><p>多行. 把<em>Haystack</em>视为许多单独的行（如果它包含新行符）的集合而不是一个单个的连续行。具体地, 它会改变下列方式:</p>
+    <td><p>多行. 把<em>Haystack</em>视为许多单独的行(如果它包含新行符)的集合而不是一个单个的连续行.具体地, 它会改变下列方式:</p>
       <p>1) 抑扬符 (^) 能匹配紧跟在内部所有新行符之后的位置, 如同它总能匹配 <em>Haystack</em> 的开始处一样 (但它不会匹配 <em>Haystack</em> 的 <em>最后面</em> 的新行符之后的位置).</p>
       <p>2) 美元符 ($) 能匹配 <em>Haystack</em> 中任何新行符之前的位置 (如同它总能匹配最后面的位置).</p>
-      <p>例如，模式“<span class="red">m)</span>^abc$”中包含了“m”选项才能在 <em>Haystack</em>“xyz`r`nabc”中形成匹配。</p>
+      <p>例如,模式"<span class="red">m)</span>^abc$"中包含了"m"选项才能在 <em>Haystack</em>"xyz`r`nabc"中形成匹配.</p>
       <p>使用了 "m" 选项时 "D" 选项会被忽略.</p></td>
   </tr>
   <tr id="opt_s">
@@ -50,7 +50,7 @@
   </tr>
   <tr id="opt_D">
     <td><strong>D</strong></td>
-    <td>强制美元符 ($) 匹配 <em>Haystack</em> 的末端, 即使 <em>Haystack</em> 的最后的字符是新行符. 如果没有此选项，则$会匹配最后的新行符之前的位置（如果有新行符，此时匹配不会包括新行符）。注: 使用了 "m" 选项时此选项会被忽略.</td>
+    <td>强制美元符 ($) 匹配 <em>Haystack</em> 的末端, 即使 <em>Haystack</em> 的最后的字符是新行符. 如果没有此选项,则$会匹配最后的新行符之前的位置(如果有新行符,此时匹配不会包括新行符).注: 使用了 "m" 选项时此选项会被忽略.</td>
   </tr>
   <tr id="opt_J">
     <td><strong>J</strong></td>
@@ -66,7 +66,7 @@
   </tr>
   <tr id="opt_P">
     <td><strong>P</strong></td>
-    <td>位置模式. 这会使 RegExMatch() 产生匹配和其子模式的位置和长度而不是匹配它们的子字符串. 更多细节请参阅 <a href="../commands/RegExMatch.htm#PosMode">UnquotedOutputVar</a>。</td>
+    <td>位置模式. 这会使 RegExMatch() 产生匹配和其子模式的位置和长度而不是匹配它们的子字符串. 更多细节请参阅 <a href="../commands/RegExMatch.htm#PosMode">UnquotedOutputVar</a>.</td>
   </tr>
   <tr id="Study">
     <td><strong>S</strong></td>
@@ -74,7 +74,7 @@
   </tr>
   <tr id="opt_Callout">
     <td><strong>C</strong></td>
-    <td>启用自动调出模式。请参阅<a href="../misc/RegExCallout.htm#auto">正则表达式调出</a>了解更多信息。</td>
+    <td>启用自动调出模式.请参阅<a href="../misc/RegExCallout.htm#auto">正则表达式调出</a>了解更多信息.</td>
   </tr>
   <tr id="opt_esc_n">
     <td><strong>`n</strong></td>
@@ -86,7 +86,7 @@
   </tr>
   <tr id="NEWLINE_ANY">
     <td><strong>`a</strong></td>
-    <td>在 v1.0.46.06+, `a 可以识别任意类型的新行符, 即 `r, `n, `r`n, `v/VT/vertical tab/chr(0xB), `f/FF/formfeed/chr(0xC) 以及 NEL/next-line/chr(0x85). 在 v1.0.47.05+，新行符可以被限制为 CR、LF 和 CRLF 三种，只需要在模式的开始处（选项后面）指定大写的（*ANYCRLF）；例如 <code>im)(*ANYCRLF)^abc$</code>。</td>
+    <td>在 v1.0.46.06+, `a 可以识别任意类型的新行符, 即 `r, `n, `r`n, `v/VT/vertical tab/chr(0xB), `f/FF/formfeed/chr(0xC) 以及 NEL/next-line/chr(0x85). 在 v1.0.47.05+,新行符可以被限制为 CR,LF 和 CRLF 三种,只需要在模式的开始处(选项后面)指定大写的(*ANYCRLF)；例如 <code>im)(*ANYCRLF)^abc$</code>.</td>
   </tr>
 </table>
 <p>注: 在两个选项间可以使用空格或 tab 分隔.</p>
@@ -128,7 +128,7 @@
   </tr>
 	<tr>
 	  <td style="align:center"><strong>\d</strong></td>
-	  <td>匹配任意一个数字 (相当于类 <span class="regex">[0-9]</span>). 相反地，大写的\D表示“任意的<em>非</em>数字字符”。这个和下面的两个都可以用在 <a href="#set">字符类</a> 中; 例如, <span class="regex">[\d.-]</span> 表示 "任何数字, 句点或负号".</td>
+	  <td>匹配任意一个数字 (相当于类 <span class="regex">[0-9]</span>). 相反地,大写的\D表示"任意的<em>非</em>数字字符".这个和下面的两个都可以用在 <a href="#set">字符类</a> 中; 例如, <span class="regex">[\d.-]</span> 表示 "任何数字, 句点或负号".</td>
   </tr>
 	<tr>
 	  <td style="align:center"><strong>\s</strong></td>
@@ -180,8 +180,8 @@
     </td>
   </tr>
 </table>
-<p><strong>贪婪</strong>：默认情况下，<span class="regex">*</span>、<span class="regex">?</span>、<span class="regex">+</span> 和 <span class="regex">{min,max}</span> 是贪婪的，因为它们消耗到<em>最后一个</em>能满足整个模式的可能的所有字符。要让它们停在 <em>首个</em> 可能的字符, 请在它们后面加上问号. 例如, 模式 <span class="regex">&lt;.+&gt;</span> (其中没有问号) 表示: "搜索一个 &lt;, 接着一个或多个任意字符, 然后是一个 &gt;". 要在匹配 <em>整个</em> 字符串 <span class="subj"><span class="red"><strong>&lt;</strong></span>em&gt;text&lt;/em<span class="red"><strong>&gt;</strong></span></span> 时停止, 请在加号后加上问号: <span class="regex">&lt;.+<span class="red">?</span>&gt;</span>. 这样会让匹配在第一个 '&gt;' 处停止, 因此它只匹配第一个标签 <span class="subj"><span class="red"><strong>&lt;</strong></span>em<span class="red"><strong>&gt;</strong></span></span>.</p>
-<p><strong>预测和回顾断言</strong>：这组 <span class="regex">(?=...)</span>、<span class="regex">(?!...)</span>、<span class="regex">(?&lt;=...)</span> 和 <span class="regex">(?&lt;!...)</span> 被称为<em>断言</em>，因为它们要求符合某个条件但不消耗任何字符。例如, <span class="regex">abc(?=.*xyz)</span> 中含有预测断言, 它要求在字符串 abc 右边的某个位置存在字符串 xyz (如果不存在, 则匹配失败). <span class="regex">(?=...)</span> 被称为 <em>正</em> 预测断言, 因为它要求指定的模式存在. 相反地, <span class="regex">(?!...)</span> 是 <em>负</em> 预测断言, 因为它要求指定的模式 <em>不</em> 存在. 同样地, <span class="regex">(?&lt;=...)</span> 和 <span class="regex">(?&lt;!...)</span> 分别是正的和负的 <em>回顾</em> 断言, 因为它们检查当前位置的 <em>左边</em> 而不是右边. 回顾比预测受到更多的限制, 因为它们不支持可变大小的限定符, 例如 <span class="regex">*</span>, <span class="regex">?</span> 和 <span class="regex">+</span>. 转义序列 \K 类似于回顾断言, 因为它会让前一个匹配的字符在最后的匹配字符串中省略. 例如, <span class="regex">foo\Kbar</span> 可以匹配 "foobar" 但报告匹配的结果为 "bar".</p>
+<p><strong>贪婪</strong>:默认情况下,<span class="regex">*</span>,<span class="regex">?</span>,<span class="regex">+</span> 和 <span class="regex">{min,max}</span> 是贪婪的,因为它们消耗到<em>最后一个</em>能满足整个模式的可能的所有字符.要让它们停在 <em>首个</em> 可能的字符, 请在它们后面加上问号. 例如, 模式 <span class="regex">&lt;.+&gt;</span> (其中没有问号) 表示: "搜索一个 &lt;, 接着一个或多个任意字符, 然后是一个 &gt;". 要在匹配 <em>整个</em> 字符串 <span class="subj"><span class="red"><strong>&lt;</strong></span>em&gt;text&lt;/em<span class="red"><strong>&gt;</strong></span></span> 时停止, 请在加号后加上问号: <span class="regex">&lt;.+<span class="red">?</span>&gt;</span>. 这样会让匹配在第一个 '&gt;' 处停止, 因此它只匹配第一个标签 <span class="subj"><span class="red"><strong>&lt;</strong></span>em<span class="red"><strong>&gt;</strong></span></span>.</p>
+<p><strong>预测和回顾断言</strong>:这组 <span class="regex">(?=...)</span>,<span class="regex">(?!...)</span>,<span class="regex">(?&lt;=...)</span> 和 <span class="regex">(?&lt;!...)</span> 被称为<em>断言</em>,因为它们要求符合某个条件但不消耗任何字符.例如, <span class="regex">abc(?=.*xyz)</span> 中含有预测断言, 它要求在字符串 abc 右边的某个位置存在字符串 xyz (如果不存在, 则匹配失败). <span class="regex">(?=...)</span> 被称为 <em>正</em> 预测断言, 因为它要求指定的模式存在. 相反地, <span class="regex">(?!...)</span> 是 <em>负</em> 预测断言, 因为它要求指定的模式 <em>不</em> 存在. 同样地, <span class="regex">(?&lt;=...)</span> 和 <span class="regex">(?&lt;!...)</span> 分别是正的和负的 <em>回顾</em> 断言, 因为它们检查当前位置的 <em>左边</em> 而不是右边. 回顾比预测受到更多的限制, 因为它们不支持可变大小的限定符, 例如 <span class="regex">*</span>, <span class="regex">?</span> 和 <span class="regex">+</span>. 转义序列 \K 类似于回顾断言, 因为它会让前一个匹配的字符在最后的匹配字符串中省略. 例如, <span class="regex">foo\Kbar</span> 可以匹配 "foobar" 但报告匹配的结果为 "bar".</p>
 <p><strong>相关</strong>: 正则表达式由 <a href="../commands/RegExMatch.htm">RegExMatch()</a>, <a href="../commands/RegExReplace.htm">RegExReplace()</a> 和 <a href="../commands/SetTitleMatchMode.htm">SetTitleMatchMode</a> 支持.</p>
 <p><strong>最后说明</strong>: 尽管这个页面涉及了大多数常用的正则表达式功能, 但是还有相当一部分您可能希望了解的其他功能没有提及, 例如条件子模式. 完整的 PCRE 手册请访问 <a href="http://www.pcre.org/pcre.txt">www.pcre.org/pcre.txt</a></p>
 <p>&nbsp;</p>

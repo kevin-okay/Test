@@ -11,7 +11,7 @@
 
 <h1>PixelSearch</h1>
 
-<p>在屏幕某个区域中搜索指定颜色所在的像素。</p>
+<p>在屏幕某个区域中搜索指定颜色所在的像素.</p>
 
 <pre class="Syntax">PixelSearch, OutputVarX, OutputVarY, X1, Y1, X2, Y2, ColorID [, Variation, Fast|RGB]</pre>
 <h3>参数</h3>
@@ -22,13 +22,13 @@
     <p>其中一个或两个参数都可以留空, 此时可以使用 ErrorLevel (请参阅下面) 来判断是否找到了匹配.</p></dd>
 
   <dt>X1, Y1</dt>
-  <dd><p>要搜索的矩形区域的左上角的 X 和 Y 坐标, 可以为 <a href="../Variables.htm#Expressions">表达式</a>. <strong>坐标相对于活动窗口，除非曾使用 <a href="CoordMode.htm">CoordMode</a> 改变了这个设置</strong>。</p></dd>
+  <dd><p>要搜索的矩形区域的左上角的 X 和 Y 坐标, 可以为 <a href="../Variables.htm#Expressions">表达式</a>. <strong>坐标相对于活动窗口,除非曾使用 <a href="CoordMode.htm">CoordMode</a> 改变了这个设置</strong>.</p></dd>
 
   <dt>X2, Y2</dt>
   <dd><p>要搜索的矩形区域的右下角的 X 和 Y 坐标, 可以为 <a href="../Variables.htm#Expressions">表达式</a>. 坐标相对于活动窗口, 除非曾使用 <a href="CoordMode.htm">CoordMode</a> 改变了这个设置.</p></dd>
 
   <dt>ColorID</dt>
-  <dd><p>要搜索的十进制或十六进制的颜色 ID, 使用蓝绿红 (BGR) 格式, 可以为 <a href="../Variables.htm#Expressions">表达式</a>. 颜色 ID 可以使用 Window Spy (可从托盘菜单打开) 或 <a href="PixelGetColor.htm">PixelGetColor</a> 来确定. 例如：<code>0x9d6346</code>。</p></dd>
+  <dd><p>要搜索的十进制或十六进制的颜色 ID, 使用蓝绿红 (BGR) 格式, 可以为 <a href="../Variables.htm#Expressions">表达式</a>. 颜色 ID 可以使用 Window Spy (可从托盘菜单打开) 或 <a href="PixelGetColor.htm">PixelGetColor</a> 来确定. 例如:<code>0x9d6346</code>.</p></dd>
 
   <dt>Variation</dt>
   <dd><p>一个介于 0 和 255 (包含的) 之间的数字, 用于表示此颜色红/绿/蓝成分强度在每个方向上允许的渐变值 (可以为 <a href="../Variables.htm#Expressions">表达式</a>). 此参数用于需要寻找的颜色渐变值可能变化时. 如果指定 255 为浮动的渐变值, 则匹配所有颜色. 默认渐变值为 0.</p></dd>

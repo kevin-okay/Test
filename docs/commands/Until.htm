@@ -11,7 +11,7 @@
 
 <h1>Until <span class="ver">[AHK_L 59+]</span></h1>
 
-<p>根据条件判断是否继续执行 Loop 或 For 循环。</p>
+<p>根据条件判断是否继续执行 Loop 或 For 循环.</p>
 
 <pre class="Syntax">Loop {
     ...
@@ -32,11 +32,11 @@
     if (<i>Expression</i>)
         break
 }</pre>
-<p>不过, Loop Until 通常更容易理解, 且与上面不同的是, 它还可以使用单行动作. 例如：</p>
+<p>不过, Loop Until 通常更容易理解, 且与上面不同的是, 它还可以使用单行动作. 例如:</p>
 <pre>Loop
     x *= 2
 Until x &gt; y</pre>
-<p><i>Until</i> 可以使用在任何 Loop 或 For 循环中. 例如：</p>
+<p><i>Until</i> 可以使用在任何 Loop 或 For 循环中. 例如:</p>
 <pre>Loop, Read, %A_ScriptFullPath%
     lines .= A_LoopReadLine . "`n"
 <b>Until</b> A_Index=5  <em>; 读取前五行.</em>

@@ -11,14 +11,14 @@
 
 <h1>RegisterCallback() <span class="ver">[v1.0.47+]</span></h1>
 
-<p>创建机器码地址，当它被调用时会重定向到脚本中的<a href="Functions.htm">函数</a>。</p>
+<p>创建机器码地址,当它被调用时会重定向到脚本中的<a href="Functions.htm">函数</a>.</p>
 
 <pre class="Syntax">Address := RegisterCallback("FunctionName" [, Options = "", ParamCount = FormalCount, EventInfo = Address])</pre>
 <h3>参数</h3>
 <dl>
 
   <dt>Address</dt>
-  <dd><p>成功时，RegisterCallback() 返回一个数值地址，它可以被 <a href="DllCall.htm">DllCall()</a> 或其他能调用机器码函数的东西调用。失败时, 它返回空字符串. 当 <em>FunctionName</em> 出现下列情况时会引起失败：1) 不存在；2) 接收到比 <em>ParamCount</em> 过多或过少的参数；或 3) 接收到任何一个 <a href="../Functions.htm#ByRef">ByRef 参数</a>。</p></dd>
+  <dd><p>成功时,RegisterCallback() 返回一个数值地址,它可以被 <a href="DllCall.htm">DllCall()</a> 或其他能调用机器码函数的东西调用.失败时, 它返回空字符串. 当 <em>FunctionName</em> 出现下列情况时会引起失败:1) 不存在；2) 接收到比 <em>ParamCount</em> 过多或过少的参数；或 3) 接收到任何一个 <a href="../Functions.htm#ByRef">ByRef 参数</a>.</p></dd>
 
   <dt>FunctionName</dt>
   <dd>
@@ -27,9 +27,9 @@
     </dd>
 
   <dt>选项</dt>
-  <dd><p>指定零个或多个下列单词. 在选项间使用空格分隔（例如<code>C Fast</code>）。</p>
+  <dd><p>指定零个或多个下列单词. 在选项间使用空格分隔(例如<code>C Fast</code>).</p>
     <p id="Fast"><strong>Fast</strong> 或 <strong>F</strong>: 避免每次调用 <em>FunctionName</em> 时都启动新 <a href="../misc/Threads.htm">线程</a>. 尽管这样执行的更好, 但必须避免调用 <em>Address</em> 的线程发生变化 (例如当回调函数被传入的消息触发时). 这是因为 <em>FunctionName</em> 能改变在它被调用时刚好在运行的线程的全局设置 (例如 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>, <a href="../Variables.htm#LastError">A_LastError</a> 和 <a href="../misc/WinTitle.htm#LastFoundWindow">上次找到的窗口</a>). 想了解更多细节, 请参阅 <a href="#Threads">备注</a>.</p>
-    <p><strong>CDecl</strong> 或 <strong>C</strong>：让 <em>Address</em> 遵循“C”调用约定。此选项通常省略, 因为在回调函数中标准调用约定更常用.</p></dd>
+    <p><strong>CDecl</strong> 或 <strong>C</strong>:让 <em>Address</em> 遵循"C"调用约定.此选项通常省略, 因为在回调函数中标准调用约定更常用.</p></dd>
 
   <dt>ParamCount</dt>
   <dd><p><em>Address</em> 的调用者会传递给它的参数数目. 如果完全省略, 则它默认为 <em>FunctionName</em> 的 <a href="../Functions.htm#define">定义</a> 中强制参数的数目. 在这两种情况中, 必须确保调用者准确传递此数目的参数.</p></dd>
@@ -67,7 +67,7 @@ wParam := wParam &lt;&lt; 32 &gt;&gt; 32</pre>
 <pre>MyString := StrGet(MyParameter)  <em>; AHK_L 46+</em></pre>
 <p>如果某个传入参数为结构的地址, 则可以参照 <a href="DllCall.htm#struct">DllCall 结构</a> 中描述的步骤提取其中的各个成员.</p>
 
-<p id="Indirect"><span class="ver">[AHK_L 60+]:</span> 如果函数声明为 <a href="../Functions.htm#Variadic">可变参数的</a>, 那么它的最后一个参数被赋值为首个没有赋值给脚本参数的回调参数 <i>地址</i>. 例如：</p>
+<p id="Indirect"><span class="ver">[AHK_L 60+]:</span> 如果函数声明为 <a href="../Functions.htm#Variadic">可变参数的</a>, 那么它的最后一个参数被赋值为首个没有赋值给脚本参数的回调参数 <i>地址</i>. 例如:</p>
 <pre>
 callback := RegisterCallback("TheFunc", "F", 1)  <em>; 必须指定参数数目.</em>
 TheFunc("TheFunc was called directly.")          <em>; 直接调用 TheFunc.</em>

@@ -9,7 +9,7 @@
 </head>
 <body><h1>AutoHotkey_L 新特性</h1>
 
-<p>这个页面描述了新添加到 AutoHotkey_L 分支的功能,现在简称为“AutoHotkey 1.1”.</p>
+<p>这个页面描述了新添加到 AutoHotkey_L 分支的功能,现在简称为"AutoHotkey 1.1".</p>
 <p><strong>警告:</strong> 近年来本文档已被忽视,可能会丢失一些最近的变化.</p>
 
 <br><table class="info">
@@ -23,7 +23,7 @@
 <tr><td><a href="commands/Throw.htm">Throw</a></td><td>抛出异常.</td></tr>
 
 <tr><th id="commands">命令</th><th>&nbsp;</th></tr>
-<tr><td><a href="commands/FileEncoding.htm">FileEncoding</a></td><td>为<a href="commands/FileRead.htm">FileRead</a>、<a href="commands/FileReadLine.htm">FileReadLine</a>、<a href="commands/LoopReadFile.htm">Loop Read</a>、<a href="commands/FileAppend.htm">FileAppend</a>和<a href="commands/FileOpen.htm">FileOpen</a>设置默认编码.<br><i>也请参见:</i> <a href="#enc">文本编码</a></td></tr>
+<tr><td><a href="commands/FileEncoding.htm">FileEncoding</a></td><td>为<a href="commands/FileRead.htm">FileRead</a>,<a href="commands/FileReadLine.htm">FileReadLine</a>,<a href="commands/LoopReadFile.htm">Loop Read</a>,<a href="commands/FileAppend.htm">FileAppend</a>和<a href="commands/FileOpen.htm">FileOpen</a>设置默认编码.<br><i>也请参见:</i> <a href="#enc">文本编码</a></td></tr>
 <tr><td><a href="commands/Gui.htm">Gui</a></td><td>请参阅后面的 <a href="#GUI_Enhancements">GUI 增强</a>.</td></tr>
 <tr><td><a href="commands/IniRead.htm">IniRead</a>/<a href="commands/IniWrite.htm">Write</a>/<a href="commands/IniDelete.htm">Delete</a></td><td>读取, 写入或删除整段, 或获取所有段名称组成的列表.</td></tr>
 <tr><td><a href="commands/Menu.htm#MenuIcon">Menu, Icon</a></td><td>设置或移除菜单项图标.</td></tr>
@@ -57,7 +57,7 @@
 <tr><td><a href="commands/Throw.htm#Exception">Exception</a></td><td>创建用于 <a href="commands/Throw.htm">Throw</a> 的异常对象 (同时提供对堆栈的受限访问).</td></tr>
 <tr><td><a href="commands/FileOpen.htm">FileOpen</a></td><td>提供面向对象的文件 I/O.</td></tr>
 <tr><td><a href="Functions.htm#Func">Func</a></td><td>获取函数的<a href="Objects.htm#Function_References">引用</a>.</td></tr>
-<tr><td><a href="Functions.htm#GetKeyName">GetKeyName/VK/SC</a></td><td>获取按键的名称、文本、虚拟按键码或扫描码.</td></tr>
+<tr><td><a href="Functions.htm#GetKeyName">GetKeyName/VK/SC</a></td><td>获取按键的名称,文本,虚拟按键码或扫描码.</td></tr>
 <tr><td><a href="commands/InStr.htm">InStr</a></td><td>搜索字符串的<em>出现位置</em>, 从左边或右边开始.</td></tr>
 <tr><td><a href="Functions.htm#IsByRef">IsByRef</a></td><td>判断变量是否是 ByRef 参数.</td></tr>
 <tr><td><a href="Objects.htm">IsObject</a></td><td>判断某个值是否为对象.</td></tr>
@@ -77,7 +77,7 @@
 <tr><td>ComObject</td><td>请参阅上面的 ComObj 函数.</td></tr>
 
 <tr><th id="vars">变量</th><th>&nbsp;</th></tr>
-<tr><td>A_Is64bitOS</td><td>当操作系统为 64 位则值为 1（真）,为 32 位则为 0（假）.</td></tr>
+<tr><td>A_Is64bitOS</td><td>当操作系统为 64 位则值为 1(真),为 32 位则为 0(假).</td></tr>
 <tr><td>A_IsUnicode</td><td>在 Unicode 版本中, 此变量值为 1 (<i>true</i>). 在 ANSI 版本中此变量未定义, 所以等同为 <i>false</i>.</td></tr>
 <tr><td>A_FileEncoding</td><td>包含用于多种命令的默认编码,请参阅 <a href="commands/FileEncoding.htm">FileEncoding</a>.</td></tr>
 <tr><td>A_OSVersion</td><td>支持 Windows 7 和 Windows 8,请参阅 <a href="Variables.htm#OSVersion">A_OSVersion</a>.</td></tr>
@@ -108,7 +108,7 @@
 
 
 <h2 id="Error_Handling">错误处理</h2>
-<p>许多命令支持使用 <a href="commands/Try.htm">try</a>/<a href="commands/Catch.htm">catch</a> 代替 ErrorLevel 进行错误处理. 例如：</p>
+<p>许多命令支持使用 <a href="commands/Try.htm">try</a>/<a href="commands/Catch.htm">catch</a> 代替 ErrorLevel 进行错误处理. 例如:</p>
 <pre class="NoIndent">try
 {
     FileCopy, file1.txt, C:\folder
@@ -138,7 +138,7 @@ catch
 </ul>
 
 <h2 id="Static">静态变量</h2>
-<p>静态变量现在可以使用任意表达式进行初始化. 例如：</p>
+<p>静态变量现在可以使用任意表达式进行初始化. 例如:</p>
 <pre>Sleep 500
 MsgBox % Time() "ms since the script started."
 Time() {

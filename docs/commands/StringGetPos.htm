@@ -11,7 +11,7 @@
 
 <h1>StringGetPos</h1>
 
-<p>获取指定的子字符串在某个字符串中的位置。</p>
+<p>获取指定的子字符串在某个字符串中的位置.</p>
 
 <pre class="Syntax">StringGetPos, OutputVar, InputVar, SearchText [, L#|R#, Offset]
 Position := <a href="InStr.htm">InStr</a>(Haystack, Needle [, CaseSensitive?, StartingPos]) <em>; 请参阅 <a href="InStr.htm">InStr() 函数</a> 了解详情.</em></pre>
@@ -32,12 +32,12 @@ Position := <a href="InStr.htm">InStr</a>(Haystack, Needle [, CaseSensitive?, St
       <p>要查找非首个匹配, 请在字母 L 或 R 后面指定出现位置的编号. 例如, 要找到从右边开始的第四个匹配, 请指定 r4. 注意: 如果编号小于或等于零, 将找不到匹配.</p></dd>
 
   <dt>Offset</dt>
-  <dd><p>最左边或最右边 (取决于上面的参数) 需要跳过的字符数. 省略时默认为 0. 例如，后面的语句会从左边的第十个字符开始查找：<code>StringGetPos, OutputVar, InputVar, abc, , 9</code>。此参数可以为 <a href="../Variables.htm#Expressions">表达式</a>.</p></dd>
+  <dd><p>最左边或最右边 (取决于上面的参数) 需要跳过的字符数. 省略时默认为 0. 例如,后面的语句会从左边的第十个字符开始查找:<code>StringGetPos, OutputVar, InputVar, abc, , 9</code>.此参数可以为 <a href="../Variables.htm#Expressions">表达式</a>.</p></dd>
 
 </dl>
 
 <h3>ErrorLevel</h3>
-<p>在 <em>InputVar</em> 中的指定位置没有找到 <em>SearchText</em> 时 <a href="../misc/ErrorLevel.htm">ErrorLevel</a> 被置为 1，否则为 0。</p>
+<p>在 <em>InputVar</em> 中的指定位置没有找到 <em>SearchText</em> 时 <a href="../misc/ErrorLevel.htm">ErrorLevel</a> 被置为 1,否则为 0.</p>
 <h3>备注</h3>
 <p>与 <a href="StringMid.htm">StringMid</a> 和 <a href="InStr.htm">InStr()</a> 不同, StringGetPos 中首个字符的位置为 0.</p>
 <p>获取的位置总是相对于 <em>InputVar</em> 的首个字符, 不受 <em>L#|R#</em> 和/或 <em>Offset</em> 的值影响. 例如, 如果在 123abc789 中查找 "abc", 那么获取的位置总为 3, 而不论查找的参数如何.</p>

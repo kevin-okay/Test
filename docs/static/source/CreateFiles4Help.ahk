@@ -17,8 +17,10 @@ SetWorkingDir %A_ScriptDir%\..
 Overwrite("content.js", JQueryJS "`n" TreeJQueryJS "`n" TocJS "`n" IndexJS "`n" TranslateJS "`n" MainJS)
 Overwrite("content.chm.js", JQueryJS "`n" TranslateJS "`n" MainJS)
 SetWorkingDir %A_ScriptDir%\..\..\..
-Overwrite("Table of Contents.hhc", TOC_CreateHHC(TocJS))
-Overwrite("Index.hhk", INDEX_CreateHHK(IndexJS))
+
+;~ 不覆盖这两个文件
+;~ Overwrite("Table of Contents.hhc", TOC_CreateHHC(TocJS))
+;~ Overwrite("Index.hhk", INDEX_CreateHHK(IndexJS))
 return
 
 Overwrite(File, Text)

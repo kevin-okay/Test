@@ -11,7 +11,7 @@
 
 <h1>FileSetTime</h1>
 
-<p>改变一个或多个文件或文件夹的时间戳。支持通配符。</p>
+<p>改变一个或多个文件或文件夹的时间戳.支持通配符.</p>
 
 <pre class="Syntax">FileSetTime [, YYYYMMDDHH24MISS, FilePattern, WhichTime, OperateOnFolders?, Recurse?]</pre>
 <h3>参数</h3>
@@ -19,7 +19,7 @@
 
   <dt>YYYYMMDDHH24MISS</dt>
   <dd><p>如果为空或省略, 则它默认为当前时间. 否则, 指定操作使用的时间 (请参阅备注了解时间的格式). 不支持 1601 以前的年份.</p>
-    <p>此参数可以为 <a href="../Variables.htm#Expressions">表达式</a>. 因此, 如果需要连接多个变量来形成单个时间戳, 则应该使用 <a href="../Variables.htm#concat">点运算符</a> 代替百分号. 例如：<code>FileSetTime, Year <strong>.</strong> Month <strong>.</strong> Day, C:\My File.txt</code>。</p></dd>
+    <p>此参数可以为 <a href="../Variables.htm#Expressions">表达式</a>. 因此, 如果需要连接多个变量来形成单个时间戳, 则应该使用 <a href="../Variables.htm#concat">点运算符</a> 代替百分号. 例如:<code>FileSetTime, Year <strong>.</strong> Month <strong>.</strong> Day, C:\My File.txt</code>.</p></dd>
 
   <dt>FilePattern</dt>
   <dd><p>单个文件或文件夹的名称或者通配符模式, 例如 C:\Temp\*.tmp. 如果未指定绝对路径则假定 <em>FilePattern</em> 在 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a> 中.</p>
@@ -33,7 +33,7 @@
       <p>注: 如果 FilePattern 是单个文件夹而不是通配符模式, 那么总是忽略此设置.</p>
       <p>此参数可以为 <a href="../Variables.htm#Expressions">表达式</a>.</p></dd>
 
-  <dt>递归？</dt>
+  <dt>递归?</dt>
   <dd><p>0 (默认) 不对子文件夹进行递归.<br>递归子文件夹, 以便对包含在其中的匹配 <em>FilePattern</em> 的所有文件和文件夹进行操作. 将递归所有子文件夹, 而不仅是名称匹配 <em>FilePattern</em> 的那些. 但是, 文件和文件夹的完整路径和名称超过 259 个字符时, 这些文件和文件夹会被跳过, 就像它们不存在一样. 这样的文件很罕见, 因为操作系统一般不允许创建它们.</p>
       <p>此参数可以为 <a href="../Variables.htm#Expressions">表达式</a>.</p></dd>
 

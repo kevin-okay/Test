@@ -10,13 +10,13 @@
 
 <body>
 <h1>变更和新功能</h1>
-<p>下面列出了 AutoHotkey 当前开发分支（也称为 AutoHotkey_L）新增的功能。</p>
-<p>对于较旧的变更，请参阅<a href="ChangeLogHelp.htm">存档变更</a>。</p>
+<p>下面列出了 AutoHotkey 当前开发分支(也称为 AutoHotkey_L)新增的功能.</p>
+<p>对于较旧的变更,请参阅<a href="ChangeLogHelp.htm">存档变更</a>.</p>
 
 <!--new revisions go here-->
 <h2 id="v1.1.23.05">1.1.23.05 - 2016年3月27日</h2>
 <p>修复 InputBox, MsgBox, FileSelectFile 和 FileSelectFolder 命令在当Alt键被按下时会发送一个非预期的Alt-up出来. 这是由于在 v1.1.22.01 版本处理 Ctrl/Shift 时的错误导致的.</p>
-<p>改进 Ctrl/Shift 的工作方式,以避免在同时按下Ctrl、Shift或Alt键时不必要的掩盖了Win键.</p>
+<p>改进 Ctrl/Shift 的工作方式,以避免在同时按下Ctrl,Shift或Alt键时不必要的掩盖了Win键.</p>
 
 <h2 id="v1.1.23.04">1.1.23.04 - 2016年3月26日</h2>
 <p>修复 LV_Modify 以支持被忽略的参数, 如 <code>LV_Modify(r,, col1)</code>.</p>
@@ -27,7 +27,7 @@
 
 <h2 id="v1.1.23.02">1.1.23.02 - 2016年3月12日</h2>
 <p>修复 RegDelete 删除整个键值而非默认值.</p>
-<p>代码维护;一些代码体积的精简、提升.</p>
+<p>代码维护;一些代码体积的精简,提升.</p>
 
 <h2 id="v1.1.23.01">1.1.23.01 - 2016年1月24日</h2>
 <p>修复 理论上可能存在从畸形或太长的路径中无法载入脚本的问题.</p>
@@ -72,7 +72,7 @@
 <p>修复 Edit 控件中如果最后一行为空行也进行自动伸缩大小.</p>
 <p>修复 可响应 ComObj 函数的 内存不足 问题.</p>
 <p>修复 ComObjArray 直接忽略多余的参数而不会崩溃 (仅适用于动态调用).</p>
-<p>修复 GuiControl以“追加”的形式修改Tabs控件（而不是原来的直接替换，见<GuiControl>中的<Tab控制>说明）.</p>
+<p>修复 GuiControl以"追加"的形式修改Tabs控件(而不是原来的直接替换,见<GuiControl>中的<Tab控制>说明).</p>
 <p>修复 XP64 支持.</p>
 
 <h2 id="v1.1.22.05">1.1.22.05 - 2015年9月10日</h2>
@@ -117,7 +117,7 @@
 <p>添加SetErrorMode(SEM_FAILCRITICALERRORS)在程序启动时抑制系统级错误消息,例如"驱动器中没有磁盘".调用Drive或DriveGet不再影响进程的错误模式.</p>
 <p>变更MonthCal控件默认拥有tab-stop在Vista或更高系统中.</p>
 <p>改进ComObjConnect使用IProvideClassInfo,如果可用.</p>
-<p>修正了方法、属性定义和括号在同一行结束出现的一些问题.</p>
+<p>修正了方法,属性定义和括号在同一行结束出现的一些问题.</p>
 <p>修正Text/Link控件自动调整大小在+Border (WS_BORDER)样式情况下.</p>
 <p>修正<code>Break <i>N</i></code> 当loop直接跟在If/Else/Try/Catch后面的情况.</p>
 
@@ -143,7 +143,7 @@
 </ul>
 <p>添加<a href="Functions.htm#Ord">Ord()</a> 和更新Chr() 来支持补充字符(&gt;0xFFFF).</p>
 <p>添加<a href="commands/StringReplace.htm">StrReplace()</a>.</p>
-<p>移除RegRead的过时的5参数模式，这是为了兼容AutoIt v2（额外的参数是未使用的）.</p>
+<p>移除RegRead的过时的5参数模式,这是为了兼容AutoIt v2(额外的参数是未使用的).</p>
 <p>变更<a href="commands/RegRead.htm">RegRead</a>, <a href="commands/RegWrite.htm">RegWrite</a> and <a href="commands/RegDelete.htm">RegDelete</a>根键和子键参数可以随意组合.</p>
 
 <h2 id="v1.1.20.03">1.1.20.03 - 2015年3月21日</h2>
@@ -156,11 +156,11 @@
 <p>琐碎的优化和代码维护.</p>
 
 <h2 id="v1.1.20.01">1.1.20.01 - 2015年3月10日</h2>
-<p>由于在线程中断中的保存和恢复ErrorLevel上意想不到的后果，恢复v1.1.20.00所做的更改.</p>
+<p>由于在线程中断中的保存和恢复ErrorLevel上意想不到的后果,恢复v1.1.20.00所做的更改.</p>
 <ul>
-  <li>ErrorLevel在新线程开始时不会重置或清除, 反而,它保留了在中断线程的值，就像v1.1.19及早期版本.</li>
+  <li>ErrorLevel在新线程开始时不会重置或清除, 反而,它保留了在中断线程的值,就像v1.1.19及早期版本.</li>
   <li>如果ErrorLevel包含一个对象并且线程被中断,线程继续时对象替换为空字符串,就像v1.1.19及早期版本.</li>
-  <li>当线程继续时,如果ErrorLevel包含一个字符串的长度超过127个字符，它会被截断，就像v1.1.19及早期版本.</li>
+  <li>当线程继续时,如果ErrorLevel包含一个字符串的长度超过127个字符,它会被截断,就像v1.1.19及早期版本.</li>
 </ul>
 <p>修正定时器有时会导致ErrorLevel会被格式化成十六进制值.</p>
 <p>修正类方法保留类的计数引用.</p>
@@ -180,14 +180,14 @@
 <h4>变更:</h4>
 <p>改变默认表现当主脚本未找到时:</p>
 <ul>
-  <li>如果没有指定脚本和未找到默认脚本文件，则在显示帮助文件的欢迎页.</li>
-  <li>如果一个脚本被指定或帮助文件丢失（或被重命名），只显示一个错误信息.</li>
+  <li>如果没有指定脚本和未找到默认脚本文件,则在显示帮助文件的欢迎页.</li>
+  <li>如果一个脚本被指定或帮助文件丢失(或被重命名),只显示一个错误信息.</li>
 </ul>
 <p>变更WinActivate来还原已经激活且最小化的窗口.</p>
 <p>变更WinActivate来寻找一个可见窗口并激活当DetectHiddenWindows关闭且激活窗口是隐藏的时候,而不是什么事都不做.</p>
 <p>变更A_CaretX/A_CaretY的获取方法.</p>
 <ul>
-  <li>在更多的情况下真正的插入位置不能确定时返回空白，而不是返回活动窗口的左上角.</li>
+  <li>在更多的情况下真正的插入位置不能确定时返回空白,而不是返回活动窗口的左上角.</li>
   <li>不太可能产生副作用.</li>
   <li>在console窗口中生效.</li>  
 </ul>
@@ -198,7 +198,7 @@
   <li>用户自定义对象可以利用this来指定属性和元函数的参数的默认值.  在__Call中, 第一个参数被省略了,如<code>x.__Call(,y)</code>.</li>
   <li>COM对象调用 DISPID_VALUE如果成员名略. 例如, <code>x[]</code> 检索x的默认属性并且<code>fn[]()</code>可以用来调用JScript函数.</li>
 </ul>
-<p>一些底层的修改来修正bug，减少代码大小或者提高性能,包括:</p>
+<p>一些底层的修改来修正bug,减少代码大小或者提高性能,包括:</p>
 <ul>
   <li>变更#if和静态变量初始化的准备.</li>
   <li>变更{ 区块 }的准备.</li>
@@ -214,7 +214,7 @@
 <p>修正自适应大小GUI只有一个滚动条的情况.</p>
 <p>修正<code>Exception(m, n)</code> 当n太大时崩溃的情况.</p>
 <p>修正GuiContextMenu在x64平台上正确设置A_GuiEvent.</p>
-<p>修正如果文件不存在或无法打开，FileGetSize有时会给出一个不确定的结果.</p>
+<p>修正如果文件不存在或无法打开,FileGetSize有时会给出一个不确定的结果.</p>
 <p>修正线程中断时更完全地保存和恢复ErrorLevel[由于意想不到的结果在v1.1.20.01版本恢复].</p>
 <p>修正ControlClick坐标模式忽略被禁用的控件.</p>
 <p>修正当Gui +MaxSize的窗口尺寸小于+MinSize的奇怪状况.</p>
@@ -223,9 +223,9 @@
 
 <h2 id="v1.1.19.03">1.1.19.03 - 2015年2月11日</h2>
 <p>改进按键映射来支持<code>scXXX::Y</code> 当当前键盘布局不映射<code>scXXX</code>至VK码. 当然, <code>Y</code> 必须存在在当前键盘布局.</p>
-<p>修正<code>break n</code> 运转正常当当前是<code>until</code>的情况，而不是终止线程.</p>
+<p>修正<code>break n</code> 运转正常当当前是<code>until</code>的情况,而不是终止线程.</p>
 <p>修正ControlGetFocus破坏用户双击的能力(thanks HotKeyIt).</p>
-<p>修正ListView不调用g标签当消息事件是不支持或未知的情况，例如LVN_GETEMPTYMARKUP.</p>
+<p>修正ListView不调用g标签当消息事件是不支持或未知的情况,例如LVN_GETEMPTYMARKUP.</p>
 <p>修正<code>#Include *i &lt;X&gt;</code>当X语法错误时退出程序.</p>
 <p>修正<code>for var in <i>expression</i></code> 有时程序崩溃当<i>expression</i> 调用一个脚本函数时.</p>
 
@@ -233,13 +233,13 @@
 <p>移除Win9x/Win2k上的16色图标支持.</p>
 <p>移除单独的托盘图标资源.</p>
 <p>改进选择DLL/EXE文件图标尺寸的功能.</p>
-<ul><li>总之，宁愿降低尺寸而不是高档。这在125%或150% DPI系统特别有帮助.在系统图标的尺寸是20 / 40或24 / 48，而不是16 / 32。如果所有这些大小都存在于图标资源中，这种变化就没有什么区别。</li></ul>
+<ul><li>总之,宁愿降低尺寸而不是高档.这在125%或150% DPI系统特别有帮助.在系统图标的尺寸是20 / 40或24 / 48,而不是16 / 32.如果所有这些大小都存在于图标资源中,这种变化就没有什么区别.</li></ul>
 <p>修正热键在加载时验证出错的情况.</p>
 <ul>
-	<li>热键永远都不可用时，例如foo::，现在会视为错误而不是警告信息.</li>
-	<li>像^!&auml;::这样的热键是无效的因为当前键盘布局可以有相同的动作, 并且标签被正确注册(例如"^!&auml;"而不是"^!&auml;:"). 如果/ILIB命令行开关使用，警告被抑制.</li>
+	<li>热键永远都不可用时,例如foo::,现在会视为错误而不是警告信息.</li>
+	<li>像^!&auml;::这样的热键是无效的因为当前键盘布局可以有相同的动作, 并且标签被正确注册(例如"^!&auml;"而不是"^!&auml;:"). 如果/ILIB命令行开关使用,警告被抑制.</li>
 	<li>重映射是无效的因为当前键盘布局显示两个警告而不是不可恢复的错误.</li>
-	<li>当滚轮键被作为前缀键，只有一个错误消息而不是两个，这遵循/ErrorStdOut.</li>
+	<li>当滚轮键被作为前缀键,只有一个错误消息而不是两个,这遵循/ErrorStdOut.</li>
 </ul>
 <p>修正/iLib开关写入文件即使语法出错.</p>
 <p>修正return/break/continue/跑到try..<a href="commands/Finally.htm">finally</a>.</p>
@@ -288,11 +288,11 @@
 <p>添加ComObject包装的VT_BYREF支持.使用<code>obj[]</code>来访问参考值.</p>
 <h4>错误修复:</h4>
 <p>修正在XP SP2上的蓝屏.</p>
-<p>修正ComObjArray返回值,而不是指针. 也就是说，返回的数组的副本，而不是指向一个数组的指针，该数组将被删除.</p>
+<p>修正ComObjArray返回值,而不是指针. 也就是说,返回的数组的副本,而不是指向一个数组的指针,该数组将被删除.</p>
 <p>修正第一次运行在生成的示例脚本中的URL.</p>
 <p>修正<code>sc15D</code>映射到<code>vk5D</code>/AppsKey (Send, GetKeyName等等).</p>
 <p>修正Edit控件不接受AltGr+A作为Ctrl+A.</p>
-<p>修正静态类变量不作为一个标签的目标，该标签立即优先于类.</p>
+<p>修正静态类变量不作为一个标签的目标,该标签立即优先于类.</p>
 
 <h2 id="v1.1.16.05">1.1.16.05 - 2014年9月28日</h2>
 <p>修正x.y/[]/{}有时错误地被标记为variadic</p>
@@ -310,77 +310,77 @@
 <p>改进文件被打开的情况下FileGetSize的精度.</p>
 <p>改进for循环在COM对象中的表现.</p>
 
-<h2 id="v1.1.16.01">1.1.16.01 - 2014，9月10</h2>
-<p>支持在类中动态定义<a href="Objects.htm#Custom_Classes_property">属性</a>。</p>
-<p>为Gui控件定位增加x+m与y+m选项。</p>
-<p>为ListHotkeys（列出热键）中每个热键增加#InputLevel项。</p>
-<p>优化带O（对象）选项的RegExMatch（正则查找）。某些情况下，捕获长字符串较之前有极大提速。</p>
-<p>修正对象，当__Call结束时将检测新方法（与__Set及__Get一致）。</p>
-<p>修正一些VarSetCapacity失败后的未定义行为。</p>
-<p>修正FileRead，使正确报告文件超4GB时的错误，而非截断数据，即便不需要这部分数据时。</p>
-<p>修正FileRead *c，使当字节长度为奇数时，亦能正确的放置空结尾字符。</p>
-<p>修正ClipboardAll的问题，作如下改变：</p>
+<h2 id="v1.1.16.01">1.1.16.01 - 2014,9月10</h2>
+<p>支持在类中动态定义<a href="Objects.htm#Custom_Classes_property">属性</a>.</p>
+<p>为Gui控件定位增加x+m与y+m选项.</p>
+<p>为ListHotkeys(列出热键)中每个热键增加#InputLevel项.</p>
+<p>优化带O(对象)选项的RegExMatch(正则查找).某些情况下,捕获长字符串较之前有极大提速.</p>
+<p>修正对象,当__Call结束时将检测新方法(与__Set及__Get一致).</p>
+<p>修正一些VarSetCapacity失败后的未定义行为.</p>
+<p>修正FileRead,使正确报告文件超4GB时的错误,而非截断数据,即便不需要这部分数据时.</p>
+<p>修正FileRead *c,使当字节长度为奇数时,亦能正确的放置空结尾字符.</p>
+<p>修正ClipboardAll的问题,作如下改变:</p>
 <ul>
-  <li><a href="commands/_ClipboardTimeout.htm">#ClipboardTimeout</a>被GetClipboardData()忽略，之前它也并未实际发挥作用却导致问题。本修正解决剪切板为文件时（Windows 8中的任何文件，及zip或类似东西中的文件），超时及丢失数据的问题。</li>
-  <li>为零长度剪切板内容分配1字节再返还给剪切板，之前设置为零长度似乎有问题。</li>
-  <li>由Scintilla设置的MSDEVColumnSelect / MSDEVLineSelec将被保持，但由VS设置的任何数据将被丢弃。</li>
-  <li>当直接将ClipboardAll写至文件时，将优先使用Unicode（ClipboardAll的其他使用情况自v1.1.08起便如此）。</li>
-  <li>Unicode版本中当ClipboardAll及FileRead *c数据长度为奇数时，将向上取整到最近的偶数。因此，由StrLen返回的结果可能被加1，避免可能对最后一个字节的截断。</li>
+  <li><a href="commands/_ClipboardTimeout.htm">#ClipboardTimeout</a>被GetClipboardData()忽略,之前它也并未实际发挥作用却导致问题.本修正解决剪切板为文件时(Windows 8中的任何文件,及zip或类似东西中的文件),超时及丢失数据的问题.</li>
+  <li>为零长度剪切板内容分配1字节再返还给剪切板,之前设置为零长度似乎有问题.</li>
+  <li>由Scintilla设置的MSDEVColumnSelect / MSDEVLineSelec将被保持,但由VS设置的任何数据将被丢弃.</li>
+  <li>当直接将ClipboardAll写至文件时,将优先使用Unicode(ClipboardAll的其他使用情况自v1.1.08起便如此).</li>
+  <li>Unicode版本中当ClipboardAll及FileRead *c数据长度为奇数时,将向上取整到最近的偶数.因此,由StrLen返回的结果可能被加1,避免可能对最后一个字节的截断.</li>
 </ul>
-<p>修正带负屏幕坐标值的TreeView控件的A_EventInfo值。</p>
-<p>修正ListView/TreeView消息筛选中可能的问题。</p>
-<p>修正A_LineFile / A_LineNumber在#If表达式中（无法正确返回设计值）的问题。</p>
-<p>修正#If，被添加到ListLines中（将显示为If）。</p>
-<p>修正<code>Abs(["-"]*)</code>及类似情况下的崩溃问题。</p>
-<p>修正全局中<code>} funcdef(){</code>及<code>}}</code>结尾的方法/属性/类。</p>
-<h2 id="v1.1.15.04">1.1.15.04 - 2014，8月12</h2>
-<p>修正性能问题：<code>&amp;变量包含长数值字符串</code>。</p>
-<p>修正问题：当内置变量被赋值为对象时，会破坏内存数据。</p>
-<p>修正解析器，以禁止某些代码中的<code>continue</code>命令，即便当前函数定义在Loop内。</p>
-<p>修正错误，<code>File.Encoding := x "-RAW"</code>打断对非ASCII字符的编码/解码。<code>-RAW</code>后缀被略过。</p>
+<p>修正带负屏幕坐标值的TreeView控件的A_EventInfo值.</p>
+<p>修正ListView/TreeView消息筛选中可能的问题.</p>
+<p>修正A_LineFile / A_LineNumber在#If表达式中(无法正确返回设计值)的问题.</p>
+<p>修正#If,被添加到ListLines中(将显示为If).</p>
+<p>修正<code>Abs(["-"]*)</code>及类似情况下的崩溃问题.</p>
+<p>修正全局中<code>} funcdef(){</code>及<code>}}</code>结尾的方法/属性/类.</p>
+<h2 id="v1.1.15.04">1.1.15.04 - 2014,8月12</h2>
+<p>修正性能问题:<code>&amp;变量包含长数值字符串</code>.</p>
+<p>修正问题:当内置变量被赋值为对象时,会破坏内存数据.</p>
+<p>修正解析器,以禁止某些代码中的<code>continue</code>命令,即便当前函数定义在Loop内.</p>
+<p>修正错误,<code>File.Encoding := x "-RAW"</code>打断对非ASCII字符的编码/解码.<code>-RAW</code>后缀被略过.</p>
 
 <h2 id="v1.1.15.03">1.1.15.03 - 2014 年 8 月 2 日</h2>
-<p>修正使用 Exit 或 Throw 后元函数不正常退出线程的问题。</p>
-<p>修正非编译脚本中 FileInstall 的 Dest 为相对路径时使用 A_WorkingDir 的问题。</p>
+<p>修正使用 Exit 或 Throw 后元函数不正常退出线程的问题.</p>
+<p>修正非编译脚本中 FileInstall 的 Dest 为相对路径时使用 A_WorkingDir 的问题.</p>
 
 <h2 id="v1.1.15.02">1.1.15.02 - 2014 年 7 月 7 日</h2>
-<p>修正调试对象中负整数键的问题。</p>
+<p>修正调试对象中负整数键的问题.</p>
 
 <h2 id="v1.1.15.01">1.1.15.01 - 2014 年 6 月 30 日</h2>
-<p>改变内置的错误和警告对话框为置顶。</p>
-<p>修正 <code>Until</code> 不会从递归的文件和注册表循环中中断的错误。</p>
+<p>改变内置的错误和警告对话框为置顶.</p>
+<p>修正 <code>Until</code> 不会从递归的文件和注册表循环中中断的错误.</p>
 
 <h2 id="v1.1.15.00">1.1.15.00 - 2014 年 5 月 4 日</h2>
-<p>添加 A_OSVersion 值 <code>WIN_8.1</code>。</p>
-<p>改变 Hotkey 命令根据是否存在<a href="Hotkeys.htm#Tilde">颚化符（~）前缀</a>应用或移除热键已有变体的穿透行为。</p>
-<p>改变 exe manifest 以允许 <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms724439">GetVersion</a>/<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms724451">GetVersionEx</a> 检测到 Windows 8.1。</p>
+<p>添加 A_OSVersion 值 <code>WIN_8.1</code>.</p>
+<p>改变 Hotkey 命令根据是否存在<a href="Hotkeys.htm#Tilde">颚化符(~)前缀</a>应用或移除热键已有变体的穿透行为.</p>
+<p>改变 exe manifest 以允许 <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms724439">GetVersion</a>/<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms724451">GetVersionEx</a> 检测到 Windows 8.1.</p>
 
 <h2 id="v1.1.14.04">1.1.14.04 - 2014 年 4 月 25 日</h2>
-<p>修正当 <em>Function</em> 为纯整数 0 时 DllCall() 会让脚本崩溃的问题。</p>
-<p>修正 <code>IsFunc("ComObj(")</code> 返回错误而不抛出异常的问题。</p>
-<p>修正 ControlClick 发送 XButton1/XButton2 时存在的问题。</p>
+<p>修正当 <em>Function</em> 为纯整数 0 时 DllCall() 会让脚本崩溃的问题.</p>
+<p>修正 <code>IsFunc("ComObj(")</code> 返回错误而不抛出异常的问题.</p>
+<p>修正 ControlClick 发送 XButton1/XButton2 时存在的问题.</p>
 
 <h2 id="v1.1.14.03">1.1.14.03 - 2014 年 2 月 14 日</h2>
-<p>修正当 &lt;c10&gt;X.__Init</code> 中止线程时 <code>new X</code> 中内存泄漏的问题。</p>
-<p>修正当断点散布在方法定义中时会转移到类变量初始化位置的问题。</p>
+<p>修正当 &lt;c10&gt;X.__Init</code> 中止线程时 <code>new X</code> 中内存泄漏的问题.</p>
+<p>修正当断点散布在方法定义中时会转移到类变量初始化位置的问题.</p>
 
 <h2 id="v1.1.14.02">1.1.14.02 - 2014 年 1 月 30 日</h2>
-<p>修正 <code>x::</code> 和 <code>x up::</code>，当 x 作为修饰键被阻止在按下触发时则让它们都在弹起时才触发。在 v1.1.14 中的预期行为是当 x 还用于自定义组合键（如 <code>x &amp; y::</code>）的时候，则 x 的单独热键和组合键都会在弹起时触发。</p>
+<p>修正 <code>x::</code> 和 <code>x up::</code>,当 x 作为修饰键被阻止在按下触发时则让它们都在弹起时才触发.在 v1.1.14 中的预期行为是当 x 还用于自定义组合键(如 <code>x &amp; y::</code>)的时候,则 x 的单独热键和组合键都会在弹起时触发.</p>
 
 <h2 id="v1.1.14.01">1.1.14.01 - 2014 年 1 月 15 日</h2>
-<p>修正不带 Catch/Finally 的 Try 过程中无异常抛出时崩溃的错误。</p>
+<p>修正不带 Catch/Finally 的 Try 过程中无异常抛出时崩溃的错误.</p>
 
 <h2 id="v1.1.14.00">1.1.14.00 - 2014 年 1 月 15 日</h2>
-<p>增加 <a href="commands/Finally.htm">Finally</a> 语句用于 try/catch 后的清理操作。[fincs]</p>
-<p><b>改变</b>自定义组合键中 <a href="Hotkeys.htm#Tilde">~ 前缀</a>的行为，使之更直观。</p>
-<p>修正 <code>x &amp; y::</code> 热键中，在释放x时会触发 <code>x::</code> 和 <code>x up::</code> 热键的问题。</p>
-<p>修正 ImageSearch，当 GDI 调用失败时设置 ErrorLevel=2（而非0）。</p>
-<p>修正 EnvGet，当变量超过 32767 个字符时致使程序崩溃的问题。</p>
-<p>修正在 StatusBarWait 的 ErrorLevel 中一个小的错误处理缺陷。</p>
-<p>修正 ANSI 版本中 FileRead *c 存在的堆损坏。</p>
-<p>修正递归调用中传递局部变量到可变参数函数。</p>
-<p>修正脚本第一行为小括号括住的表达式时，脚本加载失败的问题。</p>
-<p>修正 PixelSearch 快速模式，使其仅在成功时才设置 OutputVarX/Y。</p>
+<p>增加 <a href="commands/Finally.htm">Finally</a> 语句用于 try/catch 后的清理操作.[fincs]</p>
+<p><b>改变</b>自定义组合键中 <a href="Hotkeys.htm#Tilde">~ 前缀</a>的行为,使之更直观.</p>
+<p>修正 <code>x &amp; y::</code> 热键中,在释放x时会触发 <code>x::</code> 和 <code>x up::</code> 热键的问题.</p>
+<p>修正 ImageSearch,当 GDI 调用失败时设置 ErrorLevel=2(而非0).</p>
+<p>修正 EnvGet,当变量超过 32767 个字符时致使程序崩溃的问题.</p>
+<p>修正在 StatusBarWait 的 ErrorLevel 中一个小的错误处理缺陷.</p>
+<p>修正 ANSI 版本中 FileRead *c 存在的堆损坏.</p>
+<p>修正递归调用中传递局部变量到可变参数函数.</p>
+<p>修正脚本第一行为小括号括住的表达式时,脚本加载失败的问题.</p>
+<p>修正 PixelSearch 快速模式,使其仅在成功时才设置 OutputVarX/Y.</p>
 
 <h2 id="v1.1.13.01">1.1.13.01 - 2013年10月11日</h2>
 <p>修复 用已命名值调用带参可变函数.</p>

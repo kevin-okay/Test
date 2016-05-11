@@ -12,7 +12,7 @@
 
 <h1>常见问题(FAQ)</h1>
 
-<p>如果您的问题没有在后面列出，请查看社区维护的页面 <a href="http://www.autohotkey.net/~faqbot/faq.html">FAQ on autoHotkey.net</a>.</p>
+<p>如果您的问题没有在后面列出,请查看社区维护的页面 <a href="http://www.autohotkey.net/~faqbot/faq.html">FAQ on autoHotkey.net</a>.</p>
 
 <h3>语言语法</h3>
 <ul>
@@ -25,7 +25,7 @@
   <li><a href="#autoexec">为什么我脚本中的某些行总是无法执行?</a></li>
   <li><a href="#vista">为什么我的脚本在 XP 运行良好却无法工作于 Windows <em>xxx</em> ?</a></li>
   <li><a href="#uac">我该如何处理用 户账户控制 (UAC) 导致的问题?</a></li>
-  <li><a href="#DefaultScript">我想通过托盘图标编辑脚本，但它只显示一个错误. 能在其他位置找到我的脚本吗?</a></li>
+  <li><a href="#DefaultScript">我想通过托盘图标编辑脚本,但它只显示一个错误. 能在其他位置找到我的脚本吗?</a></li>
   <li><a href="#Debug">如何查找代码中的错误并修改呢?</a></li>
   <li><a href="#run">为什么 Run 命令不能启动我的游戏或程序?</a></li>
   <li><a href="#games">为什么在某些游戏中热字串, Send 和 MouseClick 不起作用?</a></li>
@@ -46,10 +46,10 @@
   <li><a href="#ControlSend">如何发送文本到不活跃或隐藏的窗口?</a></li>
   <li><a href="#winamp">如何控制 Winamp, 即使在它未激活时?</a></li>
   <li><a href="#msgbox">如何改变 MsgBox 的按钮名称?</a></li>
-  <li><a href="#DefaultEditor">如何改变默认编辑器，即通过上下文菜单或托盘图标打开的那个?</a></li>
+  <li><a href="#DefaultEditor">如何改变默认编辑器,即通过上下文菜单或托盘图标打开的那个?</a></li>
   <li><a href="#GuiSubmit">如何保存 GUI 关联变量的内容?</a></li>
   <li><a href="#GDIPlus">如何用 AHK 描绘?</a></li>
-  <li><a href="#WinWaitAction">如何在窗口出现、关闭或变成(不)活跃时执行操作?</a></li>
+  <li><a href="#WinWaitAction">如何在窗口出现,关闭或变成(不)活跃时执行操作?</a></li>
 </ul>
 <h3>热键, 热字串和重映射</h3>
 <ul>
@@ -68,23 +68,23 @@
 
 <h2>语言语法</h2>
 <h3 id="quotes">什么时候需要在命令和它们的参数中使用引号?</h3>
-<p>双引号 (") 仅在 <a href="Variables.htm#Expressions">表达式</a> 中具有特殊的含义. 在其他的所有地方, 它们像普通字符一样被原义对待. 不过，当脚本启动程序或文档时，操作系统通常要求要用引号把含空格的命令行参数括起来，例如：<code>Run, Notepad.exe "C:\My Documents\Address List.txt"</code>. </p>
+<p>双引号 (") 仅在 <a href="Variables.htm#Expressions">表达式</a> 中具有特殊的含义. 在其他的所有地方, 它们像普通字符一样被原义对待. 不过,当脚本启动程序或文档时,操作系统通常要求要用引号把含空格的命令行参数括起来,例如:<code>Run, Notepad.exe "C:\My Documents\Address List.txt"</code>. </p>
 <h3 id="percent">什么时候需要将变量名括在百分号中?</h3>
 <p>除了下面用 <strong>粗体</strong> 表示的情况外, 变量名总是要括在百分号中:</p>
 <p>1) 在参数中的输入或输出变量: <code><a href="commands/StringLen.htm">StringLen</a>, <strong>OutputVar</strong>, <strong>InputVar</strong></code><br>
   2) 在赋值表达式的左侧: <code><strong>Var</strong> = 123abc</code><br>
   3) 在 <a href="commands/IfEqual.htm">传统 (非表达式) if 语句</a> 的左侧: <code>If <strong>Var1</strong> &lt; %Var2%</code><br>
-4) 在<a href="Variables.htm#Expressions">表达式</a> 中的任意位置. 例如：</p>
+4) 在<a href="Variables.htm#Expressions">表达式</a> 中的任意位置. 例如:</p>
 <pre>If (<strong>Var1</strong> &lt;&gt; <strong>Var2</strong>)
     <strong>Var1 <a href="commands/SetExpression.htm">:=</a> Var2</strong> + 100</pre>
 <h3 id="esc">什么时候应该对百分号和逗号进行 <a href="commands/_EscapeChar.htm">转义</a>?</h3>
 <p>原义的百分号必须在它们前面加重音符/反引号进行 <a href="commands/_EscapeChar.htm">转义</a>. 例如: <code>MsgBox The current percentage is 25`%.</code> 原义的逗号也必须进行转义 (<code>`,</code>), 除非在 <a href="commands/MsgBox.htm">MsgBox</a> 或任何命令的最后一个参数 (在这种情况下可以使用重音符但不是必须的) 使用时.</p>
-<p> 在 <a href="Variables.htm#Expressions">表达式</a> 中逗号或百分号括在引号中时, 可以使用这样重音符但不是必须的. 例如：<code>Var := "15%"</code>. </p>
+<p> 在 <a href="Variables.htm#Expressions">表达式</a> 中逗号或百分号括在引号中时, 可以使用这样重音符但不是必须的. 例如:<code>Var := "15%"</code>. </p>
 
 <h2>General Troubleshooting</h2>
 <h3 id="autoexec">为什么我脚本中的某些行总是无法执行?</h3>
 <p>任何想在脚本启动时立即执行的行都应该出现在脚本的顶部, 要在首个 <a href="Hotkeys.htm">热键</a>, <a href="Hotstrings.htm">热字串</a> 或 <a href="commands/Return.htm">Return</a> 之前. 更多细节请参阅<a href="Scripts.htm#auto">自动执行部分</a>. </p>
-<p>还有, 含有多行执行语句的 <a href="Hotkeys.htm">热键</a> 必须把它的首行写在热键的 <em>下面</em> 而不能在同一行. 例如：</p>
+<p>还有, 含有多行执行语句的 <a href="Hotkeys.htm">热键</a> 必须把它的首行写在热键的 <em>下面</em> 而不能在同一行. 例如:</p>
 <pre>#space::  <em>; Win+空格键</em>
 Run Notepad
 WinWaitActive Untitled - Notepad
@@ -100,7 +100,7 @@ return</pre>
 <p>If you've switched operating systems, it is likely that something else has also changed and may be affecting your script. For instance, if you've got a new computer, it might have different drivers or other software installed. If you've also updated to a newer version of AutoHotkey, find out which version you had before and then check the <a href="AHKL_ChangeLog.htm">changelog</a> and <a href="Compat.htm">compatibility notes</a>.</p>
 <p><a href="commands/SoundGet.htm">SoundGet</a>, <a href="commands/SoundSet.htm">SoundSet</a>, <a href="commands/SoundGetWaveVolume.htm">SoundGetWaveVolume</a> and <a href="commands/SoundSetWaveVolume.htm">SoundSetWaveVolume</a> behave differently on Vista and later than on earlier versions of Windows. In particular, device numbers are different and some components may be unavailable. Behaviour depends on the audio drivers, which are necessarily different to the ones used on XP. The <a href="commands/SoundSet.htm#Ex">soundcard analysis script</a> can be used to find the correct device numbers.</p>
 <p>Also refer to the following question:</p>
-<p>从 XP 迁移到 Vista 或更高版本的 Windows 的常见问题是热键操作需要较高的权限或拒绝被自动化. 至少有三种变通解决方法：</p>
+<p>从 XP 迁移到 Vista 或更高版本的 Windows 的常见问题是热键操作需要较高的权限或拒绝被自动化. 至少有三种变通解决方法:</p>
 <h3 id="uac">How do I work around problems caused by User Account Control (UAC)?</h3>
 <p><a href="http://windows.microsoft.com/en-US/windows7/What-is-User-Account-Control">User Account Control (UAC)</a> is a common cause of problems, especially when moving from Windows XP/Vista/7 to Vista/7/8/10. Although it is present in Windows Vista and later, it is enabled by default on new systems or new installs, and it is more difficult to disable on Windows 8 and later.</p>
 <p>By default, UAC protects "elevated" programs (that is, programs which are running as admin) from being automated by non-elevated programs, since that would allow them to bypass security restrictions. Hotkeys are also blocked, so for instance, a non-elevated program cannot spy on input intended for an elevated program.</p>
@@ -112,7 +112,7 @@ return</pre>
   <li>关闭<a href="http://windows.microsoft.com/en-US/windows7/What-is-User-Account-Control">用户账户控制</a>(不推荐),在 Windows 8 或之后的版本您还必须禁用"以管理员核准模式运行所有管理员(Run all administrators in Admin Approval Mode)"安全设置(也不推荐). </li>
   <li>Disable UAC completely. This is not recommended, and is not feasible on Windows 8 or later.</li>
 </ul>
-<p><a href="commands/SoundGet.htm">SoundGet</a>、<a href="commands/SoundSet.htm">SoundSet</a>、<a href="commands/SoundGetWaveVolume.htm">SoundGetWaveVolume</a> 和 <a href="commands/SoundSetWaveVolume.htm">SoundSetWaveVolume</a> 的功能在 Vista 及更高版本的 Windows 中比起以前的系统有变化. 尤其是设备号不一样了,一些组件也无法使用. 具体行为决定于音频驱动,它肯定与 XP 中使用的不同. 该<a href="commands/SoundSet.htm#Ex">声卡分析脚本</a>可用于找到正确的设备号. </p>
+<p><a href="commands/SoundGet.htm">SoundGet</a>,<a href="commands/SoundSet.htm">SoundSet</a>,<a href="commands/SoundGetWaveVolume.htm">SoundGetWaveVolume</a> 和 <a href="commands/SoundSetWaveVolume.htm">SoundSetWaveVolume</a> 的功能在 Vista 及更高版本的 Windows 中比起以前的系统有变化. 尤其是设备号不一样了,一些组件也无法使用. 具体行为决定于音频驱动,它肯定与 XP 中使用的不同. 该<a href="commands/SoundSet.htm#Ex">声卡分析脚本</a>可用于找到正确的设备号. </p>
 <h3 id="DefaultScript">我想通过托盘图标编辑脚本,但它只显示一个错误. 能在其他位置找到我的脚本吗?</h3>
 <p>您必须首先修复您脚本中的错误才能找回AHK的系统托盘图标.但是首先您必须找到您的脚本.</p>
 <p>请在下面的文件夹中寻找 AutoHotkey.ahk 文件:</p>
@@ -127,14 +127,14 @@ return</pre>
 <h3 id="Debug">如何查找代码中的错误并修改呢?</h3>
 <p>对于简单的脚本,请参阅<a href="Scripts.htm#debug">调试脚本</a>. 要查看变量的内容,请使用 <a href="commands/MsgBox.htm">MsgBox</a> 或 <a href="commands/ToolTip.htm">ToolTip</a>. 对于复杂的脚本,请参阅<a href="Scripts.htm#idebug">交互式调试</a>. </p>
 <h3 id="USB">可以在 USB 驱动器中运行 AHK 代码吗?</h3>
-<p>请参阅<a href="Scripts.htm#port">AutoHotkey.exe 的可移植性</a>. 需要注意,如果您使用自动包含的函数库,AutoHotkey.exe 和 Lib 文件夹必须在 Ahk2Exe.exe 的上一级目录(例如分别为 \AutoHotkey.exe 和 \Compiler\Ahk2Exe.exe). 还需注意 Ahk2Exe 保存设置到注册表的下列位置： <code>HKEY_CURRENT_USER\Software\AutoHotkey\Ahk2ExeCommand</code>. </p>
+<p>请参阅<a href="Scripts.htm#port">AutoHotkey.exe 的可移植性</a>. 需要注意,如果您使用自动包含的函数库,AutoHotkey.exe 和 Lib 文件夹必须在 Ahk2Exe.exe 的上一级目录(例如分别为 \AutoHotkey.exe 和 \Compiler\Ahk2Exe.exe). 还需注意 Ahk2Exe 保存设置到注册表的下列位置: <code>HKEY_CURRENT_USER\Software\AutoHotkey\Ahk2ExeCommand</code>. </p>
 <h3 id="run">为什么 <a href="commands/Run.htm">Run</a> 命令不能启动我的游戏或程序?</h3>
-<p>有些程序需要在它们自己的目录下运行 (不能确定时, 通常最好这样做). 例如：</p>
+<p>有些程序需要在它们自己的目录下运行 (不能确定时, 通常最好这样做). 例如:</p>
 <pre>Run, %A_ProgramFiles%\Some Application\App.exe, %A_ProgramFiles%\Some Application</pre>
 <p>If the program you are trying to start is in <code>%A_WinDir%\System32</code> and you are using AutoHotkey 32-bit on a 64-bit system, the <a href="https://msdn.microsoft.com/en-us/library/aa384187">File System Redirector</a> may be interfering. To work around this, use <code>%A_WinDir%\SysNative</code> instead; this is a virtual directory only visible to 32-bit programs running on 64-bit systems.</p>
 
 <h3 id="output">如何获取命令行操作的输出?</h3>
-<p>测试显示, 由于文件缓存的原因, 对于较少量的输出, 使用临时文件获取会非常快. 事实上, 如果在使用后立即删除文件, 通常它并没有被真正地写到磁盘上. 例如：</p>
+<p>测试显示, 由于文件缓存的原因, 对于较少量的输出, 使用临时文件获取会非常快. 事实上, 如果在使用后立即删除文件, 通常它并没有被真正地写到磁盘上. 例如:</p>
 <pre><a href="commands/Run.htm">RunWait</a> %comspec% /c dir &gt; C:\My Temp File.txt
 FileRead, VarToContainContents, C:\My Temp File.txt
 FileDelete, C:\My Temp File.txt</pre>
@@ -181,7 +181,7 @@ return</pre>
 <p>为此 Rajat 创建了 <a href="scripts/ContextSensitiveHelp.htm">此脚本</a>.</p>
 <h3 id="load">如何检测一个网页何时加载完毕?</h3>
 <p>对于 Internet Explorer, 可能最可靠的方法是使用 DllCall 和 COM, 正如 <a href="http://www.autohotkey.com/forum/topic19256.html">www.autohotkey.com/forum/topic19256.html</a> 所演示的. 相关提示, 通过 <a href="http://www.autohotkey.com/forum/topic19255.html">www.autohotkey.com/forum/topic19255.html</a> 演示的方法可以获取地址栏和状态栏的内容.</p>
-<p><strong>旧的、较不可靠的方法：</strong>下面示例中的技术对使用 MS Internet Explorer 打开大部分页面时都有效. 类似的技术对于其他的浏览器可能也有效:</p>
+<p><strong>旧的,较不可靠的方法:</strong>下面示例中的技术对使用 MS Internet Explorer 打开大部分页面时都有效. 类似的技术对于其他的浏览器可能也有效:</p>
 <pre>Run, www.yahoo.com
 MouseMove, 0, 0  <em>; 防止状态栏显示鼠标悬停处的链接而不显示 "完毕".</em>
 WinWait, Yahoo!-
@@ -192,7 +192,7 @@ if ErrorLevel
 else
    MsgBox The page is done loading.</pre>
 <h3 id="time">如何比较或操作日期与时间?</h3>
-<p><a href="commands/EnvAdd.htm">EnvAdd</a> 命令可以对 <a href="commands/FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a> 格式的时间字符串加上或减去一些天数, 小时数, 分钟数或秒数. 后面的例子从指定的时间中减去 7 天：<code>EnvAdd, VarContainingTimestamp, -7, days</code>. </p>
+<p><a href="commands/EnvAdd.htm">EnvAdd</a> 命令可以对 <a href="commands/FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a> 格式的时间字符串加上或减去一些天数, 小时数, 分钟数或秒数. 后面的例子从指定的时间中减去 7 天:<code>EnvAdd, VarContainingTimestamp, -7, days</code>. </p>
 <p>要计算两个日期或时间之间的间隔, 请参阅 <a href="commands/EnvSub.htm">EnvSub</a>, 其中给出了一个示例. 此外, 内置变量 <a href="Variables.htm#Now">A_Now</a> 包含了当前的本地时间. 最后, 还有许多内置的 <a href="Variables.htm#date">日期/时间变量</a>, 以及用来创建自定义日期/时间字符串的 <a href="commands/FormatTime.htm">FormatTime</a> 命令.</p>
 <h3 id="SendDate">如何发送当前的日期和时间?</h3>
 <p>使用 <a href="commands/FormatTime.htm">FormatTime</a> 或<a href="Variables.htm#date">内置的日期和时间变量</a>. </p>
@@ -203,7 +203,7 @@ else
 <p>有一些替代方法,请试试下面提及的方案. 如果这些都无效,那么 AHK 可能不适用于您的游戏. 一些游戏含有防止反破解和作弊的措施,如 GameGuard 和 Hackshield. 如果是,则 AutoHotkey 很可能无法用于该游戏. </p>
 <ul>
   <li>
-  <p>通过 <a href="commands/Send.htm#SendPlay">SendPlay</a> 命令、<a href="commands/SendMode.htm">SendMode Play</a> 或 <a href="Hotstrings.htm">热字串选项 SP</a> 使用 SendPlay. </p>
+  <p>通过 <a href="commands/Send.htm#SendPlay">SendPlay</a> 命令,<a href="commands/SendMode.htm">SendMode Play</a> 或 <a href="Hotstrings.htm">热字串选项 SP</a> 使用 SendPlay. </p>
   <pre>SendPlay, abc</pre>
   <pre>SendMode, Play
 Send, abc</pre>
@@ -213,15 +213,15 @@ Send, abc</pre>
 
 #Hotstring SP
 ::btw::by the way</pre>
-  <p>注：SendPlay 在启用了用户账户控制的 Windows Vista 或更高版本中可能没有效果,即使以管理员运行脚本. </p>
+  <p>注:SendPlay 在启用了用户账户控制的 Windows Vista 或更高版本中可能没有效果,即使以管理员运行脚本. </p>
   </li>
   <li>
-  <p>使用 <a href="commands/SetKeyDelay.htm">SetKeyDelay</a> 增加延迟. 例如：</p>
+  <p>使用 <a href="commands/SetKeyDelay.htm">SetKeyDelay</a> 增加延迟. 例如:</p>
   <pre>SetKeyDelay, 0, 50
 SetKeyDelay, 0, 50, Play</pre>
   </li>
   <li>
-  <p>试试 <a href="commands/ControlSend.htm">ControlSend</a>,在其他 Send 模式无效时它可能行：</p>
+  <p>试试 <a href="commands/ControlSend.htm">ControlSend</a>,在其他 Send 模式无效时它可能行:</p>
   <pre>ControlSend,, abc, game_title</pre>
   </li>
   <li>
@@ -229,7 +229,7 @@ SetKeyDelay, 0, 50, Play</pre>
   <pre>Send {KEY down}{KEY up}</pre>
   </li>
   <li>
-  <p>试试在按键的按下事件和弹起事件之间使用 <a href="commands/ControlSend.htm">Sleep</a>：</p>
+  <p>试试在按键的按下事件和弹起事件之间使用 <a href="commands/ControlSend.htm">Sleep</a>:</p>
   <pre>Send {KEY down}
 Sleep 10 <em>; 试试不同的毫秒数</em>
 Send {KEY Up}</pre>
@@ -242,7 +242,7 @@ Send {KEY Up}</pre>
 <h3 id="DefaultEditor">如何改变默认编辑器,即通过上下文菜单或托盘图标打开的那个?</h3>
 <p>在 <a href="commands/Edit.htm">Edit</a> 的示例部分可以找到能让您改变默认编辑器的脚本. </p>
 <h3 id="GuiSubmit">如何保存 GUI 关联变量的内容?</h3>
-<p>请使用 <a href="commands/Gui.htm#Submit">Gui Submit</a>. 例如：</p>
+<p>请使用 <a href="commands/Gui.htm#Submit">Gui Submit</a>. 例如:</p>
 <pre>Gui, Add, Text,, Enter some Text and press Submit:
 Gui, Add, Edit, vAssociatedVar
 Gui, Add, Button,, Submit
@@ -255,8 +255,8 @@ MsgBox, Content of the edit control: %AssociatedVar%
 Return</pre>
 <h3 id="GDIPlus">如何用 AHK 画点什么东西?</h3>
 <p>请参阅 tic 写的 <a href="http://www.autohotkey.com/forum/topic32238.html">GDI+ standard library</a> . 它可以通过一些基本方法方法有限的使用 Gui. </p>
-<h3 id="WinWaitAction">如何在窗口出现、关闭或变成(不)活跃时执行操作?</h3>
-<p>使用 <a href="commands/WinWait.htm">WinWait</a>、<a href="commands/WinWaitClose.htm">WinWaitClose</a> 或 <a href="commands/WinWaitActive.htm">WinWait[Not]Active</a>. 请参阅<a href="http://www.autohotkey.net/~faqbot/faq.html#window">社区驱动的常见问题</a>(窗口部分)了解更多. </p>
+<h3 id="WinWaitAction">如何在窗口出现,关闭或变成(不)活跃时执行操作?</h3>
+<p>使用 <a href="commands/WinWait.htm">WinWait</a>,<a href="commands/WinWaitClose.htm">WinWaitClose</a> 或 <a href="commands/WinWaitActive.htm">WinWait[Not]Active</a>. 请参阅<a href="http://www.autohotkey.net/~faqbot/faq.html#window">社区驱动的常见问题</a>(窗口部分)了解更多. </p>
 <h3 id="Virus">我的杀毒软件把 AHK 归为恶意软件. 它真的含病毒吗?</h3>
 <p>当然不是病毒. 杀毒软件可能把 AHK 误识别为恶意软件(false positive 假设是),原因是脚本在编译时使用了压缩工具,如 UPX (AHK 1.0 的默认设置,在 AHK 1.1 中被移除) 或 MPRESS (在 AHK 1.1 中是可选的)这种压缩工具可以减小编译后可执行文件的大小.如果您不想要压缩,则应该在编译时不使用压缩工具,这样您和其他潜在用户的反病毒程序就不会误报了.</p>
 <h2>热键, 热字串和重映射</h2>
@@ -277,13 +277,13 @@ Return</pre>
 <h3 id="Remap">如何将按键或鼠标按钮重映射成其他键?</h3>
 <p>解决的方法在 <a href="misc/Remap.htm">重映射</a> 页面说明了.</p>
 <h3 id="DoublePress">如何检测按键或按钮的双击?</h3>
-<p>像下面那样使用<a href="Variables.htm#h">可用于热键的内置变量</a>：</p>
+<p>像下面那样使用<a href="Variables.htm#h">可用于热键的内置变量</a>:</p>
 <pre>~Ctrl::
     if (A_ThisHotkey = A_PriorHotkey &amp;&amp; A_TimeSincePriorHotkey &lt; 200)
         MsgBox double-press
 return</pre>
 <h3 id="HotContext">如何让 <a href="Hotkeys.htm">热键</a> 或 <a href="Hotstrings.htm">热字串</a> 只在特定的程序中有效? 换句话说, 在特定的窗口不活动时我想让特定的按键执行它原来的功能.</h3>
-<p>首选的方法是使用 <a href="commands/_IfWinActive.htm">#IfWinActive</a>. 例如：</p>
+<p>首选的方法是使用 <a href="commands/_IfWinActive.htm">#IfWinActive</a>. 例如:</p>
 <pre>#IfWinActive, ahk_class Notepad
 ^a::MsgBox You pressed Control-A while Notepad is active.
 </pre>

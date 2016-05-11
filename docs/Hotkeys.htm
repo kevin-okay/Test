@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>热键（鼠标、操纵杆和键盘快捷键）</title>
+<title>热键(鼠标,操纵杆和键盘快捷键)</title>
 <meta name="description" content="使用键盘, 鼠标和操纵杆创建热键, 快捷键和宏的免费工具可以组合任意按键和鼠标按钮为热键.">
 <meta name="keywords" content="hotkey,hotkeys,hot key,hot keys,shortcut,shortcuts,shortcut key,shortcut keys,keyboard shortcut,keyboard shortcuts,button,buttons,click,press">
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
@@ -31,9 +31,9 @@
 <pre>#n::
 Run Notepad
 return</pre>
-<p>在前面的最后一行中，<code><a href="commands/Return.htm">return</a></code> 用来结束此热键。不过, 如果热键只需要执行单行语句, 那么此行可以直接放在双冒号的右边. 换句话说，<code>return</code> 可以省略：</p>
+<p>在前面的最后一行中,<code><a href="commands/Return.htm">return</a></code> 用来结束此热键.不过, 如果热键只需要执行单行语句, 那么此行可以直接放在双冒号的右边. 换句话说,<code>return</code> 可以省略:</p>
 <pre>#n::Run Notepad</pre>
-<p>要在热键中使用多个修饰键, 那么需要把它们连续地列出来 (顺序无关紧要). 下面的例子中使用 <code>^!s</code> 来表示 Control+Alt+S：</p>
+<p>要在热键中使用多个修饰键, 那么需要把它们连续地列出来 (顺序无关紧要). 下面的例子中使用 <code>^!s</code> 来表示 Control+Alt+S:</p>
 <pre>^!s::
 <a href="commands/Send.htm">Send</a> Sincerely,{enter}John Smith  <em>; 此行发送键击到活动 (最前面的) 窗口.</em>
 return</pre>
@@ -45,7 +45,7 @@ return</pre>
   </tr>
   <tr>
     <td><strong>#</strong></td>
-    <td>Win (Windows 徽标键). 在 v1.0.48.01+, 对于 Windows Vista 及以上版本, 包含 Windows 键的热键 (例如 #a) 会等待 Windows 键被释放后才发送任何包含 "L" 键击的文本. 这样避免了这种热键中的 <a href="commands/Send.htm">Send</a> 锁定 PC。这种行为适用于除 <a href="commands/Send.htm#SendPlayDetail">SendPlay</a> (这里不需要) 和 <a href="commands/Send.htm#blind">盲从模式</a> 外的所有发送模式.</td>
+    <td>Win (Windows 徽标键). 在 v1.0.48.01+, 对于 Windows Vista 及以上版本, 包含 Windows 键的热键 (例如 #a) 会等待 Windows 键被释放后才发送任何包含 "L" 键击的文本. 这样避免了这种热键中的 <a href="commands/Send.htm">Send</a> 锁定 PC.这种行为适用于除 <a href="commands/Send.htm#SendPlayDetail">SendPlay</a> (这里不需要) 和 <a href="commands/Send.htm#blind">盲从模式</a> 外的所有发送模式.</td>
   </tr>
   <tr>
     <td><strong>!</strong></td>
@@ -73,7 +73,7 @@ return</pre>
   </tr>
   <tr id="AltGr">
     <td><strong>&lt;^&gt;!</strong></td>
-    <td><p>AltGr (alternate graving). 如果您键盘布局中含 AltGr 键而非右 Alt 键，那么这一系列符号一般可用于表示 AltGr。例如：</p>
+    <td><p>AltGr (alternate graving). 如果您键盘布局中含 AltGr 键而非右 Alt 键,那么这一系列符号一般可用于表示 AltGr.例如:</p>
       <pre>&lt;^&gt;!m::MsgBox You pressed AltGr+m.
 &lt;^&lt;!m::MsgBox You pressed LeftControl+LeftAlt+m.</pre>
       <p>或者, 让 AltGr 自己成为热键, 请使用下面的热键 (不像上面出现的任何热键):</p>
@@ -81,18 +81,18 @@ return</pre>
   </tr>
   <tr id="wildcard">
     <td><strong>*</strong></td>
-    <td><p>通配符: 即使附加的修饰键被按住也能激发热键. 这常与 <a href="misc/Remap.htm">重映射</a> 按键或按钮组合使用. 例如：</p>
-      <pre>*#c::Run Calc.exe  <em>; Win+C、Shift+Win+C、Ctrl+Win+C 等都会触发此热键.</em>
+    <td><p>通配符: 即使附加的修饰键被按住也能激发热键. 这常与 <a href="misc/Remap.htm">重映射</a> 按键或按钮组合使用. 例如:</p>
+      <pre>*#c::Run Calc.exe  <em>; Win+C,Shift+Win+C,Ctrl+Win+C 等都会触发此热键.</em>
 *ScrollLock::Run Notepad  <em>; 即使在按住其他修饰键时按下 ScrollLock 也会触发此热键.</em></pre></td>
   </tr>
   <tr id="Tilde">
     <td><strong>~</strong></td>
-    <td><p>激发热键时，不会屏蔽（被操作系统隐藏）热键中按键原有的功能.在下面的两个例子中, 用户的鼠标按钮点击会被发送到活动窗口:</p>
+    <td><p>激发热键时,不会屏蔽(被操作系统隐藏)热键中按键原有的功能.在下面的两个例子中, 用户的鼠标按钮点击会被发送到活动窗口:</p>
       <pre>~RButton::MsgBox You clicked the right mouse button.
 ~RButton &amp; C::MsgBox You pressed C while holding down the right mouse button.</pre>
       <p>与其他前缀符号不同,可以在某些热键的 <a href="commands/_IfWinActive.htm#variant">变体</a> 中使用波浪号前缀而其他的不使用. 然而,如果应用于波浪号 <a href="#prefix">前缀</a> 的任何自定义组合键没有被关闭或暂停,它会影响那个前缀键在 <em>所有</em> 组合中的行为.</p>
       <p>用于替代 <a href="#alttab">alt-tab</a> 的特殊按键总是忽略波浪号前缀.</p>
-      <p><span class="ver">[v1.1.14+]:</span> 如果把波浪号 (<a href="#prefix">前缀键</a>) 用在自定义修饰键中且此修饰键自身也作为热键,则在按下此修饰键时会触发热键而不会被延迟到按键释放的时候.例如,上文中 <em>~RButton</em> 热键在按下此按键时就会触发.对于 v1.1.14 之前的版本（或未使用波浪号前缀）, 则会在按键释放时触发其自身的热键, 不过仅在未触发 <em>RButton &amp; C</em> 组合键的时候.</p>
+      <p><span class="ver">[v1.1.14+]:</span> 如果把波浪号 (<a href="#prefix">前缀键</a>) 用在自定义修饰键中且此修饰键自身也作为热键,则在按下此修饰键时会触发热键而不会被延迟到按键释放的时候.例如,上文中 <em>~RButton</em> 热键在按下此按键时就会触发.对于 v1.1.14 之前的版本(或未使用波浪号前缀), 则会在按键释放时触发其自身的热键, 不过仅在未触发 <em>RButton &amp; C</em> 组合键的时候.</p>
       <p>如果波浪号前缀应用于自定义组合而非不可组合键, 按键的原生功能将持续锁定. 例如, 下面的脚本, 按住 AppsKey 键将会一直显示一个 ToolTip 而不会触发上下文菜单:</p>
       <pre>AppsKey::ToolTip Press &lt; or &gt; to cycle through windows.
 AppsKey Up::ToolTip
@@ -114,8 +114,8 @@ AppsKey Up::ToolTip
       <pre>*LWin::Send {LControl Down}
 *LWin <strong>Up</strong>::Send {LControl Up}
 </pre>
-      <p>“Up”也可以用于普通热键中,例如: <code>^!r Up::MsgBox You pressed and released Ctrl+Alt+R</code>.它还可以用在<a href="#combo">组合键</a>（例如 <code>F1 &amp; e Up::</code>）</p>      
-      <p>限制:1) “Up” 不能和 <a href="KeyList.htm">游戏杆按钮</a> 一起使用；2) 在没有普通/按下热键副本的 “Up” 热键会完全接管那个按键以防被卡住.避免这种情况的一种方法是添加<a href="#Tilde">波浪号前缀</a>(例如 <code><strong>~</strong>LControl up::</code>)</p>
+      <p>"Up"也可以用于普通热键中,例如: <code>^!r Up::MsgBox You pressed and released Ctrl+Alt+R</code>.它还可以用在<a href="#combo">组合键</a>(例如 <code>F1 &amp; e Up::</code>)</p>      
+      <p>限制:1) "Up" 不能和 <a href="KeyList.htm">游戏杆按钮</a> 一起使用；2) 在没有普通/按下热键副本的 "Up" 热键会完全接管那个按键以防被卡住.避免这种情况的一种方法是添加<a href="#Tilde">波浪号前缀</a>(例如 <code><strong>~</strong>LControl up::</code>)</p>
 	  <p>相关提示, 类似于上面的一种技术是让热键成为前缀键. 好处是尽管热键会在按键松开时激发, 但仅在您之前按住此前缀键时没有按其他任何键的情况下才会如此. 例如:</p>
       <pre>LControl &amp; F1::return  <em>; 通过把左 control 键放在 "&amp;" 前面至少一次来让它成为前缀键.</em>
 LControl::MsgBox You released LControl without having used it to modify any other key.</pre></td>
@@ -208,7 +208,7 @@ KeyWait Control
 KeyWait Alt
 Send {Delete}
 return</pre>
-<p>如果像 <code>#z::</code> 这样的热键标签产生了类似“无效热键”的错误,那么您的系统键盘布局/语言可能不包含特殊字符（此时为“Z”）.尝试使用您键盘布局中您知道的其他字符.</p>
+<p>如果像 <code>#z::</code> 这样的热键标签产生了类似"无效热键"的错误,那么您的系统键盘布局/语言可能不包含特殊字符(此时为"Z").尝试使用您键盘布局中您知道的其他字符.</p>
 <p>热键标签可以作为 <a href="commands/Gosub.htm">Gosub</a> 或 <a href="commands/Goto.htm">Goto</a> 的目标. 例如:<code>Gosub ^!s</code>.</p>
 <p>热键的一个常见用途是启动和停止重复的动作, 例如一系列的键击或鼠标点击. 关于这方面的例子, 请参阅 <a href="FAQ.htm#repeat">这个 FAQ 主题</a>.</p>
 <p>最后, 每个脚本都是 <a href="misc/Threads.htm">准多线程的</a>, 这样可以在之前的热键子程序还在运行时启动新的热键. 例如, 即使在当前热键显示 <a href="commands/MsgBox.htm">MsgBox</a> 时也能启动新热键.</p>
@@ -256,7 +256,7 @@ return</pre>
             else
                 Run explorer.exe "%path1%"
     }</pre>
-<p>在热键标签或者标签和函数之间仅允许空白、注释或者指令. 没有热键的标签被创建通过这种定义方式; 然而 <a href="Scripts.htm#auto">自动执行段</a> 结束再第一个热键就算关联了函数.</p>
+<p>在热键标签或者标签和函数之间仅允许空白,注释或者指令. 没有热键的标签被创建通过这种定义方式; 然而 <a href="Scripts.htm#auto">自动执行段</a> 结束再第一个热键就算关联了函数.</p>
 <p>这种方式的主要好处是可以使用局部变量从而避免两个或两个以上的热键使用相同的变量名.它也鼓励自我记录热键就像上面的代码在函数内描述热键.</p>
 <p><a href="commands/Hotkey.htm">Hotkey</a>也可以关联函数或函数对象.</p>
 

@@ -27,7 +27,7 @@
   <dd><p>(可选的) 在循环期间保持打开的文件的名称, 如果未指定绝对路径则假定在 <a href="../Variables.htm#WorkingDir">%A_WorkingDir%</a> 中.</p>
       <p>在循环体内, 使用仅带一个参数 (写入的文本) 的 <a href="FileAppend.htm">FileAppend</a> 命令来追加文本到此指定的文件. 以这种方式追加文本到文件比使用 2 个参数模式的 <a href="FileAppend.htm">FileAppend</a> 执行地更好, 因为每次操作时不需要关闭文件再重新打开. 如果需要, 记得在写入的文本后加上换行符 (`n).</p>
       <p>如果没有写入内容到此文件, 那么它不会被打开. 当 Loop 的循环次数为零或其循环体中没有使用 <a href="FileAppend.htm">FileAppend</a> 命令时会发生这种情况.</p>
-          <p><strong>行结束 (EOL) 转换</strong>: 在文件名前面加上星号可禁用 EOL 转换. 这使得每个换行符 (`n) 作为单个换行符 (LF) 而不是 Windows 标准的 CR+LF 写入. 例如：<code><strong>*</strong>C:\My Unix File.txt</code>. 即使没有星号, 如果 Loop 中<u>首次</u>使用 <a href="FileAppend.htm">FileAppend</a> 时写入任何回车和换行符对(`r`n),这时EOL 转换也会自动禁止.</p>
+          <p><strong>行结束 (EOL) 转换</strong>: 在文件名前面加上星号可禁用 EOL 转换. 这使得每个换行符 (`n) 作为单个换行符 (LF) 而不是 Windows 标准的 CR+LF 写入. 例如:<code><strong>*</strong>C:\My Unix File.txt</code>. 即使没有星号, 如果 Loop 中<u>首次</u>使用 <a href="FileAppend.htm">FileAppend</a> 时写入任何回车和换行符对(`r`n),这时EOL 转换也会自动禁止.</p>
       <p><strong>标准输出 (stdout)</strong>: 指定 <em>OutputFile</em> 为星号 (*) 可以把 <a href="FileAppend.htm">FileAppend</a> 写入的任何文本发送到标准输出 (stdout). 尽管这样的输出可以重定向到文件, 指向另一个 EXE 的管道或被 <a href="_ErrorStdOut.htm">高级文本编辑器</a> 捕获, 然而它不会出现在运行它的命令提示符中. 请参阅 <a href="FileAppend.htm">FileAppend</a> 了解详细信息.</p>
       <p><strong>逗号转义</strong>: 与其他大多数命令的最后一个参数不同, 在 <em>OutputFile</em> 中的逗号必须进行转义 (`,).</p></dd>
 
@@ -47,7 +47,7 @@
 }</pre>
 <p>要加载整个文件内容到变量中, 使用 <a href="FileRead.htm">FileRead</a>, 因为它比循环执行的更好 (尤其对于大文件).</p>
 <p>要同时打开多个文件, 请参考 <a href="DllCall.htm#file">此例</a> 使用 DllCall().</p>
-<p>请参阅 <a href="Loop.htm">Loop</a> 了解关于<a href="Block.htm">区块</a>、<a href="Break.htm">Break</a>、<a href="Continue.htm">Continue</a> 和 A_Index 变量(其存在于各种类型的循环中)的相关信息.</p>
+<p>请参阅 <a href="Loop.htm">Loop</a> 了解关于<a href="Block.htm">区块</a>,<a href="Break.htm">Break</a>,<a href="Continue.htm">Continue</a> 和 A_Index 变量(其存在于各种类型的循环中)的相关信息.</p>
 <p>在不存在字节顺序标记时要控制如何解码文件, 使用 <a href="FileEncoding.htm">FileEncoding</a>.</p>
 
 <h3>相关</h3>
@@ -123,24 +123,24 @@ Loop
 if URLStart = -1  <em>; 在 URLSearchString 中不存在网址.</em>
     return
 
-<em>; 否则,提取该网址：</em>
+<em>; 否则,提取该网址:</em>
 StringTrimLeft, URL, URLSearchString, %URLStart%  <em>; 忽略开始/无效部分.</em>
-Loop, parse, URL, %A_Tab%%A_Space%&lt;&gt;  <em>; 找到首个空格、tab 或尖括号(如果有).</em>
+Loop, parse, URL, %A_Tab%%A_Space%&lt;&gt;  <em>; 找到首个空格,tab 或尖括号(如果有).</em>
 {
     URL = %A_LoopField%
-    break  <em>; 即仅执行一次循环来获取首个“片段”.</em>
+    break  <em>; 即仅执行一次循环来获取首个"片段".</em>
 }
 <em>; 如果没有找到结束字符而在上面的循环中没有执行循环体,
 ; 那么保持网址变量的内容不变.</em>
 
 ; <em>如果网址以双引号结束,那么移除它.暂时使用 StringReplace,不过注意
 ; 双引号似乎可以合法存在于网址中,所以这样做
-; 可能破坏它们：</em>
+; 可能破坏它们:</em>
 StringReplace, URLCleansed, URL, ",, All
 FileAppend, %URLCleansed%`n
 LinkCount += 1
 
-<em>; 看看当前行中是否含有其他网址：</em>
+<em>; 看看当前行中是否含有其他网址:</em>
 StringLen, CharactersToOmit, URL
 CharactersToOmit += %URLStart%
 StringTrimLeft, URLSearchString, URLSearchString, %CharactersToOmit%
