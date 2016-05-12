@@ -4,9 +4,15 @@
 #Warn, UseUnsetLocal, Off
 
 Include_CpTransform()
-
 delHead()
 
+SetWorkingDir, %A_ScriptDir%
+FileCopy, _forReplace\content.js, docs\static\, 1
+FileCopy, _forReplace\content.chm.js, docs\static\, 1
+FileCopy, _forReplace\CreateFiles4Help.ahk, docs\static\source\, 1
+FileCopy, _forReplace\Index.hhk, %A_ScriptDir%, 1
+FileCopy, _forReplace\Project.hhp, %A_ScriptDir%, 1
+FileCopy, _forReplace\Table of Contents.hhc, %A_ScriptDir%, 1
 ExitApp
 return
 
@@ -14,43 +20,45 @@ delHead()
 {
    Loop, %A_ScriptDir%\*.htm, , 1
    {
-       _fEncoding := File_GetEncoding(A_LoopFileFullPath)
-       
-      ;~ utf8+bom,需要改为 utf8 no bom
-      if (_fEncoding = 4)
+      _fEncoding := File_GetEncoding(A_LoopFileFullPath)
+
+      ;~ a to u
+      if (_fEncoding = 1)
       {
-          File_CpTransform(A_LoopFileFullPath, "b", "a")
+         File_CpTransform(A_LoopFileFullPath, "a", "b")
       }
-      
-      ;~ utf8 no bom,改为ANSI
+      ;~ u to b
       else if (_fEncoding = 6)
       {
-          File_CpTransform(A_LoopFileFullPath, "u", "a")
-         
+         File_CpTransform(A_LoopFileFullPath, "u", "b")
       }
-      
+
       FileRead, content, % A_LoopFileFullPath
       FileDelete, % A_LoopFileFullPath
-      
-      _newContent := ""      
-      
+
+      _newContent := ""
+
       ;~ 解析内容
       loop, Parse, % content, `n, `r
       {
          _line := A_LoopField
-         
+
          if (A_Index < 10)
          {
-            if (_line ~= "i)charset=iso-8859-1")
+            if (_line ~= "i)\<meta.+?iso-8859-1")
             {
-               _line := RegExReplace(_line,"charset=iso-8859-1","charset=gb2312")
+               _line := RegExReplace(_line, "i)iso-8859-1", "UTF-8")
+            }
+            if (_line ~= "i)\<meta.+?gb2312")
+            {
+               _line := RegExReplace(_line, "i)gb2312", "UTF-8")
             }
          }
          _newContent .= _line "`n"
       }
       ;~ 删除最后的换行符
       _newContent := SubStr(_newContent, 1 , -1)
-      FileAppend, % _newContent, % A_LoopFileFullPath
+      FileAppend, % _newContent, % A_LoopFileFullPath, cp65001
       ToolTip, %A_Index% %A_LoopFileFullPath% 完成
    }
    Trace("替换头部完成", 3)
@@ -86,10 +94,10 @@ go_change1()
          }
          _newContent .= A_LoopField "`n"
       }
-      
+
       ;~ 删除最后的换行符
       _newContent := SubStr(_newContent, 1 , -1)
-      
+
       FileAppend, % _newContent, % A_LoopFileFullPath
    }
    Trace("第一步完成")
