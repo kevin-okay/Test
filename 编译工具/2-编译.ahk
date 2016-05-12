@@ -12,6 +12,9 @@ if (FileExist("AutoHotkey.chm"))
    FileDelete, AutoHotkey.chm
 }
 
+FileCopy, _forReplace\Index.hhk, %A_ScriptDir%, 1
+FileCopy, _forReplace\Project.hhp, %A_ScriptDir%, 1
+FileCopy, _forReplace\Table of Contents.hhc, %A_ScriptDir%, 1
 ;~ go_change1()
 ;~ Convert_cp_4chinese()
 

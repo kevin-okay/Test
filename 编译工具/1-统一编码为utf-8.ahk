@@ -10,9 +10,6 @@ SetWorkingDir, %A_ScriptDir%
 FileCopy, _forReplace\content.js, docs\static\, 1
 FileCopy, _forReplace\content.chm.js, docs\static\, 1
 FileCopy, _forReplace\CreateFiles4Help.ahk, docs\static\source\, 1
-FileCopy, _forReplace\Index.hhk, %A_ScriptDir%, 1
-FileCopy, _forReplace\Project.hhp, %A_ScriptDir%, 1
-FileCopy, _forReplace\Table of Contents.hhc, %A_ScriptDir%, 1
 ExitApp
 return
 
