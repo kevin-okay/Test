@@ -1346,15 +1346,15 @@ index = [
 ];
 
 translate = {
-  hdSearchTxt: "Enter search term ...",
-  hdSearchBtn: "Search",
-  hdSearchLnk: "http://www.google.com/cse?cx=010629462602499112316:ywoq_rufgic&q={0}",
-  sbContent: "Content",
-  sbIndex: "Index",
+  hdSearchTxt: "AutoHotkey",
+  hdSearchBtn: "搜索",
+  hdSearchLnk: "https://www.baidu.com/s?wd={0}",
+  sbContent: "目录",
+  sbIndex: "索引",
   ftLicense: "License:",
   ftExtra: "",
-  cdSelectBtn: "Select",
-  cdDownloadBtn: "Download",
+  cdSelectBtn: "选择",
+  cdDownloadBtn: "下载",
   verToolTipAHK_L: "Applies to:\nAutoHotkey_L Revision {0} and later\nAutoHotkey v1.0.90.00 and later",
   verToolTipDefault: "Applies to AutoHotkey {0} and later",
   tutLocalMessage: "Since you're viewing this documentation locally, you've probably already installed AutoHotkey and can skip to section b."
@@ -1481,7 +1481,7 @@ function AddContent()
 
     var en = 'http://ahkscript.org/docs/';
     var de = 'http://ragnar-f.github.io/docs/';
-    var cn = 'http://ahkcn.sourceforge.net/docs/';
+    var cn = 'http://fjxhkj.github.io/ahk_doc/zh-cn/docs/';
 
     $('#lng-btn-en').on('click', function() { document.location = en + relPath; } );
     $('#lng-btn-de').on('click', function() { document.location = de + relPath; } );
