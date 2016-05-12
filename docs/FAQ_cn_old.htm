@@ -79,7 +79,7 @@
     <strong>Var1 <a href="commands/SetExpression.htm">:=</a> Var2</strong> + 100</pre>
 <h3 id="esc">什么时候应该对百分号和逗号进行 <a href="commands/_EscapeChar.htm">转义</a>?</h3>
 <p>原义的百分号必须在它们前面加重音符/反引号进行 <a href="commands/_EscapeChar.htm">转义</a>. 例如: <code>MsgBox The current percentage is 25`%.</code> 原义的逗号也必须进行转义 (<code>`,</code>), 除非在 <a href="commands/MsgBox.htm">MsgBox</a> 或任何命令的最后一个参数 (在这种情况下可以使用重音符但不是必须的) 使用时.</p>
-<p> 在 <a href="Variables.htm#Expressions">表达式</a> 中逗号或百分号括在引号中时, 可以使用这样重音符但不是必须的. 例如:<code>Var := "15%"</code>. </p>
+<p> 在 <a href="Variables.htm#Expressions">表达式</a> 中逗号或百分号括在引号中时, 可以使用这样重音符但不是必须的. 例如:<code>Var := &quot;15%&quot;</code>. </p>
 
 <h2>General Troubleshooting</h2>
 <h3 id="autoexec">为什么我脚本中的某些行总是无法执行?</h3>
@@ -90,7 +90,7 @@ Run Notepad
 WinWaitActive Untitled - Notepad
 WinMaximize
 return</pre>
-<h3 id="vista">为什么我的脚本在 XP 运行良好却无法工作于 Windows 7 或 8?</h3>
+<h3 id="vista">为什么我的脚本在 Windows <em>xxx</em> 运行良好却无法工作于 Windows 7 或更高的版本?</h3>
 <p>因为您已经换了操作系统,很可能某些影响脚本的东西也改变了. 例如,当您换了新电脑,那么它和旧电脑有些地方是不一样的. 如果您同时更新了 AutoHotkey 的版本,那么请看看新版本的<a href="AHKL_ChangeLog.htm">更新日志</a>和<a href="Compat.htm">兼容性提示</a>以找出新旧版本的区别. </p>
 <ul>
   <li>I've upgraded my computer/Windows and now my script won't work.</li>
@@ -213,7 +213,7 @@ Send, abc</pre>
 
 #Hotstring SP
 ::btw::by the way</pre>
-  <p>注:SendPlay 在启用了用户账户控制的 Windows Vista 或更高版本中可能没有效果,即使以管理员运行脚本. </p>
+  <p>注: SendPlay 在启用了用户账户控制的 Windows Vista 或更高版本中可能没有效果,即使以管理员运行脚本. </p>
   </li>
   <li>
   <p>使用 <a href="commands/SetKeyDelay.htm">SetKeyDelay</a> 增加延迟. 例如:</p>
@@ -225,7 +225,7 @@ SetKeyDelay, 0, 50, Play</pre>
   <pre>ControlSend,, abc, game_title</pre>
   </li>
   <li>
-  <p>试试在多种发送方式中使用按键的按下和弹起事件. </p>
+  <p>试试在多种发送方式中使用按键的按下和弹起事件: </p>
   <pre>Send {KEY down}{KEY up}</pre>
   </li>
   <li>
