@@ -51,7 +51,7 @@
   <tr><td style="width:15%"><i>NumType</i></td><td>指定下列各项的其中一个直接作为函数名称的一部分:<br>UInt, Int, Int64, Short, UShort, Char, UChar, Double 或 Float.</td></tr>
   <tr><td><b>返回值</b></td><td>成功时返回数字, 否则返回空字符串.</td></tr>
 </table>
-<p>如果使用 Try 语句且没有读取任何字节时, 将抛出异常. 但是, 如果读取到最后一个字节则不会抛出异常, 即使 <i>NumType</i> 的设定值大于读取的字节数. 作为替代, 丢失的字节假设为零.</p></div>
+<p>如果使用 Try 语句且没有读取任何字节时将抛出异常. 但是, 如果读取到任何字节则不会抛出异常, 即使 <i>NumType</i> 的设定值大于读取的字节数. 不足位用0填充.</p></div>
 
 <div class="methodShort" id="WriteNum"><h2>Write<i>Num</i></h2>
 <p>写入指定类型的数据到文件并使文件指针向前移动.</p>
