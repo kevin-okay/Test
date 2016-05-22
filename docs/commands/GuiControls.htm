@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>GUI 控件类型</title>
-<meta http-equiv="content-type" content="text/html; charset=GB2312">
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -19,7 +19,7 @@
   <li><a href="#ListBox">ListBox</a>, <a href="ListView.htm">ListView</a>, <a href="TreeView.htm">TreeView</a></li>
   <li><a href="#Link">Link</a>, <a href="#Hotkey">Hotkey</a>, <a href="#DateTime">DateTime</a></li>
   <li><a href="#MonthCal">MonthCal</a>, <a href="#Slider">Slider</a>, <a href="#Progress">Progress</a></li>
-  <li><a href="#GroupBox">GroupBox</a>, <a href="#Tab">Tab2</a>, <a href="#StatusBar">StatusBar</a></li>
+  <li><a href="#GroupBox">GroupBox</a>, <a href="#Tab">Tab3</a>, <a href="#StatusBar">StatusBar</a></li>
   <li><a href="#ActiveX">ActiveX</a> (例如 Internet Explorer Control)</li>
   <li><a href="#Custom">定制</a></li>
 </ul>
@@ -298,10 +298,17 @@ SS: Second 秒 00</p>
 <pre>Gui, Add, GroupBox, w400 h300, Geographic Criteria</pre>
 <p>默认情况下, 组合框的标题可以只有一行文本. 在选项中指定 <code>Wrap</code> 可以改变此特性.</p>
 <p>要指定控件中的行数 (或高度和宽度), 请参阅 <a href="Gui.htm#PosSize">控件的位置和大小</a>.</p>
-<span id="Tab2"></span><h2 id="Tab">Tab2</h2>
+
+<span id="Tab2"></span><h2 id="Tab">Tab3</h2>
 <p>描述: 一个大的包含多个页面的控件, 其中的每个包含其他控件. 从此以后, 这些页面被称为 "选项卡".</p>
-<p><strong>Tab2 与 Tab 的异同</strong>: v1.0.47.05 添加了 "Tab2" 控件, 其中修复了原 "Tab" 控件中很少出现的重绘问题 (例如通过点击 GUI 窗口中控件的某个部分 (如滚动条) 来激活窗口时, 可能无法正确重绘). 为了向后兼容而保留了原 Tab 控件, 因为 Tab2 在 tab 键导航顺序中把它的选项卡控件放在它所包含的控件之后. 新脚本应尽可能使用 Tab2. 例如:</p>
-<pre>Gui, Add, Tab2,, General|View|Appearance|Settings</pre>
+<p>There are three types of Tab control:</p>
+<ul>
+  <li><strong>Tab3</strong> <span class="ver">[v1.1.23.00+]</span>: Fixes some issues which affect Tab2 and Tab. Controls are placed within an invisible "tab dialog" which moves and resizes with the tab control. The tab control is themed by default.</li>
+  <li><strong>Tab2</strong> <span class="ver">[v1.0.47.05+]</span>: Fixes rare redrawing problems in the original "Tab" control but introduces <a href="#Tab2_Issues">some other problems</a>.</li>
+  <li><strong>Tab</strong>: Retained for backward compatibility because of <a href="#Tab_vs">differences in behavior</a> between Tab2/Tab3 and Tab.</li>
+</ul>
+<p>Example:</p>
+<pre>Gui, Add, Tab3,, General|View|Appearance|Settings</pre>
 <p id="ChooseTab">上述的最后一个参数是管道分隔的选项卡名称列表. 要在窗口初次出现时预选其中的某个选项卡,请在它后面包含两个管道符(例如 <code>Red|Green||Blue</code>).或者,在<em>选项</em>中包含单词 <strong>Choose</strong> 紧跟着想预选的编号.例如,<code>Choose5</code> 会预选第五个选项卡(和其他选项一样,它也可以为变量,例如 <code>Choose%Var%</code>).要在控件创建后改变选择的选项卡,请使用 <a href="GuiControl.htm">GuiControl</a>.</p>
 <p id="TabCmd">创建选项卡控件后, 随后添加的控件自动属于其首个选项卡. 这可以在任何时候改变, 请参照这些例子:</p>
 <pre>Gui, Tab  <em>; 随后的控件不属于任何选项卡控件的一部分.</em>
@@ -310,12 +317,38 @@ Gui, Tab, 3, 2  <em>; 随后的控件属于第二个选项卡控件的第三个选项卡.</em>
 Gui, Tab, Name  <em>; 随后的控件属于名称以 <i>Name</i> (不区分大小写) 开始的选项卡.</em>
 Gui, Tab, Name,, Exact  <em>; 与上面相同, 不过这里需要准确匹配 (也区分大小写).</em></pre>
 <p>还可以使用上面的每个例子分配控件到还不存在的选项卡或选项卡控件 (不包括使用 <em>Name</em> 方法的情况). 但在此情况下, 不支持下面描述的相对位置选项.</p>
-<p>Positioning:当一个选项卡控件的每个选项卡接收到其首个子控件,此子控件在下列情况下将具有特殊的默认位置:1) 同时省略 X 和 Y 坐标,此时首个子控件放在选项卡控件内部的左上角(带有标准的<a href="Gui.htm#Margin">边距</a>),而首个子控件后的其他子控件放在之前控件的下面；2) 指定了 <a href="Gui.htm#PosPlus">X+n 和/或 Y+n </a>位置选项,此时子控件放在相对于选项卡控件内部的左上角的位置.例如,指定 <code>x+10 y+10</code> 会把控件放置在左上角往右和往下各 10 个像素的位置.</p>
-<p>子控件不一定要在它们的选项卡控件边界的内部: 每当选择或取消选择它们的选项卡时仍会隐藏和显示它们. 此行为特别适合于下面描述的 "buttons" 样式.</p>
-<p>使用<a href="Gui.htm#Submit">Gui Submit</a>命令后,控件的<a href="Gui.htm#var">关联输出变量</a>(如果有)会接收到当前选择的选项卡名称.但是, 如果控件含有 <a href="Gui.htm#AltSubmit">AltSubmit</a> 属性, 则输出变量将接收到选项卡位置的编号 (首个选项卡为 1, 第二个为 2, 等等).</p>
-<p><a href="Gui.htm#label">g 标签</a>例如 <code><strong>g</strong>MySubroutine</code> 可以使用在此控件的选项中.这使得当用户切换到新选项卡时 <em>MySubroutine</em> 标签会自动运行. 如果选项卡控件同时含有 <a href="Gui.htm#label">g 标签</a> 和 <a href="Gui.htm#var">输出变量</a>, 则每当用户切换到新选项卡时, 输出变量将被设置为原来选择的选项卡名称 (在含有 <a href="Gui.htm#AltSubmit">AltSubmit</a> 时则为编号).</p>
+<p>Positioning: 当一个选项卡控件的每个选项卡接收到其首个子控件,此子控件在下列情况下将具有特殊的默认位置: 1) 同时省略 X 和 Y 坐标,此时首个子控件放在选项卡控件内部的左上角(带有标准的<a href="Gui.htm#Margin">边距</a>),而首个子控件后的其他子控件放在之前控件的下面；2) 指定了 <a href="Gui.htm#PosPlus">X+n 和/或 Y+n </a>位置选项,此时子控件放在相对于选项卡控件内部的左上角的位置.例如,指定 <code>x+10 y+10</code> 会把控件放置在左上角往右和往下各 10 个像素的位置.</p>
+<p>When the <a href="Gui.htm#Submit">Gui Submit</a> command is used, the control's <a href="Gui.htm#var">associated output variable</a> (if any) receives the name of the currently selected tab. However, if the control has the <a href="Gui.htm#AltSubmit">AltSubmit</a> property, the output variable will receive the tab's position number instead (the first tab is 1, the second is 2, etc.).</p>
+<p>A <a href="Gui.htm#label">g-label</a> such as <code><strong>g</strong>MySubroutine</code> may be listed in the control's options. This would cause the <em>MySubroutine</em> label to be launched automatically whenever the user changes to a new tab. If the tab control has both a <a href="Gui.htm#label">g-label</a> and an <a href="Gui.htm#var">output variable</a>, whenever the user switches to a new tab, the output variable will be set to the previously selected tab name (or number in the case of <a href="Gui.htm#AltSubmit">AltSubmit</a>).</p>
 <p>键盘导航: 用户可以按下 Control-PageDown/PageUp 来在选项卡控件的页面间导航; 如果键盘焦点在不属于选项卡控件的控件上, 则会导航到窗口的首个选项卡控件. 也可以使用 Control-Tab 和 Control-Shift-Tab, 除非当前焦点控件在多行编辑控件中 (此时它们不起作用).</p>
 <p>每个窗口不能含有超过 255 个选项卡控件. 每个选项卡控件不能含有超过 256 个选项卡 (页面). 此外, 一个选项卡控件不能包含其他的选项卡控件.</p>
+
+<h3 id="Tab_vs">Tab3 vs. Tab2 vs. Tab</h3>
+<p id="Tab_Parent"><strong>Parent window:</strong> The parent window of a control affects the positioning and visibility of the control and tab-key navigation order. If a sub-control is added to an existing Tab3 control, its parent window is the "tab dialog", which fills the tab control's display area. Most other controls, including sub-controls of Tab or Tab2 controls, have no parent other than the GUI window itself.</p>
+<p id="Tab_Positioning"><strong>Positioning:</strong> For Tab and Tab2, sub-controls do not necessarily need to exist within their tab control's boundaries: they will still be hidden and shown whenever their tab is selected or de-selected. This behavior is especially appropriate for the &quot;buttons&quot; style described below.</p>
+<p>For Tab3, sub-controls assigned to a tab <em>before</em> the tab control is created behave as though added to a Tab or Tab2 control. All other sub-controls are visible only within the display area of the tab control.</p>
+<p>If a Tab3 control is moved, its sub-controls are moved with it. Tab and Tab2 controls do not have this behavior.</p>
+<p>In the rare case that <a href="WinMove.htm">WinMove</a> (or an equivalent DllCall) is used to move a control, the coordinates must be relative to the parent window of the control, which might not be the GUI (see <a href="#Tab_Parent">above</a>). By contrast, <a href="GuiControl.htm#Move">GuiControl Move</a> takes GUI coordinates and <a href="ControlMove.htm">ControlMove</a> takes window coordinates, regardless of the control's parent window.</p>
+<p id="Tab_TabOrder"><strong>Tab-key navigation order:</strong> The tab-key navigation order usually depends on the order in which the controls are created. When tab controls are used, the order also depends on the type of tab control:</p>
+<ul>
+  <li>Tab and Tab2 allow their sub-controls to be mixed with other controls within the tab-key order.</li>
+  <li>Tab2 puts its tab buttons after its sub-controls in the tab-key order.</li>
+  <li>Tab3 groups its sub-controls within the tab-key order and puts them after its tab buttons.</li>
+</ul>
+<p id="Tab_Notifs"><strong>Notification messages (Tab3):</strong> Common and <a href="#Custom">Custom</a> controls typically send notification messages to their <a href="#Tab_Parent">parent window</a>. Any WM_COMMAND, WM_NOTIFY, WM_VSCROLL, WM_HSCROLL or WM_CTLCOLOR' messages received by a Tab3 control's <a href="#Tab_Parent">tab dialog</a> are forwarded to the GUI window and can be detected by using <a href="OnMessage.htm">OnMessage</a>. If the tab control is themed and the sub-control lacks the <a href="Gui.htm#BackgroundTrans">+BackgroundTrans</a> option, WM_CTLCOLORSTATIC is fully handled by the tab dialog and not forwarded. Other notification messages (such as custom messages) are not supported.</p>
+<p id="Tab2_Issues"><strong>Known issues with Tab2:</strong></p>
+<ul>
+  <li><a href="Gui.htm#BackgroundTrans">BackgroundTrans</a> has no effect inside a Tab2 control.</li>
+  <li><a href="#ActiveX">WebBrowser</a> controls do not redraw correctly.</li>
+  <li>AnimateWindow and possibly other Win32 API calls can cause the tab's controls to disappear.</li>
+</ul>
+<p id="Tab_Issues"><strong>Known issues with Tab:</strong></p>
+<ul>
+  <li>Activating a GUI window by clicking certain parts of its controls, such as scrollbars, might redraw improperly.</li>
+  <li><a href="Gui.htm#BackgroundTrans">BackgroundTrans</a> has no effect if the Tab control contains a ListView.</li>
+  <li><a href="#ActiveX">WebBrowser</a> controls are invisible.</li>
+</ul>
+
 <h3>Tab 选项</h3>
 <p><strong>Choose</strong>: 请参阅 <a href="#ChooseTab">上面</a>.</p>
 <p><strong>-Background</strong> (负号跟着单词 background): 取消 <a href="Gui.htm#Color">窗口的自定义背景颜色</a> 而使用系统默认的选项卡控件的颜色. 指定 <code>+Theme -Background</code> 来让选项卡控件适应于当前桌面主题.然而, 在这样选项卡控件内的大多数类型的控件看起来会很奇怪, 因为它们的背景颜色不匹配选项卡控件的背景颜色. 对于某些类型的控件 (例如 <a href="#Text">Text</a>), 这种情况可以在它们的选项中添加 BackgroundTrans 来修复.</p>
