@@ -27,7 +27,7 @@
 <p>考虑到命名的惯例, 通常在命名变量时最好仅使用字母, 数字和下划线 (例如: <em>CursorPosition</em>, <em>Total_Items</em> 和 <em>entry_is_valid</em>). 这样的风格可以让熟悉其他计算机语言的人更容易理解您的脚本. 而且, 如果您在 AutoHotkey 和其他语言中使用相同的风格, 您会发现能更容易重新读懂自己的脚本.</p>
 <p>尽管变量名可以完全由数字组成, 但通常这样的名称仅用于 <a href="Scripts.htm#cmd">传入的命令行参数</a>. 这样数值名称的变量不能用在 <a href="#Expressions">表达式</a> 中, 因为它们会被看成是数字而不是变量.</p>
 <p>因为单词 <em>AND</em>, <em>OR</em> 和 <em>NOT</em> 作为表达式的 <a href="#Operators">运算符</a> 使用, 所以通常不应该把它们用作变量名称. 在表达式中使用这样的名称会无法正确计算.</p>
-<p><strong>给变量赋值</strong>: 要把字符串或数字保存到变量中, 有两种方法: 传统方法和表达式方法. 传统方法使用 <a href="commands/SetEnv.htm">等号运算符 (=)</a> 来指定 <strong>没有加引号的</strong> 原义字符串或包围在百分号中的变量. 例如:</p>
+<p id="assigning"><strong>给变量赋值</strong>: 要把字符串或数字保存到变量中, 有两种方法: 传统方法和表达式方法. 传统方法使用 <a href="commands/SetEnv.htm">等号运算符 (=)</a> 来指定 <strong>没有加引号的</strong> 原义字符串或包围在百分号中的变量. 例如:</p>
 <pre>MyNumber = 123
 MyString = This is a literal string.
 CopyOfVar = %Var%  <em>; 和 = 运算符一起使用时, 需要使用百分号来获取变量的内容.</em></pre>
@@ -40,7 +40,7 @@ CopyOfVar := Var  <em>; 和前面段落中与其作用相同的语句不同, 百分号不和 := 运算符
 <pre>MyVar =
 MyVar := ""</pre>
 <p>上面的这对空引号只能和 := 运算符一起使用, 因为和 = 运算符一起使用时, 则会在变量中保存两个原义的引号字符.</p>
-<p><strong>获取变量的内容</strong>: 如同赋值有两种方法, 获取变量的内容也有两种方法: 传统方法和表达式方法. 传统方法需要将变量名包围在百分号中来获取变量的内容. 例如:</p>
+<p id="retrieving"><strong>获取变量的内容</strong>: 如同赋值有两种方法, 获取变量的内容也有两种方法: 传统方法和表达式方法. 传统方法需要将变量名包围在百分号中来获取变量的内容. 例如:</p>
 <pre><a href="commands/MsgBox.htm">MsgBox</a> The value in the variable named Var is %Var%.
 CopyOfVar = %Var%</pre>
 <p>与之相比, 表达式方法省去了变量名两边的百分号, 但原义的字符串必须包围在双引号中. 所以, 下面的表达式作用等同于上面的例子:</p>
@@ -78,9 +78,12 @@ ContinueSearch := true</pre>
 <a href="commands/Loop.htm">Loop</a> <strong>%</strong> Iterations + 1
 <a href="commands/WinSet.htm">WinSet</a>, Transparent, <strong>%</strong> X + 100
 <a href="commands/WinSet.htm">Control</a>, Choose, <strong>%</strong> CurrentSelection - 1</pre>
+
 <h2 id="Operators">表达式中的运算符</h2>
 <p>优先级相同的运算符例如乘 (*) 和除 (/) 按从左到右的顺序计算, 下面另行注明的除外. 与之相比, 低优先级的运算符例如加 (+) 在更高优先级的运算符例如 (*) <em>之后</em> 计算. 例如, 3 + 2 * 2 等价于 3 + (2 * 2). 使用括号可以改变优先级, 例如: (3 + 2) * 2</p>
-<p>除了下面注明的情况, 其他时候在数学运算中包含的任何空值 (空字符串) 都 <strong>不会</strong> 被假定为零. 作为替代, 它会被视为错误, 这将导致那部分表达式的计算结果为空字符串. 例如, 如果变量 X 为空, 那么表达式 X+1 会产生空值而不是 1.</p>
+<p>除了下面注明的情况, 其他时候在数学运算中包含的任何空值 (空字符串) 或非数字值包括算术运算符中的都 <strong>不会</strong> 被假定为零. 而是被视为错误, 这将导致那部分表达式的计算结果为空字符串. 例如, 如果变量 X 为空, 那么表达式 X + 1 会返回空值而不是 1.</p>
+<p>For historical reasons, <em>quoted</em> numeric strings such as <code>"123"</code> are always considered non-numeric when used directly in an expression (but not when stored in a variable or returned by a function). This non-numeric attribute is propagated by <a href="#concat">concatenation</a>, so expressions like <code>"0x" n</code> also produce a non-numeric value (even when n contains valid hexadecimal digits). This problem can be avoided by assigning the value to a variable or passing it through a function like <a href="Functions.htm#Round">Round()</a>. Scripts should avoid using quote marks around literal numbers, as the behavior may change in a future version.</p>
+
 <h3>表达式运算符 (按优先级降序排列)</h3>
 <table class="info">
   <tr id="ref">
@@ -220,8 +223,13 @@ ContinueSearch := true</pre>
     <td>这些和其他内置数学函数在 <a href="Functions.htm#Math">这里</a> 阐述.</td>
   </tr>
   <tr>
+    <td style="text-align:center; white-space:nowrap"><p><strong>%func%()</strong></p></td>
+    <td>See <a href="Functions.htm#DynCall">Dynamically Calling a Function</a>.</td>
+  </tr>
+  <tr>
     <td style="text-align:center"><strong>func.()</strong></td>
-    <td><p><span class="ver">[AHK_L 48+]:</span> 试图调用对象 <i>func</i> 的命名的空方法. 按照约定, 这是对象的 "默认" 方法. 如果 <i>func</i> 不是对象, 则调用 <a href="Objects.htm#Default_Base_Object">默认基对象</a>.</p>
+    <td><p><strong>弃用的:</strong> 不推荐使用这个语法. 而应该用 <code>%func%()</code> (对于函数名称和对象) 或 <code>func.Call()</code> (对于函数对象) 替代.</p>
+    <p><span class="ver">[AHK_L 48+]:</span> 试图调用对象 <i>func</i> 的命名的空方法. 按照约定, 这是对象的 "默认" 方法. 如果 <i>func</i> 不是对象, 则调用 <a href="Objects.htm#Default_Base_Object">默认基对象</a>.</p>
     <p><span class="ver">[v1.0.95+]:</span> 如果 <i>func</i> 为函数名, 则调用这个命名的函数.</p></td>
   </tr>
   <tr>
@@ -234,7 +242,7 @@ ContinueSearch := true</pre>
   </tr>
 </table>
 <br>
-<p id="CommaPerf"><strong>性能</strong>:在 v1.0.48+, 使用逗号运算符常常比分开写单独的表达式速度更快, 尤其是把一个变量的值赋给另一个变量时(例如 <code>x:=y, a:=b</code>). 当越多的表达式联合成单个表达式时, 性能会持续得到提升; 例如, 把五个或十个简单的表达式联合成单个表达式速度可能提升 35%.</p>
+<p id="CommaPerf"><strong>性能</strong>: 从 v1.0.48+ 开始, 使用逗号运算符常常比分开写单独的表达式速度更快, 尤其是把一个变量的值赋给另一个变量时 (例如: <code>x:=y, a:=b</code>). 当越多的表达式联合成单个表达式时, 性能会持续得到提升; 例如, 把五个或十个简单的表达式联合成单个表达式速度可能提升 35%.</p>
 
 <h2 id="BuiltIn">内置变量</h2>
 <p>下列变量内置于程序中, 可以在任何脚本中引用. 除了 <a href="misc/Clipboard.htm">Clipboard</a>, <a href="misc/ErrorLevel.htm">ErrorLevel</a> 和 <a href="#CommandLine">命令行参数</a>, 其他变量都是只读的; 即它们的内容无法在脚本中直接修改.</p>
