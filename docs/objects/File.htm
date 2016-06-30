@@ -34,7 +34,8 @@
 <pre class="Syntax">Line := File.ReadLine()</pre>
 <table class="info">
   <tr><td style="width:15%"><b>Returns</b></td><td>A line of text.  This may include <code>`n</code>, <code>`r`n</code> or <code>`r</code> depending on the file and EOL flags used to open the file.</td></tr>
-</table></div>
+</table>
+<p>Lines up to 65,534 characters long can be read. If the length of a line exceeds this, the remainder of the line is returned by subsequent calls to this method.</p></div>
 
 <div class="methodShort" id="WriteLine"><h2>WriteLine</h2>
 <p>Writes a string of characters followed by <code>`n</code> or <code>`r`n</code> depending on the flags used to open the file. Advances the file pointer.</p>
@@ -48,15 +49,22 @@
 <p>Reads a number from the file and advances the file pointer.</p>
 <pre class="Syntax">Num := File.Read<i>NumType</i>()</pre>
 <table class="info">
-  <tr><td style="width:15%"><i>NumType</i></td><td>One of the following specified directly as part of the function name:<br>UInt, Int, Int64, Short, UShort, Char, UChar, Double, or Float.</td></tr>
+  <tr><td style="width:15%"><i>NumType</i></td>
+    <td>One of the following specified directly as part of the function name:<br>
+    UInt, Int, Int64, Short, UShort, Char, UChar, Double, or Float.
+    <p>These type names have the same meanings as with <a href="../commands/DllCall.htm#types">DllCall</a>.</p></td></tr>
   <tr><td><b>Returns</b></td><td>A number if successful, otherwise an empty string.</td></tr>
-</table></div>
+</table>
+<p>If a Try statement is active and no bytes were read, an exception is thrown. However, no exception is thrown if at least one byte was read, even if the size of the given <i>NumType</i> is greater than the number of bytes read. Instead, the missing bytes are assumed to be zero.</p></div>
 
 <div class="methodShort" id="WriteNum"><h2>Write<i>Num</i></h2>
 <p>Writes a number to the file and advances the file pointer.</p>
 <pre class="Syntax">File.Write<i>NumType</i>(Num)</pre>
 <table class="info">
-  <tr><td style="width:15%"><i>NumType</i></td><td>One of the following specified directly as part of the function name:<br>UInt, Int, Int64, Short, UShort, Char, UChar, Double, or Float.</td></tr>
+  <tr><td style="width:15%"><i>NumType</i></td>
+    <td>One of the following specified directly as part of the function name:<br>
+    UInt, Int, Int64, Short, UShort, Char, UChar, Double, or Float.
+    <p>These type names have the same meanings as with <a href="../commands/DllCall.htm#types">DllCall</a>.</p></td></tr>
   <tr><td>Num</td><td>A number.</td></tr>
   <tr><td><b>Returns</b></td><td>The number of bytes that were written. For instance, WriteUInt returns 4 if successful.</td></tr>
 </table></div>
@@ -68,7 +76,8 @@
   <tr><td style="width:15%">VarOrAddress</td><td>A variable or memory address to which the data will be copied.  Usage is similar to <a href="../commands/NumGet.htm">NumGet</a>.</td></tr>
   <tr><td>Bytes</td><td>The maximum number of bytes to read.</td></tr>
   <tr><td><b>Returns</b></td><td>The number of bytes that were read.</td></tr>
-</table></div>
+</table>
+<p>If a Try statement is active and <em>Bytes</em> is non-zero but no bytes were read, an exception is thrown. <a href="#AtEOF">AtEOF</a> can be used to avoid this, if needed.</p></div>
 
 <div class="methodShort" id="RawWrite"><h2>RawWrite</h2>
 <p>Write raw binary data to the file.</p>
