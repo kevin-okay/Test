@@ -19,7 +19,8 @@
   <li><a href="#Intro">入门和简单示例</a></li>
   <li><a href="#Symbols">热键前缀符号表 (修饰符)</a></li>
   <li><a href="#Context">上下文相关的热键</a></li>
-  <li><a href="#Features">自定义组合键及其他特性</a></li>
+  <li><a href="#combo">自定义组合</a></li>
+  <li><a href="#Features">其他特性</a></li>
   <li><a href="#Wheel">鼠标滚轮热键</a></li>
   <li><a href="#Remarks">热键技巧和备注</a></li>
   <li><a href="#AltTabDetail">Alt-Tab热键</a></li>
@@ -145,14 +146,30 @@ WheelUp::Send {Volume_Up}     <em>; 在任务栏上滚动滚轮:增加/减小音量.</em>
 WheelDown::Send {Volume_Down} <em>;</em>
 </pre>
 
-<h2 id="Features">自定义组合键及其他特性</h2>
-<p id="combo">通过在两个按键 (不包括操纵杆按钮) 间使用 "&amp;" 可以定义定制的组合键. 在下面的例子中, 您在按住 Numpad0 接着按下第二个按键时会触发此热键:</p>
+<h2 id="combo">自定义组合</h2>
+<p>通过在两个按键 (不包括操纵杆按钮) 间使用 "&amp;" 可以定义定制的组合键. 在下面的例子中, 您在按住 Numpad0 接着按下第二个按键时会触发此热键:</p>
 <pre id="prefix">Numpad0 <strong>&amp;</strong> Numpad1::MsgBox You pressed Numpad1 while holding down Numpad0.
 Numpad0 <strong>&amp;</strong> Numpad2::Run Notepad</pre>
-<p>在上面的例子中, Numpad0 成为 <em>前缀键</em>; 但是这也让 Numpad0 在被按下时失去了它原有的功能. 为了避免此问题, 脚本中可以配置 Numpad0 执行新的动作, 例如下列热键的其中一个:</p>
+<p><strong>前缀键导致失去它原有的功能:</strong> 在上面的例子中, Numpad0 成为 <em>前缀键</em>; 但是这也让 Numpad0 在被按下时失去了它原有的功能. 为了避免此问题, 脚本中可以配置 Numpad0 执行新的动作, 例如下列热键的其中一个:</p>
 <pre>Numpad0::WinMaximize A   <em>; 最大化活动/前端窗口.</em>
 Numpad0::Send {Numpad0}  <em>; 让 Numpad0 <i>释放</i> 时产生 Numpad0 键击. 请参阅下面的注释.</em></pre>
-<p>使用上面的其中一个自定义组合热键可以在 <em>释放</em>Numpad0 时执行指定的动作,但仅在您之前按住 Numpad0 时没有按其他任何按键的情况下.在 v1.1.14+ 中,可以在其中某个热键使用 <a href="#Tilde">波浪号前缀</a> 来避免这种行为.</p>
+<p><strong>释放时触发:</strong> 使用上面的其中一个自定义组合热键可以在 <em>释放</em> Numpad0 时执行指定的动作, 但不包括按住 Numpad0 时您又按下了其他按键的情况. 从 v1.1.14+ 开始,可以在其中某个热键前使用 <a href="#Tilde">波浪号前缀</a> 来避免这种行为.</p>
+<p id="combo_mods"><strong>修饰:</strong> 与普通热键不同的是, 自定义组合在默认情况下表现得就像拥有一个 <a href="#wildcard">通配符 (*)</a> 修饰一样. 例如, <code>1 &amp; 2::</code> 无论 Ctrl 或 Alt 是否被按住都会触发, 然而 <code>^1::</code> 仅在 Ctrl+1 组合键时触发,而 Ctrl+Alt+1 不会触发.</p>
+<p>对于普通的修饰键, 一般的热键会比 "自定义" 组合工作得更好. 例如, <code>&lt;+s::</code> 就是比 <code>LShift &amp; s::</code> 更好的用法.</p>
+<p>不支持组合三个或更多的键. 一般来说组合键支持你键盘上物理存在的所有按键,都可以用 <a href="commands/_If.htm">#If</a> 和 <a href="commands/GetKeyState.htm">GetKeyState</a> 探测状态, 但是也可能出现不一致的情况. 例如:</p>
+<pre><em>; 以任何顺序按下 AppsKey 和 Alt , 然后按下反斜杠键 (/).</em>
+#if GetKeyState("AppsKey", "P")
+Alt &amp; /::MsgBox Hotkey activated.
+
+<em>; 如果对调 AppsKey 和 Alt, 则必须先按下 Alt (一次按一个):</em>
+#if GetKeyState("Alt", "P")
+AppsKey &amp; /::MsgBox Hotkey activated.
+
+<em>; 同时按下这三个键: [ &amp; ] &amp; \::</em>
+#if GetKeyState("[") &amp;&amp; GetKeyState("]")
+\::MsgBox</pre>
+
+<h2 id="Features">其他功能</h2>
 <p><strong>Numlock, Capslock 和 Scrolllock:</strong> 这些键可以被强制设置为 "AlwaysOn" 或 "AlwaysOff". 例如:<code><a href="commands/SetNumScrollCapsLockState.htm">SetNumlockState</a> AlwaysOn</code>.</p>
 <p><strong>覆盖资源管理器热键:</strong> 在脚本中可以为 Windows 内置的热键例如 Win-E (#e) 和 Win-R (#r) 指定一个动作来个别的替换. 请参阅 <a href="misc/Override.htm">覆盖页面</a> 了解详情.</p>
 <p id="alttab"><strong>替换 Alt-Tab:</strong> 热键可以提供 Alt-Tab 切换窗口的可选方法. 例如, 下面的两个热键可以让您用右手进行 alt-tab:</p>

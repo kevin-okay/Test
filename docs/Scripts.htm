@@ -151,11 +151,12 @@ FileAppend, %Var%, C:\My File.txt</pre>
   <li>另外,当编译出错时,Ahk2Exe还能返回退出代码,它可以指示编译的错误类型.错误类型更多信息请访问 <a href="https://github.com/fincs/Ahk2Exe/blob/master/ErrorCodes.md">GitHub (ErrorCodes.md)</a>. <span class="ver">[v1.1.22.03+]</span></li>
 </ul>
 <p>编译器的源码和新版本可以在 <a href="https://github.com/fincs/Ahk2Exe">GitHub</a> 找到.</p>
+
 <h3 id="mpress">压缩编译脚本</h3>
 <p>Ahk2Exe 可选用 MPRESS (MATCODE Software出品的一款免费软件) 压缩编译脚本. 如果在AutoHotKey安装目录的"Compiler"子目录存在 <strong>mpress.exe</strong> , 编译时将自动使用MPRESS来压缩,除非指定了 <code>/mpress 0</code> 参数或在界面中设置不启用压缩. </p>
 <p>官网 (2016年3月该网站已下线): <a href="http://www.matcode.com/mpress.htm">http://www.matcode.com/mpress.htm</a></p>
 <p>镜像 (下载信息): <a href="https://autohotkey.com/mpress/">https://autohotkey.com/mpress/</a></p>
-<p><strong>注:</strong> 压缩编译脚本可以保护脚本不被诸如记事本或PE编辑器这类的工具随意查看,但并不能保护脚本源码不被专用的提取工具提取.</p>
+<p><strong>注意:</strong> 压缩编译脚本可以保护脚本不被诸如记事本或PE编辑器这类的工具随意查看,但并不能保护脚本源码不被专用的提取工具提取.</p>
 
 <h2 id="cmd">向脚本传递命令行参数</h2>
 <p>脚本支持命令行参数. 格式为:</p>
@@ -167,7 +168,7 @@ FileAppend, %Var%, C:\My File.txt</pre>
   <tr><th>开关</th><th>释义</th></tr>
   <tr id="SlashF">
     <td>/f or /force</td>
-    <td>无条件运行, 跳过任何警告对话框.</td>
+    <td>无条件强制启动, 忽略任何警告对话框. 和 <a href="commands/_SingleInstance.htm">#SingleInstance Off</a> 的效果相同.</td>
   </tr>
   <tr id="SlashR">
     <td>/r或/restart</td>
