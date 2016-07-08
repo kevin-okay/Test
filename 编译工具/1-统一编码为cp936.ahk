@@ -9,6 +9,7 @@ delHead()
 SetWorkingDir, %A_ScriptDir%
 FileCopy, _forReplace\content.js, docs\static\, 1
 FileCopy, _forReplace\content.chm.js, docs\static\, 1
+FileCopy, _forReplace\data_toc.js, docs\static\source\, 1
 FileCopy, _forReplace\CreateFiles4Help.ahk, docs\static\source\, 1
 ExitApp
 return
@@ -19,7 +20,7 @@ delHead()
    {
       _fEncoding := File_GetEncoding(A_LoopFileFullPath)
 
-      ;~ a to u
+      ;~ a to b
       if (_fEncoding = 1)
       {
          File_CpTransform(A_LoopFileFullPath, "a", "b")
@@ -44,18 +45,18 @@ delHead()
          {
             if (_line ~= "i)\<meta.+?iso-8859-1")
             {
-               _line := RegExReplace(_line, "i)iso-8859-1", "UTF-8")
+               _line := RegExReplace(_line, "i)iso-8859-1", "gb2312")
             }
-            if (_line ~= "i)\<meta.+?gb2312")
+            if (_line ~= "i)\<meta.+?UTF-8")
             {
-               _line := RegExReplace(_line, "i)gb2312", "UTF-8")
+               _line := RegExReplace(_line, "i)UTF-8", "gb2312")
             }
          }
          _newContent .= _line "`n"
       }
       ;~ 删除最后的换行符
       _newContent := SubStr(_newContent, 1 , -1)
-      FileAppend, % _newContent, % A_LoopFileFullPath, cp65001
+      FileAppend, % _newContent, % A_LoopFileFullPath
       ToolTip, %A_Index% %A_LoopFileFullPath% 完成
    }
    Trace("替换头部完成", 3)
