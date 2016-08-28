@@ -23,14 +23,14 @@ Hotkey, If [, Expression]</pre>
   <dd><p>热键触发键的名称, 包括所有 <a href="../Hotkeys.htm#Symbols">修饰符</a>. 例如,指定 <code>#c</code> 来触发 Win+C 热键.</p>
     <p>如果 <em>KeyName</em> 是现有的热键, 那么将使用此命令的其他参数值更新原来的热键.</p>
     <p><em>KeyName</em> 也可以是现有的热键标签的名称 (即双冒号标签), 这样会使用此命令的其他参数值更新原来的热键.</p>
-    <p>指定 <em>现有的</em> 热键时, <em>KeyName</em> 是不区分大小写的. 但是, 按键名称必须和现有的热键拼写相同 (例如在这种情况下 Esc 与 Escape 是不同的). 此外, <a href="../Hotkeys.htm#Symbols">修饰符</a> (例如 ^!+#) 是无关紧要的.</p>
+    <p>指定 <em>现有的</em> 热键时, <em>KeyName</em> 是不区分大小写的. 但是, 按键名称必须和现有的热键拼写相同 (例如在这种情况下 Esc 与 Escape 是不同的). 此外, <a href="../Hotkeys.htm#Symbols">修饰符</a> (例如 ^!+#) 是无关紧要的. <a href="GetKey.htm">GetKeyName</a> 可用于获取正常的按键名称.</p>
     <p>首次创建一个热键时 (通过 Hotkey 命令或脚本中的 <a href="../Hotkeys.htm">双冒号标签</a>), 其键名以及修饰符的顺序成为此热键的固定名称, 像 <a href="../Variables.htm#ThisHotkey">A_ThisHotkey</a> 包含的那样. 即使之后 Hotkey 命令使用不同的修饰符顺序操作此热键, 此名称也不会改变.</p>
     <p><span class="ver">[v1.1.15+]:</span>如果已存在该热键变体,则根据 <em>KeyName</em> 是否包含<a href="../Hotkeys.htm#Tilde">颚化符(~)前缀</a>更新它的行为.</p>
     <p><span class="ver">[v1.1.19+]:</span> 使用 <a href="../Hotkeys.htm#prefixdollar">钩子 ($) 前缀</a> 可添加到现有热键上. 这个前缀影响所有热键的变体且不能被删除. 在 v1.1.19 之前, 当修改一个现有热键时,这个前缀被直接忽略.</p>
     </dd>
 
   <dt>Label 标签</dt>
-  <dd><p>在 <a href="../misc/Labels.htm">标签</a> 区块中的所有内容都会被执行 (当对应热键按下时以一个新的 <a href="../misc/Threads.htm">线程</a>) 运行 . 可同时使用 <a href="../Hotkeys.htm">热键</a>/<a href="../Hotstrings.htm">热字符串</a> 标签 . 不包括冒号( : 或 :: ) . 如果 <em>标签</em> 是动态的 (比如 %VarContainingLabelName%), 可用 <a href="../Functions.htm#IsLabel">IsLabel(VarContainingLabelName)</a> 事先检查标签是否存在.</p>
+  <dd><p>在 <a href="../misc/Labels.htm">标签</a> 区块中的所有内容都会被执行 (当对应热键按下时以一个新的 <a href="../misc/Threads.htm">线程</a>) 运行 . 可同时使用 <a href="../Hotkeys.htm">热键</a>/<a href="../Hotstrings.htm">热字符串</a> 标签 . 不包括冒号( : 或 :: ) . 如果 <em>标签</em> 是动态的 (比如 %VarContainingLabelName%), 可用 <a href="IsLabel.htm">IsLabel(VarContainingLabelName)</a> 事先检查标签是否存在.</p>
   <p id="Functor"><span class="ver">[v1.1.20+]:</span> 如果不是一个有效的标签名称, 这个参数可以是一个函数的名称, 或者是一个 <a href="../objects/Functor.htm">函数对象</a> 引用变量. 比如, <code>Hotkey %funcobj%, On</code> 或 <code>Hotkey % funcobj, On</code>. 其他返回对象的表达式目前暂不支持. 当热键被触发, 函数就会被调用且无需任何参数. 热键还可以直接 <a href="../Hotkeys.htm#Function">定义为函数</a> 而无需使用 Hotkey 命令.</p>
       <p>如果 <em>KeyName</em> 已经作为热键, 那么参数可以为空, 这种情况下标签不会被改变. 这在需要仅改变热键 <em>Options (选项)</em> 时很有用.</p>
       <p><strong>如果指定了标签或函数, 但热键之前已经使用此命令禁用了, 那么热键会保持禁用状态. 要启用它, 请在 <em>Options</em> 中包含单词 ON.</strong></p>
@@ -65,7 +65,8 @@ Hotkey, If [, Expression]</pre>
 
   <dt id="If">If, Expression</dt>
   <dd>
-    <p><span class="ver">[AHK_L]:</span> <a href="_If.htm">#If <i>Expression</i></a> 的副本. <i>Expression</i> 必须准确匹配 <b>现有的</b> <code>#If <i>Expression</i></code> 的文字, 不包括 "<code>#If</code>" 或 "<code>#If,</code>". 当用于 Hotkey 命令时, "If" 后面的逗号是必须的. 尽管此命令不能创建新的表达式, 但它可以使用现有的表达式创建新的热键. 请参阅 <a href="_If.htm#ex4">#If 示例 4</a>.</p>
+    <p><span class="ver">[AHK_L]:</span> Counterpart of <a href="_If.htm">#If <i>Expression</i></a>. <em>Expression</em> must be an expression which has been used with the #If directive elsewhere in the script. Although this command is unable to create new expressions, it can create new hotkeys using an existing expression. See <a href="_If.htm#ex4">#If example 4</a>.</p>
+    <p><strong>Note:</strong> The Hotkey command uses the string that you pass to it, not the original source code. Commas and deref chars (percent signs) are interpreted <em>before</em> the command is called, so may need to be escaped if they are part of the original expression.  <a href="_EscapeChar.htm">Escape sequences</a> are resolved when the script loads, so only the resulting characters are considered; for example, <code>Hotkey, If, x = "`t"</code> and <code>Hotkey, If, % "x = """ A_Tab """"</code> both correspond to <code>#If x = "`t"</code>.</p>
     <p><strong>已知限制:</strong>如果 <em>Expression</em> 包含 <code>and</code>/<code>or</code> 运算符,则它不会被识别为表达式.为了避免此问题,请在原来的 #If 表达式和传递给 Hotkey 命令的表达式中使用等价的 <code>&amp;&amp;</code>/<code>||</code> 运算符.</p>
   </dd>
 
@@ -147,7 +148,7 @@ Hotkey, ^!c, MyLabelForAllOtherWindows</pre>
 <p>创建重复热键时, <a href="../Hotkeys.htm#Symbols">修饰符</a> 的顺序例如 ^!+# 没有关系. 例如:<code>^!c</code>等效于<code>!^c</code>.但是, 按键必须拼写一致. 例如,用于此目的时 <em>Esc</em> 与 <em>Escape</em> 是有区别的(尽管不会受大小写形式的影响).最后,任何带有<a href="../Hotkeys.htm#wildcard">通配符前缀(*)</a>的热键和不带通配符的完全不同；例如, <code>*F1</code> 和 <code>F1</code> 将拥有各自的变体设置.</p>
 <p>关于 IfWin 热键的更多信息, 请参阅 <a href="_IfWinActive.htm#gen">#IfWin 的一般说明</a>.</p>
 <h3>相关</h3>
-<p><a href="../Hotkeys.htm#Symbols">热键修饰符</a>, <a href="_IfWinActive.htm">#IfWinActive/Exist</a>, <a href="_MaxThreadsBuffer.htm">#MaxThreadsBuffer</a>, <a href="_MaxThreadsPerHotkey.htm">#MaxThreadsPerHotkey</a>, <a href="Suspend.htm">Suspend</a>, <a href="../Functions.htm#IsLabel">IsLabel()</a>, <a href="../misc/Threads.htm">线程</a>, <a href="Thread.htm">Thread</a>, <a href="Critical.htm">Critical</a>, <a href="Gosub.htm">Gosub</a>, <a href="Return.htm">Return</a>, <a href="Menu.htm">Menu</a>, <a href="SetTimer.htm">SetTimer</a></p>
+<p><a href="../Hotkeys.htm#Symbols">热键修饰符</a>, <a href="_IfWinActive.htm">#IfWinActive/Exist</a>, <a href="_MaxThreadsBuffer.htm">#MaxThreadsBuffer</a>, <a href="_MaxThreadsPerHotkey.htm">#MaxThreadsPerHotkey</a>, <a href="Suspend.htm">Suspend</a>, <a href="IsLabel.htm">IsLabel()</a>, <a href="../misc/Threads.htm">线程</a>, <a href="Thread.htm">Thread</a>, <a href="Critical.htm">Critical</a>, <a href="Gosub.htm">Gosub</a>, <a href="Return.htm">Return</a>, <a href="Menu.htm">Menu</a>, <a href="SetTimer.htm">SetTimer</a></p>
 <h3>示例</h3>
 <pre class="NoIndent">Hotkey, ^!z, MyLabel
 return

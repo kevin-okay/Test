@@ -17,9 +17,6 @@
 <h3>Parameters</h3>
 <dl>
 
-  <dt>FoundPos</dt>
-  <dd><p>返回字符串 <em>Needle</em> 在 <em>Haystack</em> 中出现的位置. 位置1 是第一个字符; 因为0等同于"false"直觉上会让人产生"找不到"的错觉.</p></dd>
-
   <dt>Haystack</dt>
   <dd><p>被搜索的字符串.</p></dd>
   
@@ -39,12 +36,16 @@
 
   </dl>
 
+<h3>返回值</h3>
+<p>该函数返回出现字符串 <em>Needle</em> 在字符串 <em>Haystack</em> 中的位置. 位置 1 表示第一个字符; 因为 0 和 "false" 为同义词, 使它能提供直觉上 "没找到" 的意义.</p>
+
 <h3>备注</h3>
 <p>这个函数整合了 <a href="StringCaseSense.htm">IfInString</a> 和 <a href="StringCaseSense.htm">StringGetPos</a> 命令, 以及一个简单形式的 <a href="RegExMatch.htm">RegExMatch()</a>.</p>
 <p>如果想在一个较大的字符串中搜索一个简单的子字串, 这个函数通常要比 <a href="RegExMatch.htm">RegExMatch()</a> 来得快.</p>
 
 <h3>相关</h3>
 <p><a href="RegExMatch.htm">RegExMatch()</a>, <a href="StringGetPos.htm">StringGetPos</a>, <a href="StringCaseSense.htm">IfInString</a>, <a href="StringCaseSense.htm">StringCaseSense</a>, <a href="IfIn.htm">if var in/contains MatchList</a>, <a href="IfBetween.htm">if var between</a>, <a href="IfIs.htm">if var is type</a>
+
 <h3>示例</h3>
 <pre class="NoIndent"><em>; 示例 1</em>
 MsgBox % InStr("123abc789","abc") <em>; 返回 4</em>

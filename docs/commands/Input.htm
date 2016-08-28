@@ -35,7 +35,7 @@ Input, OutputVar, L1 M
 if OutputVar = %CtrlC%
     MsgBox, You pressed Control-C.
 ExitApp</pre>
-      <p>注: 从 Ctrl-A 到 Ctrl-Z 对应的字符为从 <a href="../Functions.htm#Chr">Chr(1)</a> 到 <a href="../Functions.htm#Chr">Chr(26)</a>. 此外,<strong>M</strong> 选项可能会导致某些键盘快捷键(例如 Ctrl-LeftArrow)在 Input 执行时表现不正常.</p>
+      <p>注: 从 Ctrl-A 到 Ctrl-Z 对应的字符为从 <a href="Chr.htm">Chr(1)</a> 到 <a href="Chr.htm">Chr(26)</a>. 此外,<strong>M</strong> 选项可能会导致某些键盘快捷键(例如 Ctrl-LeftArrow)在 Input 执行时表现不正常.</p>
       <p><strong>T</strong>:超时(例如 <code>T3</code>).在终止输入前等待的秒数,超时后设置 <a href="../misc/ErrorLevel.htm">ErrorLevel</a> 为单词 Timeout.Input 超时后,<em>OutputVar</em> 会被设置为用户在超时前输入的文本.这个值可以为浮点数, 例如 2.5.</p>      
       <p id="vis"><strong>V</strong>: 可见. 一般情况下, 用户的输入是阻塞的 (隐藏在操作系统后). 使用此选项来发送用户的键击到活动窗口.</p>
       <p id="asterisk"><strong>*</strong>: 通配符 (查找所有地方). 一般情况下, 用户输入的文本必须准确匹配 <em>MatchList</em> 中的某个词组, 匹配才会成功. 使用此选项搜索输入文本的整个长度, 这样会更容易找到匹配.</p>
@@ -85,7 +85,7 @@ ExitApp</pre>
     <td>EndKey:<em>name</em></td>
     <td>
       <p><em>EndKeys</em> 的某个终止键被按下用于终止输入. 此时,<a href="../misc/ErrorLevel.htm">ErrorLevel</a> 包含单词 EndKey 后跟着冒号和不带大括号的终止键的名称,例如 "EndKey:Enter", "EndKey:Escape" 等等.</p>
-      <p>注意 <em>name</em> 是按键的 "标准" 名称而不管写到 <em>EndKeys</em> 中的方式. 举个例子, {Esc} 和 {vk1B} 都返回 "ErrorLevel:Escape". <a href="../Functions.htm#GetKeyName">GetKeyName()</a> 可用于获取标准名称.</p>
+      <p>注意 <em>name</em> 是按键的 "标准" 名称而不管写到 <em>EndKeys</em> 中的方式. 举个例子, {Esc} 和 {vk1B} 都返回 "ErrorLevel:Escape". <a href="GetKey.htm">GetKeyName()</a> 可用于获取标准名称.</p>
       <p>如果使用了 <a href="#E">E 参数</a>, <em>name</em> 则为实际输入的字符 (如果适用的话). 其他情况下, name 取决于当前实际使用的键盘布局.</p>
       <p>在 <span class="ver">[v1.1.20]</span> 之前, 如果 EndKey 的 VK 码在 0x41 (A) 到 0x5A (Z) 的范围内时, ErrorLevel 通常包含类似 ASCII 的字符,甚至不符合当前键盘布局. 而从 v1.1.20 开始, 则一定是符合当前键盘布局的. 如果使用从 A 到 Z 的字符, 那么当它是大写字母时可保持向后兼容; 否则可以是小写字母.</p>
     </td>

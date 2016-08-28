@@ -35,7 +35,7 @@
     <td>创建含整数键的脚本化关联数组.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Abs">Abs()</a></td>
+    <td><a href="Math.htm#Abs">Abs()</a></td>
     <td>返回 <em>Number</em> 的绝对值.</td>
   </tr>
   <tr>
@@ -43,15 +43,19 @@
     <td>设置在 <a href="SetEnv.htm"><code>Var1 = %Var2%</code></a> 这样的语句中进行赋值时是否忽略 Var2 的前导和尾随空格和 tab.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#ASin">ASin()</a></td>
-    <td>返回弧度表示的反正弦值(其正弦值为 <em>Number</em>).</td>
+    <td><a href="Asc.htm">Asc()</a></td>
+    <td>Returns the numeric value of the first byte or UTF-16 code unit in the specified string.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#ACos">ACos()</a></td>
+    <td><a href="Math.htm#ASin">ASin()</a></td>
+    <td>返回弧度表示的反正弦值 (其正弦值为 <em>Number</em>).</td>
+  </tr>
+  <tr>
+    <td><a href="Math.htm#ACos">ACos()</a></td>
     <td>返回弧度表示的反余弦值(其余弦值为 <em>Number</em>).</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#ATan">ATan()</a></td>
+    <td><a href="Math.htm#ATan">ATan()</a></td>
     <td>返回弧度表示的反正切值(其正切值为 <em>Number</em>).</td>
   </tr>
   <tr>
@@ -67,8 +71,12 @@
     <td>指定在执行 <a href="Try.htm">try</a> 语句发生异常时执行的代码.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Ceil">Ceil()</a></td>
+    <td><a href="Math.htm#Ceil">Ceil()</a></td>
     <td>返回由 <em>Number</em> 向上取整到最近的整数(不带任何 .00 后缀).</td>
+  </tr>
+  <tr>
+    <td><a href="Chr.htm">Chr()</a></td>
+    <td>Returns the string (usually a single character) corresponding to the character code indicated by the specified number.</td>
   </tr>
   <tr>
     <td class="larger"><a href="Click.htm">Click</a></td>
@@ -117,7 +125,7 @@
   <tr>
     <td><a href="ComObjActive.htm">ComObjParameter()</a></td>
     <td>把值和类型包装成参数传递给 COM 方法.</td>
-  </tr><tr>
+  <tr>
     <td><a href="ComObjQuery.htm">ComObjQuery()</a></td>
     <td>查询 COM 对象的接口或服务.</td>
   </tr>
@@ -178,7 +186,7 @@
     <td>为多个命令设置坐标模式,相对于活动窗口还是屏幕.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Cos">Cos()</a></td>
+    <td><a href="Math.htm#Cos">Cos()</a></td>
     <td>返回 <em>Number</em> 的余弦三角函数值.</td>
   </tr>
   <tr>
@@ -254,7 +262,7 @@
     <td>无条件终止脚本.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Exp">Exp()</a></td>
+    <td><a href="Math.htm#Exp">Exp()</a></td>
     <td>返回 <em>e</em>(其近似值为 2.71828182845905)的 <em>N</em> 次幂.</td>
   </tr>
   <tr>
@@ -284,6 +292,10 @@
   <tr>
     <td><a href="FileEncoding.htm">FileEncoding</a></td>
     <td>为<a href="FileRead.htm">FileRead</a>,<a href="FileReadLine.htm">FileReadLine</a>,<a href="LoopReadFile.htm">Loop Read</a>,<a href="FileAppend.htm">FileAppend</a>和<a href="FileOpen.htm">FileOpen</a>设置默认编码.<br><i>也请参见:</i> <a href="../AHKL_Features.htm#enc">文本编码</a></td>
+  </tr>
+  <tr>
+    <td class="larger"><a href="FileExist.htm">FileExist()</a></td>
+    <td>Checks for the existence of a file or folder and returns its attributes.</td>
   </tr>
   <tr>
     <td><a href="FileInstall.htm">FileInstall</a></td>
@@ -362,7 +374,7 @@
     <td>确保在<a href="Try.htm">Try</a>语句结束后总是会执行的代码块.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Floor">Floor()</a></td>
+    <td><a href="Math.htm#Floor">Floor()</a></td>
     <td>返回由 <em>Number</em> 向下取整到最近的整数(不带任何 .00 后缀).</td>
   </tr>
   <tr>
@@ -378,12 +390,20 @@
     <td>转换 <a href="FileSetTime.htm#YYYYMMDD">YYYYMMDDHH24MISS</a> 时间戳到指定的日期/时间格式.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Func">Func()</a></td>
+    <td><a href="Func.htm">Func()</a></td>
     <td>获取函数的<a href="../Objects.htm#Function_References">引用</a>.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#GetKeyName">GetKeyName()</a><br><a href="../Functions.htm#GetKeyName">GetKeyVK()</a><br><a href="../Functions.htm#GetKeyName">GetKeySC()</a></td>
-    <td>获取按键的名称,文本,虚拟按键码或扫描码.</td>
+    <td><a href="GetKey.htm">GetKeyName()</a></td>
+    <td>获取按键的名称或文本.</td>
+  </tr>
+  <tr>
+    <td><a href="GetKey.htm">GetKeyVK()</a></td>
+    <td>获取按键的虚拟键代码.</td>
+  </tr>
+  <tr>
+    <td><a href="GetKey.htm">GetKeySC()</a></td>
+    <td>获取按键的扫描码.</td>
   </tr>
   <tr>
     <td><a href="GetKeyState.htm">GetKeyState</a></td>
@@ -454,9 +474,8 @@
     <td>比较<a href="../Variables.htm">变量</a>和值判断它们是否相等.同义于:<code>if Var = Value</code> | <code>if Var &lt;&gt; Value</code>.</td>
   </tr>
   <tr>
-    <td class="larger"><a href="IfExist.htm">IfExist</a> / 
-    <a href="../Functions.htm#FileExist">FileExist()</a></td>
-    <td>检查文件或文件夹是否存在.</td>
+    <td class="larger"><a href="IfExist.htm">IfExist</a></td>
+    <td>Checks for the existence of a file or folder.</td>
   </tr>
   <tr>
     <td><a href="IfEqual.htm">IfGreater / IfGreaterOrEqual</a></td>
@@ -511,19 +530,19 @@
     <td>搜索字符串的<em>出现位置</em>,从左边或右边开始.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#IsByRef">IsByRef()</a></td>
+    <td><a href="IsByRef.htm">IsByRef()</a></td>
     <td>判断变量是否是 ByRef 参数.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#IsFunc">IsFunc()</a></td>
-    <td>判断函数是否可以<a href="../Functions.htm#DynCall">动态调用</a>.</td>
+    <td><a href="IsFunc.htm">IsFunc()</a></td>
+    <td>检查是否存在指定的函数.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#IsLabel">IsLabel()</a></td>
+    <td><a href="IsLabel.htm">IsLabel()</a></td>
     <td>检查是否存在指定的标签.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#IsObject">IsObject()</a></td>
+    <td><a href="IsObject.htm">IsObject()</a></td>
     <td>判断某个值是否为对象.</td>
   </tr>
   <tr>
@@ -547,11 +566,11 @@
     <td>显示脚本的<a href="../Variables.htm">变量</a>:它们的名称和当前的内容.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Log">Log()</a></td>
+    <td><a href="Math.htm#Log">Log()</a></td>
     <td>返回 <em>Number</em> 的对数(底数为 10).</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Ln">Ln()</a></td>
+    <td><a href="Math.htm#Ln">Ln()</a></td>
     <td>返回 <em>Number</em> 的自然对数(底数为 e).</td>
   </tr>
   <tr>
@@ -587,7 +606,7 @@
     <td>Retrieves the name of a menu given a handle to its underlying <a href="Menu.htm#Win32_Menus">Win32 menu</a>.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Mod">Mod()</a></td>
+    <td><a href="Math.htm#Mod">Mod()</a></td>
     <td>求模.返回被除数 <em>Dividend</em> 除以除数 <em>Divisor</em> 后得到的余数.</td>
   </tr>
   <tr>
@@ -625,6 +644,10 @@
   <tr>
     <td><a href="OnMessage.htm">OnMessage()</a></td>
     <td>指定当脚本接收到特定消息时自动调用的<a href="Functions.htm">函数</a>.</td>
+  </tr>
+  <tr>
+    <td><a href="Ord.htm">Ord()</a></td>
+    <td>返回 String 中第一个字符的有序字符编码数值.</td>
   </tr>
   <tr>
     <td><a href="OutputDebug.htm">OutputDebug</a></td>
@@ -691,7 +714,7 @@
     <td>从子程序返回到之前通过<a href="Functions.htm">函数调用</a>,<a href="Gosub.htm">Gosub</a>,激活 <a href="../Hotkeys.htm">Hotkey</a>,<a href="GroupActivate.htm">GroupActivate</a> 或其他方式执行跳转的地方.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Round">Round()</a></td>
+    <td><a href="Math.htm#Round">Round()</a></td>
     <td>如果 <em>N</em> 省略或为 0,则 <em>Number</em> 被取整到最近的整数.如果 <em>N</em> 为正数,则 <em>Number</em> 被取整到 <em>N</em> 个小数位.如果 <em>N</em> 为负数,则 <em>Number</em> 被取整到十进制小数点左边 <em>N</em> 位.</td>
   </tr>
   <tr>
@@ -792,7 +815,7 @@
     <td>关闭,重启或注销系统.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Sin">Sin()</a></td>
+    <td><a href="Math.htm#Sin">Sin()</a></td>
     <td>返回 <em>Number</em> 的正弦三角函数值.</td>
   </tr>
   <tr>
@@ -844,7 +867,7 @@
     <td>把文件名或 URL 分解成它的名称,目录,扩展名和驱动器.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Sqrt">Sqrt()</a></td>
+    <td><a href="Math.htm#Sqrt">Sqrt()</a></td>
     <td>返回 <em>Number</em> 的平方根.</td>
   </tr>
   <tr>
@@ -869,8 +892,8 @@
   </tr>
   <tr>
     <td><a href="StringLeft.htm">StringLeft</a></td>
-    <td>从字符串的左边提取一些字符.</td>
-	
+    <td>从字符串的左边
+		提取一些字符.</td>
   </tr>
   <tr>
     <td class="larger"><a href="StringLen.htm">StringLen / StrLen()</a></td>
@@ -890,8 +913,8 @@
   </tr>
   <tr>
     <td><a href="StringLeft.htm">StringRight</a></td>
-    <td>从字符串的右边提取一些字符.</td>
-	
+    <td>从字符串的右边
+		提取一些字符.</td>
   </tr>
   <tr>
     <td><a href="StringSplit.htm">StringSplit</a></td>
@@ -899,8 +922,8 @@
   </tr>
   <tr>
     <td><a href="StringTrimLeft.htm">StringTrimLeft</a></td>
-    <td>从字符串的左边移除一些字符.</td>
-	
+    <td>从字符串的左边
+	移除一些字符.</td>
   </tr>
   <tr>
     <td><a href="StringTrimLeft.htm">StringTrimRight</a></td>
@@ -920,7 +943,7 @@
     <td>获取屏幕分辨率,多显示器信息,系统对象的尺寸和其他系统属性.</td>
   </tr>
   <tr>
-    <td><a href="../Functions.htm#Tan">Tan()</a></td>
+    <td><a href="Math.htm#Tan">Tan()</a></td>
     <td>返回 <em>Number</em> 的正切三角函数值.</td>
   </tr>
   <tr>

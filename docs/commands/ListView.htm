@@ -199,7 +199,7 @@ return</pre>
 <p><strong>F</strong>: ListView 接收到键盘焦点.</p>
 <p><strong>f</strong> (小写的 F): ListView 失去了键盘焦点.</p>
 <p id="ItemChanged"><strong>I</strong>: 项目发生了变化. 通过变成选择的/未选择的, 选中的/未选中的等让一行改变了. 如果用户选择了一个新行, 则至少会接收到两个这样的通知: 一个是在取消之前的行时, 而另一个是在选择新行时. 在 v1.0.44+, 变量 A_EventInfo 包含目标行号. 在 v1.0.46.10+, ErrorLevel 包含零个或多个下列字母来表示项目发生的变化: S (选择) 或 s (取消选择), 和/或 F (成为焦点) 或 f (失去焦点), 和/或 C (选中) 或 c (取消选中). 例如, SF 表示此行被选择且成为了焦点. 要检查是否存在一个特定的字母,请使用<a href="LoopParse.htm">解析循环</a>或带区分大小写选项的 <a href="InStr.htm">InStr()</a>; 例如:<code>InStr(ErrorLevel, "S", true)</code>.注: 考虑到和未来版本的兼容性, 脚本不应假定 "SsFfCc" 包含了所有可能的字母或字母组合. 此外, 指定 <a href="Critical.htm">Critical</a> 作为 <a href="Gui.htm#label">g 标签</a> 子程序的首行来确保接收到所有的 "I" 通知 (否则, 如果脚本无法跟上, 则它们其中一些可能会丢失).</p>
-<p id="NotifyK"><strong>K</strong>: 当 ListView 拥有焦点时用户按下了一个键. A_EventInfo 包含此键的虚拟按键代码, 这是介于 1 和 255 之间的数字. 如果此键是字母键,则在大多数键盘布局中可以使用 <code><a href="../Functions.htm#Chr">Chr(A_EventInfo)</a></code> 把它转换成相应的字符.不论 <a href="#WantF2">WantF2</a> 选项如何都可以接收到 F2 键击.然而,不会接收到 Enter 键击；要接收它,请像<a href="#Enter">下面</a>描述的那样使用一个默认按钮.</p>
+<p id="NotifyK"><strong>K</strong>: 当 ListView 拥有焦点时用户按下了一个键. A_EventInfo 包含此键的虚拟按键代码, 这是介于 1 和 255 之间的数字. 然后可以通过 <a href="GetKey.htm">GetKeyName</a> 转换为按键名称或字符. 例如, <code>key := GetKeyName(<a href="Format.htm">Format</a>("vk{:x}", A_EventInfo))</code>. 在大多数键盘布局中, A-Z 键都可以通过 <code><a href="Chr.htm">Chr(A_EventInfo)</a></code> 转换为相应的字符. F2 的按键动作总是被接收且不会被 <a href="#WantF2">WantF2</a> 影响. 但是, 回车键不会被接收; 除非按照下面的方法设置为默认按钮.</p>
 <p><strong>M</strong>: 选取框. 用户开始在一组行或图标周围拖动一个矩形选区.</p>
 <p><strong>S</strong>: 用户开始滚动 ListView.</p>
 <p><strong>s</strong> (小写的 S): 用户完成滚动 ListView.</p>

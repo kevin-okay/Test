@@ -11,7 +11,7 @@
 
 <h1>RegisterCallback() <span class="ver">[v1.0.47+]</span></h1>
 
-<p>创建机器码地址,当它被调用时会重定向到脚本中的<a href="Functions.htm">函数</a>.</p>
+<p>创建机器码地址,当它被调用时会重定向到脚本中的<a href="../Functions.htm">函数</a>.</p>
 
 <pre class="Syntax">Address := RegisterCallback("FunctionName" [, Options = "", ParamCount = FormalCount, EventInfo = Address])</pre>
 <h3>参数</h3>
@@ -26,8 +26,8 @@
       <p><span class="ver">[v1.1.06+]:</span> 可以传递 <a href="../objects/Func.htm">函数引用</a> 来代替函数名.</p>
     </dd>
 
-  <dt>选项</dt>
-  <dd><p>指定零个或多个下列单词. 在选项间使用空格分隔(例如<code>C Fast</code>).</p>
+  <dt>Options</dt>
+  <dd><p>指定零个或多个下列单词. 在选项间使用空格分隔(例如 <code>C Fast</code> ).</p>
     <p id="Fast"><strong>Fast</strong> 或 <strong>F</strong>: 避免每次调用 <em>FunctionName</em> 时都启动新 <a href="../misc/Threads.htm">线程</a>. 尽管这样执行的更好, 但必须避免调用 <em>Address</em> 的线程发生变化 (例如当回调函数被传入的消息触发时). 这是因为 <em>FunctionName</em> 能改变在它被调用时刚好在运行的线程的全局设置 (例如 <a href="../misc/ErrorLevel.htm">ErrorLevel</a>, <a href="../Variables.htm#LastError">A_LastError</a> 和 <a href="../misc/WinTitle.htm#LastFoundWindow">上次找到的窗口</a>). 想了解更多细节, 请参阅 <a href="#Threads">备注</a>.</p>
     <p><strong>CDecl</strong> 或 <strong>C</strong>:让 <em>Address</em> 遵循"C"调用约定.此选项通常省略, 因为在回调函数中标准调用约定更常用.</p></dd>
 
@@ -56,7 +56,7 @@ wParam := wParam &lt;&lt; 32 &gt;&gt; 32</pre>
 
 <p><strong>64 位:</strong> 所有传入参数都是 64 位有符号整数. AutoHotkey 没有对 64 位无符号整数的原生支持.</p>
 
-<p><strong>AutoHotkey 32位/64位:</strong> 如果传入参数被当作8位或16位(x64上是32位)整数,此数值的高位可能会包含杂位,可通过以下方法加以过滤:</p>
+<p><strong>AutoHotkey 32位/64位:</strong> 如果传入参数被当作8位或16位 (x64上是32位) 整数,此数值的高位可能会包含杂位,可通过以下方法加以过滤:</p>
 <pre>Callback(UCharParam, UShortParam, UIntParam) {
     UCharParam &amp;= 0xFF
     UShortParam &amp;= 0xFFFF
@@ -67,9 +67,9 @@ wParam := wParam &lt;&lt; 32 &gt;&gt; 32</pre>
 <pre>MyString := StrGet(MyParameter)  <em>; AHK_L 46+</em></pre>
 <p>如果某个传入参数为结构的地址, 则可以参照 <a href="DllCall.htm#struct">DllCall 结构</a> 中描述的步骤提取其中的各个成员.</p>
 
-<p id="Indirect"><span class="ver">[AHK_L 60+]:</span> 如果函数声明为 <a href="../Functions.htm#Variadic">可变参数的</a>, 那么它的最后一个参数被赋值为首个没有赋值给脚本参数的回调参数 <i>地址</i>. 例如:</p>
+<p id="Indirect"><strong>接收参数的地址</strong><span class="ver">[AHK_L 60+]</span>: 如果函数声明为 <a href="../Functions.htm#Variadic">可变参数的</a>, 那么它的最后一个参数被赋值为首个没有赋值给脚本参数的回调参数 <i>地址</i>. 例如:</p>
 <pre>
-callback := RegisterCallback("TheFunc", "F", 1)  <em>; 必须指定参数数目.</em>
+callback := RegisterCallback("TheFunc", "F", 3)  <em>; 必须指定参数列表的大小.</em>
 TheFunc("TheFunc was called directly.")          <em>; 直接调用 TheFunc.</em>
 DllCall(callback, float, 10.5, int64, 42)        <em>; 通过回调调用 TheFunc.</em>
 TheFunc(params*) {
@@ -78,7 +78,8 @@ TheFunc(params*) {
     else
         MsgBox % <a href="NumGet.htm">NumGet</a>(params+0, "float") ", " NumGet(params+A_PtrSize, "int64")
 }</pre>
-<p>大部分回调使用 <i>stdcall</i> 调用约定, 这种方式需要固定的参数数目. 在大多数情况中, 在创建回调时必须指定 <i>ParamCount</i>. 在 64 位版本或 32 位版本的 <i>Cdecl</i> 回调中, <i>ParamCount</i> 可以省略, 此时所有可选参数接收它们的默认值且在计算保存在 <i>params</i> 中的地址时被忽略.</p>
+<p>大部分回调使用 <em>stdcall</em> 调用约定, 这种方式需要固定的参数数目. 在这种情况下, <em>ParamCount</em> 必须设置为参数列表的大小, Int64 需要两倍于 32位 的参数.</p>
+<p>对于 <em>Cdecl</em> 或64位调用约定, <em>ParamCount</em> 仅被已经赋值的参数所影响. 如果省略, 所有可选参数被设为他们的默认值,且不参与 <em>params</em> 保存地址大小的计算.</p>
 
 <h3>函数应该 <em>返回</em> 什么</h3>
 <p>如果函数使用不带任何参数的 <a href="Return.htm">Return</a>, 或指定空值如 "" (甚至从不使用 Return), 则返回 0 给 <em>Address</em> 的调用者. 否则, 函数应该返回一个介于 -2147483648 和 4294967295 之间的整数, 它会被返回给 <em>Address</em> 的调用者.</p>
@@ -146,7 +147,7 @@ WindowProc(hwnd, uMsg, wParam, lParam)
     global TextBackgroundColor, TextBackgroundBrush, WindowProcOld
     if (uMsg = 0x138 &amp;&amp; lParam = A_EventInfo)  <em>; 0x138 为 WM_CTLCOLORSTATIC.</em>
     {
-        DllCall("SetBkColor", Ptr, wParam, UInt, TextBackgroundColor)
+        DllCall(&quot;SetBkColor&quot;, Ptr, wParam, UInt, TextBackgroundColor)
         return TextBackgroundBrush  <em>; 返回 HBRUSH 来通知操作系统我们改变了 HDC.</em>
     }
     <em>; 否则 (如果上面没有返回), 传递所有的未处理事件到原来的 WindowProc.</em>
