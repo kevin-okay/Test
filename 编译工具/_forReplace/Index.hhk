@@ -184,10 +184,10 @@
 <li><object type="text/sitemap"><param name="Name" value="A_YWeek"><param name="Local" value="docs/Variables.htm#YWeek"></object>
 <li><object type="text/sitemap"><param name="Name" value="A_YYYY"><param name="Local" value="docs/Variables.htm#YYYY"></object>
 <li><object type="text/sitemap"><param name="Name" value="abbreviation expansion"><param name="Local" value="docs/Hotstrings.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Abs()"><param name="Local" value="docs/Functions.htm#Abs"></object>
-<li><object type="text/sitemap"><param name="Name" value="absolute value, abs()"><param name="Local" value="docs/Functions.htm#Abs"></object>
+<li><object type="text/sitemap"><param name="Name" value="Abs()"><param name="Local" value="docs/commands/Math.htm#Abs"></object>
+<li><object type="text/sitemap"><param name="Name" value="absolute value, abs()"><param name="Local" value="docs/commands/Math.htm#Abs"></object>
 <li><object type="text/sitemap"><param name="Name" value="Acknowledgements"><param name="Local" value="docs/misc/Acknowledgements.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="ACos()"><param name="Local" value="docs/Functions.htm#ACos"></object>
+<li><object type="text/sitemap"><param name="Name" value="ACos()"><param name="Local" value="docs/commands/Math.htm#ACos"></object>
 <li><object type="text/sitemap"><param name="Name" value="activate a window"><param name="Local" value="docs/commands/WinActivate.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="ActiveX controls (GUI)"><param name="Local" value="docs/commands/GuiControls.htm#ActiveX"></object>
 <li><object type="text/sitemap"><param name="Name" value="add"><param name="Local" value="docs/commands/EnvAdd.htm"></object>
@@ -207,11 +207,11 @@
 <li><object type="text/sitemap"><param name="Name" value="AlwaysOnTop (WinSet)"><param name="Local" value="docs/commands/WinSet.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="append to file"><param name="Local" value="docs/commands/FileAppend.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Arrays"><param name="Local" value="docs/misc/Arrays.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Asc()"><param name="Local" value="docs/Functions.htm#Asc"></object>
+<li><object type="text/sitemap"><param name="Name" value="Asc()"><param name="Local" value="docs/commands/Asc.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="ASCII conversion"><param name="Local" value="docs/commands/Transform.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="ASin()"><param name="Local" value="docs/Functions.htm#ASin"></object>
+<li><object type="text/sitemap"><param name="Name" value="ASin()"><param name="Local" value="docs/commands/Math.htm#ASin"></object>
 <li><object type="text/sitemap"><param name="Name" value="assigning values to variables"><param name="Local" value="docs/Variables.htm#AssignOp"></object>
-<li><object type="text/sitemap"><param name="Name" value="ATan()"><param name="Local" value="docs/Functions.htm#ATan"></object>
+<li><object type="text/sitemap"><param name="Name" value="ATan()"><param name="Local" value="docs/commands/Math.htm#ATan"></object>
 <li><object type="text/sitemap"><param name="Name" value="attributes of files and folders"><param name="Local" value="docs/commands/FileGetAttrib.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="auto-execute section"><param name="Local" value="docs/Scripts.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="auto-replace text as you type it"><param name="Local" value="docs/Hotstrings.htm"></object>
@@ -239,12 +239,12 @@
 <li><object type="text/sitemap"><param name="Name" value="callbacks"><param name="Local" value="docs/commands/RegisterCallback.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="case sensitive strings"><param name="Local" value="docs/commands/StringCaseSense.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Catch"><param name="Local" value="docs/commands/Catch.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Ceil()"><param name="Local" value="docs/Functions.htm#Ceil"></object>
+<li><object type="text/sitemap"><param name="Name" value="Ceil()"><param name="Local" value="docs/commands/Math.htm#Ceil"></object>
 <li><object type="text/sitemap"><param name="Name" value="Changelog"><param name="Local" value="docs/AHKL_ChangeLog.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Checkbox controls (GUI)"><param name="Local" value="docs/commands/GuiControls.htm#Checkbox"></object>
 <li><object type="text/sitemap"><param name="Name" value="choose file"><param name="Local" value="docs/commands/FileSelectFile.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="choose folder"><param name="Local" value="docs/commands/FileSelectFolder.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Chr()"><param name="Local" value="docs/Functions.htm#Chr"></object>
+<li><object type="text/sitemap"><param name="Name" value="Chr()"><param name="Local" value="docs/commands/Chr.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="class (Objects)"><param name="Local" value="docs/Objects.htm#Custom_Classes"></object>
 <li><object type="text/sitemap"><param name="Name" value="class name of a window"><param name="Local" value="docs/commands/WinGetClass.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Click a mouse button"><param name="Local" value="docs/commands/Click.htm"></object>
@@ -298,7 +298,7 @@
 <li><object type="text/sitemap"><param name="Name" value="CoordMode"><param name="Local" value="docs/commands/CoordMode.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="copy file"><param name="Local" value="docs/commands/FileCopy.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="copy folder/directory"><param name="Local" value="docs/commands/FileCopyDir.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Cos()"><param name="Local" value="docs/Functions.htm#Cos"></object>
+<li><object type="text/sitemap"><param name="Name" value="Cos()"><param name="Local" value="docs/commands/Math.htm#Cos"></object>
 <li><object type="text/sitemap"><param name="Name" value="create file"><param name="Local" value="docs/commands/FileAppend.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="create folder/directory"><param name="Local" value="docs/commands/FileCreateDir.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Critical"><param name="Local" value="docs/commands/Critical.htm"></object>
@@ -358,7 +358,7 @@
 <li><object type="text/sitemap"><param name="Name" value="Exception()"><param name="Local" value="docs/commands/Throw.htm#Exception"></object>
 <li><object type="text/sitemap"><param name="Name" value="Exit"><param name="Local" value="docs/commands/Exit.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="ExitApp"><param name="Local" value="docs/commands/ExitApp.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Exp()"><param name="Local" value="docs/Functions.htm#Exp"></object>
+<li><object type="text/sitemap"><param name="Name" value="Exp()"><param name="Local" value="docs/commands/Math.htm#Exp"></object>
 <li><object type="text/sitemap"><param name="Name" value="expressions"><param name="Local" value="docs/Variables.htm#Expressions"></object>
 <li><object type="text/sitemap"><param name="Name" value="ExtractInteger -&gt; NumGet()"><param name="Local" value="docs/commands/NumGet.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="False"><param name="Local" value="docs/Variables.htm#Boolean"></object>
@@ -377,7 +377,7 @@
 <li><object type="text/sitemap"><param name="Name" value="FileCreateShortcut"><param name="Local" value="docs/commands/FileCreateShortcut.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileDelete"><param name="Local" value="docs/commands/FileDelete.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileEncoding"><param name="Local" value="docs/commands/FileEncoding.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="FileExist()"><param name="Local" value="docs/Functions.htm#FileExist"></object>
+<li><object type="text/sitemap"><param name="Name" value="FileExist()"><param name="Local" value="docs/commands/FileExist.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileGetAttrib"><param name="Local" value="docs/commands/FileGetAttrib.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileGetShortcut"><param name="Local" value="docs/commands/FileGetShortcut.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="FileGetSize"><param name="Local" value="docs/commands/FileGetSize.htm"></object>
@@ -402,7 +402,7 @@
 <li><object type="text/sitemap"><param name="Name" value="find a window"><param name="Local" value="docs/commands/WinExist.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="floating point (check if it is one)"><param name="Local" value="docs/commands/IfIs.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="floating point (SetFormat)"><param name="Local" value="docs/commands/SetFormat.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Floor()"><param name="Local" value="docs/Functions.htm#Floor"></object>
+<li><object type="text/sitemap"><param name="Name" value="Floor()"><param name="Local" value="docs/commands/Math.htm#Floor"></object>
 <li><object type="text/sitemap"><param name="Name" value="focus"><param name="Local" value="docs/commands/ControlFocus.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="folder/directory copy"><param name="Local" value="docs/commands/FileCopyDir.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="folder/directory create"><param name="Local" value="docs/commands/FileCreateDir.htm"></object>
@@ -418,17 +418,17 @@
 <li><object type="text/sitemap"><param name="Name" value="FTP uploading example"><param name="Local" value="docs/commands/FileAppend.htm#FTP"></object>
 <li><object type="text/sitemap"><param name="Name" value="functions (defining and calling)"><param name="Local" value="docs/Functions.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="functions (libraries)"><param name="Local" value="docs/Functions.htm#lib"></object>
+<li><object type="text/sitemap"><param name="Name" value="function objects"><param name="Local" value="docs/objects/Functor.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Func object"><param name="Local" value="docs/objects/Func.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Func()"><param name="Local" value="docs/Objects.htm#Function_References"></object>
+<li><object type="text/sitemap"><param name="Name" value="Func()"><param name="Local" value="docs/commands/Func.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="g-label (responding to GUI events)"><param name="Local" value="docs/commands/Gui.htm#label"></object>
 <li><object type="text/sitemap"><param name="Name" value="game automation"><param name="Local" value="docs/commands/PixelSearch.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="GetAddress method (Object)"><param name="Local" value="docs/objects/Object.htm#GetAddress"></object>
 <li><object type="text/sitemap"><param name="Name" value="GetCapacity method (Object)"><param name="Local" value="docs/objects/Object.htm#GetCapacity"></object>
-<li><object type="text/sitemap"><param name="Name" value="GetKeyName()"><param name="Local" value="docs/Functions.htm#GetKeyName"></object>
-<li><object type="text/sitemap"><param name="Name" value="GetKeySC()"><param name="Local" value="docs/Functions.htm#GetKeyName"></object>
+<li><object type="text/sitemap"><param name="Name" value="GetKeyName()"><param name="Local" value="docs/commands/GetKey.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="GetKeySC()"><param name="Local" value="docs/commands/GetKey.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="GetKeyState"><param name="Local" value="docs/commands/GetKeyState.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="GetKeyState()"><param name="Local" value="docs/Functions.htm#GetKeyState"></object>
-<li><object type="text/sitemap"><param name="Name" value="GetKeyVK()"><param name="Local" value="docs/Functions.htm#GetKeyName"></object>
+<li><object type="text/sitemap"><param name="Name" value="GetKeyVK()"><param name="Local" value="docs/commands/GetKey.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="global variables in functions"><param name="Local" value="docs/Functions.htm#Global"></object>
 <li><object type="text/sitemap"><param name="Name" value="Gosub"><param name="Local" value="docs/commands/Gosub.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Goto"><param name="Local" value="docs/commands/Goto.htm"></object>
@@ -516,10 +516,10 @@
 <li><object type="text/sitemap"><param name="Name" value="integer (check if it is one)"><param name="Local" value="docs/commands/IfIs.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="integer (SetFormat)"><param name="Local" value="docs/commands/SetFormat.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Interrupt"><param name="Local" value="docs/commands/Thread.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="IsByRef()"><param name="Local" value="docs/Functions.htm#IsByRef"></object>
-<li><object type="text/sitemap"><param name="Name" value="IsFunc()"><param name="Local" value="docs/Functions.htm#IsFunc"></object>
-<li><object type="text/sitemap"><param name="Name" value="IsLabel()"><param name="Local" value="docs/Functions.htm#IsLabel"></object>
-<li><object type="text/sitemap"><param name="Name" value="IsObject()"><param name="Local" value="docs/Objects.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="IsByRef()"><param name="Local" value="docs/commands/IsByRef.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="IsFunc()"><param name="Local" value="docs/commands/IsFunc.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="IsLabel()"><param name="Local" value="docs/commands/IsLabel.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="IsObject()"><param name="Local" value="docs/commands/IsObject.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Join (continuation sections)"><param name="Local" value="docs/Scripts.htm#Join"></object>
 <li><object type="text/sitemap"><param name="Name" value="Joystick"><param name="Local" value="docs/KeyList.htm#Joystick"></object>
 <li><object type="text/sitemap"><param name="Name" value="JScript, embedded/inline"><param name="Local" value="docs/commands/DllCall.htm#COM"></object>
@@ -543,13 +543,13 @@
 <li><object type="text/sitemap"><param name="Name" value="ListVars"><param name="Local" value="docs/commands/ListVars.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="ListView controls (GUI)"><param name="Local" value="docs/commands/ListView.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="ListView, getting text from"><param name="Local" value="docs/commands/ControlGet.htm#List"></object>
-<li><object type="text/sitemap"><param name="Name" value="Ln()"><param name="Local" value="docs/Functions.htm#Ln"></object>
+<li><object type="text/sitemap"><param name="Name" value="Ln()"><param name="Local" value="docs/commands/Math.htm#Ln"></object>
 <li><object type="text/sitemap"><param name="Name" value="lnk (link/shortcut) file"><param name="Local" value="docs/commands/FileCreateShortcut.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="LoadPicture"><param name="Local" value="docs/commands/LoadPicture.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="local variables"><param name="Local" value="docs/Functions.htm#Locals"></object>
 <li><object type="text/sitemap"><param name="Name" value="Locale"><param name="Local" value="docs/commands/StringCaseSense.htm#Locale"></object>
-<li><object type="text/sitemap"><param name="Name" value="Log()"><param name="Local" value="docs/Functions.htm#Log"></object>
-<li><object type="text/sitemap"><param name="Name" value="logarithm, log()"><param name="Local" value="docs/Functions.htm#Log"></object>
+<li><object type="text/sitemap"><param name="Name" value="Log()"><param name="Local" value="docs/commands/Math.htm#Log"></object>
+<li><object type="text/sitemap"><param name="Name" value="logarithm, log()"><param name="Local" value="docs/commands/Math.htm#Log"></object>
 <li><object type="text/sitemap"><param name="Name" value="logoff"><param name="Local" value="docs/commands/Shutdown.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="long file name (converting to)"><param name="Local" value="docs/commands/LoopFile.htm#LoopFileLongPath"></object>
 <li><object type="text/sitemap"><param name="Name" value="Loop"><param name="Local" value="docs/commands/Loop.htm"></object>
@@ -590,9 +590,9 @@
 <li><object type="text/sitemap"><param name="Name" value="messages, sending"><param name="Local" value="docs/commands/PostMessage.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="meta-functions (Objects)"><param name="Local" value="docs/Objects.htm#Meta_Functions"></object>
 <li><object type="text/sitemap"><param name="Name" value="MinIndex()"><param name="Local" value="docs/objects/Object.htm#MinMaxIndex"></object>
-<li><object type="text/sitemap"><param name="Name" value="Mod()"><param name="Local" value="docs/Functions.htm#Mod"></object>
+<li><object type="text/sitemap"><param name="Name" value="Mod()"><param name="Local" value="docs/commands/Math.htm#Mod"></object>
 <li><object type="text/sitemap"><param name="Name" value="modal (always on top)"><param name="Local" value="docs/commands/MsgBox.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="modulo, mod()"><param name="Local" value="docs/Functions.htm#Mod"></object>
+<li><object type="text/sitemap"><param name="Name" value="modulo, mod()"><param name="Local" value="docs/commands/Math.htm#Mod"></object>
 <li><object type="text/sitemap"><param name="Name" value="MonthCal controls (GUI)"><param name="Local" value="docs/commands/GuiControls.htm#MonthCal"></object>
 <li><object type="text/sitemap"><param name="Name" value="mouse hook"><param name="Local" value="docs/commands/_InstallMouseHook.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="mouse speed"><param name="Local" value="docs/commands/SetDefaultMouseSpeed.htm"></object>
@@ -641,7 +641,7 @@
 <li><object type="text/sitemap"><param name="Name" value="OnMessage()"><param name="Local" value="docs/commands/OnMessage.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="open file"><param name="Local" value="docs/commands/FileOpen.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="operators in expressions"><param name="Local" value="docs/Variables.htm#Operators"></object>
-<li><object type="text/sitemap"><param name="Name" value="Ord()"><param name="Local" value="docs/Functions.htm#Ord"></object>
+<li><object type="text/sitemap"><param name="Name" value="Ord()"><param name="Local" value="docs/commands/Ord.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="OutputDebug"><param name="Local" value="docs/commands/OutputDebug.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="OwnDialogs (GUI)"><param name="Local" value="docs/commands/Gui.htm#OwnDialogs"></object>
 <li><object type="text/sitemap"><param name="Name" value="Owner of a GUI window"><param name="Local" value="docs/commands/Gui.htm#Owner"></object>
@@ -712,8 +712,8 @@
 <li><object type="text/sitemap"><param name="Name" value="Return"><param name="Local" value="docs/commands/Return.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RGB color names"><param name="Local" value="docs/commands/Progress.htm#colors"></object>
 <li><object type="text/sitemap"><param name="Name" value="RGB colors"><param name="Local" value="docs/commands/PixelGetColor.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Round()"><param name="Local" value="docs/Functions.htm#Round"></object>
-<li><object type="text/sitemap"><param name="Name" value="rounding a number"><param name="Local" value="docs/Functions.htm#Round"></object>
+<li><object type="text/sitemap"><param name="Name" value="Round()"><param name="Local" value="docs/commands/Math.htm#Round"></object>
+<li><object type="text/sitemap"><param name="Name" value="rounding a number"><param name="Local" value="docs/commands/Math.htm#Round"></object>
 <li><object type="text/sitemap"><param name="Name" value="RTrim()"><param name="Local" value="docs/commands/Trim.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Run"><param name="Local" value="docs/commands/Run.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RunAs"><param name="Local" value="docs/commands/RunAs.htm"></object>
@@ -758,7 +758,7 @@
 <li><object type="text/sitemap"><param name="Name" value="shortcut file"><param name="Local" value="docs/commands/FileCreateShortcut.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Shutdown"><param name="Local" value="docs/commands/Shutdown.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Silent Install/Uninstall"><param name="Local" value="docs/Scripts.htm#install"></object>
-<li><object type="text/sitemap"><param name="Name" value="Sin()"><param name="Local" value="docs/Functions.htm#Sin"></object>
+<li><object type="text/sitemap"><param name="Name" value="Sin()"><param name="Local" value="docs/commands/Math.htm#Sin"></object>
 <li><object type="text/sitemap"><param name="Name" value="SingleInstance"><param name="Local" value="docs/commands/_SingleInstance.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="size of a file/folder"><param name="Local" value="docs/commands/FileGetSize.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="size of a window"><param name="Local" value="docs/commands/WinGetPos.htm"></object>
@@ -779,7 +779,7 @@
 <li><object type="text/sitemap"><param name="Name" value="SplashTextOn"><param name="Local" value="docs/commands/SplashTextOn.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SplitPath"><param name="Local" value="docs/commands/SplitPath.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="splitting long lines"><param name="Local" value="docs/Scripts.htm#continuation"></object>
-<li><object type="text/sitemap"><param name="Name" value="Sqrt()"><param name="Local" value="docs/Functions.htm#Sqrt"></object>
+<li><object type="text/sitemap"><param name="Name" value="Sqrt()"><param name="Local" value="docs/commands/Math.htm#Sqrt"></object>
 <li><object type="text/sitemap"><param name="Name" value="standard library"><param name="Local" value="docs/Functions.htm#lib"></object>
 <li><object type="text/sitemap"><param name="Name" value="standard output (stdout)"><param name="Local" value="docs/commands/FileAppend.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="static variables"><param name="Local" value="docs/Functions.htm#static"></object>
@@ -815,7 +815,7 @@
 <li><object type="text/sitemap"><param name="Name" value="suspend or hibernate"><param name="Local" value="docs/commands/Shutdown.htm#Suspend"></object>
 <li><object type="text/sitemap"><param name="Name" value="SysGet"><param name="Local" value="docs/commands/SysGet.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Tab controls (GUI)"><param name="Local" value="docs/commands/GuiControls.htm#Tab"></object>
-<li><object type="text/sitemap"><param name="Name" value="Tan()"><param name="Local" value="docs/Functions.htm#Tan"></object>
+<li><object type="text/sitemap"><param name="Name" value="Tan()"><param name="Local" value="docs/commands/Math.htm#Tan"></object>
 <li><object type="text/sitemap"><param name="Name" value="terminate a window"><param name="Local" value="docs/commands/WinKill.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="terminate script"><param name="Local" value="docs/commands/ExitApp.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="ternary operator (?:)"><param name="Local" value="docs/Variables.htm#ternary"></object>

@@ -1,8 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-</head>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312"></head>
 <body>
 <object type="text/site properties">
 <param name="Window Styles" value="0x800025">
@@ -40,8 +37,8 @@
 </ul>
 <li><object type="text/sitemap"><param name="Name" value="迁移到 AutoHotkey 1.1 (AutoHotkey_L)"></object>
 <ul>
-<li><object type="text/sitemap"><param name="Name" value="AutoHotkey_L 新特性"><param name="Local" value="docs/AHKL_Features.htm"></object></li>
-<li><object type="text/sitemap"><param name="Name" value="脚本兼容性"><param name="Local" value="docs/Compat.htm"></object></li>
+<li><object type="text/sitemap"><param name="Name" value="AutoHotkey_L 新特性"><param name="Local" value="docs/AHKL_Features.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="脚本兼容性"><param name="Local" value="docs/Compat.htm"></object>
 </ul>
 <li><object type="text/sitemap"><param name="Name" value="环境变量管理"></object>
 <ul>
@@ -163,22 +160,24 @@
 </ul>
 <li><object type="text/sitemap"><param name="Name" value="内置函数"><param name="Local" value="docs/Functions.htm"></object>
 <ul>
-<li><object type="text/sitemap"><param name="Name" value="Asc"><param name="Local" value="docs/Functions.htm#Asc"></object>
-<li><object type="text/sitemap"><param name="Name" value="Chr"><param name="Local" value="docs/Functions.htm#Chr"></object>
-<li><object type="text/sitemap"><param name="Name" value="FileExist"><param name="Local" value="docs/Functions.htm#FileExist"></object>
+<li><object type="text/sitemap"><param name="Name" value="Asc"><param name="Local" value="docs/commands/Asc.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Chr"><param name="Local" value="docs/commands/Chr.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="FileExist"><param name="Local" value="docs/commands/FileExist.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Format"><param name="Local" value="docs/commands/Format.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="GetKeyName/VK/SC"><param name="Local" value="docs/Functions.htm#GetKeyName"></object>
-<li><object type="text/sitemap"><param name="Name" value="GetKeyState"><param name="Local" value="docs/Functions.htm#GetKeyState"></object>
+<li><object type="text/sitemap"><param name="Name" value="Func"><param name="Local" value="docs/commands/Func.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="GetKeyName/VK/SC"><param name="Local" value="docs/commands/GetKey.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="GetKeyState"><param name="Local" value="docs/commands/GetKeyState.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="InStr"><param name="Local" value="docs/commands/InStr.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="IsByRef"><param name="Local" value="docs/Functions.htm#IsByRef"></object>
-<li><object type="text/sitemap"><param name="Name" value="IsFunc"><param name="Local" value="docs/Functions.htm#IsFunc"></object>
-<li><object type="text/sitemap"><param name="Name" value="IsLabel"><param name="Local" value="docs/Functions.htm#IsLabel"></object>
+<li><object type="text/sitemap"><param name="Name" value="IsByRef"><param name="Local" value="docs/commands/IsByRef.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="IsFunc"><param name="Local" value="docs/commands/IsFunc.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="IsLabel"><param name="Local" value="docs/commands/IsLabel.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="IsObject"><param name="Local" value="docs/commands/IsObject.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="NumGet"><param name="Local" value="docs/commands/NumGet.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="NumPut"><param name="Local" value="docs/commands/NumPut.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="OnClipboardChange"><param name="Local" value="docs/commands/OnClipboardChange.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="OnExit"><param name="Local" value="docs/commands/OnExit.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="OnMessage"><param name="Local" value="docs/commands/OnMessage.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Ord"><param name="Local" value="docs/Functions.htm#Ord"></object>
+<li><object type="text/sitemap"><param name="Name" value="Ord"><param name="Local" value="docs/commands/Ord.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RegExMatch"><param name="Local" value="docs/commands/RegExMatch.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RegExReplace"><param name="Local" value="docs/commands/RegExReplace.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RegisterCallback"><param name="Local" value="docs/commands/RegisterCallback.htm"></object>
@@ -237,7 +236,7 @@
 <li><object type="text/sitemap"><param name="Name" value="#InstallMouseHook"><param name="Local" value="docs/commands/_InstallMouseHook.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="#KeyHistory"><param name="Local" value="docs/commands/_KeyHistory.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="BlockInput"><param name="Local" value="docs/commands/BlockInput.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Click 点击"><param name="Local" value="docs/commands/Click.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Click"><param name="Local" value="docs/commands/Click.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="ControlClick"><param name="Local" value="docs/commands/ControlClick.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="ControlSend, ControlSendRaw"><param name="Local" value="docs/commands/ControlSend.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="CoordMode"><param name="Local" value="docs/commands/CoordMode.htm"></object>
@@ -259,21 +258,21 @@
 <li><object type="text/sitemap"><param name="Name" value="SetNumScrollCapsLockState"><param name="Local" value="docs/commands/SetNumScrollCapsLockState.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SetStoreCapslockMode"><param name="Local" value="docs/commands/SetStoreCapslockMode.htm"></object>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="数学相关"></object>
+<li><object type="text/sitemap"><param name="Name" value="数学相关"><param name="Local" value="docs/commands/Math.htm"></object>
 <ul>
-<li><object type="text/sitemap"><param name="Name" value="Abs"><param name="Local" value="docs/Functions.htm#Abs"></object>
-<li><object type="text/sitemap"><param name="Name" value="Ceil"><param name="Local" value="docs/Functions.htm#Ceil"></object>
-<li><object type="text/sitemap"><param name="Name" value="Exp"><param name="Local" value="docs/Functions.htm#Exp"></object>
-<li><object type="text/sitemap"><param name="Name" value="Floor"><param name="Local" value="docs/Functions.htm#Floor"></object>
-<li><object type="text/sitemap"><param name="Name" value="Log"><param name="Local" value="docs/Functions.htm#Log"></object>
-<li><object type="text/sitemap"><param name="Name" value="Ln"><param name="Local" value="docs/Functions.htm#Ln"></object>
-<li><object type="text/sitemap"><param name="Name" value="Mod"><param name="Local" value="docs/Functions.htm#Mod"></object>
+<li><object type="text/sitemap"><param name="Name" value="Abs"><param name="Local" value="docs/commands/Math.htm#Abs"></object>
+<li><object type="text/sitemap"><param name="Name" value="Ceil"><param name="Local" value="docs/commands/Math.htm#Ceil"></object>
+<li><object type="text/sitemap"><param name="Name" value="Exp"><param name="Local" value="docs/commands/Math.htm#Exp"></object>
+<li><object type="text/sitemap"><param name="Name" value="Floor"><param name="Local" value="docs/commands/Math.htm#Floor"></object>
+<li><object type="text/sitemap"><param name="Name" value="Log"><param name="Local" value="docs/commands/Math.htm#Log"></object>
+<li><object type="text/sitemap"><param name="Name" value="Ln"><param name="Local" value="docs/commands/Math.htm#Ln"></object>
+<li><object type="text/sitemap"><param name="Name" value="Mod"><param name="Local" value="docs/commands/Math.htm#Mod"></object>
 <li><object type="text/sitemap"><param name="Name" value="Random"><param name="Local" value="docs/commands/Random.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Round"><param name="Local" value="docs/Functions.htm#Round"></object>
+<li><object type="text/sitemap"><param name="Name" value="Round"><param name="Local" value="docs/commands/Math.htm#Round"></object>
 <li><object type="text/sitemap"><param name="Name" value="SetFormat"><param name="Local" value="docs/commands/SetFormat.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Sqrt"><param name="Local" value="docs/Functions.htm#Sqrt"></object>
-<li><object type="text/sitemap"><param name="Name" value="Sin/Cos/Tan"><param name="Local" value="docs/Functions.htm#Sin"></object>
-<li><object type="text/sitemap"><param name="Name" value="ASin/ACos/ATan"><param name="Local" value="docs/Functions.htm#ASin"></object>
+<li><object type="text/sitemap"><param name="Name" value="Sqrt"><param name="Local" value="docs/commands/Math.htm#Sqrt"></object>
+<li><object type="text/sitemap"><param name="Name" value="Sin/Cos/Tan"><param name="Local" value="docs/commands/Math.htm#Sin"></object>
+<li><object type="text/sitemap"><param name="Name" value="ASin/ACos/ATan"><param name="Local" value="docs/commands/Math.htm#ASin"></object>
 <li><object type="text/sitemap"><param name="Name" value="Transform"><param name="Local" value="docs/commands/Transform.htm"></object>
 </ul>
 <li><object type="text/sitemap"><param name="Name" value="屏幕管理"></object>
