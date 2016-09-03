@@ -39,7 +39,7 @@
 <h3 id="Float">浮点格式</h3>
 <p>在 v1.0.48+,浮点变量的内部精确度大约为 15 位,除非在脚本的某个位置使用了 <code>SetFormat Float</code>(即慢速模式).此时, 浮点数保存的精度由 <em><a href="#DecimalPlaces">小数位数</a></em> 决定 (就像 1.0.48 之前的版本那样). 换句话说,一旦浮点运算的结果保存到变量中,多余的精度会丢失并且无法通过再进行像 <code>SetFormat, Float, 0.15</code> 这样的计算进行还原.为了防止精度丢失,请避免在脚本中使用 <code>SetFormat Float</code>,或者使用 <a href="#Fast"><code>SetFormat FloatFast</code></a> 代替.</p>
 <p>不论当前有效的是快速模式还是慢速模式, 每当浮点结果和变量需要显示或转换到字符串文本 (例如 <a href="MsgBox.htm">MsgBox</a> 或 <a href="FileAppend.htm">FileAppend</a>) 时, 它们都会被四舍五入到 <em><a href="#DecimalPlaces">小数位数</a></em>. 要查看完整的精度,请使用类似 <code>SetFormat, FloatFast, 0.15</code> 这样的命令.</p>
-<p>要把浮点数转换成整数,请使用 <code>Var:=<a href="../Functions.htm#Round">Round</a>(Var)</code>,<code>Var:=<a href="../Functions.htm#Floor">Floor</a>(Var)</code> 或 <code>Var:=<a href="../Functions.htm#Ceil">Ceil</a>(Var)</code>.要把整数转换成浮点数,给它加上 0.0(例如 <code>Var+=0.0</code>)或使用像 <code>MyFloat:=<a href="../Functions.htm#Round">Round</a>(MyInteger, 1)</code> 这样的命令.</p>
+<p>要把浮点数转换成整数,请使用 <code>Var:=<a href="Math.htm#Round">Round</a>(Var)</code>,<code>Var:=<a href="Math.htm#Floor">Floor</a>(Var)</code> 或 <code>Var:=<a href="Math.htm#Ceil">Ceil</a>(Var)</code>.要把整数转换成浮点数,给它加上 0.0(例如 <code>Var+=0.0</code>)或使用像 <code>MyFloat:=<a href="Math.htm#Round">Round</a>(MyInteger, 1)</code> 这样的命令.</p>
 <p>内置变量 <strong>A_FormatFloat</strong> 包含了当前的浮点格式(例如 <code>0.6</code>).</p>
 <h3 id="Integer">整数格式</h3>
 <p>整数的运算结果一般显示为十进制, 而不是十六进制. 要切换为十六进制,请使用 <code>SetFormat, IntegerFast, Hex</code>.这种方法还可以用来把整数从十进制转换为十六进制(反之亦然),如同此页面底部示例演示的那样.</p>
@@ -53,7 +53,7 @@
 <p>要对整数填充零或空格时可以不需要进行浮点运算, 请参照此例:</p>
 <pre>Var := "          " . Var     <em>; 引号内包含 10 个空格.  要用零填充, 请把其中的空格替换为零.</em>
 StringRight, Var, Var, 10  <em>; 这里用足够的空格填充 <i>Var</i> 中数字使其总宽度为 10 个字符.</em>
-Var := SubStr("          " . Var, -9)  <em>; 这里一行实现上面两行的操作.</em></pre>
+Var := SubStr(&quot;          &quot; . Var, -9)  <em>; 这里一行实现上面两行的操作.</em></pre>
 
 <h3>相关</h3>
 <p><a href="Format.htm">Format()</a>, <a href="SetExpression.htm">表达式赋值 (:=)</a>, <a href="EnvAdd.htm">EnvAdd</a>, <a href="EnvSub.htm">EnvSub</a>, <a href="EnvMult.htm">EnvMult</a>, <a href="EnvDiv.htm">EnvDiv</a>, <a href="AutoTrim.htm">AutoTrim</a>, <a href="IfIs.htm">if var is type</a></p>

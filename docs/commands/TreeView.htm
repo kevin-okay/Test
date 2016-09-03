@@ -3,7 +3,7 @@
 <head>
 <title>TreeView (GUI)</title>
 <meta name="description" content="使用此免费的脚本语言轻松地创建 TreeView 控件包括上下文菜单, 图标以及可选的 ListView 伙伴控件.">
-<meta http-equiv="content-type" content="text/html; charset=GB2312">
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -151,7 +151,7 @@ return</pre>
 <p><strong>E</strong>: 用户开始编辑一个项目 (只有当 TreeView 选项中含有 <a href="#ReadOnly">-ReadOnly</a> 时用户才可以编辑项目). 变量 A_EventInfo 包含目标项目 ID.</p>
 <p><strong>F</strong>: TreeView 接收到键盘焦点.</p>
 <p><strong>f</strong> (小写的 F): TreeView 失去了键盘焦点.</p>
-<p id="NotifyK"><strong>K</strong>: 当 TreeView 拥有焦点时用户按下了一个键. A_EventInfo 包含此键的虚拟按键代码, 这是介于 1 和 255 之间的数字. 如果此键是字母键,则在大多数键盘布局中可以使用 <code><a href="../Functions.htm#Chr">Chr(A_EventInfo)</a></code> 把它转换成相应的字符.不论 <a href="#WantF2">WantF2</a> 选项如何都可以接收到 F2 键击.然而,不会接收到 Enter 键击；要接收它,请像<a href="#Enter">下面</a>描述的那样使用一个默认按钮.</p>
+<p id="NotifyK"><strong>K</strong>: 当 TreeView 拥有焦点时用户按下了一个键. A_EventInfo 包含此键的虚拟按键代码, 这是介于 1 和 255 之间的数字. 如果此键是字母键,则在大多数键盘布局中可以使用 <code><a href="Chr.htm">Chr(A_EventInfo)</a></code> 把它转换成相应的字符.不论 <a href="#WantF2">WantF2</a> 选项如何都可以接收到 F2 键击.然而,不会接收到 Enter 键击；要接收它,请像<a href="#Enter">下面</a>描述的那样使用一个默认按钮.</p>
 <p><strong>+</strong> (加号): 展开了一个项目来显示它的子项目. 变量 A_EventInfo 包含目标项目 ID.</p>
 <p><strong>-</strong> (减号): 折叠一个项目来隐藏它的子项目. 变量 A_EventInfo 包含目标项目 ID.</p>
 <h2 id="Remarks">备注</h2>
