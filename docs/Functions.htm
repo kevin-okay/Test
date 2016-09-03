@@ -281,56 +281,197 @@ path-to-the-currently-running-AutoHotkey.exe\Lib\  <em>; 标准库.</em></pre>
 <p>在内置函数参数列表末尾的任何可选参数可以完全省略. 例如, <code>WinExist("Untitled - Notepad")</code> 是有效的, 因为它的其他三个参数被认为是空的.</p>
 <p>如果脚本定义了与内置函数同名的函数, 那么内置函数会被覆盖. 例如, 脚本会调用它自己定义的 WinExist() 函数来代替标准的那个. 然而, 这样脚本将无法调用原来的函数.</p>
 <p>在 DLL 文件中的 External functions (外部函数)可以使用 <a href="commands/DllCall.htm">DllCall()</a> 调用.</p>
+<p>下列内置函数都可以通过点击它们的名称查看详细信息.</p>
 <h3>常用函数</h3>
-<p id="FileExist"><strong>FileExist(FilePattern)</strong>: 如果 <em>FilePattern</em> 不存在 (如果未指定绝对路径, 则假定 <em>FilePattern</em> 在 <a href="Variables.htm#WorkingDir">A_WorkingDir</a> 中) 则返回空值 (空字符串). 否则, 它返回首个匹配的文件或文件夹的 <a href="commands/FileGetAttrib.htm#attrib">属性字符串</a> ("RASHNDOCT" 的子集). 如果文件没有属性 (很少见), 则返回 "X". <em>FilePattern</em> 可以是文件或文件夹的准确名称或包含通配符 (* 或 ?). 由于空字符串被视为 "false", 所以总可以把函数的返回值作为准布尔值来使用. 例如, <code>if FileExist("C:\My File.txt")</code> 语句当文件存在时则为真, 否则为假. 同样地, <code>if InStr(FileExist("C:\My Folder"), "D")</code> 语句仅当文件存在 <em>并且</em> 为目录时才为真. 相关命令: <a href="commands/IfExist.htm">IfExist</a> 和 <a href="commands/FileGetAttrib.htm">FileGetAttrib</a>.</p>
-<p id="GetKeyState"><strong>GetKeyState(<a href="KeyList.htm">KeyName</a> [, "P"</strong> 或 <strong>"T"])</strong>:与 <a href="commands/GetKeyState.htm">GetKeyState 命令</a>(它在按下时返回 D 而弹起时返回 U)不同,此函数在按下时返回 true(1)而弹起时返回 false(0).如果 <em><a href="KeyList.htm">KeyName</a></em> 无效, 则返回空字符串. 请参阅 <a href="commands/GetKeyState.htm">GetKeyState</a> 了解其他返回值和用法.</p>
-<p id="InStr"><strong>InStr(Haystack, Needle [, CaseSensitive = false, StartingPos = 1, Occurrence = 1])</strong>: 返回字符串 <em>Needle</em> 在字符串 <em>Haystack</em> 中的出现位置. 详情参阅 <a href="commands/InStr.htm">InStr()</a> .</p>
-<p><strong>RegExMatch(Haystack, NeedleRegEx [, UnquotedOutputVar = "", StartingPos = 1])</strong>:判断字符串是否包含某个匹配模式(正则表达式).请参阅 <a href="commands/RegExMatch.htm">RegExMatch()</a> 了解详情.</p>
-<p><strong>RegExReplace(Haystack, NeedleRegEx [, Replacement = "", OutputVarCount = "", Limit = -1, StartingPos = 1])</strong>:替换字符串中匹配模式(正则表达式)出现的地方.请参阅 <a href="commands/RegExReplace.htm">RegExReplace()</a> 了解详情.</p>
-<p id="SubStr"><strong>SubStr(String, StartingPos [, Length])</strong> <span class="ver">[v1.0.46+]:</span> 从字符串的指定位置获取一个或多个字符. 详见 <a href="commands/SubStr.htm">SubStr()</a> .</p>
-<p id="StrLen"><strong>StrLen(String)</strong>: 返回 <em>String</em> 的长度. 请参阅 <a href="commands/StringLen.htm">StrLen()</a> 了解详情.</p>
-<p id="StrSplit"><strong>StrSplit(String [, Delimiters, OmitChars])</strong> <span class="ver">[v1.1.13+]:</span>使用指定的分隔符把一个字符串分解成多个子字符串并保存到数组中.请参阅<a href="commands/StringSplit.htm">StrSplit()</a>了解详情.</p>
-<p id="WinActive"><strong>WinActive([WinTitle, WinText, ExcludeTitle, ExcludeText])</strong>:如果活动窗口匹配指定的条件,则返回其 <a href="commands/WinGet.htm">唯一 ID (HWND)</a>.请参阅 <a href="commands/WinActive.htm">WinActive()</a> 了解详情.</p>
-<p id="WinExist"><strong>WinExist([WinTitle, WinText, ExcludeTitle, ExcludeText])</strong>:返回首个匹配窗口的<a href="commands/WinGet.htm">唯一 ID(HWND)</a>.请参阅 <a href="commands/WinExist.htm">WinExist()</a> 了解详情.</p>
+<table class="info">
+  <tr>
+    <th style="width:150px">函数</th>
+    <th>描述</th>
+  </tr>
+  <tr id="FileExist">
+    <td><a href="commands/FileExist.htm">FileExist</a></td>
+    <td>检查文件或文件夹是否存在且返回它的属性.</td>
+  </tr>
+  <tr id="GetKeyState">
+    <td><a href="commands/GetKeyState.htm">GetKeyState</a></td>
+    <td>获取指定键盘按键是否被按下的状态,当指定按键被按下时返回 true (1) 否则返回 false (0).</td>
+  </tr>
+  <tr id="InStr">
+    <td><a href="commands/InStr.htm">InStr</a></td>
+    <td>从左侧或右侧截取给定字符串的一部分.</td>
+  </tr>
+  <tr id="RegExMatch">
+    <td><a href="commands/RegExMatch.htm">RegExMatch</a></td>
+    <td>判断字符串是否包含某个匹配模式(正则表达式).</td>
+  </tr>
+  <tr id="RegExReplace">
+    <td><a href="commands/RegExReplace.htm">RegExReplace</a></td>
+    <td>替换字符串中匹配模式(正则表达式)出现的地方.</td>
+  </tr>
+  <tr id="SubStr">
+    <td><a href="commands/SubStr.htm">SubStr</a></td>
+    <td>从字符串的指定位置获取一个或多个字符.</td>
+  </tr>
+  <tr id="StrLen">
+    <td><a href="commands/StringLen.htm">StrLen</a></td>
+    <td>获取给定字符串的长度.</td>
+  </tr>
+  <tr id="StrSplit">
+    <td><a href="commands/StringSplit.htm">StrSplit</a></td>
+    <td>使用指定的分隔符把一个字符串分解成多个子字符串并保存到数组中.</td>
+  </tr>
+  <tr id="WinActive">
+    <td><a href="commands/WinActive.htm">WinActive</a></td>
+    <td>如果指定的窗口存在且为活动窗口(顶层),则返回其 唯一ID(HWND).</td>
+  </tr>
+  <tr id="WinExist">
+    <td><a href="commands/WinExist.htm">WinExist</a></td>
+    <td>返回首个匹配窗口的 唯一ID(HWND).</td>
+  </tr>
+</table>
 <h3>杂项函数</h3>
-<p id="Asc"><strong>Asc(String)</strong>: 返回 <em>String</em> 第一个字节的数值 或 UTF-16 编码单元, 如果 <em>String</em> 为空则返回 0. (ANSI 编码)返回值的范围为 0 - 255 或者 (Unicode 编码) 0 - 0xFFFF . 参考 <a href="Compat.htm#Format">Unicode vs ANSI</a> . 要允许 Unicode supplementary characters (Unicode 补充字节), 请使用 <a href="#Ord">Ord(String)</a> 替代.</p>
-<p id="Chr"><strong>Chr(Number)</strong>: 返回与参数 <em>Number</em> 指定的编码相匹配的字符串 (通常只有一个字节). 高于 127 的字符编码取决于正在使用的 <a href="Compat.htm#Format">string encoding (文本编码)</a> , 返回值还会被 <a href="Variables.htm#IsUnicode">Unicode 或 ANSI</a> 的可执行文件反向影响. 如果支持 Unicode ,那么 <em>Number</em> 为 Unicode 字符编码在 0 到 0x10FFFF (或 0xFFFF 在 <span class="ver">[v1.1.21]</span> 之前版本) 之间的某个值; 其他 ANSI 字符编码时则为 0 到 255 之间的某个值. 如果 <em>Number</em> 不是有效范围内的值, 则返回一个空字符串. 通常情况下字符编码包含 9 (tab 缩进符), 10 (linefeed 换行符 ), 13 (carriage return 回车符), 32 (space 空格符), 48-57 (the digits 0-9 数字 0-9), 65-90 (uppercase A-Z 大写字母 A-Z), 和 97-122 (lowercase a-z 小写字母 a-z).</p>
-<p><strong>DllCall()</strong>:调用 DLL 文件中的函数,例如标准的 Windows API 函数.请参阅 <a href="commands/DllCall.htm">DllCall()</a>了解详情.</p>
-<p><strong>FileOpen()</strong>: 提供面向对象的文件 I/O. 请参阅 <a href="commands/FileOpen.htm">FileOpen()</a> 了解详情.</p>
-<p id="Func"><strong>Func(FunctionName)</strong> <span class="ver">[v1.1.00+]:</span> 如果 <em>FunctionName</em> 没有显式出现在脚本中 (通过例如 <a href="commands/_Include.htm">#Include</a> 或对 <a href="#lib">库函数</a> 的非动态调用的方法), 则 Func() 返回 0. 否则, 它返回 <a href="Objects.htm#Function_References">到函数的引用</a>. 这可以用来调用函数或获取类似参数的最小和最大数目的 <a href="objects/Func.htm"> 信息</a>.</p>
-<p id="GetKeyName"><strong>GetKeyName(Key), GetKeyVK(Key), GetKeySC(Key)</strong> <span class="ver">[v1.1.01+]:</span> 获取按键的名称/文本, 虚拟按键码或扫描码. <em>Key</em> 可以为 VK 或 SC 码, 例如 "vkA2" 或 "sc01D", 以及两者的组合或键名. 例如, <code>GetKeyName("vk1B")</code> 和 <code>GetKeyName("Esc")</code> 都返回 "Escape", 而 <code>GetKeyVK("Esc")</code> 返回 27.</p>
-<p id="IsByRef"><strong>IsByRef(Var)</strong> <span class="ver">[v1.1.01+]:</span> 当 <em>Var</em> 为 ByRef 参数且调用者提供了变量时返回 1; 否则当 <em>Var</em> 为其他类型的变量时返回 0.</p>
-<p id="IsFunc"><strong></a>IsFunc(FunctionName)</strong> <span class="ver">[v1.0.48+]:</span> 如果 <em>FunctionName</em> 不是显式出现在脚本中 (通过例如 <a href="commands/_Include.htm">#Include</a> 或对 <a href="#lib">库函数</a> 的非动态调用的方法), 则 IsFunc() 返回 0. 否则它返回函数的强制参数个数加一的数字(例如 1 为函数可以不需要参数,2 为函数需要 1 个参数等等).例如, 函数存在时 <code>if IsFunc("MyFunc")</code> 和 <code>if IsFunc(VarContainingFunctionName)</code> 语句为真, 否则为假. 在 v1.1.00+, <i>FunctionName</i> 为可以代替函数名的函数引用. 另请参阅: <a href="#DynCall">动态函数调用</a>, <a href="Variables.htm#ThisFunc">A_ThisFunc</a></p>
-<p id="IsLabel"><strong>IsLabel(LabelName)</strong>:如果 <em>LabelName</em> 为脚本中的<a href="commands/Gosub.htm">子程序</a>,<a href="Hotkeys.htm">热键</a>或<a href="Hotstrings.htm">热字串</a>(不包括 <em>LabelName</em> 中末尾的冒号),则返回非零数字.例如, 标签存在时 <code>if IsLabel(VarContainingLabelName)</code> 将为真, 否则为假. 在类似 <a href="commands/Gosub.htm">Gosub</a>, <a href="commands/Hotkey.htm">Hotkey</a>, <a href="commands/Menu.htm">Menu</a> 和 <a href="commands/Gui.htm">Gui</a> 命令中指定动态标签时, 使用此函数可以避免运行时错误. 另请参阅: <a href="misc/Labels.htm">Labels</a>.</p>
-<p id="IsObject"><strong>IsObject()</strong> <span class="ver">[AHK_L 31+]:</span> 判断某个值是否为对象. 另请参阅: <a href="Objects.htm">对象</a>.</p>
-<p><strong>ListView 和 TreeView 函数</strong>:请参阅 <a href="commands/ListView.htm">ListView</a> 和 <a href="commands/TreeView.htm">TreeView</a> 页面了解详情.</p>
-<p id="NumGet"><strong>NumGet(VarOrAddress [, Offset = 0][, Type = "UPtr"])</strong>:返回在指定地址+偏移的位置存储的二进制数.请参阅 <a href="commands/NumGet.htm">NumGet</a> 了解详情.</p>
-<p id="NumPut"><strong>NumPut(Number, VarOrAddress [, Offset = 0][, Type = "UPtr"])</strong>:以二进制格式把数字存储到指定地址+偏移的位置.请参阅 <a href="commands/NumPut.htm">NumPut</a> 了解详情.</p>
-<p><strong>OnMessage(MsgNumber [, "FunctionName"])</strong>: 监视消息/事件. 请参阅 <a href="commands/OnMessage.htm">OnMessage()</a> 了解详情.</p>
-<p id="Ord"><strong>Ord(String)</strong> <span class="ver">[v1.1.21+]</span>: 返回 <em>String</em> 中第一个字符的有序字符编码数值. 如果 <em>String</em> 以 Unicode 填充符号开头, <em>Ord(String)</em> 返回 Unicode 字符编码(范围在 0x10000 到 0x10FFFF 之间的某个数). 其他情况下与 <a href="#Asc">Asc(String)</a> 的返回值相同.</p>
-<p><strong>StrGet(Address [, Length] [, Encoding = None ] )</strong> <span class="ver">[AHK_L 46+]:</span> 从内存地址复制字符串, 并可以对其在不同代码页间进行转换. 请参阅 <a href="commands/StrPutGet.htm">StrGet()</a> 了解详情.</p>
-<p><strong>StrPut(String, Address [, Length] [, Encoding = None ] )</strong> <span class="ver">[AHK_L 46+]:</span> 复制字符串到内存地址, 并可以对其在不同代码页间进行转换. 请参阅 <a href="commands/StrPutGet.htm">StrPut()</a> 了解详情.</p>
-<p><strong>RegisterCallback()</strong>:创建机器码地址,当它被调用时会重定向到脚本中的函数.请参阅 <a href="commands/RegisterCallback.htm">RegisterCallback()</a> 了解详情.</p>
-<p><strong>Trim()</strong> <span class="ver">[AHK_L 31+]:</span>移除字符串的开始和/或末尾的某些字符.请参阅 <a href="commands/Trim.htm">Trim()</a> 了解详情.</p>
-<p><strong>VarSetCapacity(UnquotedVarName [, RequestedCapacity, FillByte])</strong>: 增加或清空变量占用的内存. 请参阅 <a href="commands/VarSetCapacity.htm">VarSetCapacity()</a> 了解详情.</p>
-<h3 id="Math">通用数学函数</h3>
-<p>注意: 如果某个传入参数为非数值时, 那么数学函数通常返回空值 (空字符串).</p>
-<p><strong><a name="Abs"></a>Abs(Number)</strong>: 返回 <em>Number</em> 的绝对值. 返回值的类型与 <em>Number</em> 相同 (整数或浮点数).</p>
-<p id="Ceil"><strong>Ceil(Number)</strong>:返回由 <em>Number</em> 向上取整到最近的整数(不带 .00 后缀).例如,<code>Ceil(1.2)</code> 结果为 2 而 <code>Ceil(-1.2)</code> 结果为 -1.</p>
-<p id="Exp"><strong>Exp(N)</strong>: 返回 <em>e</em> (其近似值为 2.71828182845905) 的 <em>N</em> 次幂. <em>N</em> 可以为负数, 也可以为小数. 要计算 <em>e</em> 以外的其他数的次幂, 请使用 <a href="Variables.htm#pow">** 运算符</a>.</p>
-<p id="Floor"><strong>Floor(Number)</strong>: 返回由 <em>Number</em> 向下取整到最近的整数 (不带任何 .00 后缀). 例如, <code>Floor(1.2)</code> 的结果为 1 而 <code>Floor(-1.2)</code> 结果为 -2.</p>
-<p id="Log"><strong>Log(Number)</strong>: 返回 <em>Number</em> 的对数 (底数为 10). 结果格式化为 <a href="commands/SetFormat.htm">浮点数</a>. 如果 <em>Number</em> 为负数, 则返回空字符串.</p>
-<p id="Ln"><strong>Ln(Number)</strong>: 返回 <em>Number</em> 的自然对数 (底数为 e). 结果格式化为 <a href="commands/SetFormat.htm">浮点数</a>. 如果 <em>Number</em> 为负数, 则返回空字符串.</p>
-<p id="Mod"><strong>Mod(Dividend, Divisor)</strong>: 求模. 返回被除数 <em>Dividend</em> 除以除数 <em>Divisor</em> 后得到的余数. 结果的正负总是与被除数一致. 例如,<code>mod(5, 3)</code> 和 <code>mod(5, -3)</code> 的结果都为 2,但 <code>mod(-5, 3)</code> 和 <code>mod(-5, -3)</code> 的结果为 -2.如果其中一个参数为浮点数, 那么结果也是浮点数. 例如, <code>mod(5.0, 3)</code> 的结果为 2.0 而 <code>mod(5, 3.5)</code> 的结果为 1.5. 如果除数为零, 则函数返回空值 (空字符串).</p>
-<p id="Round"><strong>Round(Number [, N])</strong>: 如果 <em>N</em> 省略或为 0, 则 <em>Number</em> 被取整到最近的整数. 如果 <em>N</em> 为正数, 则 <em>Number</em> 被取整到 <em>N</em> 个小数位. 如果 <em>N</em> 为负数,则 <em>Number</em> 被取整到十进制小数点左边 <em>N</em> 位.例如,<code>Round(345, -1)</code> 的结果为 350 而 <code>Round (345, -2)</code> 的结果为 300.与 <a href="commands/Transform.htm">Transform Round</a> 不同, 每当 <em>N</em> 省略或小于 1 时结果不带 .000 后缀. 在 v1.0.44.01+,<em>N</em> 值大于零时会准确显示 <em>N</em> 个小数位而不遵循 <a href="commands/SetFormat.htm">SetFormat</a> 的设置.要避免这种情况, 需要对 Round() 的返回值再进行一次数学运算; 例如: <code>Round(3.333, 1)<strong>+0</strong></code>.</p>
-<p id="Sqrt"><strong>Sqrt(Number)</strong>: 返回 <em>Number</em> 的平方根. 结果格式化为 <a href="commands/SetFormat.htm">浮点数</a>. 如果 <em>Number</em> 为负数, 则函数返回空字值 (空字符串).</p>
-<h3>三角函数</h3>
-<p><strong id="Sin">Sin(Number)</strong> | <strong id="Cos">Cos(Number)</strong> | <strong id="Tan">Tan(Number)</strong>:分别返回 <em>Number</em> 的正弦,余弦或正切值.<em>Number</em> 必须用弧度表示.</p>
-<p id="ASin"><strong>ASin(Number)</strong>: 返回弧度表示的反正弦值 (其正弦值为 <em>Number</em>). 如果 <em>Number</em> 小于 -1 或大于 1, 则函数返回空值 (空字符串).</p>
-<p id="ACos"><strong>ACos(Number)</strong>: 返回弧度表示的反余弦值 (其余弦值为 <em>Number</em>). 如果 <em>Number</em> 小于 -1 或大于 1, 则函数返回空值 (空字符串).</p>
-<p id="ATan"><strong>ATan(Number)</strong>:返回弧度表示的反正切值(其正切值为 <em>Number</em>).</p>
-<p><strong>注意:</strong> 要将弧度转换成角度, 请将其乘以 180/pi (约为 57.29578). 要将角度转换成弧度, 请将其乘以 pi/180 (约为 0.01745329252). pi 的值 (约为 3.141592653589793) 为 1 的反正切值的 4 倍.</p>
+<table class="info">
+  <tr>
+    <th style="width:150px">函数</th>
+    <th>描述</th>
+  </tr>
+  <tr id="Asc">
+    <td><a href="commands/Asc.htm">Asc(String)</a></td>
+    <td>返回 String 第一个字节的数值 或 UTF-16 编码单元, 如果 String 为空则返回 0. (ANSI 编码)返回值的范围为 0 - 255 或者 (Unicode 编码) 0 - 0xFFFF . 参考 Unicode vs ANSI . 要允许 Unicode supplementary characters (Unicode 补充字节), 请使用 Ord(String) 替代.</td>
+  </tr>
+  <tr id="Chr">
+    <td><a href="commands/Chr.htm">Chr(Number)</a></td>
+    <td>返回与参数 Number 指定的编码相匹配的字符串 (通常只有一个字节). 高于 127 的字符编码取决于正在使用的 string encoding (文本编码) , 返回值还会被 Unicode 或 ANSI 的可执行文件反向影响. 如果支持 Unicode ,那么 Number 为 Unicode 字符编码在 0 到 0x10FFFF (或 0xFFFF 在 [v1.1.21] 之前版本) 之间的某个值; 其他 ANSI 字符编码时则为 0 到 255 之间的某个值. 如果 Number 不是有效范围内的值, 则返回一个空字符串. 通常情况下字符编码包含 9 (tab 缩进符), 10 (linefeed 换行符 ), 13 (carriage return 回车符), 32 (space 空格符), 48-57 (the digits 0-9 数字 0-9), 65-90 (uppercase A-Z 大写字母 A-Z), 和 97-122 (lowercase a-z 小写字母 a-z).</td>
+  </tr>
+  <tr id="DllCall">
+    <td><a href="commands/DllCall.htm">DllCall</a></td>
+    <td>调用 DLL 文件中的函数,例如标准的 Windows API 函数.</td>
+  </tr>
+  <tr id="FileOpen">
+    <td><a href="commands/FileOpen.htm">FileOpen</a></td>
+    <td>提供面向对象的文件 I/O.</td>
+  </tr>
+  <tr id="Func">
+    <td><a href="commands/Func.htm">Func(FunctionName)</a></td>
+    <td>获取指定函数的引用.</td>
+  </tr>
+  <tr id="GetKeyName">
+    <td><a href="commands/GetKey.htm">GetKeyName/GetKeyVK/GetKeySC</a></td>
+    <td>获取按键的名称/文本, 虚拟按键码或扫描码.</td>
+  </tr>
+  <tr id="IsByRef">
+    <td><a href="commands/IsByRef.htm">IsByRef(Var)</a></td>
+    <td>当 Var 为 ByRef 参数且调用者提供了变量时返回 1; 否则当 Var 为其他类型的变量时返回 0.</td>
+  </tr>
+  <tr id="IsFunc">
+    <td><a href="commands/IsFunc.htm">IsFunc(FunctionName)</a></td>
+    <td>如果 FunctionName 不是显式出现在脚本中 (通过例如 #Include 或对 库函数 的非动态调用的方法), 则 IsFunc() 返回 0. 否则它返回函数的强制参数个数加一的数字(例如 1 为函数可以不需要参数,2 为函数需要 1 个参数等等).例如, 函数存在时 if IsFunc("MyFunc") 和 if IsFunc(VarContainingFunctionName) 语句为真, 否则为假. 在 v1.1.00+, FunctionName 为可以代替函数名的函数引用.</td>
+  </tr>
+  <tr id="IsLabel">
+    <td><a href="commands/IsLabel.htm">IsLabel(LabelName)</a></td>
+    <td>如果 LabelName 为脚本中的子程序,热键或热字串(不包括 LabelName 中末尾的冒号),则返回非零数字.例如, 标签存在时 if IsLabel(VarContainingLabelName) 将为真, 否则为假. 在类似 Gosub, Hotkey, Menu 和 Gui 命令中指定动态标签时, 使用此函数可以避免运行时错误.</td>
+  </tr>
+  <tr id="IsObject">
+    <td><a href="commands/IsObject.htm">IsObject</a></td>
+    <td>判断某个值是否为对象.</td>
+  </tr>
+  <tr id="ListView">
+    <td><a href="commands/ListView.htm#BuiltIn">ListView</a></td>
+    <td>用于 增加, 插入, 修改 或 删除 ListView 行/列 的函数, 还可以用于从中获取数据.</td>
+  </tr>
+  <tr id="NumGet">
+    <td><a href="commands/NumGet.htm">NumGet(VarOrAddress [, Offset = 0][, Type = "UPtr"])</a></td>
+    <td>返回在指定地址+偏移的位置存储的二进制数.</td>
+  </tr>
+  <tr id="NumPut">
+    <td><a href="commands/NumPut.htm">NumPut(Number, VarOrAddress [, Offset = 0][, Type = "UPtr"])</a></td>
+    <td>以二进制格式把数字存储到指定地址+偏移的位置.</td>
+  </tr>
+  <tr id="OnMessage">
+    <td><a href="commands/OnMessage.htm">OnMessage(MsgNumber [, "FunctionName"])</a></td>
+    <td>监听消息/事件.</td>
+  </tr>
+  <tr id="Ord">
+    <td><a href="commands/Ord.htm">Ord(String)</a></td>
+    <td>返回 String 中第一个字符的有序字符编码数值. 如果 String 以 Unicode 填充符号开头, Ord(String) 返回 Unicode 字符编码(范围在 0x10000 到 0x10FFFF 之间的某个数). 其他情况下与 Asc(String) 的返回值相同.</td>
+  </tr>
+  <tr id="StrPutGet">
+    <td><a href="commands/StrPutGet.htm">StrGet(Address [, Length] [, Encoding = None ] )</a></td>
+    <td>从内存地址复制字符串, 并可以将其在不同代码页间进行转换.</td>
+  </tr>
+  <tr id="StrPutGet">
+    <td><a href="commands/StrPutGet.htm">StrPut(String, Address [, Length] [, Encoding = None ] )</a></td>
+    <td>复制字符串到内存地址, 并可以对其在不同代码页间进行转换.</td>
+  </tr>
+  <tr id="RegisterCallback">
+    <td><a href="commands/RegisterCallback.htm">RegisterCallback</a></td>
+    <td>创建机器码地址,当它被调用时会重定向到脚本中的函数.</td>
+  </tr>
+  <tr id="TreeView">
+    <td><a href="commands/TreeView.htm#BuiltIn">TreeView</a></td>
+    <td>用于添加, 修改 或 删除 TreeView 单元格 的函数, 还可用于从其中获取数据.</td>
+  </tr>
+  <tr id="Trim">
+    <td><a href="commands/Trim.htm">Trim</a></td>
+    <td>移除字符串的开始和/或末尾的某些字符.</td>
+  </tr>
+  <tr id="VarSetCapacity">
+    <td><a href="commands/VarSetCapacity.htm">VarSetCapacity(UnquotedVarName [, RequestedCapacity, FillByte])</a></td>
+    <td>增加或清空变量占用的内存.</td>
+  </tr>
+</table>
+<h3 id="Math">数学函数</h3>
+<table class="info">
+  <tr>
+    <th style="width:150px">函数</th>
+    <th>描述</th>
+  </tr>
+  <tr id="Abs">
+    <td><a href="commands/Math.htm#Abs">Abs(Number)</a></td>
+    <td>返回 <em>Number</em> 的绝对值.</td>
+  </tr>
+  <tr id="Ceil">
+    <td><a href="commands/Math.htm#Ceil">Ceil(Number)</a></td>
+    <td>返回 <em>Number</em> 的四舍五入值 (不带任何 .00 后缀).</td>
+  </tr>
+  <tr id="Exp">
+    <td><a href="commands/Math.htm#Exp">Exp(N)</a></td>
+    <td>返回 <em>e</em> (近似值为 2.71828182845905) 的 <em>N</em>次幂.</td>
+  </tr>
+  <tr id="Floor">
+    <td><a href="commands/Math.htm#Floor">Floor(Number)</a></td>
+    <td>返回 <em>Number</em> 的向下取整 (不带任何 .00 后缀).例如, Floor(1.2) 的结果为 1 而 Floor(-1.2) 结果为 -2.</td>
+  </tr>
+  <tr id="Log">
+    <td><a href="commands/Math.htm#Log">Log(Number)</a></td>
+    <td>返回 <em>Number</em> 的对数 (底数为 10). 结果格式化为浮点数. 如果 Number 为负数, 则返回空字符串.</td>
+  </tr>
+  <tr id="Ln">
+    <td><a href="commands/Math.htm#Ln">Ln(Number)</a></td>
+    <td>返回 <em>Number</em> 的自然对数 (底数为 e). 结果格式化为 浮点数. 如果 Number 为负数, 则返回空字符串.</td>
+  </tr>
+  <tr id="Mod">
+    <td><a href="commands/Math.htm#Mod">Mod(Dividend, Divisor)</a></td>
+    <td>求模, 返回被除数 <em>Dividend</em> 除以除数 <em>Divisor</em> 后得到的余数.结果的正负总是与被除数一致. 例如,mod(5, 3) 和 mod(5, -3) 的结果都为 2,但 mod(-5, 3) 和 mod(-5, -3) 的结果为 -2.如果其中一个参数为浮点数, 那么结果也是浮点数. 例如, mod(5.0, 3) 的结果为 2.0 而 mod(5, 3.5) 的结果为 1.5. 如果除数为零, 则函数返回空值 (空字符串).</td>
+  </tr>
+  <tr id="Round">
+    <td><a href="commands/Math.htm#Round">Round(Number [, N])</a></td>
+    <td>返回 <em>Number</em> 取整到 <em>N</em> 个小数点之后的位置. 如果 N 省略或为 0, 则 Number 被取整到最近的整数. 如果 N 为正数, 则 Number 被取整到 N 个小数位. 如果 N 为负数,则 Number 被取整到十进制小数点左边 N 位.例如,Round(345, -1) 的结果为 350 而 Round (345, -2) 的结果为 300.与 Transform Round 不同, 每当 N 省略或小于 1 时结果不带 .000 后缀. 在 v1.0.44.01+,N 值大于零时会准确显示 N 个小数位而不遵循 SetFormat 的设置.要避免这种情况, 需要对 Round() 的返回值再进行一次数学运算; 例如: Round(3.333, 1)+0.</td>
+  </tr>
+  <tr id="Sqrt">
+    <td><a href="commands/Math.htm#Sqrt">Sqrt(Number)</a></td>
+    <td>返回 <em>Number</em> 的平方根. 结果格式化为 浮点数. 如果 Number 为负数, 则函数返回空字符串.</td>
+  </tr>
+  <tr>
+    <td><span id="Sin"></span><span id="Cos"></span><span id="Tan"></span><a href="commands/Math.htm#Sin">Sin(Number)</a> / <a href="commands/Math.htm#Cos">Cos(Number)</a> / <a href="commands/Math.htm#Tan">Tan(Number)</a></td>
+    <td>返回 <em>Number</em> 的 sine(正弦)/cosine(余弦)/tangent(正切) 值. Number 为弧度.</td>
+  </tr>
+  <tr>
+    <td><span id="ASin"></span><span id="ACos"></span><span id="ATan"></span><a href="commands/Math.htm#ASin">ASin(Number)</a> / <a href="commands/Math.htm#ACos">ACos(Number)</a> / <a href="commands/Math.htm#ATan">ATan(Number)</a></td>
+    <td>返回 Number 的 arcsine(反正弦)/arccosine(反余弦)/arctangent(反正切) 的弧度值.</td>
+  </tr>
+</table>
 <h3>其他函数</h3>
-<p><a href="http://www.autohotkey.net/~polyethene/#functions">Polyethene 的命令函数</a>:为每个有 OutputVar 的 AutoHotkey 命令提供了可调用的函数.可以通过 <a href="commands/_Include.htm">#Include</a> 把这个库包含在任何脚本中.</p>
+<p><a href="https://github.com/polyethene/AutoHotkey-Scripts/blob/master/Functions.ahk">Polyethene 的命令函数</a>: 为每个有 OutputVar 的 AutoHotkey 命令提供了可调用的函数.可以通过 <a href="commands/_Include.htm">#Include</a> 把这个库包含在任何脚本中.</p>
 </body>
 </html>
