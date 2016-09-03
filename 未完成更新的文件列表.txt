@@ -1,11 +1,3 @@
-docs\commands\SetFormat.htm
-docs\commands\SetTimer.htm
-docs\commands\SubStr.htm
-docs\commands\Transform.htm
-docs\commands\TreeView.htm
-docs\commands\VarSetCapacity.htm
-docs\misc\Labels.htm
-docs\misc\RemapJoystick.htm
 docs\static\source\data_index.js
 docs\static\source\data_toc.js
 docs\static\source\main.js
