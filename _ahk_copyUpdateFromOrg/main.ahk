@@ -29,13 +29,19 @@ sys_getUpdateFilesPath()
 	_content := fc_FileRead(Gv_updateListFile)
 	loop, Parse, % _content, `n, `r
 	{
-		if (! Trim(A_LoopField))
+		if (! _line := Trim(A_LoopField))
 		{
 			continue
 		}
 		
-		_sFile := fsys.joinPath(Gv_OrgFilesRootPath, A_LoopField)
-		_dFile := fsys.joinPath(fsys.getLongPath(A_ScriptDir "\..\"), A_LoopField)
+		if (A_Index == 1)
+		&& (_line ~= "__allUpdated")
+		{
+			return "无需更新"
+		}
+		
+		_sFile := fsys.joinPath(Gv_OrgFilesRootPath, _line)
+		_dFile := fsys.joinPath(fsys.getLongPath(A_ScriptDir "\..\"), _line)
 		
 		if (! FileExist(_sFile))
 		{

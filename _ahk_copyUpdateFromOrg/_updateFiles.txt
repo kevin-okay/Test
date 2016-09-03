@@ -1,3 +1,6 @@
+__allUpdated
+以下为格式示例,已经完成更新.
+自动复制脚本检查第一行,如果为 __allUpdated 则不会继续扫描.
 docs\commands\IsFunc.htm
 docs\commands\Chr.htm
 docs\commands\IsByRef.htm
