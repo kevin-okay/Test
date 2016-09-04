@@ -405,9 +405,9 @@ class <i>ClassName</i> {
 <ul><li>使用不带值的 <code>return</code> 等同于 <code>return ""</code>. 这种情况可能在未来的版本中改变, 所以可以使用 <code>return</code> 来从元函数 "退出" 而不覆盖默认行为.</li><li>请参阅 <a href="#ExitLimitation">Exit 限制</a>.</li></ul>
 
 <h4 id="Dynamic_Properties">动态属性</h4>
-<p><a href="#Custom_Classes_property">Property syntax</a> can be used to define properties which compute a value each time they are evaluated, but each property must be known in advance and defined individually in the script. By contrast, <em>__Get</em> and <em>__Set</em> can be used to implement properties which aren't known by the script.</p>
-<p>For example, a "proxy" object could be created which sends requests for properties over the network (or through some other channel). A remote server would send back a response containing the value of the property, and the proxy would return the value to its caller. Even if the name of each property was known in advance, it would not be logical to define each property individually in the proxy class since every property does the same thing (send a network request). Meta-functions receive the property name as a parameter, so are a good solution for this problem.</p>
-<p>Another use of <em>__Get</em> and <em>__Set</em> is to implement a set of related properties which share code. In the example below they are used to implement a "Color" object with R, G, B and RGB properties, where only the RGB value is actually stored:</p>
+<p><a href="#Custom_Classes_property">属性语法</a> 可用于定义属性,对每次读写值进行设置, 但前提是必须知道每个属性才能定义单独的脚本. 相比之下, <em>__Get</em> 和 <em>__Set</em> 可用于管理动态属性.</p>
+<p>例如, 一个 "代理" 对象可通过发出网络请求来创建 (或者是其他通道). 远程服务器必须回应一个属性的值, 然后代理就会返回这个值给调用者. 虽然每个属性名称都是提前知道的, 但也不必为每个属性都定义一个逻辑, 因为每个属性所做的事都一样 (发送一个网络请求). 元函数接受属性名称作为参数, 所以是这种情况的最佳解决方案.</p>
+<p>元函数 <em>__Get</em> 和 <em>__Set</em> 的另一种用途是用相同的逻辑处理一组相关的属性. 下面的例子实现了一个 "Color" 对象, 它拥有 R, G, B 和 RGB 属性, 但只有 RGB 属性的值是实际保存的:</p>
 <pre>red  := new Color(0xff0000), red.R -= 5
 cyan := new Color(0), cyan.G := 255, cyan.B := 255
 
@@ -425,33 +425,33 @@ class Color
 
     __Get(aName)
     {
-        <em>; <span class="red">NOTE:</span> Using this.Shift here would cause an infinite loop!</em>
-        shift := Color.Shift[aName]  <em>; Get the number of bits to shift.</em>
-        if (shift != "")  <em>; Is it a known property?</em>
+        <em>; <span class="red">小心:</span> 如果这里用 this.Shift 将导致死循环! 因为 this.Shift 将递归调用 __Get 元方法.</em>
+        shift := Color.Shift[aName]  <em>; 将位元数赋值给 shift.</em>
+        if (shift != "")  <em>; 检查是否为已知属性.</em>
             return (this.RGB &gt;&gt; shift) &amp; 0xff
-        <em>; <span class="red">NOTE:</span> Using 'return' here would break this.RGB.</em>
+        <em>; <span class="red">注意:</span> 这里用 'return' 可终止 this.RGB 属性调用逻辑.</em>
     }
 
     __Set(aName, aValue)
     {
         if ((shift := Color.Shift[aName]) != "")
         {
-            aValue &amp;= 255  <em>; Truncate it to the proper range.
+            aValue &amp;= 255  <em>; 截取为适合的范围.
 
-            ; Calculate and store the new RGB value.</em>
+            ; 计算并保存新的 RGB 值.</em>
             this.RGB := (aValue &lt;&lt; shift) | (this.RGB &amp; ~(0xff &lt;&lt; shift))
 
-            <em>; 'Return' must be used to indicate a new key-value pair should not be created.
-            ; This also defines what will be stored in the 'x' in 'x := clr[name] := val':</em>
+            <em>; 'Return' 表示一个新的 键值对 被创建.
+            ; 同时还定义了 'x := clr[name] := val' 中的 'x' 所保存的值是什么:</em>
             return aValue
         }
-        <em>; <span class="red">NOTE:</span> Using 'return' here would break this._RGB and this.RGB.</em>
+        <em>; <span class="red">NOTE:</span> 这里用 'return' 终止 this._RGB 和 this.RGB 的逻辑.</em>
     }
     
-    <em>; Meta-functions can be mixed with properties:</em>
+    <em>; 元函数可以混合多个属性:</em>
     RGB {
         get {
-            <em>; Return it in hex format:</em>
+            <em>; 返回它的十六进制格式:</em>
             return format("0x{:06x}", this._RGB)
 }
         set {
@@ -459,11 +459,11 @@ class Color
         }
 }
 }</pre>
-<p>However, in this case <a href="#Custom_Classes_property">Property syntax</a> could have been used instead, where code is shared by simply having each property call a central method. It is better to avoid using meta-functions where possible due to the high risk of misuse (see the notes in red above).</p>
+<p>然而, 还可以用 <a href="#Custom_Classes_property">属性语法</a> 实现一个中央方法, 来替代本例中这种调用相同代码逻辑的一组属性. 由于使用元函数出错的风险较大, 应该尽量避免使用 (见上面代码中的 小心).</p>
 
-<h4 id="Objects_as_Functions">Objects as Functions</h4>
-<p>For an outline of how to create objects which can act as functions, see <a href="objects/Functor.htm#User-Defined">Function Objects</a>.</p>
-<p>A function object can also act as a meta-function, such as to define dynamic properties similar to those in the previous section. Although it is recommended to use <a href="#Custom_Classes_property">property syntax</a> instead, the example below shows the potential of meta-functions for implementing new concepts or behaviour, or changing the structure of the script.</p>
+<h4 id="Objects_as_Functions">对象作为函数</h4>
+<p>对于利用对象实现函数的基本思路, 请参考 <a href="objects/Functor.htm#User-Defined">函数对象</a> 章节.</p>
+<p>函数对象还可以实现元函数的功能, 效果和前面几节中定义动态属性一样. 尽管推荐用 <a href="#Custom_Classes_property">属性语法</a> 替代, 下面的例子演示了如何利用元函数的潜能实现新的概念或结构, 甚至改变脚本代码的结构.</p>
 <pre>blue := new Color(0x0000ff)
 MsgBox % blue.R "," blue.G "," blue.B
 
@@ -471,7 +471,7 @@ class Properties extends <a href="objects/Functor.htm#class_FunctionObject">Func
 {
     Call(aTarget, aName, aParams*)
     {
-        <em>; If this Properties object contains a definition for this half-property, call it.</em>
+        <em>; 如果该属性保存了一个半属性的定义则调用它.</em>
         if ObjHasKey(this, aName)
             return this[aName].Call(aTarget, aParams*)
     }
@@ -587,32 +587,32 @@ Default__Warn(nonobj, p1="", p2="", p3="", p4="")
 
 <h2 id="Implementation">实现</h2>
 <span id="Refs"></span><h3 id="Reference_Counting">引用计数</h3>
-<p>AutoHotkey uses a basic reference-counting mechanism to automatically free the resources used by an object when it is no longer referenced by the script.  Script authors should not invoke this mechanism explicitly, except when dealing directly with unmanaged <a href="#Implementation_Pointers">pointers to objects</a>.</p>
-<p>Currently in AutoHotkey v1.1, temporary references created within an expression (but not stored anywhere) are released immediately after use. For example, <code>Fn(&amp;{})</code> passes an invalid address to the function, because the temporary reference returned by <code>{}</code> is released immediately after the <a href="Variables.htm#amp">address-of</a> operator is evaluated.</p>
-<p>To run code when the last reference to an object is being released, implement the <a href="#Custom_NewDelete">__Delete</a> meta-function.</p>
-<p><b>Known Limitations:</b></p>
+<p>当脚本不再引用对象时, AutoHotkey 使用基本引用计数结构来自动释放对象使用的资源. 脚本作者不应该明确调用此结构, 除非打算直接处理未托管的 <a href="#Implementation_Pointers">对象的指针</a>.</p>
+<p>目前在 AutoHotkey v1.1 中, 一个表达式将同时创建一个临时引用 (并不会在任何地方保存). 比如, <code>Fn(&amp;{})</code> 传递了一个无效的地址给函数, 由于临时引用返回 <code>{}</code> , 导致 <a href="Variables.htm#amp">取址</a> 运算之后被立即释放.</p>
+<p>如果希望在对象的最后一个引用被释放后运行一段代码, 可通过 <a href="#Custom_NewDelete">__Delete</a> 元函数实现.</p>
+<p><b>已知限制:</b></p>
 <ul>
-  <li>Circular references must be broken before an object can be freed. For details and an example, see <a href="#Circular_References">Freeing Objects</a>.</li>
-  <li>Although references in static and global variables are released automatically when the program exits, references in non-static local variables or on the expression evaluation stack are not.  These references are only released if the function or expression is allowed to complete normally.</li>
+  <li>比如中断对象的循环引用才能真正释放资源. 请参考这里的详情和例子: <a href="#Circular_References">释放对象</a>.</li>
+  <li>静态和全局的变量引用会在脚本退出时自动释放资源, 而非静态的局部变量或者是表达式堆栈中的则不会. 这些引用只有在函数或表达式中能够正确完成时才能释放.</li>
 </ul>
-<p>Although memory used by the object is reclaimed by the operating system when the program exits, <a href="#Custom_NewDelete">__Delete</a> will not be called unless all references to the object are freed.  This can be important if it frees other resources which are not automatically reclaimed by the operating system, such as temporary files.</p>
+<p>操作系统会在程序退出时自动回收对象占用的内存, 如果对象的所有引用已经被释放, 那么 <a href="#Custom_NewDelete">__Delete</a> 不会被调用. 所以当引用对象被提前释放而不是通过操作系统自动回收时, 可能造成比较严重的后果, 比如产生临时文件.<br>(译者注: 也就是程序如果因为类似死循环这种情况所造成的意外崩溃, 可能导致某些资源的内存无法被操作系统自动回收. 所以老大在这里强调的意思是让咱们小心使用元函数.)</p>
 
-<span id="AddressCast"></span><h3 id="Implementation_Pointers">Pointers to Objects</h3>
-<p>In some rare cases it may be necessary to pass an object to external code via DllCall or store it in a binary data structure for later retrieval. An object's address can be retrieved via <code>address := &amp;object</code>; however, this effectively makes two references to the object, but the program only knows about the one in <em>object</em>. If the last <em>known</em> reference to the object was released, the object would be deleted. Therefore, the script must inform the object that it has gained a reference. There are two ways to do this:</p>
-<pre><em>; Method #1: Explicitly increment the reference count.</em>
+<span id="AddressCast"></span><h3 id="Implementation_Pointers">对象的指针</h3>
+<p>有时候可能需要通过 DllCall 传递对象到外部代码或想要存储对象的二进制数据结构以供以后取回. 可以通过 <code>address := &amp;object</code> 获取对象的地址; 不过, 这样实际上创建了一个对象的两个引用, 但程序只知道一个 <em>对象</em>. 如果对象的 <em>已知</em> 最后一个引用被释放, 该对象将被删除. 因此, 脚本必须设法通知(引用计数器)对象的引用增加了. 有两种方法实现:</p>
+<pre><em>; 方法 #1: 显式地增加引用计数.</em>
 address := &amp;object
 <a href="commands/ObjAddRef.htm">ObjAddRef</a>(address)
 
-<em>; Method #2: Use Object(), which increments the reference count and returns an address.</em>
+<em>; 方法 #2: 使用 Object(), 增加一个引用并返回地址.</em>
 address := Object(object)</pre>
-<p>This function can also be used to convert an address back into a reference:</p>
+<p>这个函数还可以把地址转换成引用:</p>
 <pre>object := Object(address)</pre>
-<p>Either way, the script must also inform the object when it is finished with that reference:</p>
-<pre><em>; Decrement the object's reference count to allow it to be freed:</em>
+<p>无论用的上述哪种方法, 脚本都需要在结束对象的引用之后通知对象:</p>
+<pre><em>; 减少一次对象的引用使得其可以被自动回收资源:</em>
 <a href="commands/ObjAddRef.htm">ObjRelease</a>(address)
 </pre>
-<p>Generally each new copy of an object's address should be treated as another reference to the object, so the script should call ObjAddRef when it gains a copy and ObjRelease immediately before losing one. For example, whenever an address is copied via something like <code>x := address</code>, ObjAddRef should be called. Similarly, when the script is finished with <em>x</em> (or is about to overwrite <em>x</em>'s value), it should call ObjRelease.</p>
-<p>Note that the Object() function can be used even on objects which it did not create, such as <a href="commands/ComObjCreate.htm">COM objects</a> and <a href="objects/File.htm">File objects</a>.</p>
+<p>一般复制一个对象相当于增加了一个该对象的引用, 所以脚本必须在引用增加之后立即调用 ObjAddRef 以及 ObjRelease, 避免引用丢失.<br>比方说, 每次类似 <code>x := address</code> 这样复制一个地址的方式来复制对象, 就应该调用一次 ObjAddRef .<br>同样的, 当脚本结束 <em>x</em> (或者用其他值覆盖 <em>x</em>), 就应该调用一次 ObjRelease .</p>
+<p>注意, Object() 函数甚至可以在对象创建之前就可以使用, 比如 <a href="commands/ComObjCreate.htm">COM 对象</a> 和 <a href="objects/File.htm">File 对象</a>.</p>
 
 </body>
 </html>
