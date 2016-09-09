@@ -63,18 +63,18 @@ Hotkey, If [, Expression]</pre>
   <dd><p>在这两个参数中, 任何变量引用 (例如 %var%) 会在命令执行结束时被固定下来. 换句话说, 此后对这些变量内容的改变不会影响现有的 IfWin 热键.</p>
       <p>与 <a href="_IfWinActive.htm">#IfWinActive/Exist</a> 一样,<em>WinTitle</em> 和 <em>WinText</em> 为 <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a> 和 <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> 使用在<a href="../Scripts.htm#auto">自动执行段</a>中的默认设置.请参阅 <a href="_IfWinActive.htm">#IfWinActive/Exist</a> 了解详情.</p></dd>
 
-  <dt id="If">If, Expression</dt>
+  <dt id="If">If, 表达式</dt>
   <dd>
-    <p><span class="ver">[AHK_L]:</span> Counterpart of <a href="_If.htm">#If <i>Expression</i></a>. <em>Expression</em> must be an expression which has been used with the #If directive elsewhere in the script. Although this command is unable to create new expressions, it can create new hotkeys using an existing expression. See <a href="_If.htm#ex4">#If example 4</a>.</p>
-    <p><strong>Note:</strong> The Hotkey command uses the string that you pass to it, not the original source code. Commas and deref chars (percent signs) are interpreted <em>before</em> the command is called, so may need to be escaped if they are part of the original expression.  <a href="_EscapeChar.htm">Escape sequences</a> are resolved when the script loads, so only the resulting characters are considered; for example, <code>Hotkey, If, x = "`t"</code> and <code>Hotkey, If, % "x = """ A_Tab """"</code> both correspond to <code>#If x = "`t"</code>.</p>
-    <p><strong>已知限制:</strong>如果 <em>Expression</em> 包含 <code>and</code>/<code>or</code> 运算符,则它不会被识别为表达式.为了避免此问题,请在原来的 #If 表达式和传递给 Hotkey 命令的表达式中使用等价的 <code>&amp;&amp;</code>/<code>||</code> 运算符.</p>
+    <p><span class="ver">[AHK_L]:</span> 对应于 <a href="_If.htm">#If <i>表达式</i></a>. <em>表达式</em> 必须是在脚本其他任何地方用 #If 指令开头的的表达式. 通过这个命令不能创建新的表达式,而只能用已经存在的表达式创建新的热键定义. 请参考 <a href="_If.htm#ex4">#If 例子 4</a>.</p>
+    <p><strong>注意:</strong> 这个 Hotkey 只能用你传递给它的文本, 而不是原始代码. 逗号和变量符号 (百分号) 是在命令调用 <em>之前</em> 被解析的, 所以如果这些符号是原始表达式中的一部分, 则应该先转换一下. <a href="_EscapeChar.htm">转义序列</a> 是脚本加载的时候就进行转换的, 所以只产生字符;例如:<br><code>Hotkey, If, x = "`t"</code><br>和<br><code>Hotkey, If, % "x = """ A_Tab """"</code><br>都对应于<br><code>#If x = "`t"</code>.</p>
+    <p><strong>已知限制: </strong>If <em>表达式</em> 包含 <code>and</code>/<code>or</code> 运算符的时候, 不会被识别为表达式. 为了避免此问题, 请在原来的 #If 表达式和传递给 Hotkey 命令的表达式中使用等价的 <code>&amp;&amp;</code>/<code>||</code> 运算符.</p>
   </dd>
 
 </dl>
 
 <h3 id="ErrorLevel">ErrorLevel</h3>
 <p><span class="ver">[v1.1.04+]</span> 此命令失败时会抛出异常. 想了解更多信息, 请参阅 <a href="Catch.htm#RuntimeErrors">运行时错误</a>.</p>
-<p>只有在出现下列情况时 <a href="../misc/ErrorLevel.htm">ErrorLevel</a> 才会被改变: 1) 首个参数为 IfWin[Not]Active/Exist, 此时如果遇到问题它会被设置为 1 否则为 0; 或 2) 在 <em>Options</em> 参数中使用了单词 UseErrorLevel.</p>
+<p>只有在出现下列情况时 <a href="../misc/ErrorLevel.htm">ErrorLevel</a> 才会被改变:<br>1) 首个参数为 IfWin[Not]Active/Exist, 此时如果遇到问题它会被设置为 1 否则为 0;<br>或者:<br>2) 在 <em>Options</em> 参数中使用了单词 UseErrorLevel.</p>
 <table class="info">
   <tr>
     <th>错误</th>
@@ -117,7 +117,7 @@ Hotkey, If [, Expression]</pre>
 提示: 使用 UseErrorLevel 选项可以检查一个热键的变体是否存在. 例如:</p>
 <pre>Hotkey, ^!p,, UseErrorLevel
 if ErrorLevel in 5,6
-    MsgBox The hotkey does not exist or it has no variant for the current IfWin criteria.</pre>
+    MsgBox 热键定义不存在 或者 它不是当前 IfWin 的条件的变体.</pre>
 
 <h3>备注</h3>
 <p><a href="#IfWin">当前的 IfWin 设置</a> 决定了 Hotkey 命令将操作热键的哪个 <a href="#variant">变体</a>.</p>

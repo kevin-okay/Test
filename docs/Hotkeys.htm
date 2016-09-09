@@ -135,11 +135,11 @@ return</pre>
 <h2 id="Context">上下文相关的热键</h2>
 <p><a href="commands/_IfWinActive.htm">#IfWinActive/Exist</a> 和 <a href="commands/_If.htm">#If</a> 指令可以用来让热键根据不同的条件执行不同的动作 (或什么都不做). 例如:</p>
 <pre>#IfWinActive, ahk_class Notepad
-^a::MsgBox You pressed Ctrl-A while Notepad is active. Pressing Ctrl-A in any other window will pass the Ctrl-A keystroke to that window.
-#c::MsgBox You pressed Win-C while Notepad is active.
+^a::MsgBox 你在记事本中按下了 Ctrl-A . 而在其他窗口中按下 Ctrl-A 将原样发送.
+#c::MsgBox 你在记事本中按下了 Win-C 组合键.
 
 #IfWinActive
-#c::MsgBox You pressed Win-C while any window except Notepad is active.
+#c::MsgBox 你在非记事本程序中按下了 Win-C .
 
 #If <a href="commands/_If.htm#Examples">MouseIsOver</a>("ahk_class Shell_TrayWnd")
 WheelUp::Send {Volume_Up}     <em>; 在任务栏上滚动滚轮:增加/减小音量.</em>
