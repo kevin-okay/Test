@@ -82,7 +82,7 @@ ContinueSearch := true</pre>
 <h2 id="Operators">表达式中的运算符</h2>
 <p>优先级相同的运算符例如乘 (*) 和除 (/) 按从左到右的顺序计算, 下面另行注明的除外. 与之相比, 低优先级的运算符例如加 (+) 在更高优先级的运算符例如 (*) <em>之后</em> 计算. 例如, 3 + 2 * 2 等价于 3 + (2 * 2). 使用括号可以改变优先级, 例如: (3 + 2) * 2</p>
 <p>除了下面注明的情况, 其他时候在数学运算中包含的任何空值 (空字符串) 或非数字值包括算术运算符中的都 <strong>不会</strong> 被假定为零. 而是被视为错误, 这将导致那部分表达式的计算结果为空字符串. 例如, 如果变量 X 为空, 那么表达式 X + 1 会返回空值而不是 1.</p>
-<p>For historical reasons, <em>quoted</em> numeric strings such as <code>"123"</code> are always considered non-numeric when used directly in an expression (but not when stored in a variable or returned by a function). This non-numeric attribute is propagated by <a href="#concat">concatenation</a>, so expressions like <code>"0x" n</code> also produce a non-numeric value (even when n contains valid hexadecimal digits). This problem can be avoided by assigning the value to a variable or passing it through a function like <a href="Functions.htm#Round">Round()</a>. Scripts should avoid using quote marks around literal numbers, as the behavior may change in a future version.</p>
+<p>由于历史原因, <em>引号包围</em> 形如 <code>"123"</code> 的数字字符串直接用于表达式时,总是视为做非零的 (不过如果是用变量来保存,或者是函数的返回值则不是这样). 这种非零的属性还会被 <a href="#concat">连接符</a> 改变, 所以形如 <code>"0x" n</code> 的表达式同样会产生一个非零值 (即使 n 包含有效的十六进制值, 拼接后也会被视为非零的字符串值). 如果要避开这个问题, 可以把它保存到变量中或者用函数处理一次, 比如用 <a href="Functions.htm#Round">Round()</a> 处理后的返回值总是纯数字类型. 实际运用中, 脚本应该避免用双引号包围原意的数字, 因为将来的版本中可能会改变.<br>(译者注: 即 <strong>尽量避免</strong> 类似: <code>if ("1" < 2)</code> 这种形式书写表达式, 虽然目前这样做是合法的, 除非你真的是把这个数字当做文本来处理).</p>
 
 <h3>表达式运算符 (按优先级降序排列)</h3>
 <table class="info">
@@ -224,7 +224,7 @@ ContinueSearch := true</pre>
   </tr>
   <tr>
     <td style="text-align:center; white-space:nowrap"><p><strong>%func%()</strong></p></td>
-    <td>See <a href="Functions.htm#DynCall">Dynamically Calling a Function</a>.</td>
+    <td>请参阅 <a href="Functions.htm#DynCall">动态调用函数</a>.</td>
   </tr>
   <tr>
     <td style="text-align:center"><strong>func.()</strong></td>
@@ -410,7 +410,7 @@ ContinueSearch := true</pre>
 Sleep, 1000
 ElapsedTime := A_TickCount - StartTime
 MsgBox,  %ElapsedTime% milliseconds have elapsed.</pre>
-<p>如果您需要比 A_TickCount 的10ms 更高的精确度, 请使用 <a href="commands/DllCall.htm#QPC">QueryPerformanceCounter()</a>.</p>
+<p>如果您需要比 A_TickCount 的10ms 更高的精确度, 请使用 <a href="commands/DllCall.htm#QPC">QueryPerformanceCounter()</a> (高精度计时器).</p>
 </td>
   </tr>
 </table>
