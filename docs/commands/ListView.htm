@@ -96,7 +96,7 @@ ExitApp</pre>
 <h4 id="RowOptions">行选项</h4>
 <p><em>Options</em> 参数是一个包含零个或多个下表中单词的字符串(不区分大小写).在单词间使用空格或 tab 分隔. 要移除选项, 请在选项前加上负号. 要添加选项, 在选项前的正号可以省略.</p>
 <p><strong>Check</strong>: 在行中显示选中标记 (需要 ListView 含有 <a href="#Checked">复选框</a>). 以后要取消选中它,请使用 <code>LV_Modify(RowNumber, "-Check")</code>.</p>
-<p id="ColN"><strong>Col</strong>: 指定单词 Col 后紧跟着列号, 从此列开始往后应用参数 <em>Col1</em> 和其后参数的内容. 此选项通常和 <a href="#LV_Modify">LV_Modify()</a> 一起使用来修改行中的个别字段, 不会影响它们左边的那些字段.</p>
+<p id="ColN"><strong>ColN</strong>: 指定单词 Col 后紧跟着列号, 从此列开始往后应用参数 <em>Col1</em> 和其后参数的内容. 此选项通常和 <a href="#LV_Modify">LV_Modify()</a> 一起使用来修改行中的个别字段, 而不会影响其他字段.</p>
 <p id="Focus"><strong>Focus</strong>: 设置键盘焦点到此行 (通常和 Select 一起使用). 以后要取消它的焦点,请使用 <code>LV_Modify(RowNumber, "-Focus")</code>.</p>
 <p><strong>Icon</strong>: 指定单词 Icon 后紧跟着这行图标的编号, 这行图标显示在首列的左侧. 如果此选项不存在, 则使用 <a href="#IL">图像列表</a> 中的首个图标. 要显示空白图标, 请指定一个大于图像列表中图标数目的数字. 如果控件没有小图标的图像列表, 则 <a href="#View">报告视图</a> 中既不显示图标也不为其保留空间.</p>
 <p><strong>Select</strong>: 选择行. 以后要取消选择,请使用 <code>LV_Modify(RowNumber, "-Select")</code>.当选择行时,通常最好确保至少有一行总含有<a href="#Focus">焦点属性</a>,因为这样允许Appskey在焦点行附近显示其<a href="Gui.htm#GuiContextMenu">上下文菜单</a>(如果有).单词 <em>Select</em>后可以紧跟着 0 或 1 来表示初始状态.换句话说,<code>"Select"</code> 和 <code>"Select" <strong>.</strong> VarContainingOne</code> 是一样的(此处的句点是<a href="../Variables.htm#concat">连接运算符</a>).这种技术也适用于上面的 <em>Focus</em> 和 <em>Check</em>.</p>
@@ -104,7 +104,7 @@ ExitApp</pre>
 <h3 id="LV_Insert">LV_Insert(RowNumber [, Options, Col1, Col2, ...])</h3>
 <p>与 LV_Add() 行为一样,除了其首个参数指定了新插入行的行号.通过下移 <em>RowNumber</em> 及其下方的行来为新行腾出空间.如果 <em>RowNumber</em> 大于列表中行的数目(甚至可以高达 2147483647),则新行被添加到列表的底部.要了解<em>选项</em>,请参阅<a href="#RowOptions">行选项</a>.</p>
 <h3 id="LV_Modify">LV_Modify(RowNumber, Options [, NewCol1, NewCol2, ...])</h3>
-<p>修改行的属性和/或文本, 成功时返回 1 而失败时返回 0. 如果 <em>RowNumber</em> 为 0, 则修改控件中 <u>所有</u> 行(此时如果操作完全成功时返回 1 而部分失败时返回 0). 如果只存在前两个参数, 则仅修改行的属性而不改变其文本. 同样, 如果参数太少导致无法覆盖所有列, 则后面剩下的列保持不变. <a href="#ColN">ColN 选项</a>可以用来更新指定的列而不影响其他列.关于其他选项,请参阅<a href="#RowOptions">行选项</a>.</p>
+<p>修改行的属性和/或文本, 成功时返回 1 而失败时返回 0. 如果 <em>RowNumber</em> 为 0, 则修改控件中 <u>所有</u> 行(此时如果操作完全成功时返回 1 而部分失败时返回 0). 如果只存在前两个参数, 则仅修改行的属性而不改变其文本. 同样, 如果参数太少导致无法覆盖所有列, 则后面剩下的列保持不变. <a href="#ColN">Options 设为 ColN</a> 可更新指定的列而不影响其他列. 关于其他 Options 的可选内容,请参阅 <a href="#RowOptions">行选项</a> .</p>
 <h3 id="LV_Delete">LV_Delete([RowNumber])</h3>
 <p>如果省略此参数,则删除 ListView 中<strong>所有</strong>行.否则,仅删除指定 <em>RowNumber</em> 所在的行.成功时返回 1 而失败时返回 0.</p>
 <h2 id="bifCol">列函数</h2>
