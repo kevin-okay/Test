@@ -39,7 +39,7 @@ Gui, Add, ListView, r20 w700 gMyListView, Name|Size (KB)
 
 <em>; 从文件夹中获取文件名列表并把它们放入 ListView:</em>
 Loop, %A_MyDocuments%\*.*
-    <a href="#LV_Add">LV_Add</a>("", A_LoopFileName, A_LoopFileSizeKB)
+    <a href="#LV_Add">LV_Add</a>(&quot;&quot;, A_LoopFileName, A_LoopFileSizeKB)
 
 <a href="#LV_ModifyCol">LV_ModifyCol</a>()  <em>; 根据内容自动调整每列的大小.</em>
 LV_ModifyCol(2, "Integer")  <em>; 为了进行排序, 指出列 2 是整数.</em>
@@ -52,13 +52,13 @@ MyListView:
 if A_GuiEvent = DoubleClick
 {
     <a href="#LV_GetText">LV_GetText</a>(RowText, A_EventInfo)  <em>; 从行的第一个字段中获取文本.</em>
-    ToolTip You double-clicked row number %A_EventInfo%. Text: "%RowText%"
+    ToolTip You double-clicked row number %A_EventInfo%. Text: &quot;%RowText%&quot;
 }
 return
 
 GuiClose:  <em>; 表示当窗口关闭时脚本应自动退出.</em>
 ExitApp</pre>
-<h2 id="Options">用于 "<em>Gui, Add, ListView, <u>Options</u></em>" 的选项和样式</h2>
+<h2 id="Options">用于  &quot;<em>Gui, Add, ListView, <u>Options</u></em>&quot; 的选项和样式</h2>
 <p id="AltSubmit"><strong>AltSubmit:</strong> 通知脚本有比正常更多的 ListView 事件类型. 换句话说, g 标签会运行地更频繁. 请参阅 <a href="#notify">ListView 通知</a> 了解详情.</p>
 <p><strong>Background:</strong> 指定单词 Background 后面紧跟着颜色名称 (请参阅 <a href="Progress.htm#colors">颜色图表</a>) 或 RGB 值 (0x 前缀可以省略). 例如:<code>BackgroundSilver</code>,<code>BackgroundFFDD99</code>.如果此选项不存在,则 ListView 初始默认的背景颜色由 <a href="Gui.htm#Color">Gui Color</a> 的最后一个参数设置(如果没有,则使用系统默认的背景颜色).指定 <code>BackgroundDefault</code> 来应用系统的默认背景颜色(通常为白色).例如,使用 <code>GuiControl, +BackgroundDefault, MyListView</code> 可以把 ListView 恢复为默认的颜色.</p>
 <p><strong>C</strong>: 文本颜色. 指定字母 C 后面紧跟着颜色名称 (请参阅 <a href="Progress.htm#colors">颜色图表</a>) 或 RGB 值 (0x 前缀可以省略). 例如:<code>cRed</code>,<code>cFF2211</code>,<code>c0xFF2211</code>,<code>cDefault</code>.</p>
@@ -104,7 +104,7 @@ ExitApp</pre>
 <h3 id="LV_Insert">LV_Insert(RowNumber [, Options, Col1, Col2, ...])</h3>
 <p>与 LV_Add() 行为一样,除了其首个参数指定了新插入行的行号.通过下移 <em>RowNumber</em> 及其下方的行来为新行腾出空间.如果 <em>RowNumber</em> 大于列表中行的数目(甚至可以高达 2147483647),则新行被添加到列表的底部.要了解<em>选项</em>,请参阅<a href="#RowOptions">行选项</a>.</p>
 <h3 id="LV_Modify">LV_Modify(RowNumber, Options [, NewCol1, NewCol2, ...])</h3>
-<p>修改行的属性和/或文本,成功时返回 1 而失败时返回 0.如果 <em>RowNumber</em> 为 0,则修改控件中<u>所有</u>行(此时如果操作完全成功时返回 1 而部分失败时返回 0).如果只存在前两个参数, 则仅修改行的属性而不改变其文本. 同样, 如果参数太好而无法覆盖所有列, 则后面剩下的列保持不变. <a href="#ColN">ColN 选项</a>可以用来更新指定的列而不影响其他列.关于其他选项,请参阅<a href="#RowOptions">行选项</a>.</p>
+<p>修改行的属性和/或文本, 成功时返回 1 而失败时返回 0. 如果 <em>RowNumber</em> 为 0, 则修改控件中 <u>所有</u> 行(此时如果操作完全成功时返回 1 而部分失败时返回 0). 如果只存在前两个参数, 则仅修改行的属性而不改变其文本. 同样, 如果参数太少导致无法覆盖所有列, 则后面剩下的列保持不变. <a href="#ColN">ColN 选项</a>可以用来更新指定的列而不影响其他列.关于其他选项,请参阅<a href="#RowOptions">行选项</a>.</p>
 <h3 id="LV_Delete">LV_Delete([RowNumber])</h3>
 <p>如果省略此参数,则删除 ListView 中<strong>所有</strong>行.否则,仅删除指定 <em>RowNumber</em> 所在的行.成功时返回 1 而失败时返回 0.</p>
 <h2 id="bifCol">列函数</h2>
@@ -242,7 +242,7 @@ ButtonOK:
 GuiControlGet, FocusedControl, FocusV
 if FocusedControl &lt;&gt; MyListView
     return
-MsgBox % "Enter was pressed. The focused row number is " . LV_GetNext(0, "Focused")
+MsgBox % &quot;Enter was pressed. The focused row number is &quot; . LV_GetNext(0, &quot;Focused&quot;)
 return</pre>
 <p>使用键盘除了在行与行之间导航外, 用户还可以通过输入首列中一个项目名称的前几个字符来进行增量搜索. 这使得选择对象跳转到最近匹配的行.</p>
 <p>尽管 ListView 中的每个字段可以存储任意长度的文本, 但仅显示开始的 260 个字符.</p>
@@ -278,7 +278,7 @@ Gui, Add, Button, x+20, Switch View
 
 <em>; 创建 ListView 及其列:</em>
 <a href="#GuiAdd">Gui, Add, ListView</a>, xm r20 w700 vMyListView gMyListView, Name|In Folder|Size (KB)|Type
-<a href="#LV_ModifyCol">LV_ModifyCol</a>(3, "Integer")  <em>; 为了排序, 表示 Size 列中的内容是整数.</em>
+<a href="#LV_ModifyCol">LV_ModifyCol</a>(3, &quot;Integer&quot;)  <em>; 为了排序, 表示 Size 列中的内容是整数.</em>
 
 <em>; 创建图像列表, 这样 ListView 才可以显示图标:</em>
 ImageListID1 := <a href="#IL_Create">IL_Create</a>(10)
