@@ -193,24 +193,45 @@
 </ul>
 <li><object type="text/sitemap"><param name="Name" value="GUI, MsgBox, InputBox 和其他对话框"></object>
 <ul>
-<li><object type="text/sitemap"><param name="Name" value="FileSelectFile"><param name="Local" value="docs/commands/FileSelectFile.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="FileSelectFolder"><param name="Local" value="docs/commands/FileSelectFolder.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Gui"><param name="Local" value="docs/commands/Gui.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Gui control types"><param name="Local" value="docs/commands/GuiControls.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="GuiControl"><param name="Local" value="docs/commands/GuiControl.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="GuiControlGet"><param name="Local" value="docs/commands/GuiControlGet.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Gui ListView control"><param name="Local" value="docs/commands/ListView.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Gui TreeView control"><param name="Local" value="docs/commands/TreeView.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="IfMsgBox"><param name="Local" value="docs/commands/IfMsgBox.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="InputBox"><param name="Local" value="docs/commands/InputBox.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Menu"><param name="Local" value="docs/commands/Menu.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="MsgBox"><param name="Local" value="docs/commands/MsgBox.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui 控件类型"><param name="Local" value="docs/commands/GuiControls.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui 控件操作"><param name="Local" value="docs/commands/GuiControl.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui 控件取值"><param name="Local" value="docs/commands/GuiControlGet.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui 自定义控件"><param name="Local" value="docs/commands/GuiControls.htm#Custom"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui ActiveX 第三方控件控制器控件"><param name="Local" value="docs/commands/GuiControls.htm#ActiveX"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui Button 按钮控件"><param name="Local" value="docs/commands/GuiControls.htm#Button"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui Checkbox 多选框控件"><param name="Local" value="docs/commands/GuiControls.htm#Checkbox"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui ComboBox 可输入下拉列表控件"><param name="Local" value="docs/commands/GuiControls.htm#ComboBox"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui DateTime 时间日期选择器控件"><param name="Local" value="docs/commands/GuiControls.htm#DateTime"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui DropDownList 静态下拉列表控件"><param name="Local" value="docs/commands/GuiControls.htm#DropDownList"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui Edit 文本编辑区控件"><param name="Local" value="docs/commands/GuiControls.htm#Edit"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui GroupBox 控件组合容器控件"><param name="Local" value="docs/commands/GuiControls.htm#GroupBox"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui Hotkey 热键控件"><param name="Local" value="docs/commands/GuiControls.htm#Hotkey"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui Link 链接控件"><param name="Local" value="docs/commands/GuiControls.htm#Link"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui ListBox 简单列表控件"><param name="Local" value="docs/commands/GuiControls.htm#ListBox"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui ListView 高级表格控件"><param name="Local" value="docs/commands/ListView.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui MonthCal 月历控件"><param name="Local" value="docs/commands/GuiControls.htm#MonthCal"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui Picture 图片容器控件"><param name="Local" value="docs/commands/GuiControls.htm#Picture"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui Progress 进度条控件"><param name="Local" value="docs/commands/GuiControls.htm#Progress"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui Radio 单选按钮控件"><param name="Local" value="docs/commands/GuiControls.htm#Radio"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui StatusBar 状态栏控件"><param name="Local" value="docs/commands/GuiControls.htm#StatusBar"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui Slider 增减滑条控件"><param name="Local" value="docs/commands/GuiControls.htm#Slider"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui Text 静态文本控件"><param name="Local" value="docs/commands/GuiControls.htm#Text"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui TreeView 树形列表控件"><param name="Local" value="docs/commands/TreeView.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui Tab 多层面板控件"><param name="Local" value="docs/commands/GuiControls.htm#Tab"></object>
+<li><object type="text/sitemap"><param name="Name" value="Gui UpDown 增减按钮控件"><param name="Local" value="docs/commands/GuiControls.htm#UpDown"></object>
+<li><object type="text/sitemap"><param name="Name" value="FileSelectFile 选择文件对话框"><param name="Local" value="docs/commands/FileSelectFile.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="FileSelectFolder 选择目录对话框"><param name="Local" value="docs/commands/FileSelectFolder.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="IfMsgBox 对话框返回值判断"><param name="Local" value="docs/commands/IfMsgBox.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="InputBox 输入框"><param name="Local" value="docs/commands/InputBox.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Menu 菜单"><param name="Local" value="docs/commands/Menu.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="MsgBox 弹出窗口"><param name="Local" value="docs/commands/MsgBox.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="OnMessage"><param name="Local" value="docs/commands/OnMessage.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Progress"><param name="Local" value="docs/commands/Progress.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SplashImage"><param name="Local" value="docs/commands/Progress.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SplashTextOn/SplashTextOff"><param name="Local" value="docs/commands/SplashTextOn.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="ToolTip"><param name="Local" value="docs/commands/ToolTip.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="TrayTip"><param name="Local" value="docs/commands/TrayTip.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="ToolTip 浮动提示"><param name="Local" value="docs/commands/ToolTip.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="TrayTip 任务栏提示"><param name="Local" value="docs/commands/TrayTip.htm"></object>
 </ul>
 <li><object type="text/sitemap"><param name="Name" value="鼠标和键盘"></object>
 <ul>
