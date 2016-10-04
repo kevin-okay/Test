@@ -11,7 +11,7 @@
 
 <h1>If var [not] in/contains value1,value2,...</h1>
 
-<p>检查<a href="../Variables.htm">变量的</a>内容是否匹配列表中的某项.</p>
+<p>检查 <a href="../Variables.htm">变量的</a> 内容是否匹配列表中的某项.</p>
 
 <pre class="Syntax">if <i>Var</i> in <i>MatchList</i>
 if <i>Var</i> not in <i>MatchList</i>
@@ -22,7 +22,7 @@ if <i>Var</i> not contains <i>MatchList</i></pre>
 <dl>
 
   <dt>Var</dt>
-  <dd><p>需要被检查的 <a href="../Variables.htm">变量</a> 名称. 对于 "in" 运算符, 需要准确匹配列表中的某项. 对于 "contains" 运算符, 会更容易形成匹配: 只要列表中的某项作为子字符串包含于 <em>Var</em> 中.</p></dd>
+  <dd><p>需要被检查的 <a href="../Variables.htm">变量</a> 名称. 对于 "in" 运算符, 需要准确匹配列表中的某项.<br>对于 "contains" 运算符, 会更容易形成匹配: 只要列表中的某项作为子字符串包含于 <em>Var</em> 中.</p></dd>
 
   <dt>MatchList</dt>
   <dd><p>逗号分隔的字符串列表, 其中的每个字符串都将与 <em>Var</em> 的内容进行比较以寻找匹配. <strong>在分隔逗号周围的任何空格或 tab 都是有意义的</strong>, 这表示它们也是匹配字符串的一部分. 例如,如果 <em>MatchList</em> 被设置为 <code>ABC , XYZ</code>,这时 <em>Var</em> 必须包含带有尾随空格的 ABC 或带有前导空格的 XYZ 才形成匹配.</p>

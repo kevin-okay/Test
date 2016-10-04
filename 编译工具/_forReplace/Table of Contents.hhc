@@ -28,9 +28,10 @@
 <li><object type="text/sitemap"><param name="Name" value="扩展用法"><param name="Local" value="docs/Objects.htm#Extended_Usage"></object>
 <li><object type="text/sitemap"><param name="Name" value="自定义对象"><param name="Local" value="docs/Objects.htm#Custom_Objects"></object>
 <li><object type="text/sitemap"><param name="Name" value="默认基对象"><param name="Local" value="docs/Objects.htm#Default_Base_Object"></object>
-<li><object type="text/sitemap"><param name="Name" value="实现"><param name="Local" value="docs/Objects.htm#Implementation"></object>
-<li><object type="text/sitemap"><param name="Name" value="对象"><param name="Local" value="docs/objects/Object.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="枚举器对象 Enumerator"><param name="Local" value="docs/objects/Enumerator.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="对象的元函数"><param name="Local" value="docs/Objects.htm#Meta_Functions"></object>
+<li><object type="text/sitemap"><param name="Name" value="实例和引用"><param name="Local" value="docs/Objects.htm#Implementation"></object>
+<li><object type="text/sitemap"><param name="Name" value="简单对象-关联数组"><param name="Local" value="docs/objects/Object.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="对象的枚举"><param name="Local" value="docs/objects/Enumerator.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="文件对象"><param name="Local" value="docs/objects/File.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="函数对象"><param name="Local" value="docs/objects/Functor.htm"></object>
 </ul>
@@ -125,7 +126,7 @@
 <li><object type="text/sitemap"><param name="Name" value="Goto"><param name="Local" value="docs/commands/Goto.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="If 命令"><param name="Local" value="docs/commands/IfExpression.htm"></object>
 <ul>
-<li><object type="text/sitemap"><param name="Name" value="If (传统型)"><param name="Local" value="docs/commands/IfEqual.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="If (指令型)"><param name="Local" value="docs/commands/IfEqual.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="If (表达式)"><param name="Local" value="docs/commands/IfExpression.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="If var [not] between Low and High"><param name="Local" value="docs/commands/IfBetween.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="If var is [not] type"><param name="Local" value="docs/commands/IfIs.htm"></object>
@@ -320,21 +321,22 @@
 <li><object type="text/sitemap"><param name="Name" value="SoundSet"><param name="Local" value="docs/commands/SoundSet.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SoundSetWaveVolume"><param name="Local" value="docs/commands/SoundSetWaveVolume.htm"></object>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="字符串管理"></object>
+<li><object type="text/sitemap"><param name="Name" value="字符串处理"></object>
 <ul>
-<li><object type="text/sitemap"><param name="Name" value="Format()"><param name="Local" value="docs/commands/Format.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="FormatTime"><param name="Local" value="docs/commands/FormatTime.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="IfInString/IfNotInString"><param name="Local" value="docs/commands/IfInString.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="If var [not] in/contains MatchList"><param name="Local" value="docs/commands/IfIn.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="InStr()"><param name="Local" value="docs/commands/InStr.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Loop (解析字符串)"><param name="Local" value="docs/commands/LoopParse.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="RegExMatch()"><param name="Local" value="docs/commands/RegExMatch.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="RegExReplace()"><param name="Local" value="docs/commands/RegExReplace.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="SetEnv (var = value)"><param name="Local" value="docs/commands/SetEnv.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Format() 文本格式化"><param name="Local" value="docs/commands/Format.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="FormatTime 时间转换"><param name="Local" value="docs/commands/FormatTime.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="IfIn 文本快速匹配"><param name="Local" value="docs/commands/IfInString.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="IfIn 列表快速匹配"><param name="Local" value="docs/commands/IfIn.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="InStr() 文本简单搜索"><param name="Local" value="docs/commands/InStr.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Loop, Parse 解析字符串"><param name="Local" value="docs/commands/LoopParse.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="RegExMatch() 正则匹配"><param name="Local" value="docs/commands/RegExMatch.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="RegExReplace() 正则替换"><param name="Local" value="docs/commands/RegExReplace.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="正则表达式快速参考"><param name="Local" value="docs/misc/RegEx-QuickRef.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="SetEnv 赋值命令"><param name="Local" value="docs/commands/SetEnv.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SetFormat"><param name="Local" value="docs/commands/SetFormat.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Sort"><param name="Local" value="docs/commands/Sort.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Sort 排序"><param name="Local" value="docs/commands/Sort.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="StringCaseSense"><param name="Local" value="docs/commands/StringCaseSense.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="StringGetPos"><param name="Local" value="docs/commands/StringGetPos.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="StringGetPos 字符定位"><param name="Local" value="docs/commands/StringGetPos.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="StringLeft/StringRight"><param name="Local" value="docs/commands/StringLeft.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="StringLen"><param name="Local" value="docs/commands/StringLen.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="StringLower/StringUpper"><param name="Local" value="docs/commands/StringLower.htm"></object>
@@ -349,7 +351,7 @@
 <li><object type="text/sitemap"><param name="Name" value="SubStr()"><param name="Local" value="docs/commands/SubStr.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Trim()"><param name="Local" value="docs/commands/Trim.htm"></object>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="窗口管理"></object>
+<li><object type="text/sitemap"><param name="Name" value="窗口操作"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="控件"></object>
 <ul>

@@ -40,7 +40,7 @@ ul.list_of_p li { margin: 1em 0; }
   <li><a href="#Extended_Usage">扩展用法</a> - <a href="#Function_References">函数引用</a>, <a href="#Usage_Arrays_of_Arrays">数组嵌套</a>, <a href="#Usage_Arrays_of_Functions">函数数组</a></li>
   <li><a href="#Custom_Objects">自定义对象</a> - <a href="#Custom_Prototypes">原型</a>, <a href="#Custom_Classes">类</a>, <a href="#Custom_NewDelete">创建和销毁</a>, <a href="#Meta_Functions">元函数</a></li>
   <li><a href="#Default_Base_Object">默认基对象</a> - <a href="#Automatic_Var_Init">自动初始化变量</a>, <a href="#Pseudo_Properties">伪属性</a>, <a href="#Default__Warn">调试</a></li>
-  <li><a href="#Implementation">实现</a> - <a href="#Reference_Counting">引用计数</a>, <a href="#Implementation_Pointers">指向对象的指针</a></li>
+  <li><a href="#Implementation">实例和引用</a> - <a href="#Reference_Counting">引用计数</a>, <a href="#Implementation_Pointers">指向对象的指针</a></li>
 </ul>
 
 <span id="Syntax"></span><h2 id="Usage">基本用法</h2>
@@ -357,7 +357,7 @@ class GMem
 }</pre>
 <p>__Delete 不可被任何含有 "__Class" 键的对象调用. <a href="#Custom_Classes">Class objects (类对象)</a> 默认包含这个键.</p>
 
-<h3 id="Meta_Functions">Meta-Functions (元函数)</h3>
+<h3 id="Meta_Functions">元函数 (Meta-Functions)</h3>
 <pre class="Syntax">
 <strong>方法语法:</strong>
 class <i>ClassName</i> {
@@ -585,7 +585,7 @@ Default__Warn(nonobj, p1="", p2="", p3="", p4="")
     MsgBox A non-object value was improperly invoked.`n`nSpecifically: %nonobj%
 }</pre>
 
-<h2 id="Implementation">实现</h2>
+<h2 id="Implementation">实例和引用</h2>
 <span id="Refs"></span><h3 id="Reference_Counting">引用计数</h3>
 <p>当脚本不再引用对象时, AutoHotkey 使用基本引用计数结构来自动释放对象使用的资源. 脚本作者不应该明确调用此结构, 除非打算直接处理未托管的 <a href="#Implementation_Pointers">对象的指针</a>.</p>
 <p>目前在 AutoHotkey v1.1 中, 一个表达式将同时创建一个临时引用 (并不会在任何地方保存). 比如, <code>Fn(&amp;{})</code> 传递了一个无效的地址给函数, 由于临时引用返回 <code>{}</code> , 导致 <a href="Variables.htm#amp">取址</a> 运算之后被立即释放.</p>
