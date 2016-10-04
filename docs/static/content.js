@@ -1351,13 +1351,13 @@ translate = {
   hdSearchLnk: "https://www.baidu.com/s?wd={0}",
   sbContent: "目录",
   sbIndex: "索引",
-  ftLicense: "License:",
+  ftLicense: "版权:",
   ftExtra: "",
   cdSelectBtn: "选择",
   cdDownloadBtn: "下载",
-  verToolTipAHK_L: "Applies to:\nAutoHotkey_L Revision {0} and later\nAutoHotkey v1.0.90.00 and later",
-  verToolTipDefault: "Applies to AutoHotkey {0} and later",
-  tutLocalMessage: "Since you're viewing this documentation locally, you've probably already installed AutoHotkey and can skip to section b."
+  verToolTipAHK_L: "适用于:\nAutoHotkey_L {0} 及更高版本\nAutoHotkey v1.0.90.00 及更高版本",
+  verToolTipDefault: "适用于 AutoHotkey {0} 及更高版本",
+  tutLocalMessage: "如果你已经在本地查看本文档, 可能你已经安装了适合的 AutoHotkey 版本, 那么你可以跳过章节 b."
 };
 if (!IsInsideCHM() && !IsSearchBot())
 {
@@ -1366,7 +1366,7 @@ if (!IsInsideCHM() && !IsSearchBot())
 }
 $(document).ready(AddChmAndOnlineFeatures);
 
-function GetWorkingDir() 
+function GetWorkingDir()
 {
   var wDir = '';
   var pathArray = GetScriptDir().split('/');
@@ -1464,7 +1464,7 @@ function AddContent()
 
       if(!$(this).attr('id')) // if id anchor not exist, create one
       {
-        
+
         var str = $(this).text().replace(/\s/g, '_'); // replace spaces with _
         var str = str.replace(/[():.,;'#\[\]\/{}&="|?!]/g, ''); // remove special chars
         if($('#' + str).length) // if new id anchor exist already, set it to a unique one
@@ -1556,11 +1556,11 @@ function AddContent()
     };
 
     $("#indexcontainer").html(newContent);
-    
+
     //
     // Make keyword list fill and follow the viewport
     //
-    
+
     var nav = $('ul.nav')[0];
     (function(top) {
       var wasFixed, margin;
@@ -1588,7 +1588,7 @@ function AddContent()
       $(window).on({scroll: scrolled, resize: resized});
       scrolled();
     })(nav.offsetTop + nav.offsetHeight);
-    
+
     //
     // pre-select keyword list sidebar item
     //
@@ -1604,24 +1604,24 @@ function AddContent()
     $("#IndexEntry").on('keyup', function() {
       var oList = $('#indexcontainer')[0];
       var ListLen = oList.length;
-      var iCurSel = oList.selectedIndex; 
+      var iCurSel = oList.selectedIndex;
       var text = $("#IndexEntry").val().toLowerCase();
       var TextLen = text.length;
       if (!text) return
-      for (var i = 0; i < ListLen; i++) { 
-        var listitem = oList.item(i).text.substr(0, TextLen).toLowerCase(); 
-        if (listitem == text) { 
-          if (i != iCurSel) { 
-            var iPos = i + oList.size - 1; 
-            if(ListLen > iPos) 
-              oList.selectedIndex = iPos; 
-            else 
-              oList.selectedIndex = ListLen-1; 
-            oList.selectedIndex = i; 
-          } 
-          break; 
-        } 
-      } 
+      for (var i = 0; i < ListLen; i++) {
+        var listitem = oList.item(i).text.substr(0, TextLen).toLowerCase();
+        if (listitem == text) {
+          if (i != iCurSel) {
+            var iPos = i + oList.size - 1;
+            if(ListLen > iPos)
+              oList.selectedIndex = iPos;
+            else
+              oList.selectedIndex = ListLen-1;
+            oList.selectedIndex = i;
+          }
+          break;
+        }
+      }
     });
 
     //
@@ -1646,7 +1646,7 @@ function AddChmAndOnlineFeatures()
 {
   // Make all external links open a new tab/window.
   $("a[href^='http']").attr('target', '_blank');
-  
+
   (function() {
     var templ = $('<a class="ver"></a>');
     $('span.ver').each(function(idx, el) {
@@ -1673,7 +1673,7 @@ function AddChmAndOnlineFeatures()
         );
     });
   })();
-  
+
   //
   // Add useful features for code boxes
   //
@@ -1709,7 +1709,7 @@ function AddChmAndOnlineFeatures()
         range.moveToElementText(text);
         range.select();
       } else if (window.getSelection) {
-        selection = window.getSelection();        
+        selection = window.getSelection();
         range = document.createRange();
         range.selectNodeContents(text);
         selection.removeAllRanges();
