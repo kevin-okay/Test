@@ -160,16 +160,25 @@ ContinueSearch := true</pre>
   </tr>
   <tr id="regex">
     <td style="text-align:center"><strong>~=</strong></td>
-    <td><span class="ver">[AHK_L 31+]:</span> 这是 <a href="commands/RegExMatch.htm">RegExMatch</a> 的简写形式. 例如, <code>"abc123" ~= "\d"</code> 会设置 ErrorLevel 为 0 并返回数字 4 (首个数字的位置). 在 v1.1.03 之前, 此运算符和 <em>等号 </em> (=) 运算符优先级相同, 而之后版本中的优先级低于等号(= 或 :=), 低于 not (!).<br>译者注, 下面是一个很深的坑, 请测试下面这个<span class="red">错误的例子</span>:<br>
+    <td><span class="ver">[AHK_L 31+]:</span> 这是 <a href="commands/RegExMatch.htm">RegExMatch</a> 的简写形式. 例如, <code>"abc123" ~= "\d"</code> 会设置 ErrorLevel 为 0 并返回数字 4 (首个数字的位置). 在 v1.1.03 之前, 此运算符和 <em>等号 </em> (=) 或 (:=) 运算符优先级相同, 但低于 not (!).<br>译者注, 下面是一个很深的坑, 请测试下面这个<span class="red">错误的例子</span>:<br>
     <pre>
 str := "d"
-if (! str ~= "abc")     ;~ 必须用括号包围才能获得预期的效果 if ! (str ~= "abc")
+if (! str ~= "abc")     	;~ 必须用括号包围才能获得预期的效果 if ! (str ~= "abc")
 {
-  Msgbox 无法匹配字母 d   ;~ 不会进入这里
+  Msgbox 无法匹配字母 %str%   	;~ 不会进入这里
 }
 else
 {
-  Msgbox 找到字母 d
+  Msgbox 可以匹配字母 %str%	;~ 出乎意料的结果
+}
+    </pre>
+再来看看 ":=" 号的例子:
+    <pre>
+if (!str := "a") 				;~ 效果同 if ! (str := "a")
+{
+	Msgbox 不正常: %str% 为 false
+}else{
+	Msgbox 正常: %str% 为 true		;~ 预期的效果
 }
     </pre>
     </td>
