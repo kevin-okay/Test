@@ -80,7 +80,7 @@ Gui, Name: New  <em>; ´´½¨ÐÂ GUI,Ê×ÏÈÏú»ÙÒÑÓÐµÄÍ¬Ãû GUI.</em>
   <li><a href="GuiControls.htm#Slider">Slider</a>, <a href="GuiControls.htm#Progress">Progress</a></li>
   <li><a href="GuiControls.htm#GroupBox">GroupBox</a>, <a href="GuiControls.htm#Tab">Tab</a>, <a href="GuiControls.htm#StatusBar">StatusBar</a></li>
   <li><a href="GuiControls.htm#ActiveX">ActiveX</a> (ÀýÈç Internet Explorer Control)</li>
-  <li><a href="GuiControls.htm#Custom">¶¨ÖÆ</a></li>
+  <li><a href="GuiControls.htm#Custom">×Ô¶¨Òå¿Ø¼þ</a></li>
 </ul>
 <p>ÀýÈç:</p>
 <pre>Gui, Add, Text,, Please enter your name:
@@ -174,7 +174,13 @@ Gui <strong>MyGui:</strong>+Resize -MaximizeBox  <em>; ¸Ä±äÃû³ÆÎª <i>MyGui</i> µ
 <p><strong>Caption</strong> (Ä¬ÈÏ¾ßÓÐ´ËÑ¡Ïî): Îª´°¿ÚÔö¼Ó±êÌâÀ¸ºÍ´Ö±ß¿ò. Èç¹ûÒªÒÆ³ý½«ÒªÊ¹ÓÃ <a href="WinSet.htm#TransColor">WinSet TransColor</a> ÉèÖÃÍ¸Ã÷µÄ´°¿ÚµÄ±êÌâÀ¸, ÄÇÃ´ÔÚÐèÒªÔÚÉèÖÃ TransColor ºó²Å½øÐÐÒÆ³ý.</p>
 <p id="Delimiter"><strong>Delimiter</strong>: Ö¸¶¨¹ÜµÀ (|) ÍâµÄÆäËû×Ö·û×÷Îª´°¿ÚµÄ×Ö¶Î·Ö¸ô·û, Ã¿µ±Ê¹ÓÃ <a href="#Add">Gui Add</a> Ìí¼Ó, Ê¹ÓÃ <a href="GuiControl.htm">GuiControl</a> ÐÞ¸Ä, Ê¹ÓÃ <a href="#Submit">Gui Submit</a> »ò <a href="GuiControlGet.htm">GuiControlGet</a> »ñÈ¡¿Ø¼þµÄÄÚÈÝÊ±. ÔÚµ¥´Ê Delimiter ºó½ô¸ú×Åµ¥¸ö×Ö·û. ÀýÈç,<code>Gui +Delimiter`n</code> ½«Ê¹ÓÃ»»ÐÐ·û,Õâ¿ÉÄÜÌØ±ðÊÊºÏÓÚ<a href="../Scripts.htm#continuation">ÑÓÐøÆ¬¶Î</a>.Í¬Ñù,Ê¹ÓÃ <code>Gui +Delimiter|</code> ½«»Ö¸´ÎªÄ¬ÈÏµÄ·Ö¸ô·û.ÒªÊ¹ÓÃ¿Õ¸ñ»ò tab,Ö¸¶¨ <code>Gui +DelimiterSpace</code> »ò <code>Gui +DelimiterTab</code>.Ò»µ©¸Ä±äÊý¾Ý·Ö¸ô·û, Ëü»áÓ°Ïì×÷ÓÃÓÚÕâ¸öÌØÊâ´°¿ÚµÄËùÓÐÏÖÔÚºÍºóÐøµÄ <a href="../misc/Threads.htm">Ïß³Ì</a>.</p>
 <p><strong>Disabled</strong>: ½ûÓÃ´°¿Ú, ×èÖ¹ÓÃ»§ºÍ´°¿ÚÖÐµÄ¿Ø¼þ½»»¥. ´ËÑ¡Ïî³£ÓÃÓÚº¬ÓÐ×Ó´°¿ÚµÄ´°¿Ú (Çë²ÎÔÄ <a href="#Owner">Owner</a>).</p>
-<p id="DPIScale"><strong>DPIScale</strong> <span class="ver">[v1.1.11+]</span>:Ê¹ÓÃ <code>Gui -DPIScale</code> ½ûÓÃ DPI Ëõ·Å,ËüÄ¬ÈÏÊÇÆôÓÃµÄ.Èç¹ûÔÚÊ¹ÓÃ·Ç±ê×¼ DPI ÉèÖÃµÄÏµÍ³ÉÏÆôÓÃ DPI Ëõ·Å,Ôò Gui ÃüÁî»á×Ô¶¯µ÷Õû×ø±êºÍ³ß´çÀ´ÈÃ¿Ø¼þ¾ßÓÐ´óÖÂÏàÍ¬µÄÍâ¹Û³ß´ç(²»¹ý½âÎöÂÊ¸ü¸ß).ÀýÈç,¶ÔÓÚ 144(150%) µÄ DPI,<code>Gui Show, w100</code> »áÈÃ Gui ¿í¶ÈÎª 150 ÏñËØ,µ« <a href="../Variables.htm#GuiWidth">A_GuiWidth</a> ½«±£³Ö 100.<a href="../Variables.htm#ScreenDPI">A_ScreenDPI</a> °üº¬ÁËÏµÍ³µ±Ç° DPI.</p>
+<p id="DPIScale"><strong>DPIScale</strong> <span class="ver">[v1.1.11+]</span>: Ê¹ÓÃ <code>Gui -DPIScale</code> ½ûÓÃ DPI Ëõ·Å,ËüÄ¬ÈÏÊÇÆôÓÃµÄ.Èç¹ûÔÚÊ¹ÓÃ·Ç±ê×¼ DPI ÉèÖÃµÄÏµÍ³ÉÏÆôÓÃ DPI Ëõ·Å,Ôò Gui ÃüÁî»á×Ô¶¯µ÷Õû×ø±êºÍ³ß´çÀ´ÈÃ¿Ø¼þ¾ßÓÐ´óÖÂÏàÍ¬µÄÍâ¹Û³ß´ç(²»¹ý½âÎöÂÊ¸ü¸ß). ÀýÈç, ¶ÔÓÚ 144(150%) µÄ DPI, <code>Gui Show, w100</code> »áÈÃ Gui ¿í¶ÈÎª 150 ÏñËØ, µ« <a href="../Variables.htm#GuiWidth">A_GuiWidth</a> ½«±£³Ö 100.<a href="../Variables.htm#ScreenDPI">A_ScreenDPI</a> °üº¬ÁËÏµÍ³µ±Ç° DPI.</p>
+<p>DPI Ëõ·Å±ÈÀý½öÊÊÓÃÓÚ Gui ÃüÁî, ËùÒÔÀàËÆ ControlGetPos ÃüÁî·µ»ØµÄ×ø±êÎÞ·¨¹¤×÷. ½â¾ö·½°¸ÈçÏÂÁÐ:</p>
+<ul>
+  <li>¾¡Á¿Ê¹ÓÃÓ²±àÂë×ø±êÏµÍ³.  ÀýÈç, Ê¹ÓÃÀàËÆ <a href="#xp">xp</a>, <a href="#xs">xs</a>, <a href="#xm">xm</a> ºÍ <a href="#PosPlusMargin">x+m</a> Ñ¡ÏîÉèÖÃ¿Ø¼þµÄÏà¶ÔÎ»ÖÃÇÒÓÃÏñËØÀ´ÉèÖÃ <a href="#R">¶àÐÐÎÄ±¾</a> µÄ¸ß¶ÈÖµ.</li>
+  <li>¸ù¾Ý¾ßÌåÇé¿öÁé»îµÄ¿ªÆô (<code>Gui +DPIScale</code>) ºÍ¹Ø±Õ (<code>Gui -DPIScale</code>) DIP Ëõ·Å±ÈÀýÉèÖÃ. ¸ü¸ÄÕâ¸öÉèÖÃ²¢²»»áÓ°ÏìÒÑ¾­ÉèÖÃ¹ýµÄ×ø±ê»ò´óÐ¡.</li>
+  <li>ÊÖ¶¯²âÁ¿×ø±ê. ÀýÈç, <code>x*(A_ScreenDPI/96)</code> »á½« x ´Ó Gui×ø±êÏµ(Âß¼­) ×ª»»Îª ·ÇGui×ø±êÏµ(ÎïÀí).</li>
+</ul>
 <p id="GuiHwndOutputVar"><strong>Hwnd</strong><em>OutputVar</em> <span class="ver">[v1.1.04+]:</span> ´ËÑ¡Ïî±£´æ GUI µÄ´°¿Ú¾ä±ú (HWND) µ½ <em>OutputVar</em>. ÀýÈç:<code>Gui +HwndMyGuiHwnd</code>.ÔÚº¯ÊýÖÐÊ¹ÓÃÊ±, <em>MyGuiHwnd</em> »á±»ÊÓÎª <a href="../Functions.htm#DynVar">º¯Êý¶¯Ì¬±äÁ¿</a>. GUI µÄ HWND ³£ÓÃÓÚ <a href="PostMessage.htm">PostMessage</a>, <a href="PostMessage.htm">SendMessage</a> ºÍ <a href="DllCall.htm">DllCall</a>. Ëü»¹¿ÉÒÔÖ±½Ó×÷Îª <a href="../misc/WinTitle.htm#ahk_id">ahk_id WinTitle</a> »ò´úÌæ GUI Ãû³ÆÀ´Ê¹ÓÃ,ÀýÈç <code>Gui %MyGuiHwnd%:Destroy</code>.</p>
 <p id="PlusLabel"><strong>Label</strong> <span class="ver">[v1.0.44.09+]:</span> Îªµ±Ç°´°¿ÚµÄ <a href="#Labels">ÌØÊâ±êÇ©</a> Ö¸¶¨×Ô¶¨ÒåÃû³Æ. ÀýÈç,<code>Gui MyGui:+LabelMyGui_On</code> ½«Ê¹ÓÃ±êÇ© MyGui_OnClose ºÍ MyGui_OnSize(Èç¹ûËüÃÇ´æÔÚ)·Ö±ð´úÌæ MyGuiGuiClose ºÍ MyGuiGuiSize.»»¾ä»°Ëµ, ÔÚËùÓÐ <a href="#Labels">ÌØÊâ±êÇ©</a> µÄÃû³ÆÖÐ×Ö·û´® "MyGuiGui" ±»Ìæ»»Îª "MyGui_On". Õâ¿ÉÒÔÈÃ¶à¸ö´°¿ÚÊ¹ÓÃÒ»Ì×ÏàÍ¬µÄ±êÇ© (´ËÊ±½Å±¾¿ÉÒÔ¸ù¾Ý <a href="../Variables.htm#Gui">A_Gui</a> À´È·¶¨ÔËÐÐ×Ó³ÌÐòµÄ´°¿ÚÊÇÄÄ¸ö).</p>
 <p id="LastFound"><strong>LastFound</strong>: ÉèÖÃ´°¿ÚÎª <a href="../misc/WinTitle.htm#LastFoundWindow">ÉÏ´ÎÕÒµ½µÄ´°¿Ú</a> (¶ÔÓÚ <a href="#DefaultWin">Gui Ïß³Ì</a> ÕâÊÇ¶àÓàµÄ, ÒòÎªËü×Ô¶¯ÉèÖÃÁË), ÕâÑùÔÊÐíÀàËÆ <a href="WinSet.htm">WinSet</a> ÕâÑùµÄÃüÁî¶Ô´Ë´°¿Ú½øÐÐ²Ù×÷, ¼´Ê¹Ëüµ±Ç°ÎªÒþ²Ø×´Ì¬ (¼´²»ÐèÒªÊ¹ÓÃ <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>). ÐèÒªÔÚÏÔÊ¾´°¿ÚÖ®Ç°¸Ä±äÆäÊôÐÔÊ±, ÕâÊÇ·Ç³£ÓÐÓÃµÄ. ÀýÈç:</p>
@@ -256,8 +262,8 @@ Menu, MyMenuBar, Add, &amp;Help, :HelpMenu
 <p>Èç¹ûÍ¬Ê±Ê¡ÂÔ <strong>X</strong> ºÍ <strong>Y</strong>, Ôò¿Ø¼þ»á·ÅÖÃÔÚÖ®Ç°¿Ø¼þµÄÏÂÃæ, ÖÐ¼ä¼ÓÉÏ±ê×¼µÄÌî³ä¼ä¾à.</p>
 <p id="PosPlus">¶ÔÓÚ <strong>X</strong> ºÍ <strong>Y</strong>, »¹¿ÉÒÔÔÚºóÃæ¼ÓÉÏ¼ÓºÅÀ´È·¶¨¿Ø¼þÏà¶ÔÓÚÇ°Ò»¸öÌí¼Ó¿Ø¼þµÄÓÒ±ß»òµ×²¿±ßÔµ (·Ö±ðµØ) µÄÎ»ÖÃ. ÀýÈç,Ö¸¶¨ <code>Y+10</code> ½«°Ñ¿Ø¼þ·ÅÖÃÔÚÇ°Ò»¸ö¿Ø¼þµ×²¿ÏÂÃæ 10 ¸öÏñËØµÄÎ»ÖÃ,¶ø²»Ê¹ÓÃ±ê×¼µÄÌî³ä¼ä¾à.Í¬ÑùµØ,Ö¸¶¨ <code>X+10</code> ½«°Ñ¿Ø¼þ·ÅÖÃÔÚÇ°Ò»¸ö¿Ø¼þÓÒ±ßÔµµÄÓÒ±ß 10 ¸öÏñËØµÄÎ»ÖÃ.ÓÉÓÚ¸ºÊýÈç <code>X-10</code> ±íÊ¾¾ø¶ÔµÄÎ»ÖÃ,Òò´ËÒªÊ¹ÓÃ¸ºµÄÎ»ÖÃÆ«ÒÆ,ÐèÒªÔÚÇ°Ãæ¼ÓÉÏÒ»¸ö¼ÓºÅ.ÀýÈç:<code>X+-10</code>.</p>
 <p id="PosPlusMargin"><span class="ver">[v1.1.16+]:</span>¶Ô<strong>X+</strong>¼°<strong>Y+</strong>,¿É½«×ÖÄ¸<strong>M</strong>Ìæ»»Îª´°¿ÚµÄ<a href="#Margin(±ß¾à)">±ß¾à</a>Öµ.Èç,<strong>x+m</strong>Ê¹ÓÃÇ°Ò»¿Ø¼þµÄÓÒ±ßÎ»ÖÃ¼ÓÉÏ±ê×¼Ìî³ä¼ä¸ô.. <strong>xp y+m</strong>½«¿Ø¼þ·ÅÖÃÓÚÇ°Ò»¸öÖ®ÏÂ, µ«µ±Ö¸¶¨X×ø±êÊ±,Ïàµ±ÓÚÄ¬ÈÏÇé¿öÏÂÒþÊ½µÄ<strong>yp</strong>(whereas specifying an X coordinate on its own would normally imply <strong>yp</strong> by default).</p>
-<p><strong>xp+n</strong>, <strong>yp+n</strong>, <strong>xp-n</strong>, <strong>yp-n</strong> (ÆäÖÐ <strong>n</strong> ¿ÉÒÔÎªÈÎÒâÊý×Ö) ¿ÉÒÔÓÃÀ´Ö¸¶¨¿Ø¼þÏà¶ÔÓÚÇ°Ò»¸ö¿Ø¼þ×óÉÏ½ÇµÄÎ»ÖÃ, ´ËÑ¡Ïî³£ÓÃÓÚ <a href="GuiControls.htm#GroupBox">GroupBox</a> ÖÐµÄ·â×°¿Ø¼þ.</p>
-<p><strong>xm</strong> ºÍ <strong>ym</strong> ·Ö±ð¿ÉÒÔ°Ñ¿Ø¼þ·ÅÖÃÔÚ´°¿Ú×î×ó±ßºÍ×îÉÏ±ßµÄ <a href="#Margin(±ß¾à)">±ßÔµ</a> (ËüÃÇºóÃæ»¹¿ÉÒÔ¸ú×Å¼ÓºÅ/¼õºÅºÍÊý×Ö). Ö¸¶¨ <strong>ym</strong> ¶øÊ¡ÂÔ x ×ø±ê, ½«°Ñ¿Ø¼þ·ÅÖÃÔÚ´°¿ÚµÄ×îÉÏÃæµ«ÔÚÖ®Ç°ËùÓÐ¿Ø¼þµÄÓÒ±ß, ¿ÉÒÔÀí½âÎª¿ªÊ¼ÁËÒ»¸öÐÂ "ÁÐ". ·´Ö®ÒàÈ».</p>
+<p id="xp"><strong>xp+n</strong>, <strong>yp+n</strong>, <strong>xp-n</strong>, <strong>yp-n</strong> (ÆäÖÐ <strong>n</strong> ¿ÉÒÔÎªÈÎÒâÊý×Ö) ¿ÉÒÔÓÃÀ´Ö¸¶¨¿Ø¼þÏà¶ÔÓÚÇ°Ò»¸ö¿Ø¼þ×óÉÏ½ÇµÄÎ»ÖÃ, ´ËÑ¡Ïî³£ÓÃÓÚ <a href="GuiControls.htm#GroupBox">GroupBox</a> ÖÐµÄ·â×°¿Ø¼þ.</p>
+<p id="xm"><strong>xm</strong> ºÍ <strong>ym</strong> ·Ö±ð¿ÉÒÔ°Ñ¿Ø¼þ·ÅÖÃÔÚ´°¿Ú×î×ó±ßºÍ×îÉÏ±ßµÄ <a href="#Margin(±ß¾à)">±ßÔµ</a> (ËüÃÇºóÃæ»¹¿ÉÒÔ¸ú×Å¼ÓºÅ/¼õºÅºÍÊý×Ö). Ö¸¶¨ <strong>ym</strong> ¶øÊ¡ÂÔ x ×ø±ê, ½«°Ñ¿Ø¼þ·ÅÖÃÔÚ´°¿ÚµÄ×îÉÏÃæµ«ÔÚÖ®Ç°ËùÓÐ¿Ø¼þµÄÓÒ±ß, ¿ÉÒÔÀí½âÎª¿ªÊ¼ÁËÒ»¸öÐÂ "ÁÐ". ·´Ö®ÒàÈ».</p>
 <p id="xs"><strong>xs</strong> ºÍ <strong>ys</strong>:ËüÃÇÀàËÆÓÚ <strong>xm</strong> ºÍ <strong>ym</strong>,Çø±ðÔÚÓÚËüÃÇÊÇÏà¶ÔÓÚÇ°Ò»¸öÊ¹ÓÃ <a href="#Section">Section</a> Ñ¡ÏîÌí¼ÓµÄ¿Ø¼þ×ø±ê(ÔÚ´°¿ÚÖÐ´´½¨Ê×¸ö¿Ø¼þÊ±×ÜÊÇ¿ªÊ¼Ò»¸öÐÂÁÐ,¼´Ê¹Ã»ÓÐÖ¸¶¨´ËÑ¡Ïî).Ö¸¶¨ <strong>ys</strong> ¶øÊ¡ÂÔ x ×ø±ê, ½«°Ñ¿Ø¼þ·ÅÖÃÔÚÖ®Ç°±£´æµÄ y ×ø±ê (¼´×î½üÒ»´ÎÊ¹ÓÃ Section Ñ¡ÏîÌí¼ÓµÄ¿Ø¼þµÄ y ×ø±ê) µ«ÔÚ×î½üÒ»´ÎÊ¹ÓÃ <a href="#Section">Section</a> ºóÌí¼ÓµÄËùÓÐ¿Ø¼þÓÒ±ß; Õâ¿ÉÒÔÀí½âÎªÔÚÍ¬Ò»¸ö¿Ø¼þ¶ÎÖÐ¿ªÊ¼Ò»¸öÐÂÁÐ. ÀýÈç:</p>
 <pre>gui, add, edit, w600  <em>; ÔÚ´°¿ÚµÄ¶¥²¿Ìí¼ÓÒ»¸ö·Ç³£¿íµÄ±à¼­¿Ø¼þ.</em>
 gui, add, text, <strong>section</strong>, First Name:  <em>; ±£´æ´Ë¿Ø¼þÎ»ÖÃ²¢¶¨ÒåÒ»¸öÐÂ¿Ø¼þ¶Î.</em>
@@ -325,7 +331,7 @@ ExitApp</pre>
 ÒÑÖªÏÞÖÆ: Èç¹û´°¿ÚÖÐÊ×¸ö¿Ø¼þÊÇ½ûÓÃµÄ (¿ÉÄÜÓë¿Ø¼þÀàÐÍÓÐ¹Ø), Ôò°´ÏÂ Escape Ê± GuiEscape ×Ó³ÌÐò²»»áÔËÐÐ. ²úÉúÕâÑùµÄÐ§¹û¿ÉÄÜÊÇÊÜÆäËûÒ»Ð©ÊÂ¼þµÄÓ°Ïì.</p>
 
 <p id="GuiSize"><strong>GuiSize</strong>: ¶Ô´°¿Úµ÷Õû´óÐ¡, ×îÐ¡»¯, ×î´ó»¯»ò»¹Ô­Ê±×Ô¶¯ÔËÐÐ´Ë×Ó³ÌÐò. ÄÚÖÃ±äÁ¿ <a href="../Variables.htm#GuiWidth">A_GuiWidth</a> ºÍ <a href="../Variables.htm#GuiWidth">A_GuiHeight</a> ·Ö±ð°üº¬ÁË´°¿Ú¹¤×÷Çøµ÷ÕûºóµÄ¿í¶ÈºÍ¸ß¶È,´°¿Ú¹¤×÷Çø²»°üÀ¨±êÌâÀ¸,²Ëµ¥À¸ºÍ±ß¿ò.´ËÍâ,<a href="../Variables.htm#EventInfo">A_EventInfo</a> ºÍ <a href="../misc/ErrorLevel.htm">ErrorLevel</a> ½«Í¬Ê±°üº¬ÏÂÁÐÊý×ÖµÄÆäÖÐÒ»¸ö:</p>
-<p>0: ´°¿Ú±»»¹Ô­»òÍ¨¹ýÍÏÀ­´°¿Ú±ßÔµÕâÑùÕý³£µ÷½Ú¹ý´óÐ¡Ê±.<br>
+<p>0: ´°¿Ú±»»¹Ô­, »òÕý³£µÄÍ¨¹ýÍÏÀ­´°¿Ú±ßÔµµ÷½Ú´óÐ¡Ê±.<br>
   1: ´°¿Ú±»×îÐ¡»¯ÁË.<br>
   2: ´°¿Ú±»×î´ó»¯ÁË.</p>
 <p>½Å±¾ÖÐ¿ÉÒÔÊ¹ÓÃ GuiSize µ÷Õû¿Ø¼þµÄ´óÐ¡ºÍÎ»ÖÃÀ´ÏìÓ¦ÓÃ»§¶Ô´°¿Ú´óÐ¡µÄ¸Ä±ä. Í¨¹ý <a href="https://autohotkey.com/boards/viewtopic.php?f=6&t=1079">AutoXYWH() by tmplinshi and toralf</a> ¿ÉÒÔÈÃÕâÖÖ´¦Àí¸üÈÝÒ×Ð©.</p>
@@ -570,7 +576,7 @@ Gui, Color, White
 Gui, Add, Picture, x0 y0 h350 w450, %A_WinDir%\system32\ntimage.gif
 Gui, Add, Button, Default xp+20 yp+250, Start the Bar Moving
 Gui, Add, Progress, vMyProgress w416
-Gui, Add, Text, vMyText wp  <em>; wp ±íÊ¾ "Ê¹ÓÃÖ®Ç°µÄ¿í¶È".</em>
+Gui, Add, Text, vMyText wp  <em>; wp ±íÊ¾ &quot;Ê¹ÓÃÖ®Ç°µÄ¿í¶È&quot;.</em>
 Gui, Show
 return
 

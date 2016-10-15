@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>While 循环</title>
-<meta http-equiv="content-type" content="text/html; charset=GB2312">
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -13,12 +13,13 @@
 
 <p>重复执行一系列命令,一直到指定的<a href="../Variables.htm#Expressions">表达式</a>计算结果为假.</p>
 
-<pre class="Syntax">While <i>Expression</i></pre>
+<pre class="Syntax">While <i>Expression</i>
+While(<i>Expression</i>)</pre>
 <h3>参数</h3>
 <dl>
 
   <dt>Expression</dt>
-  <dd><p>任何有效的 <a href="../Variables.htm#Expressions">表达式</a>. 例如:<code>while x &lt; y</code>.</p></dd>
+  <dd><p>任何有效的 <a href="../Variables.htm#Expressions">表达式</a>. 例如: <code>while x &lt; y</code>.</p></dd>
 
 </dl>
 
@@ -38,10 +39,10 @@ CoordMode, Mouse, Screen
 
 ~LButton::
     MouseGetPos, begin_x, begin_y
-    <strong>while</strong> GetKeyState("LButton")
+    <strong>while</strong> GetKeyState(&quot;LButton&quot;)
     {
         MouseGetPos, x, y
-        ToolTip, % begin_x ", " begin_y "`n" Abs(begin_x-x) " x " Abs(begin_y-y)
+        ToolTip, % begin_x &quot;, &quot; begin_y &quot;`n&quot; Abs(begin_x-x) &quot; x &quot; Abs(begin_y-y)
         Sleep, 10
     }
     ToolTip
