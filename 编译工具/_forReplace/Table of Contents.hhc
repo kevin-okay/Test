@@ -319,11 +319,11 @@
 <li><object type="text/sitemap"><param name="Name" value="FormatTime 时间转换"><param name="Local" value="docs/commands/FormatTime.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="IfIn 文本快速匹配"><param name="Local" value="docs/commands/IfInString.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="IfIn 列表快速匹配"><param name="Local" value="docs/commands/IfIn.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="InStr() 文本简单搜索"><param name="Local" value="docs/commands/InStr.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="InStr 文本简单搜索"><param name="Local" value="docs/commands/InStr.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Loop (Parse 解析字符串)"><param name="Local" value="docs/commands/LoopParse.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Ord"><param name="Local" value="docs/commands/Ord.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="RegExMatch() 正则匹配"><param name="Local" value="docs/commands/RegExMatch.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="RegExReplace() 正则替换"><param name="Local" value="docs/commands/RegExReplace.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="RegExMatch 正则匹配"><param name="Local" value="docs/commands/RegExMatch.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="RegExReplace 正则替换"><param name="Local" value="docs/commands/RegExReplace.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="正则表达式快速参考"><param name="Local" value="docs/misc/RegEx-QuickRef.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SetEnv 赋值命令"><param name="Local" value="docs/commands/SetEnv.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SetFormat"><param name="Local" value="docs/commands/SetFormat.htm"></object>
@@ -337,12 +337,12 @@
 <li><object type="text/sitemap"><param name="Name" value="StringReplace"><param name="Local" value="docs/commands/StringReplace.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="StringSplit"><param name="Local" value="docs/commands/StringSplit.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="StringTrimLeft/StringTrimRight"><param name="Local" value="docs/commands/StringTrimLeft.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="StrLen()"><param name="Local" value="docs/commands/StringLen.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="StrPut()/StrGet()"><param name="Local" value="docs/commands/StrPutGet.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="StrReplace()"><param name="Local" value="docs/commands/StringReplace.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="StrSplit()"><param name="Local" value="docs/commands/StringSplit.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="SubStr()"><param name="Local" value="docs/commands/SubStr.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="Trim()"><param name="Local" value="docs/commands/Trim.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="StrLen"><param name="Local" value="docs/commands/StringLen.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="StrPut/StrGet"><param name="Local" value="docs/commands/StrPutGet.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="StrReplace"><param name="Local" value="docs/commands/StringReplace.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="StrSplit"><param name="Local" value="docs/commands/StringSplit.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="SubStr"><param name="Local" value="docs/commands/SubStr.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="Trim"><param name="Local" value="docs/commands/Trim.htm"></object>
 </ul>
 <li><object type="text/sitemap"><param name="Name" value="Windows - 窗口操作"></object>
 <ul>
