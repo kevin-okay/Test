@@ -7,6 +7,12 @@
 </object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="快速了解"><param name="Local" value="docs/AutoHotkey.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="常见问题解答"><param name="Local" value="docs/FAQ.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="教程 (快速入门)"><param name="Local" value="docs/Tutorial.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="更新日志"><param name="Local" value="docs/AHKL_ChangeLog.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="脚本展示"><param name="Local" value="docs/scripts/index.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="脚本兼容性"><param name="Local" value="docs/Compat.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="命令和函数索引"><param name="Local" value="docs/commands/index.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="基本使用和语法"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="热键"><param name="Local" value="docs/Hotkeys.htm"></object>
@@ -31,12 +37,6 @@
 <li><object type="text/sitemap"><param name="Name" value="函数对象"><param name="Local" value="docs/objects/Functor.htm"></object>
 </ul>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="常见问题解答"><param name="Local" value="docs/FAQ.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="教程 (快速入门)"><param name="Local" value="docs/Tutorial.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="更新日志"><param name="Local" value="docs/AHKL_ChangeLog.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="脚本展示"><param name="Local" value="docs/scripts/index.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="脚本兼容性"><param name="Local" value="docs/Compat.htm"></object>
-<li><object type="text/sitemap"><param name="Name" value="命令和函数索引"><param name="Local" value="docs/commands/index.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="环境变量管理"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="ClipWait"><param name="Local" value="docs/commands/ClipWait.htm"></object>
@@ -281,14 +281,14 @@
 <li><object type="text/sitemap"><param name="Name" value="URLDownloadToFile"><param name="Local" value="docs/commands/URLDownloadToFile.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="VarSetCapacity"><param name="Local" value="docs/commands/VarSetCapacity.htm"></object>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="Process 进程管理"></object>
+<li><object type="text/sitemap"><param name="Name" value="Process - 进程管理"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="Process"><param name="Local" value="docs/commands/Process.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Run/RunWait"><param name="Local" value="docs/commands/Run.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RunAs"><param name="Local" value="docs/commands/RunAs.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Shutdown"><param name="Local" value="docs/commands/Shutdown.htm"></object>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="Registry 注册表管理"></object>
+<li><object type="text/sitemap"><param name="Name" value="Registry - 注册表管理"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="Loop (registry)"><param name="Local" value="docs/commands/LoopReg.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="RegDelete"><param name="Local" value="docs/commands/RegDelete.htm"></object>
@@ -296,13 +296,13 @@
 <li><object type="text/sitemap"><param name="Name" value="RegWrite"><param name="Local" value="docs/commands/RegWrite.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SetRegView"><param name="Local" value="docs/commands/SetRegView.htm"></object>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="屏幕"></object>
+<li><object type="text/sitemap"><param name="Name" value="Screen - 屏幕(找图/取色)"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="ImageSearch"><param name="Local" value="docs/commands/ImageSearch.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="PixelGetColor"><param name="Local" value="docs/commands/PixelGetColor.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="PixelSearch"><param name="Local" value="docs/commands/PixelSearch.htm"></object>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="Sound"></object>
+<li><object type="text/sitemap"><param name="Name" value="Sound - 声音控制"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="SoundBeep"><param name="Local" value="docs/commands/SoundBeep.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SoundGet"><param name="Local" value="docs/commands/SoundGet.htm"></object>
@@ -311,7 +311,7 @@
 <li><object type="text/sitemap"><param name="Name" value="SoundSet"><param name="Local" value="docs/commands/SoundSet.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="SoundSetWaveVolume"><param name="Local" value="docs/commands/SoundSetWaveVolume.htm"></object>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="字符串处理"></object>
+<li><object type="text/sitemap"><param name="Name" value="String - 字符串处理"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="Asc"><param name="Local" value="docs/commands/Asc.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Chr"><param name="Local" value="docs/commands/Chr.htm"></object>
@@ -344,9 +344,9 @@
 <li><object type="text/sitemap"><param name="Name" value="SubStr()"><param name="Local" value="docs/commands/SubStr.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="Trim()"><param name="Local" value="docs/commands/Trim.htm"></object>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="窗口操作"></object>
+<li><object type="text/sitemap"><param name="Name" value="Windows - 窗口操作"></object>
 <ul>
-<li><object type="text/sitemap"><param name="Name" value="控件"></object>
+<li><object type="text/sitemap"><param name="Name" value="Control - 控件"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="Control"><param name="Local" value="docs/commands/Control.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="ControlClick"><param name="Local" value="docs/commands/ControlClick.htm"></object>
@@ -363,7 +363,7 @@
 <li><object type="text/sitemap"><param name="Name" value="SetControlDelay"><param name="Local" value="docs/commands/SetControlDelay.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="WinMenuSelectItem"><param name="Local" value="docs/commands/WinMenuSelectItem.htm"></object>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="窗口组"></object>
+<li><object type="text/sitemap"><param name="Name" value="Windows Group - 窗口组"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="GroupActivate"><param name="Local" value="docs/commands/GroupActivate.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="GroupAdd"><param name="Local" value="docs/commands/GroupAdd.htm"></object>
@@ -405,7 +405,7 @@
 <li><object type="text/sitemap"><param name="Name" value="WinWaitActive, WinWaitNotActive"><param name="Local" value="docs/commands/WinWaitActive.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="WinWaitClose"><param name="Local" value="docs/commands/WinWaitClose.htm"></object>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="#指令"></object>
+<li><object type="text/sitemap"><param name="Name" value="#号前缀指令 - 脚本指令"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="#AllowSameLineComments"><param name="Local" value="docs/commands/_AllowSameLineComments.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="#ClipboardTimeout"><param name="Local" value="docs/commands/_ClipboardTimeout.htm"></object>
