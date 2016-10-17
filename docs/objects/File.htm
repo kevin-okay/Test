@@ -137,8 +137,8 @@ File.Encoding := Encoding</pre>
 	<li>带小端字节顺序标识的Unicode UTF-16等效于CP1200.</li>
 	<li><code>CP<i>nnn</i></code>: 带数值标识符 <i>nnn</i> 的代码页.</li>
   </ul>
-  <p><em>Encoding</em>不会返回带<code>-RAW</code>前缀的值,不论文件如何被打开或收费包含字节顺序标识(BOM).设置<em>Encoding</em>不会增加或移除BOM,因为BOM通常在文件建立时就被写入其中.</p>
-  <p>在v1.1.15.04+中设置<em>Encoding</em>至<code>UTF-8-RAW</code>或<code>UTF-16-RAW</code>合法,但<code>-RAW</code>前缀被忽略.早期版本中,<code>UTF-8-RAW</code>及<code>UTF-16-RAW</code>如同非法的8位编码,致使所有非ASCII字符被丢弃.这仅影响<code>File.Encoding</code>,而非<a href="../commands/FileOpen.htm">FileOpen()</a>.</p>
+  <p><em>Encoding</em>不会返回带 <code>-RAW</code> 后缀的值, 不论文件如何被打开或是否包含字节顺序标识(BOM). 设置 <em>Encoding</em> 不会增加或移除BOM, 因为BOM通常在文件建立时就被写入其中.</p>
+  <p>从 v1.1.15.04+ 开始, 设置 <em>Encoding</em> 为 <code>UTF-8-RAW</code> 或 <code>UTF-16-RAW</code> 合法, 但 <code>-RAW</code> 后缀将被忽略. 而之前的版本中, <code>UTF-8-RAW</code> 及<code>UTF-16-RAW</code> 如同非法的8位编码, 导致所有非 ASCII 字符被丢弃, 不过这只会影响 <code>File.Encoding</code>, 而不会影响 <a href="../commands/FileOpen.htm">FileOpen()</a>.</p>
   </td></tr>
 </table></div>
 
