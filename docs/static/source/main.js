@@ -1,4 +1,4 @@
-﻿if (!IsInsideCHM() && !IsSearchBot())
+if (!IsInsideCHM() && !IsSearchBot())
 {
   BuildStructure();
   AddContent();
@@ -118,7 +118,7 @@ function AddContent()
     // language button
     //
 
-    var en = 'http://ahkscript.org/docs/';
+    var en = 'https://autohotkey.com/docs/';
     var de = 'http://ahkde.github.io/docs/';
     var cn = 'http://ahkcn.sourceforge.net/docs/';
 
