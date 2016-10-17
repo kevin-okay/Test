@@ -200,7 +200,7 @@
 <li><object type="text/sitemap"><param name="Name" value="ToolTip 浮动提示"><param name="Local" value="docs/commands/ToolTip.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="TrayTip 任务栏提示"><param name="Local" value="docs/commands/TrayTip.htm"></object>
 </ul>
-<li><object type="text/sitemap"><param name="Name" value="Maths"><param name="Local" value="docs/commands/Math.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="数学相关"><param name="Local" value="docs/commands/Math.htm"></object>
 <ul>
 <li><object type="text/sitemap"><param name="Name" value="Abs"><param name="Local" value="docs/commands/Math.htm#Abs"></object>
 <li><object type="text/sitemap"><param name="Name" value="Ceil"><param name="Local" value="docs/commands/Math.htm#Ceil"></object>
