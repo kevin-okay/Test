@@ -812,6 +812,9 @@ SendMessage, 1133, 16, 0, msctls_updown321 <em>; 1133 为 UDM_SETBASE</em></pre>
   <td>0x20</td>
   <td>+/-SortDesc. 与上面相同, 不过这里是降序排列.</td>
 </tr>
+<tr id="LVS_EX">
+  <td colspan="3" class="note"><p><strong>Extended ListView styles</strong> require the <a href="../commands/ListView.htm#LVS_EX">LV prefix</a> when used with the Gui commands. Some extended styles introduced in Windows XP or later versions are not listed here. For a full list, see <a href="https://msdn.microsoft.com/en-us/library/bb774732">MSDN: Extended List-View Styles</a>.</p></td>
+</tr>
 <tr id="LVS_EX_BORDERSELECT">
   <td>LVS_EX_BORDERSELECT</td>
   <td>LV0x8000</td>
@@ -822,6 +825,11 @@ SendMessage, 1133, 16, 0, msctls_updown321 <em>; 1133 为 UDM_SETBASE</em></pre>
   <td>LV0x4</td>
   <td><p>+/-Checked. 为每个项目显示一个复选框. 设置此样式后, 控件会使用 DrawFrameControl 创建和设置含两个图像的状态图像列表. 状态图像 1 为未选中的方框, 而状态图像 2 为选中的方框. 设置状态图像为零会移除复选框.</p>
     <p>Windows XP 或更高版本: 在除了 Windows XP 中引入的平铺视图模式外的所有列表视图模式中, 复选框是可见并具有功能的. 在平铺视图模式中点击复选框仅选择项目; 状态不会发生变化.</p></td>
+</tr>
+<tr id="LVS_EX_DOUBLEBUFFER">
+  <td>LVS_EX_DOUBLEBUFFER</td>
+  <td>LV0x10000</td>
+  <td><p>Windows XP or later: Paints via double-buffering, which reduces flicker. This extended style also enables alpha-blended marquee selection on systems where it is supported.</p></td>
 </tr>
 <tr id="LVS_EX_FLATSB">
   <td>LVS_EX_FLATSB</td>
@@ -1293,11 +1301,11 @@ SendMessage, 1133, 16, 0, msctls_updown321 <em>; 1133 为 UDM_SETBASE</em></pre>
 <tr id="TCS_FORCELABELLEFT">
   <td>TCS_FORCELABELLEFT</td>
   <td>0x20</td>
-  <td>让标签和每个固定宽度选项卡的左边缘对齐; 即标签紧跟在图标右边显示而不居中显示.
-  <p>此样式只能和 <a href="#TCS_FIXEDWIDTH">TCS_FIXEDWIDTH</a> 样式一起使用,
-  同时它隐含了 
-  <a href="#TCS_FORCEICONLEFT">TCS_FORCEICONLEFT</a> 样式.</p>
-  </td>
+  <td>让标签和每个固定宽度选项卡的左边缘对齐; 
+  即标签紧跟在图标右边显示而不居中显示. 
+  
+  <p>此样式只能和 <a href="#TCS_FIXEDWIDTH">TCS_FIXEDWIDTH</a> 样式一起使用, 同时它隐含了
+  <a href="#TCS_FORCEICONLEFT">TCS_FORCEICONLEFT</a> 样式.</p></td>
 </tr>
 <tr id="TCS_HOTTRACK">
   <td>TCS_HOTTRACK</td>
@@ -1311,8 +1319,8 @@ SendMessage, 1133, 16, 0, msctls_updown321 <em>; 1133 为 UDM_SETBASE</em></pre>
   <td><p>+/-Left 或 +/-Right. 选项卡显示在控件的左边, 且选项卡文本垂直显示.
   此样式仅在和
   <a href="#TCS_MULTILINE">TCS_MULTILINE</a> 样式一起使用时才有效.要让选项卡显示在控件的右边,请同时使用 <a href="#TCS_RIGHT">TCS_RIGHT</a> 样式.</p>
+
     <p>当自定义背景颜色或文本颜色有效时, 此样式将无法正确显示选项卡. 为了解决此问题, 请在选项卡控件的选项中指定 -Background 和/或 cDefault.</p>
-	
     </td>
 </tr>
 <tr id="TCS_BUTTONS">
@@ -1337,8 +1345,8 @@ SendMessage, 1133, 16, 0, msctls_updown321 <em>; 1133 为 UDM_SETBASE</em></pre>
   <td>TCS_RIGHTJUSTIFY</td>
   <td>0</td>
   <td>这是默认的. 必要时增加每个选项卡的宽度, 这样每行的选项卡会充满选项卡控件的全部宽度.
+
     <p>只有同时使用 <a href="#TCS_MULTILINE">TCS_MULTILINE</a> 样式时此窗口样式才有效.</p>
-	
 	</td>
 </tr>
 <tr id="TCS_FIXEDWIDTH">
