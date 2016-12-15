@@ -151,7 +151,7 @@
 	    <p>在模式的开始处使用 <span class="regex">^</span> 表示需要在行的开始处进行匹配. 例如, <span class="regex">^abc</span> 可以匹配 <span class="subj">abc</span>123 但不匹配 123abc.</p>
 	    <p>在模式的末尾处使用 <span class="regex">$</span> 表示需要在行的末端进行匹配. 例如, <span class="regex">abc$</span> 可以匹配 123<span class="subj">abc</span> 但不能匹配 abc123.</p>
       <p>这两个锚还可以组合使用. 例如, <span class="regex">^abc$</span> 仅匹配 <span class="subj">abc</span> (即在它的前面或后面不能有另外的字符).</p>
-      <p>如果被搜索的文本包含多行, 则可以使用 <a href="#Multiline">&quot;m&quot; 选项</a> 让锚应用于每行而不是把所有文本作为整体. 例如, <span class="regex">m)^abc$</span> 可以匹配 123`r`n<span class="subj">abc</span>`r`n789. 如果没有 "m" 选项则不会匹配成功.</p></td>
+      <p>如果被搜索的文本包含多行, 则可以使用 <a href="#Multiline">&quot;m&quot; 选项</a> 让锚应用于每行而不是把所有文本作为整体. 例如, <span class="regex">m)^abc$</span> 可以匹配 123`r`n<span class="subj">abc</span>`r`n789. 如果没有 &quot;m&quot; 选项则不会匹配成功.</p></td>
   </tr>
 	<tr>
 	  <td style="align:center"><strong>\b</strong></td>
@@ -167,7 +167,7 @@
 	    <ul>
 	      <li>确定求值的顺序. 例如, <span class="regex">(Sun|Mon|Tues|Wednes|Thurs|Fri|Satur)day</span> 可以匹配任何一天的名称.</li>
 	      <li>把 <span class="regex">*</span>, <span class="regex">?</span>, <span class="regex">+</span> 或 <span class="regex">{min,max}</span> 应用到 <em>系列</em> 字符而不只是单个字符. 例如, <span class="regex">(abc)+</span> 匹配一个或一串字符串 "abc"; 因此它可以匹配 <span class="subj">abcabc</span>123 但不会匹配 ab123 或 bc123.</li>
-          <li id="capture">捕获子模式, 例如 <span class="regex">abc<span class="red">(.*)</span>xyz</span> 中的句点星号. 例如, <a href="../commands/RegExMatch.htm">RegExMatch()</a> 会把匹配每个子模式的子字符串保存到 <a href="../commands/RegExMatch.htm#Array">输出数组</a>. 同样地, <a href="../commands/RegExReplace.htm">RegExReplace()</a> 中允许把匹配每个子模式的子字符串通过像 $1 这样的 <a href="../commands/RegExReplace.htm#BackRef">后向引用</a> 重新插入到替换结果中. 要使用不捕获子模式的括号, 请把括号内的开始两个字符指定为 <span class="regex">?:</span>; 例如: <span class="regex">(<span class="red">?:</span>.*)</span></li>
+          <li id="capture">捕获子模式. 如 <span class="regex">abc<span class="red">(.*)</span>xyz</span> 中被圆括号包围的句点和星号的匹配子模式. 调用 <a href="../commands/RegExMatch.htm">RegExMatch()</a> 函数时, 会把匹配成功的每个子模式字符串保存到它的 <a href="../commands/RegExMatch.htm#Array">output array</a>(输出数组) 参数中. 而调用 <a href="../commands/RegExReplace.htm">RegExReplace()</a> 函数时, 允许把匹配成功的每个子模式字符串通过 <a href="../commands/RegExReplace.htm#BackRef">后引用</a> (如 $1 表示匹配到的第一组) 重新插入到最终替换结果中. <br>如果希望括号中的子模式内容不参与 <a href="../commands/RegExReplace.htm#BackRef">后引用</a>, 可以在括号内开始位置增加 <span class="regex">?:</span> 这两个符号, 例如: <span class="regex">(<span class="red">?:</span>.*)</span><br><strong class="red">译者注</strong> 举个对比的例子:<br><code>RegExReplace("abc123efg555", "abc(.*)efg(.*)", "pre$1sub") ; 返回 pre123sub<br>RegExReplace("abc123efg555", "abc(<span class="red">?:</span>.*)efg(.*)", "pre$1sub") ; 返回 <span class="red">pre555sub</span></code></li>
 	      <li>在匹配过程中改变 <a href="#Options">选项</a>. 例如, <span class="regex">(?im)</span> 会为模式的后续部分打开不区分大小写和多行选项 (如果它在子模式中则它会改变子模式的选项). 相反地, <span class="regex">(?-im)</span> 会关闭它们. 支持除 DPS`r`n`a 外的所有选项.</li>
 	    </ul></td>
   </tr>
