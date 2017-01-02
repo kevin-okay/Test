@@ -165,7 +165,17 @@ MsgBox % Join("`n", <b class="blue">substrings*</b>)</pre>
 </ul>
 <h2 id="Locals">局部变量和全局变量</h2>
 <h3>局部变量</h3>
-<p>默认情况下, 在函数中创建或访问的所有变量都是 <em>局部的</em> (除了 <a href="#SuperGlobal">超级全局</a> 变量和内置变量, 例如 <a href="misc/Clipboard.htm">Clipboard</a>, <a href="misc/ErrorLevel.htm">ErrorLevel</a> 和 <a href="Variables.htm#TimeIdle">A_TimeIdle</a>). 每个局部变量的内容只在它所在的函数中可见. 因此, 一个局部变量可以和一个全局变量有相同的名称却有着不同的内容. 最后, 所有的局部变量在每次调用函数时都以空值开始.</p>
+<p>Local variables are specific to a single function and are visible only inside that function. Consequently, a local variable may have the same name as a global variable and both will have separate contents. Separate functions may also safely use the same variable names.</p>
+<p>All local variables which are not <a href="#static">static</a> are automatically freed (made empty) when the function returns.</p>
+<p>Variables access or created inside a function are local by default, with the following exceptions:</p>
+<ul>
+  <li><a href="#SuperGlobal">Super-global</a> variables, including <a href="Objects.htm#Custom_Classes">classes</a>.</li>
+  <li>Built-in variables such as <a href="misc/Clipboard.htm">Clipboard</a>, <a href="misc/ErrorLevel.htm">ErrorLevel</a>, and <a href="Variables.htm#TimeIdle">A_TimeIdle</a>.</li>
+  <li>A <a href="#DynVar">dynamic variable reference</a> may resolve to an existing global variable if no local variable exists by that name.</li>
+  <li><a href="#PseudoArrays">Commands that create pseudo-arrays</a> may create all elements as global even if only the first element is declared.</li>
+</ul>
+<p>The default may also be overridden as shown below.</p>
+
 <h3 id="Global">全局变量</h3>
 <p>要在函数中引用现有的全局变量 (或创建新的), 需要在使用前声明此变量为全局的. 例如:</p>
 <pre>LogToFile(TextToLog)
@@ -308,17 +318,21 @@ path-to-the-currently-running-AutoHotkey.exe\Lib\  <em>; 标准库.</em></pre>
     <td><a href="commands/RegExReplace.htm">RegExReplace</a></td>
     <td>替换字符串中匹配模式(正则表达式)出现的地方.</td>
   </tr>
-  <tr id="SubStr">
-    <td><a href="commands/SubStr.htm">SubStr</a></td>
-    <td>从字符串的指定位置获取一个或多个字符.</td>
-  </tr>
   <tr id="StrLen">
     <td><a href="commands/StringLen.htm">StrLen</a></td>
     <td>获取给定字符串的长度.</td>
   </tr>
+  <tr id="StrReplace">
+    <td><a href="commands/StringReplace.htm">StrReplace</a></td>
+    <td>用新的字符串替换指定字符串出现的地方.</td>
+  </tr>
   <tr id="StrSplit">
     <td><a href="commands/StringSplit.htm">StrSplit</a></td>
     <td>使用指定的分隔符把一个字符串分解成多个子字符串并保存到数组中.</td>
+  </tr>
+  <tr id="SubStr">
+    <td><a href="commands/SubStr.htm">SubStr</a></td>
+    <td>从字符串的指定位置获取一个或多个字符.</td>
   </tr>
   <tr id="WinActive">
     <td><a href="commands/WinActive.htm">WinActive</a></td>
@@ -475,3 +489,4 @@ path-to-the-currently-running-AutoHotkey.exe\Lib\  <em>; 标准库.</em></pre>
 <p><a href="https://github.com/polyethene/AutoHotkey-Scripts/blob/master/Functions.ahk">Polyethene 的命令函数</a>: 为每个有 OutputVar 的 AutoHotkey 命令提供了可调用的函数.可以通过 <a href="commands/_Include.htm">#Include</a> 把这个库包含在任何脚本中.</p>
 </body>
 </html>
+

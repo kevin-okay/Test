@@ -42,8 +42,8 @@
 
 <h2 id="New">Gui, New [, Options, Title] <span class="ver">[v1.1.04+]</span></h2>
 <p>´´½¨ÐÂ´°¿Ú²¢½«ÆäÉèÎªµ±Ç°Ïß³ÌµÄ<a href="#Default">Ä¬ÈÏ´°¿Ú</a>.</p>
-<pre>Gui, New  <em>; ´´½¨ÐÂµÄÎ´ÃüÃûÇÒÎ´±àºÅµÄ GUI.</em>
-Gui, Name: New  <em>; ´´½¨ÐÂ GUI,Ê×ÏÈÏú»ÙÒÑÓÐµÄÍ¬Ãû GUI.</em>
+<pre>Gui, New, Options, Title  <em>; ´´½¨ÐÂµÄÎ´ÃüÃûÇÒÎ´±àºÅµÄ GUI.</em>
+Gui, Name: New, Options, Title  <em>; ´´½¨ÐÂ GUI,Ê×ÏÈÏú»ÙÒÑÓÐµÄÍ¬Ãû GUI.</em>
 </pre>
 <p><strong><em>Options</em></strong> ¿ÉÒÔ°üº¬Ö÷Òª GUI ÃüÁîÖ§³ÖµÄÈÎÒâ<a href="#Options">Ñ¡Ïî</a>.</p>
 <p>Èç¹ûÊ¡ÂÔ <strong><em>Title</em></strong>,ÔòÊ¹ÓÃ½Å±¾ÎÄ¼þÃû.</p>
@@ -175,7 +175,7 @@ Gui <strong>MyGui:</strong>+Resize -MaximizeBox  <em>; ¸Ä±äÃû³ÆÎª <i>MyGui</i> µ
 <p id="Delimiter"><strong>Delimiter</strong>: Ö¸¶¨¹ÜµÀ (|) ÍâµÄÆäËû×Ö·û×÷Îª´°¿ÚµÄ×Ö¶Î·Ö¸ô·û, Ã¿µ±Ê¹ÓÃ <a href="#Add">Gui Add</a> Ìí¼Ó, Ê¹ÓÃ <a href="GuiControl.htm">GuiControl</a> ÐÞ¸Ä, Ê¹ÓÃ <a href="#Submit">Gui Submit</a> »ò <a href="GuiControlGet.htm">GuiControlGet</a> »ñÈ¡¿Ø¼þµÄÄÚÈÝÊ±. ÔÚµ¥´Ê Delimiter ºó½ô¸ú×Åµ¥¸ö×Ö·û. ÀýÈç,<code>Gui +Delimiter`n</code> ½«Ê¹ÓÃ»»ÐÐ·û,Õâ¿ÉÄÜÌØ±ðÊÊºÏÓÚ<a href="../Scripts.htm#continuation">ÑÓÐøÆ¬¶Î</a>.Í¬Ñù,Ê¹ÓÃ <code>Gui +Delimiter|</code> ½«»Ö¸´ÎªÄ¬ÈÏµÄ·Ö¸ô·û.ÒªÊ¹ÓÃ¿Õ¸ñ»ò tab,Ö¸¶¨ <code>Gui +DelimiterSpace</code> »ò <code>Gui +DelimiterTab</code>.Ò»µ©¸Ä±äÊý¾Ý·Ö¸ô·û, Ëü»áÓ°Ïì×÷ÓÃÓÚÕâ¸öÌØÊâ´°¿ÚµÄËùÓÐÏÖÔÚºÍºóÐøµÄ <a href="../misc/Threads.htm">Ïß³Ì</a>.</p>
 <p><strong>Disabled</strong>: ½ûÓÃ´°¿Ú, ×èÖ¹ÓÃ»§ºÍ´°¿ÚÖÐµÄ¿Ø¼þ½»»¥. ´ËÑ¡Ïî³£ÓÃÓÚº¬ÓÐ×Ó´°¿ÚµÄ´°¿Ú (Çë²ÎÔÄ <a href="#Owner">Owner</a>).</p>
 <p id="DPIScale"><strong>DPIScale</strong> <span class="ver">[v1.1.11+]</span>: Ê¹ÓÃ <code>Gui -DPIScale</code> ½ûÓÃ DPI Ëõ·Å,ËüÄ¬ÈÏÊÇÆôÓÃµÄ.Èç¹ûÔÚÊ¹ÓÃ·Ç±ê×¼ DPI ÉèÖÃµÄÏµÍ³ÉÏÆôÓÃ DPI Ëõ·Å,Ôò Gui ÃüÁî»á×Ô¶¯µ÷Õû×ø±êºÍ³ß´çÀ´ÈÃ¿Ø¼þ¾ßÓÐ´óÖÂÏàÍ¬µÄÍâ¹Û³ß´ç(²»¹ý½âÎöÂÊ¸ü¸ß). ÀýÈç, ¶ÔÓÚ 144(150%) µÄ DPI, <code>Gui Show, w100</code> »áÈÃ Gui ¿í¶ÈÎª 150 ÏñËØ, µ« <a href="../Variables.htm#GuiWidth">A_GuiWidth</a> ½«±£³Ö 100.<a href="../Variables.htm#ScreenDPI">A_ScreenDPI</a> °üº¬ÁËÏµÍ³µ±Ç° DPI.</p>
-<p>DPI Ëõ·Å±ÈÀý½öÊÊÓÃÓÚ Gui ÃüÁî, ËùÒÔÀàËÆ ControlGetPos ÃüÁî·µ»ØµÄ×ø±êÎÞ·¨¹¤×÷. ½â¾ö·½°¸ÈçÏÂÁÐ:</p>
+<p>DPI Ëõ·Å±ÈÀý½öÊÊÓÃÓÚ Gui ÃüÁî, ËùÒÔÀàËÆ ControlGetPos »ò WinGetPos ÃüÁî·µ»ØµÄ×ø±êÎÞ·¨¹¤×÷. ½â¾ö·½°¸ÈçÏÂÁÐ:</p>
 <ul>
   <li>¾¡Á¿Ê¹ÓÃÓ²±àÂë×ø±êÏµÍ³.  ÀýÈç, Ê¹ÓÃÀàËÆ <a href="#xp">xp</a>, <a href="#xs">xs</a>, <a href="#xm">xm</a> ºÍ <a href="#PosPlusMargin">x+m</a> Ñ¡ÏîÉèÖÃ¿Ø¼þµÄÏà¶ÔÎ»ÖÃÇÒÓÃÏñËØÀ´ÉèÖÃ <a href="#R">¶àÐÐÎÄ±¾</a> µÄ¸ß¶ÈÖµ.</li>
   <li>¸ù¾Ý¾ßÌåÇé¿öÁé»îµÄ¿ªÆô (<code>Gui +DPIScale</code>) ºÍ¹Ø±Õ (<code>Gui -DPIScale</code>) DIP Ëõ·Å±ÈÀýÉèÖÃ. ¸ü¸ÄÕâ¸öÉèÖÃ²¢²»»áÓ°ÏìÒÑ¾­ÉèÖÃ¹ýµÄ×ø±ê»ò´óÐ¡.</li>

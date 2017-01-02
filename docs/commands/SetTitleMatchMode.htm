@@ -34,17 +34,20 @@ SetTitleMatchMode, Fast|Slow</pre>
     </dd>
 
   <dt>Fast|Slow</dt>
-  <dd><p><strong>Fast</strong>: 这是默认行为. 性能比起 <em>Slow</em> 有较大提升, 但某些类型窗口中的一些 <em>WinText</em> 可能无法被各种窗口命令检测到.</p>
-      <p><strong>Slow</strong>: 速度慢得多, 但窗口命令会获取窗口中所有可能的文本以寻找 <em>WinText</em> 匹配. Window Spy 中会显示哪些部分的窗口文本 (如果有) 需要慢速模式才能匹配到.</p>    </dd>
+  <dd>
+    <p>One of the following words to specify how the <em>WinText</em> and <em>ExcludeText</em> parameters should be matched:</p>
+  	<p><strong>Fast</strong>: 这是默认行为. 性能比起 <em>Slow</em> 有较大提升, 但某些类型窗口中的一些 <em>WinText</em> 可能无法被各种窗口命令检测到.</p>
+	<p><strong>Slow</strong>: 速度慢得多, 但窗口命令会获取窗口中所有可能的文本以寻找 <em>WinText</em> 匹配. Window Spy 中会显示哪些部分的窗口文本 (如果有) 需要慢速模式才能匹配到.</p>
+  </dd>
 
 </dl>
 
 <h3>备注</h3>
-<p>此命令影响所有窗口命令的行为, 例如 <a href="WinExist.htm">IfWinExist</a> 和 <a href="WinActivate.htm">WinActivate</a>.</p>
+<p>此命令影响所有窗口命令的行为, 例如 <a href="WinExist.htm">WinExist</a> 和 <a href="WinActivate.htm">WinActivate</a>. <a href="WinGetText.htm">WinGetText</a> is affected in the same way as other commands, but it always uses the <em>Slow</em> method to retrieve text.</p></p>
 <p>如果未指定,则 TitleMatchMode 默认为 1 和 <em>fast</em> 模式.</p>
 <p>如果使用 <a href="../misc/WinTitle.htm#ahk_group">窗口组</a>, 则当前标题匹配模式适用于组中的每个单独的规则.</p>
 <p>通常, 在使用标题和 <em>快速</em> 模式的文本无法唯一标识目标窗口时才应该使用 <em>慢速</em> 模式. 这是因为当任意一个应用程序窗口正忙或 "无响应" 时慢速模式会非常慢.</p>
-<p>AutoHotkey 自带的 Window Spy 自定义版本会在单独区域中显示 <em>slow</em> 文本, 这样很容易判断是否需要使用 <em>慢速</em> 模式.</p>
+<p>AutoHotkey 自带的 Window Spy 自定义版本会在单独区域中显示 <em>slow TitleMatchMode</em> 文本, 这样很容易判断是否需要使用 <em>慢速</em> 模式.</p>
 <p>如果您想同时改变两个属性, 请执行两次命令, 例如:</p>
 <pre>SetTitleMatchMode, 2
 SetTitleMatchMode, slow</pre>
@@ -62,3 +65,4 @@ SetTitleMatchMode Slow  <em>; Slow/Fast 可以独立于其他所有模式进行设置.</em></pr
 
 </body>
 </html>
+

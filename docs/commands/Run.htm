@@ -19,7 +19,8 @@
 <p>运行外部程序.与 Run 不同, RunWait 会等待程序结束
 才继续往后执行.</p>
 
-<pre class="Syntax">Run, Target [, WorkingDir, Max|Min|Hide|UseErrorLevel, OutputVarPID]</pre>
+<pre class="Syntax">Run, Target [, WorkingDir, Max|Min|Hide|UseErrorLevel, OutputVarPID]
+RunWait, Target [, WorkingDir, Max|Min|Hide|UseErrorLevel, OutputVarPID]</pre>
 <h3>参数</h3>
 <dl>
 
@@ -64,7 +65,7 @@ Run ::{645ff040-5081-101b-9f08-00aa002f954e}  <em>; 打开回收站.</em></pre>
 <table class="info">
   <tr>
     <td style="width:8%">*<i>动词</i></td>
-    <td><span class="ver">[AHK_L 57+]:</span> 任何系统定义或自定义的动词. 例如: <code>Run *Compile %A_ScriptFullPath%</code><br>在 Windows Vista 和更高版本中,可以使用 <code>*RunAs</code> 动词代替<i>以管理员身份运行</i>右键菜单.</td>
+    <td><span class="ver">[AHK_L 57+]:</span> 任何系统定义或自定义的动词. 例如: <code>Run *Compile %A_ScriptFullPath%</code><br>在 Windows Vista 和更高版本中,可以使用 <a href="#RunAs">*RunAs</a> 动词代替 <i>以管理员身份运行</i> 右键菜单.</td>
   </tr>
   <tr>
     <td>properties(属性)</td>
@@ -93,8 +94,38 @@ Run ::{645ff040-5081-101b-9f08-00aa002f954e}  <em>; 打开回收站.</em></pre>
   </tr>
 </table>
 <p>当 RunWait 处于等待状态时, 可以通过 <a href="../Hotkeys.htm">热键</a>, <a href="Menu.htm">自定义菜单项</a> 或 <a href="SetTimer.htm">计时器</a> 启动新的 <a href="../misc/Threads.htm">线程</a>.</p>
+
+<h3 id="RunAs">Run as Administrator <span class="ver">[AHK_L 57+]:</span></h3>
+<p>For an executable file, the <em>*RunAs</em> verb is equivalent to selecting <em>Run as administrator</em> from the right-click menu of the file. For example, the following code attempts to restart the current script as admin:</p>
+<pre>full_command_line := DllCall("GetCommandLine", "str")
+
+if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
+{
+    try
+    {
+        if A_IsCompiled
+            Run *RunAs "%A_ScriptFullPath%" /restart
+        else
+            Run *RunAs "%A_AhkPath%" /restart "%A_ScriptFullPath%"
+    }
+    ExitApp
+}
+
+MsgBox A_IsAdmin: %A_IsAdmin%`nCommand line: %full_command_line%</pre>
+<p>If the user cancels the UAC dialog or Run fails for some other reason, the script will simply exit.</p>
+<p>Using <a href="../Scripts.htm#SlashR">/restart</a> ensures that a <a href="_SingleInstance.htm">single instance</a> prompt is not shown if the new instance of the script starts before ExitApp is called.</p>
+<p>If UAC is disabled, <em>*RunAs</em> will launch the process without elevating it. Checking for <code>/restart</code> in the command line ensures that the script does not enter a runaway loop in that case. Note that <code>/restart</code> is a built-in switch, so is not included in the <a href="../Scripts.htm#cmd_args">array of command-line parameters</a>.</p>
+<p>The example can be modified to fit the script's needs:</p>
+<ul>
+  <li>If the script absolutely requires admin rights, check A_IsAdmin a second time in case <em>*RunAs</em> failed to elevate the script (i.e. because UAC is disabled).</li>
+  <li>To keep the script running even if the user cancels the UAC prompt, move ExitApp into the try block.</li>
+  <li>To keep the script running even if it failed to restart (i.e. because the script file has been changed or deleted), remove ExitApp and use RunWait instead of Run. On success, <code>/restart</code> causes the new instance to terminate the old one. On failure, the new instance exits and RunWait returns.</li>
+</ul>
+<p><span class="ver">[v1.0.92.01+]:</span> If UAC is enabled, the AutoHotkey installer registers the <em>RunAs</em> verb for <em>.ahk</em> files, which allows <code>Run *RunAs script.ahk</code> to launch a script as admin with the default executable.</p>
+
 <h3>相关</h3>
 <p><a href="RunAs.htm">RunAs</a>, <a href="Process.htm">Process</a>, <a href="Exit.htm">Exit</a>, <a href="../misc/CLSID-List.htm">CLSID 列表</a>, <a href="DllCall.htm">DllCall</a></p>
+
 <h3>示例</h3>
 <pre class="NoIndent">Run, Notepad.exe, C:\My Documents, max
 

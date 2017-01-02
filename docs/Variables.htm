@@ -776,13 +776,8 @@ if A_OSVersion in WIN_NT4,WIN_95,WIN_98,WIN_ME  <em>; 注:逗号两边没有空格. </em>
   <tr id="IsAdmin">
     <td>A_IsAdmin</td>
     <td><p>如果当前用户有管理员权限, 则此变量的值为 1. 否则为 0.</p>
-    <p id="RequireAdmin">在 Windows Vista 或更高版本中, 一些脚本可能需要管理员权限才能正常运行 (例如与使用管理员权限执行的进程和窗口进行交互的脚本). 要做到这点, 请把下列语句添加到脚本的顶部:</p>
-    <pre>if not A_IsAdmin
-{
-   Run *RunAs &quot;%A_ScriptFullPath%&quot;  <em>; 需要 v1.0.92.01+</em>
-   ExitApp
-}</pre>
-    <p>尽管这个方法也可以让脚本对以管理员权限运行的程序窗口进行自动化操作,但这并不是唯一的方法. 详参 <a href="FAQ.htm#uac">FAQ</a> .</p></td>
+    <p id="RequireAdmin">To have the script restart itself as admin (or show a prompt to the user requesting admin), use <a href="commands/Run.htm#RunAs">Run *RunAs</a>. However, note that running the script as admin causes all programs launched by the script to also run as admin. For a possible alternative, see <a href="FAQ.htm#uac">the FAQ</a>.</p>
+    </td>
   </tr>
   <tr id="Screen">
     <td><p>A_ScreenWidth<br>

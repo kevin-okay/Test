@@ -11,8 +11,6 @@
 
 <h1>数学函数</h1>
 
-<p><strong>注意</strong>: 数学函数一般在传入非数字参数时返回空值 (空字符串).</p>
-
 <h4>快速索引:</h4>
 <ul>
   <li><a href="#General">一般数学</a>:
@@ -38,6 +36,7 @@
       <li><a href="#ATan">ATan - 反正切</a></li>
     </ul>
   </li>
+  <li><a href="#Errors">Error-handling</a></li>
 </ul>
 
 <h2 id="General">一般数学</h2>
@@ -170,6 +169,10 @@ MsgBox, % Round(345, -2) <em>; 返回 300, 因为 -2 表示 4, 所以向下取整.</em></pre
 <p>返回弧度表示的反正切值(其正切值为 <em>Number</em>).</p>
 <pre class="NoIndent">MsgBox, % ATan(1.2) <em>; 返回 0.876058</em></pre>
 </div>
+
+<h2 id="Errors">Error-Handling</h2>
+<p>Invalid operations such as divide by zero generally yield a blank result (empty string).</p>
+<p><a href="#Abs">Abs</a> and <a href="#Mod">Mod</a> return an empty string if any of their incoming parameters are non-numeric. Most math functions do not perform strict type-checking, so may treat non-numeric values as zero or another number. For example, <code>Round("1.0foo")</code> produces 1. However, this is expected to change in v2.0. </p>
 
 </body>
 </html>
