@@ -95,8 +95,8 @@ Run ::{645ff040-5081-101b-9f08-00aa002f954e}  <em>; 打开回收站.</em></pre>
 </table>
 <p>当 RunWait 处于等待状态时, 可以通过 <a href="../Hotkeys.htm">热键</a>, <a href="Menu.htm">自定义菜单项</a> 或 <a href="SetTimer.htm">计时器</a> 启动新的 <a href="../misc/Threads.htm">线程</a>.</p>
 
-<h3 id="RunAs">Run as Administrator <span class="ver">[AHK_L 57+]:</span></h3>
-<p>For an executable file, the <em>*RunAs</em> verb is equivalent to selecting <em>Run as administrator</em> from the right-click menu of the file. For example, the following code attempts to restart the current script as admin:</p>
+<h3 id="RunAs">以管理员权限运行(或是启动)<span class="ver">[AHK_L 57+]:</span></h3>
+<p>对于可执行文件, 命令 <em>*RunAs</em> 相当于右键菜单的 <em>以管理员权限运行</em> 命令. 例如, 以下代码尝试以管理员权限启动自身:</p>
 <pre>full_command_line := DllCall("GetCommandLine", "str")
 
 if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
@@ -112,8 +112,8 @@ if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
 }
 
 MsgBox A_IsAdmin: %A_IsAdmin%`nCommand line: %full_command_line%</pre>
-<p>If the user cancels the UAC dialog or Run fails for some other reason, the script will simply exit.</p>
-<p>Using <a href="../Scripts.htm#SlashR">/restart</a> ensures that a <a href="_SingleInstance.htm">single instance</a> prompt is not shown if the new instance of the script starts before ExitApp is called.</p>
+<p>如果用户取消了 UAC 对话框或者是其他原因启动失败, 脚本就会直接退出.</p>
+<p>在使用了 <a href="../Scripts.htm#SlashR">/restart</a> 启动参数, 且启动新进程实例的语句在 ExitApp 之前的时候, 需要确保 <a href="_SingleInstance.htm">single instance</a> 提示弹窗没有关闭.</p>
 <p>If UAC is disabled, <em>*RunAs</em> will launch the process without elevating it. Checking for <code>/restart</code> in the command line ensures that the script does not enter a runaway loop in that case. Note that <code>/restart</code> is a built-in switch, so is not included in the <a href="../Scripts.htm#cmd_args">array of command-line parameters</a>.</p>
 <p>The example can be modified to fit the script's needs:</p>
 <ul>
