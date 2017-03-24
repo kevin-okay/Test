@@ -20,17 +20,17 @@
   <dt>Title</dt>
   <dd>
     <p>此参数为窗口标题, 可以长达 73 个字符 (超出此长度的字符不会显示出来).</p>
-    <p>如果 <em>Title</em> 为空, 则会移除气球窗口中的标题行, 这会让它垂直高度变短.</p></dd>
+    <p>如果 <em>Title</em> 为空, 则会移除气球窗口中的标题行, 这会让它垂直高度变短.</p>
 	<p class="warning"><strong>Note:</strong> 如果省略所有参数, 则移除任何当前显示的托盘提示窗口.</p>
   </dd>
 
   <dt>Text</dt>
   <dd>
     <p>指定要显示的消息, <em>Title</em> 仅显示 <em>Text</em> 中前 265 个字符. </p>
-    <p>如果此参数省略或为空, 则移除当前显示的任何托盘提示窗口. However, to hide a Windows 10 toast notification it may be necessary to <a href="#Windows10">temporarily remove the tray icon</a>.</p></p>
+    <p>如果此参数省略或为空, 则移除当前显示的任何托盘提示窗口. However, to hide a Windows 10 toast notification it may be necessary to <a href="#Windows10">temporarily remove the tray icon</a>.</p>
     <p>可以使用回车 (`r) 或换行 (`n) 来创建多行文本. 例如:<code>Line1`nLine2</code>.</p>
       <p>如果 <em>Text</em> 较长, 可以通过 <a href="../Scripts.htm#continuation">延续片段</a> 的方法将其分解成较短的几行, 这样可以增加可读性和可维护性.</p>
-    </dd>
+  </dd>
 
   <dt>Seconds</dt>
   <dd><p><strong>Note:</strong> This parameter has no effect on Windows Vista and later.</p>
@@ -49,7 +49,7 @@
       <tr><td>Windows Vista 和之后的: 使用大图标.</td><td>32</td><td>0x20</td></tr>
     </table>
     <p>如果省略则默认为 0 , 亦即无图标. 如果 <em>Title</em> 省略, 同样不会显示图标.</p>
-    <p>此参数可为 <a href="../Variables.htm#Expressions">表达式 (expression)</a>.</p>
+    <p>此参数可为 <a href="../Variables.htm#Expressions">表达式</a>.</p>
     </dd>
 
 </dl>
@@ -79,7 +79,7 @@ HideTrayTip() {
 <p><a href="ToolTip.htm">ToolTip</a>, <a href="SetTimer.htm">SetTimer</a>, <a href="Menu.htm">Menu</a>, <a href="SplashTextOn.htm">SplashTextOn</a>, <a href="MsgBox.htm">MsgBox</a>, <a href="InputBox.htm">InputBox</a>, <a href="FileSelectFile.htm">FileSelectFile</a>, <a href="FileSelectFolder.htm">FileSelectFolder</a></p>
 
 <h3>示例</h3>
-<pre class="NoIndent">TrayTip, My Title, Multiline`nText, 20, 17
+<pre class="NoIndent">TrayTip, My Title, Multiline`nText, 20, 17</pre>
 <pre class="NoIndent">
 <em>; 要更精确的控制显示的时间
 ; 而不使用 Sleep 的方法 (它停止了当前线程):</em>
@@ -92,7 +92,7 @@ HideTrayTip() {  <em>; NOTE: For Windows 10, replace this function with the one 
 }
 </pre>
 <pre class="NoIndent">
-<em>; 要让托盘提示永久显示, 请使用计时器进行周期性的刷新:</em>
+<em>; 要让托盘提示永久显示, 请使用计时器进行周期性的刷新:
 ; NOTE: This probably won't work well on Windows 10 for <a href="#Windows10">reasons described above</a>.</em>
 #Persistent
 SetTimer, RefreshTrayTip, 1000
