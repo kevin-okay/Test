@@ -49,7 +49,11 @@
 WinSet, ExStyle, ^0x80, WinTitle  <em>; гп╩╩ WS_EX_TOOLWINDOW йТпт, кЭ╩АрфЁЩ/лМ╪с╢╟©з╣╫ alt-tab ап╠М.</em></pre>
 <h3 id="region">WinSet, Region [, Options, WinTitle, ...]</h3>
 <p>╦д╠Д╢╟©з╣дпнв╢н╙ж╦╤╗╣д╬ьпн, мжт╡пн╩Р╤Ю╠ъпн. хГ╧Ш <em>Options</em> ╡нйЩн╙©у, дгц╢╩ж╦╢╢╟©зн╙т╜ю╢╣дпнв╢. ╥ЯтР, ©иртж╦╤╗р╩╦Ж╩Р╤Ю╦Ж╣добапя║оН, я║оНж╝╪Дй╧сц©у╦Я╥ж╦Т:</p>
-<p><strong>Wn</strong>: ╬ьпн╩Рмжт╡пн╣д©М╤х. юЩхГ:<code>w200</code>.<br><strong>Hn</strong>:╬ьпн╩Рмжт╡пн╣д╦ъ╤х.юЩхГ:<code>h300</code>.<br><strong>X-Y</strong>: уБяЫ╣др╩╤тн╙ X/Y вЬ╠Й╤т.юЩхГ,<code>200-0</code>╠Мй╬XвЬ╠Йн╙200,YвЬ╠Йн╙0.<br><strong>E</strong>:иХжц╢╟©зпнв╢н╙мжт╡пн╤Ь╡╩йг╬ьпн.╢кя║оН╫Жтзм╛й╠ж╦╤╗ак <strong>W</strong> ╨м <strong>H</strong> й╠╡еспп╖.<strong>R[w-h]</strong>:иХжц╢╟©зпнв╢н╙т╡╫г╬ьпн.юЩхГ,<code>R30-30</code> ╠Мй╬ц©╦Ж╫гн╙ 30x30 ╣дмжт╡.хГ╧Ш <strong>w-h</strong> й║бт,тРй╧сц 30-30.<strong>R</strong> ╫Жтзм╛й╠ж╦╤╗ак <strong>W</strong> ╨м <strong>H</strong> й╠╡еспп╖.</p>
+<p><strong>Wn</strong>: ╬ьпн╩Рмжт╡пн╣д©М╤х. юЩхГ: <code>w200</code>.<br>
+<strong>Hn</strong>: ╬ьпн╩Рмжт╡пн╣д╦ъ╤х. юЩхГ: <code>h300</code>.<br>
+<strong>X-Y</strong>: уБяЫ╣др╩╤тн╙ X/Y вЬ╠Й╤т. юЩхГ, <code>200-0</code> ╠Мй╬XвЬ╠Йн╙200, YвЬ╠Йн╙0.<br>
+<strong>E</strong>: иХжц╢╟©зпнв╢н╙мжт╡пн╤Ь╡╩йг╬ьпн. ╢кя║оН╫Жтзм╛й╠ж╦╤╗ак <strong>W</strong> ╨м <strong>H</strong> й╠╡еспп╖.<br>
+<strong>R[w-h]</strong>: иХжц╢╟©зпнв╢н╙т╡╫г╬ьпн. юЩхГ, <code>R30-30</code> ╠Мй╬ц©╦Ж╫гн╙ 30x30 ╣дмжт╡. хГ╧Ш <strong>w-h</strong> й║бт, тРй╧сц 30-30. <strong>R</strong> ╫Жтзм╛й╠ж╦╤╗ак <strong>W</strong> ╨м <strong>H</strong> й╠╡еспп╖.</p>
 <p><strong>╬ьпн╩Рмжт╡пн</strong>:хГ╧Шж╦╤╗ак <strong>W</strong> ╨м <strong>H</strong> я║оН,дгц╢╩АиХжц╢╟©зпнв╢н╙╬ьпн,грфДвСио╫г╣двЬ╠Йн╙йв╦Ж(грн╗р╩)╣д <strong>X-Y</strong> вЬ╠Й╤т.╣╚йг,хГ╧Шм╛й╠ж╦╤╗ак <strong>E</strong> я║оН,дгц╢╩АиХжц╢╟©зпнв╢н╙мжт╡пн╤Ь╡╩йг╬ьпн.юЩхГ:<code>WinSet, Region, 50-0 W200 H250 E, WinTitle</code>.</p>
 <p><strong>╤Ю╠ъпн</strong>:хГ╧Ш <strong>W</strong> ╨м <strong>H</strong> я║оН╤╪ц╩спж╦╤╗,дгц╢╩АиХжц╢╟©зпнв╢н╙си╤Ю╦Ж <strong>X-Y</strong> вЬ╠Й╤тх╥╤╗╣д╤Ю╠ъпн(ц©╤твЬ╠Йрт╢╟©звСио╫гн╙т╜╣Ц).юЩхГ, хГ╧Шж╦╤╗акхЩ╤твЬ╠Й, дгц╢тз╤ЮйЩй╠╨Р╢╟©зпнв╢╩А╠╩иХжцн╙хЩ╫гпн. вЬ╠Й╤т╠к╢к╪Д╣доЮ╤ткЁпРспй╠╨эжьр╙. ╢кмБ,©ирттз <em>Options</em> жпж╦╤╗╣╔╢й <strong>Wind</strong> ╢с╤Ьй╧сц╡Ьхф╥╗╢ЗлФ╠Д╩╩╥╫╥╗ю╢х╥╤╗╤Ю╠ъпн╣дпнв╢.</p>
 <p>хГ╧ШиХжцй╖╟э, тР <a href="../misc/ErrorLevel.htm">ErrorLevel</a> ╠╩жцн╙ 1, Ёи╧╕тРн╙ 0. ЁЖожртобгИ©Жй╠╩АиХжцй╖╟э: 1) д©╠Й╢╟©з╡╩╢Фтз; 2) <em>Options</em> спр╩╦Ж╩Р╤Ю╦Жя║оНнчп╖; 3) ж╦╤╗акЁ╛╧Щ 2000 ╤твЬ╠Й; ╩Р 4) ж╦╤╗╣дпнв╢йгнчп╖╣д╩Р╡╩ййсцсзд©╠Й╢╟©з.</p>
@@ -58,9 +62,9 @@ WinSet, ExStyle, ^0x80, WinTitle  <em>; гп╩╩ WS_EX_TOOLWINDOW йТпт, кЭ╩АрфЁЩ/лМ╪
 <p>иХжц╢╟©зн╙╟Км╦цВв╢л╛. ж╦╤╗ <em>N</em> н╙╫Исз 0 ╨м 255 ж╝╪Д╣дйЩвжю╢╠Мй╬м╦цВ╤х: 0 ╠Мй╬мЙх╚м╦цВ, 255 ╠Мй╬мЙх╚╡╩м╦цВ. ж╦╤╗╣╔╢й OFF ©иртмЙх╚╧ь╠ум╦цВ╤х. сКж╦╤╗ 255 ╣дгЬ╠Пйг, уБяЫ©иртлАиЩптдэ╡╒╫╣╣мо╣мЁвйт╢╣ду╪сц.</p>
 <p id="TransLimit"><strong>Transparent ╨м <a href="#TransColor">TransColor</a> ╣дряж╙очжф</strong>:</p>
 <ul>
-  <li>╤тсзц╩сп╠ЙлБю╦гр╡╩╨╛ <a href="#AlwaysOnTop">жц╤╔</a> йТпт╣д╢╟©зц╩спп╖╧Ш. ╤тсз <a href="Gui.htm">GUI ╢╟©з</a>, ©ирттзиХжц╢╟©зм╦цВ╤х╨С╡ерфЁЩ╠ЙлБю╦. ╩Руъй╧сцобцФ╣дйТптхцм╦цВ╤хиЗп╖:<code><a href="Gui.htm#Options">Gui -Caption +ToolWindow</a></code>.</li>
   <li>тз╧ь╠ум╦цВ╤хж╝г╟иХжц "м╦цВ╤х" н╙ 255 ©ирт╠эцБоЯ╨зи╚╠Ё╬╟╣д╢╟©з╣джь╩ФнйлБ. хГ╧Ш╢╟©зхтнч╥╗уЩх╥жь╩Ф, дгц╢гК╡нтд <a href="#Redraw">Redraw</a> ак╫Б©идэ╣д╫Б╬Ж╥╫╥╗.</li>
   <li>р╙╦д╠Д╢╟©зожсп╣д <a href="#TransColor">TransColor</a>, ©идэпХр╙тз╦д╠Дг╟╧ь╠ум╦цВ╤х.</li>
+  <li>тз v1.1.24.04 ж╝г╟, ╣╠╢╟лЕх╠╥╕ caption (╠ЙлБю╦) грх╠╥╕ <a href="#AlwaysOnTop">вэтзвНио╡Ц</a> йТптй╠нчп╖. ря╬╜сз v1.1.24.05 пч╦╢.</li>
 </ul>
 <p><strong>лАй╬</strong>:р╙хцхннЯю╦м╦цВ,гКй╧сц <code>WinSet, Transparent, 150, ahk_class Shell_TrayWnd</code>.юЮкф╣ь, р╙хц©╙й╪╡к╣╔м╦цВ, гК╡нуу╢кюЩ:</p>
 <pre>DetectHiddenWindows, on

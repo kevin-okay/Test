@@ -1,5 +1,0 @@
-docs\Functions.htm	已修改	19	5
-docs\Variables.htm	已修改	2	7
-docs\commands\Math.htm	已修改	5	2
-docs\commands\Run.htm	已修改	33	2
-docs\commands\SetTitleMatchMode.htm	已修改	7	4

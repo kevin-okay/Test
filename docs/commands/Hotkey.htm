@@ -15,7 +15,8 @@
 
 <pre class="Syntax">Hotkey, KeyName [, Label, Options]
 Hotkey, IfWinActive/Exist [, WinTitle, WinText]
-Hotkey, If [, Expression]</pre>
+Hotkey, If [, Expression]
+Hotkey, If, % FunctionObject</pre>
 <h3>参数</h3>
 <dl>
 
@@ -55,8 +56,12 @@ Hotkey, If [, Expression]</pre>
       </dd>
 
   <dt>IfWinActive<br>
-  IfWinExist</dt>
-  <dd><p>(也支持 IfWin<strong>Not</strong>Active 和 IfWin<strong>Not</strong>Exist). 这些子命令让此后创建的所有热键都是上下文相关的. 请参阅 <a href="#IfWin">后面</a> 了解详情.</p></dd>
+    IfWinExist<br>
+    IfWinNotActive<br>
+    IfWinNotExist<br>
+    If, Expression<br>
+    If, % FunctionObject</dt>
+  <dd><p>这些子命令都用于创建之后的上下文相关热键. 请参考 <a href="#IfWin">below</a> .</p></dd>
 
   <dt>WinTitle<br>
   WinText</dt>
@@ -65,9 +70,16 @@ Hotkey, If [, Expression]</pre>
 
   <dt id="If">If, 表达式</dt>
   <dd>
-    <p><span class="ver">[AHK_L]:</span> 对应于 <a href="_If.htm">#If <i>表达式</i></a>. <em>表达式</em> 必须是在脚本其他任何地方用 #If 指令开头的的表达式. 通过这个命令不能创建新的表达式,而只能用已经存在的表达式创建新的热键定义. 请参考 <a href="_If.htm#ex4">#If 例子 4</a>.</p>
+    <p><span class="ver">[AHK_L 4+]:</span> 关联之后上下文相关热键 <a href="_If.htm">#If <i>表达式</i></a>. <em>表达式</em> 必须是在脚本其他任何地方用 #If 指令开头的的表达式. 通过这个命令不能创建新的表达式, 而只能用已经存在的表达式创建新的热键定义. 请参考 <a href="_If.htm#ex4">#If 例子 4</a>.</p>
     <p><strong>注意:</strong> 这个 Hotkey 只能用你传递给它的文本, 而不是原始代码. 逗号和变量符号 (百分号) 是在命令调用 <em>之前</em> 被解析的, 所以如果这些符号是原始表达式中的一部分, 则应该先转换一下. <a href="_EscapeChar.htm">转义序列</a> 是脚本加载的时候就进行转换的, 所以只产生字符;例如:<br><code>Hotkey, If, x = "`t"</code><br>和<br><code>Hotkey, If, % "x = """ A_Tab """"</code><br>都对应于<br><code>#If x = "`t"</code>.</p>
     <p><strong>已知限制: </strong>If <em>表达式</em> 包含 <code>and</code>/<code>or</code> 运算符的时候, 不会被识别为表达式. 为了避免此问题, 请在原来的 #If 表达式和传递给 Hotkey 命令的表达式中使用等价的 <code>&amp;&amp;</code>/<code>||</code> 运算符.</p>
+  </dd>
+  
+  <dt id="IfFn">If, % FunctionObject</dt>
+  <dd>
+    <p><span class="ver">[v1.1.25+]:</span> Associates subsequently-created hotkeys with a given <a href="../objects/Functor.htm">function object</a>. Such hotkeys will only execute if calling the given function object yields a non-zero number. This is like <code>Hotkey, If, Expression</code>, except that each hotkey can have many <a href="#variant">variants</a> (one per object). <em>FunctionObject</em> must be a single variable (not an expression) containing an object with a <em>call</em> method. The function or <em>call</em> method can accept one parameter, the <a href="../Variables.htm#ThisHotkey">name</a> of the hotkey.</p>
+    <p>Once passed to the Hotkey command, the object will never be deleted (but memory will be reclaimed by the OS when the process exits).</p>
+    <p>The <a href="#ExampleIfFn">"three-key combination" example</a> below uses this sub-command.</p>
   </dd>
 
 </dl>
@@ -75,6 +87,7 @@ Hotkey, If [, Expression]</pre>
 <h3 id="ErrorLevel">ErrorLevel</h3>
 <p><span class="ver">[v1.1.04+]</span> 此命令失败时会抛出异常. 想了解更多信息, 请参阅 <a href="Catch.htm#RuntimeErrors">运行时错误</a>.</p>
 <p>只有在出现下列情况时 <a href="../misc/ErrorLevel.htm">ErrorLevel</a> 才会被改变:<br>1) 首个参数为 IfWin[Not]Active/Exist, 此时如果遇到问题它会被设置为 1 否则为 0;<br>或者:<br>2) 在 <em>Options</em> 参数中使用了单词 UseErrorLevel.</p>
+<p><span class="ver">[v1.1.25+]:</span> If the first parameter is "If", an exception is thrown if the second parameter is invalid or a memory allocation fails. ErrorLevel is not set in those cases, but is still set to 0 on success.</p>
 <table class="info">
   <tr>
     <th>错误</th>
@@ -128,14 +141,16 @@ if ErrorLevel in 5,6
 <p>由此命令做出的改变使得 <a href="_InstallKeybdHook.htm">键盘</a> 和/或 <a href="_InstallMouseHook.htm">鼠标</a> 钩子被安装或移除是正常的.</p>
 <p>尽管 Hotkey 命令不能直接启用或禁用脚本中不是它创建的热键, 但在大多数情况下它可以通过创建或启用相同的热键来 <a href="../misc/Override.htm">覆盖</a> 它们. 这样是否有效取决于下列因素:1) 在其他脚本中需要被覆盖的热键是否为<a href="ListHotkeys.htm">钩子热键</a>(非钩子热键总是可以成功覆盖)；2) 最近启动的热键通常优先于其他脚本中的相同热键(因此,如果要覆盖其他脚本中的脚本是最近启动的,覆盖总是会成功)；3) 此热键的启用或创建是否会重新激活<a href="_InstallKeybdHook.htm">键盘</a>或<a href="_InstallMouseHook.htm">鼠标</a>钩子(如果是,那么覆盖总是会成功).</p>
 <p>每当脚本含有至少一个热键时, 它会变成持续运行的, 这意味着应该使用 <a href="ExitApp.htm">ExitApp</a> 而不是 Exit 来终止它. 同时热键脚本自动为 <a href="_SingleInstance.htm">#SingleInstance</a> 的单实例属性,不过可以指定 <code>#SingleInstance Off</code> 来关闭.</p>
-<h3 id="IfWin">关于 <em>Hotkey, IfWinXX [, WinTitle, WinText]</em> 的备注</h3>
-<p>"Hotkey IfWin" 命令允许在脚本运行时创建或修改上下文相关的 <a href="../Hotkeys.htm">热键</a> (与之相比, <a href="_IfWinActive.htm">#IfWinActive/Exist</a> 指令是由位置决定的并且在脚本启动时生效). 例如:</p>
+
+<h3 id="IfWin">关于 <em>Hotkey, If</em> 的备注</h3>
+<p>The &quot;Hotkey If&quot; 命令允许在脚本运行时创建或修改上下文相关的 <a href="../Hotkeys.htm">热键</a> (by contrast, the <a href="_If.htm">#If</a> and <a href="_IfWinActive.htm">#IfWinActive/Exist</a> directives are positional and take effect before the script begins executing). For example:</p>
 <pre>Hotkey, IfWinActive, ahk_class Notepad
 Hotkey, ^!e, MyLabel  <em>; 创建仅在记事本中有效的热键.</em></pre>
-<p>使用 "Hotkey IfWin" 会把后续创建或修改的所有 <a href="../Hotkeys.htm">热键</a> 都变成上下文相关的. 此外, 每个 IfWin 子命令是互斥的; 即只有最近的那个会起作用.</p>
-<p>要关闭上下文相关性 (即让后续创建的热键对所有窗口有效), 请指定任一省略了 <em>WinTitle/Text</em> 参数的 IfWin 子命令. 例如:<code>Hotkey, IfWinActive</code>.</p>
-<p>如果脚本中没有使用过"Hotkey IfWin",则最近使用的<a href="_IfWinActive.htm">#IfWin</a>指令(如果有)将作用于Hotkey命令.</p>
-<p>通过 IfWin 禁用鼠标或键盘热键后, 则热键会执行它原来的功能; 即如同这样的热键不存在那样被直接传递到活动窗口. 有一种情况例外:对于操纵杆热键,尽管 #IfWin 有效,但它不能阻止其他程序探测到按钮的按下动作.</p>
+<p>Using &quot;Hotkey If&quot; puts context sensitivity into effect for all subsequently created or modified <a href="../Hotkeys.htm">hotkeys</a>. In addition, each If sub-command is mutually exclusive; that is, only the most recent one will be in effect.</p>
+<p>To turn off context sensitivity (that is, to make subsequently-created hotkeys work in all windows), specify any If sub-command but omit the parameters. For example: <code>Hotkey, If</code> or <code>Hotkey, IfWinActive</code>.</p>
+<p>If &quot;Hotkey If&quot; is never used by a script, the bottommost use of any <a href="_If.htm">#If</a> or <a href="_IfWinActive.htm">#IfWin</a> directive (if any) will be in effect for the Hotkey command.</p>
+<p>When a mouse or keyboard hotkey is disabled via an If sub-command or directive, it performs its native function; that is, it passes through to the active window as though there is no such hotkey. However, joystick hotkeys always pass through, whether they are disabled or not.</p>
+
 <h3 id="variant">变体 (副本) 热键</h3>
 <p>只要每次定义时含有不同的 IfWin 条件, 一个特定的热键可以被创建多次. 这被称为 <em>热键变体</em>. 例如:</p>
 <pre>Hotkey, IfWinActive, ahk_class Notepad
@@ -165,6 +180,36 @@ Hotkey, ^!a, , T5  <em>; 改变热键为允许 5 个线程.</em>
 
 Hotkey, IfWinActive, ahk_class Notepad
 Hotkey, ^!c, MyLabelForNotepad  <em>; 创建仅在记事本中有效的热键 Ctrl-Alt-C.</em></pre>
+
+<pre class="NoIndent" id="ExampleIfFn"><em>; This GUI allows you to register primitive three-key combination hotkeys:</em>
+Gui Add, Text, xm, Prefix key:
+Gui Add, Edit, yp x100 w100 vPrefix, Space
+Gui Add, Text, xm, Suffix hotkey:
+Gui Add, Edit, yp x100 w100  vSuffix, f &amp; j
+Gui Add, Button, Default, Register
+Gui Show
+return
+
+ButtonRegister() {
+    global
+    Gui Submit, NoHide
+    local fn
+    fn := Func("HotkeyShouldFire").Bind(Prefix)
+    Hotkey If, % fn
+    Hotkey % Suffix, FireHotkey
+}
+
+HotkeyShouldFire(prefix, thisHotkey) {
+    return GetKeyState(prefix)
+}
+
+FireHotkey() {
+    MsgBox %A_ThisHotkey%
+}
+
+GuiClose:
+GuiEscape:
+ExitApp</pre>
 
 </body>
 </html>

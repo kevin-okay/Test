@@ -15,7 +15,7 @@ ul.list_of_p li { margin: 1em 0; }
 
 <h1>对象</h1>
 
-<p>AutoHotkey 中的<i>对象</i>是抽象的数据类型,它提供了三种基本功能:</p>
+<p>AutoHotkey 中的 <i>对象</i> 是抽象的数据类型, 它提供了三种基本功能:</p>
 <ul>
   <li>取值.</li>
   <li>设置值.</li>
@@ -92,6 +92,8 @@ Array := Object("KeyA", ValueA, "KeyB", ValueB, ..., "KeyZ", ValueZ)</pre>
 <p id="same_thing">到现在, 您也许已经注意到关联数组使用与简单数组非常相似的语法. 事实上, 在 v1.x 中它们是相同的东西. 然而, 把 <code>[]</code> 视为简单线性数组有助于保持其作用清晰, 并且改善您脚本与 AutoHotkey 未来版本的兼容性, 未来版本中可能改变实现方式.</p>
 
 <h3 id="Usage_Objects">对象</h3>
+<p>For all types of objects, the notation <code>Object.LiteralKey</code> can be used to access a property, array element or method, where <em>LiteralKey</em> is an identifier or integer and <em>Object</em> is any expression. Identifiers are unquoted strings which may consist of alphanumeric characters, underscore and, in <span class="ver">[v1.1.09+]</span>, non-ASCII characters. For example, <code>match.Pos</code> is equivalent to <code>match["Pos"]</code> while <code>arr.1</code> is equivalent to <code>arr[1]</code>. There must be no space after the dot.</p>
+<p><strong>Examples:</strong></p>
 <p>获取属性:</p>
 <pre>Value := Object.Property</pre>
 <p>设置属性:</p>

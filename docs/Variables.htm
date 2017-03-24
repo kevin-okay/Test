@@ -680,7 +680,7 @@ MsgBox,  %ElapsedTime% milliseconds have elapsed.</pre>
     <td>A_OSVersion</td>
     <td><p>下列字符串中的一个(如果存在):WIN_7 <span class="ver">[需要 AHK_L 42+]</span>, WIN_8 <span class="ver">[需要 v1.1.08+]</span>, WIN_8.1 <span class="ver">[需要 v1.1.15+]</span>, WIN_VISTA, WIN_2003, WIN_XP, WIN_2000.</p>
     <p>在AutoHotKey的执行文件或编译后的脚本属性里添加兼容性设置会让操作系统报告不同的版本信息,可以间接得出 A_OSVersion .</p>
-    <p><span class="ver">[v1.1.20+]:</span> 如果系统版本没有被识别成上述版本,会返回一个"major.minor.build"形式的字符串. 如, Windows 10 TP 是 <code>6.4.9841</code>.</p>
+    <p><span class="ver">[v1.1.20+]:</span> 如果系统版本没有被识别成上述版本,会返回一个"major.minor.build"形式的字符串. 例如, <code>10.0.14393</code> 为 Windows 10 build 14393, 也称为 1607 版.</p>
       <pre><em>; 这个示例已过时了, 里面的这些操作系统都不再受支持. </em>
 if A_OSVersion in WIN_NT4,WIN_95,WIN_98,WIN_ME  <em>; 注:逗号两边没有空格. </em>
 {

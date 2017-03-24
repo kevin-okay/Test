@@ -84,7 +84,8 @@ return</pre>
     <td><strong>*</strong></td>
     <td><p>通配符: 即使附加的修饰键被按住也能激发热键. 这常与 <a href="misc/Remap.htm">重映射</a> 按键或按钮组合使用. 例如:</p>
       <pre>*#c::Run Calc.exe  <em>; Win+C,Shift+Win+C,Ctrl+Win+C 等都会触发此热键.</em>
-*ScrollLock::Run Notepad  <em>; 即使在按住其他修饰键时按下 ScrollLock 也会触发此热键.</em></pre></td>
+*ScrollLock::Run Notepad  <em>; 即使在按住其他修饰键时按下 ScrollLock 也会触发此热键.</em></pre>
+      <p>Wildcard hotkeys always use the keyboard hook, as do any hotkeys eclipsed by a wildcard hotkey. For example, the presence of <code>*a::</code> would cause <code>^a::</code> to always use the hook.</p></td>
   </tr>
   <tr id="Tilde">
     <td><strong>~</strong></td>
@@ -99,13 +100,14 @@ return</pre>
 AppsKey Up::ToolTip
 ~AppsKey &amp; &lt;::Send !+{Esc}
 ~AppsKey &amp; &gt;::Send !{Esc}</pre>
+      <p>If at least one variant of a keyboard hotkey has the tilde modifier, that hotkey always uses the keyboard hook.</p>
     </td>
   </tr>
   <tr id="prefixdollar">
     <td><strong>$</strong></td>
     <td>
       <p>通常只在脚本使用 <a href="commands/Send.htm">Send</a> 命令发送包含了热键自身的按键时才需要使用此符号, 此时可以避免触发它自己. $ 前缀强制使用 <a href="commands/_InstallKeybdHook.htm">键盘钩子</a> 来实现此热键, 作为一个副作用这样避免了 <a href="commands/Send.htm">Send</a> 命令触发它自己. $ 前缀相当于在此热键定义之前的某个位置指定了 <code><a href="commands/_UseHook.htm">#UseHook</a></code>.</p>
-      <p>$ 前缀对于鼠标热键不起作用, 因为它们始终使用鼠标钩子. 它对于已经启用了键盘钩子的热键同样无效, 包括所有与 <a href="#Tilde">波浪号 (~)</a> 或 <a href="#wildcard">通配符 (*)</a> 搭配的修改器, key-up 热键 以及自定义组合.</p>
+      <p>$ 前缀对于鼠标热键不起作用, 因为它们始终使用鼠标钩子. 它对于已经启用了键盘钩子的热键同样无效, 包括所有与 <a href="#Tilde">波浪号 (~)</a> 或 <a href="#wildcard">通配符 (*)</a> 搭配的修改器, key-up 热键 以及自定义组合. To determine whether a particular hotkey uses the keyboard hook, use <a href="commands/ListHotkeys.htm">ListHotkeys</a>.</p>
       <p><span class="ver">[v1.1.06+]:</span> <a href="commands/_InputLevel.htm">#InputLevel</a> 和 <a href="commands/SendLevel.htm">SendLevel</a> 对 Send 命令是否触发热键和热字串提供了额外的控制功能.</p>
     </td>
   </tr>
@@ -115,8 +117,9 @@ AppsKey Up::ToolTip
       <pre>*LWin::Send {LControl Down}
 *LWin <strong>Up</strong>::Send {LControl Up}
 </pre>
-      <p>"Up"也可以用于普通热键中,例如: <code>^!r Up::MsgBox You pressed and released Ctrl+Alt+R</code>.它还可以用在<a href="#combo">组合键</a>(例如 <code>F1 &amp; e Up::</code>)</p>      
+      <p>&quot;Up&quot; 也可以用于普通热键中, 例如: <code>^!r Up::MsgBox You pressed and released Ctrl+Alt+R</code>. 它还可以用在 <a href="#combo">组合键</a> (例如 <code>F1 &amp; e Up::</code>)</p>      
       <p>限制:1) "Up" 不能和 <a href="KeyList.htm">游戏杆按钮</a> 一起使用；2) 在没有普通/按下热键副本的 "Up" 热键会完全接管那个按键以防被卡住.避免这种情况的一种方法是添加<a href="#Tilde">波浪号前缀</a>(例如 <code><strong>~</strong>LControl up::</code>)</p>
+      <p>"Up" hotkeys and their key-down counterparts (if any) always use the keyboard hook.</p>
 	  <p>相关提示, 类似于上面的一种技术是让热键成为前缀键. 好处是尽管热键会在按键松开时激发, 但仅在您之前按住此前缀键时没有按其他任何键的情况下才会如此. 例如:</p>
       <pre>LControl &amp; F1::return  <em>; 通过把左 control 键放在 "&amp;" 前面至少一次来让它成为前缀键.</em>
 LControl::MsgBox You released LControl without having used it to modify any other key.</pre></td>
@@ -168,9 +171,10 @@ AppsKey &amp; /::MsgBox Hotkey activated.
 <em>; 同时按下这三个键: [ &amp; ] &amp; \::</em>
 #if GetKeyState("[") &amp;&amp; GetKeyState("]")
 \::MsgBox</pre>
+<p><strong>Keyboard hook:</strong> Custom combinations involving keyboard keys always use the keyboard hook, as do any hotkeys which use the prefix key as a suffix. For example, <code>a &amp; b::</code> causes <code>^a::</code> to always use the hook.</p>
 
 <h2 id="Features">其他功能</h2>
-<p><strong>Numlock, Capslock 和 Scrolllock:</strong> 这些键可以被强制设置为 "AlwaysOn" 或 "AlwaysOff". 例如:<code><a href="commands/SetNumScrollCapsLockState.htm">SetNumlockState</a> AlwaysOn</code>.</p>
+<p><strong>Numlock, Capslock 和 Scrolllock:</strong> 这些键可以被强制设置为 &quot;AlwaysOn&quot; 或 &quot;AlwaysOff&quot;. 例如: <code><a href="commands/SetNumScrollCapsLockState.htm">SetNumlockState</a> AlwaysOn</code>.</p>
 <p><strong>覆盖资源管理器热键:</strong> 在脚本中可以为 Windows 内置的热键例如 Win-E (#e) 和 Win-R (#r) 指定一个动作来个别的替换. 请参阅 <a href="misc/Override.htm">覆盖页面</a> 了解详情.</p>
 <p id="alttab"><strong>替换 Alt-Tab:</strong> 热键可以提供 Alt-Tab 切换窗口的可选方法. 例如, 下面的两个热键可以让您用右手进行 alt-tab:</p>
 <pre>RControl &amp; RShift::AltTab  <em>; 按住右 control 后接着反复下右 shift 来向前移动.</em>
