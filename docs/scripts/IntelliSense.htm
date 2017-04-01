@@ -1,23 +1,19 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>IntelliSense -- by Rajat (requires XP/2k/NT)</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ÖÇÄÜ¸ÐÓ¦ -- ×÷Õß: Rajat (ÐèÒª XP/2k/NT)</title>
+<meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>IntelliSense -- by Rajat (requires XP/2k/NT)</h1>
+<h1>ÖÇÄÜ¸ÐÓ¦ -- ×÷Õß: Rajat (ÐèÒª XP/2k/NT)</h1>
 
-<p>This script watches while you edit an AutoHotkey script.  When it sees you
- type a command followed by a comma or space, it displays that command's
- parameter list to guide you.  In addition, you can press Ctrl+F1 (or
- another hotkey of your choice) to display that command's page in the help
- file. To dismiss the parameter list, press Escape or Enter.
+<p>´Ë½Å±¾»áÔÚÄú±à¼­ AutoHotkey ½Å±¾Ê±½øÐÐ¼àÊÓ. µ±Ëü¿´µ½ÄúÊäÈëÃüÁîºó¸ú×Å¶ººÅ»ò¿Õ¸ñºó, »áÏÔÊ¾´ËÃüÁîµÄ²ÎÊýÁÐ±íÒÔ¸øÄúÌáÊ¾. ´ËÍâ, Äú¿ÉÒÔ°´ÏÂ Ctrl+F1 (»òÄúÑ¡ÔñµÄÆäËûÈÈ¼ü) À´ÏÔÊ¾°ïÖúÎÄ¼þÖÐ´ËÃüÁîµÄÒ³Ãæ. ÒªÈ¡Ïû²ÎÊýÁÐ±í, Çë°´ Escape »ò Enter.
 </p>
-<p><a href="IntelliSense.ahk">Download This Script</a> &nbsp;| &nbsp;<a href="index.htm">Other Sample Scripts</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Home</a></p>
+<p><a href="IntelliSense.ahk">ÏÂÔØ´Ë½Å±¾</a> &nbsp;| &nbsp;<a href="index.htm">ÆäËûÊ¾Àý½Å±¾</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Ö÷Ò³</a></p>
 
 <pre class="NoIndent"><em>; Requires v1.0.41+</em>
 
@@ -140,7 +136,7 @@ Loop
     
     <em>; Check for commented line:</em>
     StringLeft, I_Check, I_Word, 1
-    if (I_Check = &quot;;&quot; or I_Word = &quot;If&quot;)  <em>; &quot;If&quot; seems a little too annoying to show tooltip for.</em>
+    if (I_Check = ";" or I_Word = "If")  <em>; "If" seems a little too annoying to show tooltip for.</em>
         Continue
 
     <em>; Match word with command:</em>
@@ -193,7 +189,7 @@ IfWinNotExist, AutoHotkey Help
 if I_ThisCmd =  <em>; Instead, use what was most recently typed.</em>
     I_ThisCmd := I_Word
 
-<em>; The above has set the &quot;last found&quot; window which we use below:</em>
+<em>; The above has set the "last found" window which we use below:</em>
 WinActivate
 WinWaitActive
 StringReplace, I_ThisCmd, I_ThisCmd, #, {#}  <em>; Replace leading #, if any.</em>

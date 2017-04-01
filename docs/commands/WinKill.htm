@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>WinKill</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,40 +11,40 @@
 
 <h1>WinKill</h1>
 
-<p>Forces the specified window to close.</p>
+<p>Ç¿ÖÆ¹Ø±ÕÖ¸¶¨µÄ´°¿Ú.</p>
 
 <pre class="Syntax">WinKill [, WinTitle, WinText, SecondsToWait, ExcludeTitle, ExcludeText]</pre>
-<h3>Parameters</h3>
+<h3>²ÎÊý</h3>
 <dl>
 
   <dt>WinTitle</dt>
-  <dd><p>A window title or other criteria identifying the target window. See <a href="../misc/WinTitle.htm">WinTitle</a>.</p></dd>
+  <dd><p>´°¿Ú±êÌâ»òÊ¶±ðÄ¿±ê´°¿ÚµÄÆäËûÌõ¼þ.Çë²ÎÔÄ <a href="../misc/WinTitle.htm">WinTitle</a>.</p></dd>
 
   <dt>WinText</dt>
-  <dd><p>If present, this parameter must be a substring from a single text element of the target window (as revealed by the included Window Spy utility). Hidden text elements are detected if <a href="DetectHiddenText.htm">DetectHiddenText</a> is ON.</p></dd>
+  <dd><p>Èç¹ûÊ¹ÓÃ´Ë²ÎÊý, ÄÇÃ´Ëü±ØÐëÊÇÄ¿±ê´°¿ÚÖÐµ¥¸öÎÄ±¾ÔªËØµÄ×Ó×Ö·û´® (ºÍÄÚÖÃµÄ Window Spy ¹¤¾ßÏÔÊ¾µÄÒ»Ñù). µ± <a href="DetectHiddenText.htm">DetectHiddenText</a> µÄÉèÖÃÎª ON Ê±, ÄÇÃ´»á¼ì²âµ½Òþ²ØÎÄ±¾ÔªËØ.</p></dd>
 
   <dt>SecondsToWait</dt>
-  <dd><p>If omitted or blank, the command will not wait at all. If 0, it will wait 500ms. Otherwise, it will wait the indicated number of seconds (can contain a decimal point or be an <a href="../Variables.htm#Expressions">expression</a>) for the window to close. If the window does not close within that period, the script will continue. ErrorLevel is <strong>not</strong> set by this command, so use <a href="WinExist.htm">IfWinExist</a> or <a href="WinWaitClose.htm">WinWaitClose</a> if you need to determine for certain that a window is closed.</p></dd>
+  <dd><p>Èç¹ûÊ¡ÂÔ»òÎª¿Õ, ´ËÃüÁî»áÍêÈ«²»µÈ´ý. Èç¹ûÎª 0, ÔòËü»áµÈ´ý 500ms. ·ñÔò, Ëü»áµÈ´ýÖ¸¶¨µÄÃëÊý (¿ÉÒÔÎªÐ¡Êý»ò <a href="../Variables.htm#Expressions">±í´ïÊ½</a>) À´ÈÃ´°¿Ú¹Ø±Õ. Èç¹û´°¿ÚÔÚ´ËÆÚ¼äÃ»ÓÐ¹Ø±Õ, ÄÇÃ´½Å±¾»á¼ÌÐøÖ´ÐÐ. ´ËÃüÁî <strong>²»»á</strong> ÉèÖÃ ErrorLevel, ËùÒÔÈç¹ûÄúÐèÒªÈ·¶¨´°¿ÚÊÇ·ñ¹Ø±ÕÊ±ÇëÊ¹ÓÃ <a href="WinExist.htm">IfWinExist</a> »ò <a href="WinWaitClose.htm">WinWaitClose</a>.</p></dd>
 
   <dt>ExcludeTitle</dt>
-  <dd><p>Windows whose titles include this value will not be considered.</p></dd>
+  <dd><p>±êÌâÖÐº¬ÓÐ´Ë²ÎÊýÖµµÄ´°¿Ú½«±»ÅÅ³ý.</p></dd>
 
   <dt>ExcludeText</dt>
-  <dd><p>Windows whose text include this value will not be considered.</p></dd>
+  <dd><p>ÎÄ±¾ÖÐº¬ÓÐ´Ë²ÎÊýÖµµÄ´°¿Ú½«±»ÅÅ³ý.</p></dd>
 
 </dl>
 
-<h3>Remarks</h3>
-<p>This command  first makes a brief attempt to close the window normally. If that fails, it will attempt to force the window closed by terminating its process.</p>
-<p>If a matching window is  active, that window will be closed in preference to any other matching window beneath it. In general, if more than one window matches, the topmost (most recently used)  will be closed.</p>
-<p>This command operates only upon the topmost matching window except when <em>WinTitle</em> is <a href="GroupAdd.htm">ahk_group GroupName</a>, in which case all windows in the group are affected.</p>
-<p>Window titles and text are case sensitive. Hidden windows are not detected unless <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> has been turned on.</p>
+<h3>±¸×¢</h3>
+<p>´ËÃüÁîÊ×ÏÈ»áÓÃ¶ÌÔÝµÄÊ±¼ä³¢ÊÔÕý³£µØ¹Ø±Õ´°¿Ú. Èç¹ûÊ§°Ü, ÄÇÃ´Ëü»á³¢ÊÔÖÕÖ¹´°¿Ú½ø³ÌÀ´Ç¿ÖÆ¹Ø±Õ´°¿Ú.</p>
+<p>Èç¹ûÆ¥Åä´°¿ÚÊÇ»î¶¯µÄ, ÄÇÃ´»áÓÅÏÈ¹Ø±Õ´Ë´°¿Ú¶ø²»ÊÇËüÏÂÃæµÄÆäËûÆ¥Åä´°¿Ú. Ò»°ã¶øÑÔ, Èç¹ûÓÐ¶à¸öÆ¥Åä´°¿Ú, ÄÇÃ´»á¹Ø±Õ×îÉÏÃæµÄ (×î½üÊ¹ÓÃµÄ) ´°¿Ú.</p>
+<p>´ËÃüÁî½ö¶Ô×îÉÏÃæµÄÆ¥Åä´°¿Ú½øÐÐ²Ù×÷, ³ý·Ç <em>WinTitle</em> Îª <a href="GroupAdd.htm">ahk_group GroupName</a>, ´ËÊ±»áÓ°Ïì×éÖÐËùÓÐ´°¿Ú.</p>
+<p>´°¿Ú±êÌâºÍÎÄ±¾ÊÇÇø·Ö´óÐ¡Ð´µÄ. Ö»ÓÐÔÚ´ò¿ª <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> ÉèÖÃÊ±,²ÅÄÜ¼ì²âµ½Òþ²Ø´°¿Ú.</p>
 
-<h3>Related</h3>
-<p><a href="WinClose.htm">WinClose</a>, <a href="WinWaitClose.htm">WinWaitClose</a>, <a href="Process.htm">Process</a>, <a href="WinActivate.htm">WinActivate</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>, <a href="../misc/WinTitle.htm#LastFoundWindow">Last Found Window</a>, <a href="WinExist.htm">IfWinExist</a>, <a href="WinActive.htm">IfWinActive</a>, <a href="WinWaitActive.htm">WinWaitActive</a>, <a href="WinWait.htm">WinWait</a>, <a href="GroupActivate.htm">GroupActivate</a></p>
-<h3>Example</h3>
+<h3>Ïà¹Ø</h3>
+<p><a href="WinClose.htm">WinClose</a>, <a href="WinWaitClose.htm">WinWaitClose</a>, <a href="Process.htm">Process</a>, <a href="WinActivate.htm">WinActivate</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>, <a href="../misc/WinTitle.htm#LastFoundWindow">ÉÏ´ÎÕÒµ½µÄ´°¿Ú</a>, <a href="WinExist.htm">IfWinExist</a>, <a href="WinActive.htm">IfWinActive</a>, <a href="WinWaitActive.htm">WinWaitActive</a>, <a href="WinWait.htm">WinWait</a>, <a href="GroupActivate.htm">GroupActivate</a></p>
+<h3>Ê¾Àý</h3>
 <pre class="NoIndent">IfWinExist, Untitled - Notepad
-    WinKill <em>; use the window found above</em>
+    WinKill <em>; Ê¹ÓÃÇ°ÃæÕÒµ½µÄ´°¿Ú</em>
 else
     WinKill, Calculator</pre>
 

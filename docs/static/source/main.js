@@ -19,8 +19,10 @@ function GetScriptDir()
   var scriptPath = '';
   var scriptEls = document.getElementsByTagName('script');
   for (i = 0; i < scriptEls.length; i++)
-    if (scriptEls[i].src)
+    if (scriptEls[i].src) {
       scriptPath = scriptEls[i].src;
+      break;
+    }
   return scriptPath.substr(0, scriptPath.lastIndexOf('/'));
 }
 
@@ -118,7 +120,7 @@ function AddContent()
     // language button
     //
 
-    var en = 'http://ahkscript.org/docs/';
+    var en = 'https://autohotkey.com/docs/';
     var de = 'http://ahkde.github.io/docs/';
     var cn = 'http://ahkcn.sourceforge.net/docs/';
 

@@ -8,11 +8,11 @@ Default topic=docs\AutoHotkey.htm
 Display compile progress=No
 Full-text search=Yes
 Index file=Index.hhk
-Language=0x409 English (United States)
-Title=AutoHotkey Help
+Language=0x804 中文(简体，中国)
+Title=AutoHotkey 中文帮助
 
 [WINDOWS]
-Contents="AutoHotkey Help","Table of Contents.hhc","Index.hhk","docs\AutoHotkey.htm","docs\AutoHotkey.htm",,,,,0x73520,,0x10200e,[200,0,1080,700],0,,,,0,,0
+Contents="AutoHotkey 中文帮助","Table of Contents.hhc","Index.hhk","docs\AutoHotkey.htm","docs\AutoHotkey.htm",,,,,0x73520,,0x10200e,[200,0,1080,700],0,,,,0,,0
 
 
 [FILES]

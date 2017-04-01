@@ -1,29 +1,21 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Easy Access to Favorite Folders -- by Savage</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ÇáËÉ·ÃÎÊÊÕ²Ø¼Ð__×÷Õß:Savage</title>
+<meta http-equiv="content-type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
 </head>
 <body>
 
-<h1>Easy Access to Favorite Folders -- by Savage</h1>
+<h1>ÇáËÉ·ÃÎÊÊÕ²Ø¼Ð__×÷Õß:Savage</h1>
 
-<p>When you click the middle mouse button while certain types of
- windows are active, this script displays a menu of your favorite
- folders.  Upon selecting a favorite, the script will instantly
- switch to that folder within the active window.  The following
- window types are supported: 1) Standard file-open or file-save
- dialogs; 2) Explorer windows; 3) Console (command prompt) windows.
- The menu can also be optionally shown for unsupported window
- types, in which case the chosen favorite will be opened as a new
- Explorer window.
+<p>µ±ÄúÔÚÄ³Ð©ÀàÐÍµÄ´°¿Ú»î¶¯Ê±µã»÷Êó±êÖÐ¼ü, ½Å±¾»áÏÔÊ¾ÄúµÄÊÕ²Ø¼Ð²Ëµ¥. Ñ¡ÔñÊÕ²Ø¼ÐÖÐµÄÎÄ¼þ¼Ðºó, ½Å±¾»áÈÃ»î¶¯´°¿ÚÁ¢¼´ÇÐ»»µ½ÄÇ¸öÎÄ¼þ¼Ð. Ö§³ÖÏÂÁÐ´°¿ÚÀàÐÍ: 1) ±ê×¼µÄÎÄ¼þ´ò¿ª»òÎÄ¼þ±£´æ¶Ô»°¿ò; 2) ×ÊÔ´¹ÜÀíÆ÷´°¿Ú; 3) ¿ØÖÆÌ¨ (ÃüÁîÌáÊ¾·û) ´°¿Ú. ¶ÔÓÚ²»Ö§³ÖµÄ´°¿ÚÀàÐÍÒ²¿ÉÒÔÏÔÊ¾´Ë²Ëµ¥, ´ËÊ±Ñ¡ÔñµÄÊÕ²Ø¼ÐÖÐµÄÎÄ¼þ¼Ð»áÔÚÐÂµÄ×ÊÔ´¹ÜÀíÆ÷´°¿ÚÖÐ´ò¿ª.
 </p>
-<p><a href="FavoriteFolders.ahk">Download This Script</a> &nbsp;| &nbsp;<a href="index.htm">Other Sample Scripts</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Home</a></p>
+<p><a href="FavoriteFolders.ahk">ÏÂÔØ´Ë½Å±¾</a> &nbsp;| &nbsp;<a href="index.htm">ÆäËûÊ¾Àý½Å±¾</a> &nbsp;| &nbsp;<a href="../AutoHotkey.htm">Ö÷Ò³</a></p>
 
-<pre class="NoIndent"><em>; Note: In Windows Explorer, if &quot;View &gt; Toolbars &gt; Address Bar&quot; is
+<pre class="NoIndent"><em>; Note: In Windows Explorer, if "View &gt; Toolbars &gt; Address Bar" is
 ; not enabled, the menu will not be shown if the hotkey chosen below
 ; has a tilde.  If it does have a tilde, the menu will be shown
 ; but the favorite will be opened in a new Explorer window rather
@@ -94,22 +86,22 @@ Loop, Read, %f_FavoritesFile%
         {
             IfInString, A_LoopReadLine, ITEMS IN FAVORITES MENU
                 f_AtStartingPos = y
-            continue  <em>; Start a new loop iteration.</em>
+            continue  <em>; ÔÚÑ­»·ÖÐ¿ªÊ¼Ò»´ÎÐÂµÄÖØ¸´.</em>
         }
-        <em>; Otherwise, the closing comment symbol marks the end of the list.</em>
+        <em>;·ñÔò,×¢ÊÍ½áÊø·ûºÅ±ê¼ÇÁÐ±íÄ©¶Ë.</em>
         if A_LoopReadLine = */
-            break  <em>; terminate the loop</em>
+            break  <em>; ÖÕÖ¹Ñ­»·</em>
     }
-    <em>; Menu separator lines must also be counted to be compatible</em>
+    <em>; ²Ëµ¥·Ö¸ôÏßÐë¼ÆÈëÒÔ±ã¼æÈÝ</em>
     <em>; with A_ThisMenuItemPos:</em>
     f_MenuItemCount++
-    if A_LoopReadLine =  <em>; Blank indicates a separator line.</em>
+    if A_LoopReadLine =  <em>;¿Õ±íÊ¾·Ö¸ôÏß.</em>
         Menu, Favorites, Add
     else
     {
         StringSplit, f_line, A_LoopReadLine, `;
-        f_line1 = %f_line1%  <em>; Trim leading and trailing spaces.</em>
-        f_line2 = %f_line2%  <em>; Trim leading and trailing spaces.</em>
+        f_line1 = %f_line1%  <em>;ÒÆ³ýÇ°¶Ë,Ä©¶Ë¿Õ¸ñ..</em>
+        f_line2 = %f_line2%  <em>;ÒÆ³ýÇ°¶Ë,Ä©¶Ë¿Õ¸ñ.</em>
         <em>; Resolve any references to variables within either field, and</em>
         <em>; create a new array element containing the path of this favorite:</em>
         Transform, f_path%f_MenuItemCount%, deref, %f_line2%
@@ -149,9 +141,9 @@ else if f_class in ExploreWClass,CabinetWClass  <em>; In Explorer, switch folder
     if f_Edit1Pos &lt;&gt;   <em>; And it has an Edit1 control.</em>
     {
         ControlSetText, Edit1, %f_path%, ahk_id %f_window_id%
-        <em>; Tekl reported the following: &quot;If I want to change to Folder L:\folder</em>
+        <em>; Tekl reported the following: "If I want to change to Folder L:\folder</em>
         <em>; then the addressbar shows http://www.L:\folder.com. To solve this,</em>
-        <em>; I added a {right} before {Enter}&quot;:</em>
+        <em>; I added a {right} before {Enter}":</em>
         ControlSend, Edit1, {Right}{Enter}, ahk_id %f_window_id%
         return
     }

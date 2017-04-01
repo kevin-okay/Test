@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>WinActivate</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -11,43 +11,43 @@
 
 <h1>WinActivate</h1>
 
-<p>Activates the specified window (makes it foremost).</p>
+<p>¼¤»îÖ¸¶¨µÄ´°¿Ú(ÈÃËüÖÃÓÚ×îÇ°Ãæ).</p>
 
 <pre class="Syntax">WinActivate [, WinTitle, WinText, ExcludeTitle, ExcludeText]</pre>
-<h3>Parameters</h3>
+<h3>²ÎÊý</h3>
 <dl>
 
   <dt>WinTitle</dt>
-  <dd><p>A window title or other criteria identifying the target window. See <a href="../misc/WinTitle.htm">WinTitle</a>.</p></dd>
+  <dd><p>´°¿Ú±êÌâ»òÊ¶±ðÄ¿±ê´°¿ÚµÄÆäËûÌõ¼þ.Çë²ÎÔÄ <a href="../misc/WinTitle.htm">WinTitle</a>.</p></dd>
 
   <dt>WinText</dt>
-  <dd><p>If present, this parameter must be a substring from a single text element of the target window (as revealed by the included Window Spy utility). Hidden text elements are detected if <a href="DetectHiddenText.htm">DetectHiddenText</a> is ON.</p></dd>
+  <dd><p>Èç¹ûÊ¹ÓÃ´Ë²ÎÊý, ÄÇÃ´Ëü±ØÐëÊÇÄ¿±ê´°¿ÚÖÐµ¥¸öÎÄ±¾ÔªËØµÄ×Ó×Ö·û´® (ºÍÄÚÖÃµÄ Window Spy ¹¤¾ßÏÔÊ¾µÄÒ»Ñù). µ± <a href="DetectHiddenText.htm">DetectHiddenText</a> µÄÉèÖÃÎª ON Ê±, ÄÇÃ´»á¼ì²âµ½Òþ²ØÎÄ±¾ÔªËØ.</p></dd>
 
   <dt>ExcludeTitle</dt>
-  <dd><p>Windows whose titles include this value will not be considered.</p></dd>
+  <dd><p>±êÌâÖÐº¬ÓÐ´Ë²ÎÊýÖµµÄ´°¿Ú½«±»ÅÅ³ý.</p></dd>
 
   <dt>ExcludeText</dt>
-  <dd><p>Windows whose text include this value will not be considered.</p></dd>
+  <dd><p>ÎÄ±¾ÖÐº¬ÓÐ´Ë²ÎÊýÖµµÄ´°¿Ú½«±»ÅÅ³ý.</p></dd>
 
 </dl>
 
-<h3>Remarks</h3>
-<p>If the window is minimized, it is automatically restored prior to being activated. In v1.1.20 and later, the window is restored even if it is already active.</p>
-<p>Six attempts will be made to activate the target window over the course of 60ms. Thus, it is usually unnecessary to follow WinActivate with <a href="WinWaitActive.htm">WinWaitActive</a> or <a href="WinActive.htm">IfWinNotActive</a>.</p>
-<p>If a matching window is already active, that window will be kept active rather than activating any other matching window beneath it. In general, if more than one window matches, the topmost (most recently used)  will be activated. You can activate the bottommost (least recently used)  via <a href="WinActivateBottom.htm">WinActivateBottom</a>.</p>
-<p><span class="ver">[v1.1.20+]:</span> If the active window is hidden and <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> is turned off, it is never considered a match. Instead, a visible matching window is activated if one exists.</p>
-<p>When a window is activated immediately after the activation of some other window, task bar buttons might start flashing on some systems (depending on OS and settings). To prevent this, use <a href="_WinActivateForce.htm">#WinActivateForce</a>.</p>
-<p>Window titles and text are case sensitive. Hidden windows are not detected unless <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> has been turned on.</p>
-<p><strong>Known issue:</strong> If the script is running on a computer or server being accessed via remote desktop, WinActivate may hang if the remote desktop client is minimized. One workaround is to use commands which don't require window activation, such as <a href="ControlSend.htm">ControlSend</a> and <a href="ControlClick.htm">ControlClick</a>. Another possible workaround is to apply the following registry setting on the local/client computer:</p>
-<pre><em>; Change HKCU to HKLM to affect all users on this system.</em>
+<h3>±¸×¢</h3>
+<p>Èç¹û´°¿Ú´¦ÓÚ×îÐ¡»¯×´Ì¬, ÄÇÃ´»á¶ÔÆä»¹Ô­ºóÔÙ½øÐÐ¼¤»î.ÔÚv1.1.20¼°ÒÔºóµÄ°æ±¾ÖÐ, ´°¿Ú¼´Ê¹ÒÑ¾­ÊÇ¼¤»î×´Ì¬,Ò²»á±»»¹Ô­.</p>
+<p>ÔÚ 60ms µÄÊ±¼äÖÐ, »á¶ÔÄ¿±ê´°¿Ú½øÐÐÁù´Î¼¤»îµÄ³¢ÊÔ.Òò´Ë, Í¨³£²»ÐèÒªÔÚ WinActivate ºóÊ¹ÓÃ <a href="WinWaitActive.htm">WinWaitActive</a> »ò <a href="WinActive.htm">IfWinNotActive</a>.</p>
+<p>Èç¹ûÆ¥Åä´°¿ÚÒÑ¾­Îª»î¶¯´°¿Ú, ÄÇÃ´»áÈÃ´Ë´°¿Ú¼ÌÐø±£³Ö»î¶¯×´Ì¬, ¶ø²»»á¼¤»î´Ë´°¿ÚÏÂµÄÆäËûÈÎºÎÆ¥Åä´°¿Ú. Ò»°ã¶øÑÔ, Èç¹ûÓÐ¶à¸öÆ¥Åä´°¿Ú, ÄÇÃ´»á¼¤»î×îÉÏÃæµÄ (×î½üÊ¹ÓÃµÄ) ´°¿Ú. Äú¿ÉÒÔÊ¹ÓÃ <a href="WinActivateBottom.htm">WinActivateBottom</a> ¼¤»î×îÏÂÃæµÄ (×îÔçÊ¹ÓÃµÄ) ´°¿Ú.</p>
+<p><span class="ver">[v1.1.20+]:</span>Èç¹ûÒª¼¤»îµÄ´°¿Ú´¦ÓÚÒþ²Ø×´Ì¬²¢ÇÒ <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> ±»ÉèÖÃÎªOFFÊ±,¸Ã´°¿Ú½«ÓÀÔ¶²»»áÊÓÎªÒ»¸öÆ¥ÅäÏî. Ïà·´,Ö»ÒªÓÐÒ»¸öÆ¥Åä´°¿ÚÊÇ¿É¼ûµÄ,Ëü¾Í»á±»¼¤»î.</p>
+<p>ÔÚ¼¤»îÒ»¸ö´°¿ÚºóÁ¢¼´¼¤»îÆäËûµÄ´°¿Ú, ÔÚÒ»Ð©ÏµÍ³ÉÏÈÎÎñÀ¸°´Å¥¿ÉÄÜ»áÉÁË¸ (È¡¾öÓÚ²Ù×÷ÏµÍ³ºÍÉèÖÃ). Òª±ÜÃâ´ËÎÊÌâ, ÇëÊ¹ÓÃ <a href="_WinActivateForce.htm">#WinActivateForce</a>.</p>
+<p>´°¿Ú±êÌâºÍÎÄ±¾ÊÇÇø·Ö´óÐ¡Ð´µÄ. Ö»ÓÐÔÚ´ò¿ª <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a> ÉèÖÃÊ±,²ÅÄÜ¼ì²âµ½Òþ²Ø´°¿Ú.</p>
+<p><strong>ÒÑÖªÎÊÌâ:</strong> Èç¹û½Å±¾ÔËÐÐÔÚÕýÔÚ±»Ô¶³Ì×ÀÃæ·ÃÎÊµÄ¼ÆËã»ú»ò·þÎñÆ÷ÉÏ,µ±Ô¶³Ì×ÀÃæ¿Í»§¶Ë×îÐ¡»¯Ê±,WinActivate ¿ÉÄÜ»á¹ÒÆð.Ò»ÖÖ½â¾ö°ì·¨ÊÇÊ¹ÓÃ²»ÐèÒª¼¤»î´°¿ÚµÄÃüÁî,Èç <a href="ControlSend.htm">ControlSend</a> ºÍ <a href="ControlClick.htm">ControlClick</a>. ÁíÒ»¸ö¿ÉÄÜµÄ½â¾ö·½·¨ÊÇÔÚ±¾µØ/¿Í»§¶Ë¼ÆËã»úµÄ×¢²á±íÉÏ×öÈçÏÂÉèÖÃ:</p>
+<pre><em>; ½«HKCU¸Ä³ÉHKLM,²¢¶Ô¸ÃÏµÍ³ÉÏµÄËùÓÐÓÃ»§ÉúÐ§.</em>
 RegWrite REG_DWORD, HKCU, Software\Microsoft\Terminal Server Client
     , RemoteDesktop_SuppressWhenMinimized, 2</pre>
 
-<h3>Related</h3>
-<p><a href="WinActivateBottom.htm">WinActivateBottom</a>, <a href="_WinActivateForce.htm">#WinActivateForce</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>, <a href="../misc/WinTitle.htm#LastFoundWindow">Last Found Window</a>, <a href="WinExist.htm">IfWinExist</a>, <a href="WinActive.htm">IfWinActive</a>, <a href="WinWaitActive.htm">WinWaitActive</a>, <a href="WinWait.htm">WinWait</a>, <a href="WinWaitClose.htm">WinWaitClose</a>, <a href="WinClose.htm">WinClose</a>, <a href="GroupActivate.htm">GroupActivate</a>, <a href="WinSet.htm">WinSet</a></p>
-<h3>Example</h3>
+<h3>Ïà¹Ø</h3>
+<p><a href="WinActivateBottom.htm">WinActivateBottom</a>, <a href="_WinActivateForce.htm">#WinActivateForce</a>, <a href="SetTitleMatchMode.htm">SetTitleMatchMode</a>, <a href="DetectHiddenWindows.htm">DetectHiddenWindows</a>, <a href="../misc/WinTitle.htm#LastFoundWindow">ÉÏ´ÎÕÒµ½µÄ´°¿Ú</a>, <a href="WinExist.htm">IfWinExist</a>, <a href="WinActive.htm">IfWinActive</a>, <a href="WinWaitActive.htm">WinWaitActive</a>, <a href="WinWait.htm">WinWait</a>, <a href="WinWaitClose.htm">WinWaitClose</a>, <a href="WinClose.htm">WinClose</a>, <a href="GroupActivate.htm">GroupActivate</a>, <a href="WinSet.htm">WinSet</a></p>
+<h3>Ê¾Àý</h3>
 <pre class="NoIndent">IfWinExist, Untitled - Notepad
-    WinActivate <em>; use the window found above</em>
+    WinActivate <em>; Ê¹ÓÃÇ°ÃæÕÒµ½µÄ´°¿Ú</em>
 else
     WinActivate, Calculator</pre>
 

@@ -11,7 +11,7 @@ body {
 	padding-bottom: 3em;
 }
 html {
-	font-family: Arial, sans-serif;
+	font-family: Î¢ÈíÑÅºÚ, Consolas, Arial, sans-serif;
 }
 img {
 	border: none;
@@ -259,7 +259,7 @@ ul.jqtree-tree .jqtree-toggler {
     *top: 0;  /* fix for ie7 */
     font-size: 10px;
     line-height: 12px;
-    font-family: arial;  /* fix for ie9 */
+    font-family: Arial;  /* fix for ie9 */
     border-bottom: none;
     color: #333;
 }
@@ -375,7 +375,7 @@ padding: 0;
     padding-left: 5px;
     font-size: 1em;
     height: 25px;
-    font-family: Arial, sans-serif;
+    font-family:  Î¢ÈíÑÅºÚ, Consolas, Arial, sans-serif;
     width:210px;
     vertical-align: middle;
     border: 1px solid #999;
@@ -466,7 +466,7 @@ clear: both;
     padding: 0;
     list-style: none;
     background-color: #808080;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; 
     border-top: 1px solid #ccc;
 }
 
