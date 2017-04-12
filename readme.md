@@ -24,3 +24,7 @@
 
 - `Step 3` 能得到更新的具体位置,可以避免逐行查找更新;
 - 学习使用 `BeyondCompare` 工具,可以方便的进行逐行对比翻译;
+
+## 捐助
+
+![捐助](http://cn.goldrobot.org/statics/img/donate.gif)
