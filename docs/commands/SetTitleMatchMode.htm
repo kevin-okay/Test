@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-<title>SetTitleMatchMode</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>SetTitleMatchMode - Syntax &amp; Usage | AutoHotkey</title>
+<meta name="description" content="The SetTitleMatchMode command sets the matching behavior of the WinTitle parameter in commands such as WinWait." />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
 <script src="../static/content.js" type="text/javascript"></script>
@@ -13,9 +14,11 @@
 
 <p>Sets the matching behavior of the WinTitle parameter in commands such as <a href="WinWait.htm">WinWait</a>.</p>
 
-<pre class="Syntax">SetTitleMatchMode, MatchMode
-SetTitleMatchMode, Fast|Slow</pre>
-<h3>Parameters</h3>
+<pre class="Syntax">
+<span class="func">SetTitleMatchMode</span>, MatchMode
+<span class="func">SetTitleMatchMode</span>, Speed
+</pre>
+<h2>Parameters</h2>
 <dl>
 
   <dt>MatchMode</dt>
@@ -23,7 +26,7 @@ SetTitleMatchMode, Fast|Slow</pre>
       <p><strong>1</strong>: A window's title must start with the specified <em>WinTitle</em> to be  a match.<br>
         <strong>2</strong>: A window's title can contain <em>WinTitle</em> anywhere inside it to be a match. <br>
       <strong>3</strong>:  A window's title must exactly match <em>WinTitle</em> to be a match.</p>
-      <p id="RegEx"><strong>RegEx</strong> (v1.0.45+): Changes <em>WinTitle</em>, <em>WinText</em>, <em>ExcludeTitle</em>, and <em>ExcludeText</em> to accept <a href="../misc/RegEx-QuickRef.htm">regular expressions</a>. Do not enclose such expressions in quotes when using them with commands. For example: <code><a href="WinActivate.htm">WinActivate Untitled.*Notepad</a></code>.</p>
+      <p id="RegEx"><strong>RegEx</strong> <span class="ver">[v1.0.45+]</span>: Changes <em>WinTitle</em>, <em>WinText</em>, <em>ExcludeTitle</em>, and <em>ExcludeText</em> to accept <a href="../misc/RegEx-QuickRef.htm">regular expressions</a>. Do not enclose such expressions in quotes when using them with commands. For example: <code><a href="WinActivate.htm">WinActivate</a> Untitled.*Notepad</code>.</p>
       <p>Note:</p>
       <ul>
         <li>RegEx also applies to <a href="../misc/WinTitle.htm#ahk_class">ahk_class</a> and <a href="../misc/WinTitle.htm#ahk_exe">ahk_exe</a>; for example, <code>ahk_class IEFrame</code> searches for any window whose class name contains <em>IEFrame</em> anywhere (this is because by default, regular expressions find a match <em>anywhere</em> in the target string).</li>
@@ -33,7 +36,7 @@ SetTitleMatchMode, Fast|Slow</pre>
       <p>The modes above also affect <em>ExcludeTitle</em> in the same way as <em>WinTitle</em>. For example, mode 3 requires that a window's title exactly match <em>ExcludeTitle</em> for that window to be excluded.</p>
     </dd>
 
-  <dt>Fast|Slow</dt>
+  <dt>Speed</dt>
   <dd>
     <p>One of the following words to specify how the <em>WinText</em> and <em>ExcludeText</em> parameters should be matched:</p>
     <p><strong>Fast</strong>: This is the default behavior. Performance may be substantially better than <em>Slow</em>, but certain types of controls are not detected. For instance, text is typically detected within Static and Button controls, but not Edit controls, unless they are owned by the script.</p>
@@ -42,8 +45,8 @@ SetTitleMatchMode, Fast|Slow</pre>
 
 </dl>
 
-<h3>Remarks</h3>
-<p>This command affects the behavior of all windowing commands, e.g. <a href="WinExist.htm">WinExist</a> and <a href="WinActivate.htm">WinActivate</a>. <a href="WinGetText.htm">WinGetText</a> is affected in the same way as other commands, but it always uses the <em>Slow</em> method to retrieve text.</p>
+<h2>Remarks</h2>
+<p>This command affects the behavior of all windowing functions and commands, e.g. <a href="WinExist.htm">WinExist()</a> and <a href="WinActivate.htm">WinActivate</a>. <a href="WinGetText.htm">WinGetText</a> is affected in the same way as other commands, but it always uses the <em>Slow</em> method to retrieve text.</p>
 <p>If unspecified, TitleMatchMode defaults to 1 and <em>fast</em>.</p>
 <p>If a <a href="../misc/WinTitle.htm#ahk_group">window group</a> is used, the current title match mode applies to each individual rule in the group.</p>
 <p>Generally, the <em>slow</em> mode should be used only if the  target window cannot be uniquely identified by its title and <em>fast</em>-mode text. This is because the slow mode can be extremely slow if there are any application windows that are busy or &quot;not responding&quot;.</p>
@@ -54,14 +57,17 @@ SetTitleMatchMode, slow</pre>
 <p>The built-in variables <strong>A_TitleMatchMode</strong> and <strong>A_TitleMatchModeSpeed</strong> contain the current settings.</p>
 <p>Regardless of the current TitleMatchMode, <em>WinTitle</em>, <em>WinText</em>, <em>ExcludeTitle</em> and <em>ExcludeText</em> are case sensitive. The only exception is the <a href="../misc/RegEx-QuickRef.htm#Options">case-insensitive option</a> of the RegEx mode; for example: <code><strong>i)</strong>untitled - notepad</code>.</p>
 <p>Every newly launched <a href="../misc/Threads.htm">thread</a> (such as a <a href="../Hotkeys.htm">hotkey</a>, <a href="Menu.htm">custom menu item</a>, or <a href="SetTimer.htm">timed</a> subroutine) starts off fresh with the default setting for this command. That default may be changed by using this command in the auto-execute section (top part of the script).</p>
-<h3>Related</h3>
-<p><a href="SetWinDelay.htm">SetWinDelay</a>, <a href="WinExist.htm">IfWinExist</a>, <a href="WinActivate.htm">WinActivate</a>, <a href="RegExMatch.htm">RegExMatch()</a></p>
-<h3>Example</h3>
-<pre class="NoIndent">SetTitleMatchMode 2
+<h2>Related</h2>
+<p><a href="SetWinDelay.htm">SetWinDelay</a>, <a href="WinExist.htm">WinExist() / IfWinExist</a>, <a href="WinActivate.htm">WinActivate</a>, <a href="RegExMatch.htm">RegExMatch()</a></p>
+<h2>Examples</h2>
+<div class="ex" id="ExBasic">
+<p><a href="#ExBasic">#1</a></p>
+<pre>SetTitleMatchMode 2
 <em>; OR:</em>
 SetTitleMatchMode RegEx
 
 SetTitleMatchMode Slow  <em>; Slow/Fast can be set independently of all the other modes.</em></pre>
+</div>
 
 </body>
 </html>

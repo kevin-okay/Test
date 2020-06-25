@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-<title>Function Objects</title>
+<title>Function Objects - Definition &amp; Usage | AutoHotkey</title>
+<meta name="description" content="Function objects are either references to Func objects representing actual functions, or objects which can be called like functions." />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -48,9 +49,9 @@
 <ul>
   <li><code>method</code> is an empty string if the script used <code><a href="../Functions.htm#DynCall">%this%()</a></code> or <code>this.()</code>.</li>
   <li>If the object is being used as a method, <code>IsObject(method)</code> is true and <code>method</code> contains a reference to the target object. For example, if <code>x.y</code> refers to <code>this</code> function object, <code>x.y()</code> &rarr; <code>this[x]()</code> &rarr; <code>this.__Call(x)</code> &rarr; <code>this.Call(x)</code>.</li>
-  <li><span class="ver">[v1.1.20+]:</span> If the object is being used by one of the built-in functions which accept a callback function, such as OnMessage or SetTimer, only the Call method is needed.</li>
+  <li><span class="ver">[v1.1.20+]:</span> If the object is being used by one of the built-in functions which accept a callback function, such as OnMessage() or SetTimer, only the Call method is needed.</li>
 </ul>
-<p>The work can also be done directly in __Call. However, having __Call redirect to Call is recommended to ease the transition to AutoHotkey v2, which will change the behaviour of <code>%this%()</code> and method calls to call the Call method directly.</p>
+<p>The work can also be done directly in __Call. However, having __Call redirect to Call is recommended to ease the transition to <a href="https://www.autohotkey.com/v2/">AutoHotkey v2</a>, which will change the behaviour of <code>%this%()</code> and method calls to call the Call method directly.</p>
 <h3 id="User-Defined-Examples">Examples</h3>
 <p>If you are defining multiple function object types, boilerplate code should be delegated to a base class (but if you'll ever combine your code with someone else's, be wary of conflicts). For example:</p>
 <pre id="class_FunctionObject">class FunctionObject {
@@ -62,7 +63,8 @@
     }
 }</pre>
 <p>The following example defines a function array which can be called; when called, it calls each element of the array in turn.</p>
-<pre>class FuncArrayType extends <a href="#class_FunctionObject">FunctionObject</a> {
+<pre><em>; This example requires the <a href="#class_FunctionObject">FunctionObject class</a> above in order to work.</em>
+class FuncArrayType extends FunctionObject {
     Call(obj, params*) {
         <em>; Call a list of functions.</em>
         Loop % this.Length()
