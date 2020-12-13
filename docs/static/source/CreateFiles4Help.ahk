@@ -14,12 +14,12 @@ For var, file in FileList
 	FileRead %var%, %A_ScriptDir%\%file%
 
 ;~ 仅当需要更新目录和索引时取消下面的注释
-;~ SetWorkingDir %A_ScriptDir%\..
-;~ Overwrite("content.js", JQueryJS "`n" TreeJQueryJS "`n" TocJS "`n" IndexJS "`n" TranslateJS "`n" MainJS)
-;~ Overwrite("content.chm.js", JQueryJS "`n" TranslateJS "`n" MainJS)
-;~ SetWorkingDir %A_ScriptDir%\..\..\..
-;~ Overwrite("Table of Contents.hhc", TOC_CreateHHC(TocJS))
-;~ Overwrite("Index.hhk", INDEX_CreateHHK(IndexJS))
+SetWorkingDir %A_ScriptDir%\..
+Overwrite("content.js", JQueryJS "`n" TreeJQueryJS "`n" TocJS "`n" IndexJS "`n" TranslateJS "`n" MainJS)
+Overwrite("content.chm.js", JQueryJS "`n" TranslateJS "`n" MainJS)
+SetWorkingDir %A_ScriptDir%\..\..\..
+Overwrite("Table of Contents.hhc", TOC_CreateHHC(TocJS))
+Overwrite("Index.hhk", INDEX_CreateHHK(IndexJS))
 return
 
 Overwrite(File, Text)

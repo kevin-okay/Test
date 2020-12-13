@@ -20,6 +20,7 @@
 <li><object type="text/sitemap"><param name="Name" value="重映射按键和鼠标按钮"><param name="Local" value="docs/misc/Remap.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="按键列表(键盘,鼠标,操纵杆)"><param name="Local" value="docs/KeyList.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="脚本"><param name="Local" value="docs/Scripts.htm"></object>
+<li><object type="text/sitemap"><param name="Name" value="代码拼接"><param name="Local" value="docs/Scripts.htm#continuation"></object>
 <li><object type="text/sitemap"><param name="Name" value="变量和表达式"><param name="Local" value="docs/Variables.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="函数"><param name="Local" value="docs/Functions.htm"></object>
 <li><object type="text/sitemap"><param name="Name" value="调试客户端 (DBGp)"><param name="Local" value="docs/AHKL_DBGPClients.htm"></object>

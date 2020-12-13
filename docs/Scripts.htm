@@ -17,7 +17,7 @@
   <li><a href="#auto">脚本顶部(自动执行段)</a>:当脚本启动时,这部分会自动执行.</li>
   <li><a href="#esc">转义序列</a>: 什么时候应该使用 `% 和 `, 来表示原义的百分号或逗号.</li>
   <li><a href="#Comments">在脚本中添加注释</a>: 使用分号和 /*...*/ 符号来给脚本添加注释.</li>
-  <li><a href="#continuation">把过长的行分割成一系列短行</a>: 这样可以提高脚本的可读性和可维护性.</li>
+  <li><a href="#continuation">把过长的行分割成一系列短行</a>: 以提高脚本的可读性和可维护性.</li>
   <li><a href="#ahk2exe">把脚本转换成 EXE (ahk2exe)</a>: 把 .ahk 脚本转换成可以在任何 PC 上运行的 .exe 文件.</li>
   <li><a href="#cmd">向脚本传递命令行参数</a>: %1%, %2% 等变量包含了传入的参数.</li>
   <li><a href="#cp">脚本文件代码页</a>: 在脚本中可靠地使用非 ASCII 字符.</li>
@@ -43,7 +43,7 @@
 <p>AutoHotkey 中默认的 <a href="commands/_EscapeChar.htm">转义符</a> 为重音符/反引号 (`), 它位于大多数英文键盘的左上角. 使用这个字符而不是反斜线可以与在文件路径的双反斜线以示区分.</p>
 <p>由于 AutoHotkey 中的逗号和百分号都具有特殊含义,因此需要使用 <code>`,</code> 来指定原义的逗号,使用 <code>`%</code> 来指定原义的百分号.其中的一个例外是 <a href="commands/MsgBox.htm">MsgBox</a>,它里面的逗号不需要进行转义.另一个例外是在任意命令最后一个参数中的逗号: 它们不需要进行转义. 请参阅 <a href="commands/_EscapeChar.htm">#EscapeChar</a> 了解转义序列的完整列表.</p>
 <p>某些特殊字符也需要使用转义序列的方法生成. 最常见的有 <code>`t</code>(tab),<code>`n</code>(换行)和 <code>`r</code>(回车).</p>
-<p>提示: 任何命令中的首个逗号可以省略 (除非首个参数为空或以 := 或 = 开始, 或命令单独处于 <a href="#continuation">延续片段</a> 的顶部). 例如:</p>
+<p>提示: 任何命令中的首个逗号可以省略 (除非首个参数为空或以 := 或 = 开始, 或命令单独处于 <a href="#continuation">代码拼接</a> 的顶部). 例如:</p>
 <pre>MsgBox This is ok.
 MsgBox<strong>,</strong> This is ok too (it has an explicit comma).</pre>
 <h2 id="Comments">在脚本中添加注释</h2>
@@ -88,39 +88,39 @@ A line of text.
     <i>By default</i>, the tab to the left of this line will also be written to the file (the same is true for spaces).
 <i>By default</i>, variable references such as %Var% are resolved to the variable's contents.
 ), C:\My File.txt</pre>
-<p>在上面的例子中, 几行代码被一对圆括号包围起来. 这被称为 <em>延续片段</em>. 注意在底行的闭括号后面跟着 <a href="commands/FileAppend.htm">FileAppend</a> 的最后一个参数. 这种做法是可选的; 这样做是为了确保逗号被视为参数分隔符而不是原义的逗号.</p>
-<p>通过在延续片段的开括号右侧包含一个或多个下列选项, 可以覆盖它的默认特性. 如果含有多个选项, 那么选项之间使用空格分开. 例如:<code>( LTrim Join| %</code>.</p>
-<p id="Join"><strong>Join</strong>: 指定行与行之间连接的方式. 如果省略此选项, 那么除最后一行外的其他行后面都会跟一个换行符 (`n). 如果指定单词 <em>Join</em> 自身, 则行与行之间直接连接而不添加任何字符. 或者在单词 <em>Join</em> 后可以紧跟着多达 15 个字符.例如,<code>Join`s</code> 会在除最后一行外的每行末尾插入一个空格("`s"表示原义的空格,这是一个只能被 <em>Join</em> 识别的特殊转义序列).另一个例子是 <code>Join`r`n</code>,它会在行与行之间插入 CR+LF.同样地,<code>Join|</code> 会在行之间插入管道符.要让延续片段的最后一行也以连接字符串结尾, 需要在它的闭括号上一行添加一个空行.</p>
+<p>在上面的例子中, 几行代码被一对圆括号包围起来. 这被称为 <em>代码拼接</em>. 注意在底行的闭括号后面跟着 <a href="commands/FileAppend.htm">FileAppend</a> 的最后一个参数. 这种做法是可选的; 这样做是为了确保逗号被视为参数分隔符而不是原义的逗号.</p>
+<p>通过在代码拼接的开括号右侧包含一个或多个下列选项, 可以覆盖它的默认特性. 如果含有多个选项, 那么选项之间使用空格分开. 例如:<code>( LTrim Join| %</code>.</p>
+<p id="Join"><strong>Join</strong>: 指定行与行之间连接的方式. 如果省略此选项, 那么除最后一行外的其他行后面都会跟一个换行符 (`n). 如果指定单词 <em>Join</em> 自身, 则行与行之间直接连接而不添加任何字符. 或者在单词 <em>Join</em> 后可以紧跟着多达 15 个字符.例如,<code>Join`s</code> 会在除最后一行外的每行末尾插入一个空格("`s"表示原义的空格,这是一个只能被 <em>Join</em> 识别的特殊转义序列).另一个例子是 <code>Join`r`n</code>,它会在行与行之间插入 CR+LF.同样地,<code>Join|</code> 会在行之间插入管道符.要让代码拼接的最后一行也以连接字符串结尾, 需要在它的闭括号上一行添加一个空行.</p>
 <p>已知限制: 如果单词Join后面紧跟一个冒号,那么冒号不能是这一行的最后一个. 因为 <code>(Join:</code> 将被当做一个名为 Join 的标签对待,所以不支持 <code>(LTrim Join:</code> 这种写法, 而 <code>(Join: C</code> 这种写法没有问题.</p>
-<p id="LTrim"><strong>LTrim</strong>: 删除每行开头的空格和 tab. 主要用来允许延续片段使用缩进. 此外,通过在一行中指定 <code>#LTrim</code> 自身可以为多个延续片段打开此选项.<code>#LTrim</code> 跟位置有关:会影响它下面的所有延续片段.使用 <code>#LTrim Off</code> 可以关闭此设置.</p>
+<p id="LTrim"><strong>LTrim</strong>: 删除每行开头的空格和 tab. 主要用来允许代码拼接使用缩进. 此外,通过在一行中指定 <code>#LTrim</code> 自身可以为多个代码拼接打开此选项.<code>#LTrim</code> 跟位置有关:会影响它下面的所有代码拼接.使用 <code>#LTrim Off</code> 可以关闭此设置.</p>
 <p><strong>RTrim0</strong> (RTrim 后跟着一个零): 关闭自动删除每行末尾的空格和 tab 的设置.</p>
-<p id="CommentOption"><strong>Comments</strong>(或 <strong>Comment</strong> 或 <strong>Com</strong> 或 <strong>C</strong>) <span class="ver">[v1.0.45.03+]</span>:允许在延续片段中使用<a href="#Comments">分号注释</a>(但不支持 <code>/*..*/</code>).这样的注释 (以及它们左边的空格和 tab) 会在连接时完全被忽略而不是当成原义文本处理. 每个注释可以放在一行的右侧或单独一行.</p>
+<p id="CommentOption"><strong>Comments</strong>(或 <strong>Comment</strong> 或 <strong>Com</strong> 或 <strong>C</strong>) <span class="ver">[v1.0.45.03+]</span>:允许在代码拼接中使用<a href="#Comments">分号注释</a>(但不支持 <code>/*..*/</code>).这样的注释 (以及它们左边的空格和 tab) 会在连接时完全被忽略而不是当成原义文本处理. 每个注释可以放在一行的右侧或单独一行.</p>
 <p><strong>%</strong> (百分号): 把百分号视为原义字符而不是变量引用. 这样就不需要把每个百分号 <a href="commands/_EscapeChar.htm">转义</a> 成原义字符. 在百分号已经为原义的地方不需要使用此选项, 例如 <a href="Hotstrings.htm">自动替换热字串</a>.</p>
 <p><strong>,</strong> (逗号): 把逗号作为分隔符而不是原义逗号. 这个非常少用的选项只有在命令的参数之间才需要, 因为在 <a href="Functions.htm">函数调用</a> 中逗号的类型没有影响. 并且, 此选项只会转换那些真正的分隔参数的逗号. 换句话说, 一旦到了命令的最后一个参数 (或者命令没有参数), 那么会忽略此选项而把后续的逗号当成原义逗号.</p>
 <p id="accent"><strong>`</strong> (重音符): 把每个反引号视为原义字符而不是 <a href="commands/_EscapeChar.htm">转义符</a>. 此选项同时也避免了需要分别对逗号和百分号进行明确地转义. 此外, 它还阻止对任何特定的转义序列例如 `r 和 `t 进行转义.</p>
 <p id="non-continuation"><strong>)</strong> <span class="ver">[v1.1.01+]</span>: 如果一个右括号出现在延续代码的参数中(除了作为 <a href="#Join">Join</a> 的选项参数), 那么这一行将重新解释为一个表达式,而不是作为一段延续代码的开始. 这将避免类似 <code>(x.y)[z]()</code> 的表达式需要对左括号进行转义.</p>
 <p><u>备注</u></p>
-<p>当没有指定 <a href="#accent">重音符 (`) 选项</a> 时, 支持在延续片段中使用 <a href="commands/_EscapeChar.htm">转义序列</a>, 例如 `n (换行) 和 `t (tab).</p>
-<p>没有使用 <a href="#CommentOption">注释选项</a> 时, 不支持在延续片段中使用分号和 /*..*/ 添加注释, 因为它们会被视为原义文本. 不过, 可以在片段的底行和顶行添加注释. 例如:</p>
+<p>当没有指定 <a href="#accent">重音符 (`) 选项</a> 时, 支持在代码拼接中使用 <a href="commands/_EscapeChar.htm">转义序列</a>, 例如 `n (换行) 和 `t (tab).</p>
+<p>没有使用 <a href="#CommentOption">注释选项</a> 时, 不支持在代码拼接中使用分号和 /*..*/ 添加注释, 因为它们会被视为原义文本. 不过, 可以在片段的底行和顶行添加注释. 例如:</p>
 <pre>FileAppend<strong>,</strong>   <em>; 注释.
 ; 注释.</em>
 ( LTrim Join    <em>; 注释.</em>
     &nbsp;; This is <strong>not</strong> a comment; it is literal. Include the word <i>Comments</i> in the line above to make it a comment.
 ), C:\File.txt   <em>; 注释.</em></pre>
-<p>由上面可知, 延续片段中的分号不需要进行 <a href="commands/_EscapeChar.htm">转义</a>.</p>
-<p>使用延续片段无法生成总长度超过 16,383 字符的行 (如果尝试这么做, 那么程序在启动时会弹出警告). 解决此问题的一种方法是把一系列内容连接到变量中. 例如:</p>
+<p>由上面可知, 代码拼接中的分号不需要进行 <a href="commands/_EscapeChar.htm">转义</a>.</p>
+<p>使用代码拼接无法生成总长度超过 16,383 字符的行 (如果尝试这么做, 那么程序在启动时会弹出警告). 解决此问题的一种方法是把一系列内容连接到变量中. 例如:</p>
 <pre>Var =
 (
 ...
 )
-Var = %Var%`n  <em>; 通过另一个延续片段添加更多文本到此变量中.</em>
+Var = %Var%`n  <em>; 通过另一个代码拼接添加更多文本到此变量中.</em>
 (
 ...
 )
 FileAppend, %Var%, C:\My File.txt</pre>
-<p>因为闭括号表示延续片段的结束,所以要让某一行以原义的闭括号开头,需要在其前面加上重音符/反引号:<code>`)</code>.</p>
-<p>一个延续片段后面可以紧跟着包含另一个延续片段的开括号的一行. 这样使得上面提到的选项可以在创建单行的过程中进行改变.</p>
-<p>不支持通过 <a href="commands/_Include.htm">#Include</a> 的方法把延续片段各部分连接起来.</p>
+<p>因为闭括号表示代码拼接的结束,所以要让某一行以原义的闭括号开头,需要在其前面加上重音符/反引号:<code>`)</code>.</p>
+<p>一个代码拼接后面可以紧跟着包含另一个代码拼接的开括号的一行. 这样使得上面提到的选项可以在创建单行的过程中进行改变.</p>
+<p>不支持通过 <a href="commands/_Include.htm">#Include</a> 的方法把代码拼接各部分连接起来.</p>
 
 <h2 id="ahk2exe">把脚本转换成 EXE (ahk2exe)</h2>
 <p>程序中已包含了脚本编译器 (感谢 fincs 提供).</p>

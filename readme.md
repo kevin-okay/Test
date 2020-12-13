@@ -1,5 +1,13 @@
 # AutoHotkey_L-Docs 中文化项目
 
+本项目现在是Fonny独自维护.
+
+本项目不再坚持与官方文档一致的结构,而是根据本人的使用需求个性化这个文档,其中会加入很多帮助新手理解和使用的例子,闭坑指南之类的东西.
+
+目前使用Gitee的pages服务生成了在线版,欢迎使用, [点击我打开](https://fonny.gitee.io/autohotkey_l-docs/docs/AutoHotkey.htm)
+
+
+
 欢迎各位Ahker都参与进来,通过 Pull Request 或 提交 Issues 的方式均可.
 
 对于有能力的朋友,如果本项目对您有帮助,欢迎用打赏的方式支持我们(微信扫描下方的二维码).

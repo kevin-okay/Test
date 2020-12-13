@@ -71,7 +71,10 @@ SYS_Convert()
 
     FileCopy, _forReplace\content.js, docs\static\, 1
     FileCopy, _forReplace\content.chm.js, docs\static\, 1
+    FileCopy, _forReplace\main.js, docs\static\source\, 1
+    FileCopy, _forReplace\data_index.js, docs\static\source\, 1
     FileCopy, _forReplace\data_toc.js, docs\static\source\, 1
+    FileCopy, _forReplace\data_translate.js, docs\static\source\, 1
     FileCopy, _forReplace\CreateFiles4Help.ahk, docs\static\source\, 1
     FileCopy, _forReplace\Index.hhk, %A_ScriptDir%, 1
     FileCopy, _forReplace\Project.hhp, %A_ScriptDir%, 1
