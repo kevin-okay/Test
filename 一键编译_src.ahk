@@ -112,6 +112,12 @@ SYS_Convert()
     FileDelete, %A_ScriptDir%\Index.hhk
     FileDelete, %A_ScriptDir%\Project.hhp
     FileDelete, %A_ScriptDir%\Table of Contents.hhc
+    
+    FileDelete, %A_ScriptDir%\docs\static\source\CreateFiles4Help.ahk
+    FileDelete, %A_ScriptDir%\docs\static\source\data_index.js
+    FileDelete, %A_ScriptDir%\docs\static\source\data_toc.js
+    FileDelete, %A_ScriptDir%\docs\static\source\data_translate.js
+    FileDelete, %A_ScriptDir%\docs\static\source\main.js
     return
 }
 
