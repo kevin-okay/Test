@@ -1,2 +1,7 @@
 *.chm
 /docs/commands/*.bak
+/docs/static/source/CreateFiles4Help.ahk
+/docs/static/source/data_index.js
+/docs/static/source/data_toc.js
+/docs/static/source/data_translate.js
+/docs/static/source/main.js

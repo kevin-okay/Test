@@ -8,16 +8,16 @@ SetBatchLines, -1
 ListLines Off
 
 global Gs_Author := "Fonny"
-, Gs_OptionFile := SubStr(A_ScriptName, 1, -3) "ini"
-, Gs_DebugLevel := 0
+, Gs_ConfigFile := path_replaceExtName(A_ScriptName, "ini")
+, Gv_logFile := "_dbglog.txt"
+, Gs_DebugLevel := 3
 
 main()
-Trace("Done")
-Sleep, 2000
 return
 
-main()
-{  
+_main()
+{
+	
    SYS_FixHeadAndTransCp()
    SYS_Convert()
    return
@@ -98,7 +98,9 @@ SYS_Convert()
     SetWorkingDir %A_ScriptDir%\docs\static
 
     ; Rebuild Index.hhk and Table of Contents.hhc.
-    RunWait "%A_AhkPath%" source\CreateFiles4Help.ahk
+    ;~ RunWait "%A_AhkPath%" source\CreateFiles4Help.ahk
+    _cmd := fsys_JoinPath(A_ScriptDir, "docs\static\source\CreateFiles4Help.ahk")
+    RunWait, % _cmd
     FileMove content.js, content.temp.js, 1
     FileMove content.chm.js, content.js
 
@@ -113,4 +115,12 @@ SYS_Convert()
     FileDelete, %A_ScriptDir%\Project.hhp
     FileDelete, %A_ScriptDir%\Table of Contents.hhc
     return
+}
+
+main()
+{
+	try
+		_main()
+	catch , _err
+		Debug(A_ThisFunc ? A_ThisFunc : A_ThisLabel, A_LineFile, A_LineNumber, _err)
 }
