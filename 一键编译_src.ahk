@@ -69,6 +69,7 @@ SYS_Convert()
        FileDelete, AutoHotkey.chm
     }
 
+    FileCopy, _forReplace\theme.css, docs\static\, 1
     FileCopy, _forReplace\main.js, docs\static\source\, 1
     FileCopy, _forReplace\data_index.js, docs\static\source\, 1
     FileCopy, _forReplace\data_toc.js, docs\static\source\, 1
