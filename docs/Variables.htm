@@ -532,7 +532,7 @@ MsgBox,  %ElapsedTime% milliseconds have elapsed.</pre>
     A_CoordModeMouse<br>
     A_CoordModeCaret<br>
     A_CoordModeMenu</td>
-    <td><span class="ver">[v1.1.23+]:</span> <a href="commands/CoordMode.htm">CoordMode</a> 的当前设置值的字符串. (可能的值为: Window, Client 或 Screen) </td>
+    <td><span class="ver">[v1.1.23+]:</span> <a href="commands/CoordMode.htm">CoordMode</a> 的当前设置值的字符串. 默认值都是 Windows, 可能的值为: Window, Client 或 Screen</td>
   </tr>
   <tr id="RegView">
     <td>A_RegView</td>
@@ -809,7 +809,7 @@ if A_OSVersion in WIN_NT4,WIN_95,WIN_98,WIN_ME  <em>; 注:逗号两边没有空格. </em>
   <tr id="Caret">
     <td>A_CaretX<br>
 	A_CaretY</td>
-    <td><p>当前光标 (文本插入点) 的 X 和 Y 坐标. 如果没有使用 <a href="commands/CoordMode.htm">CoordMode</a> 使得坐标相对于整个屏幕, 默认坐标相对于活动窗口. 如果没有活动窗口或无法确定文本插入点的位置, 则这两个变量为空.</p>
+    <td><p>当前光标(文本插入点)的X轴和Y轴坐标. 默认坐标系为相对于活动窗口(Window). 可以通过 <a href="commands/CoordMode.htm">CoordMode</a> 修改坐标系. 如果没有活动窗口或无法确定光标位置, 则为空字符串.</p>
       <p>下面这个脚本可以让您在四处移动文本插入点时, 查看显示在自动更新工具提示上的当前位置. 注意在某些窗口 (例如某些版本的 MS Word) 会不管文本插入点的实际位置如何都报告同样的位置.</p>
 <pre>
 #Persistent

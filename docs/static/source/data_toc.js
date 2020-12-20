@@ -1,5 +1,11 @@
 ﻿toc = [
   {label:"快速检索",path:"AutoHotkey.htm"},
+  {label:"常见问题解答",path:"FAQ.htm"},
+  {label:"教程 (快速入门)",path:"Tutorial.htm"},
+  {label:"更新日志",path:"AHKL_ChangeLog.htm"},
+  {label:"脚本展示台",path:"scripts/index.htm"},
+  {label:"脚本兼容性",path:"Compat.htm"},
+  {label:"内置命令和函数列表",path:"commands/index.htm"},
   {label:"基本语法",children:
   [
     {label:"热键",path:"Hotkeys.htm"},
@@ -24,12 +30,6 @@
       {label:"函数对象",path:"objects/Functor.htm"}
     ]}
   ]},
-  {label:"常见问题解答",path:"FAQ.htm"},
-  {label:"教程 (快速入门)",path:"Tutorial.htm"},
-  {label:"更新日志",path:"AHKL_ChangeLog.htm"},
-  {label:"脚本展示台",path:"scripts/index.htm"},
-  {label:"脚本兼容性",path:"Compat.htm"},
-  {label:"内置命令和函数列表",path:"commands/index.htm"},
   {label:"系统环境控制",children:
   [
     {label:"ClipWait 等待剪贴板",path:"commands/ClipWait.htm"},
@@ -189,7 +189,7 @@
     {label:"ASin/ACos/ATan",path:"commands/Math.htm#ASin"},
     {label:"Transform",path:"commands/Transform.htm"}
   ]},
-  {label:"Mouse and Keyboard",children:
+  {label:"鼠标键盘",children:
   [
     {label:"热键和热字串",path:"Hotkeys.htm",children:
     [
@@ -217,7 +217,7 @@
     {label:"Click",path:"commands/Click.htm"},
     {label:"ControlClick",path:"commands/ControlClick.htm"},
     {label:"ControlSend, ControlSendRaw",path:"commands/ControlSend.htm"},
-    {label:"CoordMode",path:"commands/CoordMode.htm"},
+    {label:"CoordMode 修改坐标系",path:"commands/CoordMode.htm"},
     {label:"GetKeyName/VK/SC",path:"commands/GetKey.htm"},
     {label:"GetKeyState",path:"commands/GetKeyState.htm"},
     {label:"按键列表 (键盘、鼠标、手柄)",path:"KeyList.htm"},
@@ -237,7 +237,7 @@
     {label:"SetNumScrollCapsLockState",path:"commands/SetNumScrollCapsLockState.htm"},
     {label:"SetStoreCapslockMode",path:"commands/SetStoreCapslockMode.htm"}
   ]},
-  {label:"Misc.",children:
+  {label:"辅助命令",children:
   [
     {label:"AutoTrim",path:"commands/AutoTrim.htm"},
     {label:"Edit",path:"commands/Edit.htm"},
@@ -268,13 +268,13 @@
     {label:"RegWrite",path:"commands/RegWrite.htm"},
     {label:"SetRegView",path:"commands/SetRegView.htm"}
   ]},
-  {label:"Screen",children:
+  {label:"以图找图和屏幕取色",children:
   [
     {label:"ImageSearch",path:"commands/ImageSearch.htm"},
     {label:"PixelGetColor",path:"commands/PixelGetColor.htm"},
     {label:"PixelSearch",path:"commands/PixelSearch.htm"}
   ]},
-  {label:"声音管理",children:
+  {label:"声音和音乐",children:
   [
     {label:"SoundBeep",path:"commands/SoundBeep.htm"},
     {label:"SoundGet",path:"commands/SoundGet.htm"},
@@ -376,7 +376,7 @@
     {label:"WinWaitActive, WinWaitNotActive",path:"commands/WinWaitActive.htm"},
     {label:"WinWaitClose",path:"commands/WinWaitClose.htm"}
   ]},
-  {label:"#指令",children:
+  {label:"#符号前缀的系统指令",children:
   [
     {label:"#AllowSameLineComments",path:"commands/_AllowSameLineComments.htm"},
     {label:"#ClipboardTimeout",path:"commands/_ClipboardTimeout.htm"},
