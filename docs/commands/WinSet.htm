@@ -45,8 +45,10 @@
 <p><strong>Style, N</strong> <u>or</u> <strong>ExStyle, N</strong>:·Ö±ð¸Ä±ä´°¿ÚµÄÑùÊ½»òÀ©Õ¹ÑùÊ½.Èç¹û <strong>N</strong> µÄÊ×¸ö×Ö·ûÎª¼ÓºÅ»ò¼õºÅ, ÄÇÃ´»áÌí¼Ó»òÒÆ³ý <strong>N</strong> ÖÐµÄÑùÊ½. Èç¹ûÊ×¸ö×Ö·ûÎªÍÑ×Ö·û (^), ÄÇÃ´ N ÖÐµÄÑùÊ½»á±»ÇÐ»»µ½Ïà·´µÄ×´Ì¬. Èç¹ûÊ×¸ö×Ö·ûÎªÊý×Ö, Ôò´°¿ÚÑùÊ½»á±»ÍêÈ«¸²¸ÇÎª <strong>N</strong>.</p>
 <p>Èç¹ûÉèÖÃÊ§°Ü, Ôò <a href="../misc/ErrorLevel.htm">ErrorLevel</a> ±»ÖÃÎª 1, ³É¹¦ÔòÎª 0. Ã»ÓÐÕÒµ½Ä¿±ê´°¿Ú»òÎÞ·¨Ó¦ÓÃ´ËÑùÊ½Ê±»áÉèÖÃÊ§°Ü.</p>
 <p>¸Ä±ä¿É¼û´°¿ÚµÄÄ³Ð©ÑùÊ½ºó,¿ÉÄÜÐèÒªÊ¹ÓÃ <code>WinSet Redraw</code>(Çë²ÎÔÄÏÂÃæ)¶Ô´°¿Ú½øÐÐÖØ»æ.×îºó, <a href="../misc/Styles.htm">ÑùÊ½±í</a> ÖÐÁÐ³öÁËÒ»Ð©³£ÓÃµÄÑùÊ½±àºÅ. Ê¾Àý:</p>
-<pre>WinSet, Style, -0xC00000, A  <em>; ÒÆ³ý»î¶¯´°¿ÚµÄ±êÌâÀ¸ (WS_CAPTION).</em>
-WinSet, ExStyle, ^0x80, WinTitle  <em>; ÇÐ»» WS_EX_TOOLWINDOW ÊôÐÔ, Ëü»áÒÆ³ý/Ìí¼Ó´°¿Úµ½ alt-tab ÁÐ±í.</em></pre>
+<pre>
+WinSet, Style, -0xC00000, A  <em>; ÒÆ³ý»î¶¯´°¿ÚµÄ±êÌâÀ¸ (WS_CAPTION).</em>
+WinSet, ExStyle, ^0x80, WinTitle  <em>; ÇÐ»» WS_EX_TOOLWINDOW ÊôÐÔ, Ëü»áÒÆ³ý/Ìí¼Ó´°¿Úµ½ alt-tab ÁÐ±í.</em>
+</pre>
 <h3 id="region">WinSet, Region [, Options, WinTitle, ...]</h3>
 <p>¸Ä±ä´°¿ÚµÄÐÎ×´ÎªÖ¸¶¨µÄ¾ØÐÎ, ÍÖÔ²ÐÎ»ò¶à±ßÐÎ. Èç¹û <em>Options</em> ²ÎÊýÎª¿Õ, ÄÇÃ´»Ö¸´´°¿ÚÎªÔ­À´µÄÐÎ×´. ·ñÔò, ¿ÉÒÔÖ¸¶¨Ò»¸ö»ò¶à¸öµÄÏÂÁÐÑ¡Ïî, Ñ¡ÏîÖ®¼äÊ¹ÓÃ¿Õ¸ñ·Ö¸ô:</p>
 <p><strong>Wn</strong>: ¾ØÐÎ»òÍÖÔ²ÐÎµÄ¿í¶È. ÀýÈç: <code>w200</code>.<br>
@@ -54,7 +56,7 @@ WinSet, ExStyle, ^0x80, WinTitle  <em>; ÇÐ»» WS_EX_TOOLWINDOW ÊôÐÔ, Ëü»áÒÆ³ý/Ìí¼
 <strong>X-Y</strong>: ÕâÑùµÄÒ»¶ÔÎª X/Y ×ø±ê¶Ô. ÀýÈç, <code>200-0</code> ±íÊ¾X×ø±êÎª200, Y×ø±êÎª0.<br>
 <strong>E</strong>: ÉèÖÃ´°¿ÚÐÎ×´ÎªÍÖÔ²ÐÎ¶ø²»ÊÇ¾ØÐÎ. ´ËÑ¡Ïî½öÔÚÍ¬Ê±Ö¸¶¨ÁË <strong>W</strong> ºÍ <strong>H</strong> Ê±²ÅÓÐÐ§.<br>
 <strong>R[w-h]</strong>: ÉèÖÃ´°¿ÚÐÎ×´ÎªÔ²½Ç¾ØÐÎ. ÀýÈç, <code>R30-30</code> ±íÊ¾Ã¿¸ö½ÇÎª 30x30 µÄÍÖÔ². Èç¹û <strong>w-h</strong> Ê¡ÂÔ, ÔòÊ¹ÓÃ 30-30. <strong>R</strong> ½öÔÚÍ¬Ê±Ö¸¶¨ÁË <strong>W</strong> ºÍ <strong>H</strong> Ê±²ÅÓÐÐ§.</p>
-<p><strong>¾ØÐÎ»òÍÖÔ²ÐÎ</strong>:Èç¹ûÖ¸¶¨ÁË <strong>W</strong> ºÍ <strong>H</strong> Ñ¡Ïî,ÄÇÃ´»áÉèÖÃ´°¿ÚÐÎ×´Îª¾ØÐÎ,ÇÒÆä×óÉÏ½ÇµÄ×ø±êÎªÊ×¸ö(ÇÒÎ¨Ò»)µÄ <strong>X-Y</strong> ×ø±ê¶Ô.µ«ÊÇ,Èç¹ûÍ¬Ê±Ö¸¶¨ÁË <strong>E</strong> Ñ¡Ïî,ÄÇÃ´»áÉèÖÃ´°¿ÚÐÎ×´ÎªÍÖÔ²ÐÎ¶ø²»ÊÇ¾ØÐÎ.ÀýÈç:<code>WinSet, Region, 50-0 W200 H250 E, WinTitle</code>.</p>
+<p><strong>¾ØÐÎ»òÍÖÔ²ÐÎ</strong>:Èç¹ûÖ¸¶¨ÁË <strong>W</strong> ºÍ <strong>H</strong> Ñ¡Ïî,ÄÇÃ´»áÉèÖÃ´°¿ÚÐÎ×´Îª¾ØÐÎ,ÇÒÆä×óÉÏ½ÇµÄ×ø±êÎªÊ×¸ö(ÇÒÎ¨Ò»)µÄ <strong>X-Y</strong> ×ø±ê¶Ô.µ«ÊÇ,Èç¹ûÍ¬Ê±Ö¸¶¨ÁË <strong>E</strong> Ñ¡Ïî,ÄÇÃ´»áÉèÖÃ´°¿ÚÐÎ×´ÎªÍÖÔ²ÐÎ¶ø²»ÊÇ¾ØÐÎ.ÀýÈç: <code>WinSet, Region, 50-0 W200 H250 E, WinTitle</code></p>
 <p><strong>¶à±ßÐÎ</strong>:Èç¹û <strong>W</strong> ºÍ <strong>H</strong> Ñ¡Ïî¶¼Ã»ÓÐÖ¸¶¨,ÄÇÃ´»áÉèÖÃ´°¿ÚÐÎ×´ÎªÓÉ¶à¸ö <strong>X-Y</strong> ×ø±ê¶ÔÈ·¶¨µÄ¶à±ßÐÎ(Ã¿¶Ô×ø±êÒÔ´°¿Ú×óÉÏ½ÇÎªÔ­µã).ÀýÈç, Èç¹ûÖ¸¶¨ÁËÈý¶Ô×ø±ê, ÄÇÃ´ÔÚ¶àÊýÊ±ºò´°¿ÚÐÎ×´»á±»ÉèÖÃÎªÈý½ÇÐÎ. ×ø±ê¶Ô±Ë´Ë¼äµÄÏà¶ÔË³ÐòÓÐÊ±ºÜÖØÒª. ´ËÍâ,¿ÉÒÔÔÚ <em>Options</em> ÖÐÖ¸¶¨µ¥´Ê <strong>Wind</strong> ´Ó¶øÊ¹ÓÃ²øÈÆ·¨´úÌæ±ä»»·½·¨À´È·¶¨¶à±ßÐÎµÄÐÎ×´.</p>
 <p>Èç¹ûÉèÖÃÊ§°Ü, Ôò <a href="../misc/ErrorLevel.htm">ErrorLevel</a> ±»ÖÃÎª 1, ³É¹¦ÔòÎª 0. ³öÏÖÒÔÏÂÇé¿öÊ±»áÉèÖÃÊ§°Ü: 1) Ä¿±ê´°¿Ú²»´æÔÚ; 2) <em>Options</em> ÓÐÒ»¸ö»ò¶à¸öÑ¡ÏîÎÞÐ§; 3) Ö¸¶¨ÁË³¬¹ý 2000 ¶Ô×ø±ê; »ò 4) Ö¸¶¨µÄÐÎ×´ÊÇÎÞÐ§µÄ»ò²»ÊÊÓÃÓÚÄ¿±ê´°¿Ú.</p>
 <p>Çë²ÎÔÄ±¾Ò³µ×²¿²é¿´Ê¹ÓÃ´ËÃüÁîµÄÊ¾Àý.</p>
@@ -66,25 +68,35 @@ WinSet, ExStyle, ^0x80, WinTitle  <em>; ÇÐ»» WS_EX_TOOLWINDOW ÊôÐÔ, Ëü»áÒÆ³ý/Ìí¼
   <li>Òª¸Ä±ä´°¿ÚÏÖÓÐµÄ <a href="#TransColor">TransColor</a>, ¿ÉÄÜÐèÒªÔÚ¸Ä±äÇ°¹Ø±ÕÍ¸Ã÷¶È.</li>
   <li>ÔÚ v1.1.24.04 Ö®Ç°, µ±´°ÌåÈ±·¦ caption (±êÌâÀ¸) ÇÒÈ±·¦ <a href="#AlwaysOnTop">×ÜÔÚ×îÉÏ²ã</a> ÊôÐÔÊ±ÎÞÐ§. ÒÑ¾­ÓÚ v1.1.24.05 ÐÞ¸´.</li>
 </ul>
-<p><strong>ÌáÊ¾</strong>:ÒªÈÃÈÎÎñÀ¸Í¸Ã÷,ÇëÊ¹ÓÃ <code>WinSet, Transparent, 150, ahk_class Shell_TrayWnd</code>.ÀàËÆµØ, ÒªÈÃ¿ªÊ¼²Ëµ¥Í¸Ã÷, Çë²ÎÕÕ´ËÀý:</p>
-<pre>DetectHiddenWindows, on
-WinSet, Transparent, 150, ahk_class BaseBar  <em>; ÒªÈÃ¿ªÊ¼²Ëµ¥µÄ×Ó²Ëµ¥Í¸Ã÷, »¹±ØÐë¼ÓÉÏÏÂÃæµÄ´úÂë.</em></pre>
+<p><strong>ÌáÊ¾</strong>:ÒªÈÃÈÎÎñÀ¸Í¸Ã÷,ÇëÊ¹ÓÃ <code>WinSet, Transparent, 150, ahk_class Shell_TrayWnd</code> ÀàËÆµØ, ÒªÈÃ¿ªÊ¼²Ëµ¥Í¸Ã÷, Çë²ÎÕÕ´ËÀý:</p>
+<pre>
+DetectHiddenWindows, on
+WinSet, Transparent, 150, ahk_class BaseBar  <em>; ÒªÈÃ¿ªÊ¼²Ëµ¥µÄ×Ó²Ëµ¥Í¸Ã÷, »¹±ØÐë¼ÓÉÏÏÂÃæµÄ´úÂë.</em>
+</pre>
 <p>ÒªÈÃÏµÍ³ÖÐËùÓÐµÄ»òÑ¡ÔñµÄ²Ëµ¥Í¸Ã÷, ÔòÈÃÏñÏÂÃæÕâÑùµÄ½Å±¾±£³ÖÔËÐÐ. ×¢Òâ¾¡¹Ü´Ë½Å±¾²»ÄÜÈÃËü×Ô¼ºµÄ²Ëµ¥Í¸Ã÷, µ«¿ÉÒÔÈÃÆäËû½Å±¾µÄ²Ëµ¥Í¸Ã÷:</p>
-<pre>#Persistent
+<pre>
+#Persistent
 SetTimer, WatchForMenu, 5
-return  <em>; ×Ô¶¯ÔËÐÐ¶Î½áÊø.</em>
+return  <em>; ×Ô¶¯ÔËÐÐ¶Î½áÊø
+</em>
 
 WatchForMenu:
 DetectHiddenWindows, on  <em>; ²Å¿ÉÒÔÁ¢¼´¼ì²âµ½²Ëµ¥.</em>
 IfWinExist, ahk_class #32768
     WinSet, Transparent, 150  <em>; Ê¹ÓÃÇ°Ò»ÐÐÕÒµ½µÄ´°¿Ú.</em>
-return</pre>
+return
+</pre>
 <h3 id="TransColor">WinSet, TransColor, Color [N], WinTitle</h3>
-<p>ÈÃÄ¿±ê´°¿ÚÖÐÖ¸¶¨ÑÕÉ«µÄËùÓÐÏñËØÍ¸Ã÷,ÕâÑù¿ÉÒÔÈÃËüºóÃæµÄ´°¿ÚÄÚÈÝÏÔÊ¾³öÀ´.Èç¹ûÓÃ»§µã»÷Í¸Ã÷²¿·Ö, ÄÇÃ´µã»÷»á "´©Í¸" ´Ë´°¿Ú´«µÝµ½ËüºóÃæµÄ´°¿Ú. ÔÚ <em>Color</em> ÖÐÖ¸¶¨ÑÕÉ«Ãû³Æ»ò RGB Öµ (Çë²ÎÔÄ <a href="Progress.htm#colors">ÑÕÉ«Í¼±í</a> ½øÐÐÁË½â»òÊ¹ÓÃ <a href="PixelGetColor.htm">PixelGetColor</a> µÄ RGB Ä£Ê½). ´ËÍâ, ÒªÈÃÄ¿±ê´°¿ÚÖÐ·ûºÏÖ¸¶¨ÑÕÉ«µÄ²¿·Ö°ëÍ¸Ã÷, ÇëÔÚÑÕÉ«²ÎÊýºóÌí¼Ó¿Õ¸ñ (²»ÊÇ¶ººÅ) ºÍÍ¸Ã÷¶ÈµÈ¼¶ (0-255). ÀýÈç:<code>WinSet, TransColor, EEAA99 150, WinTitle</code>.</p>
+<p>ÈÃÄ¿±ê´°¿ÚÖÐÖ¸¶¨ÑÕÉ«µÄÄÇÐ©ÏñËØ±ä³ÉÍ¸Ã÷µÄ. Èç¹ûÓÃ»§µã»÷Í¸Ã÷²¿·Ö, ÄÇÃ´µã»÷»á "´©Í¸" ´Ë´°¿Ú´«µÝµ½ËüºóÃæµÄ´°¿Ú. ÔÚ <em>Color</em> ÖÐÖ¸¶¨ÑÕÉ«Ãû³Æ (<a href="Progress.htm#colors">ÑÕÉ«±í</a>) »ò RGB Öµ. ´ËÍâ, ÒªÈÃÄ¿±ê´°¿Ú¿É¼û²¿·ÖÍ¸Ã÷, ÇëÔÚÑÕÉ«²ÎÊýºóÌí¼Ó¿Õ¸ñºÍÍ¸Ã÷¶ÈµÈ¼¶ (0-255).<br><br>ÒëÕß×¢:<br>Èç¹ûÍ¸Ã÷µÈ¼¶Îª0,ÔòÎÞÂÛÑÕÉ«ÎªºÎÖµ, Õû¸ö´°¿Ú¶¼½«"ÏûÊ§", ÉèÎªÆäËûÖµÔòÊÇÖ¸¶¨ÑÕÉ«µÄÍ¸Ã÷¶È,µ«²¢²»¾«È·.<br>ÁíÍâ, ÑÕÉ«ÖµÎªRGB¸ñÊ½, ¶ø PixelGetColor Ä¬ÈÏÇé¿öÏÂÈ¡Öµ¸ñÊ½Îª BGR, Çë²Î¿¼ÕâÀï: <a href="PixelGetColor.htm">Ê¹ÓÃ PixelGetColor µÄ RGB Ä£Ê½</a> , ÀýÈç:</p>
+<pre>
+WinSet, TransColor, EEAA99 150, WinTitle
+</pre> 
 <p>³£ÓÃ TransColor À´´´½¨ÆÁÄ»ÏÔÊ¾ (OSD) ºÍÆäËûÊÓ¾õÐ§¹û. <a href="Gui.htm#OSD">ÔÚ Gui Ò³ÃæµÄµ×²¿</a> ÓÐÒ»¸öÆÁÄ»ÏÔÊ¾µÄÀý×Ó.</p>
 <p>Ö¸¶¨µ¥´Ê OFF ¿ÉÒÔÍêÈ«¹Ø±Õ´°¿ÚµÄÍ¸Ã÷¶È. ÏÂÃæÁ½¸öÓï¾ä¹¦ÄÜÊÇÏàÍ¬µÄ:</p>
-<pre>WinSet, Transparent, Off, WinTitle
-WinSet, TransColor, Off, WinTitle</pre>
+<pre>
+WinSet, Transparent, Off, WinTitle
+WinSet, TransColor, Off, WinTitle
+</pre>
 <p>ÒÑÖªÏÞÖÆ: Çë²ÎÔÄ <a href="#TransLimit">ÉÏÃæµÄ</a> ÁÐ±í.</p>
 <h3>±¸×¢</h3>
 <p>³ýÁËÉÏÃæÃ÷È·Ö¸³öµÄÇé¿öÍâ, ´ËÃüÁî²»»á¸Ä±ä <a href="../misc/ErrorLevel.htm">ErrorLevel</a>.</p>
